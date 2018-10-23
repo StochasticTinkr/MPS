@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.diff.ui.merge.AcceptYoursTheirs" file="AcceptYoursTheirs.java">
+  <dependency className="jetbrains.mps.vcs.diff.ui.merge.AcceptYoursTheirs">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.util.ui.EmptyIcon" />
     <classNode dependClassName="java.lang.Object" />
@@ -11,7 +11,7 @@
     <classNode extendsClassName="com.intellij.openapi.project.DumbAware" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.merge.ApplyNonConflictsForRoot" file="ApplyNonConflictsForRoot.java">
+  <dependency className="jetbrains.mps.vcs.diff.ui.merge.ApplyNonConflictsForRoot">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -25,11 +25,11 @@
     <classNode extendsClassName="com.intellij.openapi.project.DumbAware" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel" file="ISaveMergedModel.java">
+  <dependency className="jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel">
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter" file="MergeButtonsPainter.java">
+  <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeRootsPane" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ButtonsPainter" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeConfirmation" file="MergeConfirmation.java">
+  <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeConfirmation">
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeSession" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel" file="MergeModelsPanel.java">
+  <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel">
     <classNode dependClassName="com.intellij.diff.merge.TextMergeRequest" />
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
@@ -133,7 +133,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeNonConflictingRoots" file="MergeNonConflictingRoots.java">
+  <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeNonConflictingRoots">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -143,7 +143,7 @@
     <classNode extendsClassName="com.intellij.openapi.project.DumbAware" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeRootsPane" file="MergeRootsPane.java">
+  <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeRootsPane">
     <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -191,7 +191,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.merge.ResetState" file="ResetState.java">
+  <dependency className="jetbrains.mps.vcs.diff.ui.merge.ResetState">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.java.sourceStubsUI.JavaSourceStubModelRootSettingsEditor" file="JavaSourceStubModelRootSettingsEditor.java">
+  <dependency className="jetbrains.mps.ide.java.sourceStubsUI.JavaSourceStubModelRootSettingsEditor">
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooser" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptorFactory" />
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="jetbrains.mps.ide.persistence.ModelRootSettingsEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.sourceStubsUI.JavaSourceStubModelRootSettingsProvider" file="JavaSourceStubModelRootSettingsProvider.java">
+  <dependency className="jetbrains.mps.ide.java.sourceStubsUI.JavaSourceStubModelRootSettingsProvider">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubsUI.JavaSourceStubModelRootSettingsEditor" />
     <classNode dependClassName="jetbrains.mps.ide.persistence.ModelRootSettingsEditor" />

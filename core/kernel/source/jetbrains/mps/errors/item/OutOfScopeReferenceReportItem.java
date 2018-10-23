@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -32,10 +33,15 @@ import java.util.Set;
 public class OutOfScopeReferenceReportItem extends ReferenceReportItem implements RuleIdFlavouredItem, EditorQuickfixReportItem {
   private final TypesystemRuleId myRuleNode;
   private final EditorQuickFix myQuickfix;
+  private final EditorQuickFix myAddImportQuickfix;
   public OutOfScopeReferenceReportItem(@NotNull SReference ref, @Nullable SNodeReference ruleNode, @NotNull EditorQuickFix quickfix) {
+    this(ref, ruleNode, quickfix, null);
+  }
+  public OutOfScopeReferenceReportItem(@NotNull SReference ref, @Nullable SNodeReference ruleNode, @NotNull EditorQuickFix quickfix, @Nullable EditorQuickFix addImportQuickfix) {
     super(MessageStatus.ERROR, ref, getMessage(ref.getTargetNode().getName(), ref.getLink()));
     myRuleNode = new TypesystemRuleId(ruleNode);
     myQuickfix = quickfix;
+    myAddImportQuickfix = addImportQuickfix;
   }
 
   @Override
@@ -58,11 +64,16 @@ public class OutOfScopeReferenceReportItem extends ReferenceReportItem implement
 
   @Override
   public Collection<EditorQuickFix> getQuickFix() {
-    return Collections.singleton(myQuickfix);
+    ArrayList<EditorQuickFix> result = new ArrayList<>();
+    result.add(myQuickfix);
+    if (myAddImportQuickfix != null) {
+      result.add(myAddImportQuickfix);
+    }
+    return result;
   }
 
   @Override
   public ItemKind getIssueKind() {
-    return IssueKindReportItem.CONSTRAINTS.deriveItemKind();
+    return IssueKindReportItem.REFERENCE_SCOPES.deriveItemKind();
   }
 }

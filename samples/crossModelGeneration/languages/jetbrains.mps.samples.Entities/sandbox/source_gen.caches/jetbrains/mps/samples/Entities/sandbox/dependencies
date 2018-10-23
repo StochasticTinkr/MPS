@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.Entities.sandbox.Harry" file="Harry.java">
+  <dependency className="jetbrains.mps.samples.Entities.sandbox.Harry">
     <classNode dependClassName="jetbrains.mps.samples.Entities.sandbox.James" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Entities.sandbox.James" file="James.java">
+  <dependency className="jetbrains.mps.samples.Entities.sandbox.James">
     <classNode dependClassName="jetbrains.mps.samples.Entities.sandbox.Harry" />
     <classNode dependClassName="jetbrains.mps.samples.Entities.sandbox.Lily" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Entities.sandbox.Lily" file="Lily.java">
+  <dependency className="jetbrains.mps.samples.Entities.sandbox.Lily">
     <classNode dependClassName="jetbrains.mps.samples.Entities.sandbox.Harry" />
     <classNode dependClassName="jetbrains.mps.samples.Entities.sandbox.James" />
   </dependency>

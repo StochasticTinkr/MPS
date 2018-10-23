@@ -3067,8 +3067,13 @@
                                                 <ref role="3uigEE" to="7e8u:~MPSTreeNode" resolve="MPSTreeNode" />
                                               </node>
                                             </node>
-                                            <node concept="37vLTw" id="67Ra4fFA0mf" role="1DdaDG">
-                                              <ref role="3cqZAo" node="67Ra4fF_JHk" resolve="placeholder" />
+                                            <node concept="2OqwBi" id="5fPzS2nMLAh" role="1DdaDG">
+                                              <node concept="37vLTw" id="67Ra4fFA0mf" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="67Ra4fF_JHk" resolve="placeholder" />
+                                              </node>
+                                              <node concept="liA8E" id="5fPzS2nNgjh" role="2OqNvi">
+                                                <ref role="37wK5l" to="7e8u:~MPSTreeNode.getChildren():java.util.List" resolve="getChildren" />
+                                              </node>
                                             </node>
                                           </node>
                                           <node concept="3clFbF" id="67Ra4fFA9RQ" role="3cqZAp">

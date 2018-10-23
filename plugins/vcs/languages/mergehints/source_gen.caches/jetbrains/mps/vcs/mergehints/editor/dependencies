@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.ConceptVCSDescriptor_Editor" file="ConceptVCSDescriptor_Editor.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.ConceptVCSDescriptor_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.editor.ConceptVCSDescriptor_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.ConceptVCSDescriptor_EditorBuilder_a" file="ConceptVCSDescriptor_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.ConceptVCSDescriptor_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -84,14 +84,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.LinkVCSDescriptor_Editor" file="LinkVCSDescriptor_Editor.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.LinkVCSDescriptor_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.editor.LinkVCSDescriptor_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.LinkVCSDescriptor_EditorBuilder_a" file="LinkVCSDescriptor_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.LinkVCSDescriptor_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -137,7 +137,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.LinkVCSDescriptor_SubstituteMenu" file="LinkVCSDescriptor_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.LinkVCSDescriptor_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -158,14 +158,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.MergeHint_Editor" file="MergeHint_Editor.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.MergeHint_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.editor.MergeHint_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.MergeHint_EditorBuilder_a" file="MergeHint_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.MergeHint_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -201,14 +201,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.OursStrategy_Editor" file="OursStrategy_Editor.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.OursStrategy_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.editor.OursStrategy_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.OursStrategy_EditorBuilder_a" file="OursStrategy_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.OursStrategy_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -217,14 +217,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.PropertyVCSDescriptor_Editor" file="PropertyVCSDescriptor_Editor.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.PropertyVCSDescriptor_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.editor.PropertyVCSDescriptor_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.PropertyVCSDescriptor_EditorBuilder_a" file="PropertyVCSDescriptor_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.PropertyVCSDescriptor_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -270,7 +270,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.PropertyVCSDescriptor_SubstituteMenu" file="PropertyVCSDescriptor_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.PropertyVCSDescriptor_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -291,14 +291,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.TheirsStrategy_Editor" file="TheirsStrategy_Editor.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.TheirsStrategy_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.editor.TheirsStrategy_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.TheirsStrategy_EditorBuilder_a" file="TheirsStrategy_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.TheirsStrategy_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -307,14 +307,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.VCSHints_Editor" file="VCSHints_Editor.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.VCSHints_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.editor.VCSHints_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.editor.VCSHints_EditorBuilder_a" file="VCSHints_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.editor.VCSHints_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />

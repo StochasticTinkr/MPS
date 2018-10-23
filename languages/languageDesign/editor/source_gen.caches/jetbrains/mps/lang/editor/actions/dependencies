@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.actions.ActionAspectDescriptorImpl" file="ActionAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.ActionAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -14,7 +14,7 @@
     <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.EDTL_node_factories" file="EDTL_node_factories.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.EDTL_node_factories">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.IExtensibleMenuPart_factory" file="IExtensibleMenuPart_factory.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.IExtensibleMenuPart_factory">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.StyleClassItem" file="StyleClassItem.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.StyleClassItem">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.TransformationMenuActionsUtil" file="TransformationMenuActionsUtil.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.TransformationMenuActionsUtil">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

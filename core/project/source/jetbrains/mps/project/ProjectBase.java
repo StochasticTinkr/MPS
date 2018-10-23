@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
@@ -61,7 +61,7 @@ public abstract class ProjectBase extends Project {
   private final ProjectManager myProjectManager = ProjectManager.getInstance();
 
   private final Map<SModuleReference, SModuleListenerBase> myModulesListeners = new HashMap<>();
-  protected final Platform myPlatform; // XXX perhaps, worth moving into superclass?
+  protected final ComponentHost myPlatform; // XXX perhaps, worth moving into superclass?
 
   // AP fixme must be final, however StandaloneMpsProject exposes it (a client can publicly reset the project descriptor)
   protected ProjectDescriptor myProjectDescriptor;
@@ -69,13 +69,13 @@ public abstract class ProjectBase extends Project {
   private final Map<SModuleReference, ModulePath> myModuleToPathMap = new LinkedHashMap<>();
   private final ProjectModuleLoader myModuleLoader;
 
-  protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull Platform mpsPlatform) {
+  protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull ComponentHost mpsPlatform) {
     this(projectDescriptor, mpsPlatform, false);
     initRepositoryDefault(mpsPlatform);
   }
 
   // FIXME refactor other subclasses and pass boolean initDefaultRepo == true|false
-  protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull Platform mpsPlatform, boolean unusedJustIndicatorOfNoRepository) {
+  protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull ComponentHost mpsPlatform, boolean unusedJustIndicatorOfNoRepository) {
     super(projectDescriptor.getName());
     myProjectDescriptor = projectDescriptor;
     myModuleLoader = new ProjectModuleLoader(this); // fixme: avoid

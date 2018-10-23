@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.behavior.CategorizeBlock__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.behavior.CheckCancelledStatusStatement__BehaviorDescriptor" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.CategorizeBlock__BehaviorDescriptor" file="CategorizeBlock__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.CategorizeBlock__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.CheckCancelledStatusStatement__BehaviorDescriptor" file="CheckCancelledStatusStatement__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.CheckCancelledStatusStatement__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -68,7 +68,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.FindBlock__BehaviorDescriptor" file="FindBlock__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.FindBlock__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -96,7 +96,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration__BehaviorDescriptor" file="FinderDeclaration__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -127,7 +127,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.ForEachNodeFoundClosureParameterDeclaration__BehaviorDescriptor" file="ForEachNodeFoundClosureParameterDeclaration__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.ForEachNodeFoundClosureParameterDeclaration__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -148,7 +148,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.IsApplicableBlock__BehaviorDescriptor" file="IsApplicableBlock__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.IsApplicableBlock__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -176,7 +176,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.IsUsedByDefault__BehaviorDescriptor" file="IsUsedByDefault__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.IsUsedByDefault__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -204,7 +204,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.IsVisibleBlock__BehaviorDescriptor" file="IsVisibleBlock__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.IsVisibleBlock__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -232,7 +232,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.NodeStatement__BehaviorDescriptor" file="NodeStatement__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.NodeStatement__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -249,7 +249,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.OnEachFoundNodeCallback__BehaviorDescriptor" file="OnEachFoundNodeCallback__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.OnEachFoundNodeCallback__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -271,7 +271,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.OnEachNodeFoundByExpression__BehaviorDescriptor" file="OnEachNodeFoundByExpression__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.OnEachNodeFoundByExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -298,7 +298,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.ResultStatement__BehaviorDescriptor" file="ResultStatement__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.ResultStatement__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -315,7 +315,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.behavior.SearchedNodesBlock__BehaviorDescriptor" file="SearchedNodesBlock__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.behavior.SearchedNodesBlock__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />

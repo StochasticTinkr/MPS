@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product version="3" modelHash="-7xpipngmd64rxfx6qvech40z4nfkdo5">
+  <files dir="nowhere/leads/thispath/to" names="SampleClassInControlledPackage.java" />
+  <files dir="nowhere/location" names="OtherPackageIface.java" />
+  <files dir="toplevel/pkg/differs" names="Values.java" />
+</product>
+

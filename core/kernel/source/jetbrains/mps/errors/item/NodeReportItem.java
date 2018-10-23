@@ -15,6 +15,43 @@
  */
 package jetbrains.mps.errors.item;
 
+import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+
 public interface NodeReportItem extends NodeFlavouredItem, ReportItem, IssueKindReportItem {
+
+  ReportItemFlavour<NodeReportItem, MessageTarget> MESSAGE_TARGET_FEATURE = new SimpleReportItemFlavour<>("FLAVOUR_MESSAGE_TARGET", NodeReportItem.class, NodeReportItem::getMessageTarget);
+
+  default MessageTarget getMessageTarget() {
+    return conceptFeatureToMessageTarget(NodeFeatureReportItem.FLAVOUR_NODE_FEATURE.tryToGet(this));
+  }
+
+  @NotNull
+  static MessageTarget conceptFeatureToMessageTarget(@Nullable SConceptFeature conceptFeature) {
+    MessageTarget messageTarget = null;
+    if (conceptFeature instanceof SContainmentLink) {
+      //todo: we use ReferenceMessageTarget for containment links as well as for references
+      messageTarget = new ReferenceMessageTarget(((SContainmentLink) conceptFeature).getRoleName());
+    }
+    if (conceptFeature instanceof SReferenceLink) {
+      messageTarget = new ReferenceMessageTarget(((SReferenceLink) conceptFeature).getRoleName());
+    }
+    if (conceptFeature instanceof SProperty) {
+      messageTarget = new PropertyMessageTarget(conceptFeature.getName());
+    }
+    if (messageTarget == null) {
+      messageTarget = new NodeMessageTarget();
+    }
+    return messageTarget;
+  }
 
 }

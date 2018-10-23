@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testSubstituteType.model.AnnotatedType_Test" file="AnnotatedType_Test.java">
+  <dependency className="testSubstituteType.model.AnnotatedType_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="testSubstituteType.model.OverridingInference_Test" file="OverridingInference_Test.java">
+  <dependency className="testSubstituteType.model.OverridingInference_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="testSubstituteType.model.WrappedType_Test" file="WrappedType_Test.java">
+  <dependency className="testSubstituteType.model.WrappedType_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />

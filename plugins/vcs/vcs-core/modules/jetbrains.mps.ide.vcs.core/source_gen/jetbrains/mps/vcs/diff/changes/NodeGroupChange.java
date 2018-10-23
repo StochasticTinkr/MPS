@@ -31,7 +31,7 @@ public class NodeGroupChange extends ModelChange {
   private final int myResultBegin;
   private final int myResultEnd;
   private List<SNodeId> myPreparedIdsToDelete = null;
-  private SNodeId myPreparedAnchorId = null;
+  private SNodeId myBeforeAnchorId = null;
   public NodeGroupChange(@NotNull ChangeSet changeSet, @NotNull SNodeId parentNodeId, @NotNull SContainmentLink role, int begin, int end, int resultBegin, int resultEnd) {
     super(changeSet);
     myParentNodeId = parentNodeId;
@@ -106,16 +106,17 @@ public class NodeGroupChange extends ModelChange {
           return it.getNodeId();
         }
       }).toListSequence();
-      myPreparedAnchorId = (myBegin == 0 ? null : children.get(myBegin - 1).getNodeId());
+      myBeforeAnchorId = (myEnd >= ListSequence.fromList(children).count() ? null : children.get(myEnd).getNodeId());
     }
   }
   @Override
   public void apply(@NotNull final SModel model, @NotNull final NodeCopier nodeCopier) {
     // delete old nodes 
     prepare();
+    // some nodes can be already deleted in editor (if editing is allowed) 
     ListSequence.fromList(myPreparedIdsToDelete).visitAll(new IVisitor<SNodeId>() {
       public void visit(SNodeId id) {
-        model.getNode(id).delete();
+        check_yjf6x2_a0a0a0d0z(model.getNode(id));
       }
     });
     myPreparedIdsToDelete = null;
@@ -128,15 +129,15 @@ public class NodeGroupChange extends ModelChange {
     });
 
     // insert new nodes 
-    SNode anchor = (myPreparedAnchorId == null ? null : model.getNode(myPreparedAnchorId));
+    SNode beforeAnchor = (myBeforeAnchorId == null ? null : model.getNode(myBeforeAnchorId));
     SNode parent = model.getNode(myParentNodeId);
     for (SNode newNode : Sequence.fromIterable(nodesToAdd)) {
-      anchor = insertNodeAfterAnchor(parent, newNode, anchor);
+      insertNodeBeforeAnchor(parent, newNode, beforeAnchor);
     }
   }
-  private SNode insertNodeAfterAnchor(SNode parent, SNode newNode, SNode anchor) {
+  private SNode insertNodeBeforeAnchor(SNode parent, SNode newNode, SNode anchor) {
     SContainmentLink link = (SNodeOperations.isInstanceOf(newNode, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")) ? MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute") : myRole);
-    parent.insertChildAfter(link, newNode, anchor);
+    parent.insertChildBefore(link, newNode, anchor);
     return newNode;
   }
   @Nullable
@@ -226,5 +227,11 @@ public class NodeGroupChange extends ModelChange {
       return AttributeOperations.getChildNodesAndAttributes(checkedDotOperand, myRole);
     }
     return null;
+  }
+  private static void check_yjf6x2_a0a0a0d0z(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.delete();
+    }
+
   }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_FlowLayout_Test" file="MigrateToIndent_FlowLayout_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_FlowLayout_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_HorizontalLayout_Test" file="MigrateToIndent_HorizontalLayout_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_HorizontalLayout_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -26,7 +26,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_IndentLayout_Test" file="MigrateToIndent_IndentLayout_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_IndentLayout_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_NoLayout_Test" file="MigrateToIndent_NoLayout_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_NoLayout_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_SuperscriptLayout_Test" file="MigrateToIndent_SuperscriptLayout_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_SuperscriptLayout_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -65,7 +65,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_TableLayout_Test" file="MigrateToIndent_TableLayout_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_TableLayout_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_VerticalGrtidLayout_Test" file="MigrateToIndent_VerticalGrtidLayout_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_VerticalGrtidLayout_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -91,7 +91,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_VerticalLayout_Test" file="MigrateToIndent_VerticalLayout_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_VerticalLayout_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

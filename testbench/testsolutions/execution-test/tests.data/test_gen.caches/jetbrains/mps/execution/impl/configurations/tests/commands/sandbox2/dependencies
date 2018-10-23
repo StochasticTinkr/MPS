@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.FailedTestCase_Test_Test" file="FailedTestCase_Test_Test.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.FailedTestCase_Test_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.SimpleTestCase_Test_Test" file="SimpleTestCase_Test_Test.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.SimpleTestCase_Test_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.WaitingTestCase_Test_Test" file="WaitingTestCase_Test_Test.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.WaitingTestCase_Test_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Thread" />

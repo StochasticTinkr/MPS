@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints" file="ConstantValue_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStatementListInnerExpression_Constraints" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ExtractStatementListInnerExpression_Constraints" file="ExtractStatementListInnerExpression_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ExtractStatementListInnerExpression_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -68,7 +68,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassConcept_Constraints" file="ExtractStaticInnerClassConcept_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassConcept_Constraints">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -83,7 +83,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints" file="ExtractStaticInnerClassCreator_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
@@ -111,7 +111,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints" file="ExtractStaticMethod_CallExpression_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -133,7 +133,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints" file="ExtractToConstantRefExpression_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -158,7 +158,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.InternalAnonymousClass_Constraints" file="InternalAnonymousClass_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.InternalAnonymousClass_Constraints">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -173,7 +173,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.InternalPartialInstanceMethodCall_Constraints" file="InternalPartialInstanceMethodCall_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.InternalPartialInstanceMethodCall_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -188,7 +188,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.InternalSuperMethodCallOperation_Constraints" file="InternalSuperMethodCallOperation_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.InternalSuperMethodCallOperation_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -203,7 +203,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.WeakClassReference_Constraints" file="WeakClassReference_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.constraints.WeakClassReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />

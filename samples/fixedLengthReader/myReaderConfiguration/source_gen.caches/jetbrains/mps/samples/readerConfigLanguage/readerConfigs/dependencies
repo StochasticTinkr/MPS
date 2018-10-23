@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" file="Config1.java">
+  <dependency className="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1">
     <classNode dependClassName="jetbrains.mps.samples.readerConfigLanguage.dsl.ServiceCall" />
     <classNode dependClassName="jetbrains.mps.samples.readerConfigLanguage.dsl.Usage" />
     <classNode dependClassName="jetbrains.mps.samples.readerConfigLanguage.reader.Reader" />

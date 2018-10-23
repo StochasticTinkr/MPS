@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.generator.plan.migration.InPlaceCheckpointDeclarations" file="InPlaceCheckpointDeclarations.java">
+  <dependency className="jetbrains.mps.lang.generator.plan.migration.InPlaceCheckpointDeclarations">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.plan.migration.MigrationDescriptor" file="MigrationDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.plan.migration.MigrationDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />

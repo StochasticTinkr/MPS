@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test" file="SkipTakePage_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />

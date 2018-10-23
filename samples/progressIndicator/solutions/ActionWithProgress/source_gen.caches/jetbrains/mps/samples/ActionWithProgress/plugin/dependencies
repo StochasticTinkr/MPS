@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.ActionWithProgress.plugin.ActionWithProgress_ApplicationPlugin" file="ActionWithProgress_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.samples.ActionWithProgress.plugin.ActionWithProgress_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.samples.ActionWithProgress.plugin.BackgroundableProgressAction_Action" />
     <classNode dependClassName="jetbrains.mps.samples.ActionWithProgress.plugin.ModalProgressAction_Action" />
     <classNode dependClassName="jetbrains.mps.samples.ActionWithProgress.plugin.ProgressActionsGroup_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.ActionWithProgress.plugin.BackgroundableProgressAction_Action" file="BackgroundableProgressAction_Action.java">
+  <dependency className="jetbrains.mps.samples.ActionWithProgress.plugin.BackgroundableProgressAction_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -30,7 +30,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.ActionWithProgress.plugin.ModalProgressAction_Action" file="ModalProgressAction_Action.java">
+  <dependency className="jetbrains.mps.samples.ActionWithProgress.plugin.ModalProgressAction_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -57,7 +57,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.ActionWithProgress.plugin.ProgressActionsGroup_ActionGroup" file="ProgressActionsGroup_ActionGroup.java">
+  <dependency className="jetbrains.mps.samples.ActionWithProgress.plugin.ProgressActionsGroup_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

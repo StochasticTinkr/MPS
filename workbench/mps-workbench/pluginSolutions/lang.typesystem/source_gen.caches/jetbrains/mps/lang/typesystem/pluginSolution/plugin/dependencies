@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ConvertInferenceRuleToCheckingRule_Action" file="ConvertInferenceRuleToCheckingRule_Action.java">
+  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ConvertInferenceRuleToCheckingRule_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -21,14 +21,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.Default_KeymapChanges" file="Default_KeymapChanges.java">
+  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.Default_KeymapChanges">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.PluginSolution_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -42,11 +42,11 @@
     <classNode dependClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowAsIntentions_TypeSystem_ActionGroup" file="ShowAsIntentions_TypeSystem_ActionGroup.java">
+  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowAsIntentions_TypeSystem_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action" file="ShowNodeType_Action.java">
+  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.ui.MessageType" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowManager" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TypesystemActions_Plugin_ActionGroup" file="TypesystemActions_Plugin_ActionGroup.java">
+  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TypesystemActions_Plugin_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

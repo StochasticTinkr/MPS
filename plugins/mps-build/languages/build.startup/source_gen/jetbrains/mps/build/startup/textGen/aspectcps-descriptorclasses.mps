@@ -688,7 +688,7 @@
                       <ref role="3cqZAo" node="2A" resolve="outline" />
                     </node>
                     <node concept="liA8E" id="30" role="2OqNvi">
-                      <ref role="37wK5l" to="yfwt:~TextGenModelOutline.registerTextUnit(java.lang.String,java.nio.charset.Charset,org.jetbrains.mps.openapi.model.SNode...):void" resolve="registerTextUnit" />
+                      <ref role="37wK5l" to="yfwt:~TextGenModelOutline.registerTextUnit(java.lang.String,java.lang.String,java.nio.charset.Charset,org.jetbrains.mps.openapi.model.SNode...):void" resolve="registerTextUnit" />
                       <node concept="3K4zz7" id="31" role="37wK5m">
                         <node concept="1eOMI4" id="33" role="3K4GZi">
                           <node concept="3cpWs3" id="36" role="1eOMHV">

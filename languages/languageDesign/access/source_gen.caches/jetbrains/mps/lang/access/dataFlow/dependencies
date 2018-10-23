@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.access.dataFlow.BaseExecuteCommandStatementSync_DataFlow" file="BaseExecuteCommandStatementSync_DataFlow.java">
+  <dependency className="jetbrains.mps.lang.access.dataFlow.BaseExecuteCommandStatementSync_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.access.dataFlow.BaseExecuteCommandStatement_DataFlow" file="BaseExecuteCommandStatement_DataFlow.java">
+  <dependency className="jetbrains.mps.lang.access.dataFlow.BaseExecuteCommandStatement_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.access.dataFlow.CommandClosureLiteral_DataFlow" file="CommandClosureLiteral_DataFlow.java">
+  <dependency className="jetbrains.mps.lang.access.dataFlow.CommandClosureLiteral_DataFlow">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StatementList__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.access.dataFlow.DataFlowAspectDescriptorImpl" file="DataFlowAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.access.dataFlow.DataFlowAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />

@@ -15,6 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.make.IMakeService;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import java.util.function.Supplier;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -78,13 +79,15 @@ public class ReloadManagerComponent extends ReloadManager implements Application
   }
 
   @Override
-  public <T extends ReloadParticipant> void runReload(Class<T> participantClass, ReloadAction<T> reloadAction) {
+  public <T extends ReloadParticipant> void runReload(Object participantKey, Supplier<T> participantInstance, ReloadAction<T> reloadAction) {
     ReloadSession rs;
     rs = myReloadSessionBroker.employ();
     try {
-      T participant = rs.getParticipant(participantClass);
-      reloadAction.runAction(participant);
-      rs.updateStatus();
+      T participant = rs.getParticipant(participantKey, participantInstance);
+      if (participant != null) {
+        reloadAction.runAction(participant);
+        rs.updateStatus();
+      }
     } catch (RuntimeException e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Exception during reload", e);

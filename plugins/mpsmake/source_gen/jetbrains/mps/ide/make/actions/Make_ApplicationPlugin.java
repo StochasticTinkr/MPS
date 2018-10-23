@@ -57,6 +57,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new SaveTransientModels_ActionGroup());
     addGroup(new TextPreviewGroup_ActionGroup());
     addGroup(new ToolbarMake_ActionGroup());
+    addGroup(new TouchBarDefault_ActionGroup());
   }
   public void adjustRegularGroups() {
     insertGroupIntoAnother(MakeAddition_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
@@ -65,6 +66,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(JavaModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_compileJava);
     insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);
     insertGroupIntoAnother(SaveTransientModels_ActionGroup.ID, GenerateOptions_ActionGroup.ID, GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
+    insertGroupIntoAnother(TouchBarDefault_ActionGroup.ID, "TouchBarDefault", null);
     insertGroupIntoAnother(Make_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(Make_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(ProjectMake_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_make);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.tests.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.tests.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule__BehaviorDescriptor" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin__BehaviorDescriptor" file="BuildModuleTestsPlugin__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup__BehaviorDescriptor" file="BuildMpsLayout_TestModuleGroup__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -76,7 +76,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule__BehaviorDescriptor" file="BuildMpsLayout_TestModule__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -102,7 +102,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content__BehaviorDescriptor" file="BuildMpsLayout_TestModules_Content__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -127,7 +127,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor" file="BuildMpsLayout_TestModules__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />

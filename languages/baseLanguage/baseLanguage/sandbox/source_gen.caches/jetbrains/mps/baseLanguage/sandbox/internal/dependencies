@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.sandbox.internal.InternalAnonymousClassUsage" file="InternalAnonymousClassUsage.java">
+  <dependency className="jetbrains.mps.baseLanguage.sandbox.internal.InternalAnonymousClassUsage">
     <classNode dependClassName="java.io.Closeable" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />

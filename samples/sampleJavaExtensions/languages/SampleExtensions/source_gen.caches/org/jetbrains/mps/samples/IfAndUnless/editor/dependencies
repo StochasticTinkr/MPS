@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
@@ -14,14 +14,14 @@
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.UnlessStatement_Editor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.Flow_Editor" file="Flow_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.Flow_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.Flow_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.Flow_EditorBuilder_a" file="Flow_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.Flow_EditorBuilder_a">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -56,14 +56,14 @@
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.MyIfStatement_Editor" file="MyIfStatement_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.MyIfStatement_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.MyIfStatement_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.MyIfStatement_EditorBuilder_a" file="MyIfStatement_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.MyIfStatement_EditorBuilder_a">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -91,14 +91,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.UnlessStatement_Editor" file="UnlessStatement_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.UnlessStatement_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.UnlessStatement_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.UnlessStatement_EditorBuilder_a" file="UnlessStatement_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.UnlessStatement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.trove.plugin.ExtensionDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -8,7 +8,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.plugin.customContainers_extension" file="customContainers_extension.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.trove.plugin.customContainers_extension">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />

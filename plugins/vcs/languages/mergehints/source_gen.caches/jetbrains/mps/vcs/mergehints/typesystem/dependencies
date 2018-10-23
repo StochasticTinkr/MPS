@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedConceptHints_NonTypesystemRule" file="CheckNoDuplicatedConceptHints_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedConceptHints_NonTypesystemRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -22,7 +22,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedLinkHints_NonTypesystemRule" file="CheckNoDuplicatedLinkHints_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedLinkHints_NonTypesystemRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -41,7 +41,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedPropertyHints_NonTypesystemRule" file="CheckNoDuplicatedPropertyHints_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedPropertyHints_NonTypesystemRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -60,7 +60,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedConceptHints_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedLinkHints_NonTypesystemRule" />

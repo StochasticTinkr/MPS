@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main" file="Mapping_main.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.DropRootRuleBase" />
@@ -49,7 +49,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.MapConfigBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Script_MoveLibraryRoutineDefinitions" file="Script_MoveLibraryRoutineDefinitions.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Script_MoveLibraryRoutineDefinitions">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
@@ -89,7 +89,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingScript" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Script_MoveRoutineDefinitions" file="Script_MoveRoutineDefinitions.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Script_MoveRoutineDefinitions">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
@@ -100,7 +100,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingScript" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Script_RemoveEmptyLines" file="Script_RemoveEmptyLines.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Script_RemoveEmptyLines">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
@@ -111,7 +111,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingScript" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Switch_ReduceDirectionEnum" file="Switch_ReduceDirectionEnum.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Switch_ReduceDirectionEnum">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -136,7 +136,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.TemplateModelImpl" file="TemplateModelImpl.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.TemplateModelImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -180,7 +180,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModelBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_map_Script" file="Template_map_Script.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_map_Script">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -209,7 +209,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_CommandList" file="Template_reduce_CommandList.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_CommandList">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -231,7 +231,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_CommentLine" file="Template_reduce_CommentLine.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_CommentLine">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -256,7 +256,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Drop" file="Template_reduce_Drop.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Drop">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -281,7 +281,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_East" file="Template_reduce_East.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_East">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -304,7 +304,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Heading" file="Template_reduce_Heading.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Heading">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -328,7 +328,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IfStatement" file="Template_reduce_IfStatement.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IfStatement">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -351,7 +351,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IsFull" file="Template_reduce_IsFull.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IsFull">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -374,7 +374,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IsMark" file="Template_reduce_IsMark.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IsMark">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -397,7 +397,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IsWall" file="Template_reduce_IsWall.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IsWall">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -420,7 +420,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_LeftTurn" file="Template_reduce_LeftTurn.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_LeftTurn">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -443,7 +443,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Looking" file="Template_reduce_Looking.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Looking">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -468,7 +468,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_North" file="Template_reduce_North.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_North">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -491,7 +491,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Not" file="Template_reduce_Not.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Not">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -514,7 +514,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Pick" file="Template_reduce_Pick.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Pick">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -539,7 +539,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Repeat" file="Template_reduce_Repeat.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Repeat">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -566,7 +566,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_RoutineCall" file="Template_reduce_RoutineCall.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_RoutineCall">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -590,7 +590,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_RoutineDefinition" file="Template_reduce_RoutineDefinition.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_RoutineDefinition">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -616,7 +616,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_South" file="Template_reduce_South.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_South">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -639,7 +639,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Step" file="Template_reduce_Step.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Step">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -664,7 +664,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_TraceMessage" file="Template_reduce_TraceMessage.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_TraceMessage">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -692,7 +692,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_West" file="Template_reduce_West.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_West">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -715,7 +715,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_While" file="Template_reduce_While.java">
+  <dependency className="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_While">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.vfs;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 /**
@@ -42,12 +41,6 @@ public final class FileListenerAdapter implements FileSystemListener {
   @Override
   public FileListeningPreferences listeningPreferences() {
     return myFileListener.listeningPreferences();
-  }
-
-  @Nullable
-  @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    return null;
   }
 
   @Override

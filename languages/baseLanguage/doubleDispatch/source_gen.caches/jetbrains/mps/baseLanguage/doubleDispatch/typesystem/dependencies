@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule" file="DispatchArgsHierarchy_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
@@ -22,7 +22,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup" file="DispatchGroup.java">
+  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -44,7 +44,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor" file="DispatchGroupDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchMethodCollector" file="DispatchMethodCollector.java">
+  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchMethodCollector">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -80,7 +80,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil" file="DispatchUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
@@ -98,7 +98,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DisptachParamIsClass_NonTypesystemRule" file="DisptachParamIsClass_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DisptachParamIsClass_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -114,7 +114,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DisptachParamIsClass_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />

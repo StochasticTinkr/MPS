@@ -660,7 +660,7 @@
                       <ref role="3cqZAo" node="2u" resolve="outline" />
                     </node>
                     <node concept="liA8E" id="2S" role="2OqNvi">
-                      <ref role="37wK5l" to="yfwt:~TextGenModelOutline.registerTextUnit(java.lang.String,java.nio.charset.Charset,org.jetbrains.mps.openapi.model.SNode...):void" resolve="registerTextUnit" />
+                      <ref role="37wK5l" to="yfwt:~TextGenModelOutline.registerTextUnit(java.lang.String,java.lang.String,java.nio.charset.Charset,org.jetbrains.mps.openapi.model.SNode...):void" resolve="registerTextUnit" />
                       <node concept="3K4zz7" id="2T" role="37wK5m">
                         <node concept="1eOMI4" id="2V" role="3K4GZi">
                           <node concept="3cpWs3" id="2Y" role="1eOMHV">

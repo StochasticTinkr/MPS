@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.migration.util.MigrationsCheckUtil" file="MigrationsCheckUtil.java">
+  <dependency className="jetbrains.mps.lang.migration.util.MigrationsCheckUtil">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.util.NodeReferenceUtil" file="NodeReferenceUtil.java">
+  <dependency className="jetbrains.mps.lang.migration.util.NodeReferenceUtil">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Objects" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.runner.test.RunCodeFromSolution_Test" file="RunCodeFromSolution_Test.java">
+  <dependency className="jetbrains.mps.build.mps.runner.test.RunCodeFromSolution_Test">
     <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
     <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />

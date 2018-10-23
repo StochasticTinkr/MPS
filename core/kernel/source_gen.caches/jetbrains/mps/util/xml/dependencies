@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.util.xml.BreakParseSAXException" file="BreakParseSAXException.java">
+  <dependency className="jetbrains.mps.util.xml.BreakParseSAXException">
     <classNode extendsClassName="org.xml.sax.SAXException" />
   </dependency>
-  <dependency className="jetbrains.mps.util.xml.XMLSAXHandler" file="XMLSAXHandler.java">
+  <dependency className="jetbrains.mps.util.xml.XMLSAXHandler">
     <classNode extendsClassName="org.xml.sax.helpers.DefaultHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.util.xml.XmlUtil" file="XmlUtil.java">
+  <dependency className="jetbrains.mps.util.xml.XmlUtil">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />

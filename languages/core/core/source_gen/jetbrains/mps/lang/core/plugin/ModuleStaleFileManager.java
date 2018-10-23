@@ -141,6 +141,20 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     return rv;
   }
 
+  /**
+   * PROVISIONAL, intended to investigate TU with own path spec.
+   * 'new' in the name means we don't track FDC instance here
+   */
+  /*package*/ FileDeltaCollector newPrimaryStreamHandler(SModel generatedInputModel, String path) {
+    GenerationTargetFacet gtf = getGenerationTargetFacet(generatedInputModel);
+    if (gtf == null) {
+      throw new IllegalStateException();
+    }
+    IFile outputRoot = gtf.getOutputRoot(generatedInputModel);
+    IFile nested = outputRoot.getDescendant(path);
+    return newStreamHandler(generatedInputModel, nested);
+  }
+
   /*package*/ FileDeltaCollector getCacheStreamHandler(SModel generatedInputModel) {
     // almost identical to getPrimaryStreamHandler(), above, uses getOutputCacheLocation() 
     GenerationTargetFacet gtf = getGenerationTargetFacet(generatedInputModel);

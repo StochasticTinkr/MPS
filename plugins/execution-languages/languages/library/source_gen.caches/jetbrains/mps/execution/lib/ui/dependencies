@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog" file="FieldWithPathChooseDialog.java">
+  <dependency className="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog">
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDialog" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
@@ -11,7 +11,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.ui.ListPanel" file="ListPanel.java">
+  <dependency className="jetbrains.mps.execution.lib.ui.ListPanel">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.ui.NodeByConceptChooser" file="NodeByConceptChooser.java">
+  <dependency className="jetbrains.mps.execution.lib.ui.NodeByConceptChooser">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -72,7 +72,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.NodeChooser" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser" file="NodeBySeveralConceptChooser.java">
+  <dependency className="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -98,7 +98,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.NodeChooser" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.ui.NodeChooser" file="NodeChooser.java">
+  <dependency className="jetbrains.mps.execution.lib.ui.NodeChooser">
     <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataContext" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -132,7 +132,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.ui.RawLineEditorComponent" file="RawLineEditorComponent.java">
+  <dependency className="jetbrains.mps.execution.lib.ui.RawLineEditorComponent">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />

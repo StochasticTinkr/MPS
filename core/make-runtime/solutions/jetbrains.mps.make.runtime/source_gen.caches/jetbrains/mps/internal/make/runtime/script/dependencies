@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.internal.make.runtime.script.CompositeResult" file="CompositeResult.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.script.CompositeResult">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.LinkedHashMap" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode extendsClassName="jetbrains.mps.make.script.IResult" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.script.InvalidScript" file="InvalidScript.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.script.InvalidScript">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -27,18 +27,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.script.IScript" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy" file="LoggingFeedbackStrategy.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy">
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy" file="MessageFeedbackStrategy.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy">
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.script.Script" file="Script.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.script.Script">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassCastException" />
@@ -100,7 +100,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.script.IScript" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.script.TargetRange" file="TargetRange.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.script.TargetRange">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -126,7 +126,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.script.TimeStatisticResource" file="TimeStatisticResource.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.script.TimeStatisticResource">
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -134,7 +134,7 @@
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.script.ValidationError" file="ValidationError.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.script.ValidationError">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

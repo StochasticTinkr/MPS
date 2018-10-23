@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="sandboxModel2.first" file="first.java">
+  <dependency className="sandboxModel2.first">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.runtime.Function" />
   </dependency>
-  <dependency className="sandboxModel2.qwert" file="qwert.java">
+  <dependency className="sandboxModel2.qwert">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.extension.tests.testExtension.Extension_Test" file="Extension_Test.java">
+  <dependency className="jetbrains.mps.lang.extension.tests.testExtension.Extension_Test">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationAdapter" />
     <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
     <classNode dependClassName="java.lang.Exception" />

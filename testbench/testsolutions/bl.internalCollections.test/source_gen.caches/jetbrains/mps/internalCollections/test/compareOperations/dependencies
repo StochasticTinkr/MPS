@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Bar" file="Bar.java">
+  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Bar">
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.compareOperations.Foo" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Concat_Test" file="Concat_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Concat_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Disjunct_Test" file="Disjunct_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Disjunct_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -36,8 +36,8 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Foo" file="Foo.java" />
-  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Intersect_Test" file="Intersect_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Foo" />
+  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Intersect_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -53,7 +53,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test" file="SubtractTest_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -69,7 +69,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Union_Test" file="Union_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Union_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.mergehints.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.plugin.ExtensionDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -8,10 +8,10 @@
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.plugin.LanguageAspectsEP_extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.plugin.IconContainer" file="IconContainer.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.plugin.IconContainer">
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.plugin.LanguageAspectsEP_extension" file="LanguageAspectsEP_extension.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.plugin.LanguageAspectsEP_extension">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -43,7 +43,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.Extension" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.mergehints.plugin.vcs_Order" file="vcs_Order.java">
+  <dependency className="jetbrains.mps.vcs.mergehints.plugin.vcs_Order">
     <classNode extendsClassName="jetbrains.mps.aspects.OrderDescriptor" />
   </dependency>
 </dependenciesRoot>

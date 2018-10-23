@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.core.util.OldCommentContainerMigration" file="OldCommentContainerMigration.java">
+  <dependency className="jetbrains.mps.lang.core.util.OldCommentContainerMigration">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />

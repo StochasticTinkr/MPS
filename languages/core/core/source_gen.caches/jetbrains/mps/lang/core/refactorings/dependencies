@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.core.refactorings.RefactoringAspectDescriptor" file="RefactoringAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.core.refactorings.RefactoringAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.refactoring.runtime.RefactoringAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.refactorings.Rename" file="Rename.java">
+  <dependency className="jetbrains.mps.lang.core.refactorings.Rename">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.refactorings.Rename_Target" file="Rename_Target.java">
+  <dependency className="jetbrains.mps.lang.core.refactorings.Rename_Target">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

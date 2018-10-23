@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.actions.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRule" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal_InferenceRule" file="typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -25,7 +25,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule" file="typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcess__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -41,7 +41,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRule" file="typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPastePostProcess__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -57,7 +57,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToPasteWrap_InferenceRule" file="typeof_ConceptFunctionParameter_nodeToPasteWrap_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToPasteWrap_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -73,7 +73,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.typesystem.typeof_NodeSetupFunction_NewNode_InferenceRule" file="typeof_NodeSetupFunction_NewNode_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.actions.typesystem.typeof_NodeSetupFunction_NewNode_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

@@ -19,9 +19,9 @@ import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ChangeEditorMessageFactory {
@@ -56,7 +56,9 @@ public class ChangeEditorMessageFactory {
       // (for instance, when some changes are already applied) 
       SNodeId beginId = (changeBegin < ListSequence.fromList(changeChildren).count() ? ListSequence.fromList(changeChildren).getElement(changeBegin).getNodeId() : null);
       SNodeId endId = (changeEnd < ListSequence.fromList(changeChildren).count() ? ListSequence.fromList(changeChildren).getElement(changeEnd).getNodeId() : null);
-      int currentChildrenSize = ListSequence.fromList(changeChildren).count();
+
+      List<? extends SNode> editedChildren = IterableUtil.asList(AttributeOperations.getChildNodesAndAttributes(((SNode) editedModel.getNode(parentId)), roleLink));
+      int currentChildrenSize = editedChildren.size();
 
       int beginIndex = ChangeEditorMessageFactory.getIndex(beginId, currentChildrenSize, editedModel);
       int endIndex = ChangeEditorMessageFactory.getIndex(endId, currentChildrenSize, editedModel);
@@ -68,7 +70,6 @@ public class ChangeEditorMessageFactory {
         // delete nodes 
         return ListSequence.fromListAndArray(new LinkedList<ChangeEditorMessage>(), new ChangeEditorMessage(editedModel.getNode(parentId), new DeletedNodeMessageTarget(roleLink.getName(), beginIndex), owner, change, conflictChecker, highlighted));
       } else {
-        List<? extends SNode> editedChildren = IterableUtil.asList(AttributeOperations.getChildNodesAndAttributes(((SNode) editedModel.getNode(parentId)), roleLink));
         List<ChangeEditorMessage> msgs = ListSequence.fromList(new LinkedList<ChangeEditorMessage>());
         for (int i = beginIndex; i < endIndex; i++) {
           ListSequence.fromList(msgs).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker, highlighted));

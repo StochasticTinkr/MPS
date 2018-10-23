@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.AbstractTest4Class" file="AbstractTest4Class.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.AbstractTest4Class">
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.AbstractTestClass" file="AbstractTestClass.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.AbstractTestClass">
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.SimpleRunner" file="SimpleRunner.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.SimpleRunner">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.System" />
@@ -17,12 +17,12 @@
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode extendsClassName="org.junit.runners.BlockJUnit4ClassRunner" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test3" file="Test3.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test3">
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.sandbox.AbstractTestClass" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test4" file="Test4.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test4">
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.sandbox.SimpleRunner" />
     <classNode dependClassName="junit.framework.Assert" />
@@ -31,11 +31,11 @@
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.sandbox.AbstractTest4Class" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.TestMain" file="TestMain.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.TestMain">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test_Test" file="Test_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="junit.framework.Assert" />

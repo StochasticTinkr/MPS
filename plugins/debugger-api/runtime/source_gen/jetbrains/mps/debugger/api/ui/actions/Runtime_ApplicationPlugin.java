@@ -36,13 +36,18 @@ public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new DebugRunMenu_ActionGroup());
     addGroup(new DebugStepsMenu_ActionGroup());
     addGroup(new DebugTool_ActionGroup());
+    addGroup(new TouchBarDebug_ActionGroup());
+    addGroup(new TouchBarDefault_cmd_ActionGroup());
   }
   public void adjustInterfaceGroups() {
     insertInterfaceGroupIntoAnother("DebugMuteAction", DebugTool_ActionGroup.ID, DebugTool_ActionGroup.LABEL_ID_MuteAction);
     insertInterfaceGroupIntoAnother("DebugStopAction", DebugTool_ActionGroup.ID, DebugTool_ActionGroup.LABEL_ID_StopAction);
   }
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(TouchBarDefault_cmd_ActionGroup.ID, jetbrains.mps.ide.actions.TouchBarDefault_cmd_ActionGroup.ID, null);
+    insertGroupIntoAnother(TouchBarDebug_ActionGroup.ID, jetbrains.mps.ide.actions.TouchBarDebug_ActionGroup.ID, null);
     insertGroupIntoAnother(DebugRunMenu_ActionGroup.ID, "RunMenu", null);
+    insertGroupIntoAnother(DebugRunMenu_ActionGroup.ID, jetbrains.mps.ide.actions.TouchBarDebug_ActionGroup.ID, jetbrains.mps.ide.actions.TouchBarDebug_ActionGroup.LABEL_ID_debug);
     insertGroupIntoAnother(DebugStepsMenu_ActionGroup.ID, DebugRunMenu_ActionGroup.ID, DebugRunMenu_ActionGroup.LABEL_ID_steps);
   }
   public List<BaseKeymapChanges> initKeymaps() {

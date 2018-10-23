@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testCustomAnalyzer.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="testCustomAnalyzer.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="testCustomAnalyzer.typesystem.check_Counter_NonTypesystemRule" />
     <classNode dependClassName="testCustomAnalyzer.typesystem.check_ParentCounter_NonTypesystemRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="testCustomAnalyzer.typesystem.check_Counter_NonTypesystemRule" file="check_Counter_NonTypesystemRule.java">
+  <dependency className="testCustomAnalyzer.typesystem.check_Counter_NonTypesystemRule">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner" />
@@ -26,7 +26,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="testCustomAnalyzer.typesystem.check_ParentCounter_NonTypesystemRule" file="check_ParentCounter_NonTypesystemRule.java">
+  <dependency className="testCustomAnalyzer.typesystem.check_ParentCounter_NonTypesystemRule">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />

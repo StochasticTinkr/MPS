@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testbench.ModuleGenerationHolder" file="ModuleGenerationHolder.java">
+  <dependency className="jetbrains.mps.testbench.ModuleGenerationHolder">
     <classNode dependClassName="difflib.Delta" />
     <classNode dependClassName="difflib.DiffUtils" />
     <classNode dependClassName="difflib.Patch" />
@@ -65,7 +65,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.ProjectTest" file="ProjectTest.java">
+  <dependency className="jetbrains.mps.testbench.ProjectTest">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -92,7 +92,7 @@
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode dependClassName="org.junit.runners.Parameterized" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.TestMakeService" file="TestMakeService.java">
+  <dependency className="jetbrains.mps.testbench.TestMakeService">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

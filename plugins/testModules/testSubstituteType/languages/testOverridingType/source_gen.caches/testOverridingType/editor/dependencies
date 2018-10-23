@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testOverridingType.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="testOverridingType.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
@@ -15,14 +15,14 @@
     <classNode dependClassName="testOverridingType.editor.UnconditionalOverrideAnnotation_Editor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="testOverridingType.editor.ErrorType_Editor" file="ErrorType_Editor.java">
+  <dependency className="testOverridingType.editor.ErrorType_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="testOverridingType.editor.ErrorType_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="testOverridingType.editor.ErrorType_EditorBuilder_a" file="ErrorType_EditorBuilder_a.java">
+  <dependency className="testOverridingType.editor.ErrorType_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -32,14 +32,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="testOverridingType.editor.OverrideAnnotation_Editor" file="OverrideAnnotation_Editor.java">
+  <dependency className="testOverridingType.editor.OverrideAnnotation_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="testOverridingType.editor.OverrideAnnotation_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="testOverridingType.editor.OverrideAnnotation_EditorBuilder_a" file="OverrideAnnotation_EditorBuilder_a.java">
+  <dependency className="testOverridingType.editor.OverrideAnnotation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenAfterNameStyleClass" />
@@ -67,14 +67,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="testOverridingType.editor.OverridingPrimNumConstant_Editor" file="OverridingPrimNumConstant_Editor.java">
+  <dependency className="testOverridingType.editor.OverridingPrimNumConstant_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="testOverridingType.editor.OverridingPrimNumConstant_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="testOverridingType.editor.OverridingPrimNumConstant_EditorBuilder_a" file="OverridingPrimNumConstant_EditorBuilder_a.java">
+  <dependency className="testOverridingType.editor.OverridingPrimNumConstant_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -108,14 +108,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="testOverridingType.editor.UnconditionalOverrideAnnotation_Editor" file="UnconditionalOverrideAnnotation_Editor.java">
+  <dependency className="testOverridingType.editor.UnconditionalOverrideAnnotation_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="testOverridingType.editor.UnconditionalOverrideAnnotation_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="testOverridingType.editor.UnconditionalOverrideAnnotation_EditorBuilder_a" file="UnconditionalOverrideAnnotation_EditorBuilder_a.java">
+  <dependency className="testOverridingType.editor.UnconditionalOverrideAnnotation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenAfterNameStyleClass" />

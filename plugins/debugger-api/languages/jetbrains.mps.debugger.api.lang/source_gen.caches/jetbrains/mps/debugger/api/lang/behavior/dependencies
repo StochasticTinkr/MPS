@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.api.lang.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project__BehaviorDescriptor" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept__BehaviorDescriptor" file="ConceptFunctionParameter_Concept__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project__BehaviorDescriptor" file="ConceptFunctionParameter_Debug_Project__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -66,7 +66,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode__BehaviorDescriptor" file="ConceptFunctionParameter_DebuggableNode__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -90,7 +90,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint__BehaviorDescriptor" file="ConceptFunction_CreateBreakpoint__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -120,7 +120,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor" file="ConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -148,7 +148,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference__BehaviorDescriptor" file="DebuggerReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -165,7 +165,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function__BehaviorDescriptor" file="GetDebuggerSettings_Function__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />

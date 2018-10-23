@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.structure.actions.ActionAspectDescriptorImpl" file="ActionAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.structure.actions.ActionAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -19,7 +19,7 @@
     <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.actions.DeclarationFactories" file="DeclarationFactories.java">
+  <dependency className="jetbrains.mps.lang.structure.actions.DeclarationFactories">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.actions.STRL_node_factories" file="STRL_node_factories.java">
+  <dependency className="jetbrains.mps.lang.structure.actions.STRL_node_factories">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.actions.SetStructureIds" file="SetStructureIds.java">
+  <dependency className="jetbrains.mps.lang.structure.actions.SetStructureIds">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdHelper" />
@@ -45,7 +45,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_0" file="StructureIds_PastePostProcessor_0.java">
+  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_0">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdSetter" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.PastePostProcessor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_1" file="StructureIds_PastePostProcessor_1.java">
+  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_1">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdSetter" />
@@ -63,7 +63,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.PastePostProcessor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_2" file="StructureIds_PastePostProcessor_2.java">
+  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_2">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdSetter" />
@@ -72,7 +72,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.PastePostProcessor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_3" file="StructureIds_PastePostProcessor_3.java">
+  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_3">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdSetter" />

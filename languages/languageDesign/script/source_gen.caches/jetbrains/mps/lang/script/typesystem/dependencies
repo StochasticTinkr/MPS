@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.script.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.script.typesystem.check_FactoryMigrationScriptPath_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.script.typesystem.check_PullUpMethod_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.script.typesystem.typeof_MigrationScriptPart_node_InferenceRule" />
@@ -8,7 +8,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.typesystem.check_FactoryMigrationScriptPath_NonTypesystemRule" file="check_FactoryMigrationScriptPath_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.script.typesystem.check_FactoryMigrationScriptPath_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -26,7 +26,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.typesystem.check_PullUpMethod_NonTypesystemRule" file="check_PullUpMethod_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.script.typesystem.check_PullUpMethod_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -39,7 +39,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.typesystem.typeof_MigrationScriptPart_node_InferenceRule" file="typeof_MigrationScriptPart_node_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.script.typesystem.typeof_MigrationScriptPart_node_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

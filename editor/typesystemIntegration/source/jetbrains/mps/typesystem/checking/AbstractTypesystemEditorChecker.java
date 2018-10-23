@@ -19,7 +19,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.IndexNotReadyException;
 import jetbrains.mps.checkers.ErrorReportUtil;
-import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.FlavouredItem.ReportItemFlavour;
@@ -28,9 +27,9 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.nodeEditor.checking.QuickFixRuntimeEditorWrapper;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -136,29 +135,9 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
       myOnceExecutedQuickFixes.add(flavours);
       // XXX why Application.invokeLater, not ThreadUtils or ModelAccess (likely, shall use SNodeReference for quickFixNode, not SNode, and resolve inside)
       ApplicationManager.getApplication().invokeLater(() -> {
-        EditorCell selectedCell = editorContext.getSelectedCell();
-        if (selectedCell == null) {
-          return;
-        }
-        int caretX = selectedCell.getCaretX();
-        int caretY = selectedCell.getBaseline();
-
-        editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new EditorCommand(editorContext) {
-          @Override
-          public void doExecute() {
-            intention.execute(editorContext.getRepository());
-          }
+        editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(() -> {
+            QuickFixRuntimeEditorWrapper.getInstance(intention).execute(editorContext, true);
         });
-
-        editorContext.flushEvents();
-        if (editorContext.getSelectionManager().getSelection() == null) {
-          EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
-          EditorCell leaf = rootCell.findLeaf(caretX, caretY);
-          if (leaf != null) {
-            editorContext.getEditorComponent().changeSelection(leaf);
-            leaf.setCaretX(caretX);
-          }
-        }
       }, ModalityState.NON_MODAL);
     }
     return true;

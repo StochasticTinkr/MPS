@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
@@ -14,14 +14,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.SimpleConceptDeclaration_Editor" file="SimpleConceptDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.SimpleConceptDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.highlevel.simpleStructure.editor.SimpleConceptDeclaration_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.SimpleConceptDeclaration_EditorBuilder_a" file="SimpleConceptDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.SimpleConceptDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -65,14 +65,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.SimplePropertyDeclaration_Editor" file="SimplePropertyDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.SimplePropertyDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.highlevel.simpleStructure.editor.SimplePropertyDeclaration_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.SimplePropertyDeclaration_EditorBuilder_a" file="SimplePropertyDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.SimplePropertyDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -99,14 +99,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.StructureAspectDeclaration_Editor" file="StructureAspectDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.StructureAspectDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.highlevel.simpleStructure.editor.StructureAspectDeclaration_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.StructureAspectDeclaration_EditorBuilder_a" file="StructureAspectDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.highlevel.simpleStructure.editor.StructureAspectDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />

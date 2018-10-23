@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.DataSource_Queries" file="DataSource_Queries.java" />
-  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.FilterElement_Queries" file="FilterElement_Queries.java" />
-  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.MapElement_Queries" file="MapElement_Queries.java" />
-  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.SwingBuilder_Queries" file="SwingBuilder_Queries.java">
+  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.DataSource_Queries" />
+  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.FilterElement_Queries" />
+  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.MapElement_Queries" />
+  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.SwingBuilder_Queries">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.util.DSLDescriptorUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.Translator_Queries" file="Translator_Queries.java">
+  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.Translator_Queries">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.behavior.Converter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.structure.ConceptPresentationAspectImpl" file="ConceptPresentationAspectImpl.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.ConceptPresentationAspectImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.IconContainer" />
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.LanguageConceptSwitch" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_AlignEnum" file="EnumerationDescriptor_AlignEnum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_AlignEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_CellActionId" file="EnumerationDescriptor_CellActionId.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_CellActionId">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_CellKeyMapCaretPolicy" file="EnumerationDescriptor_CellKeyMapCaretPolicy.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_CellKeyMapCaretPolicy">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_DefaultBaseLineEnum" file="EnumerationDescriptor_DefaultBaseLineEnum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_DefaultBaseLineEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_FocusPolicy" file="EnumerationDescriptor_FocusPolicy.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_FocusPolicy">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_PredefinedCellID" file="EnumerationDescriptor_PredefinedCellID.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_PredefinedCellID">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -72,7 +72,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_ScriptSwitchEnum" file="EnumerationDescriptor_ScriptSwitchEnum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_ScriptSwitchEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -82,7 +82,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_SelectPosition" file="EnumerationDescriptor_SelectPosition.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_SelectPosition">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -92,7 +92,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_ShowBoundariesAreaEnum" file="EnumerationDescriptor_ShowBoundariesAreaEnum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_ShowBoundariesAreaEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -102,7 +102,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_StyleAttributeKind" file="EnumerationDescriptor_StyleAttributeKind.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_StyleAttributeKind">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -112,7 +112,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_TableComponentEnum" file="EnumerationDescriptor_TableComponentEnum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_TableComponentEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -122,7 +122,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_TransformationLocation_SideTransform_PlaceInCell" file="EnumerationDescriptor_TransformationLocation_SideTransform_PlaceInCell.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_TransformationLocation_SideTransform_PlaceInCell">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -132,7 +132,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_UnderlineStyle" file="EnumerationDescriptor_UnderlineStyle.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor_UnderlineStyle">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -142,7 +142,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__CaretPosition_Enum" file="EnumerationDescriptor__CaretPosition_Enum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__CaretPosition_Enum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -152,7 +152,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__Colors_Enum" file="EnumerationDescriptor__Colors_Enum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__Colors_Enum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -162,7 +162,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__Enum_Measure" file="EnumerationDescriptor__Enum_Measure.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__Enum_Measure">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -172,7 +172,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__FontStyle_Enum" file="EnumerationDescriptor__FontStyle_Enum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__FontStyle_Enum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -182,7 +182,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__ImageAlignment_Enum" file="EnumerationDescriptor__ImageAlignment_Enum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__ImageAlignment_Enum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -192,7 +192,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__Layout_Constraints_Enum" file="EnumerationDescriptor__Layout_Constraints_Enum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__Layout_Constraints_Enum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -202,7 +202,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__LeftRight_Enum" file="EnumerationDescriptor__LeftRight_Enum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__LeftRight_Enum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -212,7 +212,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__NextLine_Enum" file="EnumerationDescriptor__NextLine_Enum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__NextLine_Enum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -222,7 +222,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__YesNoDefault_Enum" file="EnumerationDescriptor__YesNoDefault_Enum.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.EnumerationDescriptor__YesNoDefault_Enum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -232,16 +232,16 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.IconContainer" file="IconContainer.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.IconContainer">
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.LanguageConceptSwitch" file="LanguageConceptSwitch.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.LanguageConceptSwitch">
     <classNode dependClassName="jetbrains.mps.lang.smodel.LanguageConceptIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.LanguageConceptIndexBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />

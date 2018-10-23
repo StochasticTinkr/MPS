@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="decl.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="decl.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="decl.editor.NewComponent_Editor" />
     <classNode dependClassName="decl.editor.OldComponent_Editor" />
     <classNode dependClassName="java.util.Collection" />
@@ -13,14 +13,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="decl.editor.NewComponent_Editor" file="NewComponent_Editor.java">
+  <dependency className="decl.editor.NewComponent_Editor">
     <classNode dependClassName="decl.editor.NewComponent_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="decl.editor.NewComponent_EditorBuilder_a" file="NewComponent_EditorBuilder_a.java">
+  <dependency className="decl.editor.NewComponent_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -66,14 +66,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="decl.editor.OldComponent_Editor" file="OldComponent_Editor.java">
+  <dependency className="decl.editor.OldComponent_Editor">
     <classNode dependClassName="decl.editor.OldComponent_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="decl.editor.OldComponent_EditorBuilder_a" file="OldComponent_EditorBuilder_a.java">
+  <dependency className="decl.editor.OldComponent_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.project.structure.stub.ProjectStructureBuilder" file="ProjectStructureBuilder.java">
+  <dependency className="jetbrains.mps.project.structure.stub.ProjectStructureBuilder">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

@@ -20,17 +20,12 @@ public class DefaultNodeRenderer extends BaseRenderer<NodeNavigatable> {
   }
 
   @Override
-  protected final void customizeCellRenderer(final JList list, final Object value, final int i, final boolean index, final boolean selected) {
+  protected final void customizeCellRenderer(final JList<? extends NodeNavigatable> list, final NodeNavigatable value, final int i, final boolean index, final boolean selected) {
     myRepository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        superCustomizeCellRenderer(list, value, i, index, selected);
+        DefaultNodeRenderer.super.customizeCellRenderer(list, value, i, index, selected);
       }
     });
-  }
-
-  /*package*/ final void superCustomizeCellRenderer(JList list, Object value, int i, boolean index, boolean selected) {
-    // this is workaround for https://youtrack.jetbrains.com/issue/MPS-23068 
-    super.customizeCellRenderer(list, value, i, index, selected);
   }
 
   @Override

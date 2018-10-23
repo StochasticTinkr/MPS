@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence" file="DeploymentDescriptorPersistence.java">
+  <dependency className="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.project.persistence.DevkitDescriptorPersistence" file="DevkitDescriptorPersistence.java">
+  <dependency className="jetbrains.mps.project.persistence.DevkitDescriptorPersistence">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.project.persistence.GeneratorDescriptorPersistence" file="GeneratorDescriptorPersistence.java">
+  <dependency className="jetbrains.mps.project.persistence.GeneratorDescriptorPersistence">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.project.persistence.LanguageDescriptorPersistence" file="LanguageDescriptorPersistence.java">
+  <dependency className="jetbrains.mps.project.persistence.LanguageDescriptorPersistence">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.NumberFormatException" />
@@ -86,7 +86,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.project.persistence.ModuleDescriptorPersistence" file="ModuleDescriptorPersistence.java">
+  <dependency className="jetbrains.mps.project.persistence.ModuleDescriptorPersistence">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStreamReader" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -138,11 +138,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.project.persistence.ModuleReadException" file="ModuleReadException.java">
+  <dependency className="jetbrains.mps.project.persistence.ModuleReadException">
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="java.lang.RuntimeException" />
   </dependency>
-  <dependency className="jetbrains.mps.project.persistence.ProjectDescriptorPersistence" file="ProjectDescriptorPersistence.java">
+  <dependency className="jetbrains.mps.project.persistence.ProjectDescriptorPersistence">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
@@ -170,7 +170,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" file="SolutionDescriptorPersistence.java">
+  <dependency className="jetbrains.mps.project.persistence.SolutionDescriptorPersistence">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />

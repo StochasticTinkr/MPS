@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.runner.test.test2.MainClass" file="MainClass.java">
+  <dependency className="jetbrains.mps.build.mps.runner.test.test2.MainClass">
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.build.mps.runner.test.test1.MainClass" />
   </dependency>

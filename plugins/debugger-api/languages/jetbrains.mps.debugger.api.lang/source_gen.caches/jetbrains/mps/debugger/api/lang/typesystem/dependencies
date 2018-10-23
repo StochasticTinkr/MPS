@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.DebuggerIsDebugger_ComparisonRule" file="DebuggerIsDebugger_ComparisonRule.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.DebuggerIsDebugger_ComparisonRule">
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.typesystem.Pattern_wcp5kc_a0a0a0f" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule" file="DebuggerTypeIsDebuggerType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -24,11 +24,11 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.Pattern_wcp5kc_a0a0a0f" file="Pattern_wcp5kc_a0a0a0f.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.Pattern_wcp5kc_a0a0a0f">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerIsDebugger_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule" file="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule">
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage" />
@@ -58,7 +58,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.typeof_CreateBreakpointOperation_InferenceRule" file="typeof_CreateBreakpointOperation_InferenceRule.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.typeof_CreateBreakpointOperation_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -72,7 +72,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.typeof_DebuggerConfiguration_InferenceRule" file="typeof_DebuggerConfiguration_InferenceRule.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.typeof_DebuggerConfiguration_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -85,7 +85,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.typeof_DebuggerReference_InferenceRule" file="typeof_DebuggerReference_InferenceRule.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.typeof_DebuggerReference_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />

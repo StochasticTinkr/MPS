@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,20 +16,24 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.vfs.FileSystemEvent;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.Memento;
-
-import java.util.Collections;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 /**
+ * @deprecated use {@link FileBasedModelRoot} instead
+ *             There are few instanceof checks with this class in MPS, but no subclasses for quite some time now.
+ *             The class will be removed once corresponding code is wiped out and 2018.3 is out
  * evgeny, 11/9/12
  */
+@Deprecated
+@ToRemove(version = 2018.3)
 public abstract class FolderModelRootBase extends ModelRootBase implements FileSystemListener {
   private String path;
 
@@ -85,14 +89,6 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
   @Override
   public IFile getFileToListen() {
     return FileSystem.getInstance().getFileByPath(getPath());
-  }
-
-  @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    if (getModule() instanceof FileSystemListener) {
-      return Collections.singleton((FileSystemListener) getModule());
-    }
-    return null;
   }
 
   @Override

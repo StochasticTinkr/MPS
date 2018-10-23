@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testExtendingAnalyzer.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="testExtendingAnalyzer.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
@@ -13,14 +13,14 @@
     <classNode dependClassName="testExtendingAnalyzer.editor.NullUnsafeDotExpression_Editor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="testExtendingAnalyzer.editor.NullSafeDotExpression_Editor" file="NullSafeDotExpression_Editor.java">
+  <dependency className="testExtendingAnalyzer.editor.NullSafeDotExpression_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="testExtendingAnalyzer.editor.NullSafeDotExpression_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="testExtendingAnalyzer.editor.NullSafeDotExpression_EditorBuilder_a" file="NullSafeDotExpression_EditorBuilder_a.java">
+  <dependency className="testExtendingAnalyzer.editor.NullSafeDotExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -41,14 +41,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="testExtendingAnalyzer.editor.NullUnsafeDotExpression_Editor" file="NullUnsafeDotExpression_Editor.java">
+  <dependency className="testExtendingAnalyzer.editor.NullUnsafeDotExpression_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="testExtendingAnalyzer.editor.NullUnsafeDotExpression_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="testExtendingAnalyzer.editor.NullUnsafeDotExpression_EditorBuilder_a" file="NullUnsafeDotExpression_EditorBuilder_a.java">
+  <dependency className="testExtendingAnalyzer.editor.NullUnsafeDotExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />

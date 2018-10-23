@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.core.xml.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlAttribute_Constraints" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.XmlCDATA_Constraints" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlAttribute_Constraints" file="XmlAttribute_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlAttribute_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlCDATA_Constraints" file="XmlCDATA_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlCDATA_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -57,7 +57,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlCharRefValue_Constraints" file="XmlCharRefValue_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlCharRefValue_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -72,7 +72,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlCharRef_Constraints" file="XmlCharRef_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlCharRef_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -87,7 +87,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlCommentLine_Constraints" file="XmlCommentLine_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlCommentLine_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -102,11 +102,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlContent_Constraints" file="XmlContent_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlContent_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlDeclaration_Constraints" file="XmlDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlDeclaration_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -122,7 +122,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlDoctypeDeclaration_Constraints" file="XmlDoctypeDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlDoctypeDeclaration_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -149,7 +149,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlElement_Constraints" file="XmlElement_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlElement_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -164,7 +164,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlEntityRefValue_Constraints" file="XmlEntityRefValue_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlEntityRefValue_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -179,7 +179,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlEntityRef_Constraints" file="XmlEntityRef_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlEntityRef_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -194,7 +194,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlExternalId_Constraints" file="XmlExternalId_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlExternalId_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -209,10 +209,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlNameUtil" file="XmlNameUtil.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlNameUtil">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlProcessingInstruction_Constraints" file="XmlProcessingInstruction_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlProcessingInstruction_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -227,7 +227,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlTextValue_Constraints" file="XmlTextValue_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlTextValue_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -242,7 +242,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlText_Constraints" file="XmlText_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlText_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -257,11 +257,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlValuePart_Constraints" file="XmlValuePart_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlValuePart_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.constraints.XmlWhitespace_Constraints" file="XmlWhitespace_Constraints.java">
+  <dependency className="jetbrains.mps.core.xml.constraints.XmlWhitespace_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />

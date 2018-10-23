@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.debugger.java.customViewers.typesystem.WatchableListIsAListOrWatchables_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.customViewers.typesystem.WatchableListIsAList_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.customViewers.typesystem.typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule" />
@@ -10,7 +10,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.WatchableListIsAListOrWatchables_SubtypingRule" file="WatchableListIsAListOrWatchables_SubtypingRule.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.WatchableListIsAListOrWatchables_SubtypingRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -22,7 +22,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.WatchableListIsAList_SubtypingRule" file="WatchableListIsAList_SubtypingRule.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.WatchableListIsAList_SubtypingRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -34,7 +34,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule" file="typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -46,7 +46,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.typeof_HighLevelWatchableCreator_InferenceRule" file="typeof_HighLevelWatchableCreator_InferenceRule.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.typeof_HighLevelWatchableCreator_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -58,7 +58,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.typeof_WatchablesListCreator_InferenceRule" file="typeof_WatchablesListCreator_InferenceRule.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.typeof_WatchablesListCreator_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

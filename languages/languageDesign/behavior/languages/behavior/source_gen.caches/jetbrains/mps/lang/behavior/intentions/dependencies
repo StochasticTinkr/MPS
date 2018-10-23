@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.behavior.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="jetbrains.mps.lang.behavior.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.intentions.RemoveTVD_Intention" file="RemoveTVD_Intention.java">
+  <dependency className="jetbrains.mps.lang.behavior.intentions.RemoveTVD_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -38,7 +38,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.intentions.ToggleConceptAbstract_Intention" file="ToggleConceptAbstract_Intention.java">
+  <dependency className="jetbrains.mps.lang.behavior.intentions.ToggleConceptAbstract_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -56,7 +56,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.intentions.ToggleConceptMethodAbstract_Intention" file="ToggleConceptMethodAbstract_Intention.java">
+  <dependency className="jetbrains.mps.lang.behavior.intentions.ToggleConceptMethodAbstract_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -75,7 +75,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.intentions.ToggleConceptMethodVirtual_Intention" file="ToggleConceptMethodVirtual_Intention.java">
+  <dependency className="jetbrains.mps.lang.behavior.intentions.ToggleConceptMethodVirtual_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -93,7 +93,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.intentions.ToggleMethodStatic_Intention" file="ToggleMethodStatic_Intention.java">
+  <dependency className="jetbrains.mps.lang.behavior.intentions.ToggleMethodStatic_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />

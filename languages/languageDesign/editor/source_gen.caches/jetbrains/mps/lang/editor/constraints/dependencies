@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.constraints.AbstractComponent_Constraints" file="AbstractComponent_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.AbstractComponent_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints" file="AttributeStyleClassItem_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
@@ -57,7 +57,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellActionMapDeclaration_Constraints" file="CellActionMapDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellActionMapDeclaration_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
@@ -72,7 +72,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellActionMapImport_Constraints" file="CellActionMapImport_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellActionMapImport_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -92,7 +92,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints" file="CellIdReferenceSelector_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -112,7 +112,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellKeyMapDeclaration_Constraints" file="CellKeyMapDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellKeyMapDeclaration_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
@@ -127,7 +127,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_Constraints" file="CellMenuComponentFeature_Link_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -151,7 +151,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Property_Constraints" file="CellMenuComponentFeature_Property_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Property_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -175,7 +175,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellMenuComponent_Constraints" file="CellMenuComponent_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellMenuComponent_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
@@ -190,11 +190,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints" file="CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints" file="CellModel_Component_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
@@ -227,7 +227,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_NextEditor_Constraints" file="CellModel_NextEditor_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_NextEditor_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -243,7 +243,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_Property_Constraints" file="CellModel_Property_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_Property_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -267,35 +267,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_Constraints" file="CellModel_RefCell_Constraints.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.scope.ListScope" />
-    <classNode dependClassName="jetbrains.mps.scope.Scope" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_Constraints" file="CellModel_RefNodeList_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
@@ -323,7 +295,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_RefNode_Constraints" file="CellModel_RefNode_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
@@ -351,7 +323,35 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_ReferencePresentation_Constraints" file="CellModel_ReferencePresentation_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_RefNode_Constraints">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.scope.ListScope" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_ReferencePresentation_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -368,7 +368,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_TransactionalProperty_Constraints" file="CellModel_TransactionalProperty_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_TransactionalProperty_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -392,7 +392,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_WithRole_Constraints" file="CellModel_WithRole_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_WithRole_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -415,7 +415,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.ConceptEditorDeclaration_Constraints" file="ConceptEditorDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.ConceptEditorDeclaration_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -443,7 +443,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.ConceptEditorHintDeclaration_Constraints" file="ConceptEditorHintDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.ConceptEditorHintDeclaration_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -467,7 +467,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.AbstractComponent_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints" />
@@ -529,7 +529,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.ContextVariable_Constraints" file="ContextVariable_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.ContextVariable_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -549,7 +549,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.EditorCellModel_Constraints" file="EditorCellModel_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.EditorCellModel_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.LayoutContainer__BehaviorDescriptor" />
@@ -568,7 +568,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.EditorComponentDeclaration_Constraints" file="EditorComponentDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.EditorComponentDeclaration_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
@@ -583,7 +583,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.IMenuPartParameterized_Constraints" file="IMenuPartParameterized_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.IMenuPartParameterized_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -602,7 +602,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.IMenuReference_Default_Constraints" file="IMenuReference_Default_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.IMenuReference_Default_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -622,7 +622,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.IMenu_Default_Constraints" file="IMenu_Default_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.IMenu_Default_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -646,7 +646,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.IMenu_Named_Constraints" file="IMenu_Named_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.IMenu_Named_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -670,7 +670,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.IStyle_Constraints" file="IStyle_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.IStyle_Constraints">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashSet" />
@@ -706,7 +706,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.InlineStyleDeclaration_Constraints" file="InlineStyleDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.InlineStyleDeclaration_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.LayoutContainer__BehaviorDescriptor" />
@@ -725,7 +725,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.MenuScopes" file="MenuScopes.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.MenuScopes">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -738,7 +738,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_Constraints" file="NavigatableReferenceStyleClassItem_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -762,7 +762,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints" file="PropertyDeclarationCellSelector_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -782,7 +782,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.RGBColor_Constraints" file="RGBColor_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.RGBColor_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -796,7 +796,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.StyleSheet_Constraints" file="StyleSheet_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.StyleSheet_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
@@ -811,7 +811,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenuItem_AbstractOperation_Constraints" file="SubstituteMenuItem_AbstractOperation_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenuItem_AbstractOperation_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -830,7 +830,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenuPart_ReferenceScope_Constraints" file="SubstituteMenuPart_ReferenceScope_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenuPart_ReferenceScope_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -855,7 +855,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenuReference_DefaultWithFunction_Constraints" file="SubstituteMenuReference_DefaultWithFunction_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenuReference_DefaultWithFunction_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -871,7 +871,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenuReference_Named_Constraints" file="SubstituteMenuReference_Named_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenuReference_Named_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -891,7 +891,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenuVariableReference_Constraints" file="SubstituteMenuVariableReference_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenuVariableReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -911,7 +911,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenu_Constraints" file="SubstituteMenu_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenu_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
@@ -926,7 +926,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenu_Contribution_Constraints" file="SubstituteMenu_Contribution_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenu_Contribution_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
@@ -941,7 +941,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenu_Default_Constraints" file="SubstituteMenu_Default_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenu_Default_Constraints">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -957,7 +957,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenu_Named_Constraints" file="SubstituteMenu_Named_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.SubstituteMenu_Named_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.MenuScopes" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
@@ -975,7 +975,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuContribution_Constraints" file="TransformationMenuContribution_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuContribution_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
@@ -990,7 +990,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_IncludeSubstituteMenu_Constraints" file="TransformationMenuPart_IncludeSubstituteMenu_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_IncludeSubstituteMenu_Constraints">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1020,7 +1020,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_PropertyMenu_Constraints" file="TransformationMenuPart_PropertyMenu_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_PropertyMenu_Constraints">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1048,7 +1048,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_ReferenceMenu_Constraints" file="TransformationMenuPart_ReferenceMenu_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_ReferenceMenu_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -1072,7 +1072,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuReference_Named_Constraints" file="TransformationMenuReference_Named_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuReference_Named_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -1092,7 +1092,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuVariableReference_Constraints" file="TransformationMenuVariableReference_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenuVariableReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -1112,7 +1112,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenu_Constraints" file="TransformationMenu_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenu_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
@@ -1127,7 +1127,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenu_Default_Constraints" file="TransformationMenu_Default_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenu_Default_Constraints">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1143,7 +1143,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenu_Named_Constraints" file="TransformationMenu_Named_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.TransformationMenu_Named_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.MenuScopes" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.facet.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.make.facet.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.Expression_Contribution" file="Expression_Contribution.java">
+  <dependency className="jetbrains.mps.make.facet.editor.Expression_Contribution">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -68,7 +68,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ExtendsFacetReference_SubstituteMenu" file="ExtendsFacetReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ExtendsFacetReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -89,14 +89,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor" file="FacetDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.FacetDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.FacetDeclaration_EditorBuilder_a" file="FacetDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.FacetDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -148,14 +148,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.FacetJavaClassExpression_Editor" file="FacetJavaClassExpression_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.FacetJavaClassExpression_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.FacetJavaClassExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.FacetJavaClassExpression_EditorBuilder_a" file="FacetJavaClassExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.FacetJavaClassExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -194,14 +194,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.FacetReferenceExpression_Editor" file="FacetReferenceExpression_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.FacetReferenceExpression_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.FacetReferenceExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.FacetReferenceExpression_EditorBuilder_a" file="FacetReferenceExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.FacetReferenceExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -227,7 +227,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.FacetReferenceExpression_SubstituteMenu" file="FacetReferenceExpression_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.FacetReferenceExpression_SubstituteMenu">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -259,7 +259,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.FacetReferenceExpression_TransformationMenu" file="FacetReferenceExpression_TransformationMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.FacetReferenceExpression_TransformationMenu">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -300,14 +300,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.FacetReference_Editor" file="FacetReference_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.FacetReference_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.FacetReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.FacetReference_EditorBuilder_a" file="FacetReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.FacetReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -345,7 +345,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.FacetReference_TransformationMenu" file="FacetReference_TransformationMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.FacetReference_TransformationMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -372,7 +372,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ForeignParameters" file="ForeignParameters.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ForeignParameters">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -411,14 +411,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ForeignParametersComponentExpression_Editor" file="ForeignParametersComponentExpression_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ForeignParametersComponentExpression_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.ForeignParametersComponentExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ForeignParametersComponentExpression_EditorBuilder_a" file="ForeignParametersComponentExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ForeignParametersComponentExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.DotStyleClass" />
@@ -447,14 +447,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ForeignParametersExpression_Editor" file="ForeignParametersExpression_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ForeignParametersExpression_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.ForeignParametersExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ForeignParametersExpression_EditorBuilder_a" file="ForeignParametersExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ForeignParametersExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -496,7 +496,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ForeignParametersExpression_SubstituteMenu" file="ForeignParametersExpression_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ForeignParametersExpression_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -508,7 +508,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.IPropertyExpression_TransformationMenu" file="IPropertyExpression_TransformationMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.IPropertyExpression_TransformationMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -544,7 +544,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.LocalParameters" file="LocalParameters.java">
+  <dependency className="jetbrains.mps.make.facet.editor.LocalParameters">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -581,14 +581,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.LocalParametersComponentExpression_Editor" file="LocalParametersComponentExpression_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.LocalParametersComponentExpression_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.LocalParametersComponentExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.LocalParametersComponentExpression_EditorBuilder_a" file="LocalParametersComponentExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.LocalParametersComponentExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -615,14 +615,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.LocalParametersExpression_Editor" file="LocalParametersExpression_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.LocalParametersExpression_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.LocalParametersExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.LocalParametersExpression_EditorBuilder_a" file="LocalParametersExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.LocalParametersExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -638,7 +638,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.LocalParametersExpression_SubstituteMenu" file="LocalParametersExpression_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.LocalParametersExpression_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -650,7 +650,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.NamedFacetReference_SubstituteMenu" file="NamedFacetReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.NamedFacetReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -671,14 +671,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ParametersDeclaration_Editor" file="ParametersDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ParametersDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.ParametersDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ParametersDeclaration_EditorBuilder_a" file="ParametersDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ParametersDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
@@ -703,7 +703,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.RelatedFacetReference_SubstituteMenu" file="RelatedFacetReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.RelatedFacetReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -724,7 +724,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ResourceClassifierType_SmartReference" file="ResourceClassifierType_SmartReference.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ResourceClassifierType_SmartReference">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -745,7 +745,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ResourceClassifierType_SubstituteMenu" file="ResourceClassifierType_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ResourceClassifierType_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
@@ -768,14 +768,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ResourceSpecificPropertiesExpression_Editor" file="ResourceSpecificPropertiesExpression_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ResourceSpecificPropertiesExpression_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.ResourceSpecificPropertiesExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ResourceSpecificPropertiesExpression_EditorBuilder_a" file="ResourceSpecificPropertiesExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ResourceSpecificPropertiesExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -800,14 +800,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ResourceTypeDeclaration_Editor" file="ResourceTypeDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ResourceTypeDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.ResourceTypeDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.ResourceTypeDeclaration_EditorBuilder_a" file="ResourceTypeDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.ResourceTypeDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -834,14 +834,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor" file="TargetDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.TargetDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetDeclaration_EditorBuilder_a" file="TargetDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -917,7 +917,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetDeclaration_makeOptional" file="TargetDeclaration_makeOptional.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetDeclaration_makeOptional">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -948,7 +948,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetDeclaration_makeRequired" file="TargetDeclaration_makeRequired.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetDeclaration_makeRequired">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
@@ -960,7 +960,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetDeclaration_resourcesPolicy" file="TargetDeclaration_resourcesPolicy.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetDeclaration_resourcesPolicy">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
@@ -980,14 +980,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetDependency_Editor" file="TargetDependency_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetDependency_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.TargetDependency_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetDependency_EditorBuilder_a" file="TargetDependency_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetDependency_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1039,7 +1039,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu" file="TargetDependency_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1080,7 +1080,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetReferenceExpression_DELETE" file="TargetReferenceExpression_DELETE.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetReferenceExpression_DELETE">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
@@ -1093,14 +1093,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetReferenceExpression_Editor" file="TargetReferenceExpression_Editor.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetReferenceExpression_Editor">
     <classNode dependClassName="jetbrains.mps.make.facet.editor.TargetReferenceExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetReferenceExpression_EditorBuilder_a" file="TargetReferenceExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetReferenceExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1155,7 +1155,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.editor.TargetReferenceExpression_SubstituteMenu" file="TargetReferenceExpression_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.make.facet.editor.TargetReferenceExpression_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />

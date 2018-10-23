@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated">
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.StringUtils" file="StringUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.StringUtils">
     <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>

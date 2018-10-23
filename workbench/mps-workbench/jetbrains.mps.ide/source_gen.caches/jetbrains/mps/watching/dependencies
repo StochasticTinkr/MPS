@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.watching.ModelFocusSynchronizer" file="ModelFocusSynchronizer.java">
+  <dependency className="jetbrains.mps.watching.ModelFocusSynchronizer">
     <classNode dependClassName="com.intellij.ide.FrameStateListener" />
     <classNode dependClassName="com.intellij.ide.FrameStateManager" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -33,7 +33,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.watching.WatchedRootsUpdater" file="WatchedRootsUpdater.java">
+  <dependency className="jetbrains.mps.watching.WatchedRootsUpdater">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManagerAdapter" />

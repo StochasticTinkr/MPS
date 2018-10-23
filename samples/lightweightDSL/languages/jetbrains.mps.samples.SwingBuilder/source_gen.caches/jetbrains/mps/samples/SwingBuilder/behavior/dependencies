@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Converter__BehaviorDescriptor" file="Converter__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Converter__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -44,7 +44,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Filter__BehaviorDescriptor" file="Filter__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Filter__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -67,7 +67,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Map__BehaviorDescriptor" file="Map__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Map__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -90,7 +90,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Pipeline__BehaviorDescriptor" file="Pipeline__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Pipeline__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -113,7 +113,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.SourceDataType__BehaviorDescriptor" file="SourceDataType__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.SourceDataType__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -136,7 +136,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.SwingBuilderMember__BehaviorDescriptor" file="SwingBuilderMember__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.SwingBuilderMember__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -159,7 +159,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.TargetDataType__BehaviorDescriptor" file="TargetDataType__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.TargetDataType__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -182,7 +182,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Transformers__BehaviorDescriptor" file="Transformers__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Transformers__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

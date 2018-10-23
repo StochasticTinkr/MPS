@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="math_samples.Sample" file="Sample.java">
+  <dependency className="math_samples.Sample">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Integer" />

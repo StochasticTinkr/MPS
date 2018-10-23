@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.A" file="A.java" />
-  <dependency className="jetbrains.mps.internalCollections.test.closures.Advanced_Test" file="Advanced_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.A" />
+  <dependency className="jetbrains.mps.internalCollections.test.closures.Advanced_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -11,12 +11,12 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.B" file="B.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.B">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internalCollections.test.closures.A" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test" file="ChainedOperations_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.Find_Test" file="Find_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.Find_Test">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.ForEach_Test" file="ForEach_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.ForEach_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -65,15 +65,15 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.IBar" file="IBar.java" />
-  <dependency className="jetbrains.mps.internalCollections.test.closures.IFoo" file="IFoo.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.IBar" />
+  <dependency className="jetbrains.mps.internalCollections.test.closures.IFoo">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internalCollections.test.closures.IBar" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.IInterface" file="IInterface.java" />
-  <dependency className="jetbrains.mps.internalCollections.test.closures.IntHolder" file="IntHolder.java" />
-  <dependency className="jetbrains.mps.internalCollections.test.closures.MPS10313" file="MPS10313.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.IInterface" />
+  <dependency className="jetbrains.mps.internalCollections.test.closures.IntHolder" />
+  <dependency className="jetbrains.mps.internalCollections.test.closures.MPS10313">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
@@ -82,7 +82,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.Mapper_Test" file="Mapper_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.Mapper_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -105,7 +105,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test" file="ReduceFold_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -124,7 +124,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.RemoveWhereTest_Test" file="RemoveWhereTest_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.RemoveWhereTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -137,14 +137,14 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.Runtime_Test" file="Runtime_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.Runtime_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.SelectTest_Test" file="SelectTest_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.SelectTest_Test">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Exception" />
@@ -172,7 +172,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.Sort_Test" file="Sort_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.Sort_Test">
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
@@ -191,7 +191,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.Util_Test" file="Util_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.Util_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -207,7 +207,7 @@
     <classNode dependClassName="org.junit.Ignore" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.VisitAll_Test" file="VisitAll_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.VisitAll_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -225,7 +225,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.closures.Where_Test" file="Where_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.closures.Where_Test">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />

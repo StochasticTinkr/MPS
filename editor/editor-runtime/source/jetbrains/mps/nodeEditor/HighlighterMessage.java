@@ -58,7 +58,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   }
 
   public HighlighterMessage(EditorMessageOwner owner, NodeReportItem reportItem, SNode node) {
-    super(node, reportItem.getSeverity(), NodeFeatureReportItem.MESSAGE_TARGET_FEATURE.get(reportItem), getMessageColor(reportItem.getSeverity()),
+    super(node, reportItem.getSeverity(), reportItem.getMessageTarget(), getMessageColor(reportItem.getSeverity()),
           reportItem.getMessage(), owner);
     if (!node.getReference().equals(reportItem.getNode())) {
       throw new IllegalStateException();

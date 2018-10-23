@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.multiple.editorComponent.tests.DefaultEditorComponent_Test" file="DefaultEditorComponent_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.multiple.editorComponent.tests.DefaultEditorComponent_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.multiple.editorComponent.tests.EditorComponentSpecifiedBy_context_hint_Test" file="EditorComponentSpecifiedBy_context_hint_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.multiple.editorComponent.tests.EditorComponentSpecifiedBy_context_hint_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.multiple.editorComponent.tests.MostSpecificEditorComponent_Test" file="MostSpecificEditorComponent_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.multiple.editorComponent.tests.MostSpecificEditorComponent_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.multiple.editorComponent.tests.OverridenEditorComponent_Test" file="OverridenEditorComponent_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.multiple.editorComponent.tests.OverridenEditorComponent_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

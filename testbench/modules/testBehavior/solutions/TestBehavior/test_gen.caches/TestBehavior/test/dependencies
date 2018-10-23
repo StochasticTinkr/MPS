@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="TestBehavior.test.BHTest_Test" file="BHTest_Test.java">
+  <dependency className="TestBehavior.test.BHTest_Test">
     <classNode dependClassName="BHL1.behavior.A__BehaviorDescriptor" />
     <classNode dependClassName="BHL1.behavior.I1__BehaviorDescriptor" />
     <classNode dependClassName="BHL1.behavior.I__BehaviorDescriptor" />

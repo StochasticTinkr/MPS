@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker" file="ConvertToBinaryWorker.java">
+  <dependency className="jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.RuntimeException" />

@@ -76,6 +76,8 @@
                       serviceImplementation="com.intellij.openapi.progress.impl.ProgressManagerImpl"/>
 
   <applicationService serviceImplementation="com.intellij.ide.ui.customization.CustomActionsSchema"/>
+  <applicationService serviceInterface="com.intellij.ide.ui.ProductIcons"
+                      serviceImplementation="com.intellij.ide.impl.ui.ProductsIconsImpl"/>
 
   <applicationService serviceInterface="com.intellij.openapi.project.DefaultProjectFactory"
                       serviceImplementation="com.intellij.openapi.project.DefaultProjectFactoryImpl"/>
@@ -338,6 +340,7 @@
                   serviceImplementation="com.intellij.externalDependencies.impl.ExternalDependenciesManagerImpl"/>
 
   <welcomeFrameProvider implementation="com.intellij.openapi.wm.impl.welcomeScreen.FlatWelcomeFrameProvider"/>
+  <themeProvider id="JetBrainsHighContrastTheme" path="/themes/HighContrast.theme.json"/>
 
   <postStartupActivity implementation="com.intellij.internal.IconsLoadTime$StartupLoadTime"/>
 
@@ -452,12 +455,14 @@
   <keymapExtension implementation="com.intellij.ide.actions.ToolWindowKeymapExtension"/>
 
 
+  <statistics.projectUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.FacetTypeUsageCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ProductivityUsageCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.plugins.DisabledPluginsUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.plugins.NonBundledPluginsUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.ToolbarClicksUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.EditorColorSchemesUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.actions.ActionUsagesCollector"/>
+  <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.actions.ActionFromContextMenuUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.actions.ToolWindowUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.actions.IntentionUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.actions.MainMenuUsagesCollector"/>
@@ -472,9 +477,9 @@
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.UiInfoUsageCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.A11YUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.diff.statistics.DiffUsagesCollector"/>
-    <statistics.applicationUsagesCollector implementation="com.intellij.openapi.diff.impl.DiffUsageTriggerCollector"/>
+  <statistics.applicationUsagesCollector implementation="com.intellij.openapi.diff.impl.DiffUsageTriggerCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.RegistryApplicationUsagesCollector"/>
-    <statistics.applicationUsagesCollector implementation="com.intellij.ide.TipsOfTheDayUsagesCollector"/>
+  <statistics.applicationUsagesCollector implementation="com.intellij.ide.TipsOfTheDayUsagesCollector"/>
 
   <statistics.projectUsagesCollector implementation="com.intellij.openapi.vcs.statistics.VcsOptionsUsagesCollector"/>
   <statistics.projectUsagesCollector implementation="com.intellij.openapi.vcs.statistics.VcsStatsUsagesCollector"/>
@@ -484,13 +489,13 @@
   <applicationInitializedListener implementation="com.intellij.openapi.vcs.statistics.VcsBackForwardUsageTriggerCollector$Trigger"/>
 
   <statistics.projectUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.RegistryProjectUsagesCollector"/>
-    <statistics.projectUsagesCollector implementation="com.intellij.featureStatistics.fusCollectors.ProjectLifecycleUsageTriggerCollector"/>
+  <statistics.projectUsagesCollector implementation="com.intellij.featureStatistics.fusCollectors.ProjectLifecycleUsageTriggerCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.featureStatistics.fusCollectors.AppLifecycleUsageTriggerCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.featureStatistics.fusCollectors.EAPUsageCollector"/>
-    <statistics.applicationUsagesCollector implementation="com.intellij.openapi.updateSettings.impl.IdeUpdateUsageTriggerCollector"/>
+  <statistics.applicationUsagesCollector implementation="com.intellij.openapi.updateSettings.impl.IdeUpdateUsageTriggerCollector"/>
   <statistic.eventLog.fusEventLoggerProvider implementation="com.intellij.internal.statistic.eventLog.FeatureUsageFileEventLoggerProvider"/>
-    <statistic.eventLog.fusStateEventTracker implementation="com.intellij.internal.statistic.eventLog.SystemStateMonitor"/>
-    <statistic.eventLog.fusStateEventTracker implementation="com.intellij.configurationStore.statistic.eventLog.FeatureUsageSettingsEventScheduler"/>
+  <statistic.eventLog.fusStateEventTracker implementation="com.intellij.internal.statistic.eventLog.SystemStateMonitor"/>
+  <statistic.eventLog.fusStateEventTracker implementation="com.intellij.configurationStore.statistic.eventLog.FeatureUsageSettingsEventScheduler"/>
 
     <vfs.local.pluggableFileWatcher implementation="com.intellij.openapi.vfs.impl.local.NativeFileWatcherImpl" />
 
@@ -623,4 +628,6 @@
   <!-- TODO: Uncomment in workbench/mps-workbench/source/META-INF/MPSLangExtensions.xml after fix java.lang.RuntimeException: Service: com.intellij.codeInsight.actions.FormatChangedTextUtil doesn't override anything-->
   <applicationService serviceInterface="com.intellij.codeInsight.actions.FormatChangedTextUtil"
                       serviceImplementation="com.intellij.codeInsight.actions.FormatChangedTextUtil"/>
+
+  <rawEditorTypedHandler implementationClass="com.intellij.openapi.editor.impl.EditorFactoryImpl$MyRawTypedHandler"/>
 </extensions>

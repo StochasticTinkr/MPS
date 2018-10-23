@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -18,14 +18,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Optional_Editor" file="TransformationFeature_Optional_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Optional_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Optional_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Optional_EditorBuilder_a" file="TransformationFeature_Optional_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Optional_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -34,14 +34,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Required_Editor" file="TransformationFeature_Required_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Required_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Required_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Required_EditorBuilder_a" file="TransformationFeature_Required_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Required_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -50,14 +50,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Unavailable_Editor" file="TransformationFeature_Unavailable_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Unavailable_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Unavailable_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Unavailable_EditorBuilder_a" file="TransformationFeature_Unavailable_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationFeature_Unavailable_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -66,14 +66,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_Editor" file="TransformationMenu_Test_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_EditorBuilder_a" file="TransformationMenu_Test_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -116,7 +116,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_SubstituteMenu" file="TransformationMenu_Test_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />

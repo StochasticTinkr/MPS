@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.runtime.AbstractIntentionMenuPart" file="AbstractIntentionMenuPart.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.runtime.AbstractIntentionMenuPart">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuItemBase" file="PluginActionMenuItemBase.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuItemBase">
     <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
@@ -30,7 +30,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuPartBase" file="PluginActionMenuPartBase.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuPartBase">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.lang.Override" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.menus.SingleItemMenuPart" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.runtime.RefactoringMenuItemBase" file="RefactoringMenuItemBase.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.runtime.RefactoringMenuItemBase">
     <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
@@ -60,7 +60,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.runtime.RefactoringMenuPartBase" file="RefactoringMenuPartBase.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.runtime.RefactoringMenuPartBase">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />

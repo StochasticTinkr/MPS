@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.DebuggedtypeIsHighLevelType_SubtypingRule" file="DebuggedtypeIsHighLevelType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.DebuggedtypeIsHighLevelType_SubtypingRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -10,7 +10,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.typesystem.DebuggedtypeIsHighLevelType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_DownCastToLowLevel_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_EvaluatorsThisExpression_InferenceRule" />
@@ -21,7 +21,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_DownCastToLowLevel_InferenceRule" file="typeof_DownCastToLowLevel_InferenceRule.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_DownCastToLowLevel_InferenceRule">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -36,7 +36,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_EvaluatorsThisExpression_InferenceRule" file="typeof_EvaluatorsThisExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_EvaluatorsThisExpression_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -48,7 +48,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_LowLevelVariableReference_InferenceRule" file="typeof_LowLevelVariableReference_InferenceRule.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_LowLevelVariableReference_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -59,7 +59,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_LowLevelVariable_InferenceRule" file="typeof_LowLevelVariable_InferenceRule.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_LowLevelVariable_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -70,7 +70,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_UnitNode_InferenceRule" file="typeof_UnitNode_InferenceRule.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_UnitNode_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.propertiesTest.BaseTestClass" file="BaseTestClass.java" />
-  <dependency className="jetbrains.mps.propertiesTest.CustomPropertyAccess_Test" file="CustomPropertyAccess_Test.java">
+  <dependency className="jetbrains.mps.propertiesTest.BaseTestClass" />
+  <dependency className="jetbrains.mps.propertiesTest.CustomPropertyAccess_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.propertiesTest.CustomPropertyReferences1_Test" file="CustomPropertyReferences1_Test.java">
+  <dependency className="jetbrains.mps.propertiesTest.CustomPropertyReferences1_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -30,7 +30,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.propertiesTest.CustomPropertyReferences2_Test" file="CustomPropertyReferences2_Test.java">
+  <dependency className="jetbrains.mps.propertiesTest.CustomPropertyReferences2_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.propertiesTest.CustomPropertyReferences3_Test" file="CustomPropertyReferences3_Test.java">
+  <dependency className="jetbrains.mps.propertiesTest.CustomPropertyReferences3_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -54,13 +54,13 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.propertiesTest.PropertiesTest_Test" file="PropertiesTest_Test.java">
+  <dependency className="jetbrains.mps.propertiesTest.PropertiesTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="jetbrains.mps.propertiesTest.TestClass" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.propertiesTest.TestClass" file="TestClass.java">
+  <dependency className="jetbrains.mps.propertiesTest.TestClass">
     <classNode extendsClassName="jetbrains.mps.propertiesTest.BaseTestClass" />
   </dependency>
 </dependenciesRoot>

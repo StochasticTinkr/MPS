@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 package jetbrains.mps.idea.core.module;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.util.io.ModelInputStream;
@@ -26,8 +25,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * evgeny, 12/12/12
@@ -49,9 +52,6 @@ public class CachedModuleData {
   public List<CachedModelData> getModels(ModelRoot modelRoot) {
     if (modelRoot instanceof FileBasedModelRoot) {
       String signature = CachedRepositoryUtil.getSignature((FileBasedModelRoot) modelRoot);
-      return myModels.get(signature);
-    } else if (modelRoot instanceof FolderModelRootBase) {
-      String signature = CachedRepositoryUtil.getSignature((FolderModelRootBase) modelRoot);
       return myModels.get(signature);
     }
     return null;

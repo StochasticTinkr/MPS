@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="utils.ParallelLoopException" file="ParallelLoopException.java">
+  <dependency className="utils.ParallelLoopException">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />

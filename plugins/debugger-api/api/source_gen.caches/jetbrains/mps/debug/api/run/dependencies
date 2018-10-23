@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debug.api.run.DebuggerRunProfileState" file="DebuggerRunProfileState.java">
+  <dependency className="jetbrains.mps.debug.api.run.DebuggerRunProfileState">
     <classNode dependClassName="jetbrains.mps.debug.api.EmptyDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.debug.api.run.IDebuggerConfiguration" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.api.run.IDebuggerConfiguration" file="IDebuggerConfiguration.java">
+  <dependency className="jetbrains.mps.debug.api.run.IDebuggerConfiguration">
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

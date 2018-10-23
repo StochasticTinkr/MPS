@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -24,14 +24,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.Event_Editor" file="Event_Editor.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.Event_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.editor.Event_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.Event_EditorBuilder_a" file="Event_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.Event_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -60,14 +60,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_Editor" file="HandleEvent_Editor.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_EditorBuilder_a" file="HandleEvent_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -106,7 +106,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_SubstituteMenu" file="HandleEvent_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -127,14 +127,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_Editor" file="StateMachineTestMethod_Editor.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_EditorBuilder_a" file="StateMachineTestMethod_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -187,7 +187,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_SubstituteMenu" file="StateMachineTestMethod_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -208,14 +208,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_Editor" file="StateMachineTest_Editor.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_EditorBuilder_a" file="StateMachineTest_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -267,7 +267,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_SubstituteMenu" file="StateMachineTest_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -288,14 +288,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_Editor" file="StateMachine_Editor.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_EditorBuilder_a" file="StateMachine_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -348,7 +348,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_SubstituteMenu" file="StateMachine_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -369,14 +369,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.State_Editor" file="State_Editor.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.State_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.editor.State_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.State_EditorBuilder_a" file="State_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.State_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -419,14 +419,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.Transition_Editor" file="Transition_Editor.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.Transition_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.editor.Transition_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.Transition_EditorBuilder_a" file="Transition_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.editor.Transition_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />

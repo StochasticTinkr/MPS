@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.ant.AllModulesDataType" file="AllModulesDataType.java">
+  <dependency className="jetbrains.mps.build.ant.AllModulesDataType">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.Arg" file="Arg.java">
+  <dependency className="jetbrains.mps.build.ant.Arg">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="org.apache.tools.ant.ProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.CustomMPSLoadTask" file="CustomMPSLoadTask.java">
+  <dependency className="jetbrains.mps.build.ant.CustomMPSLoadTask">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.ExcludeNested" file="ExcludeNested.java">
+  <dependency className="jetbrains.mps.build.ant.ExcludeNested">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="org.apache.tools.ant.types.resources.FileResource" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.JvmArgs" file="JvmArgs.java">
+  <dependency className="jetbrains.mps.build.ant.JvmArgs">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.Arg" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.MPSClasspathUtil" file="MPSClasspathUtil.java">
+  <dependency className="jetbrains.mps.build.ant.MPSClasspathUtil">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.UnsupportedEncodingException" />
     <classNode dependClassName="java.lang.Class" />
@@ -60,12 +60,12 @@
     <classNode dependClassName="org.apache.tools.ant.Project" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.Macro" file="Macro.java">
+  <dependency className="jetbrains.mps.build.ant.Macro">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.MigrationTask" file="MigrationTask.java">
+  <dependency className="jetbrains.mps.build.ant.MigrationTask">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="java.io.IOException" />
@@ -80,21 +80,21 @@
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.ModuleDataType" file="ModuleDataType.java">
+  <dependency className="jetbrains.mps.build.ant.ModuleDataType">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.ModuleJarDataType" file="ModuleJarDataType.java">
+  <dependency className="jetbrains.mps.build.ant.ModuleJarDataType">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.ModulesDataType" file="ModulesDataType.java">
+  <dependency className="jetbrains.mps.build.ant.ModulesDataType">
     <classNode dependClassName="java.io.File" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.MpsLoadTask" file="MpsLoadTask.java">
+  <dependency className="jetbrains.mps.build.ant.MpsLoadTask">
     <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
@@ -144,7 +144,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="org.apache.tools.ant.Task" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.MyExecuteStreamHandler" file="MyExecuteStreamHandler.java">
+  <dependency className="jetbrains.mps.build.ant.MyExecuteStreamHandler">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.OutputStream" />
@@ -158,7 +158,7 @@
     <classNode dependClassName="org.apache.tools.ant.Task" />
     <classNode extendsClassName="org.apache.tools.ant.taskdefs.ExecuteStreamHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.RepositoryDataType" file="RepositoryDataType.java">
+  <dependency className="jetbrains.mps.build.ant.RepositoryDataType">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.build.ant.AllModulesDataType" />
     <classNode dependClassName="jetbrains.mps.build.ant.ModuleDataType" />

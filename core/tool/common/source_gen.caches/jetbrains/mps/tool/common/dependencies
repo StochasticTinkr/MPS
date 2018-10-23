@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.tool.common.GeneratorProperties" file="GeneratorProperties.java">
+  <dependency className="jetbrains.mps.tool.common.GeneratorProperties">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.NumberFormatException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.common.IMessageFormat" file="IMessageFormat.java">
+  <dependency className="jetbrains.mps.tool.common.IMessageFormat">
     <classNode dependClassName="java.lang.CharSequence" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.common.JDOMUtil" file="JDOMUtil.java">
+  <dependency className="jetbrains.mps.tool.common.JDOMUtil">
     <classNode dependClassName="java.io.BufferedOutputStream" />
     <classNode dependClassName="java.io.CharArrayReader" />
     <classNode dependClassName="java.io.File" />
@@ -45,21 +45,21 @@
     <classNode dependClassName="org.xml.sax.InputSource" />
     <classNode dependClassName="org.xml.sax.SAXException" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.common.JavaCompilerProperties" file="JavaCompilerProperties.java">
+  <dependency className="jetbrains.mps.tool.common.JavaCompilerProperties">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.common.MpsRunnerProperties" file="MpsRunnerProperties.java">
+  <dependency className="jetbrains.mps.tool.common.MpsRunnerProperties">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.common.RepositoryDescriptor" file="RepositoryDescriptor.java">
+  <dependency className="jetbrains.mps.tool.common.RepositoryDescriptor">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.common.Script" file="Script.java">
+  <dependency className="jetbrains.mps.tool.common.Script">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.io.IOException" />
@@ -83,7 +83,7 @@
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jdom.JDOMException" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.common.ScriptData" file="ScriptData.java">
+  <dependency className="jetbrains.mps.tool.common.ScriptData">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
@@ -96,10 +96,10 @@
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.jdom.Element" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.common.ScriptProperties" file="ScriptProperties.java">
+  <dependency className="jetbrains.mps.tool.common.ScriptProperties">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.common.TeamCityMessageFormat" file="TeamCityMessageFormat.java">
+  <dependency className="jetbrains.mps.tool.common.TeamCityMessageFormat">
     <classNode dependClassName="java.lang.CharSequence" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

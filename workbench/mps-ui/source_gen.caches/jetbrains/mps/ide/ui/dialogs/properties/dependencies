@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.ModelProperties" file="ModelProperties.java">
+  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.ModelProperties">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" file="StateUtil.java">
+  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.StateUtil">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />

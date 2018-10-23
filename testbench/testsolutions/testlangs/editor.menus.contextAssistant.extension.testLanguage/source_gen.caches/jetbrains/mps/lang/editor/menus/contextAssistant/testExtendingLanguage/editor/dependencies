@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.Child_MoreDefaultActions" file="Child_MoreDefaultActions.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.Child_MoreDefaultActions">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.Child_MoreNamedActions" file="Child_MoreNamedActions.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.Child_MoreNamedActions">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.DefaultMenuContribution" file="DefaultMenuContribution.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.DefaultMenuContribution">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -80,7 +80,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -101,7 +101,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.Extras" file="Extras.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.Extras">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -131,10 +131,10 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.IconContainer" file="IconContainer.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.IconContainer">
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.NamedMenuContribution" file="NamedMenuContribution.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.NamedMenuContribution">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -158,7 +158,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.Parameterized" file="Parameterized.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.Parameterized">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />

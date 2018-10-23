@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcspersistence.SNodeFactory" file="SNodeFactory.java">
+  <dependency className="jetbrains.mps.vcspersistence.SNodeFactory">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.InterfaceSNode" />
     <classNode dependClassName="jetbrains.mps.smodel.LazySNode" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="jetbrains.mps.util.InternUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.vcspersistence.VCSPersistenceSupport" file="VCSPersistenceSupport.java">
+  <dependency className="jetbrains.mps.vcspersistence.VCSPersistenceSupport">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.InputStreamReader" />
@@ -65,7 +65,7 @@
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.helpers.DefaultHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.vcspersistence.VCSPersistenceUtil" file="VCSPersistenceUtil.java">
+  <dependency className="jetbrains.mps.vcspersistence.VCSPersistenceUtil">
     <classNode dependClassName="java.io.ByteArrayInputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />

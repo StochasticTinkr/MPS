@@ -22,7 +22,6 @@ import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -30,8 +29,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
@@ -115,40 +112,6 @@ public class SModelOperations {
 
   public static boolean isReadOnly(SModel model) {
     return model.isReadOnly();
-  }
-
-  /**
-   * All languages visible for the model, including imported and languages they extend
-   * @deprecated 'visible' is vague, whether it's module dependencies or used languages; use SLanguage instead of Language; replace with <code>new SLanguageHierarchy(SModelOperations.getAllLanguageImports()).getExtended()</code>
-   * MPS 3.4 note: despite being deprecated for 1.5 years to date, there are uses of the method. Those in actions are likely to fade away with
-   * new generated code (RT aspects), others deserve attention of the change architect (i.e. accessory models vs language runtime).
-   */
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static List<Language> getLanguages(SModel model) {
-    // in use in mbeddr
-    ArrayList<Language> languages = new ArrayList<>();
-    SRepository repository = model.getRepository();
-    if (repository == null) {
-      Logger.getLogger(SModelOperations.class).error("SModelOperations.getLanguages() is deprecated and scheduled for removal. Moreover, its use for detached (not in a repository) model is illegitimate");
-      // FIXME there still might be uses with detached models, that's why I have to resort to global instance for now.
-      repository = MPSModuleRepository.getInstance();
-//      throw new IllegalArgumentException("Can't figure out modules for languages of a detached model. Context repository missing");
-    }
-    LanguageRegistry languageRegistry = LanguageRegistry.getInstance(repository);
-
-    for (SLanguage lang : new SLanguageHierarchy(languageRegistry, SModelOperations.getAllLanguageImports(model)).getExtended()) {
-      final SModuleReference sourceModuleRef = lang.getSourceModuleReference();
-      if (sourceModuleRef == null) {
-        continue;
-      }
-      final SModule sourceModule = sourceModuleRef.resolve(repository);
-      if (sourceModule instanceof Language) {
-        languages.add((Language) sourceModule);
-      }
-    }
-    return languages;
   }
 
   /**

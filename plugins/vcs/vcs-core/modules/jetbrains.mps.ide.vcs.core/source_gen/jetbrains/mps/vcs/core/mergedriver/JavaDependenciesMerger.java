@@ -51,7 +51,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
   }
   private static void copyDependencies(ModelDependencies from, ModelDependencies to) throws JavaDependenciesMerger.MergeException {
     for (RootDependencies fromRootDep : Sequence.fromIterable(from.getDependencies())) {
-      RootDependencies toRootDep = to.getDependency(fromRootDep.getFileName());
+      RootDependencies toRootDep = to.getDependency(fromRootDep.getClassName());
       if (toRootDep == null) {
         to.addDependencies(fromRootDep);
       } else {
@@ -67,7 +67,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
     SetSequence.fromSet(dependNodes).addSequence(SetSequence.fromSet(rd2.getDependencies()));
     Set<String> extendsNodes = rd1.getExtends();
     SetSequence.fromSet(extendsNodes).addSequence(SetSequence.fromSet(rd2.getExtends()));
-    return new RootDependencies(rd1.getClassName(), rd1.getFileName(), SetSequence.fromSet(dependNodes).toListSequence(), SetSequence.fromSet(extendsNodes).toListSequence());
+    return new RootDependencies(rd1.getClassName(), SetSequence.fromSet(dependNodes).toListSequence(), SetSequence.fromSet(extendsNodes).toListSequence());
   }
   private static class MergeException extends Exception {
     private MergeException(String msg) {

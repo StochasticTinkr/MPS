@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_AddText_Test" file="LabelWithBrackets_AddText_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_AddText_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_Click_Test" file="LabelWithBrackets_Click_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_Click_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -26,7 +26,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_RemoveText_Test" file="LabelWithBrackets_RemoveText_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_RemoveText_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_Undo_Test" file="LabelWithBrackets_Undo_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_Undo_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_Update_Test" file="LabelWithBrackets_Update_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_Update_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

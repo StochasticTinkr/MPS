@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.TypesystemDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.typeof_LeftOperand_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.typeof_RightOperand_InferenceRule" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.typeof_LeftOperand_InferenceRule" file="typeof_LeftOperand_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.typeof_LeftOperand_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -31,7 +31,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.typeof_RightOperand_InferenceRule" file="typeof_RightOperand_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.typeof_RightOperand_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />

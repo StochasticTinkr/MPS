@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguageInternal.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithConstantValue_Intention" file="ReplaceWithConstantValue_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithConstantValue_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -36,7 +36,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithFieldReference_Intention" file="ReplaceWithFieldReference_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithFieldReference_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -54,7 +54,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.intentions.add_parameter_to_InternalClassifierType_Intention" file="add_parameter_to_InternalClassifierType_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.intentions.add_parameter_to_InternalClassifierType_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.workflow.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.build.workflow.typesystem.check_BwfTaskLibrary_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.typesystem.check_BwfTaskLibrary_NonTypesystemRule" file="check_BwfTaskLibrary_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.workflow.typesystem.check_BwfTaskLibrary_NonTypesystemRule">
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfTaskLibrary__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />

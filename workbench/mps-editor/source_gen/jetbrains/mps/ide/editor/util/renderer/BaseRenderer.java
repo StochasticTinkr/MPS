@@ -11,12 +11,11 @@ import com.intellij.util.ui.UIUtil;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 
-public abstract class BaseRenderer<T> extends ColoredListCellRenderer {
+public abstract class BaseRenderer<T> extends ColoredListCellRenderer<T> {
   protected BaseRenderer() {
   }
 
-  protected void customizeCellRenderer(JList list, Object value, int i, boolean index, boolean selected) {
-    T element = (T) value;
+  protected void customizeCellRenderer(JList<? extends T> list, T element, int i, boolean index, boolean selected) {
     String name = getElementText(element);
     Color color = list.getForeground();
     SimpleTextAttributes nameAttributes = new SimpleTextAttributes(Font.PLAIN, color);

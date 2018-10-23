@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="analyzers.test.tests.ExtendingNullableAnalyzer_Test" file="ExtendingNullableAnalyzer_Test.java">
+  <dependency className="analyzers.test.tests.ExtendingNullableAnalyzer_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="analyzers.test.tests.TestAnalyzerWithConstructorParameters_Test" file="TestAnalyzerWithConstructorParameters_Test.java">
+  <dependency className="analyzers.test.tests.TestAnalyzerWithConstructorParameters_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="analyzers.test.tests.TestAnalyzerWithModeSpecified_Test" file="TestAnalyzerWithModeSpecified_Test.java">
+  <dependency className="analyzers.test.tests.TestAnalyzerWithModeSpecified_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="analyzers.test.tests.TestProgramWithModeSpecified_Test" file="TestProgramWithModeSpecified_Test.java">
+  <dependency className="analyzers.test.tests.TestProgramWithModeSpecified_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Arrays" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test" file="TestProgramWithMoreSpecificMode_Test.java">
+  <dependency className="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Arrays" />

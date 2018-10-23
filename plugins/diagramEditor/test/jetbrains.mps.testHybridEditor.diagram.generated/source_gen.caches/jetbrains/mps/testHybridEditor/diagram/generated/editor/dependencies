@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockActionMap" file="BlockActionMap.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockActionMap">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockInstance_diagram_Editor" file="BlockInstance_diagram_Editor.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockInstance_diagram_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockInstance_diagram_EditorBuilder_a" file="BlockInstance_diagram_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockInstance_diagram_EditorBuilder_a">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
@@ -72,7 +72,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Block_diagram_Editor" file="Block_diagram_Editor.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Block_diagram_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -84,7 +84,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Block_diagram_EditorBuilder_a" file="Block_diagram_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Block_diagram_EditorBuilder_a">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
@@ -124,7 +124,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorActionMap" file="ConnectorActionMap.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorActionMap">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -134,7 +134,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorInstance_diagram_Editor" file="ConnectorInstance_diagram_Editor.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorInstance_diagram_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -146,7 +146,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorInstance_diagram_EditorBuilder_a" file="ConnectorInstance_diagram_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorInstance_diagram_EditorBuilder_a">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Set" />
@@ -177,7 +177,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Connector_diagram_Editor" file="Connector_diagram_Editor.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Connector_diagram_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -189,7 +189,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Connector_diagram_EditorBuilder_a" file="Connector_diagram_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Connector_diagram_EditorBuilder_a">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
@@ -219,7 +219,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.DefaultDiagramElementActionMap_0" file="DefaultDiagramElementActionMap_0.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.DefaultDiagramElementActionMap_0">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -229,7 +229,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor" file="Diagram_diagram_Editor.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -241,7 +241,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_EditorBuilder_a" file="Diagram_diagram_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_EditorBuilder_a">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -303,7 +303,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
@@ -321,7 +321,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.InputPort_diagram_Editor" file="InputPort_diagram_Editor.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.InputPort_diagram_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -333,7 +333,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.InputPort_diagram_EditorBuilder_a" file="InputPort_diagram_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.InputPort_diagram_EditorBuilder_a">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
@@ -358,7 +358,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyActionGroup" file="MyActionGroup.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyActionGroup">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -376,7 +376,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyBlockCreationAction" file="MyBlockCreationAction.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyBlockCreationAction">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -396,7 +396,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteToggleAction" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyConnectorCreationAction" file="MyConnectorCreationAction.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyConnectorCreationAction">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -423,7 +423,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteToggleAction" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyMainActionGroup" file="MyMainActionGroup.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyMainActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
@@ -445,7 +445,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.OutputPort_diagram_Editor" file="OutputPort_diagram_Editor.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.OutputPort_diagram_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -457,7 +457,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.OutputPort_diagram_EditorBuilder_a" file="OutputPort_diagram_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.OutputPort_diagram_EditorBuilder_a">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />

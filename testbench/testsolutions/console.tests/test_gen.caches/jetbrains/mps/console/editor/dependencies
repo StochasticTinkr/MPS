@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.console.editor.CommandSelectAllTest_Test" file="CommandSelectAllTest_Test.java">
+  <dependency className="jetbrains.mps.console.editor.CommandSelectAllTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.console.editor.EmptyConsoleCommentTest_Test" file="EmptyConsoleCommentTest_Test.java">
+  <dependency className="jetbrains.mps.console.editor.EmptyConsoleCommentTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.console.editor.EmptyConsoleSelectAllTest_Test" file="EmptyConsoleSelectAllTest_Test.java">
+  <dependency className="jetbrains.mps.console.editor.EmptyConsoleSelectAllTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_Editor" file="CellModel_Checkbox_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -8,7 +8,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a" file="CellModel_Checkbox_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -58,7 +58,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_InspectorBuilder_a" file="CellModel_Checkbox_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -71,14 +71,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Platform_Editor" file="CheckboxUI_Platform_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Platform_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Platform_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Platform_EditorBuilder_a" file="CheckboxUI_Platform_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Platform_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -87,7 +87,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Text_Editor" file="CheckboxUI_Text_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Text_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Text_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Text_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -95,7 +95,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Text_EditorBuilder_a" file="CheckboxUI_Text_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Text_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -104,7 +104,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Text_InspectorBuilder_a" file="CheckboxUI_Text_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.CheckboxUI_Text_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -140,7 +140,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_Editor" />
@@ -155,7 +155,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.FormsStylePack_StyleSheet" file="FormsStylePack_StyleSheet.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.FormsStylePack_StyleSheet">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.KEYWORD_StyleKey" />
@@ -165,14 +165,14 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.StubCellModel_Checkbox_Editor" file="StubCellModel_Checkbox_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.StubCellModel_Checkbox_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.editor.StubCellModel_Checkbox_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.editor.StubCellModel_Checkbox_EditorBuilder_a" file="StubCellModel_Checkbox_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.editor.StubCellModel_Checkbox_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.state.DebugSession" file="DebugSession.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.state.DebugSession">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Set" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.state.JavaUiStateImpl" file="JavaUiStateImpl.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.state.JavaUiStateImpl">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.JavaUiState" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.state.PausedJavaUiState" file="PausedJavaUiState.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.state.PausedJavaUiState">
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
     <classNode dependClassName="com.sun.jdi.StackFrame" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
@@ -67,7 +67,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.state.JavaUiStateImpl" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.state.RunningJavaUiState" file="RunningJavaUiState.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.state.RunningJavaUiState">
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractUiState" />
@@ -76,7 +76,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.state.JavaUiStateImpl" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.state.SessionStopDisposer" file="SessionStopDisposer.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.state.SessionStopDisposer">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />

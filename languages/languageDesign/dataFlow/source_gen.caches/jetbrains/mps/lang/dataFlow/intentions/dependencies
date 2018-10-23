@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.dataFlow.intentions.AddMayBeUnreachable_Intention" file="AddMayBeUnreachable_Intention.java">
+  <dependency className="jetbrains.mps.lang.dataFlow.intentions.AddMayBeUnreachable_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -20,7 +20,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.dataFlow.intentions.AddModeToDataFlowBuilder_Intention" file="AddModeToDataFlowBuilder_Intention.java">
+  <dependency className="jetbrains.mps.lang.dataFlow.intentions.AddModeToDataFlowBuilder_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -38,7 +38,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.dataFlow.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="jetbrains.mps.lang.dataFlow.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -56,7 +56,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.dataFlow.intentions.RemoveMayBeUnreachable_Intention" file="RemoveMayBeUnreachable_Intention.java">
+  <dependency className="jetbrains.mps.lang.dataFlow.intentions.RemoveMayBeUnreachable_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />

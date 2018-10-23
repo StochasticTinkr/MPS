@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.resolve.IResolver" file="IResolver.java">
+  <dependency className="jetbrains.mps.resolve.IResolver">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.resolve.ReferenceResolverUtils" file="ReferenceResolverUtils.java">
+  <dependency className="jetbrains.mps.resolve.ReferenceResolverUtils">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.resolve.ResolverComponent" file="ResolverComponent.java">
+  <dependency className="jetbrains.mps.resolve.ResolverComponent">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -40,7 +40,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.resolve.ScopeResolver" file="ScopeResolver.java">
+  <dependency className="jetbrains.mps.resolve.ScopeResolver">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />

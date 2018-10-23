@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debug.evaluation.transform.tests.DebuggerInitializer" file="DebuggerInitializer.java">
+  <dependency className="jetbrains.mps.debug.evaluation.transform.tests.DebuggerInitializer">
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.MirrorUtilImpl" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorBuilderImpl" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test" file="TransformationUtil_Complex_Test.java">
+  <dependency className="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test" file="TransformationUtil_Expressions_Test.java">
+  <dependency className="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Throwable" />

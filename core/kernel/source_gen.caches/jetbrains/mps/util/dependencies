@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.util.DisjointSets" file="DisjointSets.java">
+  <dependency className="jetbrains.mps.util.DisjointSets">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.HashMap" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
   </dependency>
-  <dependency className="jetbrains.mps.util.Icon2IconResourceAdapter_Deprecated" file="Icon2IconResourceAdapter_Deprecated.java">
+  <dependency className="jetbrains.mps.util.Icon2IconResourceAdapter_Deprecated">
     <classNode dependClassName="java.awt.Graphics2D" />
     <classNode dependClassName="java.awt.image.BufferedImage" />
     <classNode dependClassName="java.io.ByteArrayInputStream" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.IconResource" />
   </dependency>
-  <dependency className="jetbrains.mps.util.LongestCommonSubsequenceFinder" file="LongestCommonSubsequenceFinder.java">
+  <dependency className="jetbrains.mps.util.LongestCommonSubsequenceFinder">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Math" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.util.ModuleNameUtil" file="ModuleNameUtil.java">
+  <dependency className="jetbrains.mps.util.ModuleNameUtil">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.DevKit" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
@@ -57,7 +57,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.util.SNodeCompare" file="SNodeCompare.java">
+  <dependency className="jetbrains.mps.util.SNodeCompare">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
@@ -79,7 +79,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
-  <dependency className="jetbrains.mps.util.SNodeOperations" file="SNodeOperations.java">
+  <dependency className="jetbrains.mps.util.SNodeOperations">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -113,7 +113,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
   </dependency>
-  <dependency className="jetbrains.mps.util.StringsIO" file="StringsIO.java">
+  <dependency className="jetbrains.mps.util.StringsIO">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="java.io.FileNotFoundException" />

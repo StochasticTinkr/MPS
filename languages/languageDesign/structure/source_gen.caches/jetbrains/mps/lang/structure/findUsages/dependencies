@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.AbstractConceptWrap" file="AbstractConceptWrap.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.AbstractConceptWrap">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.api.AbstractConceptLike" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptAncestors_Finder" file="ConceptAncestors_Finder.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptAncestors_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -33,7 +33,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptDescendants_Finder" file="ConceptDescendants_Finder.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptDescendants_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder" file="ConceptInstances_Finder.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -85,7 +85,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptMRO" file="ConceptMRO.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptMRO">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
@@ -96,7 +96,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.C3StarMethodResolutionOrder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptWrap" file="ConceptWrap.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptWrap">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -111,7 +111,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.api.AbstractConceptLike" />
     <classNode extendsClassName="jetbrains.mps.lang.structure.findUsages.AbstractConceptWrap" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.DerivedConcepts_Finder" file="DerivedConcepts_Finder.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.DerivedConcepts_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedList" />
@@ -134,7 +134,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.DerivedInterfaceConcepts_Finder" file="DerivedInterfaceConcepts_Finder.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.DerivedInterfaceConcepts_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedList" />
@@ -157,7 +157,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder" file="ExactConceptInstances_Finder.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
@@ -176,7 +176,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" file="FindUsagesDescriptor.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -198,7 +198,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.ImplementingConcepts_Finder" file="ImplementingConcepts_Finder.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ImplementingConcepts_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -218,7 +218,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.InterfaceConceptWrap" file="InterfaceConceptWrap.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.InterfaceConceptWrap">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -230,7 +230,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.api.AbstractConceptLike" />
     <classNode extendsClassName="jetbrains.mps.lang.structure.findUsages.AbstractConceptWrap" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder" file="LinkInstances_Finder.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -255,7 +255,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" file="NodeUsages_Finder.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
@@ -275,7 +275,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.PropertyInstances_Finder" file="PropertyInstances_Finder.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.PropertyInstances_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
@@ -294,7 +294,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.findUsages.StraightDescendants_Finder" file="StraightDescendants_Finder.java">
+  <dependency className="jetbrains.mps.lang.structure.findUsages.StraightDescendants_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />

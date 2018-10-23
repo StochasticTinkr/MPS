@@ -56,7 +56,7 @@ import java.util.SortedSet;
   public E getOrAdd(E e) {
     final int i = Collections.binarySearch(myData, e);
     if (i < 0) {
-      myData.add(i + 1, e);
+      myData.add(-i - 1, e);
       return e;
     } else {
       return myData.get(i);
@@ -69,7 +69,7 @@ import java.util.SortedSet;
   public boolean add(E e) {
     final int i = Collections.binarySearch(myData, e);
     if (i < 0) {
-      myData.add(i+1, e);
+      myData.add(-i - 1, e);
       return true;
     } else {
       return false;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.forms.constraints.CellModel_Checkbox_Constraints" file="CellModel_Checkbox_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.constraints.CellModel_Checkbox_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.constraints.CheckboxUI_Text_Constraints" file="CheckboxUI_Text_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.constraints.CheckboxUI_Text_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClassItem__BehaviorDescriptor" />
@@ -46,7 +46,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.constraints.CellModel_Checkbox_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.constraints.CheckboxUI_Text_Constraints" />

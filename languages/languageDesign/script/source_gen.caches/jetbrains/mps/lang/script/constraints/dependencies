@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.script.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.script.constraints.MigrationScriptPart_Constraints" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints" file="DirectMethodSpecification_Constraints.java">
+  <dependency className="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -42,11 +42,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.constraints.MigrationScriptPart_Constraints" file="MigrationScriptPart_Constraints.java">
+  <dependency className="jetbrains.mps.lang.script.constraints.MigrationScriptPart_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints" file="PullUpMethod_Constraints.java">
+  <dependency className="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

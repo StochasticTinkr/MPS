@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsThisExpression_Constraints" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints" file="EvaluatorsSuperMethodCall_Constraints.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsThisExpression_Constraints" file="EvaluatorsThisExpression_Constraints.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsThisExpression_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -67,7 +67,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints" file="LowLevelVariableReference_Constraints.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_AddressReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_Address_InferenceRule" />
@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_ZipOperation_InferenceRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_AddressReference_InferenceRule" file="typeof_AddressReference_InferenceRule.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_AddressReference_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -22,7 +22,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_Address_InferenceRule" file="typeof_Address_InferenceRule.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_Address_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -33,7 +33,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_ItemReference_InferenceRule" file="typeof_ItemReference_InferenceRule.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_ItemReference_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -44,7 +44,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_Item_InferenceRule" file="typeof_Item_InferenceRule.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_Item_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -56,7 +56,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_SomeForm_InferenceRule" file="typeof_SomeForm_InferenceRule.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_SomeForm_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -69,7 +69,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_StreetOperation_InferenceRule" file="typeof_StreetOperation_InferenceRule.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_StreetOperation_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -81,7 +81,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_ZipOperation_InferenceRule" file="typeof_ZipOperation_InferenceRule.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.typesystem.typeof_ZipOperation_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

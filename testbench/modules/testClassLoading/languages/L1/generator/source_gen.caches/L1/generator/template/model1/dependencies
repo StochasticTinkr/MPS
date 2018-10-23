@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="L1.generator.template.model1.Util1" file="Util1.java">
+  <dependency className="L1.generator.template.model1.Util1">
     <classNode dependClassName="java.lang.System" />
   </dependency>
 </dependenciesRoot>

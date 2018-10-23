@@ -16,6 +16,7 @@
 package jetbrains.mps.validation;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.errors.CheckerRegistry;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -31,8 +32,7 @@ public class ValidationSettings implements CoreComponent {
 
   private IModelValidationSettings myModelValidationSettings;
 
-  public ValidationSettings() {
-  }
+  private CheckerRegistry myCheckerRegistry = new CheckerRegistry();
 
   @Override
   public void init() {
@@ -50,6 +50,10 @@ public class ValidationSettings implements CoreComponent {
 
   public IModelValidationSettings getModelValidationSettings() {
     return myModelValidationSettings;
+  }
+
+  public CheckerRegistry getCheckerRegistry() {
+    return myCheckerRegistry;
   }
 
   public void setModelValidationSettings(@Nullable IModelValidationSettings settings) {

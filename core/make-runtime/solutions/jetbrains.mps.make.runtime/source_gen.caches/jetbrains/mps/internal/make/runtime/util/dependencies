@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.internal.make.runtime.util.DefaultHName" file="DefaultHName.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.util.DefaultHName">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -8,7 +8,7 @@
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode extendsClassName="jetbrains.mps.make.IHName" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.util.DeltaKey" file="DeltaKey.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.util.DeltaKey">
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="org.jetbrains.mps.annotations.Immutable" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.util.DeltaReconciler" file="DeltaReconciler.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.util.DeltaReconciler">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Iterator" />
@@ -29,7 +29,7 @@
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDeltaVisitor" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.util.DirUtil" file="DirUtil.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.util.DirUtil">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -44,7 +44,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.util.FilesDelta" file="FilesDelta.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.util.FilesDelta">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
@@ -66,7 +66,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.make.delta.IDelta" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.util.FqName" file="FqName.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.util.FqName">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -74,7 +74,7 @@
     <classNode dependClassName="java.util.regex.Matcher" />
     <classNode dependClassName="java.util.regex.Pattern" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.util.FutureValue" file="FutureValue.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.util.FutureValue">
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.concurrent.ExecutionException" />
@@ -82,7 +82,7 @@
     <classNode dependClassName="java.util.concurrent.TimeoutException" />
     <classNode extendsClassName="java.util.concurrent.Future" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer" file="GraphAnalyzer.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
@@ -97,7 +97,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.util.SmartWrapper" file="SmartWrapper.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.util.SmartWrapper">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -108,7 +108,7 @@
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector" file="StaleFilesCollector.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />

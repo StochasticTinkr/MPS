@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.heating.tabular.editor.ChangeEvent_tabular_Editor" file="ChangeEvent_tabular_Editor.java">
+  <dependency className="jetbrains.mps.samples.heating.tabular.editor.ChangeEvent_tabular_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.heating.tabular.editor.ChangeEvent_tabular_EditorBuilder_a" file="ChangeEvent_tabular_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.heating.tabular.editor.ChangeEvent_tabular_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_ApplySideTransforms" file="DailyPlan_ApplySideTransforms.java">
+  <dependency className="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_ApplySideTransforms">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -68,7 +68,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_Editor" file="DailyPlan_tabular_Editor.java">
+  <dependency className="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -80,7 +80,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_EditorBuilder_a" file="DailyPlan_tabular_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FieldStyleClass" />
@@ -121,7 +121,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.heating.tabular.editor.DeleteCustomizeInTabular" file="DeleteCustomizeInTabular.java">
+  <dependency className="jetbrains.mps.samples.heating.tabular.editor.DeleteCustomizeInTabular">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
@@ -133,7 +133,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.heating.tabular.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.samples.heating.tabular.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -157,7 +157,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.heating.tabular.editor.HeatingPlan_tabular_Editor" file="HeatingPlan_tabular_Editor.java">
+  <dependency className="jetbrains.mps.samples.heating.tabular.editor.HeatingPlan_tabular_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -169,7 +169,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.heating.tabular.editor.HeatingPlan_tabular_EditorBuilder_a" file="HeatingPlan_tabular_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.heating.tabular.editor.HeatingPlan_tabular_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -211,7 +211,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.heating.tabular.editor.Slot_tabular_Editor" file="Slot_tabular_Editor.java">
+  <dependency className="jetbrains.mps.samples.heating.tabular.editor.Slot_tabular_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -223,7 +223,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.heating.tabular.editor.Slot_tabular_EditorBuilder_a" file="Slot_tabular_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.heating.tabular.editor.Slot_tabular_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />

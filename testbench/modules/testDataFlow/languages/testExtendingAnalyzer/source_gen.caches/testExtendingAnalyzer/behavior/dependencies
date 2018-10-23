@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testExtendingAnalyzer.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="testExtendingAnalyzer.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="testExtendingAnalyzer.behavior.NullUnsafeDotExpression__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="testExtendingAnalyzer.behavior.NullSafeDotExpression__BehaviorDescriptor" file="NullSafeDotExpression__BehaviorDescriptor.java">
+  <dependency className="testExtendingAnalyzer.behavior.NullSafeDotExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="testExtendingAnalyzer.behavior.NullUnsafeDotExpression__BehaviorDescriptor" file="NullUnsafeDotExpression__BehaviorDescriptor.java">
+  <dependency className="testExtendingAnalyzer.behavior.NullUnsafeDotExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

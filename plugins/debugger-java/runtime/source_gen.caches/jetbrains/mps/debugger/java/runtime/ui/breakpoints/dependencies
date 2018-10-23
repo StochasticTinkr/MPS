@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel" file="ChooseFromStubsByNameModel.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel">
     <classNode dependClassName="com.intellij.ui.ListCellRendererWrapper" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -30,7 +30,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.NavigationParticipant" />
     <classNode extendsClassName="com.intellij.ide.util.gotoByName.ChooseByNameModel" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog" file="ExceptionChooserDialog.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.HeadlessException" />
     <classNode dependClassName="java.lang.Override" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.StubsClassChooserDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.breakpoints.StubsClassChooserDialog" file="StubsClassChooserDialog.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.breakpoints.StubsClassChooserDialog">
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNameModel" />
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />

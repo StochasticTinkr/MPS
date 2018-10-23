@@ -44,22 +44,14 @@ import static jetbrains.mps.errors.item.NodeFlavouredItem.FLAVOUR_NODE;
  * <li> Create a subclass of {@code FlavouredItem} with the method returning the flavour value
  * <li> Create a flavour object (instance of {@code ReportItemFlavour}) knowing about that method
  * <li> Call that method to get flavour value from an instance of dedicated subclass
- * <li> Call {@code ReportItemFlavour.tryToGet()} instead of checking via {@code instanceof} because
- * there can exists cases where flavour is present ({@code ReportItemFlavour.canGet()}) in item that is not an instance of that subclass.
- * For example, this can hold for {@code DelegatingFlavouredItem}.
+ * <li> Call {@code ReportItemFlavour.tryToGet()} instead of checking via {@code instanceof}.
  * </ul>
  */
 public interface FlavouredItem {
 
   Set<ReportItemFlavour<?, ?>> getIdFlavours();
 
-  interface DelegatingFlavouredItem extends FlavouredItem {
-    FlavouredItem getDelegate();
-  }
-
   abstract class ReportItemFlavour<I extends FlavouredItem, T> {
-    @Deprecated
-    @ToRemove(version = 2018.3)
     public abstract T get(I reportItem);
     @NotNull
     protected abstract Class<I> getApplicableClass();
@@ -70,24 +62,22 @@ public interface FlavouredItem {
       if (getApplicableClass().isAssignableFrom(reportItem.getClass())) {
         return get((I) reportItem);
       }
-      if (reportItem instanceof DelegatingFlavouredItem) {
-        return tryToGet(((DelegatingFlavouredItem) reportItem).getDelegate());
-      }
       return null;
     }
     public boolean canGet(FlavouredItem reportItem) {
-      if (getApplicableClass().isAssignableFrom(reportItem.getClass())) {
-        return true;
-      }
-      if (reportItem instanceof DelegatingFlavouredItem) {
-        return canGet(((DelegatingFlavouredItem) reportItem).getDelegate());
-      }
-      return false;
+      return getApplicableClass().isAssignableFrom(reportItem.getClass());
     }
     @Override
     public final String toString() {
       return getId();
     }
+    public String serialize(T value) {
+      return value.toString();
+    }
+  }
+
+  interface SerializingFlavour<I extends FlavouredItem, T> {
+    T deserialize(String s);
   }
 
   class FlavourPredicate implements Predicate<FlavouredItem> {
@@ -97,7 +87,12 @@ public interface FlavouredItem {
     }
     @Override
     public boolean test(FlavouredItem flavouredItem) {
-      return flavouredItem.toPredicate(flavouredItem.getIdFlavours()).myFlavours.entrySet().containsAll(myFlavours.entrySet());
+      HashMap<String, String> flavoursToTest = new HashMap<>(myFlavours);
+      flavoursToTest.remove(ReportItem.FLAVOUR_MESSAGE.getId());
+      return flavouredItem.toPredicate(flavouredItem.getIdFlavours()).myFlavours.entrySet().containsAll(flavoursToTest.entrySet());
+    }
+    public Map<String, String> getFlavours() {
+      return new HashMap<>(myFlavours);
     }
     public static FlavourPredicate deserialize(String s) {
       Map<String, String> flavours = new ListMap<>();
@@ -127,10 +122,11 @@ public interface FlavouredItem {
   default FlavourPredicate toPredicate(Set<ReportItemFlavour<?, ?>> idFlavours) {
     Map<String, String> flavours = new HashMap<>();
     idFlavours.remove(FLAVOUR_NODE);
+    idFlavours.add(ReportItem.FLAVOUR_MESSAGE);
     for (ReportItemFlavour flavour : idFlavours) {
       Object value = flavour.tryToGet(this);
       if (value != null) {
-        flavours.put(flavour.getId(), value.toString());
+        flavours.put(flavour.getId(), flavour.serialize(value));
       }
     }
     return new FlavourPredicate(flavours);

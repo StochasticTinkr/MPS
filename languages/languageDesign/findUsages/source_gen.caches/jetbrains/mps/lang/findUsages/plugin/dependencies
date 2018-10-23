@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.findUsages.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.plugin.ExtensionDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -8,10 +8,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.plugin.IconContainer" file="IconContainer.java">
+  <dependency className="jetbrains.mps.lang.findUsages.plugin.IconContainer">
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.plugin.LanguageAspectsEP_extension" file="LanguageAspectsEP_extension.java">
+  <dependency className="jetbrains.mps.lang.findUsages.plugin.LanguageAspectsEP_extension">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

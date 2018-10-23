@@ -2904,8 +2904,13 @@
           <node concept="2GrKxI" id="42ljTcHmp6N" role="2Gsz3X">
             <property role="TrG5h" value="child" />
           </node>
-          <node concept="37vLTw" id="2BHiRxgmCn2" role="2GsD0m">
-            <ref role="3cqZAo" node="42ljTcHmp6G" resolve="node" />
+          <node concept="2OqwBi" id="5fPzS2nLPz$" role="2GsD0m">
+            <node concept="37vLTw" id="2BHiRxgmCn2" role="2Oq$k0">
+              <ref role="3cqZAo" node="42ljTcHmp6G" resolve="node" />
+            </node>
+            <node concept="liA8E" id="5fPzS2nLQqQ" role="2OqNvi">
+              <ref role="37wK5l" to="7e8u:~MPSTreeNode.getChildren():java.util.List" resolve="getChildren" />
+            </node>
           </node>
           <node concept="3clFbS" id="42ljTcHmp6P" role="2LFqv$">
             <node concept="3clFbF" id="42ljTcHmp6R" role="3cqZAp">

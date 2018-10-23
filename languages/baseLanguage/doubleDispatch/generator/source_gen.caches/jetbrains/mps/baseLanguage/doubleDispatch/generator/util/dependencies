@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.generator.util.DispatchGenUtil" file="DispatchGenUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.generator.util.DispatchGenUtil">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />

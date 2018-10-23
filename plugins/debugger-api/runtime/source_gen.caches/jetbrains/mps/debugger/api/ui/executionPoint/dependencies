@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.api.ui.executionPoint.CurrentLinePositionComponent" file="CurrentLinePositionComponent.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.executionPoint.CurrentLinePositionComponent">
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
@@ -20,7 +20,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent" file="InTextPositionComponent.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.editor.Document" />
     <classNode dependClassName="com.intellij.openapi.editor.ex.MarkupModelEx" />

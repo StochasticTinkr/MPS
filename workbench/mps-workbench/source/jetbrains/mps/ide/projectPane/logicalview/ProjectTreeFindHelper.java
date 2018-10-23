@@ -149,7 +149,7 @@ public final class ProjectTreeFindHelper {
         if (!tn.isInitialized()) {
           tn.init();
         }
-        for (MPSTreeNode node : tn) {
+        for (MPSTreeNode node : tn.getChildren()) {
           queue.addLast(node);
         }
       }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsAspect_Constraints" file="BuildMpsAspect_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsAspect_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsLayout_ModuleJars_Constraints" file="BuildMpsLayout_ModuleJars_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsLayout_ModuleJars_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsLayout_ModuleSources_Constraints" file="BuildMpsLayout_ModuleSources_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsLayout_ModuleSources_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsLayout_ModuleXml_Constraints" file="BuildMpsLayout_ModuleXml_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsLayout_ModuleXml_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -81,7 +81,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsLayout_PluginDescriptor_Constraints" file="BuildMpsLayout_PluginDescriptor_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsLayout_PluginDescriptor_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -101,7 +101,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsLayout_Plugin_Constraints" file="BuildMpsLayout_Plugin_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMpsLayout_Plugin_Constraints">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -128,7 +128,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Branding_Constraints" file="BuildMps_Branding_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Branding_Constraints">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -145,7 +145,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_DevKitExportLanguage_Constraints" file="BuildMps_DevKitExportLanguage_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_DevKitExportLanguage_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -165,7 +165,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_DevKitExportSolution_Constraints" file="BuildMps_DevKitExportSolution_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_DevKitExportSolution_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -185,7 +185,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_DevKitRef_Constraints" file="BuildMps_DevKitRef_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_DevKitRef_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -205,7 +205,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_DevKit_Constraints" file="BuildMps_DevKit_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_DevKit_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -224,7 +224,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Generator_Constraints" file="BuildMps_Generator_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Generator_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -243,7 +243,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Group_Constraints" file="BuildMps_Group_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Group_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -262,7 +262,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginDependency_Constraints" file="BuildMps_IdeaPluginDependency_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginDependency_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -282,7 +282,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginGroupCustomModule_Constraints" file="BuildMps_IdeaPluginGroupCustomModule_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginGroupCustomModule_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -306,7 +306,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginGroup_Constraints" file="BuildMps_IdeaPluginGroup_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginGroup_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -331,7 +331,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginModule_Constraints" file="BuildMps_IdeaPluginModule_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginModule_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -356,7 +356,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPlugin_Constraints" file="BuildMps_IdeaPlugin_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPlugin_Constraints">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -371,7 +371,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Language_Constraints" file="BuildMps_Language_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Language_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -390,7 +390,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyExtendLanguage_Constraints" file="BuildMps_ModuleDependencyExtendLanguage_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyExtendLanguage_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
@@ -419,7 +419,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyOnDevKit_Constraints" file="BuildMps_ModuleDependencyOnDevKit_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyOnDevKit_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -439,7 +439,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyOnJavaModule_Constraints" file="BuildMps_ModuleDependencyOnJavaModule_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyOnJavaModule_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -459,7 +459,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyOnModule_Constraints" file="BuildMps_ModuleDependencyOnModule_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyOnModule_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -479,7 +479,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyUseLanguage_Constraints" file="BuildMps_ModuleDependencyUseLanguage_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyUseLanguage_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -499,7 +499,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleSolutionRuntime_Constraints" file="BuildMps_ModuleSolutionRuntime_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_ModuleSolutionRuntime_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -519,7 +519,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Solution_Constraints" file="BuildMps_Solution_Constraints.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Solution_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -538,7 +538,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.mps.constraints.BuildMpsAspect_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.mps.constraints.BuildMpsLayout_ModuleJars_Constraints" />

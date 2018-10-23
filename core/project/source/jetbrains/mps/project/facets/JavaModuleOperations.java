@@ -17,14 +17,9 @@ package jetbrains.mps.project.facets;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.vfs.IFile;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.reloading.ClassPathCachingFacility;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -38,8 +33,6 @@ import java.util.stream.Collectors;
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
 public class JavaModuleOperations {
-  private static final Logger LOG = LogManager.getLogger(JavaModuleOperations.class);
-
   /**
    * By default use includeSelfModulesClassesGen == false
    * In case of incremental compilation in ModuleMaker use includeSelfModulesClassesGen == true
@@ -56,11 +49,6 @@ public class JavaModuleOperations {
     return result;
   }
 
-  @SafeVarargs
-  public static <T extends SModule> Set<String> collectCompileClasspath(T... modules) {
-    return collectCompileClasspath(new HashSet<SModule>(Arrays.asList(modules)), true);
-  }
-
   public static Set<String> collectExecuteClasspath(Set<? extends SModule> modules) {
     Set<String> result = new HashSet<>();
     for (SModule module : getJavaModules(new GlobalModuleDependenciesManager(modules).getModules(Deptype.EXECUTE))) {
@@ -72,22 +60,6 @@ public class JavaModuleOperations {
   @SafeVarargs
   public static <T extends SModule> Set<String> collectExecuteClasspath(T... modules) {
     return collectExecuteClasspath(new HashSet<SModule>(Arrays.asList(modules)));
-  }
-
-  /**
-   * @param classPath a sequence of paths to classes
-   * @param caller debug info describing the caller of this method
-   * @return constructed CompositeClassPathItem
-   */
-  public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String caller) {
-    CompositeClassPathItem classPathItem = new CompositeClassPathItem();
-
-    for (String path : classPath) {
-      IClassPathItem pathItem = ClassPathCachingFacility.getInstance().createFromPath(path, caller);
-      classPathItem.add(pathItem);
-    }
-
-    return classPathItem;
   }
 
   private static Iterable<SModule> getJavaModules(Collection<? extends SModule> modules) {

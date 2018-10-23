@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.smodel.query.test.migrationTest.MigrateScopes" file="MigrateScopes.java">
+  <dependency className="jetbrains.mps.lang.smodel.query.test.migrationTest.MigrateScopes">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />

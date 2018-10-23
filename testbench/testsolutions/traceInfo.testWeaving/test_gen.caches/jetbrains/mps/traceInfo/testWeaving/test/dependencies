@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.traceInfo.testWeaving.test.TestUtil" file="TestUtil.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeaving.test.TestUtil">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test" file="TestWeaving_Test.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />

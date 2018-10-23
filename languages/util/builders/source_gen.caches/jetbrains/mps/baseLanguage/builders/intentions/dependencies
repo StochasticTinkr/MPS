@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.builders.intentions.ChangeAbstract_Intention" file="ChangeAbstract_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.builders.intentions.ChangeAbstract_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -17,7 +17,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.builders.intentions.ChangeLeaf_Intention" file="ChangeLeaf_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.builders.intentions.ChangeLeaf_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -34,7 +34,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.builders.intentions.ChangeRoot_Intention" file="ChangeRoot_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.builders.intentions.ChangeRoot_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -51,7 +51,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.builders.intentions.ConvertToBeanBuilder_Intention" file="ConvertToBeanBuilder_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.builders.intentions.ConvertToBeanBuilder_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -71,7 +71,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.builders.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.builders.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />

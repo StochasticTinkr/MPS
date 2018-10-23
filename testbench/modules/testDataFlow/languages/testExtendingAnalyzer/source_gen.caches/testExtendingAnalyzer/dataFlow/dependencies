@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testExtendingAnalyzer.dataFlow.DataFlowAspectDescriptorImpl" file="DataFlowAspectDescriptorImpl.java">
+  <dependency className="testExtendingAnalyzer.dataFlow.DataFlowAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -11,7 +11,7 @@
     <classNode dependClassName="testExtendingAnalyzer.dataFlow.NullSafeRule" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptorBase" />
   </dependency>
-  <dependency className="testExtendingAnalyzer.dataFlow.NullSafeRule" file="NullSafeRule.java">
+  <dependency className="testExtendingAnalyzer.dataFlow.NullSafeRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.plugin.AddModuleToVcs_Action" file="AddModuleToVcs_Action.java">
+  <dependency className="jetbrains.mps.vcs.plugin.AddModuleToVcs_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
@@ -21,7 +21,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.CompareTransientModels_Action" file="CompareTransientModels_Action.java">
+  <dependency className="jetbrains.mps.vcs.plugin.CompareTransientModels_Action">
     <classNode dependClassName="com.intellij.diff.DiffManager" />
     <classNode dependClassName="com.intellij.diff.contents.DiffContent" />
     <classNode dependClassName="com.intellij.diff.requests.DiffRequest" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.IgnoreModuleInVcs_Action" file="IgnoreModuleInVcs_Action.java">
+  <dependency className="jetbrains.mps.vcs.plugin.IgnoreModuleInVcs_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
@@ -69,13 +69,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.MakeFromChangesView_ActionGroup" file="MakeFromChangesView_ActionGroup.java">
+  <dependency className="jetbrains.mps.vcs.plugin.MakeFromChangesView_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action" file="MakeOrRebuildModelsFromChangeList_Action.java">
+  <dependency className="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -112,11 +112,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.ModuleVcsActions_ActionGroup" file="ModuleVcsActions_ActionGroup.java">
+  <dependency className="jetbrains.mps.vcs.plugin.ModuleVcsActions_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" file="ReRunMergeFromBackup_Action.java">
+  <dependency className="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action">
     <classNode dependClassName="com.intellij.diff.DiffManager" />
     <classNode dependClassName="com.intellij.diff.DiffRequestFactory" />
     <classNode dependClassName="com.intellij.diff.InvalidDiffRequestException" />
@@ -164,11 +164,11 @@
     <classNode dependClassName="org.xml.sax.InputSource" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup" file="ShowDiffWithCurrRev_ActionGroup.java">
+  <dependency className="jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" file="ShowDifferencesWithModelOnDisk_Action.java">
+  <dependency className="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action">
     <classNode dependClassName="com.intellij.diff.DiffManager" />
     <classNode dependClassName="com.intellij.diff.contents.DiffContent" />
     <classNode dependClassName="com.intellij.diff.requests.DiffRequest" />
@@ -195,7 +195,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.ShowDiffererenceWithCurrentRevision_Action" file="ShowDiffererenceWithCurrentRevision_Action.java">
+  <dependency className="jetbrains.mps.vcs.plugin.ShowDiffererenceWithCurrentRevision_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -218,7 +218,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.ShowNodeDifference_Action" file="ShowNodeDifference_Action.java">
+  <dependency className="jetbrains.mps.vcs.plugin.ShowNodeDifference_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -236,7 +236,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.TestMergeAction_Action" file="TestMergeAction_Action.java">
+  <dependency className="jetbrains.mps.vcs.plugin.TestMergeAction_Action">
     <classNode dependClassName="com.intellij.diff.DiffManager" />
     <classNode dependClassName="com.intellij.diff.DiffRequestFactory" />
     <classNode dependClassName="com.intellij.diff.InvalidDiffRequestException" />
@@ -274,11 +274,11 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup" file="VCSModelActions_ActionGroup.java">
+  <dependency className="jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" file="Vcs_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />

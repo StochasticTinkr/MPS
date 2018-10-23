@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.closures.scripts.ScriptsDescriptor" file="ScriptsDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.scripts.ScriptsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -10,7 +10,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.ScriptAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.scripts.UpdateClosuresRuntime_MigrationScript" file="UpdateClosuresRuntime_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.scripts.UpdateClosuresRuntime_MigrationScript">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.scripts.UpdateRuntimeUtil_MigrationScript" file="UpdateRuntimeUtil_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.scripts.UpdateRuntimeUtil_MigrationScript">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

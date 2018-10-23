@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.constraints.migration.AnnotateRefPresentationQueriesAsMigrated" file="AnnotateRefPresentationQueriesAsMigrated.java">
+  <dependency className="jetbrains.mps.lang.constraints.migration.AnnotateRefPresentationQueriesAsMigrated">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.migration.ConstraintCanBeFunctions_NodeToConcept" file="ConstraintCanBeFunctions_NodeToConcept.java">
+  <dependency className="jetbrains.mps.lang.constraints.migration.ConstraintCanBeFunctions_NodeToConcept">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -69,7 +69,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.migration.ConstraintScopeFactory_NodeToConcept" file="ConstraintScopeFactory_NodeToConcept.java">
+  <dependency className="jetbrains.mps.lang.constraints.migration.ConstraintScopeFactory_NodeToConcept">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -91,13 +91,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.migration.ConstraintsMigrationProblem" file="ConstraintsMigrationProblem.java">
+  <dependency className="jetbrains.mps.lang.constraints.migration.ConstraintsMigrationProblem">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.migration.ConstraintsMigrationUtil" file="ConstraintsMigrationUtil.java">
+  <dependency className="jetbrains.mps.lang.constraints.migration.ConstraintsMigrationUtil">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -119,13 +119,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.migration.DefaultPresentationQueryNotMigrated" file="DefaultPresentationQueryNotMigrated.java">
+  <dependency className="jetbrains.mps.lang.constraints.migration.DefaultPresentationQueryNotMigrated">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.migration.MigrationDescriptor" file="MigrationDescriptor.java">
+  <dependency className="jetbrains.mps.lang.constraints.migration.MigrationDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -137,13 +137,13 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.migration.PresentationQueryMigratedWithProblems" file="PresentationQueryMigratedWithProblems.java">
+  <dependency className="jetbrains.mps.lang.constraints.migration.PresentationQueryMigratedWithProblems">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.migration.UseDevkit" file="UseDevkit.java">
+  <dependency className="jetbrains.mps.lang.constraints.migration.UseDevkit">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.function.Predicate" />

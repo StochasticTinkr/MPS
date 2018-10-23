@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.generator.editor.tests.Test_PropertyMacroApplicable_Test" file="Test_PropertyMacroApplicable_Test.java">
+  <dependency className="jetbrains.mps.generator.editor.tests.Test_PropertyMacroApplicable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.generator.editor.tests.Test_ReferenceMacroApplicable_Test" file="Test_ReferenceMacroApplicable_Test.java">
+  <dependency className="jetbrains.mps.generator.editor.tests.Test_ReferenceMacroApplicable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

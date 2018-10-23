@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.constraints.BTestCase_Constraints" file="BTestCase_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.constraints.BTestCase_Constraints">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.constraints.BTestCase_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.constraints.TestMethod_Constraints" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.constraints.TestMethod_Constraints" file="TestMethod_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.constraints.TestMethod_Constraints">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

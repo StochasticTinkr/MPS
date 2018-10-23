@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.console.ideCommands.migration.MigrationDescriptor" file="MigrationDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.migration.MigrationDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.migration.MigrationScript_1" file="MigrationScript_1.java">
+  <dependency className="jetbrains.mps.console.ideCommands.migration.MigrationScript_1">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

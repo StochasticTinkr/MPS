@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters" file="JavaHighlighters.java">
+  <dependency className="jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Deque" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverriddenMethodEditorMessage" file="OverriddenMethodEditorMessage.java">
+  <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverriddenMethodEditorMessage">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.lang.Override" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.popup.AbstractOverrideEditorMessage" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker" file="OverrideMethodsChecker.java">
+  <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker">
     <classNode dependClassName="com.intellij.openapi.project.IndexNotReadyException" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -83,7 +83,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEventProcessingEditorChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverridingMethodEditorMessage" file="OverridingMethodEditorMessage.java">
+  <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverridingMethodEditorMessage">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.lang.Override" />
@@ -96,7 +96,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.popup.AbstractOverrideEditorMessage" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage" file="SubclassedClassifierEditorMessage.java">
+  <dependency className="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.lang.Override" />
@@ -115,7 +115,7 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.highlighters.ToDoHighlighter" file="ToDoHighlighter.java">
+  <dependency className="jetbrains.mps.ide.java.platform.highlighters.ToDoHighlighter">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.LinkedHashSet" />
@@ -137,7 +137,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEventProcessingEditorChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.highlighters.ToDoMessage" file="ToDoMessage.java">
+  <dependency className="jetbrains.mps.ide.java.platform.highlighters.ToDoMessage">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Override" />

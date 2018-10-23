@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.generator.tests.fork.GenPlanForkTest" file="GenPlanForkTest.java">
+  <dependency className="jetbrains.mps.generator.tests.fork.GenPlanForkTest">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.lang.test.generator.rt.TransformHelper" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

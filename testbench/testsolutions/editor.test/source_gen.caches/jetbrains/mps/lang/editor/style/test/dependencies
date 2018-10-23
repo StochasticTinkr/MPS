@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyDefaultIfUnknownTest_Test" file="FontFamilyDefaultIfUnknownTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyDefaultIfUnknownTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyDefaultTest_Test" file="FontFamilyDefaultTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyDefaultTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyFromQueryTest_Test" file="FontFamilyFromQueryTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyFromQueryTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyGenerationIfUnknown_Test" file="FontFamilyGenerationIfUnknown_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyGenerationIfUnknown_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralPreviewTest_Test" file="FontFamilyLiteralPreviewTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralPreviewTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -79,7 +79,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralWarningTest_Test" file="FontFamilyLiteralWarningTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralWarningTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -96,7 +96,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilySimpleTest_Test" file="FontFamilySimpleTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilySimpleTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -111,7 +111,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemPreviewTest_Test" file="FontFamilyStyleClassItemPreviewTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemPreviewTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -129,7 +129,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemWarningTest_Test" file="FontFamilyStyleClassItemWarningTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemWarningTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -146,7 +146,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.FontStyleInheritanceTest_Test" file="FontStyleInheritanceTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.FontStyleInheritanceTest_Test">
     <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
@@ -165,7 +165,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributeInheritanceTest_Test" file="StyleAttributeInheritanceTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributeInheritanceTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -186,7 +186,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributeNonInheritanceTest_Test" file="StyleAttributeNonInheritanceTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributeNonInheritanceTest_Test">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
@@ -207,7 +207,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributePriorityTest_Test" file="StyleAttributePriorityTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributePriorityTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -228,7 +228,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributeSetHiddenThenUnhideTest_Test" file="StyleAttributeSetHiddenThenUnhideTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributeSetHiddenThenUnhideTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -249,7 +249,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributeThreeLayerTest_Test" file="StyleAttributeThreeLayerTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributeThreeLayerTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -270,7 +270,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributeUnapplyTest_Test" file="StyleAttributeUnapplyTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.StyleAttributeUnapplyTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -291,7 +291,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.StyleOfSingleRoleChild_Test" file="StyleOfSingleRoleChild_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.StyleOfSingleRoleChild_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -303,7 +303,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.URLStyleFunctionTest_Test" file="URLStyleFunctionTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.URLStyleFunctionTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -318,7 +318,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.style.test.URLStyleSimpleTest_Test" file="URLStyleSimpleTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.style.test.URLStyleSimpleTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

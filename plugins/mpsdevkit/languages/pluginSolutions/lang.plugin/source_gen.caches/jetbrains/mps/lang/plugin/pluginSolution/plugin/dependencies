@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.GeneratePluginSolution_Action" file="GeneratePluginSolution_Action.java">
+  <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.GeneratePluginSolution_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.PluginSolution_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.pluginSolution.plugin.GeneratePluginSolution_Action" />
@@ -36,15 +36,15 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.pluginSolution.plugin.SortKeymapMembers_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.ProjectPaneProjectAddition_ActionGroup" file="ProjectPaneProjectAddition_ActionGroup.java">
+  <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.ProjectPaneProjectAddition_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.RefactoringAdditions_ActionGroup" file="RefactoringAdditions_ActionGroup.java">
+  <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.RefactoringAdditions_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.SortKeymapMembers_Action" file="SortKeymapMembers_Action.java">
+  <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.SortKeymapMembers_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 package jetbrains.mps.idea.core.module;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 
 /**
  * evgeny, 12/22/12
@@ -44,9 +43,5 @@ public class CachedRepositoryUtil {
       }
     }
     return sb.toString();
-  }
-
-  public static String getSignature(FolderModelRootBase modelRoot) {
-    return modelRoot.getType() + ":" + modelRoot.getPath();
   }
 }

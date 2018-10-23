@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.DeleteNoWait" file="DeleteNoWait.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.DeleteNoWait">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -40,7 +40,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ThreadSafe_Editor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_Contribution" file="NoWaitTransforms_Contribution.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_Contribution">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -65,7 +65,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor" file="NoWaitTransforms_ParallelFor.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -94,7 +94,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor_ext_3" file="NoWaitTransforms_ParallelFor_ext_3.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor_ext_3">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -123,14 +123,14 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NonThreadSafeClass_Editor" file="NonThreadSafeClass_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NonThreadSafeClass_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.NonThreadSafeClass_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NonThreadSafeClass_EditorBuilder_a" file="NonThreadSafeClass_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NonThreadSafeClass_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -146,7 +146,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_Editor" file="ParallelFor_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -154,7 +154,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_InspectorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_EditorBuilder_a" file="ParallelFor_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -191,7 +191,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.RemoveThreadPoolReference" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_InspectorBuilder_a" file="ParallelFor_InspectorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -213,7 +213,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_TransformationMenu" file="ParallelFor_TransformationMenu.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_TransformationMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -241,7 +241,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_ext_3_RTransform_Menu" file="ParallelFor_ext_3_RTransform_Menu.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_ext_3_RTransform_Menu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -267,14 +267,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelLoopVariable_Editor" file="ParallelLoopVariable_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelLoopVariable_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ParallelLoopVariable_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelLoopVariable_EditorBuilder_a" file="ParallelLoopVariable_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ParallelLoopVariable_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -301,7 +301,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.RemoveThreadPoolReference" file="RemoveThreadPoolReference.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.RemoveThreadPoolReference">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
@@ -313,7 +313,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms" file="ThreadPoolTransforms.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -348,7 +348,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms_ext_3" file="ThreadPoolTransforms_ext_3.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms_ext_3">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -383,14 +383,14 @@
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPool_Editor" file="ThreadPool_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPool_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPool_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPool_EditorBuilder_a" file="ThreadPool_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPool_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -420,14 +420,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadSafe_Editor" file="ThreadSafe_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadSafe_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ThreadSafe_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadSafe_EditorBuilder_a" file="ThreadSafe_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.ThreadSafe_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

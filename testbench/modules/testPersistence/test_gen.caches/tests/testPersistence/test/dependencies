@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="tests.testPersistence.test.CollectCallback" file="CollectCallback.java">
+  <dependency className="tests.testPersistence.test.CollectCallback">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
@@ -10,7 +10,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.persistence.IndexAwareModelFactory" />
   </dependency>
-  <dependency className="tests.testPersistence.test.TestOutputFilter" file="TestOutputFilter.java">
+  <dependency className="tests.testPersistence.test.TestOutputFilter">
     <classNode dependClassName="java.io.ByteArrayInputStream" />
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
     <classNode dependClassName="java.io.PrintStream" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.apache.log4j.spi.Filter" />
     <classNode dependClassName="org.apache.log4j.spi.LoggingEvent" />
   </dependency>
-  <dependency className="tests.testPersistence.test.TestPersistenceHelper" file="TestPersistenceHelper.java">
+  <dependency className="tests.testPersistence.test.TestPersistenceHelper">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="tests.testPersistence.test.TestOutputFilter" />
   </dependency>
-  <dependency className="tests.testPersistence.test.TestPersistence_Test" file="TestPersistence_Test.java">
+  <dependency className="tests.testPersistence.test.TestPersistence_Test">
     <classNode dependClassName="java.io.ByteArrayInputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />

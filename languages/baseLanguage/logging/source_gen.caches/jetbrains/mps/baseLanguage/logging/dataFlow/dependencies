@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.DataFlowAspectDescriptorImpl" file="DataFlowAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.DataFlowAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -16,28 +16,28 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.LogLowLevelStatement_DataFlow" file="LogLowLevelStatement_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.LogLowLevelStatement_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.LogStatement_DataFlow" file="LogStatement_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.LogStatement_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.MsgStatement_DataFlow" file="MsgStatement_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.MsgStatement_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.PrintStatement_DataFlow" file="PrintStatement_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.PrintStatement_DataFlow">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

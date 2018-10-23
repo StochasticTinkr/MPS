@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.test.util.RunStateEnum" file="RunStateEnum.java" />
-  <dependency className="jetbrains.mps.lang.test.util.TestInProcessRunState" file="TestInProcessRunState.java">
+  <dependency className="jetbrains.mps.lang.test.util.RunStateEnum" />
+  <dependency className="jetbrains.mps.lang.test.util.TestInProcessRunState">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.concurrent.atomic.AtomicReference" />
     <classNode dependClassName="jetbrains.mps.lang.test.util.RunStateEnum" />

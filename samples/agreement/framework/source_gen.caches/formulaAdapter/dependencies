@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="formulaAdapter.FeeMoney" file="FeeMoney.java">
+  <dependency className="formulaAdapter.FeeMoney">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="mf.Money" />
     <classNode dependClassName="postingrules.MonetaryEvent" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="formulaAdapter.MoneyAdapter" file="MoneyAdapter.java">
+  <dependency className="formulaAdapter.MoneyAdapter">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -15,27 +15,27 @@
     <classNode dependClassName="mf.Money" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="formulaAdapter.MoneyAddOperation" file="MoneyAddOperation.java">
+  <dependency className="formulaAdapter.MoneyAddOperation">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="mf.Money" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="formulaAdapter.MoneyConstant" file="MoneyConstant.java">
+  <dependency className="formulaAdapter.MoneyConstant">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="mf.Currency" />
     <classNode dependClassName="mf.Money" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="formulaAdapter.MoneyMultiplyOperation" file="MoneyMultiplyOperation.java">
+  <dependency className="formulaAdapter.MoneyMultiplyOperation">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="mf.Money" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="formulaAdapter.PostingRule_Formula" file="PostingRule_Formula.java">
+  <dependency className="formulaAdapter.PostingRule_Formula">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
     <classNode dependClassName="mf.Money" />
@@ -43,35 +43,35 @@
     <classNode dependClassName="postingrules.AccountingEvent" />
     <classNode extendsClassName="postingrules.PostingRule" />
   </dependency>
-  <dependency className="formulaAdapter.QuantityConstant" file="QuantityConstant.java">
+  <dependency className="formulaAdapter.QuantityConstant">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="mf.Quantity" />
     <classNode dependClassName="mf.Unit" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="formulaAdapter.QuantityGreaterThanOperation" file="QuantityGreaterThanOperation.java">
+  <dependency className="formulaAdapter.QuantityGreaterThanOperation">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="mf.Quantity" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="formulaAdapter.UsageDouble" file="UsageDouble.java">
+  <dependency className="formulaAdapter.UsageDouble">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="postingrules.Usage" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="formulaAdapter.UsageQuantity" file="UsageQuantity.java">
+  <dependency className="formulaAdapter.UsageQuantity">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="mf.Quantity" />
     <classNode dependClassName="postingrules.Usage" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="formulaAdapter.ValueDouble" file="ValueDouble.java">
+  <dependency className="formulaAdapter.ValueDouble">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -80,7 +80,7 @@
     <classNode dependClassName="postingrules.AccountingEvent" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="formulaAdapter.ValueQuantity" file="ValueQuantity.java">
+  <dependency className="formulaAdapter.ValueQuantity">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

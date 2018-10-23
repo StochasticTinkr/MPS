@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.core.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+  <dependency className="jetbrains.mps.lang.core.plugin.ExtensionDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.plugin.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.core.plugin.FacetAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.FacetManifest" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacetManifest" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.MakeAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.plugin.FacetManifest" file="FacetManifest.java">
+  <dependency className="jetbrains.mps.lang.core.plugin.FacetManifest">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacetManifest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.plugin.Generate_Facet" file="Generate_Facet.java">
+  <dependency className="jetbrains.mps.lang.core.plugin.Generate_Facet">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -88,7 +88,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.plugin.ModuleStaleFileManager" file="ModuleStaleFileManager.java">
+  <dependency className="jetbrains.mps.lang.core.plugin.ModuleStaleFileManager">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -118,14 +118,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.plugin.ResourceDeltaCollector" file="ResourceDeltaCollector.java">
+  <dependency className="jetbrains.mps.lang.core.plugin.ResourceDeltaCollector">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.plugin.RetainedUtil" file="RetainedUtil.java">
+  <dependency className="jetbrains.mps.lang.core.plugin.RetainedUtil">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -149,14 +149,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleFacet" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.plugin.TextGenOutcomeResource" file="TextGenOutcomeResource.java">
+  <dependency className="jetbrains.mps.lang.core.plugin.TextGenOutcomeResource">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.text.TextGenResult" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.plugin.TextGen_Facet" file="TextGen_Facet.java">
+  <dependency className="jetbrains.mps.lang.core.plugin.TextGen_Facet">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />

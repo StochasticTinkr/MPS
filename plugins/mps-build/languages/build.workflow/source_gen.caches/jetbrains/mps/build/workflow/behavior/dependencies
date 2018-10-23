@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfAntTaskBundleDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfAntTaskDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfCustomMacro__BehaviorDescriptor" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfAntTaskBundleDeclaration__BehaviorDescriptor" file="BwfAntTaskBundleDeclaration__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfAntTaskBundleDeclaration__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfAntTaskDeclaration__BehaviorDescriptor" file="BwfAntTaskDeclaration__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfAntTaskDeclaration__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -69,7 +69,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfCustomMacro__BehaviorDescriptor" file="BwfCustomMacro__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfCustomMacro__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -91,7 +91,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfJavaDependency__BehaviorDescriptor" file="BwfJavaDependency__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfJavaDependency__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -108,7 +108,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfJavaModuleReference__BehaviorDescriptor" file="BwfJavaModuleReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfJavaModuleReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -125,7 +125,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfJavaModule__BehaviorDescriptor" file="BwfJavaModule__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfJavaModule__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -150,7 +150,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfMacroListImport__BehaviorDescriptor" file="BwfMacroListImport__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfMacroListImport__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -172,7 +172,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfMacro__BehaviorDescriptor" file="BwfMacro__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfMacro__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -194,7 +194,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration__BehaviorDescriptor" file="BwfPathDeclaration__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -218,7 +218,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfProjectPart__BehaviorDescriptor" file="BwfProjectPart__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfProjectPart__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -240,7 +240,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfProject__BehaviorDescriptor" file="BwfProject__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfProject__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -265,7 +265,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfSubTask__BehaviorDescriptor" file="BwfSubTask__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfSubTask__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -290,7 +290,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfTaskLibrary__BehaviorDescriptor" file="BwfTaskLibrary__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfTaskLibrary__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -317,7 +317,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfTaskPart__BehaviorDescriptor" file="BwfTaskPart__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfTaskPart__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -346,7 +346,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.behavior.BwfTask__BehaviorDescriptor" file="BwfTask__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.workflow.behavior.BwfTask__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />

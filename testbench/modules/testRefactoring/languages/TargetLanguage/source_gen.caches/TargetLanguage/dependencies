@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="TargetLanguage.Language" file="Language.java">
+  <dependency className="TargetLanguage.Language">
     <classNode dependClassName="TargetLanguage.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="TargetLanguage.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="TargetLanguage.editor.EditorAspectDescriptorImpl" />

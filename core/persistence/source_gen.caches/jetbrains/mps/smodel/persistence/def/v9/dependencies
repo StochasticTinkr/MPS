@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v9.AnnotationInfoReader9Handler" file="AnnotationInfoReader9Handler.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v9.AnnotationInfoReader9Handler">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v9.ModelReader9Handler" file="ModelReader9Handler.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v9.ModelReader9Handler">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Integer" />

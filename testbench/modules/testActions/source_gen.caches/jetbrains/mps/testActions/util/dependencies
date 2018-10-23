@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testActions.util.FlyingActionsFinder" file="FlyingActionsFinder.java">
+  <dependency className="jetbrains.mps.testActions.util.FlyingActionsFinder">
     <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />
     <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />

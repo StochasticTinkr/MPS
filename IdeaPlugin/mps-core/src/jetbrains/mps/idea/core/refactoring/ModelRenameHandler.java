@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
-import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.model.ModelDeleteHelper;
 import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -55,7 +55,6 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class ModelRenameHandler implements RenameHandler {
   private static final Logger LOG = Logger.getInstance(ModelRenameHandler.class);
-  private static final String CACHES_SUFFIX = ".caches";
 
   @Override
   public boolean isAvailableOnDataContext(DataContext dataContext) {
@@ -148,12 +147,7 @@ public class ModelRenameHandler implements RenameHandler {
     }
 
     // TODO for 3.5: check rewritten code and remove if(true)
-    final IFile outputRoot = SModuleOperations.getOutputRoot(sModel);
-    if (outputRoot == null) {
-      return;
-    }
-    outputRoot.delete();
-    outputRoot.getFileSystem().getFile(outputRoot.toPath() + CACHES_SUFFIX).delete();
+    new ModelDeleteHelper(sModel).removeGeneratedArtifacts();
   }
 
   private static abstract class MyInputValidator implements InputValidatorEx {

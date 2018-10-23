@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder" file="AspectMethodsFinder.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -23,7 +23,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.Finder" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder" file="ConstantFinder.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
@@ -33,7 +33,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageConceptsUsagesFinder" file="LanguageConceptsUsagesFinder.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageConceptsUsagesFinder">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -58,7 +58,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder" file="MappingConfigFinder.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

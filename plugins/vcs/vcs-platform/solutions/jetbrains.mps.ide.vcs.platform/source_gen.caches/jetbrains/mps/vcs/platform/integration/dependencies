@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil" file="ConflictingModelsUtil.java">
+  <dependency className="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -55,7 +55,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings" file="ConflictingModelsWarnings.java">
+  <dependency className="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcsHelper" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -79,7 +79,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.warningPanel.EditorWarningsProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.integration.MPSVcsHelper" file="MPSVcsHelper.java">
+  <dependency className="jetbrains.mps.vcs.platform.integration.MPSVcsHelper">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
@@ -100,13 +100,13 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.integration.ModelDiffContent" file="ModelDiffContent.java">
+  <dependency className="jetbrains.mps.vcs.platform.integration.ModelDiffContent">
     <classNode dependClassName="com.intellij.openapi.fileTypes.FileType" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="com.intellij.diff.contents.DiffContentBase" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.integration.ModelDiffTool" file="ModelDiffTool.java">
+  <dependency className="jetbrains.mps.vcs.platform.integration.ModelDiffTool">
     <classNode dependClassName="com.intellij.diff.DiffContext" />
     <classNode dependClassName="com.intellij.diff.requests.ContentDiffRequest" />
     <classNode dependClassName="com.intellij.diff.requests.DiffRequest" />
@@ -117,7 +117,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.diff.FrameDiffTool" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.integration.ModelDiffViewer" file="ModelDiffViewer.java">
+  <dependency className="jetbrains.mps.vcs.platform.integration.ModelDiffViewer">
     <classNode dependClassName="com.intellij.diff.DiffContext" />
     <classNode dependClassName="com.intellij.diff.contents.DiffContent" />
     <classNode dependClassName="com.intellij.diff.contents.DocumentContent" />
@@ -157,7 +157,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="com.intellij.diff.FrameDiffTool" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.integration.ModelMergeTool" file="ModelMergeTool.java">
+  <dependency className="jetbrains.mps.vcs.platform.integration.ModelMergeTool">
     <classNode dependClassName="com.intellij.diff.contents.DiffContent" />
     <classNode dependClassName="com.intellij.diff.contents.FileContent" />
     <classNode dependClassName="com.intellij.diff.merge.MergeContext" />
@@ -174,7 +174,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.diff.merge.MergeTool" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.integration.ModelMergeViewer" file="ModelMergeViewer.java">
+  <dependency className="jetbrains.mps.vcs.platform.integration.ModelMergeViewer">
     <classNode dependClassName="com.intellij.diff.contents.DiffContent" />
     <classNode dependClassName="com.intellij.diff.contents.DocumentContent" />
     <classNode dependClassName="com.intellij.diff.contents.FileContent" />
@@ -227,7 +227,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="com.intellij.diff.merge.MergeTool" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener" file="ModelStorageProblemsListener.java">
+  <dependency className="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener">
     <classNode dependClassName="com.intellij.diff.DiffDialogHints" />
     <classNode dependClassName="com.intellij.diff.DiffManager" />
     <classNode dependClassName="com.intellij.diff.contents.DiffContent" />
@@ -296,7 +296,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler" file="OptimizeImportsCheckinHandler.java">
+  <dependency className="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -334,7 +334,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="com.intellij.openapi.vcs.checkin.CheckinHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.integration.PluginVCSManager" file="PluginVCSManager.java">
+  <dependency className="jetbrains.mps.vcs.platform.integration.PluginVCSManager">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.extapi.module.SRepositoryRegistry" />

@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("comment", "comment", false, "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"), new ConceptEditorHintImpl("reflectiveEditor", "reflectiveEditor", false, "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("comment", "comment", false, "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"), new ConceptEditorHintImpl("reflectiveEditor", "reflectiveEditor", false, "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"), new ConceptEditorHintImpl("ShowSuppressedErrors", "Show Suppressed Errors", true, "jetbrains.mps.lang.core.editor.SuppressedHints.ShowSuppressedErrors"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
@@ -45,7 +45,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       case 8:
         return Collections.<ConceptEditor>singletonList(new SideTransformInfo_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new SuppressErrorsAnnotation_Editor());
+        return Arrays.asList(new ConceptEditor[]{new SuppressErrorsAnnotation_Editor(), new SuppressErrorsAnnotation_ShowSuppressedErrors_Editor()});
       default:
     }
     return Collections.<ConceptEditor>emptyList();

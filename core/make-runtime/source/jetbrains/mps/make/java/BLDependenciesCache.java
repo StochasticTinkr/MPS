@@ -21,7 +21,6 @@ import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.cache.ParseFacility;
 import jetbrains.mps.generator.cache.ParseFacility.Parser;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.jetbrains.annotations.NotNull;
@@ -67,39 +66,13 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
 
     @Override
     public void generateCache(GenerationStatus status, StreamHandler handler) {
-      final ModelDependencies deps = updateUnchanged(status);
+      final ModelDependencies deps = myDepsNew;
       if (deps == null) {
         return;
       }
       update(status.getInputModel(), deps);
 
       handler.saveStream(getCacheFileName(), deps.toXml());
-    }
-
-    private ModelDependencies updateUnchanged(GenerationStatus genStatus) {
-      if (myDepsNew == null) {
-        return null;
-      }
-      // update modelDependencies and generationDependencies
-      ModelDependencies modelDep = null;
-
-      // process unchanged files
-      SModel originalInputModel = genStatus.getInputModel();
-      for (GenerationRootDependencies rdep : genStatus.getDependencies().getUnchangedDependencies()) {
-        for (String filename : rdep.getFiles()) {
-          // re-register baseLanguage dependencies
-          if (modelDep == null) {
-            modelDep = BLDependenciesCache.this.get(originalInputModel);
-          }
-          if (modelDep != null) {
-            RootDependencies root = modelDep.getDependency(filename);
-            if (root != null) {
-              myDepsNew.replaceRoot(root);
-            }
-          }
-        }
-      }
-      return myDepsNew;
     }
   }
 

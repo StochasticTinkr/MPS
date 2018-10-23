@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,11 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.vfs.FileSystemEvent;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-
-import java.util.Arrays;
-import java.util.Collections;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 /**
  * This data source allows to track a backup file along with the main file.
@@ -96,19 +93,6 @@ public class FileWithBackupDataSource extends FileDataSource {
     super.stopListening();
   }
 
-  @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    FileSystemListener backupFileListener = myBackupFileListener;
-    FileSystemListener parent = getParentListener();
-    if (backupFileListener != null && parent != null) {
-      return Arrays.asList(parent, backupFileListener);
-    }
-    if (parent != null) {
-      return Collections.singleton(parent);
-    }
-    return backupFileListener != null ? Collections.singleton(backupFileListener) : null;
-  }
-
   private class BackupFileListener implements FileSystemListener {
     private IFile path;
 
@@ -120,11 +104,6 @@ public class FileWithBackupDataSource extends FileDataSource {
     @Override
     public IFile getFileToListen() {
       return path;
-    }
-
-    @Override
-    public Iterable<FileSystemListener> getListenerDependencies() {
-      return null;
     }
 
     @Override

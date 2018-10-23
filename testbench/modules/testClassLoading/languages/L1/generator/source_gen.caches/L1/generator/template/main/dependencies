@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="L1.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
+  <dependency className="L1.generator.template.main.QueriesGenerated">
     <classNode dependClassName="L2.generator.template.model2.Util2" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TByteArrayListDecorator" file="TByteArrayListDecorator.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TByteArrayListDecorator">
     <classNode dependClassName="gnu.trove.TByteArrayList" />
     <classNode dependClassName="java.lang.Byte" />
     <classNode dependClassName="java.lang.Object" />
@@ -15,7 +15,7 @@
     <classNode extendsClassName="java.util.AbstractList" />
     <classNode extendsClassName="java.util.List" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TDoubleArrayListDecorator" file="TDoubleArrayListDecorator.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TDoubleArrayListDecorator">
     <classNode dependClassName="gnu.trove.TDoubleArrayList" />
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Object" />
@@ -30,7 +30,7 @@
     <classNode extendsClassName="java.util.AbstractList" />
     <classNode extendsClassName="java.util.List" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TFloatArrayListDecorator" file="TFloatArrayListDecorator.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TFloatArrayListDecorator">
     <classNode dependClassName="gnu.trove.TFloatArrayList" />
     <classNode dependClassName="java.lang.Float" />
     <classNode dependClassName="java.lang.Object" />
@@ -45,7 +45,7 @@
     <classNode extendsClassName="java.util.AbstractList" />
     <classNode extendsClassName="java.util.List" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TIntArrayListDecorator" file="TIntArrayListDecorator.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TIntArrayListDecorator">
     <classNode dependClassName="gnu.trove.TIntArrayList" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -60,7 +60,7 @@
     <classNode extendsClassName="java.util.AbstractList" />
     <classNode extendsClassName="java.util.List" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TLongArrayListDecorator" file="TLongArrayListDecorator.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TLongArrayListDecorator">
     <classNode dependClassName="gnu.trove.TLongArrayList" />
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.Object" />
@@ -75,7 +75,7 @@
     <classNode extendsClassName="java.util.AbstractList" />
     <classNode extendsClassName="java.util.List" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TShortArrayListDecorator" file="TShortArrayListDecorator.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.trove.runtime.TShortArrayListDecorator">
     <classNode dependClassName="gnu.trove.TShortArrayList" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

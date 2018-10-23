@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.console.actions.ClosureHoldingNodeUtil" file="ClosureHoldingNodeUtil.java">
+  <dependency className="jetbrains.mps.console.actions.ClosureHoldingNodeUtil">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.WeakHashMap" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action" file="ExecuteActionAttachedToCurrentNode_Action.java">
+  <dependency className="jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.console.actions.PasteOriginalNode_Action" file="PasteOriginalNode_Action.java">
+  <dependency className="jetbrains.mps.console.actions.PasteOriginalNode_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />

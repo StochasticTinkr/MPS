@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.refactoringTest.AddParameter_Test" file="AddParameter_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.AddParameter_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.AddThrowDeclaration_Test" file="AddThrowDeclaration_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.AddThrowDeclaration_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.BreakStatement_Test" file="BreakStatement_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.BreakStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -74,7 +74,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ChangeMethodName_Test" file="ChangeMethodName_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ChangeMethodName_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -98,7 +98,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ChangeMethodParametersForStatement_Test" file="ChangeMethodParametersForStatement_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ChangeMethodParametersForStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -125,7 +125,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ChangeParameterName_Test" file="ChangeParameterName_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ChangeParameterName_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -150,7 +150,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ChangeParameterType_Test" file="ChangeParameterType_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ChangeParameterType_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -176,7 +176,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ChangeParametersOrder_Test" file="ChangeParametersOrder_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ChangeParametersOrder_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -200,7 +200,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ChangeReturningType_Test" file="ChangeReturningType_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ChangeReturningType_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -224,7 +224,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ChangeSigantureOfInterface_Test" file="ChangeSigantureOfInterface_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ChangeSigantureOfInterface_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -248,7 +248,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ChangeSignatureOfStaticMethod_Test" file="ChangeSignatureOfStaticMethod_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ChangeSignatureOfStaticMethod_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -272,7 +272,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.CheckInlineCanBePerformed_Test" file="CheckInlineCanBePerformed_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.CheckInlineCanBePerformed_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -289,7 +289,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.CheckInlineWithThrow_Test" file="CheckInlineWithThrow_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.CheckInlineWithThrow_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -306,7 +306,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.CheckStaticVisibility_Test" file="CheckStaticVisibility_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.CheckStaticVisibility_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -323,7 +323,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.CheckVisibility_Test" file="CheckVisibility_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.CheckVisibility_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -340,7 +340,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ConceptFunctioParameterTest_Test" file="ConceptFunctioParameterTest_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ConceptFunctioParameterTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -360,7 +360,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousAbstractClassTest_Test" file="ConvertAnonymousAbstractClassTest_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousAbstractClassTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -382,7 +382,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousAbstractClassWithConstructorTest_Test" file="ConvertAnonymousAbstractClassWithConstructorTest_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousAbstractClassWithConstructorTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -404,7 +404,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousGenGenericFields_Test" file="ConvertAnonymousGenGenericFields_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousGenGenericFields_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -426,7 +426,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousInterfaceTest_Test" file="ConvertAnonymousInterfaceTest_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousInterfaceTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -448,7 +448,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousToStaticTest_Test" file="ConvertAnonymousToStaticTest_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousToStaticTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -470,7 +470,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousWithLocalVariablesTest_Test" file="ConvertAnonymousWithLocalVariablesTest_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousWithLocalVariablesTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -492,7 +492,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousWithLocalVariables_Test" file="ConvertAnonymousWithLocalVariables_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousWithLocalVariables_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -514,7 +514,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousWithParameterReference_Test" file="ConvertAnonymousWithParameterReference_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousWithParameterReference_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -536,7 +536,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousWithTypeParameters_Test" file="ConvertAnonymousWithTypeParameters_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousWithTypeParameters_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -558,7 +558,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousWithTypeVariablesTest_Test" file="ConvertAnonymousWithTypeVariablesTest_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ConvertAnonymousWithTypeVariablesTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -580,7 +580,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.DeclarationVariablesInMethod_Test" file="DeclarationVariablesInMethod_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.DeclarationVariablesInMethod_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -602,7 +602,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractAddingNewDeclaration_Test" file="ExtractAddingNewDeclaration_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractAddingNewDeclaration_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -626,32 +626,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractBreak_Test" file="ExtractBreak_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithExitPoints" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.RunWithCommand" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="junit.framework.Assert" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.junit.ClassRule" />
-    <classNode dependClassName="org.junit.Rule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractContinue_Test" file="ExtractContinue_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractBreak_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -676,7 +651,32 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractDefaultClassifierMethodDeclaration_Test" file="ExtractDefaultClassifierMethodDeclaration_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractContinue_Test">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithExitPoints" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.RunWithCommand" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Rule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.refactoringTest.ExtractDefaultClassifierMethodDeclaration_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -700,7 +700,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractDifferentReturns_Test" file="ExtractDifferentReturns_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractDifferentReturns_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -725,7 +725,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractFromAnonymous_Test" file="ExtractFromAnonymous_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractFromAnonymous_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -749,7 +749,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractFromExpressionWithoutReturn_Test" file="ExtractFromExpressionWithoutReturn_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractFromExpressionWithoutReturn_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -773,7 +773,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractFromExpression_Test" file="ExtractFromExpression_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractFromExpression_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -797,7 +797,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractFromIntention_Test" file="ExtractFromIntention_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractFromIntention_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -823,7 +823,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractFromStatementWithReturnValue_Test" file="ExtractFromStatementWithReturnValue_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractFromStatementWithReturnValue_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -847,7 +847,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractFromStatementsEndsWithReturn_Test" file="ExtractFromStatementsEndsWithReturn_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractFromStatementsEndsWithReturn_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -871,7 +871,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractFromStatements_Test" file="ExtractFromStatements_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractFromStatements_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -895,7 +895,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodFromClosure_Test" file="ExtractMethodFromClosure_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodFromClosure_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -920,7 +920,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodFromConstructor_Test" file="ExtractMethodFromConstructor_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodFromConstructor_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -944,7 +944,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodWithOutputVaryableFromExpression_Test" file="ExtractMethodWithOutputVaryableFromExpression_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodWithOutputVaryableFromExpression_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -968,7 +968,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodWithOutputVaryableFromStatement_Test" file="ExtractMethodWithOutputVaryableFromStatement_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodWithOutputVaryableFromStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -992,7 +992,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodWithThrows_Test" file="ExtractMethodWithThrows_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodWithThrows_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1016,7 +1016,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodWithUnusedAssignments_Test" file="ExtractMethodWithUnusedAssignments_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractMethodWithUnusedAssignments_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1040,7 +1040,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractWithFieldReference_Test" file="ExtractWithFieldReference_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractWithFieldReference_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1064,7 +1064,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ExtractWithStaticFieldReference_Test" file="ExtractWithStaticFieldReference_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ExtractWithStaticFieldReference_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1088,7 +1088,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.FindAndMoveFromIfForIntroduceLocalVar_Test" file="FindAndMoveFromIfForIntroduceLocalVar_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.FindAndMoveFromIfForIntroduceLocalVar_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1110,7 +1110,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.FindForMethodWithIVariableLikeNodes_Test" file="FindForMethodWithIVariableLikeNodes_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.FindForMethodWithIVariableLikeNodes_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1135,7 +1135,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.FindForMethodWithOutputVariable_Test" file="FindForMethodWithOutputVariable_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.FindForMethodWithOutputVariable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1160,7 +1160,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.FindInputVariables_Test" file="FindInputVariables_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.FindInputVariables_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1182,7 +1182,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineAssignmentInClosure_Test" file="InlineAssignmentInClosure_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineAssignmentInClosure_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1204,7 +1204,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineAssignmentWithClosures_Test" file="InlineAssignmentWithClosures_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineAssignmentWithClosures_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1226,7 +1226,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineAssignment_Test" file="InlineAssignment_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineAssignment_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1248,7 +1248,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineFieldBinaryOnDeclaration_Test" file="InlineFieldBinaryOnDeclaration_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineFieldBinaryOnDeclaration_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1270,7 +1270,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineFieldBinary_Test" file="InlineFieldBinary_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineFieldBinary_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1292,7 +1292,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineFieldOperationBinaryOnDeclaration_Test" file="InlineFieldOperationBinaryOnDeclaration_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineFieldOperationBinaryOnDeclaration_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1314,7 +1314,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineFieldOperationBinary_Test" file="InlineFieldOperationBinary_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineFieldOperationBinary_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1336,7 +1336,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineFromAnotherBehavior_Test" file="InlineFromAnotherBehavior_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineFromAnotherBehavior_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1358,7 +1358,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineFromAnotherClass_Test" file="InlineFromAnotherClass_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineFromAnotherClass_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1380,7 +1380,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineFromBehaviorWithMethods_Test" file="InlineFromBehaviorWithMethods_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineFromBehaviorWithMethods_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1402,7 +1402,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineFromBehavior_Test" file="InlineFromBehavior_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineFromBehavior_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1424,7 +1424,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineFromConceptFunction_Test" file="InlineFromConceptFunction_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineFromConceptFunction_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1448,7 +1448,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineFromExpression_Test" file="InlineFromExpression_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineFromExpression_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1470,7 +1470,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineInBehaviorWithThis_Test" file="InlineInBehaviorWithThis_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineInBehaviorWithThis_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1492,7 +1492,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineInClosureWithOutsideAssignment_Test" file="InlineInClosureWithOutsideAssignment_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineInClosureWithOutsideAssignment_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1515,7 +1515,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineInsideClosure_Test" file="InlineInsideClosure_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineInsideClosure_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1538,7 +1538,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineLocalVariableReferenceWithoutDeclarationDeleting_Test" file="InlineLocalVariableReferenceWithoutDeclarationDeleting_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineLocalVariableReferenceWithoutDeclarationDeleting_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1560,7 +1560,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineLocalVariableReferense_Test" file="InlineLocalVariableReferense_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineLocalVariableReferense_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1582,7 +1582,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineManyReturns_Test" file="InlineManyReturns_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineManyReturns_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1604,7 +1604,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineMethodInTest_Test" file="InlineMethodInTest_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineMethodInTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1626,7 +1626,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineMethodThatChangesParameters_Test" file="InlineMethodThatChangesParameters_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineMethodThatChangesParameters_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1648,7 +1648,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineMethodWithConceptFunctionParameters_Test" file="InlineMethodWithConceptFunctionParameters_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineMethodWithConceptFunctionParameters_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1670,7 +1670,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineMethodWithReturnAtTheEnd_Test" file="InlineMethodWithReturnAtTheEnd_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineMethodWithReturnAtTheEnd_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1692,7 +1692,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineMethodWithUnusedParameters_Test" file="InlineMethodWithUnusedParameters_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineMethodWithUnusedParameters_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1714,7 +1714,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineMethodWithVoidType_Test" file="InlineMethodWithVoidType_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineMethodWithVoidType_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1736,7 +1736,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineModelWithConstants_Test" file="InlineModelWithConstants_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineModelWithConstants_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1758,7 +1758,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineRecursiveMethod_Test" file="InlineRecursiveMethod_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineRecursiveMethod_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -1775,7 +1775,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineReferenceWithAssignment_Test" file="InlineReferenceWithAssignment_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineReferenceWithAssignment_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1797,7 +1797,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineStaticFromAnotherClass_Test" file="InlineStaticFromAnotherClass_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineStaticFromAnotherClass_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1819,7 +1819,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineVariableBinaryInBinaryOnDeclaration_Test" file="InlineVariableBinaryInBinaryOnDeclaration_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineVariableBinaryInBinaryOnDeclaration_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1841,7 +1841,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineVariableBinaryInBinary_Test" file="InlineVariableBinaryInBinary_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineVariableBinaryInBinary_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1863,7 +1863,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineVariableBinaryInCastOnDeclaration_Test" file="InlineVariableBinaryInCastOnDeclaration_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineVariableBinaryInCastOnDeclaration_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1885,7 +1885,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineVariableBinaryInCast_Test" file="InlineVariableBinaryInCast_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineVariableBinaryInCast_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1907,7 +1907,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineVariableBinaryInTernary_Test" file="InlineVariableBinaryInTernary_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineVariableBinaryInTernary_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1929,7 +1929,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineWithNoSourcesAttached_Test" file="InlineWithNoSourcesAttached_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineWithNoSourcesAttached_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -1946,7 +1946,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineWithVoidTypeAndBug_Test" file="InlineWithVoidTypeAndBug_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineWithVoidTypeAndBug_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1968,7 +1968,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineWithoutDeclarationDeletion_Test" file="InlineWithoutDeclarationDeletion_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineWithoutDeclarationDeletion_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1990,7 +1990,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.InlineWithoutReturnStatement_Test" file="InlineWithoutReturnStatement_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.InlineWithoutReturnStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2012,7 +2012,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.IntroduceConstantFromAnonimousClass_Test" file="IntroduceConstantFromAnonimousClass_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.IntroduceConstantFromAnonimousClass_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2035,7 +2035,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.IntroduceFinalField_Test" file="IntroduceFinalField_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.IntroduceFinalField_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2059,7 +2059,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.IntroduceFinalLocalVariable_Test" file="IntroduceFinalLocalVariable_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.IntroduceFinalLocalVariable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2081,7 +2081,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.IntroduceVariableFromAnonimousClass_Test" file="IntroduceVariableFromAnonimousClass_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.IntroduceVariableFromAnonimousClass_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2103,7 +2103,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.IntroduceVariableFromWildcards_Test" file="IntroduceVariableFromWildcards_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.IntroduceVariableFromWildcards_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2125,7 +2125,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.MethodsWithoutReturnStatement_Test" file="MethodsWithoutReturnStatement_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.MethodsWithoutReturnStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2149,7 +2149,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.MoveMethodWithFields_Test" file="MoveMethodWithFields_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.MoveMethodWithFields_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2171,7 +2171,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.MoveMethodWithMethods_Test" file="MoveMethodWithMethods_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.MoveMethodWithMethods_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2193,7 +2193,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.MoveMethodWithParameters_Test" file="MoveMethodWithParameters_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.MoveMethodWithParameters_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2215,7 +2215,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.MoveMethodWithUssages_Test" file="MoveMethodWithUssages_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.MoveMethodWithUssages_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2237,7 +2237,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.MoveStaticFieldSimpleTest_Test" file="MoveStaticFieldSimpleTest_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.MoveStaticFieldSimpleTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2259,7 +2259,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.MoveStaticFieldWithUsageTest_Test" file="MoveStaticFieldWithUsageTest_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.MoveStaticFieldWithUsageTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2281,7 +2281,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.OneReturnStatement_Test" file="OneReturnStatement_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.OneReturnStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2301,7 +2301,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.OneReturnTransformation_Test" file="OneReturnTransformation_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.OneReturnTransformation_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2325,7 +2325,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.OneReturnWithNotVariableParameters_Test" file="OneReturnWithNotVariableParameters_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.OneReturnWithNotVariableParameters_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2347,7 +2347,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.OneReturnWithParameteres_Test" file="OneReturnWithParameteres_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.OneReturnWithParameteres_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2369,7 +2369,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.OperandOfDotExpression_Test" file="OperandOfDotExpression_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.OperandOfDotExpression_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2391,7 +2391,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.RemoveParameter_Test" file="RemoveParameter_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.RemoveParameter_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2415,7 +2415,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ReplaceOutputVaryable_Test" file="ReplaceOutputVaryable_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ReplaceOutputVaryable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2440,7 +2440,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.ReturnStatement_Test" file="ReturnStatement_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.ReturnStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2460,7 +2460,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.SimpleFindAndMoveForIntroduceLocalVar_Test" file="SimpleFindAndMoveForIntroduceLocalVar_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.SimpleFindAndMoveForIntroduceLocalVar_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2482,7 +2482,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForExtractFromExpression_Test" file="SimpleFindForExtractFromExpression_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForExtractFromExpression_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2507,7 +2507,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForExtractFromManyStatements_Test" file="SimpleFindForExtractFromManyStatements_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForExtractFromManyStatements_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2532,7 +2532,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForExtractFromStatement_Test" file="SimpleFindForExtractFromStatement_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForExtractFromStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2557,7 +2557,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForExtractWithReturn_Test" file="SimpleFindForExtractWithReturn_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForExtractWithReturn_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2582,7 +2582,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForIntroduceConstant_Test" file="SimpleFindForIntroduceConstant_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForIntroduceConstant_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2605,7 +2605,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForIntroduceLocalVariable_Test" file="SimpleFindForIntroduceLocalVariable_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.SimpleFindForIntroduceLocalVariable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2627,7 +2627,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.SimpleInlineVariable_Test" file="SimpleInlineVariable_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.SimpleInlineVariable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2649,7 +2649,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.SimpleInlineWithOneReturn_Test" file="SimpleInlineWithOneReturn_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.SimpleInlineWithOneReturn_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2671,7 +2671,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.SimpleMoveMethod_Test" file="SimpleMoveMethod_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.SimpleMoveMethod_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2693,7 +2693,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.SimpleMoveStaticMethod_Test" file="SimpleMoveStaticMethod_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.SimpleMoveStaticMethod_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -2712,7 +2712,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.StaticMethod_Test" file="StaticMethod_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.StaticMethod_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2734,7 +2734,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.TwoParametersWithSameType_Test" file="TwoParametersWithSameType_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.TwoParametersWithSameType_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2759,7 +2759,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.VariableDeclarationInitializer_Test" file="VariableDeclarationInitializer_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.VariableDeclarationInitializer_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2781,7 +2781,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoringTest.staticContainerClassTest_Test" file="staticContainerClassTest_Test.java">
+  <dependency className="jetbrains.mps.refactoringTest.staticContainerClassTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />

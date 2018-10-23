@@ -28,7 +28,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.traceable.behavior.UnitConcept__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
@@ -100,16 +101,13 @@ public final class Interface__BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   /*package*/ static String getUnitName_id4pl5GY7LKmR(@NotNull SNode __thisNode__) {
-    String fqName = INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__);
-    if (SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false) == null) {
-      return fqName;
+    // same as in ClassConcept 
+    SNode ancestorClass = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+    if (ancestorClass == null) {
+      return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__);
     }
-    int index = fqName.lastIndexOf('.');
-    if (index <= 0) {
-      return fqName;
-    }
-    int length = SModelOperations.getModelName(SNodeOperations.getModel(__thisNode__)).length();
-    return fqName.substring(0, length) + "." + fqName.substring(length + 1).replace('.', '$');
+    String ancestorUnit = (SNodeOperations.isInstanceOf(ancestorClass, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept")) ? UnitConcept__BehaviorDescriptor.getUnitName_id4pl5GY7LKmR.invoke(SNodeOperations.cast(ancestorClass, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))) : INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(ancestorClass));
+    return ancestorUnit + '$' + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x73048d24d425f35eL, "jetbrains.mps.baseLanguage.structure.SuperInerfaceKind"))) {

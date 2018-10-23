@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.ApplicableRefactoring" file="ApplicableRefactoring.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.ApplicableRefactoring">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.ApplicableRefactoring_Target" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.ApplicableRefactoring_Target" file="ApplicableRefactoring_Target.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.ApplicableRefactoring_Target">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.InapplicableRefactoring" file="InapplicableRefactoring.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.InapplicableRefactoring">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.InapplicableRefactoring_Target" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.InapplicableRefactoring_Target" file="InapplicableRefactoring_Target.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.InapplicableRefactoring_Target">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.RefactoringAspectDescriptor" file="RefactoringAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.RefactoringAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.figures.sandbox.BlockContentView" file="BlockContentView.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.sandbox.BlockContentView">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -23,15 +23,15 @@
     <classNode extendsClassName="jetbrains.jetpad.projectional.diagram.view.layout.CenterVerticalLayoutView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.figures.sandbox.BoxFigureExt" file="BoxFigureExt.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.sandbox.BoxFigureExt">
     <classNode extendsClassName="jetbrains.mps.lang.editor.figures.library.BoxFigure" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.figures.sandbox.MPSRectView" file="MPSRectView.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.sandbox.MPSRectView">
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.RectView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView" file="PolygonContentView.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />

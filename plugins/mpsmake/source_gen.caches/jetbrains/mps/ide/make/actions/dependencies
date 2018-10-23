@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.make.actions.BuildAllGeneratableGenerators_Action" file="BuildAllGeneratableGenerators_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.BuildAllGeneratableGenerators_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.BuildAllGenerators_Action" file="BuildAllGenerators_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.BuildAllGenerators_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action" file="BuildAllLanguageDescriptors_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -75,7 +75,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.BuildAspect_Action" file="BuildAspect_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.BuildAspect_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -103,7 +103,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.CheckModelsBeforeGeneration_Action" file="CheckModelsBeforeGeneration_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.CheckModelsBeforeGeneration_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.util.ui.EmptyIcon" />
@@ -117,7 +117,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.CleanModule_Action" file="CleanModule_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.CleanModule_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -142,7 +142,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.CleanProject_Action" file="CleanProject_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.CleanProject_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -167,7 +167,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.CompileProject_Action" file="CompileProject_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.CompileProject_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
@@ -188,7 +188,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.DefaultMakeTask" file="DefaultMakeTask.java">
+  <dependency className="jetbrains.mps.ide.make.actions.DefaultMakeTask">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
@@ -213,29 +213,29 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="com.intellij.openapi.progress.Task" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.Default_KeymapChanges" file="Default_KeymapChanges.java">
+  <dependency className="jetbrains.mps.ide.make.actions.Default_KeymapChanges">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.GenerateOptions_ActionGroup" file="GenerateOptions_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.GenerateOptions_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.GlobalMake_ActionGroup" file="GlobalMake_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.GlobalMake_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.JavaModuleActions_ActionGroup" file="JavaModuleActions_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.JavaModuleActions_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.MakeActionImpl" file="MakeActionImpl.java">
+  <dependency className="jetbrains.mps.ide.make.actions.MakeActionImpl">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -259,7 +259,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.MakeActionParameters" file="MakeActionParameters.java">
+  <dependency className="jetbrains.mps.ide.make.actions.MakeActionParameters">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -286,14 +286,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.MakeAddition_ActionGroup" file="MakeAddition_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.MakeAddition_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.MakeAspects_ActionGroup" file="MakeAspects_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.MakeAspects_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
@@ -312,7 +312,7 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.MakeModule_Action" file="MakeModule_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.MakeModule_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
@@ -331,7 +331,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.MakeNamespace_Action" file="MakeNamespace_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.MakeNamespace_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -353,7 +353,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.MakeProject_Action" file="MakeProject_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.MakeProject_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -374,7 +374,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.MakeSelectedModels_Action" file="MakeSelectedModels_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.MakeSelectedModels_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -393,7 +393,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.MakeSelectedModules_Action" file="MakeSelectedModules_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.MakeSelectedModules_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -413,7 +413,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.MakeSelection_Action" file="MakeSelection_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.MakeSelection_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -435,7 +435,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.Make_ActionGroup" file="Make_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.Make_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
@@ -443,7 +443,7 @@
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin" file="Make_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -486,23 +486,24 @@
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TextPreviewModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.ToolbarMake_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.TouchBarDefault_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.Make_ProjectPlugin" file="Make_ProjectPlugin.java">
+  <dependency className="jetbrains.mps.ide.make.actions.Make_ProjectPlugin">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModels_ProjectPluginPart" />
     <classNode dependClassName="jetbrains.mps.plugins.part.ProjectPluginPart" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.NamespaceMake_ActionGroup" file="NamespaceMake_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.NamespaceMake_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.MakeNamespace_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.Options_Action" file="Options_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.Options_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -512,15 +513,15 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.ProjectCompileActions_ActionGroup" file="ProjectCompileActions_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.ProjectCompileActions_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.ProjectMake_ActionGroup" file="ProjectMake_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.ProjectMake_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.RebuildModule_Action" file="RebuildModule_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.RebuildModule_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
@@ -539,7 +540,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.RebuildProject_Action" file="RebuildProject_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.RebuildProject_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -559,7 +560,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.RebuildRequiredModels_Action" file="RebuildRequiredModels_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.RebuildRequiredModels_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -585,7 +586,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.RebuildSelectedModels_Action" file="RebuildSelectedModels_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.RebuildSelectedModels_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -604,7 +605,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.RebuildSelectedModules_Action" file="RebuildSelectedModules_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.RebuildSelectedModules_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -624,7 +625,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.RecompileProject_Action" file="RecompileProject_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.RecompileProject_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
@@ -645,7 +646,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.SaveTransientModelsAction" file="SaveTransientModelsAction.java">
+  <dependency className="jetbrains.mps.ide.make.actions.SaveTransientModelsAction">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
@@ -654,19 +655,19 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.SaveTransientModels_ActionGroup" file="SaveTransientModels_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.SaveTransientModels_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.SaveTransientModelsAction" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" file="TextPreviewGroup_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.TextPreviewModel_Action" file="TextPreviewModel_Action.java">
+  <dependency className="jetbrains.mps.ide.make.actions.TextPreviewModel_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -718,11 +719,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.ToolbarMake_ActionGroup" file="ToolbarMake_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.make.actions.ToolbarMake_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer" file="TransientModelBallonDisplayer.java">
+  <dependency className="jetbrains.mps.ide.make.actions.TouchBarDefault_ActionGroup">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer">
     <classNode dependClassName="com.intellij.notification.Notification" />
     <classNode dependClassName="com.intellij.notification.NotificationDisplayType" />
     <classNode dependClassName="com.intellij.notification.NotificationType" />
@@ -749,7 +754,7 @@
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidget" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.TransientModelsNotification" file="TransientModelsNotification.java">
+  <dependency className="jetbrains.mps.ide.make.actions.TransientModelsNotification">
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
@@ -765,7 +770,7 @@
     <classNode dependClassName="jetbrains.mps.make.MakeServiceComponent" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.TransientModelsPanel" file="TransientModelsPanel.java">
+  <dependency className="jetbrains.mps.ide.make.actions.TransientModelsPanel">
     <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
     <classNode dependClassName="com.intellij.util.SystemProperties" />
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />
@@ -781,7 +786,7 @@
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidget" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.TransientModelsWidget" file="TransientModelsWidget.java">
+  <dependency className="jetbrains.mps.ide.make.actions.TransientModelsWidget">
     <classNode dependClassName="com.intellij.ide.ui.UISettings" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
@@ -807,7 +812,7 @@
     <classNode extendsClassName="com.intellij.openapi.wm.StatusBarWidget" />
     <classNode extendsClassName="java.beans.PropertyChangeListener" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.TransientModels_ProjectPluginPart" file="TransientModels_ProjectPluginPart.java">
+  <dependency className="jetbrains.mps.ide.make.actions.TransientModels_ProjectPluginPart">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
@@ -815,7 +820,7 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.part.ProjectPluginPart" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.WidgetSettingsPanel" file="WidgetSettingsPanel.java">
+  <dependency className="jetbrains.mps.ide.make.actions.WidgetSettingsPanel">
     <classNode dependClassName="com.intellij.notification.impl.NotificationsConfigurationImpl" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopup" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopupFactory" />

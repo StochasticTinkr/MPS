@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.findUsages.DefaultMenuReferences_Finder" file="DefaultMenuReferences_Finder.java">
+  <dependency className="jetbrains.mps.lang.editor.findUsages.DefaultMenuReferences_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.findUsages.FindUsagesDescriptor" file="FindUsagesDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.findUsages.FindUsagesDescriptor">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

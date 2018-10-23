@@ -47,7 +47,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import com.intellij.openapi.command.impl.CurrentEditorProvider;
+import com.intellij.openapi.fileEditor.impl.CurrentEditorProvider;
 import com.intellij.openapi.fileEditor.FileEditor;
 import org.apache.log4j.Level;
 
@@ -122,6 +122,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         }
         myFileNodeEditor = openEditor();
         myEditor = myFileNodeEditor.getNodeEditor();
+        myEditor.showNode(myBefore, false);
         myCurrentEditorComponent = myEditor.getCurrentEditorComponent();
         if (!(myCurrentEditorComponent instanceof NodeEditorComponent)) {
           throw new IllegalArgumentException("The component is not an instance of NodeEditorComponent: " + myCurrentEditorComponent);

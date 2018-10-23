@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor" file="AbstractExtractMethodRefactoringProcessor.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFieldRefactoring" file="AbstractIntroduceFieldRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFieldRefactoring">
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPlace" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -28,13 +28,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractStaticContainerProcessor" file="AbstractStaticContainerProcessor.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractStaticContainerProcessor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.BasicMoveRefactoring" file="BasicMoveRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.BasicMoveRefactoring">
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters" file="ChangeMethodSignatureParameters.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -53,7 +53,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring" file="ChangeMethodSignatureRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters" />
@@ -66,7 +66,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassExtractMethodRefactoringProcessor" file="ClassExtractMethodRefactoringProcessor.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassExtractMethodRefactoringProcessor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -77,7 +77,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassRefactoringUtils" file="ClassRefactoringUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassRefactoringUtils">
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter" />
@@ -90,7 +90,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassStaticContainerProcessor" file="ClassStaticContainerProcessor.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassStaticContainerProcessor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -101,7 +101,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractStaticContainerProcessor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring" file="ConvertAnonymousRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -139,7 +139,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory" file="ExtractMethodFactory.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -156,7 +156,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFromExpressionRefactoring" file="ExtractMethodFromExpressionRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFromExpressionRefactoring">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch" />
@@ -171,7 +171,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFromStatementsRefactoring" file="ExtractMethodFromStatementsRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFromStatementsRefactoring">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -186,7 +186,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" file="ExtractMethodRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -227,7 +227,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringAnalyzer" file="ExtractMethodRefactoringAnalyzer.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringAnalyzer">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -271,7 +271,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" file="ExtractMethodRefactoringParameters.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -296,7 +296,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodModel" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithExitPoints" file="ExtractMethodWithExitPoints.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithExitPoints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch" />
@@ -309,7 +309,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFromStatementsRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithOutputVariable" file="ExtractMethodWithOutputVariable.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithOutputVariable">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
@@ -328,7 +328,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFromStatementsRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithReturn" file="ExtractMethodWithReturn.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithReturn">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
@@ -341,18 +341,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFromStatementsRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPlace" file="FieldInitializationPlace.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPlace">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor" file="IExtractMethodRefactoringProcessor.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor" file="IStaticContainerProcessor.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldAssignmentRefactoring" file="InlineFieldAssignmentRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldAssignmentRefactoring">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlinePrecedenceUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -361,7 +361,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldRefactoring" file="InlineFieldRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldRefactoring">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldAssignmentRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldReferenceRefactoring" />
@@ -374,7 +374,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldReferenceOperationRefactoring" file="InlineFieldReferenceOperationRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldReferenceOperationRefactoring">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlinePrecedenceUtil" />
@@ -384,7 +384,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldReferenceRefactoring" file="InlineFieldReferenceRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldReferenceRefactoring">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlinePrecedenceUtil" />
@@ -394,7 +394,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel" file="InlineMethodModel.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter" />
@@ -413,7 +413,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring" file="InlineMethodRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -453,14 +453,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlinePrecedenceUtil" file="InlinePrecedenceUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlinePrecedenceUtil">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring" file="InlineVariableAssignmentRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -485,7 +485,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" file="InlineVariableRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring">
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring" />
@@ -503,7 +503,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring" file="InlineVariableReferenceRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -525,7 +525,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring" file="IntroduceConstantRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -541,7 +541,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceFieldRefactoring" file="IntroduceFieldRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceFieldRefactoring">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -564,7 +564,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFieldRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceLocalVariableRefactoring" file="IntroduceLocalVariableRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceLocalVariableRefactoring">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Object" />
@@ -587,7 +587,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceStaticFieldRefactoring" file="IntroduceStaticFieldRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceStaticFieldRefactoring">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -611,7 +611,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFieldRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" file="IntroduceVariableRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -635,7 +635,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MemberInsertingUtils" file="MemberInsertingUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MemberInsertingUtils">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -644,7 +644,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter" file="MethodCallAdapter.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -654,7 +654,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodDuplicatesFinder" file="MethodDuplicatesFinder.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodDuplicatesFinder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
@@ -673,7 +673,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch" file="MethodMatch.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
@@ -694,7 +694,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodModel" file="MethodModel.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodModel">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -707,7 +707,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodOptimizer" file="MethodOptimizer.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodOptimizer">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -717,7 +717,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter" file="MethodParameter.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -736,20 +736,20 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameterModel" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameterModel" file="MethodParameterModel.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameterModel">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtil" file="MethodRefactoringUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtil">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils" file="MethodRefactoringUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
@@ -764,7 +764,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils" file="MoveRefactoringUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MemberInsertingUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -786,7 +786,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticFieldRefactoring" file="MoveStaticFieldRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticFieldRefactoring">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -803,7 +803,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.BasicMoveRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring" file="MoveStaticMethodRefactoring.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -824,7 +824,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.BasicMoveRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.SimpleDuplicatesFinder" file="SimpleDuplicatesFinder.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.SimpleDuplicatesFinder">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -834,11 +834,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ToStringWrap" file="ToStringWrap.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ToStringWrap">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel" file="VisibilityLevel.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

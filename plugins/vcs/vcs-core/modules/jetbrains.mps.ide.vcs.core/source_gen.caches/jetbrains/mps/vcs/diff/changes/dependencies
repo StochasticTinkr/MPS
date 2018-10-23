@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.diff.changes.AddRootChange" file="AddRootChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.AddRootChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -14,8 +14,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.ChangeType" file="ChangeType.java" />
-  <dependency className="jetbrains.mps.vcs.diff.changes.DeleteRootChange" file="DeleteRootChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.ChangeType" />
+  <dependency className="jetbrains.mps.vcs.diff.changes.DeleteRootChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
@@ -27,14 +27,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.DependencyChange" file="DependencyChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.DependencyChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.MetadataChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange" file="DoNotGenerateOptionChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.extapi.model.GeneratableSModel" />
@@ -46,7 +46,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.MetadataChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.EngagedLanguageChange" file="EngagedLanguageChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.EngagedLanguageChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
@@ -58,7 +58,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.DependencyChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.ImportedModelChange" file="ImportedModelChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.ImportedModelChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelImports" />
@@ -70,7 +70,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.DependencyChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.MetadataChange" file="MetadataChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.MetadataChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
@@ -79,7 +79,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.ModelChange" file="ModelChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.ModelChange">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -96,7 +96,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" file="ModuleDependencyChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -109,7 +109,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.DependencyChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.NodeChange" file="NodeChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.NodeChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
@@ -118,7 +118,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.NodeCopier" file="NodeCopier.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.NodeCopier">
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
@@ -140,7 +140,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.NodeGroupChange" file="NodeGroupChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.NodeGroupChange">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -169,7 +169,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.NodeGroupStructChange" file="NodeGroupStructChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.NodeGroupStructChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
@@ -180,7 +180,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.SetPropertyChange" file="SetPropertyChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.SetPropertyChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -197,7 +197,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.NodeChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.SetPropertyStructChange" file="SetPropertyStructChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.SetPropertyStructChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
@@ -210,7 +210,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.SetReferenceChange" file="SetReferenceChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.SetReferenceChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Objects" />
@@ -235,7 +235,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.NodeChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.SetReferenceStructChange" file="SetReferenceStructChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.SetReferenceStructChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Objects" />
@@ -257,7 +257,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.UsedLanguageChange" file="UsedLanguageChange.java">
+  <dependency className="jetbrains.mps.vcs.diff.changes.UsedLanguageChange">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />

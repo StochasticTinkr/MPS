@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper" file="MigrateStaticBehaviorThisAndSuper.java">
+  <dependency className="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -43,7 +43,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.migration.MigrationDescriptor" file="MigrationDescriptor.java">
+  <dependency className="jetbrains.mps.lang.behavior.migration.MigrationDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -53,19 +53,19 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a0a6" file="Pattern_bb55mu_a0a6.java">
+  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a0a6">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a1a6" file="Pattern_bb55mu_a1a6.java">
+  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a1a6">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a2a6" file="Pattern_bb55mu_a2a6.java">
+  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a2a6">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.migration.Remove_ConceptMethodDeclaration_IsPrivate_Property" file="Remove_ConceptMethodDeclaration_IsPrivate_Property.java">
+  <dependency className="jetbrains.mps.lang.behavior.migration.Remove_ConceptMethodDeclaration_IsPrivate_Property">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />

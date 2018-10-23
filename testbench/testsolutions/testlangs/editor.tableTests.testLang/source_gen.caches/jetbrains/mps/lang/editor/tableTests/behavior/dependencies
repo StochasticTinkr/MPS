@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement__BehaviorDescriptor" file="AbstractStateMachineElement__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable__BehaviorDescriptor" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable__BehaviorDescriptor" file="HierarchycalTable__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -66,7 +66,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.LightWeightDecisionTable__BehaviorDescriptor" file="LightWeightDecisionTable__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.LightWeightDecisionTable__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -84,7 +84,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine__BehaviorDescriptor" file="StateMachine__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -105,7 +105,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.Table__BehaviorDescriptor" file="Table__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.Table__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

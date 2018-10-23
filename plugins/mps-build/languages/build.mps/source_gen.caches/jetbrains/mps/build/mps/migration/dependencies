@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.migration.BuildJavaVersionMigration" file="BuildJavaVersionMigration.java">
+  <dependency className="jetbrains.mps.build.mps.migration.BuildJavaVersionMigration">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -21,7 +21,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.migration.BuildJavaVersionMigration_JDKDefault" file="BuildJavaVersionMigration_JDKDefault.java">
+  <dependency className="jetbrains.mps.build.mps.migration.BuildJavaVersionMigration_JDKDefault">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.migration.DevkitAsJar" file="DevkitAsJar.java">
+  <dependency className="jetbrains.mps.build.mps.migration.DevkitAsJar">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor" />
@@ -59,7 +59,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.migration.MigrationDescriptor" file="MigrationDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.migration.MigrationDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -73,7 +73,7 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.migration.ModuleResources" file="ModuleResources.java">
+  <dependency className="jetbrains.mps.build.mps.migration.ModuleResources">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor" />
@@ -96,7 +96,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.migration.ModuleXml_classpathEntry" file="ModuleXml_classpathEntry.java">
+  <dependency className="jetbrains.mps.build.mps.migration.ModuleXml_classpathEntry">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -117,7 +117,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.migration.TransferCustomPackagingToLayout" file="TransferCustomPackagingToLayout.java">
+  <dependency className="jetbrains.mps.build.mps.migration.TransferCustomPackagingToLayout">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.tool.builder.unittest.ConsoleTestReporter" file="ConsoleTestReporter.java">
+  <dependency className="jetbrains.mps.tool.builder.unittest.ConsoleTestReporter">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.unittest.ITestReporter" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.unittest.ITestReporter" file="ITestReporter.java">
+  <dependency className="jetbrains.mps.tool.builder.unittest.ITestReporter">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestAdapter" file="UnitTestAdapter.java">
+  <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestAdapter">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.unittest.UnitTestListener" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestListener" file="UnitTestListener.java">
+  <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestListener">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestOutputReader" file="UnitTestOutputReader.java">
+  <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestOutputReader">
     <classNode dependClassName="java.io.BufferedWriter" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
@@ -37,7 +37,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestRunner" file="UnitTestRunner.java">
+  <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestRunner">
     <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStreamReader" />
@@ -57,7 +57,7 @@
     <classNode dependClassName="org.junit.runner.notification.Failure" />
     <classNode extendsClassName="org.junit.runner.notification.RunListener" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.unittest.XmlTestReporter" file="XmlTestReporter.java">
+  <dependency className="jetbrains.mps.tool.builder.unittest.XmlTestReporter">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Long" />

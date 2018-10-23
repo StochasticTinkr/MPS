@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.AddRemoveMessage_Intention" file="AddRemoveMessage_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.AddRemoveMessage_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -18,7 +18,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.FlipAssertEquals_Intention" file="FlipAssertEquals_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.FlipAssertEquals_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -36,7 +36,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention" file="convert_test_case_to_unittest_case_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

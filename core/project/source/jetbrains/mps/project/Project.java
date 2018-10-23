@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.core.platform.Platform;
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.Language;
@@ -51,13 +51,13 @@ public abstract class Project implements MPSModuleOwner, IProject {
     myName = name;
   }
 
-  protected Project(String name, @NotNull Platform mpsPlatform, @NotNull BiFunction<Project, Platform, ProjectRepository> repoFactory) {
+  protected Project(String name, @NotNull ComponentHost mpsPlatform, @NotNull BiFunction<Project, ComponentHost, ProjectRepository> repoFactory) {
     myName = name;
     myRepository = repoFactory.apply(this, mpsPlatform);
   }
 
   //
-  protected final void initRepositoryDefault(@NotNull Platform mpsPlatform) {
+  protected final void initRepositoryDefault(@NotNull ComponentHost mpsPlatform) {
     myRepository = new ProjectRepository(this, mpsPlatform.findComponent(MPSModuleRepository.class), mpsPlatform.findComponent(SRepositoryRegistry.class));
     myRepository.init();
   }

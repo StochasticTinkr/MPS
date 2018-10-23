@@ -15,13 +15,11 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="6qgz" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.model(MPS.Core/)" />
-    <import index="etl3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.filechoosers.treefilechooser(MPS.Platform/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="ljzk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
-    <import index="ends" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
@@ -73,10 +71,6 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
-      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
-        <child id="1081256993305" name="classType" index="2ZW6by" />
-        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
-      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
@@ -85,10 +79,6 @@
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
-      </concept>
-      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
-        <child id="1070534934091" name="type" index="10QFUM" />
-        <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
@@ -145,9 +135,6 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
-      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
-        <child id="1079359253376" name="expression" index="1eOMHV" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -841,36 +828,9 @@
                                     </node>
                                   </node>
                                 </node>
-                                <node concept="3clFbJ" id="162iOiMR35P" role="3cqZAp">
-                                  <node concept="2ZW3vV" id="162iOiMR3bc" role="3clFbw">
-                                    <node concept="3uibUv" id="162iOiMR3ke" role="2ZW6by">
-                                      <ref role="3uigEE" to="ends:~FolderModelRootBase" resolve="FolderModelRootBase" />
-                                    </node>
-                                    <node concept="37vLTw" id="162iOiMR36T" role="2ZW6bz">
-                                      <ref role="3cqZAo" node="162iOiMQTfS" resolve="root" />
-                                    </node>
-                                  </node>
-                                  <node concept="3clFbS" id="162iOiMR35R" role="3clFbx">
-                                    <node concept="3clFbF" id="162iOiMR3kB" role="3cqZAp">
-                                      <node concept="2OqwBi" id="162iOiMR3um" role="3clFbG">
-                                        <node concept="liA8E" id="162iOiMR4sw" role="2OqNvi">
-                                          <ref role="37wK5l" to="ends:~FolderModelRootBase.setPath(java.lang.String):void" resolve="setPath" />
-                                          <node concept="37vLTw" id="162iOiMR4zp" role="37wK5m">
-                                            <ref role="3cqZAo" node="3tOCygy3AAs" resolve="it" />
-                                          </node>
-                                        </node>
-                                        <node concept="1eOMI4" id="162iOiMR3kz" role="2Oq$k0">
-                                          <node concept="10QFUN" id="162iOiMR3kw" role="1eOMHV">
-                                            <node concept="3uibUv" id="162iOiMR3k_" role="10QFUM">
-                                              <ref role="3uigEE" to="ends:~FolderModelRootBase" resolve="FolderModelRootBase" />
-                                            </node>
-                                            <node concept="37vLTw" id="162iOiMR3kA" role="10QFUP">
-                                              <ref role="3cqZAo" node="162iOiMQTfS" resolve="root" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
+                                <node concept="3SKdUt" id="6zgmtslZtF0" role="3cqZAp">
+                                  <node concept="3SKdUq" id="6zgmtslZtF2" role="3SKWNk">
+                                    <property role="3SKdUp" value="FIXME here used to be instanceof for FolderModelRootBased, deprecated and unused. Present code looks no-op as there's nothing saved in the memento of a blank new model root" />
                                   </node>
                                 </node>
                                 <node concept="3cpWs8" id="162iOiMR4Lp" role="3cqZAp">

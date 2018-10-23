@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.BaseLanguagesImportHelper" file="BaseLanguagesImportHelper.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.BaseLanguagesImportHelper">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer" file="EvaluationContainer.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
@@ -74,7 +74,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule" file="EvaluationModule.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -108,7 +108,7 @@
     <classNode extendsClassName="jetbrains.mps.project.AbstractModule" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.GeneratorUtil" file="GeneratorUtil.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.GeneratorUtil">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
@@ -153,7 +153,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" file="IEvaluationContainer.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -161,7 +161,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.Evaluator" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.PresentationUtil" file="PresentationUtil.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.PresentationUtil">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -178,7 +178,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.Properties" file="Properties.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.Properties">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

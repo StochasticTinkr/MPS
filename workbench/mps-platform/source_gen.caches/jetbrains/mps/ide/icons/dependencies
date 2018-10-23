@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.icons.BaseIconManager" file="BaseIconManager.java">
+  <dependency className="jetbrains.mps.ide.icons.BaseIconManager">
     <classNode dependClassName="com.intellij.ui.LayeredIcon" />
     <classNode dependClassName="com.intellij.ui.RowIcon" />
     <classNode dependClassName="com.intellij.util.PlatformIcons" />
@@ -45,7 +45,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.icons.GlobalIconManager" file="GlobalIconManager.java">
+  <dependency className="jetbrains.mps.ide.icons.GlobalIconManager">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -60,7 +60,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.icons.BaseIconManager" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.icons.IconLoadingUtil" file="IconLoadingUtil.java">
+  <dependency className="jetbrains.mps.ide.icons.IconLoadingUtil">
     <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />

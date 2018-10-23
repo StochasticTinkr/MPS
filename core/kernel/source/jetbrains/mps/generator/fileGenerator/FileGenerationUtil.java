@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ import java.io.File;
 /**
  * @deprecated This class doesn't respect overridden output location ({@link jetbrains.mps.extapi.model.GeneratableSModel#isGenerateIntoModelFolder()} nor
  *             does it tell anything about where to take <code>outputRootDir</code> from (assumes it comes
- *             from {@link jetbrains.mps.project.SModuleOperations#getOutputRoot(SModel)} while it's common to see invocations of
+ *             from {@code jetbrains.mps.project.SModuleOperations#getOutputRoot(SModel)} while it's common to see invocations of
  *             {@link #getDefaultOutputDir(SModel, IFile)} with <code>((AbstractModule) module).getOutputPath()</code>
  *
  * TODO remove once 3.5 is out as replacement API, {@link jetbrains.mps.project.facets.GenerationTargetFacet}, has been introduced in 3.5 and there's no

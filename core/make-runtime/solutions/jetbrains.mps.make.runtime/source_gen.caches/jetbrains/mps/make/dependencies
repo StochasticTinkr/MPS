@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.IHName" file="IHName.java">
+  <dependency className="jetbrains.mps.make.IHName">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.make.IMakeNotificationListener" file="IMakeNotificationListener.java">
+  <dependency className="jetbrains.mps.make.IMakeNotificationListener">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.MakeNotification" />
   </dependency>
-  <dependency className="jetbrains.mps.make.IMakeService" file="IMakeService.java">
+  <dependency className="jetbrains.mps.make.IMakeService">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -22,18 +22,18 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.MakeNotification" file="MakeNotification.java">
+  <dependency className="jetbrains.mps.make.MakeNotification">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.IMakeService" />
     <classNode extendsClassName="java.util.EventObject" />
   </dependency>
-  <dependency className="jetbrains.mps.make.MakeServiceComponent" file="MakeServiceComponent.java">
+  <dependency className="jetbrains.mps.make.MakeServiceComponent">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.IMakeService" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.make.MakeSession" file="MakeSession.java">
+  <dependency className="jetbrains.mps.make.MakeSession">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.make.script.IScript" />

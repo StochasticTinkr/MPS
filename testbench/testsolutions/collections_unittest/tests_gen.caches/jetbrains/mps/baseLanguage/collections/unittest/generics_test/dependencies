@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.BooleanSequence" file="BooleanSequence.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.BooleanSequence">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.Generics1_Test" file="Generics1_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.Generics1_Test">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
@@ -15,12 +15,12 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.IntegerSequence" file="IntegerSequence.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.IntegerSequence">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence" file="MySequence.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />

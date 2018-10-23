@@ -54,28 +54,14 @@ public class SModuleOperations {
 
   /**
    * @deprecated use {@link jetbrains.mps.project.facets.GenerationTargetFacet#getOutputLocation(SModel)} or {@link JavaModuleFacet#getOutputRoot()}.
-   *             Even {@link #getOutputRoot(SModel)} is much better as it (a) deals with IFile (b) hints it's root, not model-specific location
+   *             Even {@code #getOutputRoot(SModel)} is much better as it (a) deals with IFile (b) hints it's root, not model-specific location
    */
   @Deprecated
   @ToRemove(version = 3.5)
   public static String getOutputPathFor(SModel model) {
+    // FIXME a lot of uses in mbeddr (14!)
     IFile outputDir = SModelOperations.getOutputLocation(model);
     return outputDir != null ? outputDir.getPath() : null;
-  }
-
-  /**
-   * Filesystem location for all output of the model's module.
-   * Unlike {@link #getOutputPathFor(org.jetbrains.mps.openapi.model.SModel)} doesn't
-   * translate IFile to String.
-   *
-   * @deprecated use {@link jetbrains.mps.smodel.SModelOperations#getOutputLocation(SModel)} instead. This operation is not {@code SModuleOperation}'s.
-   *
-   * @return module's output path, or null if unknown
-   */
-  @ToRemove(version = 3.5)
-  @Deprecated
-  public static IFile getOutputRoot(@NotNull SModel model) {
-    return SModelOperations.getOutputLocation(model);
   }
 
   /**

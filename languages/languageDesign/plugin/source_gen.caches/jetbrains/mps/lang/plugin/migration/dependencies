@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.plugin.migration.BaseToolDeclaration_number" file="BaseToolDeclaration_number.java">
+  <dependency className="jetbrains.mps.lang.plugin.migration.BaseToolDeclaration_number">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -26,7 +26,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.migration.CleanEditorTabCommandOnCreateProperty" file="CleanEditorTabCommandOnCreateProperty.java">
+  <dependency className="jetbrains.mps.lang.plugin.migration.CleanEditorTabCommandOnCreateProperty">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.migration.ClearActionParameterIsOptional" file="ClearActionParameterIsOptional.java">
+  <dependency className="jetbrains.mps.lang.plugin.migration.ClearActionParameterIsOptional">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -58,7 +58,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources" file="CopyPrefPageIconsToResources.java">
+  <dependency className="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -86,7 +86,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.migration.MigrationDescriptor" file="MigrationDescriptor.java">
+  <dependency className="jetbrains.mps.lang.plugin.migration.MigrationDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />

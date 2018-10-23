@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.search.BaseLanguageUtil" file="BaseLanguageUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.search.BaseLanguageUtil">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" file="ClassifierSuccessors.java">
+  <dependency className="jetbrains.mps.baseLanguage.search.ClassifierSuccessors">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -21,12 +21,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.search.MPSBaseLanguage" file="MPSBaseLanguage.java">
+  <dependency className="jetbrains.mps.baseLanguage.search.MPSBaseLanguage">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
     <classNode extendsClassName="jetbrains.mps.components.ComponentPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.search.MpsScopesUtil" file="MpsScopesUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.search.MpsScopesUtil">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.search.VisibilityUtil" file="VisibilityUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.search.VisibilityUtil">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.BaseLanguageUtil" />

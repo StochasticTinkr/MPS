@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.text.impl;
 
-import jetbrains.mps.logging.Log4jUtil;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.text.BasicToken;
 import jetbrains.mps.text.TextArea;
@@ -26,7 +25,6 @@ import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.SNodeOperations;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -104,7 +102,6 @@ public final class TextGenSupport implements TextArea {
     TextMark m = myContext.getBuffer().popMark();
     final UnitPositionInfo pi = tic.createUnitPosition(m, myContext.getPrimaryInput());
     pi.setUnitName(unitName);
-    warnIfUnitNameInvalid(unitName, myContext.getPrimaryInput());
   }
 
   private TraceInfoCollector getTraceInfoCollector() {
@@ -167,17 +164,6 @@ public final class TextGenSupport implements TextArea {
 
   private TextGenTransitionContext getTransitionContext() {
     return ((TextGenTransitionContext) myContext);
-  }
-
-  private void warnIfUnitNameInvalid(String unitName, SNode node) {
-    String modelName = node.getModel().getName().getLongName();
-    if (!(unitName.startsWith(modelName))) {
-      final String msg = String.format("Unit name has to start with model fqName. Fix %s in %s.", unitName, modelName);
-      LogManager.getLogger(getClass()).warn(Log4jUtil.createMessageObject(msg, node));
-    } else if (unitName.length() <= modelName.length() + 1 || unitName.charAt(modelName.length())!= '.' || unitName.indexOf('.', modelName.length()+1) != -1) {
-      String msg = String.format("Unit name has to match \"modelFqName.shortUnitName\" where short unit name does not contain dots. Fix %s in %s", unitName, modelName);
-      LogManager.getLogger(getClass()).warn(Log4jUtil.createMessageObject(msg, node));
-    }
   }
 
   /**

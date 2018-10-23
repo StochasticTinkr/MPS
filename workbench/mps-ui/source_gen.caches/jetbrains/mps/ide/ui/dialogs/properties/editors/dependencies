@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor" file="RuleTypeEditor.java">
+  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor">
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.awt.event.KeyListener" />
     <classNode dependClassName="javax.swing.JComboBox" />

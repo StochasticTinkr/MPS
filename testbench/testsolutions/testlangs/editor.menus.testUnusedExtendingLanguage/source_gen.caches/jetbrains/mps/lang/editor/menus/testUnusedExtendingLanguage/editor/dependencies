@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage" file="MenuForBaseInUnusedExtendingLanguage.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -40,7 +40,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution" file="UnusedContribution.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />

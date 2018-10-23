@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_editorContext__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_model__BehaviorDescriptor" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_editorContext__BehaviorDescriptor" file="ConceptFunctionParameter_editorContext__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_editorContext__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_model__BehaviorDescriptor" file="ConceptFunctionParameter_model__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_model__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -63,7 +63,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_node__BehaviorDescriptor" file="ConceptFunctionParameter_node__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_node__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -87,7 +87,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_operationContext__BehaviorDescriptor" file="ConceptFunctionParameter_operationContext__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_operationContext__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />

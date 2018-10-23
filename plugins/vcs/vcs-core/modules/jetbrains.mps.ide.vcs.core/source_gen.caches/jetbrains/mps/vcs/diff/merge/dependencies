@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.diff.merge.MergeConflictsBuilder" file="MergeConflictsBuilder.java">
+  <dependency className="jetbrains.mps.vcs.diff.merge.MergeConflictsBuilder">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -41,9 +41,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.merge.MergeSession" file="MergeSession.java">
+  <dependency className="jetbrains.mps.vcs.diff.merge.MergeSession">
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
@@ -53,10 +55,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -64,12 +63,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceVersionAware" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelAdapter" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
@@ -77,6 +73,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelRootEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.references.UnregisteredNodes" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetImpl" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.AddRootChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.DeleteRootChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.MetadataChange" />
@@ -84,19 +81,16 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeConflictsBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeSessionState" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeTemporaryModel" />
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeStrategy" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.merge.MergeSessionState" file="MergeSessionState.java">
+  <dependency className="jetbrains.mps.vcs.diff.merge.MergeSessionState">
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
@@ -109,7 +103,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeTemporaryModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.merge.MergeTemporaryModel" file="MergeTemporaryModel.java">
+  <dependency className="jetbrains.mps.vcs.diff.merge.MergeTemporaryModel">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />

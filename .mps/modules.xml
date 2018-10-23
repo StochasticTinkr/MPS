@@ -480,6 +480,8 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.SourceLanguage/testmaterial.moveConcept.SourceLanguage.mpl" folder="tests.testRefactoring.material.moveConcept" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.TargetLanguage/testmaterial.moveConcept.TargetLanguage.mpl" folder="tests.testRefactoring.material.moveConcept" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/testSpaceCompletion.mpl" folder="tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/textgen.folders/lang/jetbrains.mps.samples.files.mpl" folder="tests.TextGen Folders" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/textgen.folders/sandbox/jetbrains.mps.samples.files.sandbox.msd" folder="tests.TextGen Folders" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/xmodel.build/jetbrains.mps.generator.xmodel.build.test.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/testbench/solution/jetbrains.mps.testbench.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="tests" />

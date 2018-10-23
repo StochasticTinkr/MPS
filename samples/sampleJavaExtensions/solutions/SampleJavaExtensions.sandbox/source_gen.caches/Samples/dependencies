@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="Samples.DecisionSample" file="DecisionSample.java">
+  <dependency className="Samples.DecisionSample">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -10,18 +10,18 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.mps.samples.money.runtime.Money" />
   </dependency>
-  <dependency className="Samples.DropBox" file="DropBox.java">
+  <dependency className="Samples.DropBox">
     <classNode dependClassName="java.lang.InterruptedException" />
   </dependency>
-  <dependency className="Samples.MoneySample" file="MoneySample.java">
+  <dependency className="Samples.MoneySample">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="org.jetbrains.mps.samples.money.runtime.Money" />
   </dependency>
-  <dependency className="Samples.MyConstants" file="MyConstants.java">
+  <dependency className="Samples.MyConstants">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="Samples.ParallelForSample" file="ParallelForSample.java">
+  <dependency className="Samples.ParallelForSample">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.InterruptedException" />
@@ -42,12 +42,12 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="utils.ParallelLoopException" />
   </dependency>
-  <dependency className="Samples.SidewaysIfSample" file="SidewaysIfSample.java">
+  <dependency className="Samples.SidewaysIfSample">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
   </dependency>
-  <dependency className="Samples.SimpleParallelForSample" file="SimpleParallelForSample.java">
+  <dependency className="Samples.SimpleParallelForSample">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.InterruptedException" />
@@ -65,7 +65,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="utils.ParallelLoopException" />
   </dependency>
-  <dependency className="Samples.ThreadSafeSample" file="ThreadSafeSample.java">
+  <dependency className="Samples.ThreadSafeSample">
     <classNode dependClassName="Samples.DropBox" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.InterruptedException" />
@@ -82,7 +82,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="utils.ParallelLoopException" />
   </dependency>
-  <dependency className="Samples.UnlessSample" file="UnlessSample.java">
+  <dependency className="Samples.UnlessSample">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
   </dependency>

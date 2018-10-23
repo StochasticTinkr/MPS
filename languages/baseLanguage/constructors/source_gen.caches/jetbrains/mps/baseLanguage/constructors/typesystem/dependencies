@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.typesystem.checkNumberOfArgs_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructorParameterReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructorParameter_InferenceRule" />
@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.checkNumberOfArgs_NonTypesystemRule" file="checkNumberOfArgs_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.checkNumberOfArgs_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -26,7 +26,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructorParameterReference_InferenceRule" file="typeof_CustomConstructorParameterReference_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructorParameterReference_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -37,7 +37,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructorParameter_InferenceRule" file="typeof_CustomConstructorParameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructorParameter_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -48,7 +48,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructorUsage_InferenceRule" file="typeof_CustomConstructorUsage_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructorUsage_InferenceRule">
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -62,7 +62,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructor_InferenceRule" file="typeof_CustomConstructor_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructor_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -73,7 +73,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_ListCustomParameter_InferenceRule" file="typeof_ListCustomParameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_ListCustomParameter_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />

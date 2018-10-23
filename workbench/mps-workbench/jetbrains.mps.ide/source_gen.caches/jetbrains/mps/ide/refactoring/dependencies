@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" file="ModelOrNodeChooser.java">
+  <dependency className="jetbrains.mps.ide.refactoring.ModelOrNodeChooser">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode dependClassName="java.lang.Object" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.MoveUpDialog" file="MoveUpDialog.java">
+  <dependency className="jetbrains.mps.ide.refactoring.MoveUpDialog">
     <classNode dependClassName="com.intellij.refactoring.RefactoringBundle" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -37,7 +37,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.NodeHierarchyChooser" file="NodeHierarchyChooser.java">
+  <dependency className="jetbrains.mps.ide.refactoring.NodeHierarchyChooser">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -57,13 +57,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="com.intellij.ui.components.JBScrollPane" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.OptionDialog" file="OptionDialog.java">
+  <dependency className="jetbrains.mps.ide.refactoring.OptionDialog">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.RefactoringAccessImpl" file="RefactoringAccessImpl.java">
+  <dependency className="jetbrains.mps.ide.refactoring.RefactoringAccessImpl">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.Deprecated" />
@@ -90,7 +90,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.RefactoringSettings" file="RefactoringSettings.java">
+  <dependency className="jetbrains.mps.ide.refactoring.RefactoringSettings">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
@@ -102,7 +102,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.RefactoringView" file="RefactoringView.java">
+  <dependency className="jetbrains.mps.ide.refactoring.RefactoringView">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode dependClassName="java.lang.Override" />
@@ -123,7 +123,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.view.TabbedUsagesTool" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl" file="RefactoringViewItemImpl.java">
+  <dependency className="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -158,7 +158,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewItem" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.RenameModelDialog" file="RenameModelDialog.java">
+  <dependency className="jetbrains.mps.ide.refactoring.RenameModelDialog">
     <classNode dependClassName="java.awt.HeadlessException" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
@@ -172,7 +172,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelName" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RenameDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.RenameModuleDialog" file="RenameModuleDialog.java">
+  <dependency className="jetbrains.mps.ide.refactoring.RenameModuleDialog">
     <classNode dependClassName="com.intellij.ui.components.JBLabel" />
     <classNode dependClassName="com.intellij.ui.components.JBPanel" />
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />

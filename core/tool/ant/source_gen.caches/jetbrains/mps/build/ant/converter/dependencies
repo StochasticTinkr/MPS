@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.ant.converter.ConvertToBinaryTask" file="ConvertToBinaryTask.java">
+  <dependency className="jetbrains.mps.build.ant.converter.ConvertToBinaryTask">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.PrintWriter" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.execution.settings.constraints.EditorExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.execution.settings.constraints.EditorOperationCall_Constraints" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.settings.constraints.EditorExpression_Constraints" file="EditorExpression_Constraints.java">
+  <dependency className="jetbrains.mps.execution.settings.constraints.EditorExpression_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
@@ -55,7 +55,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.settings.constraints.EditorOperationCall_Constraints" file="EditorOperationCall_Constraints.java">
+  <dependency className="jetbrains.mps.execution.settings.constraints.EditorOperationCall_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
@@ -87,11 +87,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.settings.constraints.EditorOperationDeclaration_Constraints" file="EditorOperationDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.execution.settings.constraints.EditorOperationDeclaration_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.settings.constraints.EditorPropertyReference_Constraints" file="EditorPropertyReference_Constraints.java">
+  <dependency className="jetbrains.mps.execution.settings.constraints.EditorPropertyReference_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
@@ -121,7 +121,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.settings.constraints.GetEditorOperation_Constraints" file="GetEditorOperation_Constraints.java">
+  <dependency className="jetbrains.mps.execution.settings.constraints.GetEditorOperation_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -140,7 +140,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.settings.constraints.PersistentPropertyReferenceOperation_Constraints" file="PersistentPropertyReferenceOperation_Constraints.java">
+  <dependency className="jetbrains.mps.execution.settings.constraints.PersistentPropertyReferenceOperation_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
@@ -167,7 +167,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.settings.constraints.ProjectAccessExpression_Constraints" file="ProjectAccessExpression_Constraints.java">
+  <dependency className="jetbrains.mps.execution.settings.constraints.ProjectAccessExpression_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -183,7 +183,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.settings.constraints.SettingsEditor_Constraints" file="SettingsEditor_Constraints.java">
+  <dependency className="jetbrains.mps.execution.settings.constraints.SettingsEditor_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -198,7 +198,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.settings.constraints.TemplateParameterReference_Constraints" file="TemplateParameterReference_Constraints.java">
+  <dependency className="jetbrains.mps.execution.settings.constraints.TemplateParameterReference_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />

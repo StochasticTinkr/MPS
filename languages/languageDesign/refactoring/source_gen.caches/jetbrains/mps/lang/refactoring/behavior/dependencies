@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.AbstractMoveExpression__BehaviorDescriptor" file="AbstractMoveExpression__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.AbstractMoveExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.AffectedNodesClause__BehaviorDescriptor" file="AffectedNodesClause__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.AffectedNodesClause__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.AbstractMoveExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.AffectedNodesClause__BehaviorDescriptor" />
@@ -84,7 +84,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_Model__BehaviorDescriptor" file="ConceptFunctionParameter_Model__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_Model__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -108,7 +108,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_SModel__BehaviorDescriptor" file="ConceptFunctionParameter_SModel__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_SModel__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -132,7 +132,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ContextMemberOperation__BehaviorDescriptor" file="ContextMemberOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.ContextMemberOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -154,7 +154,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.DoRefactorClause__BehaviorDescriptor" file="DoRefactorClause__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.DoRefactorClause__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -182,7 +182,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.DoWhenDoneClause__BehaviorDescriptor" file="DoWhenDoneClause__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.DoWhenDoneClause__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -210,7 +210,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.GetModelsToUpdateClause__BehaviorDescriptor" file="GetModelsToUpdateClause__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.GetModelsToUpdateClause__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -238,7 +238,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.InitClause__BehaviorDescriptor" file="InitClause__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.InitClause__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -266,7 +266,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModelClause__BehaviorDescriptor" file="IsApplicableToModelClause__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModelClause__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -294,7 +294,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModuleClause__BehaviorDescriptor" file="IsApplicableToModuleClause__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModuleClause__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -322,7 +322,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.IsApplicableToNodeClause__BehaviorDescriptor" file="IsApplicableToNodeClause__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.IsApplicableToNodeClause__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -350,7 +350,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.MainProjectOperation__BehaviorDescriptor" file="MainProjectOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.MainProjectOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -375,7 +375,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ModelDescriptorOperation__BehaviorDescriptor" file="ModelDescriptorOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.ModelDescriptorOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -400,7 +400,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ModelsToGenerateClause__BehaviorDescriptor" file="ModelsToGenerateClause__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.ModelsToGenerateClause__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -428,7 +428,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ModuleOperation__BehaviorDescriptor" file="ModuleOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.ModuleOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -453,7 +453,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.NodeOperation__BehaviorDescriptor" file="NodeOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.NodeOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -480,7 +480,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.NodesOperation__BehaviorDescriptor" file="NodesOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.NodesOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -507,7 +507,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ProjectOperation__BehaviorDescriptor" file="ProjectOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.ProjectOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -532,7 +532,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringFieldReference__BehaviorDescriptor" file="RefactoringFieldReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringFieldReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -554,7 +554,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.Refactoring__BehaviorDescriptor" file="Refactoring__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.Refactoring__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -580,7 +580,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.RepositoryOperation__BehaviorDescriptor" file="RepositoryOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.RepositoryOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -605,7 +605,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ScopeOperation__BehaviorDescriptor" file="ScopeOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.behavior.ScopeOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

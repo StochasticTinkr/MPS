@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil" file="IdeCommandUtil.java">
+  <dependency className="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />

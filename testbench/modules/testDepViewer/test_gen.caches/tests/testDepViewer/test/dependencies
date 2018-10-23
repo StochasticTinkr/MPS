@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="tests.testDepViewer.test.TestDepViewer_Test" file="TestDepViewer_Test.java">
+  <dependency className="tests.testDepViewer.test.TestDepViewer_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Throwable" />

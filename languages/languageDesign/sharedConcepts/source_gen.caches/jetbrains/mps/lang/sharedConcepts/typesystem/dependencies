@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.sharedConcepts.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.lang.sharedConcepts.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.sharedConcepts.typesystem.typeof_ConceptFunctionParameter_progressMonitor_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.sharedConcepts.typesystem.typeof_ConceptFunctionParameter_scope_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.sharedConcepts.typesystem.typeof_ConceptFunctionParameter_progressMonitor_InferenceRule" file="typeof_ConceptFunctionParameter_progressMonitor_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.sharedConcepts.typesystem.typeof_ConceptFunctionParameter_progressMonitor_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -19,7 +19,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.sharedConcepts.typesystem.typeof_ConceptFunctionParameter_scope_InferenceRule" file="typeof_ConceptFunctionParameter_scope_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.sharedConcepts.typesystem.typeof_ConceptFunctionParameter_scope_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />

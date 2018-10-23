@@ -77,7 +77,7 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
   public Collection<EditorQuickFix> getQuickFix() {
     List<EditorQuickFix> list = new ArrayList<>();
     for (QuickFixProvider quickFixProvider : getErrorReporter().getIntentionProviders()) {
-      QuickFixRuntimeAdapter quickFixAdapter = new QuickFixRuntimeAdapter(myLanguageRegistry, getErrorReporter().getSNode(), quickFixProvider);
+      QuickFixRuntimeAdapter quickFixAdapter = new QuickFixRuntimeAdapter(myLanguageRegistry, getErrorReporter().getSNode().getReference(), quickFixProvider);
       list.add(quickFixAdapter);
     }
     return list;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler_value__BehaviorDescriptor" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler__BehaviorDescriptor" file="XMLSAXAttributeHandler__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler_value__BehaviorDescriptor" file="XMLSAXAttributeHandler_value__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler_value__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -74,7 +74,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildHandler__BehaviorDescriptor" file="XMLSAXChildHandler__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildHandler__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -99,7 +99,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRuleCondition__BehaviorDescriptor" file="XMLSAXChildRuleCondition__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRuleCondition__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -129,7 +129,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRule__BehaviorDescriptor" file="XMLSAXChildRule__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRule__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -162,7 +162,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXDefaultChildHandler__BehaviorDescriptor" file="XMLSAXDefaultChildHandler__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXDefaultChildHandler__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -187,7 +187,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXDefaultChildHandler_tagName__BehaviorDescriptor" file="XMLSAXDefaultChildHandler_tagName__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXDefaultChildHandler_tagName__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -211,7 +211,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXFieldReference__BehaviorDescriptor" file="XMLSAXFieldReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXFieldReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -233,7 +233,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandlerFunction__BehaviorDescriptor" file="XMLSAXHandlerFunction__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandlerFunction__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -263,7 +263,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeCreator__BehaviorDescriptor" file="XMLSAXNodeCreator__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeCreator__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -299,7 +299,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeRule__BehaviorDescriptor" file="XMLSAXNodeRule__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeRule__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -329,7 +329,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeValidator__BehaviorDescriptor" file="XMLSAXNodeValidator__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeValidator__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -354,7 +354,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXParser__BehaviorDescriptor" file="XMLSAXParser__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXParser__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -380,7 +380,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler__BehaviorDescriptor" file="XMLSAXTextHandler__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -405,7 +405,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_value__BehaviorDescriptor" file="XMLSAXTextHandler_value__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_value__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

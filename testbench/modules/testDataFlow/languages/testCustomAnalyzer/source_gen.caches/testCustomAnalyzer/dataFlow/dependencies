@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testCustomAnalyzer.dataFlow.ChildIntraModeRule" file="ChildIntraModeRule.java">
+  <dependency className="testCustomAnalyzer.dataFlow.ChildIntraModeRule">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.ChildRule" file="ChildRule.java">
+  <dependency className="testCustomAnalyzer.dataFlow.ChildRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="testCustomAnalyzer.dataFlow.counterInstructionAInstruction" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.Child_IntraProceduralSpecific_BuilderMode_DataFlow" file="Child_IntraProceduralSpecific_BuilderMode_DataFlow.java">
+  <dependency className="testCustomAnalyzer.dataFlow.Child_IntraProceduralSpecific_BuilderMode_DataFlow">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -33,7 +33,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.Child_IntraProcedural_BuilderMode_DataFlow" file="Child_IntraProcedural_BuilderMode_DataFlow.java">
+  <dependency className="testCustomAnalyzer.dataFlow.Child_IntraProcedural_BuilderMode_DataFlow">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructorAnalyzerRunner" file="CounterAnalyzerWithConstructorAnalyzerRunner.java">
+  <dependency className="testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructorAnalyzerRunner">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.CustomAnalyzerWithModeAnalyzerRunner" file="CustomAnalyzerWithModeAnalyzerRunner.java">
+  <dependency className="testCustomAnalyzer.dataFlow.CustomAnalyzerWithModeAnalyzerRunner">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
@@ -80,7 +80,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.DataFlowAspectDescriptorImpl" file="DataFlowAspectDescriptorImpl.java">
+  <dependency className="testCustomAnalyzer.dataFlow.DataFlowAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -103,7 +103,7 @@
     <classNode dependClassName="testCustomAnalyzer.dataFlow.Root_DataFlow" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptorBase" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.OtherChild_IntraProcedural_BuilderMode_DataFlow" file="OtherChild_IntraProcedural_BuilderMode_DataFlow.java">
+  <dependency className="testCustomAnalyzer.dataFlow.OtherChild_IntraProcedural_BuilderMode_DataFlow">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -115,7 +115,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.OtherRoot_DataFlow" file="OtherRoot_DataFlow.java">
+  <dependency className="testCustomAnalyzer.dataFlow.OtherRoot_DataFlow">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -123,7 +123,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.OtherSubChild_IntraProceduralSpecific_BuilderMode_DataFlow" file="OtherSubChild_IntraProceduralSpecific_BuilderMode_DataFlow.java">
+  <dependency className="testCustomAnalyzer.dataFlow.OtherSubChild_IntraProceduralSpecific_BuilderMode_DataFlow">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -132,7 +132,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.Root_DataFlow" file="Root_DataFlow.java">
+  <dependency className="testCustomAnalyzer.dataFlow.Root_DataFlow">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -140,13 +140,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.counterInstructionAInstruction" file="counterInstructionAInstruction.java">
+  <dependency className="testCustomAnalyzer.dataFlow.counterInstructionAInstruction">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.counterInstructionBInstruction" file="counterInstructionBInstruction.java">
+  <dependency className="testCustomAnalyzer.dataFlow.counterInstructionBInstruction">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />

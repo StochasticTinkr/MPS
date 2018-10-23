@@ -11,6 +11,8 @@ import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.icons.AllIcons;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -31,6 +33,10 @@ public class ToggleBreakpoint_Action extends BaseAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     BreakpointsUiComponent breakpointManager = BreakpointsUiComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
     event.getPresentation().setEnabled(breakpointManager != null && breakpointManager.isDebuggable(((EditorCell) MapSequence.fromMap(_params).get("selectedCell"))));
+    if (ActionPlaces.TOUCHBAR_GENERAL.equals(event.getPlace())) {
+      event.getPresentation().setIcon(AllIcons.Debugger.Db_set_breakpoint);
+    }
+
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {

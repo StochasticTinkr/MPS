@@ -21,7 +21,7 @@ public class TargetConceptChecker extends AbstractNodeCheckerInEditor implements
   }
   @Override
   public IssueKindReportItem.CheckerCategory getCategory() {
-    return IssueKindReportItem.CONSTRAINTS;
+    return IssueKindReportItem.TARGET_CONCEPTS;
   }
   @Override
   public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {

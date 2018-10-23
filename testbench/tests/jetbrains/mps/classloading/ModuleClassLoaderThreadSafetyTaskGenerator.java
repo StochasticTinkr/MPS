@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.classloading.reloading.FakeClassPathItem;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.smodel.ExecutorServiceShutdownHelper;
-import jetbrains.mps.util.performance.PerformanceTracer;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;

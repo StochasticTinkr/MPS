@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.behavior.findUsages.FindUsagesDescriptor" file="FindUsagesDescriptor.java">
+  <dependency className="jetbrains.mps.lang.behavior.findUsages.FindUsagesDescriptor">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder" file="OverriddenMethods_Finder.java">
+  <dependency className="jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -46,7 +46,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder" file="OverridingMethods_Finder.java">
+  <dependency className="jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor" />

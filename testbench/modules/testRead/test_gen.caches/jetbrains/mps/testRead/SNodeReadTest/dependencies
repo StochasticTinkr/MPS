@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test" file="SNodeReadAccess_Test.java">
+  <dependency className="jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test">
     <classNode dependClassName="java.beans.XMLDecoder" />
     <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.io.IOException" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.testRead.SNodeReadTest.StatCountNodeReadAccessInEditorListener" file="StatCountNodeReadAccessInEditorListener.java">
+  <dependency className="jetbrains.mps.testRead.SNodeReadTest.StatCountNodeReadAccessInEditorListener">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.StackTraceElement" />

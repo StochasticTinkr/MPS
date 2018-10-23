@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.datatransfer.CopyPasteUtil" file="CopyPasteUtil.java">
+  <dependency className="jetbrains.mps.ide.datatransfer.CopyPasteUtil">
     <classNode dependClassName="com.intellij.ide.CopyPasteManagerEx" />
     <classNode dependClassName="java.awt.datatransfer.DataFlavor" />
     <classNode dependClassName="java.awt.datatransfer.StringSelection" />
@@ -56,12 +56,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.datatransfer.SModelDataFlavor" file="SModelDataFlavor.java">
+  <dependency className="jetbrains.mps.ide.datatransfer.SModelDataFlavor">
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.SNodeTransferable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="java.awt.datatransfer.DataFlavor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.datatransfer.SNodeTransferable" file="SNodeTransferable.java">
+  <dependency className="jetbrains.mps.ide.datatransfer.SNodeTransferable">
     <classNode dependClassName="java.awt.datatransfer.DataFlavor" />
     <classNode dependClassName="java.awt.datatransfer.UnsupportedFlavorException" />
     <classNode dependClassName="java.io.IOException" />
@@ -87,7 +87,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="java.awt.datatransfer.Transferable" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.datatransfer.TextPasteUtil" file="TextPasteUtil.java">
+  <dependency className="jetbrains.mps.ide.datatransfer.TextPasteUtil">
     <classNode dependClassName="com.intellij.ide.CopyPasteManagerEx" />
     <classNode dependClassName="java.awt.datatransfer.DataFlavor" />
     <classNode dependClassName="java.awt.datatransfer.Transferable" />

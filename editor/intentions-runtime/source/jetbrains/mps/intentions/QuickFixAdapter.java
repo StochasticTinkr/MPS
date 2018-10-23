@@ -23,6 +23,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.intentions.Kind;
+import jetbrains.mps.nodeEditor.checking.QuickFixRuntimeEditorWrapper;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -102,24 +104,8 @@ public class QuickFixAdapter extends OldBaseIntentionFactory {
     @Override
     public void execute(SNode node, EditorContext editorContext) {
       EditorCell selectedCell = editorContext.getSelectedCell();
-      int caretX = -1;
-      int caretY = -1;
-      boolean restoreCaretPosition = false;
-      if (selectedCell != null && jetbrains.mps.util.SNodeOperations.isAncestor(node, selectedCell.getSNode())) {
-        caretX = selectedCell.getCaretX();
-        caretY = selectedCell.getBaseline();
-        restoreCaretPosition = true;
-      }
-      myQuickFix.execute(editorContext.getRepository());
-      if (restoreCaretPosition) {
-        editorContext.flushEvents();
-        EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
-        EditorCell leaf = rootCell.findLeaf(caretX, caretY);
-        if (leaf != null) {
-          editorContext.getEditorComponent().changeSelection(leaf);
-          leaf.setCaretX(caretX);
-        }
-      }
+      boolean restoreCaretPosition = selectedCell != null && SNodeOperations.isAncestor(node, selectedCell.getSNode());
+      QuickFixRuntimeEditorWrapper.getInstance(myQuickFix).execute(editorContext, restoreCaretPosition);
     }
 
     @Override

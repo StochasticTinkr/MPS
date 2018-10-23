@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.platform.actions.Annotate_Action" file="Annotate_Action.java">
+  <dependency className="jetbrains.mps.vcs.platform.actions.Annotate_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.actions.CopyOldNodes_Action" file="CopyOldNodes_Action.java">
+  <dependency className="jetbrains.mps.vcs.platform.actions.CopyOldNodes_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.actions.GoToNextChange_Action" file="GoToNextChange_Action.java">
+  <dependency className="jetbrains.mps.vcs.platform.actions.GoToNextChange_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.actions.GoToPreviousChange_Action" file="GoToPreviousChange_Action.java">
+  <dependency className="jetbrains.mps.vcs.platform.actions.GoToPreviousChange_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -63,7 +63,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.actions.InstalVcsAddons_Action" file="InstalVcsAddons_Action.java">
+  <dependency className="jetbrains.mps.vcs.platform.actions.InstalVcsAddons_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -76,7 +76,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action" file="ReportModelMergeProblem_Action.java">
+  <dependency className="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
@@ -109,7 +109,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.actions.ResolveNonconflictingChanges_Action" file="ResolveNonconflictingChanges_Action.java">
+  <dependency className="jetbrains.mps.vcs.platform.actions.ResolveNonconflictingChanges_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
@@ -131,7 +131,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.actions.RollbackChanges_Action" file="RollbackChanges_Action.java">
+  <dependency className="jetbrains.mps.vcs.platform.actions.RollbackChanges_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -147,7 +147,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.actions.ShowDiffFromChanges_Action" file="ShowDiffFromChanges_Action.java">
+  <dependency className="jetbrains.mps.vcs.platform.actions.ShowDiffFromChanges_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -169,7 +169,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.actions.VcsActionsUtil" file="VcsActionsUtil.java">
+  <dependency className="jetbrains.mps.vcs.platform.actions.VcsActionsUtil">
     <classNode dependClassName="com.intellij.diff.DiffContentFactory" />
     <classNode dependClassName="com.intellij.diff.DiffManager" />
     <classNode dependClassName="com.intellij.diff.contents.DiffContent" />

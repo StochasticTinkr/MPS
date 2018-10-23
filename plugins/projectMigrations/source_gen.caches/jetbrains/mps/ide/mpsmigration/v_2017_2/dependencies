@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_2.JUnitLibsRepackaging" file="JUnitLibsRepackaging.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_2.JUnitLibsRepackaging">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -29,7 +29,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_2.Migrations_2017_2" file="Migrations_2017_2.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_2.Migrations_2017_2">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.mpsmigration.v_2017_2.JUnitLibsRepackaging" />

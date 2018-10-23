@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.project.foreign.FacetConfigurationFormatException" file="FacetConfigurationFormatException.java">
+  <dependency className="jetbrains.mps.project.foreign.FacetConfigurationFormatException">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="java.lang.Exception" />
   </dependency>
-  <dependency className="jetbrains.mps.project.foreign.IdeaModuleConfiguration" file="IdeaModuleConfiguration.java">
+  <dependency className="jetbrains.mps.project.foreign.IdeaModuleConfiguration">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jdom.JDOMException" />
   </dependency>
-  <dependency className="jetbrains.mps.project.foreign.IdeaModuleSolutionDescriptorIO" file="IdeaModuleSolutionDescriptorIO.java">
+  <dependency className="jetbrains.mps.project.foreign.IdeaModuleSolutionDescriptorIO">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.Override" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.project.io.DescriptorIO" />
   </dependency>
-  <dependency className="jetbrains.mps.project.foreign.MPSFacetConfiguration" file="MPSFacetConfiguration.java">
+  <dependency className="jetbrains.mps.project.foreign.MPSFacetConfiguration">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
   </dependency>
-  <dependency className="jetbrains.mps.project.foreign.ModuleMacroExpander" file="ModuleMacroExpander.java">
+  <dependency className="jetbrains.mps.project.foreign.ModuleMacroExpander">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
@@ -64,7 +64,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.util.MacroHelper" />
   </dependency>
-  <dependency className="jetbrains.mps.project.foreign.ProjectMacroExpander" file="ProjectMacroExpander.java">
+  <dependency className="jetbrains.mps.project.foreign.ProjectMacroExpander">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />

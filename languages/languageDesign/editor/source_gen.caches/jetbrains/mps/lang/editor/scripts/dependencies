@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript" file="HorizontalGapMigration_MigrationScript.java">
+  <dependency className="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.scripts.ScriptsDescriptor" file="ScriptsDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.scripts.ScriptsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -29,7 +29,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.ScriptAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.scripts.SmartRefGeneratedMenuMigration_MigrationScript" file="SmartRefGeneratedMenuMigration_MigrationScript.java">
+  <dependency className="jetbrains.mps.lang.editor.scripts.SmartRefGeneratedMenuMigration_MigrationScript">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

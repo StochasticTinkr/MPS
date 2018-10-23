@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.dataFlow.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.dataFlow.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration__BehaviorDescriptor" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock__BehaviorDescriptor" file="BuilderBlock__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -44,7 +44,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration__BehaviorDescriptor" file="DataFlowBuilderDeclaration__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -68,7 +68,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.dataFlow.behavior.EmitStatement__BehaviorDescriptor" file="EmitStatement__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.dataFlow.behavior.EmitStatement__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -85,7 +85,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.dataFlow.behavior.InstructionType__BehaviorDescriptor" file="InstructionType__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.dataFlow.behavior.InstructionType__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -107,7 +107,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.dataFlow.behavior.LabelPosition__BehaviorDescriptor" file="LabelPosition__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.dataFlow.behavior.LabelPosition__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -124,7 +124,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.dataFlow.behavior.NodeParameter__BehaviorDescriptor" file="NodeParameter__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.dataFlow.behavior.NodeParameter__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

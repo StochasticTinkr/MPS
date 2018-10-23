@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineAfterWrapper_Test" file="AddNewLineAfterWrapper_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineAfterWrapper_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineBeforeWrapper_Test" file="AddNewLineBeforeWrapper_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineBeforeWrapper_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineBetweenWordAndWrapperOnWord_Test" file="AddNewLineBetweenWordAndWrapperOnWord_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineBetweenWordAndWrapperOnWord_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineOnEmptyLine_Test" file="AddNewLineOnEmptyLine_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineOnEmptyLine_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheEndOfTheLine_Test" file="AddNewLineOnTheEndOfTheLine_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheEndOfTheLine_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -60,7 +60,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheMiddleOfTheWord_Test" file="AddNewLineOnTheMiddleOfTheWord_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheMiddleOfTheWord_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -72,7 +72,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheStartOfTheLine_Test" file="AddNewLineOnTheStartOfTheLine_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheStartOfTheLine_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -84,7 +84,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNextNodeFromOutsideOfTheText_Test" file="AddNextNodeFromOutsideOfTheText_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNextNodeFromOutsideOfTheText_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -96,7 +96,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNextPlaceholderFromOutsideOfTheText_Test" file="AddNextPlaceholderFromOutsideOfTheText_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNextPlaceholderFromOutsideOfTheText_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -108,7 +108,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNextPlaceholderFromText_Test" file="AddNextPlaceholderFromText_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNextPlaceholderFromText_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -120,22 +120,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNodeWrapperContent_Test" file="AddNodeWrapperContent_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="org.junit.ClassRule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddNodeWrapper_Test" file="AddNodeWrapper_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNodeWrapperContent_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -150,7 +135,22 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddTextToPlaceholder_Test" file="AddTextToPlaceholder_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddNodeWrapper_Test">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddTextToPlaceholder_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -162,7 +162,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddWordAfterRichWord_Test" file="AddWordAfterRichWord_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddWordAfterRichWord_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -174,7 +174,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddWordAfterWord_Test" file="AddWordAfterWord_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddWordAfterWord_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -186,7 +186,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddWordAfterWrapper_Test" file="AddWordAfterWrapper_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddWordAfterWrapper_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -198,7 +198,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddWordBeforeWord_Test" file="AddWordBeforeWord_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddWordBeforeWord_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -210,7 +210,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddWordBeforeWrapper_Test" file="AddWordBeforeWrapper_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddWordBeforeWrapper_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -222,7 +222,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.AddWord_Test" file="AddWord_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.AddWord_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -234,7 +234,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceEmptyLine_Test" file="BackspaceEmptyLine_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceEmptyLine_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -246,44 +246,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceFirstLineFromStartAndWholeText_Test" file="BackspaceFirstLineFromStartAndWholeText_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.EditorUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="org.junit.ClassRule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceLineBetweenWordAndWrapper_Test" file="BackspaceLineBetweenWordAndWrapper_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="org.junit.ClassRule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceLineBetweenWrappers_Test" file="BackspaceLineBetweenWrappers_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="org.junit.ClassRule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWordAndWrapperFromWord_Test" file="BackspaceSpaceBetweenWordAndWrapperFromWord_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceFirstLineFromStartAndWholeText_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -296,7 +259,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWordAndWrapperFromWrapper_Test" file="BackspaceSpaceBetweenWordAndWrapperFromWrapper_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceLineBetweenWordAndWrapper_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -308,7 +271,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWords_Test" file="BackspaceSpaceBetweenWords_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceLineBetweenWrappers_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -320,31 +283,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceStartOfTheLineBetweenWords_Test" file="BackspaceStartOfTheLineBetweenWords_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="org.junit.ClassRule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteEmptyLine_Test" file="DeleteEmptyLine_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="org.junit.ClassRule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteLastLineFromStartAndWholeText_Test" file="DeleteLastLineFromStartAndWholeText_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWordAndWrapperFromWord_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -357,7 +296,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteLineBetweenWordAndWrapper_Test" file="DeleteLineBetweenWordAndWrapper_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWordAndWrapperFromWrapper_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -369,7 +308,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteLineBetweenWrappers_Test" file="DeleteLineBetweenWrappers_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWords_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -381,7 +320,31 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWordAndWrapperFromWord_Test" file="DeleteSpaceBetweenWordAndWrapperFromWord_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.BackspaceStartOfTheLineBetweenWords_Test">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteEmptyLine_Test">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteLastLineFromStartAndWholeText_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -394,7 +357,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWordAndWrapperFromWrapper_Test" file="DeleteSpaceBetweenWordAndWrapperFromWrapper_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteLineBetweenWordAndWrapper_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -406,7 +369,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWords_Test" file="DeleteSpaceBetweenWords_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteLineBetweenWrappers_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -418,7 +381,20 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteStartOfTheLineBetweenWords_Test" file="DeleteStartOfTheLineBetweenWords_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWordAndWrapperFromWord_Test">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.EditorUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWordAndWrapperFromWrapper_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -430,7 +406,31 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.MakeWordUnderlined_Test" file="MakeWordUnderlined_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWords_Test">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.text.test.editor.DeleteStartOfTheLineBetweenWords_Test">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.text.test.editor.MakeWordUnderlined_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -447,7 +447,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.SelectWordAndLine_Test" file="SelectWordAndLine_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.SelectWordAndLine_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -459,7 +459,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.SelectWordUp_Test" file="SelectWordUp_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.SelectWordUp_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -471,7 +471,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.SplitRichWord_Test" file="SplitRichWord_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.SplitRichWord_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -483,7 +483,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.text.test.editor.SplitWord_Test" file="SplitWord_Test.java">
+  <dependency className="jetbrains.mps.lang.text.test.editor.SplitWord_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.editor.popup.AbstractOverrideEditorMessage" file="AbstractOverrideEditorMessage.java">
+  <dependency className="jetbrains.mps.ide.editor.popup.AbstractOverrideEditorMessage">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.popup.IconResourceBundle_OverrideImplements" file="IconResourceBundle_OverrideImplements.java">
+  <dependency className="jetbrains.mps.ide.editor.popup.IconResourceBundle_OverrideImplements">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />

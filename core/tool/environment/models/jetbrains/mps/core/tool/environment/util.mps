@@ -3756,7 +3756,7 @@
       <node concept="3Tm1VV" id="2doG_VG59Hs" role="1B3o_S" />
       <node concept="3clFbS" id="2doG_VG59Ht" role="3clF47">
         <node concept="XkiVB" id="2doG_VG59Hu" role="3cqZAp">
-          <ref role="37wK5l" to="z1c3:~ProjectBase.&lt;init&gt;(jetbrains.mps.project.structure.project.ProjectDescriptor,jetbrains.mps.core.platform.Platform)" resolve="ProjectBase" />
+          <ref role="37wK5l" to="z1c3:~ProjectBase.&lt;init&gt;(jetbrains.mps.project.structure.project.ProjectDescriptor,jetbrains.mps.components.ComponentHost)" resolve="ProjectBase" />
           <node concept="2ShNRf" id="3lw7SQDAxaE" role="37wK5m">
             <node concept="1pGfFk" id="3lw7SQDABbM" role="2ShVmc">
               <ref role="37wK5l" to="y8s3:~ProjectDescriptor.&lt;init&gt;(java.lang.String)" resolve="ProjectDescriptor" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder" file="TransformatorBuilder.java">
+  <dependency className="jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorBuilderImpl" />

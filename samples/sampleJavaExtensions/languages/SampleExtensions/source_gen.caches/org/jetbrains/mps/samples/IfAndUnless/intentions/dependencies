@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.intentions.ConvertMyIfToIf_Intention" file="ConvertMyIfToIf_Intention.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.intentions.ConvertMyIfToIf_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -20,7 +20,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.intentions.UnwrapUnlessBlock_Intention" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionAspectDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.intentions.SurroundWithUnless_Intention" file="SurroundWithUnless_Intention.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.intentions.SurroundWithUnless_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -60,7 +60,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.intentions.TurnToIfStatement_Intention" file="TurnToIfStatement_Intention.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.intentions.TurnToIfStatement_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -80,7 +80,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.intentions.UnwrapUnlessBlock_Intention" file="UnwrapUnlessBlock_Intention.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.intentions.UnwrapUnlessBlock_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />

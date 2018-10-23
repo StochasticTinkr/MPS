@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.tool.gentest.plugin.Diff_Facet" file="Diff_Facet.java">
+  <dependency className="jetbrains.mps.tool.gentest.plugin.Diff_Facet">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -44,7 +44,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.gentest.plugin.Differ" file="Differ.java">
+  <dependency className="jetbrains.mps.tool.gentest.plugin.Differ">
     <classNode dependClassName="difflib.DiffUtils" />
     <classNode dependClassName="difflib.Patch" />
     <classNode dependClassName="java.io.BufferedReader" />
@@ -66,13 +66,13 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.gentest.plugin.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
+  <dependency className="jetbrains.mps.tool.gentest.plugin.FacetAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacetManifest" />
     <classNode dependClassName="jetbrains.mps.tool.gentest.plugin.FacetManifest" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.MakeAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.gentest.plugin.FacetManifest" file="FacetManifest.java">
+  <dependency className="jetbrains.mps.tool.gentest.plugin.FacetManifest">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -83,13 +83,13 @@
     <classNode dependClassName="jetbrains.mps.tool.gentest.plugin.Test_Facet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacetManifest" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.gentest.plugin.ITestResource" file="ITestResource.java">
+  <dependency className="jetbrains.mps.tool.gentest.plugin.ITestResource">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.gentest.plugin.TestCollector" file="TestCollector.java">
+  <dependency className="jetbrains.mps.tool.gentest.plugin.TestCollector">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -119,7 +119,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.gentest.plugin.Test_Facet" file="Test_Facet.java">
+  <dependency className="jetbrains.mps.tool.gentest.plugin.Test_Facet">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -164,7 +164,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.gentest.plugin.Tester" file="Tester.java">
+  <dependency className="jetbrains.mps.tool.gentest.plugin.Tester">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />

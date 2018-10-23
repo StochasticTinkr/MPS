@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -17,14 +17,14 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowContainer_Editor" file="WorkflowContainer_Editor.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowContainer_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowContainer_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowContainer_EditorBuilder_a" file="WorkflowContainer_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowContainer_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -66,14 +66,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.editor.Workflow_Editor" file="Workflow_Editor.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.editor.Workflow_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.multipleProjections.requestTracking.editor.Workflow_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.editor.Workflow_EditorBuilder_a" file="Workflow_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.editor.Workflow_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

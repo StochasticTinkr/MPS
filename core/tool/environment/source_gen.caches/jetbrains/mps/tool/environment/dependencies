@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.tool.environment.AbstractEnvironment" file="AbstractEnvironment.java">
+  <dependency className="jetbrains.mps.tool.environment.AbstractEnvironment">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
@@ -10,7 +10,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.Environment" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.CompositeProjectStrategy" file="CompositeProjectStrategy.java">
+  <dependency className="jetbrains.mps.tool.environment.CompositeProjectStrategy">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.ProjectStrategy" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.Environment" file="Environment.java">
+  <dependency className="jetbrains.mps.tool.environment.Environment">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="jetbrains.mps.core.platform.Platform" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -28,11 +28,11 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.Retainable" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.EnvironmentAware" file="EnvironmentAware.java">
+  <dependency className="jetbrains.mps.tool.environment.EnvironmentAware">
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.EnvironmentBase" file="EnvironmentBase.java">
+  <dependency className="jetbrains.mps.tool.environment.EnvironmentBase">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.IllegalStateException" />
@@ -77,7 +77,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.Environment" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.EnvironmentConfig" file="EnvironmentConfig.java">
+  <dependency className="jetbrains.mps.tool.environment.EnvironmentConfig">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
@@ -92,7 +92,7 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.PluginDescriptor" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.EnvironmentContainer" file="EnvironmentContainer.java">
+  <dependency className="jetbrains.mps.tool.environment.EnvironmentContainer">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
@@ -100,12 +100,12 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.EnvironmentSetupException" file="EnvironmentSetupException.java">
+  <dependency className="jetbrains.mps.tool.environment.EnvironmentSetupException">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="java.lang.RuntimeException" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.LibraryContributorHelper" file="LibraryContributorHelper.java">
+  <dependency className="jetbrains.mps.tool.environment.LibraryContributorHelper">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.String" />
@@ -132,14 +132,14 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.Log4jInitializer" file="Log4jInitializer.java">
+  <dependency className="jetbrains.mps.tool.environment.Log4jInitializer">
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="org.apache.log4j.ConsoleAppender" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.PatternLayout" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.MpsEnvironment" file="MpsEnvironment.java">
+  <dependency className="jetbrains.mps.tool.environment.MpsEnvironment">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Deprecated" />
@@ -167,10 +167,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleFacet" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.EnvironmentBase" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.PluginDescriptor" file="PluginDescriptor.java">
+  <dependency className="jetbrains.mps.tool.environment.PluginDescriptor">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.ProjectContainer" file="ProjectContainer.java">
+  <dependency className="jetbrains.mps.tool.environment.ProjectContainer">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />
@@ -190,7 +190,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.project.ProjectManagerListener" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.ProjectModulesFiller" file="ProjectModulesFiller.java">
+  <dependency className="jetbrains.mps.tool.environment.ProjectModulesFiller">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
@@ -200,12 +200,12 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.ProjectStrategy" file="ProjectStrategy.java">
+  <dependency className="jetbrains.mps.tool.environment.ProjectStrategy">
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.ProjectStrategyBase" file="ProjectStrategyBase.java">
+  <dependency className="jetbrains.mps.tool.environment.ProjectStrategyBase">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.InterruptedException" />
@@ -234,6 +234,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.ProjectStrategy" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.environment.Retainable" file="Retainable.java" />
+  <dependency className="jetbrains.mps.tool.environment.Retainable" />
 </dependenciesRoot>
 

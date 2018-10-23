@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.core.properties.textGen.PropertiesComment_TextGen" file="PropertiesComment_TextGen.java">
+  <dependency className="jetbrains.mps.core.properties.textGen.PropertiesComment_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.properties.util.PropEscapeUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.core.properties.textGen.PropertiesDeclaration_TextGen" file="PropertiesDeclaration_TextGen.java">
+  <dependency className="jetbrains.mps.core.properties.textGen.PropertiesDeclaration_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.properties.util.PropEscapeUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.core.properties.textGen.PropertiesFile_TextGen" file="PropertiesFile_TextGen.java">
+  <dependency className="jetbrains.mps.core.properties.textGen.PropertiesFile_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -29,13 +29,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.core.properties.textGen.PropertiesLine_TextGen" file="PropertiesLine_TextGen.java">
+  <dependency className="jetbrains.mps.core.properties.textGen.PropertiesLine_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.core.properties.textGen.TextGenAspectDescriptor" file="TextGenAspectDescriptor.java">
+  <dependency className="jetbrains.mps.core.properties.textGen.TextGenAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.nio.charset.Charset" />

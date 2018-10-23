@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.intentions.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.lang.intentions.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_childNode_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_node_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_parameter_InferenceRule" />
@@ -8,7 +8,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_childNode_InferenceRule" file="typeof_ConceptFunctionParameter_childNode_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_childNode_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -20,7 +20,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_node_InferenceRule" file="typeof_ConceptFunctionParameter_node_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_node_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -36,7 +36,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_parameter_InferenceRule" file="typeof_ConceptFunctionParameter_parameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_parameter_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -48,7 +48,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.intentions.typesystem.typeof_ForConceptParameterDeclaration_InferenceRule" file="typeof_ForConceptParameterDeclaration_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.intentions.typesystem.typeof_ForConceptParameterDeclaration_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.intentions.util.TypeCalculator" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

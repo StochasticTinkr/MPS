@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.refactoring.runtime.access.RefactoringAccess" file="RefactoringAccess.java">
+  <dependency className="jetbrains.mps.refactoring.runtime.access.RefactoringAccess">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.runtime.access.RefactoringFacade" file="RefactoringFacade.java">
+  <dependency className="jetbrains.mps.refactoring.runtime.access.RefactoringFacade">
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
   </dependency>
 </dependenciesRoot>

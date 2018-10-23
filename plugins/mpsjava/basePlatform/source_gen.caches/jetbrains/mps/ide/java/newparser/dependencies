@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.java.newparser.ASTConverter" file="ASTConverter.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.ASTConverter">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -81,7 +81,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.ASTConverterWithExpressions" file="ASTConverterWithExpressions.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.ASTConverterWithExpressions">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -148,7 +148,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.java.newparser.ASTConverter" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.CommentHelper" file="CommentHelper.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.CommentHelper">
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Math" />
@@ -160,7 +160,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.DirParser" file="DirParser.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.DirParser">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -189,8 +189,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.FeatureKind" file="FeatureKind.java" />
-  <dependency className="jetbrains.mps.ide.java.newparser.FullASTConverter" file="FullASTConverter.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.FeatureKind" />
+  <dependency className="jetbrains.mps.ide.java.newparser.FullASTConverter">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Long" />
@@ -259,10 +259,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.java.newparser.ASTConverterWithExpressions" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.IncrementalModelAccess" file="IncrementalModelAccess.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.IncrementalModelAccess">
     <classNode dependClassName="java.lang.Runnable" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.IncrementalModelAccessBase" file="IncrementalModelAccessBase.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.IncrementalModelAccessBase">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -283,7 +283,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.ide.java.newparser.IncrementalModelAccess" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.IncrementalModelAccessWithCommand" file="IncrementalModelAccessWithCommand.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.IncrementalModelAccessWithCommand">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -293,7 +293,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.ide.java.newparser.IncrementalModelAccessBase" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.IncrementalModelAccessWithoutCommand" file="IncrementalModelAccessWithoutCommand.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.IncrementalModelAccessWithoutCommand">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -302,7 +302,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.ide.java.newparser.IncrementalModelAccessBase" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.JavaConvertUtil" file="JavaConvertUtil.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.JavaConvertUtil">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
@@ -313,12 +313,12 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.vfs.IFileUtils" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.JavaParseException" file="JavaParseException.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.JavaParseException">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="java.lang.Exception" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.JavaParser" file="JavaParser.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.JavaParser">
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Integer" />
@@ -367,7 +367,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.JavaToMpsConverter" file="JavaToMpsConverter.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.JavaToMpsConverter">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -459,8 +459,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.ParseDepth" file="ParseDepth.java" />
-  <dependency className="jetbrains.mps.ide.java.newparser.YetUnknownResolver" file="YetUnknownResolver.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.ParseDepth" />
+  <dependency className="jetbrains.mps.ide.java.newparser.YetUnknownResolver">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.HashMap" />

@@ -4,13 +4,15 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.icons.AllIcons;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.bookmark.BookmarkManager;
 
 public class SetBookmarkNoNumber_Action extends BaseAction {
@@ -24,6 +26,12 @@ public class SetBookmarkNoNumber_Action extends BaseAction {
   @Override
   public boolean isDumbAware() {
     return true;
+  }
+  @Override
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+    if (ActionPlaces.TOUCHBAR_GENERAL.equals(event.getPlace())) {
+      event.getPresentation().setIcon(AllIcons.Actions.Checked);
+    }
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {

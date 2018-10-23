@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.ConstraintsStrings" file="ConstraintsStrings.java">
+  <dependency className="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.ConstraintsStrings">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil" file="QueriesUtil.java">
+  <dependency className="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="Kaja.sandbox.sandbox.Dog" file="Dog.java">
+  <dependency className="Kaja.sandbox.sandbox.Dog">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="JavaKaja.runtime.KajaFrame" />
   </dependency>
-  <dependency className="Kaja.sandbox.sandbox.Karel" file="Karel.java">
+  <dependency className="Kaja.sandbox.sandbox.Karel">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="JavaKaja.runtime.KajaFrame" />
   </dependency>
-  <dependency className="Kaja.sandbox.sandbox.MarkSniffer" file="MarkSniffer.java">
+  <dependency className="Kaja.sandbox.sandbox.MarkSniffer">
     <classNode dependClassName="JavaKaja.runtime.Direction" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="JavaKaja.runtime.KajaFrame" />
   </dependency>
-  <dependency className="Kaja.sandbox.sandbox.Maze" file="Maze.java">
+  <dependency className="Kaja.sandbox.sandbox.Maze">
     <classNode dependClassName="JavaKaja.runtime.Direction" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="JavaKaja.runtime.KajaFrame" />
   </dependency>
-  <dependency className="Kaja.sandbox.sandbox.Sample" file="Sample.java">
+  <dependency className="Kaja.sandbox.sandbox.Sample">
     <classNode dependClassName="JavaKaja.runtime.Direction" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="JavaKaja.runtime.KajaFrame" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_FolderWithSources__BehaviorDescriptor" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor" file="BuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMPSPlugin__BehaviorDescriptor" file="BuildMPSPlugin__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMPSPlugin__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -97,7 +97,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_FolderWithSources__BehaviorDescriptor" file="BuildMpsLayout_FolderWithSources__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_FolderWithSources__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -124,7 +124,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars__BehaviorDescriptor" file="BuildMpsLayout_ModuleJars__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -156,7 +156,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleSources__BehaviorDescriptor" file="BuildMpsLayout_ModuleSources__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleSources__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -179,7 +179,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_PluginDescriptor__BehaviorDescriptor" file="BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_PluginDescriptor__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -212,7 +212,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin__BehaviorDescriptor" file="BuildMpsLayout_Plugin__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -256,7 +256,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule__BehaviorDescriptor" file="BuildMps_AbstractModule__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -280,7 +280,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_DevKit__BehaviorDescriptor" file="BuildMps_DevKit__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_DevKit__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -307,7 +307,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_Generator__BehaviorDescriptor" file="BuildMps_Generator__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_Generator__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -331,7 +331,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginContent__BehaviorDescriptor" file="BuildMps_IdeaPluginContent__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginContent__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -353,7 +353,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroup__BehaviorDescriptor" file="BuildMps_IdeaPluginGroup__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroup__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -381,7 +381,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginModule__BehaviorDescriptor" file="BuildMps_IdeaPluginModule__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginModule__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -406,7 +406,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPlugin__BehaviorDescriptor" file="BuildMps_IdeaPlugin__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPlugin__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -432,7 +432,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_Language__BehaviorDescriptor" file="BuildMps_Language__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_Language__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
@@ -457,7 +457,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_Module__BehaviorDescriptor" file="BuildMps_Module__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_Module__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -495,7 +495,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_Solution__BehaviorDescriptor" file="BuildMps_Solution__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_Solution__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

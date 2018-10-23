@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.BaseClassifierType_subtypeOf_Object_SubtypingRule" file="BaseClassifierType_subtypeOf_Object_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.BaseClassifierType_subtypeOf_Object_SubtypingRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -12,7 +12,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.typesystem.BaseClassifierType_subtypeOf_Object_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.typesystem.check_DefaultClassifierFieldDeclaration_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.typesystem.check_IMemberOperation_NonTypesystemRule" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.check_DefaultClassifierFieldDeclaration_NonTypesystemRule" file="check_DefaultClassifierFieldDeclaration_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.check_DefaultClassifierFieldDeclaration_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
@@ -34,7 +34,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.check_IMemberOperation_NonTypesystemRule" file="check_IMemberOperation_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.check_IMemberOperation_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -53,7 +53,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_DefaultClassifierFieldAccessOperation_InferenceRule" file="typeof_DefaultClassifierFieldAccessOperation_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_DefaultClassifierFieldAccessOperation_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -64,7 +64,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_DefaultMethodCallOperation_InferenceRule" file="typeof_DefaultMethodCallOperation_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_DefaultMethodCallOperation_InferenceRule">
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -80,7 +80,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_SuperClassifierExpresson_InferenceRule" file="typeof_SuperClassifierExpresson_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_SuperClassifierExpresson_InferenceRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -95,7 +95,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_ThisClassifierExpresson_InferenceRule" file="typeof_ThisClassifierExpresson_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_ThisClassifierExpresson_InferenceRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />

@@ -2,13 +2,13 @@
 <model ref="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)">
   <persistence version="9" />
   <languages>
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
@@ -65,6 +65,7 @@
       <concept id="1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" flags="ng" index="ftmFs">
         <child id="1207145201301" name="reference" index="ftvYc" />
       </concept>
+      <concept id="1207145360364" name="jetbrains.mps.lang.plugin.structure.BuildGroupBlock" flags="in" index="fu6FP" />
       <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
         <property id="1207318242773" name="modifiers" index="pLAjc" />
         <property id="1207318242774" name="keycode" index="pLAjf" />
@@ -1778,6 +1779,43 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="1FOz_N44d9N" role="3cqZAp">
+          <node concept="2OqwBi" id="1FOz_N44eRW" role="3clFbw">
+            <node concept="10M0yZ" id="1FOz_N44eRV" role="2Oq$k0">
+              <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
+              <ref role="3cqZAo" to="qkt:~ActionPlaces.TOUCHBAR_GENERAL" resolve="TOUCHBAR_GENERAL" />
+            </node>
+            <node concept="liA8E" id="1FOz_N44eRX" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+              <node concept="2OqwBi" id="1FOz_N44fif" role="37wK5m">
+                <node concept="tl45R" id="1FOz_N44f7c" role="2Oq$k0" />
+                <node concept="liA8E" id="1FOz_N44f$O" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~AnActionEvent.getPlace():java.lang.String" resolve="getPlace" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="1FOz_N44d9R" role="3clFbx">
+            <node concept="3clFbF" id="1FOz_N44d9S" role="3cqZAp">
+              <node concept="2OqwBi" id="1FOz_N44d9T" role="3clFbG">
+                <node concept="liA8E" id="1FOz_N44d9V" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~Presentation.setIcon(javax.swing.Icon):void" resolve="setIcon" />
+                  <node concept="10M0yZ" id="1FOz_N44h8a" role="37wK5m">
+                    <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+                    <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_set_breakpoint" resolve="Db_set_breakpoint" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="1FOz_N44fNf" role="2Oq$k0">
+                  <node concept="tl45R" id="1FOz_N44fD0" role="2Oq$k0" />
+                  <node concept="liA8E" id="1FOz_N44g5w" role="2OqNvi">
+                    <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1FOz_N44gAk" role="3cqZAp" />
       </node>
     </node>
   </node>
@@ -1898,6 +1936,10 @@
     </node>
     <node concept="tT9cl" id="68aArIS9HL7" role="2f5YQi">
       <ref role="tU$_T" to="tprs:6gEJNBIezVz" resolve="MPSRunMenu" />
+    </node>
+    <node concept="tT9cl" id="2LI6gbES2Dh" role="2f5YQi">
+      <ref role="tU$_T" to="tprs:2LI6gbES2$T" resolve="TouchBarDebug" />
+      <ref role="2f8Tey" to="tprs:2LI6gbES2MP" resolve="debug" />
     </node>
   </node>
   <node concept="tC5Ba" id="68aArIS9HL8">
@@ -2875,6 +2917,42 @@
         <property role="pLAjc" value="alt+shift" />
         <property role="pLAjf" value="VK_8" />
         <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+  </node>
+  <node concept="tC5Ba" id="2LI6gbERUiP">
+    <property role="TrG5h" value="TouchBarDefault_cmd" />
+    <property role="3GE5qa" value="TouchBar" />
+    <node concept="tT9cl" id="2LI6gbERUiR" role="2f5YQi">
+      <ref role="tU$_T" to="tprs:2LI6gbERTXr" resolve="TouchBarDefault_cmd" />
+    </node>
+    <node concept="ftmFs" id="2LI6gbERUiX" role="ftER_">
+      <node concept="tCFHf" id="2LI6gbERUj0" role="ftvYc">
+        <ref role="tCJdB" node="68aArIS9HJO" resolve="ToggleBreakpoint" />
+      </node>
+    </node>
+  </node>
+  <node concept="tC5Ba" id="2LI6gbES37x">
+    <property role="3GE5qa" value="TouchBar" />
+    <property role="TrG5h" value="TouchBarDebug" />
+    <node concept="tT9cl" id="2LI6gbES37A" role="2f5YQi">
+      <ref role="tU$_T" to="tprs:2LI6gbES2$T" resolve="TouchBarDebug" />
+    </node>
+    <node concept="fu6FP" id="2LI6gbES37G" role="ftER_">
+      <node concept="3clFbS" id="2LI6gbES37I" role="2VODD2">
+        <node concept="3clFbF" id="2LI6gbES3XV" role="3cqZAp">
+          <node concept="2OqwBi" id="2LI6gbES49r" role="3clFbG">
+            <node concept="2WthIp" id="2LI6gbES3XU" role="2Oq$k0" />
+            <node concept="liA8E" id="2LI6gbES4Cm" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
+              <node concept="2ShNRf" id="2LI6gbES4K3" role="37wK5m">
+                <node concept="1pGfFk" id="2LI6gbESkkq" role="2ShVmc">
+                  <ref role="37wK5l" node="24OxoGwTqgi" resolve="MuteBreakpoints" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

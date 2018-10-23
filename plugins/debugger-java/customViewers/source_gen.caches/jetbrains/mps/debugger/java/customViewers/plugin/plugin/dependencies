@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections" file="Collections.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.watchables.CustomJavaWatchable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.CustomViewersInitializer_AppPluginPart" file="CustomViewersInitializer_AppPluginPart.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.CustomViewersInitializer_AppPluginPart">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.DebugInfoProvider_AppPluginPart" file="DebugInfoProvider_AppPluginPart.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.DebugInfoProvider_AppPluginPart">
     <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.IndexedTupleViewer_WrapperFactory" file="IndexedTupleViewer_WrapperFactory.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.IndexedTupleViewer_WrapperFactory">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -70,7 +70,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.List_WrapperFactory" file="List_WrapperFactory.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.List_WrapperFactory">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -91,7 +91,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapEntry_WrapperFactory" file="MapEntry_WrapperFactory.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapEntry_WrapperFactory">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -112,7 +112,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Map_WrapperFactory" file="Map_WrapperFactory.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Map_WrapperFactory">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -133,7 +133,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Plugin_ApplicationPlugin" file="Plugin_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Plugin_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
@@ -142,7 +142,7 @@
     <classNode dependClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory" file="SNodeViewer_WrapperFactory.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -165,13 +165,13 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeWatchables" file="SNodeWatchables.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeWatchables">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.watchables.CustomJavaWatchable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Set_WrapperFactory" file="Set_WrapperFactory.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Set_WrapperFactory">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -192,7 +192,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.TuplesWatchables" file="TuplesWatchables.java">
+  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.TuplesWatchables">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />

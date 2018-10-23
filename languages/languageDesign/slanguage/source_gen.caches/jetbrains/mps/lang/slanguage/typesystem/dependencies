@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.slanguage.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.lang.slanguage.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.slanguage.typesystem.typeof_AspectModelRefExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.slanguage.typesystem.typeof_Model_IsAspectOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.slanguage.typesystem.typeof_OfAspectOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.slanguage.typesystem.typeof_AspectModelRefExpression_InferenceRule" file="typeof_AspectModelRefExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.slanguage.typesystem.typeof_AspectModelRefExpression_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -21,7 +21,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.slanguage.typesystem.typeof_Model_IsAspectOperation_InferenceRule" file="typeof_Model_IsAspectOperation_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.slanguage.typesystem.typeof_Model_IsAspectOperation_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -33,7 +33,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.slanguage.typesystem.typeof_OfAspectOperation_InferenceRule" file="typeof_OfAspectOperation_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.slanguage.typesystem.typeof_OfAspectOperation_InferenceRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

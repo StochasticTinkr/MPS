@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test" file="SNodeGetChildrenOperation_Test.java">
+  <dependency className="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test" file="SNodeGetReferenceOperation_Test.java">
+  <dependency className="jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test" file="SNodeGetReferencesOperation_Test.java">
+  <dependency className="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -80,7 +80,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.test.reflection.TestUtilities" file="TestUtilities.java">
+  <dependency className="jetbrains.mps.smodel.test.reflection.TestUtilities">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

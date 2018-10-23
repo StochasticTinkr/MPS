@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel" file="DependenciesPanel.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree" file="DependencyTree.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -64,7 +64,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope" file="DependencyViewerScope.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -86,7 +86,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.ReferencesFinder" file="ReferencesFinder.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.ReferencesFinder">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
@@ -105,7 +105,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.ReferencesView" file="ReferencesView.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.ReferencesView">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -127,7 +127,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.TargetsView" file="TargetsView.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.TargetsView">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />

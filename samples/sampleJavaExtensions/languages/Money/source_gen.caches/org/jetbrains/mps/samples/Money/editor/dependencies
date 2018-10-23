@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.ConvertTo_Editor" file="ConvertTo_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.ConvertTo_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.ConvertTo_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.ConvertTo_EditorBuilder_a" file="ConvertTo_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.ConvertTo_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -37,14 +37,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_Editor" file="CurrencyDefTable_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_EditorBuilder_a" file="CurrencyDefTable_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
@@ -67,14 +67,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrencyUnit_Editor" file="CurrencyUnit_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrencyUnit_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.CurrencyUnit_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrencyUnit_EditorBuilder_a" file="CurrencyUnit_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrencyUnit_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -101,14 +101,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrentStockPrice_Editor" file="CurrentStockPrice_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrentStockPrice_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.CurrentStockPrice_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrentStockPrice_EditorBuilder_a" file="CurrentStockPrice_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.CurrentStockPrice_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass" />
@@ -138,7 +138,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -162,14 +162,14 @@
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.GetAmount_Editor" file="GetAmount_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.GetAmount_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.GetAmount_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.GetAmount_EditorBuilder_a" file="GetAmount_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.GetAmount_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -178,14 +178,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.GetCurrency_Editor" file="GetCurrency_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.GetCurrency_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.GetCurrency_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.GetCurrency_EditorBuilder_a" file="GetCurrency_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.GetCurrency_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -194,14 +194,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_Editor" file="MoneyLiteral_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a" file="MoneyLiteral_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -239,14 +239,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.MoneyType_Editor" file="MoneyType_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.MoneyType_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.MoneyType_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.MoneyType_EditorBuilder_a" file="MoneyType_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.MoneyType_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -255,14 +255,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.MovingAverage_Editor" file="MovingAverage_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.MovingAverage_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.MovingAverage_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.MovingAverage_EditorBuilder_a" file="MovingAverage_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.MovingAverage_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -300,14 +300,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.StockSymbol_Editor" file="StockSymbol_Editor.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.StockSymbol_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.StockSymbol_EditorBuilder_a" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.StockSymbol_EditorBuilder_a" file="StockSymbol_EditorBuilder_a.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.StockSymbol_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -337,7 +337,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution" file="makeMoneyFromInteger_Contribution.java">
+  <dependency className="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer" file="DefaultOptionsContainer.java">
+  <dependency className="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jdom.Element" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent" file="DefaultSearchOptionsComponent.java">
+  <dependency className="jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent">
     <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
     <classNode dependClassName="com.intellij.openapi.components.StoragePathMacros" />

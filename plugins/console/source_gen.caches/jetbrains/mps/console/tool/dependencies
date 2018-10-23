@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.console.tool.BaseConsoleTab" file="BaseConsoleTab.java">
+  <dependency className="jetbrains.mps.console.tool.BaseConsoleTab">
     <classNode dependClassName="com.intellij.ide.CopyPasteManagerEx" />
     <classNode dependClassName="com.intellij.ide.PasteProvider" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
@@ -105,12 +105,12 @@
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
     <classNode extendsClassName="com.intellij.openapi.ui.SimpleToolWindowPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.console.tool.ConsoleContext" file="ConsoleContext.java">
+  <dependency className="jetbrains.mps.console.tool.ConsoleContext">
     <classNode dependClassName="jetbrains.mps.console.tool.BaseConsoleTab" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode extendsClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
   </dependency>
-  <dependency className="jetbrains.mps.console.tool.ConsoleFileEditor" file="ConsoleFileEditor.java">
+  <dependency className="jetbrains.mps.console.tool.ConsoleFileEditor">
     <classNode dependClassName="com.intellij.codeHighlighting.BackgroundEditorHighlighter" />
     <classNode dependClassName="com.intellij.ide.structureView.StructureViewBuilder" />
     <classNode dependClassName="com.intellij.openapi.editor.Document" />
@@ -134,7 +134,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.openapi.fileEditor.DocumentsEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.tool.ConsoleStream" file="ConsoleStream.java">
+  <dependency className="jetbrains.mps.console.tool.ConsoleStream">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -143,7 +143,7 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.console.tool.ConsoleTool" file="ConsoleTool.java">
+  <dependency className="jetbrains.mps.console.tool.ConsoleTool">
     <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
     <classNode dependClassName="com.intellij.openapi.components.StoragePathMacros" />
@@ -180,7 +180,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.tools.BaseTabbedProjectTool" />
   </dependency>
-  <dependency className="jetbrains.mps.console.tool.ConsoleUtil" file="ConsoleUtil.java">
+  <dependency className="jetbrains.mps.console.tool.ConsoleUtil">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
@@ -211,7 +211,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
-  <dependency className="jetbrains.mps.console.tool.DialogConsoleTab" file="DialogConsoleTab.java">
+  <dependency className="jetbrains.mps.console.tool.DialogConsoleTab">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
@@ -250,7 +250,7 @@
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="jetbrains.mps.console.tool.BaseConsoleTab" />
   </dependency>
-  <dependency className="jetbrains.mps.console.tool.OutputConsoleTab" file="OutputConsoleTab.java">
+  <dependency className="jetbrains.mps.console.tool.OutputConsoleTab">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />

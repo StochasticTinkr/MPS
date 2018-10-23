@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.BinaryRegexp_DataFlow" file="BinaryRegexp_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.BinaryRegexp_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.DataFlowAspectDescriptorImpl" file="DataFlowAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.DataFlowAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -43,21 +43,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.FindMatchExpression_DataFlow" file="FindMatchExpression_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.FindMatchExpression_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.FindMatchStatement_DataFlow" file="FindMatchStatement_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.FindMatchStatement_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.ForEachMatchStatement_DataFlow" file="ForEachMatchStatement_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.ForEachMatchStatement_DataFlow">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -65,103 +65,103 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.InlineRegexpExpression_DataFlow" file="InlineRegexpExpression_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.InlineRegexpExpression_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.LookRegexp_DataFlow" file="LookRegexp_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.LookRegexp_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchParensRegexp_DataFlow" file="MatchParensRegexp_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchParensRegexp_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchRegexpExpression_DataFlow" file="MatchRegexpExpression_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchRegexpExpression_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchRegexpOperation_DataFlow" file="MatchRegexpOperation_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchRegexpOperation_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchRegexpStatement_DataFlow" file="MatchRegexpStatement_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchRegexpStatement_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchVariableReferenceRegexp_DataFlow" file="MatchVariableReferenceRegexp_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchVariableReferenceRegexp_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchVariableReferenceReplacement_DataFlow" file="MatchVariableReferenceReplacement_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchVariableReferenceReplacement_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchVariableReference_DataFlow" file="MatchVariableReference_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.MatchVariableReference_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.ParensRegexp_DataFlow" file="ParensRegexp_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.RegexpDeclarationReferenceRegexp_DataFlow" file="RegexpDeclarationReferenceRegexp_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.ParensRegexp_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.RegexpDeclaration_DataFlow" file="RegexpDeclaration_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.RegexpDeclarationReferenceRegexp_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.RegexpExpression_DataFlow" file="RegexpExpression_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.Regexp_DataFlow" file="Regexp_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.Regexps_DataFlow" file="Regexps_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.RegexpDeclaration_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.ReplaceRegexpOperation_DataFlow" file="ReplaceRegexpOperation_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.RegexpExpression_DataFlow">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.Regexp_DataFlow">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.Regexps_DataFlow">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.ReplaceRegexpOperation_DataFlow">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -169,28 +169,28 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.ReplaceWithRegexpOperation_DataFlow" file="ReplaceWithRegexpOperation_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.ReplaceWithRegexpOperation_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.SplitOperation_DataFlow" file="SplitOperation_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.SplitOperation_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.SymbolClassRegexp_DataFlow" file="SymbolClassRegexp_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.SymbolClassRegexp_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.UnaryRegexp_DataFlow" file="UnaryRegexp_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.UnaryRegexp_DataFlow">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

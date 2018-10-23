@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.core.CurrentLinePainter" file="CurrentLinePainter.java">
+  <dependency className="jetbrains.mps.debugger.core.CurrentLinePainter">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.Rectangle" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.debugger.core.DebuggerCellPainter" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx" file="CurrentLinePositionComponentEx.java">
+  <dependency className="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.core.DebuggerCellPainter" file="DebuggerCellPainter.java">
+  <dependency className="jetbrains.mps.debugger.core.DebuggerCellPainter">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.Rectangle" />
