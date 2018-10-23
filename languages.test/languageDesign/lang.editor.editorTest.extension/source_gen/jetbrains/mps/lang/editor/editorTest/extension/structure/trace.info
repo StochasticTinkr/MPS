@@ -15,7 +15,7 @@
       <unit at="10,0,28,0" name="jetbrains.mps.lang.editor.editorTest.extension.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,64,0" name="jetbrains.mps.lang.editor.editorTest.extension.structure.StructureAspectDescriptor" />
+      <unit at="15,0,57,0" name="jetbrains.mps.lang.editor.editorTest.extension.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7a2a702d-28cd-4325-9c0b-086e8aac9f62(jetbrains.mps.lang.editor.editorTest.extension.structure)/4575047236827101332">
@@ -36,20 +36,20 @@
       <node id="4575047236827101332" at="15,116,16,69" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="4575047236827101332" at="17,0,18,0" concept="1" trace="myConceptActionMapImportTesterExtension" />
-      <node id="4575047236827101332" at="33,64,34,55" concept="4" />
-      <node id="4575047236827101332" at="55,88,56,211" concept="3" />
-      <node id="4575047236827101332" at="56,211,57,34" concept="0" />
-      <node id="4575047236827101332" at="57,34,58,148" concept="0" />
-      <node id="4575047236827101332" at="58,148,59,133" concept="0" />
-      <node id="4575047236827101332" at="59,133,60,17" concept="0" />
-      <node id="4575047236827101332" at="60,17,61,22" concept="4" />
-      <node id="4575047236827101332" at="55,0,63,0" concept="6" trace="createDescriptorForActionMapImportTesterExtension#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="4575047236827101332" at="33,64,34,55" />
-      <scope id="4575047236827101332" at="55,88,61,22">
+      <node id="4575047236827101332" at="16,0,17,0" concept="1" trace="myConceptActionMapImportTesterExtension" />
+      <node id="4575047236827101332" at="32,64,33,55" concept="4" />
+      <node id="4575047236827101332" at="48,88,49,211" concept="3" />
+      <node id="4575047236827101332" at="49,211,50,34" concept="0" />
+      <node id="4575047236827101332" at="50,34,51,148" concept="0" />
+      <node id="4575047236827101332" at="51,148,52,133" concept="0" />
+      <node id="4575047236827101332" at="52,133,53,17" concept="0" />
+      <node id="4575047236827101332" at="53,17,54,22" concept="4" />
+      <node id="4575047236827101332" at="48,0,56,0" concept="6" trace="createDescriptorForActionMapImportTesterExtension#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4575047236827101332" at="32,64,33,55" />
+      <scope id="4575047236827101332" at="48,88,54,22">
         <var name="b" id="4575047236827101332" />
       </scope>
-      <scope id="4575047236827101332" at="55,0,63,0" />
+      <scope id="4575047236827101332" at="48,0,56,0" />
     </file>
   </root>
 </debug-info>

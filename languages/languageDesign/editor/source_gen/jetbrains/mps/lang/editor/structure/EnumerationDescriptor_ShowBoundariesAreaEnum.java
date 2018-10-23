@@ -18,7 +18,6 @@ public class EnumerationDescriptor_ShowBoundariesAreaEnum extends EnumerationDes
   private final EnumerationDescriptor.MemberDescriptor VALUE_GUTTER_0 = new EnumerationDescriptor.MemberDescriptor("GUTTER", "gutter", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/5266818545798429659");
   private final EnumerationDescriptor.MemberDescriptor VALUE_GUTTER_AND_EDITOR_0 = new EnumerationDescriptor.MemberDescriptor("GUTTER_AND_EDITOR", "gutter-and-editor", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/5266818545798429768");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_ShowBoundariesAreaEnum extends EnumerationDes
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_GUTTER_0, VALUE_GUTTER_AND_EDITOR_0);
   }
-
 
   @Nullable
   @Override

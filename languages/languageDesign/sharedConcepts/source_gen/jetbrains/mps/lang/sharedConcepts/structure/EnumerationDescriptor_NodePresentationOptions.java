@@ -19,7 +19,6 @@ public class EnumerationDescriptor_NodePresentationOptions extends EnumerationDe
   private final EnumerationDescriptor.MemberDescriptor VALUE_default_referent_0 = new EnumerationDescriptor.MemberDescriptor("default_referent", "referent", "r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)/1165007068491");
   private final EnumerationDescriptor.MemberDescriptor VALUE_custom_0 = new EnumerationDescriptor.MemberDescriptor("custom", "custom", "r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)/1165007009658");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_NodePresentationOptions extends EnumerationDe
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_default_referent_0, VALUE_custom_0);
   }
-
 
   @Nullable
   @Override

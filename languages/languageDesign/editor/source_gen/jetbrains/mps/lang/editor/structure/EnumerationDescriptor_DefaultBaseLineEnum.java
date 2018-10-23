@@ -19,7 +19,6 @@ public class EnumerationDescriptor_DefaultBaseLineEnum extends EnumerationDescri
   private final EnumerationDescriptor.MemberDescriptor VALUE_CENTER_0 = new EnumerationDescriptor.MemberDescriptor("CENTER", "collection center", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/7620205565664606380");
   private final EnumerationDescriptor.MemberDescriptor VALUE_LAST_0 = new EnumerationDescriptor.MemberDescriptor("LAST", "last cell baseline", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/7620205565664606448");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_DefaultBaseLineEnum extends EnumerationDescri
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_FIRST_0, VALUE_CENTER_0, VALUE_LAST_0);
   }
-
 
   @Nullable
   @Override

@@ -22,7 +22,6 @@ public class EnumerationDescriptor_Keymap extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_DefaultforKDE_0 = new EnumerationDescriptor.MemberDescriptor("Default for KDE", "KDE", "r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1911082874216608562");
   private final EnumerationDescriptor.MemberDescriptor VALUE_$default_0 = new EnumerationDescriptor.MemberDescriptor("$default", "Default", "r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/2443880313834664128");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -34,7 +33,6 @@ public class EnumerationDescriptor_Keymap extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_MacOSX_0, VALUE_MacOSX105_0, VALUE_DefaultforXWin_0, VALUE_DefaultforGNOME_0, VALUE_DefaultforKDE_0, VALUE_$default_0);
   }
-
 
   @Nullable
   @Override

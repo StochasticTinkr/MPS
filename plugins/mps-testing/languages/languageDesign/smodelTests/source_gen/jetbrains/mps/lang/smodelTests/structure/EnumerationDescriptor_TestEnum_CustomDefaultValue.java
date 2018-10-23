@@ -19,7 +19,6 @@ public class EnumerationDescriptor_TestEnum_CustomDefaultValue extends Enumerati
   private final EnumerationDescriptor.MemberDescriptor VALUE_b_0 = new EnumerationDescriptor.MemberDescriptor("b", "Default_B", "r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/1408723013993599821");
   private final EnumerationDescriptor.MemberDescriptor VALUE_c_0 = new EnumerationDescriptor.MemberDescriptor("c", "NotDefualt_C", "r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/1408723013993599824");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_TestEnum_CustomDefaultValue extends Enumerati
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_a_0, VALUE_b_0, VALUE_c_0);
   }
-
 
   @Nullable
   @Override

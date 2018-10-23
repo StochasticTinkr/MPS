@@ -21,7 +21,6 @@ public class EnumerationDescriptor_PrecisionSetting extends EnumerationDescripto
   private final EnumerationDescriptor.MemberDescriptor VALUE_3_0 = new EnumerationDescriptor.MemberDescriptor("3", "DECIMAL128", "r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/1238404929994");
   private final EnumerationDescriptor.MemberDescriptor VALUE_4_0 = new EnumerationDescriptor.MemberDescriptor("4", "UNLIMITED", "r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/1238404930917");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -33,7 +32,6 @@ public class EnumerationDescriptor_PrecisionSetting extends EnumerationDescripto
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_0_0, VALUE_1_0, VALUE_2_0, VALUE_3_0, VALUE_4_0);
   }
-
 
   @Nullable
   @Override

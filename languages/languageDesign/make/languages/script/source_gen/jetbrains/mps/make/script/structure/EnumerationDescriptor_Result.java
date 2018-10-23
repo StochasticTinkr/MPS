@@ -18,7 +18,6 @@ public class EnumerationDescriptor_Result extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_SUCCESS_0 = new EnumerationDescriptor.MemberDescriptor("SUCCESS", "success", "r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)/2360002718792446683");
   private final EnumerationDescriptor.MemberDescriptor VALUE_FAILURE_0 = new EnumerationDescriptor.MemberDescriptor("FAILURE", "failure", "r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)/2360002718792446684");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_Result extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_SUCCESS_0, VALUE_FAILURE_0);
   }
-
 
   @Nullable
   @Override

@@ -18,7 +18,6 @@ public class EnumerationDescriptor_TestSubstituteEnumDataType extends Enumeratio
   private final EnumerationDescriptor.MemberDescriptor VALUE_myFirstValue_0 = new EnumerationDescriptor.MemberDescriptor("myFirstValue", "first presentation", "r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/476103360378640392");
   private final EnumerationDescriptor.MemberDescriptor VALUE_mySecondValue_0 = new EnumerationDescriptor.MemberDescriptor("mySecondValue", "second presentation", "r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/476103360378640393");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_TestSubstituteEnumDataType extends Enumeratio
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_myFirstValue_0, VALUE_mySecondValue_0);
   }
-
 
   @Nullable
   @Override

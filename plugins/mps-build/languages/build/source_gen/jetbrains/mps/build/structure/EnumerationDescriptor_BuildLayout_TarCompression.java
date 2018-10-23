@@ -19,7 +19,6 @@ public class EnumerationDescriptor_BuildLayout_TarCompression extends Enumeratio
   private final EnumerationDescriptor.MemberDescriptor VALUE_gzip_0 = new EnumerationDescriptor.MemberDescriptor("gzip", "gzip", "r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/1979010778009209126");
   private final EnumerationDescriptor.MemberDescriptor VALUE_bzip2_0 = new EnumerationDescriptor.MemberDescriptor("bzip2", "bzip2", "r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/1979010778009209127");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_BuildLayout_TarCompression extends Enumeratio
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_none_0, VALUE_gzip_0, VALUE_bzip2_0);
   }
-
 
   @Nullable
   @Override

@@ -23,7 +23,6 @@ public class EnumerationDescriptor_DayDataType extends EnumerationDescriptorBase
   private final EnumerationDescriptor.MemberDescriptor VALUE_saturday_0 = new EnumerationDescriptor.MemberDescriptor("saturday", "Saturday", "r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/5063359128233346680");
   private final EnumerationDescriptor.MemberDescriptor VALUE_sunday_0 = new EnumerationDescriptor.MemberDescriptor("sunday", "Sunday", "r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/5063359128233346687");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -35,7 +34,6 @@ public class EnumerationDescriptor_DayDataType extends EnumerationDescriptorBase
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_monday_0, VALUE_tuesday_0, VALUE_wednesday_0, VALUE_thursday_0, VALUE_friday_0, VALUE_saturday_0, VALUE_sunday_0);
   }
-
 
   @Nullable
   @Override

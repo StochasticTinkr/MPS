@@ -18,7 +18,6 @@ public class EnumerationDescriptor_Options_DefaultCustom extends EnumerationDesc
   private final EnumerationDescriptor.MemberDescriptor VALUE__0 = new EnumerationDescriptor.MemberDescriptor(null, "default_", "r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)/1161807239262");
   private final EnumerationDescriptor.MemberDescriptor VALUE_custom_0 = new EnumerationDescriptor.MemberDescriptor("custom", "custom_", "r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)/1161807432013");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_Options_DefaultCustom extends EnumerationDesc
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_custom_0);
   }
-
 
   @Nullable
   @Override

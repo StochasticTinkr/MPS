@@ -19,7 +19,6 @@ public class EnumerationDescriptor_UnderlineStyle extends EnumerationDescriptorB
   private final EnumerationDescriptor.MemberDescriptor VALUE_1_0 = new EnumerationDescriptor.MemberDescriptor("1", "not_underlined", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1130847816499");
   private final EnumerationDescriptor.MemberDescriptor VALUE_2_0 = new EnumerationDescriptor.MemberDescriptor("2", "underlined", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1130847833453");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_UnderlineStyle extends EnumerationDescriptorB
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_0_0, VALUE_1_0, VALUE_2_0);
   }
-
 
   @Nullable
   @Override

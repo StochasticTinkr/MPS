@@ -21,7 +21,6 @@ public class EnumerationDescriptor_BuildLayout_CopyFilterEolStyle extends Enumer
   private final EnumerationDescriptor.MemberDescriptor VALUE_lf_0 = new EnumerationDescriptor.MemberDescriptor("lf", "convert to a single LF", "r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/4198392933254416817");
   private final EnumerationDescriptor.MemberDescriptor VALUE_crlf_0 = new EnumerationDescriptor.MemberDescriptor("crlf", "convert to the pair CRLF", "r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/4198392933254416818");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -33,7 +32,6 @@ public class EnumerationDescriptor_BuildLayout_CopyFilterEolStyle extends Enumer
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_local_0, VALUE_asis_0, VALUE_cr_0, VALUE_lf_0, VALUE_crlf_0);
   }
-
 
   @Nullable
   @Override

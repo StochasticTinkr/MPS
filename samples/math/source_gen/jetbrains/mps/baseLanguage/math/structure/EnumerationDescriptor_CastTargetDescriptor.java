@@ -33,7 +33,6 @@ public class EnumerationDescriptor_CastTargetDescriptor extends EnumerationDescr
   private final EnumerationDescriptor.MemberDescriptor VALUE_15_0 = new EnumerationDescriptor.MemberDescriptor("15", "...->matrix<complex>", "r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/5217243589490813627");
   private final EnumerationDescriptor.MemberDescriptor VALUE_16_0 = new EnumerationDescriptor.MemberDescriptor("16", "...->matrix<bigcomplex>", "r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/5217243589490813628");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -45,7 +44,6 @@ public class EnumerationDescriptor_CastTargetDescriptor extends EnumerationDescr
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_0_0, VALUE_1_0, VALUE_2_0, VALUE_3_0, VALUE_4_0, VALUE_5_0, VALUE_6_0, VALUE_7_0, VALUE_8_0, VALUE_9_0, VALUE_10_0, VALUE_11_0, VALUE_12_0, VALUE_13_0, VALUE_14_0, VALUE_15_0, VALUE_16_0);
   }
-
 
   @Nullable
   @Override

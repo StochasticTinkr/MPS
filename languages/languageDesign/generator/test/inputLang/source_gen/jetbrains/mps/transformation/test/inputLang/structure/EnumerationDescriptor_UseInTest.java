@@ -26,7 +26,6 @@ public class EnumerationDescriptor_UseInTest extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_argsInTemplateCall_0 = new EnumerationDescriptor.MemberDescriptor("argsInTemplateCall", "Expressions in ITemplateCall arguments", "r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)/207553032706660027");
   private final EnumerationDescriptor.MemberDescriptor VALUE_none_0 = new EnumerationDescriptor.MemberDescriptor("none", "none", "r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)/1202242822699");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -38,7 +37,6 @@ public class EnumerationDescriptor_UseInTest extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_test1_0, VALUE_getPrevInputTest_0, VALUE_reduceInheritors_0, VALUE_reduceExpressionToStatement_0, VALUE_dontApplyReductionTwice_0, VALUE_weaveManyToSingularChild_0, VALUE_reduceOneToMany_0, VALUE_argsInTemplDeclRef_0, VALUE_argsInTemplateCall_0, VALUE_none_0);
   }
-
 
   @Nullable
   @Override

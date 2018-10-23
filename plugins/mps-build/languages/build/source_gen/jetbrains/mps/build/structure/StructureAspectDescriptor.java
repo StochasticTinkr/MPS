@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -448,15 +449,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
-    return Arrays.asList(myEnumerationBuildLayout_CopyFilterEolStyle, myEnumerationBuildLayout_TarCompression, myEnumerationBuildSource_JavaContentFolderKind);
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationBuildLayout_CopyFilterEolStyle, myEnumerationBuildLayout_TarCompression, myEnumerationBuildSource_JavaContentFolderKind, myCSDatatypeAntRegexFlags, myCSDatatypeBuildLayout_UnixFilemode, myCSDatatypeFileName);
   }
-
-  @Override
-  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
-    return Arrays.asList(myCSDatatypeAntRegexFlags, myCSDatatypeBuildLayout_UnixFilemode, myCSDatatypeFileName);
-  }
-
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);

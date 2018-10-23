@@ -18,7 +18,6 @@ public class EnumerationDescriptor_TableComponentEnum extends EnumerationDescrip
   private final EnumerationDescriptor.MemberDescriptor VALUE_HORIZONTAL_COLLECTION_0 = new EnumerationDescriptor.MemberDescriptor("HORIZONTAL_COLLECTION", "horizontal collection", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/6820251943131810953");
   private final EnumerationDescriptor.MemberDescriptor VALUE_VERTICAL_COLLECTION_0 = new EnumerationDescriptor.MemberDescriptor("VERTICAL_COLLECTION", "vertical collection", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/6820251943131810954");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_TableComponentEnum extends EnumerationDescrip
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_HORIZONTAL_COLLECTION_0, VALUE_VERTICAL_COLLECTION_0);
   }
-
 
   @Nullable
   @Override

@@ -19,7 +19,6 @@ public class EnumerationDescriptor_ProjectionType extends EnumerationDescriptorB
   private final EnumerationDescriptor.MemberDescriptor VALUE_rich_0 = new EnumerationDescriptor.MemberDescriptor("rich", "rich", "r:eb859fb0-1cb5-4829-a090-c7f47391d585(jetbrains.mps.lang.editor.multiple.testLanguage.structure)/7687090409437208801");
   private final EnumerationDescriptor.MemberDescriptor VALUE_compact_0 = new EnumerationDescriptor.MemberDescriptor("compact", "compact", "r:eb859fb0-1cb5-4829-a090-c7f47391d585(jetbrains.mps.lang.editor.multiple.testLanguage.structure)/7687090409437208798");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_ProjectionType extends EnumerationDescriptorB
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_rich_0, VALUE_compact_0);
   }
-
 
   @Nullable
   @Override

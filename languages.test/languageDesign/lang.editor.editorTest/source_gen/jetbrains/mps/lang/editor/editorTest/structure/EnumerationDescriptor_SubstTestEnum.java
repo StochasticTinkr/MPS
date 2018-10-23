@@ -19,7 +19,6 @@ public class EnumerationDescriptor_SubstTestEnum extends EnumerationDescriptorBa
   private final EnumerationDescriptor.MemberDescriptor VALUE_v2_0 = new EnumerationDescriptor.MemberDescriptor("v2", "v2", "r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/957371990174295507");
   private final EnumerationDescriptor.MemberDescriptor VALUE_v3_0 = new EnumerationDescriptor.MemberDescriptor("v3", "v3", "r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/957371990174295510");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_SubstTestEnum extends EnumerationDescriptorBa
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_v2_0, VALUE_v3_0);
   }
-
 
   @Nullable
   @Override

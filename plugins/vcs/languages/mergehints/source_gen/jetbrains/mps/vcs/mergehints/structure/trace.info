@@ -19,7 +19,7 @@
       <unit at="10,0,44,0" name="jetbrains.mps.vcs.mergehints.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,165,0" name="jetbrains.mps.vcs.mergehints.structure.StructureAspectDescriptor" />
+      <unit at="17,0,159,0" name="jetbrains.mps.vcs.mergehints.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/4140018591229954297">
@@ -42,20 +42,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="4140018591229954297" at="26,0,27,0" concept="2" trace="myConceptVCSHints" />
       <node id="4140018591229954297" at="59,42,60,33" concept="6" />
-      <node id="4140018591229954297" at="154,66,155,171" concept="5" />
-      <node id="4140018591229954297" at="155,171,156,33" concept="1" />
-      <node id="4140018591229954297" at="156,33,157,71" concept="1" />
-      <node id="4140018591229954297" at="157,71,158,115" concept="1" />
-      <node id="4140018591229954297" at="158,115,159,17" concept="1" />
-      <node id="4140018591229954298" at="159,17,160,200" concept="1" />
-      <node id="4140018591229954297" at="160,200,161,25" concept="1" />
-      <node id="4140018591229954297" at="161,25,162,22" concept="6" />
-      <node id="4140018591229954297" at="154,0,164,0" concept="8" trace="createDescriptorForVCSHints#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="4140018591229954297" at="148,66,149,171" concept="5" />
+      <node id="4140018591229954297" at="149,171,150,33" concept="1" />
+      <node id="4140018591229954297" at="150,33,151,71" concept="1" />
+      <node id="4140018591229954297" at="151,71,152,115" concept="1" />
+      <node id="4140018591229954297" at="152,115,153,17" concept="1" />
+      <node id="4140018591229954298" at="153,17,154,200" concept="1" />
+      <node id="4140018591229954297" at="154,200,155,25" concept="1" />
+      <node id="4140018591229954297" at="155,25,156,22" concept="6" />
+      <node id="4140018591229954297" at="148,0,158,0" concept="8" trace="createDescriptorForVCSHints#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="4140018591229954297" at="59,42,60,33" />
-      <scope id="4140018591229954297" at="154,66,162,22">
+      <scope id="4140018591229954297" at="148,66,156,22">
         <var name="b" id="4140018591229954297" />
       </scope>
-      <scope id="4140018591229954297" at="154,0,164,0" />
+      <scope id="4140018591229954297" at="148,0,158,0" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/4140018591229954300">
@@ -78,21 +78,21 @@
     <file name="StructureAspectDescriptor.java">
       <node id="4140018591229954300" at="18,0,19,0" concept="2" trace="myConceptConceptVCSDescriptor" />
       <node id="4140018591229954300" at="43,54,44,45" concept="6" />
-      <node id="4140018591229954300" at="81,78,82,183" concept="5" />
-      <node id="4140018591229954300" at="82,183,83,34" concept="1" />
-      <node id="4140018591229954300" at="83,34,84,115" concept="1" />
-      <node id="4140018591229954300" at="84,115,85,17" concept="1" />
-      <node id="4140018591229954485" at="85,17,86,164" concept="1" />
-      <node id="5705146868101924673" at="86,164,87,201" concept="1" />
-      <node id="5705146868101871817" at="87,201,88,200" concept="1" />
-      <node id="4140018591229954300" at="88,200,89,23" concept="1" />
-      <node id="4140018591229954300" at="89,23,90,22" concept="6" />
-      <node id="4140018591229954300" at="81,0,92,0" concept="8" trace="createDescriptorForConceptVCSDescriptor#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="4140018591229954300" at="75,78,76,183" concept="5" />
+      <node id="4140018591229954300" at="76,183,77,34" concept="1" />
+      <node id="4140018591229954300" at="77,34,78,115" concept="1" />
+      <node id="4140018591229954300" at="78,115,79,17" concept="1" />
+      <node id="4140018591229954485" at="79,17,80,164" concept="1" />
+      <node id="5705146868101924673" at="80,164,81,201" concept="1" />
+      <node id="5705146868101871817" at="81,201,82,200" concept="1" />
+      <node id="4140018591229954300" at="82,200,83,23" concept="1" />
+      <node id="4140018591229954300" at="83,23,84,22" concept="6" />
+      <node id="4140018591229954300" at="75,0,86,0" concept="8" trace="createDescriptorForConceptVCSDescriptor#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="4140018591229954300" at="43,54,44,45" />
-      <scope id="4140018591229954300" at="81,78,90,22">
+      <scope id="4140018591229954300" at="75,78,84,22">
         <var name="b" id="4140018591229954300" />
       </scope>
-      <scope id="4140018591229954300" at="81,0,92,0" />
+      <scope id="4140018591229954300" at="75,0,86,0" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/5705146868101871733">
@@ -114,18 +114,18 @@
     <file name="StructureAspectDescriptor.java">
       <node id="5705146868101871733" at="19,0,20,0" concept="2" trace="myConceptFeatureVCSDescriptor" />
       <node id="5705146868101871733" at="45,54,46,45" concept="6" />
-      <node id="5705146868101871733" at="92,78,93,183" concept="5" />
-      <node id="5705146868101871733" at="93,183,94,33" concept="1" />
-      <node id="5705146868101871733" at="94,33,95,115" concept="1" />
-      <node id="5705146868101871733" at="95,115,96,17" concept="1" />
-      <node id="5705146868101924671" at="96,17,97,202" concept="1" />
-      <node id="5705146868101871733" at="97,202,98,22" concept="6" />
-      <node id="5705146868101871733" at="92,0,100,0" concept="8" trace="createDescriptorForFeatureVCSDescriptor#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="5705146868101871733" at="86,78,87,183" concept="5" />
+      <node id="5705146868101871733" at="87,183,88,33" concept="1" />
+      <node id="5705146868101871733" at="88,33,89,115" concept="1" />
+      <node id="5705146868101871733" at="89,115,90,17" concept="1" />
+      <node id="5705146868101924671" at="90,17,91,202" concept="1" />
+      <node id="5705146868101871733" at="91,202,92,22" concept="6" />
+      <node id="5705146868101871733" at="86,0,94,0" concept="8" trace="createDescriptorForFeatureVCSDescriptor#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="5705146868101871733" at="45,54,46,45" />
-      <scope id="5705146868101871733" at="92,78,98,22">
+      <scope id="5705146868101871733" at="86,78,92,22">
         <var name="b" id="5705146868101871733" />
       </scope>
-      <scope id="5705146868101871733" at="92,0,100,0" />
+      <scope id="5705146868101871733" at="86,0,94,0" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/5705146868101872078">
@@ -148,20 +148,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="5705146868101872078" at="20,0,21,0" concept="2" trace="myConceptLinkVCSDescriptor" />
       <node id="5705146868101872078" at="47,51,48,42" concept="6" />
-      <node id="5705146868101872078" at="100,75,101,180" concept="5" />
-      <node id="5705146868101872078" at="101,180,102,34" concept="1" />
-      <node id="5705146868101872078" at="102,34,103,139" concept="1" />
-      <node id="5705146868101872078" at="103,139,104,115" concept="1" />
-      <node id="5705146868101872078" at="104,115,105,17" concept="1" />
-      <node id="5705146868101871735" at="105,17,106,161" concept="1" />
-      <node id="5705146868101872078" at="106,161,107,20" concept="1" />
-      <node id="5705146868101872078" at="107,20,108,22" concept="6" />
-      <node id="5705146868101872078" at="100,0,110,0" concept="8" trace="createDescriptorForLinkVCSDescriptor#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="5705146868101872078" at="94,75,95,180" concept="5" />
+      <node id="5705146868101872078" at="95,180,96,34" concept="1" />
+      <node id="5705146868101872078" at="96,34,97,139" concept="1" />
+      <node id="5705146868101872078" at="97,139,98,115" concept="1" />
+      <node id="5705146868101872078" at="98,115,99,17" concept="1" />
+      <node id="5705146868101871735" at="99,17,100,161" concept="1" />
+      <node id="5705146868101872078" at="100,161,101,20" concept="1" />
+      <node id="5705146868101872078" at="101,20,102,22" concept="6" />
+      <node id="5705146868101872078" at="94,0,104,0" concept="8" trace="createDescriptorForLinkVCSDescriptor#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="5705146868101872078" at="47,51,48,42" />
-      <scope id="5705146868101872078" at="100,75,108,22">
+      <scope id="5705146868101872078" at="94,75,102,22">
         <var name="b" id="5705146868101872078" />
       </scope>
-      <scope id="5705146868101872078" at="100,0,110,0" />
+      <scope id="5705146868101872078" at="94,0,104,0" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/5705146868101872080">
@@ -184,20 +184,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="5705146868101872080" at="24,0,25,0" concept="2" trace="myConceptPropertyVCSDescriptor" />
       <node id="5705146868101872080" at="55,55,56,46" concept="6" />
-      <node id="5705146868101872080" at="135,79,136,184" concept="5" />
-      <node id="5705146868101872080" at="136,184,137,34" concept="1" />
-      <node id="5705146868101872080" at="137,34,138,139" concept="1" />
-      <node id="5705146868101872080" at="138,139,139,115" concept="1" />
-      <node id="5705146868101872080" at="139,115,140,17" concept="1" />
-      <node id="5705146868101872081" at="140,17,141,162" concept="1" />
-      <node id="5705146868101872080" at="141,162,142,24" concept="1" />
-      <node id="5705146868101872080" at="142,24,143,22" concept="6" />
-      <node id="5705146868101872080" at="135,0,145,0" concept="8" trace="createDescriptorForPropertyVCSDescriptor#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="5705146868101872080" at="129,79,130,184" concept="5" />
+      <node id="5705146868101872080" at="130,184,131,34" concept="1" />
+      <node id="5705146868101872080" at="131,34,132,139" concept="1" />
+      <node id="5705146868101872080" at="132,139,133,115" concept="1" />
+      <node id="5705146868101872080" at="133,115,134,17" concept="1" />
+      <node id="5705146868101872081" at="134,17,135,162" concept="1" />
+      <node id="5705146868101872080" at="135,162,136,24" concept="1" />
+      <node id="5705146868101872080" at="136,24,137,22" concept="6" />
+      <node id="5705146868101872080" at="129,0,139,0" concept="8" trace="createDescriptorForPropertyVCSDescriptor#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="5705146868101872080" at="55,55,56,46" />
-      <scope id="5705146868101872080" at="135,79,143,22">
+      <scope id="5705146868101872080" at="129,79,137,22">
         <var name="b" id="5705146868101872080" />
       </scope>
-      <scope id="5705146868101872080" at="135,0,145,0" />
+      <scope id="5705146868101872080" at="129,0,139,0" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/5705146868101924605">
@@ -219,19 +219,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="5705146868101924605" at="22,0,23,0" concept="2" trace="myConceptMergeStrategy" />
       <node id="5705146868101924605" at="51,47,52,38" concept="6" />
-      <node id="5705146868101924605" at="119,71,120,176" concept="5" />
-      <node id="5705146868101924605" at="120,176,121,19" concept="1" />
-      <node id="5705146868101924605" at="121,19,122,115" concept="1" />
-      <node id="5705146868101924605" at="122,115,123,17" concept="1" />
-      <node id="5705146868101924605" at="123,17,124,22" concept="6" />
-      <node id="5705146868101924605" at="128,34,129,76" concept="1" />
-      <node id="5705146868101924605" at="147,34,148,76" concept="1" />
-      <node id="5705146868101924605" at="119,0,126,0" concept="8" trace="createDescriptorForMergeStrategy#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="5705146868101924605" at="113,71,114,176" concept="5" />
+      <node id="5705146868101924605" at="114,176,115,19" concept="1" />
+      <node id="5705146868101924605" at="115,19,116,115" concept="1" />
+      <node id="5705146868101924605" at="116,115,117,17" concept="1" />
+      <node id="5705146868101924605" at="117,17,118,22" concept="6" />
+      <node id="5705146868101924605" at="122,34,123,76" concept="1" />
+      <node id="5705146868101924605" at="141,34,142,76" concept="1" />
+      <node id="5705146868101924605" at="113,0,120,0" concept="8" trace="createDescriptorForMergeStrategy#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="5705146868101924605" at="51,47,52,38" />
-      <scope id="5705146868101924605" at="119,71,124,22">
+      <scope id="5705146868101924605" at="113,71,118,22">
         <var name="b" id="5705146868101924605" />
       </scope>
-      <scope id="5705146868101924605" at="119,0,126,0" />
+      <scope id="5705146868101924605" at="113,0,120,0" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/5705146868101924608">
@@ -254,18 +254,18 @@
     <file name="StructureAspectDescriptor.java">
       <node id="5705146868101924608" at="23,0,24,0" concept="2" trace="myConceptOursStrategy" />
       <node id="5705146868101924608" at="53,46,54,37" concept="6" />
-      <node id="5705146868101924608" at="126,70,127,175" concept="5" />
-      <node id="5705146868101924608" at="127,175,128,34" concept="1" />
-      <node id="5705146868101924608" at="129,76,130,115" concept="1" />
-      <node id="5705146868101924608" at="130,115,131,17" concept="1" />
-      <node id="5705146868101924608" at="131,17,132,20" concept="1" />
-      <node id="5705146868101924608" at="132,20,133,22" concept="6" />
-      <node id="5705146868101924608" at="126,0,135,0" concept="8" trace="createDescriptorForOursStrategy#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="5705146868101924608" at="120,70,121,175" concept="5" />
+      <node id="5705146868101924608" at="121,175,122,34" concept="1" />
+      <node id="5705146868101924608" at="123,76,124,115" concept="1" />
+      <node id="5705146868101924608" at="124,115,125,17" concept="1" />
+      <node id="5705146868101924608" at="125,17,126,20" concept="1" />
+      <node id="5705146868101924608" at="126,20,127,22" concept="6" />
+      <node id="5705146868101924608" at="120,0,129,0" concept="8" trace="createDescriptorForOursStrategy#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="5705146868101924608" at="53,46,54,37" />
-      <scope id="5705146868101924608" at="126,70,133,22">
+      <scope id="5705146868101924608" at="120,70,127,22">
         <var name="b" id="5705146868101924608" />
       </scope>
-      <scope id="5705146868101924608" at="126,0,135,0" />
+      <scope id="5705146868101924608" at="120,0,129,0" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/5705146868101924639">
@@ -288,18 +288,18 @@
     <file name="StructureAspectDescriptor.java">
       <node id="5705146868101924639" at="25,0,26,0" concept="2" trace="myConceptTheirsStrategy" />
       <node id="5705146868101924639" at="57,48,58,39" concept="6" />
-      <node id="5705146868101924639" at="145,72,146,177" concept="5" />
-      <node id="5705146868101924639" at="146,177,147,34" concept="1" />
-      <node id="5705146868101924639" at="148,76,149,115" concept="1" />
-      <node id="5705146868101924639" at="149,115,150,17" concept="1" />
-      <node id="5705146868101924639" at="150,17,151,22" concept="1" />
-      <node id="5705146868101924639" at="151,22,152,22" concept="6" />
-      <node id="5705146868101924639" at="145,0,154,0" concept="8" trace="createDescriptorForTheirsStrategy#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="5705146868101924639" at="139,72,140,177" concept="5" />
+      <node id="5705146868101924639" at="140,177,141,34" concept="1" />
+      <node id="5705146868101924639" at="142,76,143,115" concept="1" />
+      <node id="5705146868101924639" at="143,115,144,17" concept="1" />
+      <node id="5705146868101924639" at="144,17,145,22" concept="1" />
+      <node id="5705146868101924639" at="145,22,146,22" concept="6" />
+      <node id="5705146868101924639" at="139,0,148,0" concept="8" trace="createDescriptorForTheirsStrategy#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="5705146868101924639" at="57,48,58,39" />
-      <scope id="5705146868101924639" at="145,72,152,22">
+      <scope id="5705146868101924639" at="139,72,146,22">
         <var name="b" id="5705146868101924639" />
       </scope>
-      <scope id="5705146868101924639" at="145,0,154,0" />
+      <scope id="5705146868101924639" at="139,0,148,0" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/7313573869697839898">
@@ -323,19 +323,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="7313573869697839898" at="21,0,22,0" concept="2" trace="myConceptMergeHint" />
       <node id="7313573869697839898" at="49,43,50,34" concept="6" />
-      <node id="7313573869697839898" at="110,67,111,172" concept="5" />
-      <node id="7313573869697839898" at="111,172,112,34" concept="1" />
-      <node id="7313573869697839898" at="112,34,113,127" concept="1" />
-      <node id="7313573869697839898" at="113,127,114,115" concept="1" />
-      <node id="7313573869697839898" at="114,115,115,17" concept="1" />
-      <node id="8485200647808748986" at="115,17,116,178" concept="1" />
-      <node id="7313573869697839898" at="116,178,117,22" concept="6" />
-      <node id="7313573869697839898" at="110,0,119,0" concept="8" trace="createDescriptorForMergeHint#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="7313573869697839898" at="104,67,105,172" concept="5" />
+      <node id="7313573869697839898" at="105,172,106,34" concept="1" />
+      <node id="7313573869697839898" at="106,34,107,127" concept="1" />
+      <node id="7313573869697839898" at="107,127,108,115" concept="1" />
+      <node id="7313573869697839898" at="108,115,109,17" concept="1" />
+      <node id="8485200647808748986" at="109,17,110,175" concept="1" />
+      <node id="7313573869697839898" at="110,175,111,22" concept="6" />
+      <node id="7313573869697839898" at="104,0,113,0" concept="8" trace="createDescriptorForMergeHint#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="7313573869697839898" at="49,43,50,34" />
-      <scope id="7313573869697839898" at="110,67,117,22">
+      <scope id="7313573869697839898" at="104,67,111,22">
         <var name="b" id="7313573869697839898" />
       </scope>
-      <scope id="7313573869697839898" at="110,0,119,0" />
+      <scope id="7313573869697839898" at="104,0,113,0" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/8485200647808748945">
@@ -343,32 +343,32 @@
       <node id="8485200647808748945" at="14,43,15,187" concept="9" />
       <node id="8485200647808748977" at="18,0,19,0" concept="2" trace="VALUE_1_0" />
       <node id="8485200647808748983" at="19,0,20,0" concept="2" trace="VALUE_2_0" />
-      <node id="8485200647808748945" at="24,62,25,21" concept="6" />
-      <node id="8485200647808748945" at="30,74,31,47" concept="6" />
-      <node id="8485200647808748945" at="38,25,39,18" concept="6" />
-      <node id="8485200647808748977" at="42,15,43,25" concept="6" />
-      <node id="8485200647808748983" at="44,15,45,25" concept="6" />
-      <node id="8485200647808748945" at="46,5,47,16" concept="6" />
+      <node id="8485200647808748945" at="23,62,24,21" concept="6" />
+      <node id="8485200647808748945" at="29,74,30,47" concept="6" />
+      <node id="8485200647808748945" at="36,25,37,18" concept="6" />
+      <node id="8485200647808748977" at="40,15,41,25" concept="6" />
+      <node id="8485200647808748983" at="42,15,43,25" concept="6" />
+      <node id="8485200647808748945" at="44,5,45,16" concept="6" />
       <node id="8485200647808748945" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_Strategy#()V" />
-      <node id="8485200647808748945" at="37,84,40,5" concept="3" />
-      <node id="8485200647808748945" at="22,0,27,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <node id="8485200647808748945" at="28,0,33,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
-      <node id="8485200647808748945" at="40,5,46,5" concept="10" />
-      <node id="8485200647808748945" at="35,0,49,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="8485200647808748945" at="35,84,38,5" concept="3" />
+      <node id="8485200647808748945" at="21,0,26,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="8485200647808748945" at="27,0,32,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="8485200647808748945" at="38,5,44,5" concept="10" />
+      <node id="8485200647808748945" at="33,0,47,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
       <scope id="8485200647808748945" at="14,43,15,187" />
-      <scope id="8485200647808748945" at="24,62,25,21" />
-      <scope id="8485200647808748945" at="30,74,31,47" />
-      <scope id="8485200647808748945" at="38,25,39,18" />
-      <scope id="8485200647808748977" at="42,15,43,25" />
-      <scope id="8485200647808748983" at="44,15,45,25" />
+      <scope id="8485200647808748945" at="23,62,24,21" />
+      <scope id="8485200647808748945" at="29,74,30,47" />
+      <scope id="8485200647808748945" at="36,25,37,18" />
+      <scope id="8485200647808748977" at="40,15,41,25" />
+      <scope id="8485200647808748983" at="42,15,43,25" />
       <scope id="8485200647808748945" at="14,0,17,0" />
-      <scope id="8485200647808748945" at="22,0,27,0" />
-      <scope id="8485200647808748945" at="28,0,33,0" />
-      <scope id="8485200647808748945" at="37,84,47,16" />
-      <scope id="8485200647808748945" at="35,0,49,0">
+      <scope id="8485200647808748945" at="21,0,26,0" />
+      <scope id="8485200647808748945" at="27,0,32,0" />
+      <scope id="8485200647808748945" at="35,84,45,16" />
+      <scope id="8485200647808748945" at="33,0,47,0">
         <var name="string" id="8485200647808748945" />
       </scope>
-      <unit id="8485200647808748945" at="12,0,50,0" name="jetbrains.mps.vcs.mergehints.structure.EnumerationDescriptor_Strategy" />
+      <unit id="8485200647808748945" at="12,0,48,0" name="jetbrains.mps.vcs.mergehints.structure.EnumerationDescriptor_Strategy" />
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="8485200647808748945" at="27,0,28,0" concept="2" trace="myEnumerationStrategy" />

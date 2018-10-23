@@ -19,7 +19,6 @@ public class EnumerationDescriptor_EnumerationMemberIdentifierPolicy extends Enu
   private final EnumerationDescriptor.MemberDescriptor VALUE_derive_from_internal_value_0 = new EnumerationDescriptor.MemberDescriptor("derive_from_internal_value", "derive from internal value", "r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/1197591048630");
   private final EnumerationDescriptor.MemberDescriptor VALUE_custom_0 = new EnumerationDescriptor.MemberDescriptor("custom", "custom", "r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/1197591075491");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_EnumerationMemberIdentifierPolicy extends Enu
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_derive_from_presentation_0, VALUE_derive_from_internal_value_0, VALUE_custom_0);
   }
-
 
   @Nullable
   @Override

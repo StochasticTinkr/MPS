@@ -34,7 +34,6 @@ public class EnumerationDescriptor__Colors_Enum extends EnumerationDescriptorBas
   private final EnumerationDescriptor.MemberDescriptor VALUE_WHITE_0 = new EnumerationDescriptor.MemberDescriptor("WHITE", "white", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1214395400259");
   private final EnumerationDescriptor.MemberDescriptor VALUE_black_0 = new EnumerationDescriptor.MemberDescriptor("black", "black", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/7151630269404055096");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -46,7 +45,6 @@ public class EnumerationDescriptor__Colors_Enum extends EnumerationDescriptorBas
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_red_0, VALUE_pink_0, VALUE_orange_0, VALUE_yellow_0, VALUE_green_0, VALUE_DARK_GREEN_0, VALUE_magenta_0, VALUE_DARK_MAGENTA_0, VALUE_cyan_0, VALUE_blue_0, VALUE_LIGHT_BLUE_0, VALUE_DARK_BLUE_0, VALUE_gray_0, VALUE_lightGray_0, VALUE_darkGray_0, VALUE_WHITE_0, VALUE_black_0);
   }
-
 
   @Nullable
   @Override

@@ -22,7 +22,6 @@ public class EnumerationDescriptor_Severity extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_info_0 = new EnumerationDescriptor.MemberDescriptor("info", "info", "r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)/1169477928086");
   private final EnumerationDescriptor.MemberDescriptor VALUE_trace_0 = new EnumerationDescriptor.MemberDescriptor("trace", "trace", "r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)/1167245293010");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -34,7 +33,6 @@ public class EnumerationDescriptor_Severity extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_fatal_0, VALUE_error_0, VALUE_warn_0, VALUE_debug_0, VALUE_info_0, VALUE_trace_0);
   }
-
 
   @Nullable
   @Override

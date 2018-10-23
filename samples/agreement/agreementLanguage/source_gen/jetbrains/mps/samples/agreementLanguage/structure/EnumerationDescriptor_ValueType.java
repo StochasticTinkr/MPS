@@ -18,7 +18,6 @@ public class EnumerationDescriptor_ValueType extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_Quantity_0 = new EnumerationDescriptor.MemberDescriptor("Quantity", "QUANTITY", "r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)/1111792874919");
   private final EnumerationDescriptor.MemberDescriptor VALUE_Money_0 = new EnumerationDescriptor.MemberDescriptor("Money", "MONEY", "r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)/1111792901670");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_ValueType extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_Quantity_0, VALUE_Money_0);
   }
-
 
   @Nullable
   @Override

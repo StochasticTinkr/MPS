@@ -18,7 +18,6 @@ public class EnumerationDescriptor_BuildMps_GeneratorOptions_SkipUnmodifiedModel
   private final EnumerationDescriptor.MemberDescriptor VALUE__0 = new EnumerationDescriptor.MemberDescriptor(null, "use mps.generator.skipUnmodifiedModels macro", "r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/250862790757304012");
   private final EnumerationDescriptor.MemberDescriptor VALUE_never_0 = new EnumerationDescriptor.MemberDescriptor("never", "never", "r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/250862790757304013");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_BuildMps_GeneratorOptions_SkipUnmodifiedModel
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_never_0);
   }
-
 
   @Nullable
   @Override

@@ -20,7 +20,6 @@ public class EnumerationDescriptor_CellKeyMapCaretPolicy extends EnumerationDesc
   private final EnumerationDescriptor.MemberDescriptor VALUE_caret_at_last_position_0 = new EnumerationDescriptor.MemberDescriptor("caret_at_last_position", "LAST_POSITION", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1141091209420");
   private final EnumerationDescriptor.MemberDescriptor VALUE_caret_at_intermediate_position_0 = new EnumerationDescriptor.MemberDescriptor("caret_at_intermediate_position", "INTERMEDIATE_POSITION", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1143573566373");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -32,7 +31,6 @@ public class EnumerationDescriptor_CellKeyMapCaretPolicy extends EnumerationDesc
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_caret_at_first_position_0, VALUE_caret_at_last_position_0, VALUE_caret_at_intermediate_position_0);
   }
-
 
   @Nullable
   @Override

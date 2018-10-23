@@ -18,7 +18,6 @@ public class EnumerationDescriptor_LinkMetaclass extends EnumerationDescriptorBa
   private final EnumerationDescriptor.MemberDescriptor VALUE_reference_0 = new EnumerationDescriptor.MemberDescriptor("reference", "reference", "r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/1084199179704");
   private final EnumerationDescriptor.MemberDescriptor VALUE_aggregation_0 = new EnumerationDescriptor.MemberDescriptor("aggregation", "aggregation", "r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/1084199179705");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_LinkMetaclass extends EnumerationDescriptorBa
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_reference_0, VALUE_aggregation_0);
   }
-
 
   @Nullable
   @Override

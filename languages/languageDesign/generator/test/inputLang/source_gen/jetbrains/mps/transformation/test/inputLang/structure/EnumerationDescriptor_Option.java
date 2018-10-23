@@ -19,7 +19,6 @@ public class EnumerationDescriptor_Option extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_option_1_0 = new EnumerationDescriptor.MemberDescriptor("option_1", "option_1", "r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)/1195169295907");
   private final EnumerationDescriptor.MemberDescriptor VALUE_drop_it_0 = new EnumerationDescriptor.MemberDescriptor("drop_it", "drop it", "r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)/1202780730330");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_Option extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_option_default_0, VALUE_option_1_0, VALUE_drop_it_0);
   }
-
 
   @Nullable
   @Override

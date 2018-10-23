@@ -18,7 +18,6 @@ public class EnumerationDescriptor_MenuTraceEnum extends EnumerationDescriptorBa
   private final EnumerationDescriptor.MemberDescriptor VALUE_enum1_0 = new EnumerationDescriptor.MemberDescriptor("enum1", "enum1", "r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/3631615103242154419");
   private final EnumerationDescriptor.MemberDescriptor VALUE_enum2_0 = new EnumerationDescriptor.MemberDescriptor("enum2", "enum2", "r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/3631615103242154420");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_MenuTraceEnum extends EnumerationDescriptorBa
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_enum1_0, VALUE_enum2_0);
   }
-
 
   @Nullable
   @Override

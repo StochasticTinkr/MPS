@@ -24,7 +24,6 @@ public class EnumerationDescriptor_Level extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_TRACE_0 = new EnumerationDescriptor.MemberDescriptor("TRACE", "TRACE", "r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)/5219531754069980146");
   private final EnumerationDescriptor.MemberDescriptor VALUE_ALL_0 = new EnumerationDescriptor.MemberDescriptor("ALL", "ALL", "r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)/5219531754069980161");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -36,7 +35,6 @@ public class EnumerationDescriptor_Level extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_OFF_0, VALUE_FATAL_0, VALUE_ERROR_0, VALUE_WARN_0, VALUE_INFO_0, VALUE_DEBUG_0, VALUE_TRACE_0, VALUE_ALL_0);
   }
-
 
   @Nullable
   @Override

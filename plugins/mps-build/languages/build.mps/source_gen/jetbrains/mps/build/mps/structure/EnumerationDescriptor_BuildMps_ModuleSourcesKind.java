@@ -19,7 +19,6 @@ public class EnumerationDescriptor_BuildMps_ModuleSourcesKind extends Enumeratio
   private final EnumerationDescriptor.MemberDescriptor VALUE_sourcesandtests_0 = new EnumerationDescriptor.MemberDescriptor("sources and tests", "sources and tests", "r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/269707337715631443");
   private final EnumerationDescriptor.MemberDescriptor VALUE_tests_0 = new EnumerationDescriptor.MemberDescriptor("tests", "tests", "r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/269707337715631452");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_BuildMps_ModuleSourcesKind extends Enumeratio
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_sources_0, VALUE_sourcesandtests_0, VALUE_tests_0);
   }
-
 
   @Nullable
   @Override

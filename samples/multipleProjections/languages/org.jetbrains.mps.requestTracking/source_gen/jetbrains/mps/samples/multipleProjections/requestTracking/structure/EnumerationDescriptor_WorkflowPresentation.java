@@ -18,7 +18,6 @@ public class EnumerationDescriptor_WorkflowPresentation extends EnumerationDescr
   private final EnumerationDescriptor.MemberDescriptor VALUE_structural_0 = new EnumerationDescriptor.MemberDescriptor("structural", "structural", "r:fa417a98-a00c-4f7c-9ba5-6ec71a5b205a(jetbrains.mps.samples.multipleProjections.requestTracking.structure)/3675491646420867318");
   private final EnumerationDescriptor.MemberDescriptor VALUE_tabular_0 = new EnumerationDescriptor.MemberDescriptor("tabular", "tabular", "r:fa417a98-a00c-4f7c-9ba5-6ec71a5b205a(jetbrains.mps.samples.multipleProjections.requestTracking.structure)/3675491646420867327");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_WorkflowPresentation extends EnumerationDescr
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_structural_0, VALUE_tabular_0);
   }
-
 
   @Nullable
   @Override

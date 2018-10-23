@@ -18,7 +18,6 @@ public class EnumerationDescriptor_KeyMapChange extends EnumerationDescriptorBas
   private final EnumerationDescriptor.MemberDescriptor VALUE_replaceall_0 = new EnumerationDescriptor.MemberDescriptor("replace all", "replace all", "r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/6785623076777453161");
   private final EnumerationDescriptor.MemberDescriptor VALUE_remove_0 = new EnumerationDescriptor.MemberDescriptor("remove", "remove", "r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/6785623076777453162");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_KeyMapChange extends EnumerationDescriptorBas
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_replaceall_0, VALUE_remove_0);
   }
-
 
   @Nullable
   @Override

@@ -24,7 +24,6 @@ public class EnumerationDescriptor_PredefinedCellID extends EnumerationDescripto
   private final EnumerationDescriptor.MemberDescriptor VALUE_focusPolicy_0 = new EnumerationDescriptor.MemberDescriptor("focusPolicy", "FOCUS_POLICY", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/2057482661602002122");
   private final EnumerationDescriptor.MemberDescriptor VALUE_mostRelevant_0 = new EnumerationDescriptor.MemberDescriptor("mostRelevant", "MOST_RELEVANT", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/5933946333436767965");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -36,7 +35,6 @@ public class EnumerationDescriptor_PredefinedCellID extends EnumerationDescripto
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_first_0, VALUE_last_0, VALUE_firstEditable_0, VALUE_lastEditable_0, VALUE_firstError_0, VALUE_lastError_0, VALUE_focusPolicy_0, VALUE_mostRelevant_0);
   }
-
 
   @Nullable
   @Override

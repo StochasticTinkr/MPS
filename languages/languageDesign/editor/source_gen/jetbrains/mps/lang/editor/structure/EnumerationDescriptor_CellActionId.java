@@ -65,7 +65,6 @@ public class EnumerationDescriptor_CellActionId extends EnumerationDescriptorBas
   private final EnumerationDescriptor.MemberDescriptor VALUE_insert_placeholder_action_id_0 = new EnumerationDescriptor.MemberDescriptor("insert_placeholder_action_id", "INSERT_PLACEHOLDER", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/4058177569375008137");
   private final EnumerationDescriptor.MemberDescriptor VALUE_insert_placeholder_before_action_id_0 = new EnumerationDescriptor.MemberDescriptor("insert_placeholder_before_action_id", "INSERT_PLACEHOLDER_BEFORE", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/474718489010969512");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -77,7 +76,6 @@ public class EnumerationDescriptor_CellActionId extends EnumerationDescriptorBas
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_right_transform_action_id_0, VALUE_delete_action_id_0, VALUE_insert_action_id_0, VALUE_insert_before_action_id_0, VALUE_backspace_action_id_0, VALUE_delete_to_word_end_action_id_0, VALUE_copy_action_id_0, VALUE_cut_action_id_0, VALUE_paste_action_id_0, VALUE_paste_before_action_id_0, VALUE_paste_after_action_id_0, VALUE_left_action_id_0, VALUE_right_action_id_0, VALUE_up_action_id_0, VALUE_down_action_id_0, VALUE_next_action_id_0, VALUE_prev_action_id_0, VALUE_home_action_id_0, VALUE_end_action_id_0, VALUE_page_up_action_id_0, VALUE_page_down_action_id_0, VALUE_root_home_action_id_0, VALUE_root_end_action_id_0, VALUE_local_home_action_id_0, VALUE_local_end_action_id_0, VALUE_select_all_action_id_0, VALUE_select_left_action_id_0, VALUE_select_right_action_id_0, VALUE_select_up_action_id_0, VALUE_select_down_action_id_0, VALUE_select_home_action_id_0, VALUE_select_end_action_id_0, VALUE_select_local_end_action_id_0, VALUE_select_local_home_action_id_0, VALUE_select_next_action_id_0, VALUE_select_previous_action_id_0, VALUE_left_transform_action_id_0, VALUE_complete_action_id_0, VALUE_complete_smart_action_id_0, VALUE_fold_action_id_0, VALUE_unfold_action_id_0, VALUE_fold_all_action_id_0, VALUE_unfold_all_action_id_0, VALUE_toggle_folding_action_id_0, VALUE_show_message_action_id_0, VALUE_comment_out_action_id_0, VALUE_click_action_id_0, VALUE_insert_placeholder_action_id_0, VALUE_insert_placeholder_before_action_id_0);
   }
-
 
   @Nullable
   @Override

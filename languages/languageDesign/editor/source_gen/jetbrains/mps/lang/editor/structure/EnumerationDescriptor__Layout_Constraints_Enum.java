@@ -19,7 +19,6 @@ public class EnumerationDescriptor__Layout_Constraints_Enum extends EnumerationD
   private final EnumerationDescriptor.MemberDescriptor VALUE_noflow_0 = new EnumerationDescriptor.MemberDescriptor("noflow", "noflow", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1138197619454");
   private final EnumerationDescriptor.MemberDescriptor VALUE__0 = new EnumerationDescriptor.MemberDescriptor(null, "none", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1138197631095");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor__Layout_Constraints_Enum extends EnumerationD
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_punctuation_0, VALUE_noflow_0, VALUE__0);
   }
-
 
   @Nullable
   @Override

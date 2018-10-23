@@ -18,7 +18,6 @@ public class EnumerationDescriptor_TestEnum_DeriveFromInternalValue extends Enum
   private final EnumerationDescriptor.MemberDescriptor VALUE_value_1_0 = new EnumerationDescriptor.MemberDescriptor("value_1", "presentation_1", "r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/1322863731089346295");
   private final EnumerationDescriptor.MemberDescriptor VALUE_value_2_0 = new EnumerationDescriptor.MemberDescriptor("value_2", "presentation_2", "r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/1322863731089346296");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_TestEnum_DeriveFromInternalValue extends Enum
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_value_1_0, VALUE_value_2_0);
   }
-
 
   @Nullable
   @Override

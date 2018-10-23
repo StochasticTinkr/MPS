@@ -15,7 +15,7 @@
       <unit at="10,0,28,0" name="jetbrains.mps.samples.TargetBL.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,63,0" name="jetbrains.mps.samples.TargetBL.structure.StructureAspectDescriptor" />
+      <unit at="15,0,56,0" name="jetbrains.mps.samples.TargetBL.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:c0438ea6-d2b1-4733-881f-d4cc1aae0e59(jetbrains.mps.samples.TargetBL.structure)/7957904439566601112">
@@ -36,19 +36,19 @@
       <node id="7957904439566601112" at="15,116,16,54" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="7957904439566601112" at="17,0,18,0" concept="1" trace="myConceptIncludeBLTarget" />
-      <node id="7957904439566601112" at="33,49,34,40" concept="4" />
-      <node id="7957904439566601112" at="55,73,56,180" concept="3" />
-      <node id="7957904439566601112" at="56,180,57,33" concept="0" />
-      <node id="7957904439566601112" at="57,33,58,117" concept="0" />
-      <node id="7957904439566601112" at="58,117,59,17" concept="0" />
-      <node id="7957904439566601112" at="59,17,60,22" concept="4" />
-      <node id="7957904439566601112" at="55,0,62,0" concept="6" trace="createDescriptorForIncludeBLTarget#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="7957904439566601112" at="33,49,34,40" />
-      <scope id="7957904439566601112" at="55,73,60,22">
+      <node id="7957904439566601112" at="16,0,17,0" concept="1" trace="myConceptIncludeBLTarget" />
+      <node id="7957904439566601112" at="32,49,33,40" concept="4" />
+      <node id="7957904439566601112" at="48,73,49,180" concept="3" />
+      <node id="7957904439566601112" at="49,180,50,33" concept="0" />
+      <node id="7957904439566601112" at="50,33,51,117" concept="0" />
+      <node id="7957904439566601112" at="51,117,52,17" concept="0" />
+      <node id="7957904439566601112" at="52,17,53,22" concept="4" />
+      <node id="7957904439566601112" at="48,0,55,0" concept="6" trace="createDescriptorForIncludeBLTarget#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="7957904439566601112" at="32,49,33,40" />
+      <scope id="7957904439566601112" at="48,73,53,22">
         <var name="b" id="7957904439566601112" />
       </scope>
-      <scope id="7957904439566601112" at="55,0,62,0" />
+      <scope id="7957904439566601112" at="48,0,55,0" />
     </file>
   </root>
 </debug-info>

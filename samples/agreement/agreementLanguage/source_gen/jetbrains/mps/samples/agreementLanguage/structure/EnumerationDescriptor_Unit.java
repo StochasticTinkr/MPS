@@ -19,7 +19,6 @@ public class EnumerationDescriptor_Unit extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_USD_0 = new EnumerationDescriptor.MemberDescriptor("USD", "USD", "r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)/1111793298691");
   private final EnumerationDescriptor.MemberDescriptor VALUE_KWH_0 = new EnumerationDescriptor.MemberDescriptor("KWH", "KWH", "r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)/1111793319239");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_Unit extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_USD_KWH_0, VALUE_USD_0, VALUE_KWH_0);
   }
-
 
   @Nullable
   @Override

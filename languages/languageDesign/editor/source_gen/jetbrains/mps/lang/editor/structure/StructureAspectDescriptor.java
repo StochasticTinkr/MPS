@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -1344,15 +1345,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
-    return Arrays.asList(myEnumerationAlignEnum, myEnumerationCellActionId, myEnumerationCellKeyMapCaretPolicy, myEnumerationDefaultBaseLineEnum, myEnumerationFocusPolicy, myEnumerationPredefinedCellID, myEnumerationScriptSwitchEnum, myEnumerationSelectPosition, myEnumerationShowBoundariesAreaEnum, myEnumerationStyleAttributeKind, myEnumerationTableComponentEnum, myEnumerationTransformationLocation_SideTransform_PlaceInCell, myEnumerationUnderlineStyle, myEnumeration_CaretPosition_Enum, myEnumeration_Colors_Enum, myEnumeration_Enum_Measure, myEnumeration_FontStyle_Enum, myEnumeration_ImageAlignment_Enum, myEnumeration_Layout_Constraints_Enum, myEnumeration_LeftRight_Enum, myEnumeration_NextLine_Enum, myEnumeration_YesNoDefault_Enum);
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationAlignEnum, myEnumerationCellActionId, myEnumerationCellKeyMapCaretPolicy, myEnumerationDefaultBaseLineEnum, myEnumerationFocusPolicy, myEnumerationPredefinedCellID, myEnumerationScriptSwitchEnum, myEnumerationSelectPosition, myEnumerationShowBoundariesAreaEnum, myEnumerationStyleAttributeKind, myEnumerationTableComponentEnum, myEnumerationTransformationLocation_SideTransform_PlaceInCell, myEnumerationUnderlineStyle, myEnumeration_CaretPosition_Enum, myEnumeration_Colors_Enum, myEnumeration_Enum_Measure, myEnumeration_FontStyle_Enum, myEnumeration_ImageAlignment_Enum, myEnumeration_Layout_Constraints_Enum, myEnumeration_LeftRight_Enum, myEnumeration_NextLine_Enum, myEnumeration_YesNoDefault_Enum, myCSDatatype_FloatOrInteger_String);
   }
-
-  @Override
-  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
-    return Arrays.asList(myCSDatatype_FloatOrInteger_String);
-  }
-
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);

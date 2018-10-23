@@ -18,7 +18,6 @@ public class EnumerationDescriptor_SideTransformSide extends EnumerationDescript
   private final EnumerationDescriptor.MemberDescriptor VALUE_right_0 = new EnumerationDescriptor.MemberDescriptor("right", "right", "r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/779128492853700077");
   private final EnumerationDescriptor.MemberDescriptor VALUE_left_0 = new EnumerationDescriptor.MemberDescriptor("left", "left", "r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/779128492853702223");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_SideTransformSide extends EnumerationDescript
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_right_0, VALUE_left_0);
   }
-
 
   @Nullable
   @Override

@@ -19,7 +19,6 @@ public class EnumerationDescriptor_StaticScope extends EnumerationDescriptorBase
   private final EnumerationDescriptor.MemberDescriptor VALUE_root_0 = new EnumerationDescriptor.MemberDescriptor("root", "containing root", "r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/5404671619616246761");
   private final EnumerationDescriptor.MemberDescriptor VALUE_none_0 = new EnumerationDescriptor.MemberDescriptor("none", "none", "r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/5404671619616246764");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_StaticScope extends EnumerationDescriptorBase
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_root_0, VALUE_none_0);
   }
-
 
   @Nullable
   @Override

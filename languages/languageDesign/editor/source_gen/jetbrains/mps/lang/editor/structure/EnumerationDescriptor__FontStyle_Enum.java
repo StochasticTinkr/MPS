@@ -21,7 +21,6 @@ public class EnumerationDescriptor__FontStyle_Enum extends EnumerationDescriptor
   private final EnumerationDescriptor.MemberDescriptor VALUE_PLAIN_0 = new EnumerationDescriptor.MemberDescriptor("PLAIN", "plain", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1134577855137");
   private final EnumerationDescriptor.MemberDescriptor VALUE_QUERY_0 = new EnumerationDescriptor.MemberDescriptor("QUERY", "query", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1220973684614");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -33,7 +32,6 @@ public class EnumerationDescriptor__FontStyle_Enum extends EnumerationDescriptor
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_BOLD_0, VALUE_ITALIC_0, VALUE_BOLD_ITALIC_0, VALUE_PLAIN_0, VALUE_QUERY_0);
   }
-
 
   @Nullable
   @Override

@@ -19,7 +19,6 @@ public class EnumerationDescriptor_GeneratorMessageType extends EnumerationDescr
   private final EnumerationDescriptor.MemberDescriptor VALUE_warning_0 = new EnumerationDescriptor.MemberDescriptor("warning", "warning", "r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1169670280596");
   private final EnumerationDescriptor.MemberDescriptor VALUE_error_0 = new EnumerationDescriptor.MemberDescriptor("error", "error", "r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1169670287832");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_GeneratorMessageType extends EnumerationDescr
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_info_0, VALUE_warning_0, VALUE_error_0);
   }
-
 
   @Nullable
   @Override

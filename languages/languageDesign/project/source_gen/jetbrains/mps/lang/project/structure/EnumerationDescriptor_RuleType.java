@@ -21,7 +21,6 @@ public class EnumerationDescriptor_RuleType extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_after_or_together_0 = new EnumerationDescriptor.MemberDescriptor("after_or_together", "after or together (>=)", "r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)/2643213347103734302");
   private final EnumerationDescriptor.MemberDescriptor VALUE_strictly_after_0 = new EnumerationDescriptor.MemberDescriptor("strictly_after", "after (>)", "r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)/2643213347103734303");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -33,7 +32,6 @@ public class EnumerationDescriptor_RuleType extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_strictly_before_0, VALUE_strictly_together_0, VALUE_before_or_together_0, VALUE_after_or_together_0, VALUE_strictly_after_0);
   }
-
 
   @Nullable
   @Override

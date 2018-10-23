@@ -20,7 +20,6 @@ public class EnumerationDescriptor_TargetDependencyQualifier extends Enumeration
   private final EnumerationDescriptor.MemberDescriptor VALUE_AFTER_0 = new EnumerationDescriptor.MemberDescriptor("AFTER", "after", "r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)/8351679702044326374");
   private final EnumerationDescriptor.MemberDescriptor VALUE_NOT_AFTER_0 = new EnumerationDescriptor.MemberDescriptor("NOT_AFTER", "not after", "r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)/8351679702044326375");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -32,7 +31,6 @@ public class EnumerationDescriptor_TargetDependencyQualifier extends Enumeration
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_BEFORE_0, VALUE_NOT_BEFORE_0, VALUE_AFTER_0, VALUE_NOT_AFTER_0);
   }
-
 
   @Nullable
   @Override

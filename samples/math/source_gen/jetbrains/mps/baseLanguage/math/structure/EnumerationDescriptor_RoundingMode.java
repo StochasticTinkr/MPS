@@ -24,7 +24,6 @@ public class EnumerationDescriptor_RoundingMode extends EnumerationDescriptorBas
   private final EnumerationDescriptor.MemberDescriptor VALUE_6_0 = new EnumerationDescriptor.MemberDescriptor("6", "UNNECCESARY", "r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/1238402803795");
   private final EnumerationDescriptor.MemberDescriptor VALUE_7_0 = new EnumerationDescriptor.MemberDescriptor("7", "UP", "r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/1238402809265");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -36,7 +35,6 @@ public class EnumerationDescriptor_RoundingMode extends EnumerationDescriptorBas
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_0_0, VALUE_1_0, VALUE_2_0, VALUE_3_0, VALUE_4_0, VALUE_5_0, VALUE_6_0, VALUE_7_0);
   }
-
 
   @Nullable
   @Override

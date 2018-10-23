@@ -18,7 +18,6 @@ public class EnumerationDescriptor_TransformationLocation_SideTransform_PlaceInC
   private final EnumerationDescriptor.MemberDescriptor VALUE_RIGHT_0 = new EnumerationDescriptor.MemberDescriptor("RIGHT", "right", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/3473224453637651889");
   private final EnumerationDescriptor.MemberDescriptor VALUE_LEFT_0 = new EnumerationDescriptor.MemberDescriptor("LEFT", "left", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1838685759388610269");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_TransformationLocation_SideTransform_PlaceInC
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_RIGHT_0, VALUE_LEFT_0);
   }
-
 
   @Nullable
   @Override

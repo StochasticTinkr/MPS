@@ -21,7 +21,6 @@ public class EnumerationDescriptor_RefactoringTargetKind_Enum extends Enumeratio
   private final EnumerationDescriptor.MemberDescriptor VALUE_solution_0 = new EnumerationDescriptor.MemberDescriptor("solution", "solution", "r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)/1210084444144");
   private final EnumerationDescriptor.MemberDescriptor VALUE_devkit_0 = new EnumerationDescriptor.MemberDescriptor("devkit", "devkit", "r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)/1210084445238");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -33,7 +32,6 @@ public class EnumerationDescriptor_RefactoringTargetKind_Enum extends Enumeratio
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_model_0, VALUE_language_0, VALUE_solution_0, VALUE_devkit_0);
   }
-
 
   @Nullable
   @Override

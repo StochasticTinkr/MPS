@@ -19,7 +19,6 @@ public class EnumerationDescriptor_AlignEnum extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_RIGHT_0 = new EnumerationDescriptor.MemberDescriptor("RIGHT", "right", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1235999738057");
   private final EnumerationDescriptor.MemberDescriptor VALUE_CENTER_0 = new EnumerationDescriptor.MemberDescriptor("CENTER", "center", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1235999744266");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_AlignEnum extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_LEFT_0, VALUE_RIGHT_0, VALUE_CENTER_0);
   }
-
 
   @Nullable
   @Override

@@ -20,7 +20,6 @@ public class EnumerationDescriptor_MatrixNormKind extends EnumerationDescriptorB
   private final EnumerationDescriptor.MemberDescriptor VALUE_2_0 = new EnumerationDescriptor.MemberDescriptor("2", "F", "r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/758819215871666041");
   private final EnumerationDescriptor.MemberDescriptor VALUE_3_0 = new EnumerationDescriptor.MemberDescriptor("3", "max", "r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/758819215871666042");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -32,7 +31,6 @@ public class EnumerationDescriptor_MatrixNormKind extends EnumerationDescriptorB
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_0_0, VALUE_1_0, VALUE_2_0, VALUE_3_0);
   }
-
 
   @Nullable
   @Override

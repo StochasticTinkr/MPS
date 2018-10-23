@@ -18,7 +18,6 @@ public class EnumerationDescriptor_MappingScriptKind extends EnumerationDescript
   private final EnumerationDescriptor.MemberDescriptor VALUE_pre_processing_0 = new EnumerationDescriptor.MemberDescriptor("pre_processing", "pre-process input model", "r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1195595264962");
   private final EnumerationDescriptor.MemberDescriptor VALUE_post_processing_0 = new EnumerationDescriptor.MemberDescriptor("post_processing", "post-process output model", "r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1195595382324");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_MappingScriptKind extends EnumerationDescript
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_pre_processing_0, VALUE_post_processing_0);
   }
-
 
   @Nullable
   @Override

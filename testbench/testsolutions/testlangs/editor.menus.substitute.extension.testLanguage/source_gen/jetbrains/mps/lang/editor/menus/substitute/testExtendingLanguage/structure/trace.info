@@ -8,7 +8,7 @@
       <unit at="10,0,26,0" name="jetbrains.mps.lang.editor.menus.substitute.testExtendingLanguage.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="15,0,52,0" name="jetbrains.mps.lang.editor.menus.substitute.testExtendingLanguage.structure.StructureAspectDescriptor" />
+      <unit at="14,0,45,0" name="jetbrains.mps.lang.editor.menus.substitute.testExtendingLanguage.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

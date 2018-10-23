@@ -20,7 +20,6 @@ public class EnumerationDescriptor_ResourcesPolicy extends EnumerationDescriptor
   private final EnumerationDescriptor.MemberDescriptor VALUE_CONSUME_0 = new EnumerationDescriptor.MemberDescriptor("CONSUME", "consume", "r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)/1675547159918562086");
   private final EnumerationDescriptor.MemberDescriptor VALUE_PRODUCE_0 = new EnumerationDescriptor.MemberDescriptor("PRODUCE", "produce", "r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)/1675547159918562087");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -32,7 +31,6 @@ public class EnumerationDescriptor_ResourcesPolicy extends EnumerationDescriptor
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_TRANSFORM_0, VALUE_PASSTHRU_0, VALUE_CONSUME_0, VALUE_PRODUCE_0);
   }
-
 
   @Nullable
   @Override

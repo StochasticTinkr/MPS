@@ -18,7 +18,6 @@ public class EnumerationDescriptor_ScriptType extends EnumerationDescriptorBase 
   private final EnumerationDescriptor.MemberDescriptor VALUE_enhancement_0 = new EnumerationDescriptor.MemberDescriptor("enhancement", "enhancement", "r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)/5299416737274925393");
   private final EnumerationDescriptor.MemberDescriptor VALUE_migration_0 = new EnumerationDescriptor.MemberDescriptor("migration", "migration", "r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)/5299416737274925394");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_ScriptType extends EnumerationDescriptorBase 
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_enhancement_0, VALUE_migration_0);
   }
-
 
   @Nullable
   @Override

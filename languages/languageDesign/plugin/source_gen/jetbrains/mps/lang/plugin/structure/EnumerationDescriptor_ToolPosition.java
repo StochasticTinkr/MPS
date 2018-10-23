@@ -20,7 +20,6 @@ public class EnumerationDescriptor_ToolPosition extends EnumerationDescriptorBas
   private final EnumerationDescriptor.MemberDescriptor VALUE_LEFT_0 = new EnumerationDescriptor.MemberDescriptor("LEFT", "left", "r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/2498620720770664570");
   private final EnumerationDescriptor.MemberDescriptor VALUE_RIGHT_0 = new EnumerationDescriptor.MemberDescriptor("RIGHT", "right", "r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/2498620720770664571");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -32,7 +31,6 @@ public class EnumerationDescriptor_ToolPosition extends EnumerationDescriptorBas
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_BOTTOM_0, VALUE_TOP_0, VALUE_LEFT_0, VALUE_RIGHT_0);
   }
-
 
   @Nullable
   @Override

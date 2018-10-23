@@ -19,7 +19,6 @@ public class EnumerationDescriptor__NextLine_Enum extends EnumerationDescriptorB
   private final EnumerationDescriptor.MemberDescriptor VALUE_nextline_0 = new EnumerationDescriptor.MemberDescriptor("next-line", "next-line", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1216308502931");
   private final EnumerationDescriptor.MemberDescriptor VALUE_indented_0 = new EnumerationDescriptor.MemberDescriptor("indented", "indented", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1216308376569");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor__NextLine_Enum extends EnumerationDescriptorB
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_nextline_0, VALUE_indented_0);
   }
-
 
   @Nullable
   @Override

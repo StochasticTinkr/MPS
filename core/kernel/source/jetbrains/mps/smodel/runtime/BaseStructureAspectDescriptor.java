@@ -67,17 +67,6 @@ public abstract class BaseStructureAspectDescriptor implements StructureAspectDe
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    final ArrayList<DataTypeDescriptor> dataTypeDescriptors = new ArrayList<>();
-    dataTypeDescriptors.addAll(getConstrainedStringDatatypeDescriptors());
-    dataTypeDescriptors.addAll(getEnumerationDescriptors());
-    return dataTypeDescriptors;
-  }
-
-  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
-    return Collections.emptyList();
-  }
-
-  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
     return Collections.emptyList();
   }
 }

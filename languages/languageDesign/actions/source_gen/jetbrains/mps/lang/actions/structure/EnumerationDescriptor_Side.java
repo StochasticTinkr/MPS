@@ -19,7 +19,6 @@ public class EnumerationDescriptor_Side extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_left_0 = new EnumerationDescriptor.MemberDescriptor("left", "left", "r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)/1215605024347");
   private final EnumerationDescriptor.MemberDescriptor VALUE_both_0 = new EnumerationDescriptor.MemberDescriptor("both", "both sides", "r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)/3609453419537306772");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_Side extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_left_0, VALUE_both_0);
   }
-
 
   @Nullable
   @Override

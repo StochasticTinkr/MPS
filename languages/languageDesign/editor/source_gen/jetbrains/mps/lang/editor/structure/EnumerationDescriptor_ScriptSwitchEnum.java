@@ -19,7 +19,6 @@ public class EnumerationDescriptor_ScriptSwitchEnum extends EnumerationDescripto
   private final EnumerationDescriptor.MemberDescriptor VALUE_SUPERSCRIPT_0 = new EnumerationDescriptor.MemberDescriptor("SUPERSCRIPT", "superscript", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/8255250703325731012");
   private final EnumerationDescriptor.MemberDescriptor VALUE_SUBSCRIPT_0 = new EnumerationDescriptor.MemberDescriptor("SUBSCRIPT", "subscript", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/8255250703325731013");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_ScriptSwitchEnum extends EnumerationDescripto
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_NORMAL_0, VALUE_SUPERSCRIPT_0, VALUE_SUBSCRIPT_0);
   }
-
 
   @Nullable
   @Override

@@ -19,7 +19,6 @@ public class EnumerationDescriptor__ImageAlignment_Enum extends EnumerationDescr
   private final EnumerationDescriptor.MemberDescriptor VALUE_center_0 = new EnumerationDescriptor.MemberDescriptor("center", "alignmentCenter", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1139744531598");
   private final EnumerationDescriptor.MemberDescriptor VALUE_tile_0 = new EnumerationDescriptor.MemberDescriptor("tile", "alignmentTile", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1139744545740");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor__ImageAlignment_Enum extends EnumerationDescr
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_justify_0, VALUE_center_0, VALUE_tile_0);
   }
-
 
   @Nullable
   @Override

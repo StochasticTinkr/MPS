@@ -19,7 +19,6 @@ public class EnumerationDescriptor_NotesPresentation extends EnumerationDescript
   private final EnumerationDescriptor.MemberDescriptor VALUE_compact_0 = new EnumerationDescriptor.MemberDescriptor("compact", "compact", "r:d80ddecc-25d5-4844-86af-49ea7b4962af(jetbrains.mps.samples.notesOrganizer.structure)/8908453262580051930");
   private final EnumerationDescriptor.MemberDescriptor VALUE_inspected_0 = new EnumerationDescriptor.MemberDescriptor("inspected", "inspected", "r:d80ddecc-25d5-4844-86af-49ea7b4962af(jetbrains.mps.samples.notesOrganizer.structure)/8908453262580051933");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_NotesPresentation extends EnumerationDescript
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_default_0, VALUE_compact_0, VALUE_inspected_0);
   }
-
 
   @Nullable
   @Override

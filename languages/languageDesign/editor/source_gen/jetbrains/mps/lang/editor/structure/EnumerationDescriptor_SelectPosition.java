@@ -18,7 +18,6 @@ public class EnumerationDescriptor_SelectPosition extends EnumerationDescriptorB
   private final EnumerationDescriptor.MemberDescriptor VALUE_before_0 = new EnumerationDescriptor.MemberDescriptor("before", "before", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1201268793546");
   private final EnumerationDescriptor.MemberDescriptor VALUE_after_0 = new EnumerationDescriptor.MemberDescriptor("after", "after", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1201268803781");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor_SelectPosition extends EnumerationDescriptorB
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_before_0, VALUE_after_0);
   }
-
 
   @Nullable
   @Override

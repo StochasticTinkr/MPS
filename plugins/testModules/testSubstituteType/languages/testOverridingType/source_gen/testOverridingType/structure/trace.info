@@ -15,7 +15,7 @@
       <unit at="10,0,38,0" name="testOverridingType.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="19,0,131,0" name="testOverridingType.structure.StructureAspectDescriptor" />
+      <unit at="18,0,124,0" name="testOverridingType.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/1870027727456306442">
@@ -36,20 +36,20 @@
       <node id="1870027727456306442" at="25,64,26,70" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="1870027727456306442" at="25,0,26,0" concept="1" trace="myConceptUnconditionalOverrideAnnotation" />
-      <node id="1870027727456306442" at="51,65,52,56" concept="4" />
-      <node id="1870027727456306442" at="122,89,123,184" concept="3" />
-      <node id="1870027727456306442" at="123,184,124,34" concept="0" />
-      <node id="1870027727456306442" at="124,34,125,127" concept="0" />
-      <node id="1870027727456306442" at="125,127,126,105" concept="0" />
-      <node id="1870027727456306442" at="126,105,127,17" concept="0" />
-      <node id="1870027727456306442" at="127,17,128,22" concept="4" />
-      <node id="1870027727456306442" at="122,0,130,0" concept="6" trace="createDescriptorForUnconditionalOverrideAnnotation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="1870027727456306442" at="51,65,52,56" />
-      <scope id="1870027727456306442" at="122,89,128,22">
+      <node id="1870027727456306442" at="24,0,25,0" concept="1" trace="myConceptUnconditionalOverrideAnnotation" />
+      <node id="1870027727456306442" at="50,65,51,56" concept="4" />
+      <node id="1870027727456306442" at="115,89,116,184" concept="3" />
+      <node id="1870027727456306442" at="116,184,117,34" concept="0" />
+      <node id="1870027727456306442" at="117,34,118,127" concept="0" />
+      <node id="1870027727456306442" at="118,127,119,105" concept="0" />
+      <node id="1870027727456306442" at="119,105,120,17" concept="0" />
+      <node id="1870027727456306442" at="120,17,121,22" concept="4" />
+      <node id="1870027727456306442" at="115,0,123,0" concept="6" trace="createDescriptorForUnconditionalOverrideAnnotation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="1870027727456306442" at="50,65,51,56" />
+      <scope id="1870027727456306442" at="115,89,121,22">
         <var name="b" id="1870027727456306442" />
       </scope>
-      <scope id="1870027727456306442" at="122,0,130,0" />
+      <scope id="1870027727456306442" at="115,0,123,0" />
     </file>
   </root>
   <root nodeRef="r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/1870027727456337728">
@@ -70,22 +70,22 @@
       <node id="1870027727456337728" at="20,116,21,48" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="1870027727456337728" at="20,0,21,0" concept="1" trace="myConceptErrorType" />
-      <node id="1870027727456337728" at="41,43,42,34" concept="4" />
-      <node id="1870027727456337728" at="73,67,74,162" concept="3" />
-      <node id="1870027727456337728" at="74,162,75,34" concept="0" />
-      <node id="1870027727456337728" at="75,34,76,116" concept="0" />
-      <node id="1870027727456337728" at="76,116,77,105" concept="0" />
-      <node id="1870027727456337728" at="77,105,78,17" concept="0" />
-      <node id="1870027727456337728" at="78,17,79,54" concept="0" />
-      <node id="1870027727456337728" at="79,54,80,21" concept="0" />
-      <node id="1870027727456337728" at="80,21,81,22" concept="4" />
-      <node id="1870027727456337728" at="73,0,83,0" concept="6" trace="createDescriptorForErrorType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="1870027727456337728" at="41,43,42,34" />
-      <scope id="1870027727456337728" at="73,67,81,22">
+      <node id="1870027727456337728" at="19,0,20,0" concept="1" trace="myConceptErrorType" />
+      <node id="1870027727456337728" at="40,43,41,34" concept="4" />
+      <node id="1870027727456337728" at="66,67,67,162" concept="3" />
+      <node id="1870027727456337728" at="67,162,68,34" concept="0" />
+      <node id="1870027727456337728" at="68,34,69,116" concept="0" />
+      <node id="1870027727456337728" at="69,116,70,105" concept="0" />
+      <node id="1870027727456337728" at="70,105,71,17" concept="0" />
+      <node id="1870027727456337728" at="71,17,72,54" concept="0" />
+      <node id="1870027727456337728" at="72,54,73,21" concept="0" />
+      <node id="1870027727456337728" at="73,21,74,22" concept="4" />
+      <node id="1870027727456337728" at="66,0,76,0" concept="6" trace="createDescriptorForErrorType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="1870027727456337728" at="40,43,41,34" />
+      <scope id="1870027727456337728" at="66,67,74,22">
         <var name="b" id="1870027727456337728" />
       </scope>
-      <scope id="1870027727456337728" at="73,0,83,0" />
+      <scope id="1870027727456337728" at="66,0,76,0" />
     </file>
   </root>
   <root nodeRef="r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/4113274076525496020">
@@ -106,22 +106,22 @@
       <node id="4113274076525496020" at="21,48,22,57" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="4113274076525496020" at="21,0,22,0" concept="1" trace="myConceptOverrideAnnotation" />
-      <node id="4113274076525496020" at="43,52,44,43" concept="4" />
-      <node id="4113274076525496020" at="83,76,84,171" concept="3" />
-      <node id="4113274076525496020" at="84,171,85,34" concept="0" />
-      <node id="4113274076525496020" at="85,34,86,127" concept="0" />
-      <node id="4113274076525496020" at="86,127,87,105" concept="0" />
-      <node id="4113274076525496020" at="87,105,88,17" concept="0" />
-      <node id="6405009306797650362" at="88,17,89,204" concept="0" />
-      <node id="6405009306797650372" at="89,204,90,203" concept="0" />
-      <node id="4113274076525496020" at="90,203,91,22" concept="4" />
-      <node id="4113274076525496020" at="83,0,93,0" concept="6" trace="createDescriptorForOverrideAnnotation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="4113274076525496020" at="43,52,44,43" />
-      <scope id="4113274076525496020" at="83,76,91,22">
+      <node id="4113274076525496020" at="20,0,21,0" concept="1" trace="myConceptOverrideAnnotation" />
+      <node id="4113274076525496020" at="42,52,43,43" concept="4" />
+      <node id="4113274076525496020" at="76,76,77,171" concept="3" />
+      <node id="4113274076525496020" at="77,171,78,34" concept="0" />
+      <node id="4113274076525496020" at="78,34,79,127" concept="0" />
+      <node id="4113274076525496020" at="79,127,80,105" concept="0" />
+      <node id="4113274076525496020" at="80,105,81,17" concept="0" />
+      <node id="6405009306797650362" at="81,17,82,204" concept="0" />
+      <node id="6405009306797650372" at="82,204,83,203" concept="0" />
+      <node id="4113274076525496020" at="83,203,84,22" concept="4" />
+      <node id="4113274076525496020" at="76,0,86,0" concept="6" trace="createDescriptorForOverrideAnnotation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4113274076525496020" at="42,52,43,43" />
+      <scope id="4113274076525496020" at="76,76,84,22">
         <var name="b" id="4113274076525496020" />
       </scope>
-      <scope id="4113274076525496020" at="83,0,93,0" />
+      <scope id="4113274076525496020" at="76,0,86,0" />
     </file>
   </root>
   <root nodeRef="r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/6572489169071277973">
@@ -142,21 +142,21 @@
       <node id="6572489169071277973" at="24,60,25,64" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="6572489169071277973" at="24,0,25,0" concept="1" trace="myConceptOverridingPrimNumConstant" />
-      <node id="6572489169071277973" at="49,59,50,50" concept="4" />
-      <node id="6572489169071277973" at="113,83,114,178" concept="3" />
-      <node id="6572489169071277973" at="114,178,115,34" concept="0" />
-      <node id="6572489169071277973" at="115,34,116,123" concept="0" />
-      <node id="6572489169071277973" at="116,123,117,105" concept="0" />
-      <node id="6572489169071277973" at="117,105,118,17" concept="0" />
-      <node id="6572489169071278427" at="118,17,119,119" concept="0" />
-      <node id="6572489169071277973" at="119,119,120,22" concept="4" />
-      <node id="6572489169071277973" at="113,0,122,0" concept="6" trace="createDescriptorForOverridingPrimNumConstant#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6572489169071277973" at="49,59,50,50" />
-      <scope id="6572489169071277973" at="113,83,120,22">
+      <node id="6572489169071277973" at="23,0,24,0" concept="1" trace="myConceptOverridingPrimNumConstant" />
+      <node id="6572489169071277973" at="48,59,49,50" concept="4" />
+      <node id="6572489169071277973" at="106,83,107,178" concept="3" />
+      <node id="6572489169071277973" at="107,178,108,34" concept="0" />
+      <node id="6572489169071277973" at="108,34,109,123" concept="0" />
+      <node id="6572489169071277973" at="109,123,110,105" concept="0" />
+      <node id="6572489169071277973" at="110,105,111,17" concept="0" />
+      <node id="6572489169071278427" at="111,17,112,119" concept="0" />
+      <node id="6572489169071277973" at="112,119,113,22" concept="4" />
+      <node id="6572489169071277973" at="106,0,115,0" concept="6" trace="createDescriptorForOverridingPrimNumConstant#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6572489169071277973" at="48,59,49,50" />
+      <scope id="6572489169071277973" at="106,83,113,22">
         <var name="b" id="6572489169071277973" />
       </scope>
-      <scope id="6572489169071277973" at="113,0,122,0" />
+      <scope id="6572489169071277973" at="106,0,115,0" />
     </file>
   </root>
   <root nodeRef="r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/6572489169071322609">
@@ -177,22 +177,22 @@
       <node id="6572489169071322609" at="23,62,24,60" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="6572489169071322609" at="23,0,24,0" concept="1" trace="myConceptOverridingPrimIntType" />
-      <node id="6572489169071322609" at="47,55,48,46" concept="4" />
-      <node id="6572489169071322609" at="103,79,104,174" concept="3" />
-      <node id="6572489169071322609" at="104,174,105,34" concept="0" />
-      <node id="6572489169071322609" at="105,34,106,119" concept="0" />
-      <node id="6572489169071322609" at="106,119,107,105" concept="0" />
-      <node id="6572489169071322609" at="107,105,108,17" concept="0" />
-      <node id="6572489169071322609" at="108,17,109,54" concept="0" />
-      <node id="6572489169071322609" at="109,54,110,31" concept="0" />
-      <node id="6572489169071322609" at="110,31,111,22" concept="4" />
-      <node id="6572489169071322609" at="103,0,113,0" concept="6" trace="createDescriptorForOverridingPrimIntType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6572489169071322609" at="47,55,48,46" />
-      <scope id="6572489169071322609" at="103,79,111,22">
+      <node id="6572489169071322609" at="22,0,23,0" concept="1" trace="myConceptOverridingPrimIntType" />
+      <node id="6572489169071322609" at="46,55,47,46" concept="4" />
+      <node id="6572489169071322609" at="96,79,97,174" concept="3" />
+      <node id="6572489169071322609" at="97,174,98,34" concept="0" />
+      <node id="6572489169071322609" at="98,34,99,119" concept="0" />
+      <node id="6572489169071322609" at="99,119,100,105" concept="0" />
+      <node id="6572489169071322609" at="100,105,101,17" concept="0" />
+      <node id="6572489169071322609" at="101,17,102,54" concept="0" />
+      <node id="6572489169071322609" at="102,54,103,31" concept="0" />
+      <node id="6572489169071322609" at="103,31,104,22" concept="4" />
+      <node id="6572489169071322609" at="96,0,106,0" concept="6" trace="createDescriptorForOverridingPrimIntType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6572489169071322609" at="46,55,47,46" />
+      <scope id="6572489169071322609" at="96,79,104,22">
         <var name="b" id="6572489169071322609" />
       </scope>
-      <scope id="6572489169071322609" at="103,0,113,0" />
+      <scope id="6572489169071322609" at="96,0,106,0" />
     </file>
   </root>
   <root nodeRef="r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/6572489169071322628">
@@ -213,22 +213,22 @@
       <node id="6572489169071322628" at="22,57,23,62" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="6572489169071322628" at="22,0,23,0" concept="1" trace="myConceptOverridingPrimFloatType" />
-      <node id="6572489169071322628" at="45,57,46,48" concept="4" />
-      <node id="6572489169071322628" at="93,81,94,176" concept="3" />
-      <node id="6572489169071322628" at="94,176,95,34" concept="0" />
-      <node id="6572489169071322628" at="95,34,96,121" concept="0" />
-      <node id="6572489169071322628" at="96,121,97,105" concept="0" />
-      <node id="6572489169071322628" at="97,105,98,17" concept="0" />
-      <node id="6572489169071322628" at="98,17,99,54" concept="0" />
-      <node id="6572489169071322628" at="99,54,100,33" concept="0" />
-      <node id="6572489169071322628" at="100,33,101,22" concept="4" />
-      <node id="6572489169071322628" at="93,0,103,0" concept="6" trace="createDescriptorForOverridingPrimFloatType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6572489169071322628" at="45,57,46,48" />
-      <scope id="6572489169071322628" at="93,81,101,22">
+      <node id="6572489169071322628" at="21,0,22,0" concept="1" trace="myConceptOverridingPrimFloatType" />
+      <node id="6572489169071322628" at="44,57,45,48" concept="4" />
+      <node id="6572489169071322628" at="86,81,87,176" concept="3" />
+      <node id="6572489169071322628" at="87,176,88,34" concept="0" />
+      <node id="6572489169071322628" at="88,34,89,121" concept="0" />
+      <node id="6572489169071322628" at="89,121,90,105" concept="0" />
+      <node id="6572489169071322628" at="90,105,91,17" concept="0" />
+      <node id="6572489169071322628" at="91,17,92,54" concept="0" />
+      <node id="6572489169071322628" at="92,54,93,33" concept="0" />
+      <node id="6572489169071322628" at="93,33,94,22" concept="4" />
+      <node id="6572489169071322628" at="86,0,96,0" concept="6" trace="createDescriptorForOverridingPrimFloatType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6572489169071322628" at="44,57,45,48" />
+      <scope id="6572489169071322628" at="86,81,94,22">
         <var name="b" id="6572489169071322628" />
       </scope>
-      <scope id="6572489169071322628" at="93,0,103,0" />
+      <scope id="6572489169071322628" at="86,0,96,0" />
     </file>
   </root>
 </debug-info>

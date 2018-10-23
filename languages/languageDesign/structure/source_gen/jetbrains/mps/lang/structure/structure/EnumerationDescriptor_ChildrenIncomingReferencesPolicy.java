@@ -19,7 +19,6 @@ public class EnumerationDescriptor_ChildrenIncomingReferencesPolicy extends Enum
   private final EnumerationDescriptor.MemberDescriptor VALUE_local_0 = new EnumerationDescriptor.MemberDescriptor("local", "enforce `same root only'", "r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/3220559764717766995");
   private final EnumerationDescriptor.MemberDescriptor VALUE_forbidden_0 = new EnumerationDescriptor.MemberDescriptor("forbidden", "enforce `forbidden'", "r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/3220559764717766998");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_ChildrenIncomingReferencesPolicy extends Enum
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE_local_0, VALUE_forbidden_0);
   }
-
 
   @Nullable
   @Override

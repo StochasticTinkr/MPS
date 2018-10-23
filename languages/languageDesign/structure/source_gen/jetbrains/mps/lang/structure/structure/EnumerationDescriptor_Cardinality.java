@@ -20,7 +20,6 @@ public class EnumerationDescriptor_Cardinality extends EnumerationDescriptorBase
   private final EnumerationDescriptor.MemberDescriptor VALUE_0n_0 = new EnumerationDescriptor.MemberDescriptor("0..n", "0..n", "r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/1084197782725");
   private final EnumerationDescriptor.MemberDescriptor VALUE_1n_0 = new EnumerationDescriptor.MemberDescriptor("1..n", "1..n", "r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/1084197782726");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -32,7 +31,6 @@ public class EnumerationDescriptor_Cardinality extends EnumerationDescriptorBase
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_01_0, VALUE_1_0, VALUE_0n_0, VALUE_1n_0);
   }
-
 
   @Nullable
   @Override

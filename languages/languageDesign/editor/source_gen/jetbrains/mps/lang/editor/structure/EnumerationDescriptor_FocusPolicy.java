@@ -20,7 +20,6 @@ public class EnumerationDescriptor_FocusPolicy extends EnumerationDescriptorBase
   private final EnumerationDescriptor.MemberDescriptor VALUE_2_0 = new EnumerationDescriptor.MemberDescriptor("2", "firstEditableCell", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1130926603060");
   private final EnumerationDescriptor.MemberDescriptor VALUE_3_0 = new EnumerationDescriptor.MemberDescriptor("3", "attractsRecursively", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1227082414196");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -32,7 +31,6 @@ public class EnumerationDescriptor_FocusPolicy extends EnumerationDescriptorBase
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_0_0, VALUE_1_0, VALUE_2_0, VALUE_3_0);
   }
-
 
   @Nullable
   @Override

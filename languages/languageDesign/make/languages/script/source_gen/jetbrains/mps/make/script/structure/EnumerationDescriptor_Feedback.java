@@ -20,7 +20,6 @@ public class EnumerationDescriptor_Feedback extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_ERROR_0 = new EnumerationDescriptor.MemberDescriptor("ERROR", "error", "r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)/3668957831723333677");
   private final EnumerationDescriptor.MemberDescriptor VALUE_MESSAGE_0 = new EnumerationDescriptor.MemberDescriptor("MESSAGE", "message", "r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)/6320856973181134892");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -32,7 +31,6 @@ public class EnumerationDescriptor_Feedback extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_INFO_0, VALUE_WARNING_0, VALUE_ERROR_0, VALUE_MESSAGE_0);
   }
-
 
   @Nullable
   @Override

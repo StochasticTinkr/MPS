@@ -19,7 +19,6 @@ public class EnumerationDescriptor_TrimKind extends EnumerationDescriptorBase {
   private final EnumerationDescriptor.MemberDescriptor VALUE_leading_0 = new EnumerationDescriptor.MemberDescriptor("leading", "leading", "r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/1225271514376");
   private final EnumerationDescriptor.MemberDescriptor VALUE_trailing_0 = new EnumerationDescriptor.MemberDescriptor("trailing", "trailing", "r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/1225271514377");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_TrimKind extends EnumerationDescriptorBase {
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_both_0, VALUE_leading_0, VALUE_trailing_0);
   }
-
 
   @Nullable
   @Override

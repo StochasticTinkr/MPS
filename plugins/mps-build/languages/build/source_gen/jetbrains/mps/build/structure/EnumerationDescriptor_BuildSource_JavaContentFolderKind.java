@@ -19,7 +19,6 @@ public class EnumerationDescriptor_BuildSource_JavaContentFolderKind extends Enu
   private final EnumerationDescriptor.MemberDescriptor VALUE_test_0 = new EnumerationDescriptor.MemberDescriptor("test", "test", "r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/5248329904288265465");
   private final EnumerationDescriptor.MemberDescriptor VALUE_excluded_0 = new EnumerationDescriptor.MemberDescriptor("excluded", "excluded", "r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/5248329904288265466");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_BuildSource_JavaContentFolderKind extends Enu
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_source_0, VALUE_test_0, VALUE_excluded_0);
   }
-
 
   @Nullable
   @Override

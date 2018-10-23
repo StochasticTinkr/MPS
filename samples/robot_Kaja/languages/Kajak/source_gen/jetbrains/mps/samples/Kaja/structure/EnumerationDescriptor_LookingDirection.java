@@ -20,7 +20,6 @@ public class EnumerationDescriptor_LookingDirection extends EnumerationDescripto
   private final EnumerationDescriptor.MemberDescriptor VALUE_south_0 = new EnumerationDescriptor.MemberDescriptor("south", "south", "r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)/7060824959893078073");
   private final EnumerationDescriptor.MemberDescriptor VALUE_west_0 = new EnumerationDescriptor.MemberDescriptor("west", "west", "r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)/7060824959893078077");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -32,7 +31,6 @@ public class EnumerationDescriptor_LookingDirection extends EnumerationDescripto
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_north_0, VALUE_east_0, VALUE_south_0, VALUE_west_0);
   }
-
 
   @Nullable
   @Override

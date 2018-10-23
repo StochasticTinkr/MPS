@@ -19,7 +19,6 @@ public class EnumerationDescriptor_OrangeTaste extends EnumerationDescriptorBase
   private final EnumerationDescriptor.MemberDescriptor VALUE__1 = new EnumerationDescriptor.MemberDescriptor(null, "Sour", "r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)/3803436373353348030");
   private final EnumerationDescriptor.MemberDescriptor VALUE__2 = new EnumerationDescriptor.MemberDescriptor(null, "Bitter", "r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)/3803436373353348033");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor_OrangeTaste extends EnumerationDescriptorBase
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE__0, VALUE__1, VALUE__2);
   }
-
 
   @Nullable
   @Override

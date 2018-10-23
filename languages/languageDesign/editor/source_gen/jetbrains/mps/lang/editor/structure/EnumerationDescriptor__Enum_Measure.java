@@ -18,7 +18,6 @@ public class EnumerationDescriptor__Enum_Measure extends EnumerationDescriptorBa
   private final EnumerationDescriptor.MemberDescriptor VALUE_PIXELS_0 = new EnumerationDescriptor.MemberDescriptor("PIXELS", "pixels", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1226504633753");
   private final EnumerationDescriptor.MemberDescriptor VALUE_SPACES_0 = new EnumerationDescriptor.MemberDescriptor("SPACES", "spaces", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1226504706052");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -30,7 +29,6 @@ public class EnumerationDescriptor__Enum_Measure extends EnumerationDescriptorBa
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_PIXELS_0, VALUE_SPACES_0);
   }
-
 
   @Nullable
   @Override

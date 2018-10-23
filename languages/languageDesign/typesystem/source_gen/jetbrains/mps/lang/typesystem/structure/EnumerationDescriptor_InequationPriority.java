@@ -21,7 +21,6 @@ public class EnumerationDescriptor_InequationPriority extends EnumerationDescrip
   private final EnumerationDescriptor.MemberDescriptor VALUE_3_0 = new EnumerationDescriptor.MemberDescriptor("3", "3", "r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1212056204513");
   private final EnumerationDescriptor.MemberDescriptor VALUE_500_0 = new EnumerationDescriptor.MemberDescriptor("500", "inf", "r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1212056211202");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -33,7 +32,6 @@ public class EnumerationDescriptor_InequationPriority extends EnumerationDescrip
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_0_0, VALUE_1_0, VALUE_2_0, VALUE_3_0, VALUE_500_0);
   }
-
 
   @Nullable
   @Override

@@ -15,7 +15,7 @@
       <unit at="10,0,28,0" name="jetbrains.mps.lang.makeup.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,66,0" name="jetbrains.mps.lang.makeup.structure.StructureAspectDescriptor" />
+      <unit at="16,0,59,0" name="jetbrains.mps.lang.makeup.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:4d7d5410-8d5a-45f2-a2f2-a6b7b42a377e(jetbrains.mps.lang.makeup.structure)/1223283106984741523">
@@ -37,21 +37,21 @@
       <node id="1223283106984741523" at="15,115,16,50" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="1223283106984741523" at="18,0,19,0" concept="1" trace="myConceptCopyOutcome" />
-      <node id="1223283106984741523" at="34,45,35,36" concept="4" />
-      <node id="1223283106984741523" at="56,69,57,170" concept="3" />
-      <node id="1223283106984741523" at="57,170,58,34" concept="0" />
-      <node id="1223283106984741523" at="58,34,59,127" concept="0" />
-      <node id="1223283106984741523" at="59,127,60,112" concept="0" />
-      <node id="1223283106984741523" at="60,112,61,17" concept="0" />
-      <node id="1223283106984741524" at="61,17,62,114" concept="0" />
-      <node id="1223283106984741523" at="62,114,63,22" concept="4" />
-      <node id="1223283106984741523" at="56,0,65,0" concept="6" trace="createDescriptorForCopyOutcome#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="1223283106984741523" at="34,45,35,36" />
-      <scope id="1223283106984741523" at="56,69,63,22">
+      <node id="1223283106984741523" at="17,0,18,0" concept="1" trace="myConceptCopyOutcome" />
+      <node id="1223283106984741523" at="33,45,34,36" concept="4" />
+      <node id="1223283106984741523" at="49,69,50,170" concept="3" />
+      <node id="1223283106984741523" at="50,170,51,34" concept="0" />
+      <node id="1223283106984741523" at="51,34,52,127" concept="0" />
+      <node id="1223283106984741523" at="52,127,53,112" concept="0" />
+      <node id="1223283106984741523" at="53,112,54,17" concept="0" />
+      <node id="1223283106984741524" at="54,17,55,114" concept="0" />
+      <node id="1223283106984741523" at="55,114,56,22" concept="4" />
+      <node id="1223283106984741523" at="49,0,58,0" concept="6" trace="createDescriptorForCopyOutcome#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="1223283106984741523" at="33,45,34,36" />
+      <scope id="1223283106984741523" at="49,69,56,22">
         <var name="b" id="1223283106984741523" />
       </scope>
-      <scope id="1223283106984741523" at="56,0,65,0" />
+      <scope id="1223283106984741523" at="49,0,58,0" />
     </file>
   </root>
 </debug-info>

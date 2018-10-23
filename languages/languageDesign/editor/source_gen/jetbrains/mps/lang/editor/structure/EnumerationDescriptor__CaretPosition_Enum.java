@@ -19,7 +19,6 @@ public class EnumerationDescriptor__CaretPosition_Enum extends EnumerationDescri
   private final EnumerationDescriptor.MemberDescriptor VALUE_FIRST_0 = new EnumerationDescriptor.MemberDescriptor("FIRST", "first", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1197893580900");
   private final EnumerationDescriptor.MemberDescriptor VALUE_LAST_0 = new EnumerationDescriptor.MemberDescriptor("LAST", "last", "r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1197893584870");
 
-
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
@@ -31,7 +30,6 @@ public class EnumerationDescriptor__CaretPosition_Enum extends EnumerationDescri
   public Collection<EnumerationDescriptor.MemberDescriptor> getMembers() {
     return Arrays.asList(VALUE_NONE_0, VALUE_FIRST_0, VALUE_LAST_0);
   }
-
 
   @Nullable
   @Override
