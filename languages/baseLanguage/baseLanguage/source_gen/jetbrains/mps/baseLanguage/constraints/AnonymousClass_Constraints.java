@@ -57,9 +57,6 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
-        if (isEmptyString((SPropertyOperations.getString(propertyValue)))) {
-          return false;
-        }
         return (SPropertyOperations.getString(propertyValue)).matches("[a-zA-Z[_]][a-zA-Z0-9$.[_]]*");
       }
     });
@@ -116,7 +113,4 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   private static SNodePointer breakingNode_vrtrpd_a0a2a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643224");
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
-  }
 }

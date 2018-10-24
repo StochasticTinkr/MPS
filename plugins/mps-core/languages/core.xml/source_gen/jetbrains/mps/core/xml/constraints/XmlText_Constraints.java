@@ -29,7 +29,7 @@ public class XmlText_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "value";
-        return XmlNameUtil.isCharData(((SPropertyOperations.getString(propertyValue)) == null ? "" : (SPropertyOperations.getString(propertyValue))));
+        return XmlNameUtil.isCharData((SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;

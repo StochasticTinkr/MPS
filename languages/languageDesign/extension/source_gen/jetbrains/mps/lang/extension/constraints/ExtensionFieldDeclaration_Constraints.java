@@ -11,7 +11,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.Objects;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -31,7 +30,7 @@ public class ExtensionFieldDeclaration_Constraints extends BaseConstraintsDescri
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
-        return Objects.equals(NameUtil.toValidIdentifier((SPropertyOperations.getString(propertyValue))), (SPropertyOperations.getString(propertyValue)));
+        return NameUtil.toValidIdentifier((SPropertyOperations.getString(propertyValue))).equals((SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;
