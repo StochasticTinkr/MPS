@@ -203,8 +203,14 @@ public class ModelConstraints {
    * and language constraints (property validation functions in constraints aspect)
    */
   public static boolean validatePropertyValue(SNode node, SProperty property, Object propertyValue) {
-    if (!property.getType().isInstanceOf(propertyValue)) {
+    final SDataType type = property.getType();
+    if (!type.isInstanceOf(propertyValue)) {
       return false;
+    }
+    if (propertyValue == null && type.isInstanceOf("")) {
+      // existent property constraints relies to take empty string values instead of null as its argument
+      // this is inconsistent with all other smodel code that works with nullable strings
+      propertyValue = "";
     }
     PropertyConstraintsDescriptor pcd = ConceptRegistryUtil.getConstraintsDescriptor(node.getConcept()).getProperty(property);
     return pcd != null && pcd.validateValue(node, propertyValue);
