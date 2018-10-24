@@ -98,9 +98,21 @@
       <zipfileset dir="${mps_home}/languages/baseLanguage/tuples/runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.baseLanguage.tuples.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-tuples-runtime-jetbrains" prefix="modules/jetbrains.mps.baseLanguage.tuples.runtime/jetbrains" />
     </jar>
+    <mkdir dir="${build.tmp}/default/mps-references.jar" />
+    <mkdir dir="${build.tmp}/default/mps-references.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/mps-references.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.baseLanguage.references.runtime" type="solution" uuid="52b81ac7-93fd-4e9e-b972-4995882da6d4">
+        <dependencies />
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="." descriptor="jetbrains.mps.baseLanguage.references.runtime.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/lib/mps-references.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-references" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/references/runtime/jetbrains.mps.baseLanguage.references.runtime.msd" prefix="modules/jetbrains.mps.baseLanguage.references.runtime" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/references/runtime/jetbrains.mps.baseLanguage.references.runtime.msd" prefix="module" />
+      <fileset dir="${build.tmp}/default/mps-references.jar" />
     </jar>
     <jar destfile="${build.layout}/lib/mps-logging.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-logging" />
