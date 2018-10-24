@@ -18,6 +18,7 @@ package jetbrains.mps.ide.ui.tree;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -34,6 +35,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -42,7 +44,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * @author Kostik
  */
-public class MPSTreeNode extends DefaultMutableTreeNode {
+//todo[MM]: unimplement iterable after 2019.1, use getChildren()
+public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
   private static final Logger LOG = LogManager.getLogger(MPSTreeNode.class);
 
   private MPSTree myTree;
@@ -74,6 +77,18 @@ public class MPSTreeNode extends DefaultMutableTreeNode {
 
   public MPSTreeNode(Object userObject) {
     super(userObject);
+  }
+
+  @NotNull
+  @Override
+  @SuppressWarnings("unchecked")
+  @Deprecated
+  @ToRemove(version = 2019.1)
+  public Iterator<MPSTreeNode> iterator() {
+    if (children == null) {
+      return Collections.<MPSTreeNode>emptySet().iterator();
+    }
+    return (Iterator)children.iterator();
   }
 
   public List<? extends MPSTreeNode> getChildren() {
