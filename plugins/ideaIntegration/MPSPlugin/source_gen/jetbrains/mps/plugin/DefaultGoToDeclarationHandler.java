@@ -6,13 +6,13 @@ import jetbrains.mps.ide.editor.actions.GoToDeclarationHandlerRegistry;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.SwingUtilities;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.rmi.RemoteException;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -26,18 +26,17 @@ import java.io.File;
     assert SwingUtilities.isEventDispatchThread();
     assert p.getModelAccess().canRead();
 
-    SModelReference ref = SModelOperations.getPointer(SNodeOperations.getModel(node));
     boolean isClassifier = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     boolean isConstructor = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
     boolean isMethod = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     boolean isField = (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     return isClassifier || isConstructor || isMethod || isField;
   }
-  public boolean navigate(MPSProject p, final SNode node) {
+
+  public boolean navigate(MPSProject p, SNode node) {
     assert SwingUtilities.isEventDispatchThread();
     assert p.getModelAccess().canWrite();
 
-    SModelReference ref = SModelOperations.getPointer(SNodeOperations.getModel(node));
     boolean isClassifier = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     boolean isConstructor = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
     boolean isMethod = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
@@ -45,7 +44,7 @@ import java.io.File;
     assert isClassifier || isConstructor || isMethod || isField;
 
     if (isClassifier) {
-      final String fqName = SModelOperations.getModelName(SNodeOperations.getModel(node)) + '.' + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      final String fqName = ((String) BHReflection.invoke0(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"), SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
       return open(new _FunctionTypes._void_P1_E1<IProjectHandler, RemoteException>() {
         public void invoke(IProjectHandler h) throws RemoteException {
           h.openClass(fqName);
@@ -55,12 +54,14 @@ import java.io.File;
       SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
       assert classifier != null;
 
-      final String classifierName = ref.getName().getLongName() + '.' + SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      final String classifierName = ((String) BHReflection.invoke0(classifier, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"), SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
       if (isMethod) {
-        final SNode method = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+        SNode method = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+        final String methodName = SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+        final int paramCount = ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count();
         return open(new _FunctionTypes._void_P1_E1<IProjectHandler, RemoteException>() {
           public void invoke(IProjectHandler h) throws RemoteException {
-            h.openMethod(classifierName, SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count());
+            h.openMethod(classifierName, methodName, paramCount);
           }
         }, p);
       } else if (isConstructor) {
@@ -71,9 +72,10 @@ import java.io.File;
           }
         }, p);
       } else {
+        final String fieldName = node.getName();
         return open(new _FunctionTypes._void_P1_E1<IProjectHandler, RemoteException>() {
           public void invoke(IProjectHandler h) throws RemoteException {
-            h.openField(classifierName, node.getName());
+            h.openField(classifierName, fieldName);
           }
         }, p);
       }
@@ -84,25 +86,21 @@ import java.io.File;
     final Wrappers._boolean result = new Wrappers._boolean(false);
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
-        p.getRepository().getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(check_tz3sru_a0a0a0a0a0a0b0e(p.getProjectFile()));
-            if (handler != null) {
-              // unsuppress 2 errors here  
-              try {
-                todo.invoke(handler);
-                result.value = true;
-              } catch (RemoteException e) {
-                e.printStackTrace();
-              }
-            }
+        IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(check_tz3sru_a0a0a0a0a1a5(p.getProjectFile()));
+        if (handler != null) {
+          // unsuppress 2 errors here  
+          try {
+            todo.invoke(handler);
+            result.value = true;
+          } catch (RemoteException e) {
+            e.printStackTrace();
           }
-        });
+        }
       }
     });
     return result.value;
   }
-  private static String check_tz3sru_a0a0a0a0a0a0b0e(File checkedDotOperand) {
+  private static String check_tz3sru_a0a0a0a0a1a5(File checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAbsolutePath();
     }
