@@ -7,11 +7,12 @@ import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import jetbrains.mps.project.Project;
 import java.util.List;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-import java.awt.Insets;
+import com.intellij.util.ui.JBUI;
 import javax.swing.JLabel;
+import com.intellij.openapi.ui.ComboBox;
 import javax.swing.DefaultComboBoxModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.event.ActionListener;
@@ -24,21 +25,22 @@ import javax.swing.JComponent;
 public class SetNodePackageDialog extends DialogWrapper {
   private boolean myIsCancelled = true;
   private JPanel myMainPanel;
-  private JComboBox myCbPackage;
+  private JComboBox<String> myCbPackage;
   private String myPackage;
+
   public SetNodePackageDialog(Project project, List<String> existingPackages) {
-    super(ProjectHelper.toIdeaProject(project));
+    super(((MPSProject) project).getProject());
     setTitle("Set Virtual Package");
     setOKButtonText("&OK");
     setCancelButtonText("Ca&ncel");
     setModal(true);
     myMainPanel = new JPanel();
     myMainPanel.setLayout(new GridBagLayout());
-    GridBagConstraints c = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 5, 5, 5), 0, 0);
+    GridBagConstraints c = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, JBUI.insets(0, 5, 5, 5), 0, 0);
     myMainPanel.add(new JLabel("Enter virtual package name:"), c);
-    myCbPackage = new JComboBox();
+    myCbPackage = new ComboBox<String>();
     myCbPackage.setEditable(true);
-    myCbPackage.setModel(new DefaultComboBoxModel(ListSequence.fromList(existingPackages).toGenericArray(String.class)));
+    myCbPackage.setModel(new DefaultComboBoxModel<String>(ListSequence.fromList(existingPackages).toGenericArray(String.class)));
     myCbPackage.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -58,19 +60,23 @@ public class SetNodePackageDialog extends DialogWrapper {
 
     init();
   }
+
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myCbPackage;
   }
+
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myMainPanel;
   }
+
   public String getPackage() {
     return myPackage;
   }
+
   private void updatePackage() {
     String pack = ((String) myCbPackage.getEditor().getItem());
     if (pack != null && pack.length() == 0) {
@@ -78,15 +84,18 @@ public class SetNodePackageDialog extends DialogWrapper {
     }
     myPackage = pack;
   }
+
   public void setPackage(String pack) {
     if (pack == null) {
       pack = "";
     }
     myCbPackage.setSelectedItem(pack);
   }
+
   public boolean isCancelled() {
     return myIsCancelled;
   }
+
   @Override
   protected void doOKAction() {
     updatePackage();

@@ -9429,94 +9429,94 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/4514830148568015579">
     <file name="SetNodePackageDialog.java">
-      <node id="4514830148568018450" at="25,0,26,0" concept="7" trace="myIsCancelled" />
-      <node id="4514830148568018560" at="26,0,27,0" concept="7" trace="myMainPanel" />
-      <node id="4514830148568018499" at="27,0,28,0" concept="7" trace="myCbPackage" />
-      <node id="5100037748390843592" at="28,0,29,0" concept="7" trace="myPackage" />
-      <node id="4514830148568018489" at="29,79,30,48" concept="18" />
-      <node id="1863024455910539714" at="30,48,31,36" concept="6" />
-      <node id="6038184747638467065" at="31,36,32,27" concept="6" />
-      <node id="6038184747638490030" at="32,27,33,35" concept="6" />
-      <node id="4514830148568018494" at="33,35,34,19" concept="6" />
-      <node id="4514830148568018565" at="34,19,35,31" concept="6" />
-      <node id="4514830148568018576" at="35,31,36,47" concept="6" />
-      <node id="5100037748390750564" at="36,47,37,159" concept="12" />
-      <node id="4514830148568018548" at="37,159,38,66" concept="6" />
-      <node id="4514830148568018504" at="38,66,39,34" concept="6" />
-      <node id="4514830148568018514" at="39,34,40,34" concept="6" />
-      <node id="4514830148568024297" at="40,34,41,121" concept="6" />
-      <node id="7126646285594649522" at="44,50,45,61" concept="6" />
-      <node id="7126646285594649535" at="51,85,52,23" concept="6" />
-      <node id="5100037748390751264" at="55,7,56,16" concept="6" />
-      <node id="4514830148568018539" at="56,16,57,36" concept="6" />
-      <node id="1863024455910539723" at="57,36,58,0" concept="15" />
-      <node id="1863024455910539726" at="58,0,59,11" concept="6" />
-      <node id="6232858487716689708" at="63,52,64,23" concept="13" />
-      <node id="1863024455910539751" at="68,44,69,23" concept="13" />
-      <node id="5100037748390843636" at="71,30,72,21" concept="13" />
-      <node id="5100037748390843608" at="74,32,75,63" concept="12" />
-      <node id="5100037748390843621" at="76,45,77,18" concept="6" />
-      <node id="5100037748390843703" at="78,5,79,21" concept="6" />
-      <node id="4514830148568018621" at="82,23,83,16" concept="6" />
-      <node id="4514830148568018628" at="84,5,85,38" concept="6" />
-      <node id="4514830148568045550" at="87,32,88,25" concept="13" />
-      <node id="1863024455910540800" at="91,31,92,20" concept="6" />
-      <node id="1863024455910540802" at="92,20,93,26" concept="6" />
-      <node id="1863024455910540782" at="93,26,94,23" concept="6" />
-      <node id="4514830148568024334" at="50,42,53,9" concept="10" />
-      <node id="4514830148568020647" at="71,0,74,0" concept="11" trace="getPackage#()Ljava/lang/String;" />
-      <node id="5100037748390843619" at="75,63,78,5" concept="10" />
-      <node id="4514830148568018613" at="81,39,84,5" concept="10" />
-      <node id="4514830148568045544" at="87,0,90,0" concept="11" trace="isCancelled#()Z" />
-      <node id="5100037748390843666" at="43,0,47,0" concept="11" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="6232858487716689700" at="61,0,66,0" concept="11" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-      <node id="1863024455910539729" at="66,0,71,0" concept="11" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <node id="5100037748390843652" at="41,121,47,7" concept="6" />
-      <node id="4514830148568024328" at="49,0,55,0" concept="11" trace="keyPressed#(Ljava/awt/event/KeyEvent;)V" />
-      <node id="4514830148568018607" at="81,0,87,0" concept="11" trace="setPackage#(Ljava/lang/String;)V" />
-      <node id="1863024455910540777" at="90,0,96,0" concept="11" trace="doOKAction#()V" />
-      <node id="5100037748390843600" at="74,0,81,0" concept="11" trace="updatePackage#()V" />
-      <node id="4514830148568024320" at="47,7,55,7" concept="6" />
-      <node id="4514830148568015581" at="29,0,61,0" concept="4" trace="SetNodePackageDialog#(Ljetbrains/mps/project/Project;Ljava/util/List;)V" />
-      <scope id="5100037748390843671" at="44,50,45,61" />
-      <scope id="4514830148568024347" at="51,85,52,23" />
-      <scope id="6232858487716689705" at="63,52,64,23" />
-      <scope id="1863024455910539733" at="68,44,69,23" />
-      <scope id="4514830148568020650" at="71,30,72,21" />
-      <scope id="5100037748390843620" at="76,45,77,18" />
-      <scope id="4514830148568018615" at="82,23,83,16" />
-      <scope id="4514830148568045547" at="87,32,88,25" />
-      <scope id="4514830148568024333" at="50,42,53,9" />
-      <scope id="4514830148568020647" at="71,0,74,0" />
-      <scope id="4514830148568045544" at="87,0,90,0" />
-      <scope id="1863024455910540780" at="91,31,94,23" />
-      <scope id="5100037748390843666" at="43,0,47,0">
+      <node id="4514830148568018450" at="26,0,27,0" concept="7" trace="myIsCancelled" />
+      <node id="4514830148568018560" at="27,0,28,0" concept="7" trace="myMainPanel" />
+      <node id="4514830148568018499" at="28,0,29,0" concept="7" trace="myCbPackage" />
+      <node id="5100037748390843592" at="29,0,30,0" concept="7" trace="myPackage" />
+      <node id="4514830148568018489" at="31,79,32,47" concept="18" />
+      <node id="1863024455910539714" at="32,47,33,36" concept="6" />
+      <node id="6038184747638467065" at="33,36,34,27" concept="6" />
+      <node id="6038184747638490030" at="34,27,35,35" concept="6" />
+      <node id="4514830148568018494" at="35,35,36,19" concept="6" />
+      <node id="4514830148568018565" at="36,19,37,31" concept="6" />
+      <node id="4514830148568018576" at="37,31,38,47" concept="6" />
+      <node id="5100037748390750564" at="38,47,39,160" concept="12" />
+      <node id="4514830148568018548" at="39,160,40,66" concept="6" />
+      <node id="4514830148568018504" at="40,66,41,41" concept="6" />
+      <node id="4514830148568018514" at="41,41,42,34" concept="6" />
+      <node id="4514830148568024297" at="42,34,43,129" concept="6" />
+      <node id="7126646285594649522" at="46,50,47,61" concept="6" />
+      <node id="7126646285594649535" at="53,85,54,23" concept="6" />
+      <node id="5100037748390751264" at="57,7,58,16" concept="6" />
+      <node id="4514830148568018539" at="58,16,59,36" concept="6" />
+      <node id="1863024455910539723" at="59,36,60,0" concept="15" />
+      <node id="1863024455910539726" at="60,0,61,11" concept="6" />
+      <node id="6232858487716689708" at="66,52,67,23" concept="13" />
+      <node id="1863024455910539751" at="72,44,73,23" concept="13" />
+      <node id="5100037748390843636" at="76,30,77,21" concept="13" />
+      <node id="5100037748390843608" at="80,32,81,63" concept="12" />
+      <node id="5100037748390843621" at="82,45,83,18" concept="6" />
+      <node id="5100037748390843703" at="84,5,85,21" concept="6" />
+      <node id="4514830148568018621" at="89,23,90,16" concept="6" />
+      <node id="4514830148568018628" at="91,5,92,38" concept="6" />
+      <node id="4514830148568045550" at="95,32,96,25" concept="13" />
+      <node id="1863024455910540800" at="100,31,101,20" concept="6" />
+      <node id="1863024455910540802" at="101,20,102,26" concept="6" />
+      <node id="1863024455910540782" at="102,26,103,23" concept="6" />
+      <node id="4514830148568024334" at="52,42,55,9" concept="10" />
+      <node id="4514830148568020647" at="76,0,79,0" concept="11" trace="getPackage#()Ljava/lang/String;" />
+      <node id="5100037748390843619" at="81,63,84,5" concept="10" />
+      <node id="4514830148568018613" at="88,39,91,5" concept="10" />
+      <node id="4514830148568045544" at="95,0,98,0" concept="11" trace="isCancelled#()Z" />
+      <node id="5100037748390843666" at="45,0,49,0" concept="11" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="6232858487716689700" at="64,0,69,0" concept="11" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+      <node id="1863024455910539729" at="70,0,75,0" concept="11" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
+      <node id="5100037748390843652" at="43,129,49,7" concept="6" />
+      <node id="4514830148568024328" at="51,0,57,0" concept="11" trace="keyPressed#(Ljava/awt/event/KeyEvent;)V" />
+      <node id="4514830148568018607" at="88,0,94,0" concept="11" trace="setPackage#(Ljava/lang/String;)V" />
+      <node id="1863024455910540777" at="99,0,105,0" concept="11" trace="doOKAction#()V" />
+      <node id="5100037748390843600" at="80,0,87,0" concept="11" trace="updatePackage#()V" />
+      <node id="4514830148568024320" at="49,7,57,7" concept="6" />
+      <node id="4514830148568015581" at="31,0,63,0" concept="4" trace="SetNodePackageDialog#(Ljetbrains/mps/project/Project;Ljava/util/List;)V" />
+      <scope id="5100037748390843671" at="46,50,47,61" />
+      <scope id="4514830148568024347" at="53,85,54,23" />
+      <scope id="6232858487716689705" at="66,52,67,23" />
+      <scope id="1863024455910539733" at="72,44,73,23" />
+      <scope id="4514830148568020650" at="76,30,77,21" />
+      <scope id="5100037748390843620" at="82,45,83,18" />
+      <scope id="4514830148568018615" at="89,23,90,16" />
+      <scope id="4514830148568045547" at="95,32,96,25" />
+      <scope id="4514830148568024333" at="52,42,55,9" />
+      <scope id="4514830148568020647" at="76,0,79,0" />
+      <scope id="4514830148568045544" at="95,0,98,0" />
+      <scope id="1863024455910540780" at="100,31,103,23" />
+      <scope id="5100037748390843666" at="45,0,49,0">
         <var name="e" id="5100037748390843669" />
       </scope>
-      <scope id="4514830148568018610" at="81,39,85,38" />
-      <scope id="6232858487716689700" at="61,0,66,0" />
-      <scope id="1863024455910539729" at="66,0,71,0" />
-      <scope id="5100037748390843603" at="74,32,79,21">
+      <scope id="4514830148568018610" at="88,39,92,38" />
+      <scope id="6232858487716689700" at="64,0,69,0" />
+      <scope id="1863024455910539729" at="70,0,75,0" />
+      <scope id="5100037748390843603" at="80,32,85,21">
         <var name="pack" id="5100037748390843609" />
       </scope>
-      <scope id="4514830148568024328" at="49,0,55,0">
+      <scope id="4514830148568024328" at="51,0,57,0">
         <var name="e" id="4514830148568024331" />
       </scope>
-      <scope id="4514830148568018607" at="81,0,87,0">
+      <scope id="4514830148568018607" at="88,0,94,0">
         <var name="pack" id="4514830148568018611" />
       </scope>
-      <scope id="1863024455910540777" at="90,0,96,0" />
-      <scope id="5100037748390843600" at="74,0,81,0" />
-      <scope id="4514830148568015584" at="29,79,59,11">
+      <scope id="1863024455910540777" at="99,0,105,0" />
+      <scope id="5100037748390843600" at="80,0,87,0" />
+      <scope id="4514830148568015584" at="31,79,61,11">
         <var name="c" id="5100037748390750565" />
       </scope>
-      <scope id="4514830148568015581" at="29,0,61,0">
+      <scope id="4514830148568015581" at="31,0,63,0">
         <var name="existingPackages" id="4514830148568018484" />
         <var name="project" id="5882519022999513893" />
       </scope>
-      <unit id="5100037748390843664" at="42,38,47,5" name="jetbrains.mps.ide.actions.SetNodePackageDialog$1" />
-      <unit id="4514830148568024326" at="48,68,55,5" name="jetbrains.mps.ide.actions.SetNodePackageDialog$2" />
-      <unit id="4514830148568015579" at="24,0,97,0" name="jetbrains.mps.ide.actions.SetNodePackageDialog" />
+      <unit id="5100037748390843664" at="44,38,49,5" name="jetbrains.mps.ide.actions.SetNodePackageDialog$1" />
+      <unit id="4514830148568024326" at="50,68,57,5" name="jetbrains.mps.ide.actions.SetNodePackageDialog$2" />
+      <unit id="4514830148568015579" at="25,0,106,0" name="jetbrains.mps.ide.actions.SetNodePackageDialog" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/484385057887943926">
