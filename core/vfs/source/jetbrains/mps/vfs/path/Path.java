@@ -33,7 +33,7 @@ import java.util.List;
  *
  * Created by apyshkin on 6/17/16.
  */
-public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchable, PathUtil {
+public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchable {
   /**
    * current system defaults
    */
