@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.generator;
 
 import com.intellij.ide.ui.UISettings;
-import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.JBColor;
@@ -26,6 +25,7 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.icons.MPSIcons.Nodes;
+import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +40,6 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.DefaultFormatter;
 import java.awt.GridBagConstraints;
@@ -83,8 +82,8 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
   private final IModifiableGenerationSettings myGenerationSettings;
   private final ButtonSelectStateTracker myButtonState = new ButtonSelectStateTracker();
 
-  public GenerationSettingsPreferencesPage() {
-    myGenerationSettings = GenerationSettingsProvider.getInstance().getGenerationSettings();
+  public GenerationSettingsPreferencesPage(MPSCoreComponents coreComponents) {
+    myGenerationSettings = coreComponents.getPlatform().findComponent(GenerationSettingsProvider.class).getGenerationSettings();
     reset();
     myPage = createPage();
     myButtonState.reset();

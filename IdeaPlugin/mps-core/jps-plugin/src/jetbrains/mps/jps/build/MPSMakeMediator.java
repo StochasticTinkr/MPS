@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,6 @@ import jetbrains.mps.tool.builder.make.BuildMakeService;
 import jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.jps.builders.java.JavaBuilderUtil;
 import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
 import org.jetbrains.jps.incremental.ModuleLevelBuilder.OutputConsumer;
@@ -53,7 +52,6 @@ import java.util.concurrent.Future;
 /**
  * User: fyodor
  * Date: 12/19/12
- * TODO Something with {@link ReducedMakeFacetConfiguration#getFileHashes()}. It is possible to persist any caches by a jps mechanism.
  */
 public class MPSMakeMediator {
   @NonNls
@@ -109,9 +107,7 @@ public class MPSMakeMediator {
     return new MakeSession(myProject, myMessageHandler, true) {
       @Override
       public IScript toScript(ScriptBuilder scriptBuilder) {
-        scriptBuilder.withFacetNames(
-          new IFacet.Name("jetbrains.mps.make.reduced.ReportFiles"),
-          new IFacet.Name("jetbrains.mps.make.reduced.CollectHashes"));
+        scriptBuilder.withFacetNames(new IFacet.Name("jetbrains.mps.make.reduced.ReportFiles"));
         return scriptBuilder.toScript();
       }
     };

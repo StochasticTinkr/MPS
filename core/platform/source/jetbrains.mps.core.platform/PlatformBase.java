@@ -43,7 +43,7 @@ class PlatformBase implements Platform {
       myCore.init();
     }
     if (options.loadsPersistence()) {
-      myPersistence = new MPSPersistence(myCore.getPersistenceFacade());
+      myPersistence = new MPSPersistence(myCore);
       myPersistence.init();
     }
     if (options.loadsOthers()) {

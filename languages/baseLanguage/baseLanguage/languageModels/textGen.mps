@@ -10123,19 +10123,22 @@
       <node concept="3clFbS" id="5kChkJ6qdlE" role="3clF47">
         <node concept="3clFbF" id="5kChkJ6qsA6" role="3cqZAp">
           <node concept="37vLTI" id="5kChkJ6qsAS" role="3clFbG">
-            <node concept="2OqwBi" id="6cEFRXIH86e" role="37vLTx">
-              <node concept="2OqwBi" id="6cEFRXIH7B1" role="2Oq$k0">
-                <node concept="37vLTw" id="6cEFRXIH7v0" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5kChkJ6qdlF" resolve="rootNode" />
-                </node>
-                <node concept="I4A8Y" id="6cEFRXIH7Qq" role="2OqNvi" />
-              </node>
-              <node concept="LkI2h" id="6cEFRXIH87w" role="2OqNvi" />
-            </node>
             <node concept="2OqwBi" id="5kChkJ6qsAs" role="37vLTJ">
               <node concept="Xjq3P" id="5kChkJ6qsA7" role="2Oq$k0" />
               <node concept="2OwXpG" id="5kChkJ6qt8t" role="2OqNvi">
                 <ref role="2Oxat5" node="5kChkJ6qsA1" resolve="packageName" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="3kHv2MV4TVH" role="37vLTx">
+              <ref role="1Pybhc" to="18ew:~JavaNameUtil" resolve="JavaNameUtil" />
+              <ref role="37wK5l" to="18ew:~JavaNameUtil.packageName(java.lang.String):java.lang.String" resolve="packageName" />
+              <node concept="2OqwBi" id="3kHv2MV4Set" role="37wK5m">
+                <node concept="37vLTw" id="3kHv2MV4RSA" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5kChkJ6qdlF" resolve="rootNode" />
+                </node>
+                <node concept="2qgKlT" id="3kHv2MV4SKh" role="2OqNvi">
+                  <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                </node>
               </node>
             </node>
           </node>
@@ -10179,7 +10182,12 @@
         <node concept="3clFbH" id="5kChkJ6qlrd" role="3cqZAp" />
         <node concept="3SKdUt" id="5kChkJ6qdso" role="3cqZAp">
           <node concept="3SKdUq" id="5kChkJ6qdsp" role="3SKWNk">
-            <property role="3SKdUp" value="init package simple names" />
+            <property role="3SKdUp" value="init package simple names (i.e. name of classes from the same package)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3kHv2MV53Pl" role="3cqZAp">
+          <node concept="3SKdUq" id="3kHv2MV53Pn" role="3SKWNk">
+            <property role="3SKdUp" value="indeed, there could be other models that generate into this package, and we could have a conflict with a 'java.lang' class then if the name matches." />
           </node>
         </node>
         <node concept="3clFbF" id="5kChkJ6qlsN" role="3cqZAp">
@@ -10197,19 +10205,52 @@
         </node>
         <node concept="1DcWWT" id="5kChkJ6qlpo" role="3cqZAp">
           <node concept="3clFbS" id="5kChkJ6qlpp" role="2LFqv$">
-            <node concept="3clFbF" id="5kChkJ6qlql" role="3cqZAp">
-              <node concept="2OqwBi" id="5522gsSlaIy" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeuu0m" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5kChkJ6qdp3" resolve="packageSimpleNames" />
+            <node concept="3cpWs8" id="3kHv2MV502Q" role="3cqZAp">
+              <node concept="3cpWsn" id="3kHv2MV502R" role="3cpWs9">
+                <property role="TrG5h" value="fqName" />
+                <node concept="17QB3L" id="3kHv2MV502O" role="1tU5fm" />
+                <node concept="2OqwBi" id="3kHv2MV502S" role="33vP2m">
+                  <node concept="37vLTw" id="3kHv2MV502T" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5kChkJ6qlpr" resolve="classifier" />
+                  </node>
+                  <node concept="2qgKlT" id="3kHv2MV502U" role="2OqNvi">
+                    <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                  </node>
                 </node>
-                <node concept="liA8E" id="5522gsSlaIC" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
-                  <node concept="2OqwBi" id="5522gsSlaIY" role="37wK5m">
-                    <node concept="37vLTw" id="3GM_nagT$EG" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5kChkJ6qlpr" resolve="classifier" />
+              </node>
+            </node>
+            <node concept="3clFbJ" id="3kHv2MV4VGw" role="3cqZAp">
+              <node concept="3clFbS" id="3kHv2MV4VGy" role="3clFbx">
+                <node concept="3clFbF" id="5kChkJ6qlql" role="3cqZAp">
+                  <node concept="2OqwBi" id="5522gsSlaIy" role="3clFbG">
+                    <node concept="37vLTw" id="2BHiRxeuu0m" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5kChkJ6qdp3" resolve="packageSimpleNames" />
                     </node>
-                    <node concept="3TrcHB" id="5522gsSliqZ" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    <node concept="liA8E" id="5522gsSlaIC" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+                      <node concept="2OqwBi" id="3kHv2MV52fD" role="37wK5m">
+                        <node concept="37vLTw" id="3kHv2MV51xd" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5kChkJ6qlpr" resolve="classifier" />
+                        </node>
+                        <node concept="3TrcHB" id="3kHv2MV531t" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="3kHv2MV4Who" role="3clFbw">
+                <node concept="37vLTw" id="3kHv2MV4VSM" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5kChkJ6qsA1" resolve="packageName" />
+                </node>
+                <node concept="liA8E" id="3kHv2MV4WyX" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <node concept="2YIFZM" id="3kHv2MV4WDW" role="37wK5m">
+                    <ref role="1Pybhc" to="18ew:~JavaNameUtil" resolve="JavaNameUtil" />
+                    <ref role="37wK5l" to="18ew:~JavaNameUtil.packageName(java.lang.String):java.lang.String" resolve="packageName" />
+                    <node concept="37vLTw" id="3kHv2MV502V" role="37wK5m">
+                      <ref role="3cqZAo" node="3kHv2MV502R" resolve="fqName" />
                     </node>
                   </node>
                 </node>
