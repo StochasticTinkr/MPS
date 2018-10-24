@@ -49,20 +49,16 @@ import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.Reference;
-import java.util.Objects;
+import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.project.ModelsAutoImportsManager;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import org.jetbrains.mps.openapi.persistence.Memento;
-import jetbrains.mps.persistence.MementoImpl;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import java.io.File;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import java.util.Iterator;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
+import jetbrains.mps.extapi.persistence.DefaultSourceRoot;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import javax.lang.model.SourceVersion;
 import javax.swing.JComponent;
@@ -252,46 +248,46 @@ public class NewModelDialog extends DialogWrapper {
 
   }
 
-  private EditableSModel createModel(final ModelFactoryType storageFormat, ModelRoot selectedModelRoot) throws ModelCannotBeCreatedException {
-    final Reference<ModelRoot> selectedModelRootRef = new Reference<ModelRoot>(selectedModelRoot);
-
+  private EditableSModel createModel(final ModelFactoryType storageFormat, final ModelRoot selectedModelRoot) throws ModelCannotBeCreatedException {
     final String fqName = getFqName();
-    if (!(selectedModelRootRef.get().canCreateModel(fqName)) && myModule instanceof Language && selectedModelRootRef.get() instanceof FileBasedModelRoot) {
-      final FileBasedModelRoot selectedFileBasedModelRoot = (FileBasedModelRoot) selectedModelRootRef.get();
 
-      createAccessoryModelRoot(selectedFileBasedModelRoot, (Language) myModule, myProject);
-
-      myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          for (ModelRoot modelRoot : myModule.getModelRoots()) {
-            if (modelRoot instanceof FileBasedModelRoot && Objects.equals(((FileBasedModelRoot) modelRoot).getContentRoot(), selectedFileBasedModelRoot.getContentRoot())) {
-              selectedModelRootRef.set(modelRoot);
-            }
-          }
-        }
-      });
+    final Reference<SourceRoot> sourceRootOpt = new Reference<SourceRoot>(null);
+    // next constant is purely for documentation purposes, just to indicate what's the intention of getOrCreateAccessortySourceRoot method 
+    final boolean distinctSrcRoot4Accessory = false;
+    if (myModule instanceof Language && selectedModelRoot instanceof DefaultModelRoot) {
+      if (distinctSrcRoot4Accessory || !(selectedModelRoot.canCreateModel(fqName))) {
+        sourceRootOpt.set(getOrCreateAccessorySourceRoot(((DefaultModelRoot) selectedModelRoot)));
+      }
     }
 
     final Reference<ModelCannotBeCreatedException> refException = new Reference<ModelCannotBeCreatedException>();
-    final ModelRoot modelRoot = selectedModelRootRef.get();
 
-    EditableSModel res = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<EditableSModel>() {
+    final EditableSModel res = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<EditableSModel>() {
       @Override
       public EditableSModel compute() {
 
-        @NotNull EditableSModel result;
+        SModel result;
         try {
-          if (modelRoot instanceof DefaultModelRoot) {
-            result = SModuleOperations.createModelWithAdjustments(fqName, modelRoot, storageFormat);
+          if (selectedModelRoot instanceof DefaultModelRoot) {
+            result = ((DefaultModelRoot) selectedModelRoot).createModel(new SModelName(fqName), sourceRootOpt.get(), null, storageFormat);
           } else {
-            result = SModuleOperations.createModelWithAdjustments(fqName, modelRoot, null);
+            result = selectedModelRoot.createModel(fqName);
           }
+          if (!(result instanceof EditableSModel)) {
+            // XXX there seems to be no true need to get EditableSModel return value, please revisit 
+            throw new ModelCannotBeCreatedException(String.format("Could not create EditableSModel, got %s", result));
+          }
+          // XXX do we need autoimports in case there's myClone we would copy from? 
+          myProject.getComponent(ModelsAutoImportsManager.class).performImports(myModule, result);
+          // XXX Perhaps, shall fix module dependencies only once imports of myClone has been copied? 
+          new MissingDependenciesFixer(result).fixModuleDependencies();
         } catch (ModelCannotBeCreatedException e) {
           refException.set(e);
           return null;
         }
+        final EditableSModel rv = ((EditableSModel) result);
         if (myClone == null) {
-          return result;
+          return rv;
         }
         ModelImports imports = new ModelImports(result);
         imports.copyImportedModelsFrom(myClone);
@@ -307,10 +303,9 @@ public class NewModelDialog extends DialogWrapper {
           ((GeneratableSModel) result).setDoNotGenerate(((GeneratableSModel) myClone).isDoNotGenerate());
           ((GeneratableSModel) result).setGenerateIntoModelFolder(((GeneratableSModel) myClone).isGenerateIntoModelFolder());
         }
-        result.setChanged(true);
-        result.save();
-
-        return result;
+        rv.setChanged(true);
+        rv.save();
+        return rv;
       }
     });
 
@@ -321,36 +316,19 @@ public class NewModelDialog extends DialogWrapper {
     return res;
   }
 
-  private static void createAccessoryModelRoot(FileBasedModelRoot selectedModelRoot, final Language module, final Project project) {
-    Memento memento = new MementoImpl();
-    selectedModelRoot.save(memento);
-
-    final ModelRootDescriptor oldModelRootDescriptor = new ModelRootDescriptor(selectedModelRoot.getType(), memento);
-
-    final FileBasedModelRoot newModelRoot = (FileBasedModelRoot) PersistenceFacade.getInstance().getModelRootFactory(selectedModelRoot.getType()).create();
-    newModelRoot.load(memento);
-    newModelRoot.addFile(FileBasedModelRoot.SOURCE_ROOTS, newModelRoot.getContentRoot() + File.separator + "languageAccessories");
-
-    memento = new MementoImpl();
-    newModelRoot.save(memento);
-    final ModelRootDescriptor newModelRootDescriptor = new ModelRootDescriptor(newModelRoot.getType(), memento);
-
-    project.getRepository().getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-        final LanguageDescriptor languageDescriptor = module.getModuleDescriptor();
-        Iterator<ModelRootDescriptor> iterator = languageDescriptor.getModelRootDescriptors().iterator();
-        while (iterator.hasNext()) {
-          ModelRootDescriptor descriptor = iterator.next();
-          if (descriptor.getType().equals(oldModelRootDescriptor.getType()) && descriptor.getMemento().equals(oldModelRootDescriptor.getMemento())) {
-            iterator.remove();
-            break;
+  private SourceRoot getOrCreateAccessorySourceRoot(final FileBasedModelRoot selectedModelRoot) {
+    return new ModelAccessHelper(myProject.getModelAccess()).runWriteAction(new Computable<SourceRoot>() {
+      public SourceRoot compute() {
+        final String dedicatedSourceRootName = "languageAccessories";
+        for (SourceRoot sr : selectedModelRoot.getSourceRoots(SourceRootKinds.SOURCES)) {
+          if (sr.getPath().endsWith(dedicatedSourceRootName)) {
+            return sr;
           }
         }
-        languageDescriptor.getModelRootDescriptors().add(newModelRootDescriptor);
-        // see MPS-18743 
-        project.getRepository().saveAll();
-        module.setModuleDescriptor(languageDescriptor);
-        module.save();
+        DefaultSourceRoot rv = new DefaultSourceRoot(dedicatedSourceRootName, selectedModelRoot.getContentDirectory());
+        selectedModelRoot.addSourceRoot(SourceRootKinds.SOURCES, rv);
+        // it's up to model root impl to ensure module is marked changed on source root addition 
+        return rv;
       }
     });
   }
