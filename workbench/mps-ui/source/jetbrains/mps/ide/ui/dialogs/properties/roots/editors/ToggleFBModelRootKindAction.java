@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,23 +86,26 @@ public abstract class ToggleFBModelRootKindAction extends ToggleAction implement
   }
 
   @Override
-  public void setSelected(AnActionEvent e, boolean enabled) { // if enabled == false, then the selection was disabled
+  public void setSelected(AnActionEvent e, final boolean enabled) { // if enabled == false, then the selection was disabled
     final List<IFile> selectedFiles = getSelectedFiles();
     assert !selectedFiles.isEmpty();
 
     final FileBasedModelRoot modelRoot = myModelRootEditor.getFileBasedModelRootEntry().getModelRoot();
 
-    for (IFile selectedFile : selectedFiles) {
-      SourceRoot sourceRootByPath = getSourceRootByPath(selectedFile);
-      if (enabled) {
-        assert sourceRootByPath == null;
-        assert modelRoot.getContentDirectory() != null;
-        modelRoot.addSourceRoot(getKind(), new DefaultSourceRoot(selectedFile.getPath(), modelRoot.getContentDirectory()));
-      } else {
-        assert sourceRootByPath != null;
-        modelRoot.removeSourceRoot(sourceRootByPath);
+    modelRoot.getModule().getRepository().getModelAccess().runWriteAction(() -> {
+      for (IFile selectedFile : selectedFiles) {
+        SourceRoot sourceRootByPath = getSourceRootByPath(selectedFile);
+        if (enabled) {
+          assert sourceRootByPath == null;
+          assert modelRoot.getContentDirectory() != null;
+          modelRoot.addSourceRoot(getKind(), new DefaultSourceRoot(selectedFile.getPath(), modelRoot.getContentDirectory()));
+        } else {
+          assert sourceRootByPath != null;
+          modelRoot.removeSourceRoot(sourceRootByPath);
+        }
       }
-    }
+    });
+
 
     myTree.updateUI();
     myModelRootEditor.getFileBasedModelRootEntry().updateUI();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,14 +65,14 @@ public abstract class ModelRootBase implements ModelRoot {
     myModule = module;
   }
 
-  private void assertCanRead() {
+  protected final void assertCanRead() {
     final SRepository repository = myRepository;
     if (repository != null) {
       repository.getModelAccess().checkReadAccess();
     }
   }
 
-  private void assertCanChange() {
+  protected final void assertCanChange() {
     final SRepository repo = myRepository;
     if (repo != null) {
       repo.getModelAccess().checkWriteAccess();
