@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.classloading.reloading;
+package jetbrains.mps.reloading;
 
 public interface IClassPathItemVisitor {
   void visit(CompositeClassPathItem cpItem);

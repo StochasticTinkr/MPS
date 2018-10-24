@@ -13,9 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.classloading.reloading;
+package jetbrains.mps.reloading;
 
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.reloading.AbstractClassPathItem;
+import jetbrains.mps.reloading.IClassPathItemVisitor;
+import jetbrains.mps.reloading.RealClassPathItem;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
 import org.jetbrains.annotations.NotNull;

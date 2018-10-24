@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.classloading.reloading.ClassBytesProvider.ClassBytes;
-import jetbrains.mps.classloading.reloading.IClassPathItem;
+import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.annotations.NotNull;
