@@ -53,7 +53,7 @@ public class ModelValidatorAdapter implements ModelValidator {
     if (tool == null) {
       return true;
     }
-    final IModifiableGenerationSettings generationSettings = ideaProject.getComponent(GenerationSettingsProvider.class).getGenerationSettings();
+    final IModifiableGenerationSettings generationSettings = p.getComponent(GenerationSettingsProvider.class).getGenerationSettings();
 
     ModelCheckerViewer viewer = tool.checkModels(modelDescriptors);
     SearchResults<IssueKindReportItem> issues = viewer.getSearchResults();
