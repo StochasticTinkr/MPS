@@ -45,7 +45,7 @@
     </language>
   </registry>
   <node concept="3FgkA8" id="2ImduasRmkH">
-    <property role="TrG5h" value="Transfrom_BL_References" />
+    <property role="TrG5h" value="GenTest_TransformBLReferences" />
     <property role="3Fgkti" value="." />
     <node concept="3FggHx" id="2ImduasRnnM" role="3FggHh">
       <node concept="3FggHH" id="2ImduasRnos" role="3FggHC">

@@ -2100,9 +2100,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="2G$12M" id="1y5ThBEPi2J" role="3989C9">
-      <property role="TrG5h" value="reference-modules" />
       <node concept="1E1JtD" id="1y5ThBEPi7n" role="2G$12L">
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.baseLanguage.testRefs.testLang" />

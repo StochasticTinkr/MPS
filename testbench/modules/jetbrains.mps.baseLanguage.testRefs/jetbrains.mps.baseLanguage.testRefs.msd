@@ -5,9 +5,6 @@
       <sourceRoot location="models" />
     </modelRoot>
   </models>
-  <facets>
-    <facet planModel="r:7d81a500-6dbc-44ab-9e9e-d3249bbd34c7(jetbrains.mps.baseLanguage.testRefs.gp@genplan)" type="generator" />
-  </facets>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
