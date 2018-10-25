@@ -114,7 +114,7 @@ public class ProjectDescriptorPersistence {
     if (projectFile.isDirectory()) {
       projectFile = projectFile.getDescendant(MPS_DOT_FOLDER).getDescendant(MODULES_XML_LOCATION);
     }
-    if (!(projectFile.path().endsWith(MODULES_XML_LOCATION))) {
+    if (!(projectFile.getName().equals(MODULES_XML_LOCATION))) {
       LOG.warn("Supposed to be the 'modules.xml' file: '" + projectFile + "'");
     }
     return projectFile;

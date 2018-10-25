@@ -90,8 +90,7 @@ public class NewGeneratorDialog extends DialogWrapper {
   private void updateTemplateModelsDir() {
     IFile moduleDir = mySourceLanguage.getModuleSourceDir();
     assert moduleDir != null;
-    String path = moduleDir.path().toString();
-    String modelsDir = path + File.separatorChar + "generator" + File.separatorChar + "template";
+    String modelsDir = moduleDir.getPath() + File.separatorChar + "generator" + File.separatorChar + "template";
     myTemplateModelsDir.setText(modelsDir);
   }
   private boolean isValidName(String name) {
@@ -107,13 +106,14 @@ public class NewGeneratorDialog extends DialogWrapper {
   }
   @Override
   protected void doOKAction() {
-    if (myTemplateModelsDir.getText().length() == 0) {
+    String filePath = myTemplateModelsDir.getText();
+    if (filePath.length() == 0) {
       setErrorText("No template models root");
       return;
     }
 
-    final IFile templateModelsPath = myProjectFS.getFile(myTemplateModelsDir.getText());
-    if (templateModelsPath.path().isRelative()) {
+    final IFile templateModelsPath = myProjectFS.getFile(filePath);
+    if (!(new File(filePath).isAbsolute())) {
       setErrorText("Path should be absolute");
       return;
     }

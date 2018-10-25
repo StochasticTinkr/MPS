@@ -239,7 +239,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
       Assert.assertEquals(newModuleName, module.getModuleName());
       IFile descriptorFile = module.getDescriptorFile();
       Assert.assertNotNull(descriptorFile);
-      String fileName = descriptorFile.path().getFileName();
+      String fileName = descriptorFile.getName();
       Assert.assertNotNull(fileName);
       Assert.assertTrue(fileName.contains(newModuleName));
 
