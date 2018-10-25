@@ -9598,7 +9598,7 @@
       <node id="4998818250317610929" at="99,0,103,0" concept="11" trace="performAction#(Ljetbrains/mps/ide/platform/refactoring/RefactoringViewItem;)V" />
       <node id="4998818250317603956" at="40,0,45,0" concept="4" trace="FindRootableConceptsWithoutIcons_Action#()V" />
       <node id="4998818250317618646" at="82,353,88,32" concept="6" />
-      <node id="4998818250317610920" at="97,29,103,113" concept="6" />
+      <node id="4998818250317610920" at="97,29,103,115" concept="6" />
       <node id="4998818250317617662" at="53,5,60,5" concept="2" />
       <node id="5938312768539852903" at="60,5,67,5" concept="2" />
       <node id="4998818250317610918" at="97,0,105,0" concept="11" trace="run#()V" />
@@ -9633,7 +9633,7 @@
       <scope id="5938312768539852903" at="61,5,66,7">
         <var name="p" id="5938312768539852903" />
       </scope>
-      <scope id="4998818250317610919" at="97,29,103,113" />
+      <scope id="4998818250317610919" at="97,29,103,115" />
       <scope id="5938312768539888955" at="81,29,88,32" />
       <scope id="4998818250317610918" at="97,0,105,0" />
       <scope id="5938312768539888954" at="81,0,90,0" />

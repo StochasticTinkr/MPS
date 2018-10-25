@@ -56,11 +56,11 @@ import java.util.List;
       return myResults;
     }
     List<SearchResult<SNode>> sortedList = new ArrayList<>();
-    for (SearchResult<?> oldResult : myResults.getSearchResults()) {
+    for (SearchResult<?> oldResult : myResults.getSearchResults2()) {
       sortedList.add(new SearchResult<>((SearchResult<SNode>) oldResult));
     }
     sortedList.sort((result1, result2) -> compareNodes(result1.getObject(), result2.getObject()));
-    return new SearchResults(Collections.unmodifiableSet(myResults.getSearchedNodes()), sortedList);
+    return new SearchResults(myResults.getSearchedObjects(), sortedList);
   }
 
   private static int compareNodes(SNode n1, SNode n2) {

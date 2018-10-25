@@ -31,7 +31,7 @@ public interface IFinder {
   default void find(@NotNull SearchQuery query, @NotNull IFinder.FindCallback callback, @NotNull ProgressMonitor monitor) {
     SearchResults<?> searchResults = find(query, monitor);
     callback.onSearchedObjectsCalculated(searchResults.getSearchedObjects());
-    for (SearchResult<?> result : searchResults.getSearchResults()) {
+    for (SearchResult<?> result : searchResults.getSearchResults2()) {
       callback.onUsageFound(result);
     }
   }

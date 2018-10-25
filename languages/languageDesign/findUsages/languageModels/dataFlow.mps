@@ -170,6 +170,14 @@
             </node>
           </node>
         </node>
+        <node concept="3AgYrR" id="2aorhc0jSxN" role="3cqZAp">
+          <node concept="2OqwBi" id="2aorhc0jSM9" role="3Ah4Yx">
+            <node concept="3__QtB" id="2aorhc0jSBk" role="2Oq$k0" />
+            <node concept="3TrEf2" id="2aorhc0jTvz" role="2OqNvi">
+              <ref role="3Tt5mk" to="tp3b:5Xky2$hpEQD" resolve="queryScope" />
+            </node>
+          </node>
+        </node>
         <node concept="axUMO" id="h$q4osv" role="3cqZAp">
           <property role="TrG5h" value="condition" />
         </node>

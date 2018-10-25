@@ -197,7 +197,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public void open(final String fileName, final int startLine, final int startPosition, int endLine, int endPosition) {
     executeWriteAction(() -> {
       VirtualFile vfile = LocalFileSystem.getInstance().findFileByPath(fileName);
-      FileEditorManager.getInstance(myProject).navigateToTextEditor(new OpenFileDescriptor(myProject, vfile, startLine, startPosition), true);
+//      FileEditorManager.getInstance(myProject).navigateToTextEditor(new OpenFileDescriptor(myProject, vfile, startLine, startPosition), true);
       activateProjectWindow();
     });
   }

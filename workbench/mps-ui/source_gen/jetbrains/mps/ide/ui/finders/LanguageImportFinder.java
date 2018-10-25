@@ -4,10 +4,12 @@ package jetbrains.mps.ide.ui.finders;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.SearchedObjects;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
@@ -39,78 +41,76 @@ public class LanguageImportFinder extends BaseFinder implements IFinder {
 
   public LanguageImportFinder() {
   }
+
   @Override
   public String getDescription() {
     return "Language Imports";
   }
+
   @Override
-  public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-    SearchResults searchResults = new SearchResults();
-    for (SLanguage lang : LanguageUsagesFinder.getLanguageToLookUp(query)) {
-      searchResults.getSearchedNodes().add(lang);
+  public void find(SearchQuery query, @NotNull IFinder.FindCallback callback, ProgressMonitor monitor) {
+    Collection<SLanguage> languageToLookUp = LanguageUsagesFinder.getLanguageToLookUp(query);
+    callback.onSearchedObjectsCalculated(new SearchedObjects(languageToLookUp));
+    for (SLanguage lang : languageToLookUp) {
       SearchScope scope = query.getScope();
       for (SModule module : scope.getModules()) {
         if (monitor.isCanceled()) {
-          return searchResults;
+          return;
         }
         if (module instanceof Solution) {
-          collectUsagesInSolution(lang, (Solution) module, searchResults);
-        }
-        if (module instanceof Language) {
-          collectUsagesInLanguage(lang, (Language) module, searchResults);
+          collectUsagesInSolution(lang, (Solution) module, callback);
+        } else if (module instanceof Language) {
+          collectUsagesInLanguage(lang, (Language) module, callback);
           for (Generator g : ((Language) module).getOwnedGenerators()) {
-            collectUsagesInGenerator(lang, g, searchResults);
+            collectUsagesInGenerator(lang, g, callback);
           }
-        }
-        if (module instanceof DevKit) {
-          collectUsagesInDevKit(lang, (DevKit) module, searchResults);
+        } else if (module instanceof DevKit) {
+          collectUsagesInDevKit(lang, (DevKit) module, callback);
         }
       }
     }
-    return searchResults;
   }
 
-  /*package*/ void collectUsagesInSolution(SLanguage searchLanguage, Solution solution, SearchResults searchResults) {
+  private void collectUsagesInSolution(SLanguage searchLanguage, Solution solution, @NotNull IFinder.FindCallback callback) {
     if (solution.getUsedLanguages().contains(searchLanguage)) {
-      searchResults.add(new SearchResult<Solution>(solution, ModuleUsagesFinder.USED_BY));
-      collectUsagesInModels(searchLanguage, solution, searchResults);
+      callback.onUsageFound(new SearchResult<Solution>(solution, ModuleUsagesFinder.USED_BY));
+      collectUsagesInModels(searchLanguage, solution, callback);
     }
   }
 
-  /*package*/ void collectUsagesInLanguage(SLanguage searchedLanguage, Language language, SearchResults searchResults) {
+  private void collectUsagesInLanguage(SLanguage searchedLanguage, Language language, @NotNull IFinder.FindCallback callback) {
     if (language.getUsedLanguages().contains(searchedLanguage)) {
-      searchResults.add(new SearchResult<Language>(language, ModuleUsagesFinder.USED_BY));
-      collectUsagesInModels(searchedLanguage, language, searchResults);
+      callback.onUsageFound(new SearchResult<Language>(language, ModuleUsagesFinder.USED_BY));
+      collectUsagesInModels(searchedLanguage, language, callback);
     }
   }
 
-  /*package*/ void collectUsagesInGenerator(SLanguage searchedLanguage, Generator generator, SearchResults searchResults) {
+  private void collectUsagesInGenerator(SLanguage searchedLanguage, Generator generator, @NotNull IFinder.FindCallback callback) {
     if (generator.getUsedLanguages().contains(searchedLanguage)) {
-      searchResults.add(new SearchResult<Generator>(generator, ModuleUsagesFinder.USED_BY));
-      collectUsagesInModels(searchedLanguage, generator, searchResults);
+      callback.onUsageFound(new SearchResult<Generator>(generator, ModuleUsagesFinder.USED_BY));
+      collectUsagesInModels(searchedLanguage, generator, callback);
     }
   }
 
-  /*package*/ void collectUsagesInDevKit(SLanguage searchLanguage, DevKit devKit, SearchResults searchResults) {
+  private void collectUsagesInDevKit(SLanguage searchLanguage, DevKit devKit, @NotNull IFinder.FindCallback callback) {
     if (searchLanguage == null) {
       return;
     }
     for (Language l : devKit.getExportedLanguages()) {
       if (searchLanguage.equals(MetaAdapterByDeclaration.getLanguage(l))) {
-        searchResults.add(new SearchResult<DevKit>(devKit, EXPORTED_BY));
+        callback.onUsageFound(new SearchResult<DevKit>(devKit, EXPORTED_BY));
         break;
       }
     }
   }
 
-  /*package*/ void collectUsagesInModels(SLanguage searchedLanguage, SModule owner, SearchResults searchResults) {
+  private void collectUsagesInModels(SLanguage searchedLanguage, SModule owner, @NotNull IFinder.FindCallback callback) {
     for (SModel model : owner.getModels()) {
       // FIXME rest of the class relies on plain (no unwraped devkits and extended languages) imports, 
       // perhaps, shall revert to SModel.getUsedLanguages() here as well? 
       if (SModelOperations.getAllLanguageImports(model).contains(searchedLanguage)) {
-        searchResults.add(new SearchResult<SModel>(model, MODELS_WRITTEN_IN_LANGUAGE));
+        callback.onUsageFound(new SearchResult<SModel>(model, MODELS_WRITTEN_IN_LANGUAGE));
       }
     }
   }
-
 }

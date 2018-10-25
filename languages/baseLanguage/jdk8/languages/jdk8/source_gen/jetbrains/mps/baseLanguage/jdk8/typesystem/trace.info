@@ -25,57 +25,62 @@
       </scope>
     </file>
     <file name="check_DefaultMethodIsNotAbstract_NonTypesystemRule.java">
-      <node id="1557757632988409407" at="22,121,23,231" concept="6" />
-      <node id="1557757632988466920" at="25,7,26,60" concept="6" />
-      <node id="1557757632988466920" at="26,60,27,285" concept="6" />
-      <node id="2577576048764446555" at="28,9,29,161" concept="6" />
-      <node id="2577576048764446581" at="29,161,30,58" concept="3" />
-      <node id="2577576048764446555" at="30,58,31,71" concept="3" />
-      <node id="1557757632988482638" at="33,9,34,160" concept="6" />
-      <node id="2577576048764446605" at="34,160,35,58" concept="3" />
-      <node id="1557757632988482638" at="35,58,36,71" concept="3" />
-      <node id="1557757632988404966" at="41,50,42,165" concept="7" />
-      <node id="1557757632988404966" at="44,68,45,102" concept="7" />
-      <node id="1557757632988404966" at="47,30,48,17" concept="7" />
+      <node id="4452056467060858021" at="22,121,23,55" concept="6" />
+      <node id="4452056467060880823" at="24,204,25,13" concept="7" />
+      <node id="1557757632988409407" at="26,5,27,202" concept="6" />
+      <node id="1557757632988466920" at="29,7,30,60" concept="6" />
+      <node id="1557757632988466920" at="30,60,31,285" concept="6" />
+      <node id="2577576048764446555" at="32,9,33,161" concept="6" />
+      <node id="2577576048764446581" at="33,161,34,58" concept="3" />
+      <node id="2577576048764446555" at="34,58,35,71" concept="3" />
+      <node id="1557757632988482638" at="37,9,38,160" concept="6" />
+      <node id="2577576048764446605" at="38,160,39,58" concept="3" />
+      <node id="1557757632988482638" at="39,58,40,71" concept="3" />
+      <node id="1557757632988404966" at="45,50,46,165" concept="7" />
+      <node id="1557757632988404966" at="48,68,49,102" concept="7" />
+      <node id="1557757632988404966" at="51,30,52,17" concept="7" />
       <node id="1557757632988404966" at="20,0,22,0" concept="2" trace="check_DefaultMethodIsNotAbstract_NonTypesystemRule#()V" />
-      <node id="1557757632988404966" at="41,0,44,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1557757632988404966" at="44,0,47,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1557757632988404966" at="47,0,50,0" concept="5" trace="overrides#()Z" />
-      <node id="2577576048764446555" at="27,285,32,9" concept="1" />
-      <node id="1557757632988482638" at="32,9,37,9" concept="1" />
-      <node id="1557757632988466920" at="24,168,38,7" concept="1" />
-      <node id="1557757632988409537" at="23,231,39,5" concept="4" />
-      <node id="1557757632988404966" at="22,0,41,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="4452056467060858559" at="23,55,26,5" concept="4" />
+      <node id="1557757632988404966" at="45,0,48,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1557757632988404966" at="48,0,51,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1557757632988404966" at="51,0,54,0" concept="5" trace="overrides#()Z" />
+      <node id="2577576048764446555" at="31,285,36,9" concept="1" />
+      <node id="1557757632988482638" at="36,9,41,9" concept="1" />
+      <node id="1557757632988466920" at="28,168,42,7" concept="1" />
+      <node id="1557757632988409537" at="27,202,43,5" concept="4" />
+      <node id="1557757632988404966" at="22,0,45,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1557757632988404966" at="20,63,20,63" />
-      <scope id="1557757632988404966" at="41,50,42,165" />
-      <scope id="1557757632988404966" at="44,68,45,102" />
-      <scope id="1557757632988404966" at="47,30,48,17" />
+      <scope id="4452056467060858561" at="24,204,25,13" />
+      <scope id="1557757632988404966" at="45,50,46,165" />
+      <scope id="1557757632988404966" at="48,68,49,102" />
+      <scope id="1557757632988404966" at="51,30,52,17" />
       <scope id="1557757632988404966" at="20,0,22,0" />
-      <scope id="2577576048764446555" at="28,9,31,71">
+      <scope id="2577576048764446555" at="32,9,35,71">
         <var name="intentionProvider" id="2577576048764446555" />
       </scope>
-      <scope id="1557757632988482638" at="33,9,36,71">
+      <scope id="1557757632988482638" at="37,9,40,71">
         <var name="intentionProvider" id="1557757632988482638" />
       </scope>
-      <scope id="1557757632988404966" at="41,0,44,0" />
-      <scope id="1557757632988404966" at="44,0,47,0">
+      <scope id="1557757632988404966" at="45,0,48,0" />
+      <scope id="1557757632988404966" at="48,0,51,0">
         <var name="argument" id="1557757632988404966" />
       </scope>
-      <scope id="1557757632988404966" at="47,0,50,0" />
-      <scope id="1557757632988466920" at="25,7,37,9">
+      <scope id="1557757632988404966" at="51,0,54,0" />
+      <scope id="1557757632988466920" at="29,7,41,9">
         <var name="_reporter_2309309498" id="1557757632988466920" />
         <var name="errorTarget" id="1557757632988466920" />
       </scope>
-      <scope id="1557757632988409539" at="24,168,38,7" />
-      <scope id="1557757632988404967" at="22,121,39,5">
+      <scope id="1557757632988409539" at="28,168,42,7" />
+      <scope id="1557757632988404967" at="22,121,43,5">
         <var name="method" id="1557757632988409408" />
+        <var name="parent" id="4452056467060858022" />
       </scope>
-      <scope id="1557757632988404966" at="22,0,41,0">
+      <scope id="1557757632988404966" at="22,0,45,0">
         <var name="modifier" id="1557757632988404966" />
         <var name="status" id="1557757632988404966" />
         <var name="typeCheckingContext" id="1557757632988404966" />
       </scope>
-      <unit id="1557757632988404966" at="19,0,51,0" name="jetbrains.mps.baseLanguage.jdk8.typesystem.check_DefaultMethodIsNotAbstract_NonTypesystemRule" />
+      <unit id="1557757632988404966" at="19,0,55,0" name="jetbrains.mps.baseLanguage.jdk8.typesystem.check_DefaultMethodIsNotAbstract_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:0396c9ff-0a4d-4e54-9678-835fc58468cd(jetbrains.mps.baseLanguage.jdk8.typesystem)/1557757632988467212">

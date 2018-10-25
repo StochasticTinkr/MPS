@@ -17,6 +17,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * must become immutable
+ * 
+ * the type parameter T does not make much sense since we allow usages with different kinds to be in the same
+ * SearchResults container
+ */
 public class SearchResults<T> implements UsagesList {
   private final SearchedObjects<?> mySearchedObjects;
   private final List<SearchResult<T>> mySearchResults;
@@ -46,7 +52,7 @@ public class SearchResults<T> implements UsagesList {
     SearchedObjects searchedObjects1 = one.getSearchedObjects();
     SearchedObjects searchedObjects2 = another.getSearchedObjects();
     SearchedObjects searchedObjects = SearchedObjects.union(searchedObjects1, searchedObjects2);
-    List<SearchResult> searchResults = Stream.<SearchResult>concat(((List<SearchResult>) one.getSearchResults()).stream(), ((List<SearchResult>) another.getSearchResults()).stream()).collect(Collectors.<SearchResult>toList());
+    List<SearchResult> searchResults = Stream.<SearchResult>concat(((List<SearchResult>) one.getSearchResults2()).stream(), ((List<SearchResult>) another.getSearchResults2()).stream()).collect(Collectors.<SearchResult>toList());
     return new SearchResults(searchedObjects, searchResults);
   }
 
@@ -58,17 +64,27 @@ public class SearchResults<T> implements UsagesList {
   /**
    * @deprecated need to remove this since it exposes the internals too much.
    *             in my view the provided constructors of the class must be enough
+   * use #getSearchedObjects instead
    */
   @Deprecated
   public Set<Object> getSearchedNodes() {
     // mySearchNodes lists elements we looked for; elements our results 'derived' from. They are not necessarily of the same 
     // kind as our results, hence we use <?>, not <T> (I don't feel there's reason introduce <E> as it 
     // (a) limits where we can look; (b) complicates the code 
-    return (Set<Object>) mySearchedObjects.getElements();
+    return (Set<Object>) mySearchedObjects.getElements0();
   }
 
+  /**
+   * 
+   * @deprecated use #getSearchResults2
+   */
+  @Deprecated
   public List<SearchResult<T>> getSearchResults() {
     return mySearchResults;
+  }
+
+  public List<SearchResult<T>> getSearchResults2() {
+    return Collections.unmodifiableList(mySearchResults);
   }
 
   public Set<T> getResultObjects() {
@@ -79,10 +95,20 @@ public class SearchResults<T> implements UsagesList {
     return resultObjects;
   }
 
+  /**
+   * 
+   * @deprecated use #addSearchResult
+   */
+  @Deprecated
   public void add(@NotNull SearchResult<T> result) {
     mySearchResults.add(result);
   }
 
+  /**
+   * 
+   * @deprecated use #addSearchResults
+   */
+  @Deprecated
   public void addAll(@NotNull SearchResults<T> results) {
     mySearchResults.addAll(results.mySearchResults);
   }
@@ -118,6 +144,24 @@ public class SearchResults<T> implements UsagesList {
 
   @NotNull
   public SearchResults<T> removeDuplicates() {
-    return new SearchResults<T>(getSearchedNodes(), (List<SearchResult<T>>) mySearchResults.stream().distinct().collect(Collectors.toList()));
+    return new SearchResults<T>(getSearchedObjects(), (List<SearchResult<T>>) mySearchResults.stream().distinct().collect(Collectors.toList()));
+  }
+
+  @NotNull
+  public SearchResults<T> addSearchedObjects(SearchedObjects<?> objectsToAdd) {
+    SearchedObjects<?> searchedObjects = SearchedObjects.union((SearchedObjects) getSearchedObjects(), (SearchedObjects) objectsToAdd);
+    return new SearchResults<T>(searchedObjects, getSearchResults2());
+  }
+
+  @NotNull
+  public SearchResults<T> addSearchResult(@NotNull SearchResult<T> searchResult) {
+    List<SearchResult<T>> results = new ArrayList<SearchResult<T>>(getSearchResults2());
+    results.add(searchResult);
+    return new SearchResults<T>(getSearchedObjects(), results);
+  }
+
+  @NotNull
+  public SearchResults<T> addSearchResults(@NotNull SearchResults<T> searchResults) {
+    return SearchResults.union(this, searchResults);
   }
 }
