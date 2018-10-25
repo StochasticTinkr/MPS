@@ -8,10 +8,12 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConceptConstraints = createDescriptorForConceptConstraints();
@@ -176,6 +178,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         return null;
     }
+  }
+
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -607,7 +614,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)/1159285995602");
     b.version(2);
-    b.prop("description", 0x10dead60cf2L, "1159286099186");
+    b.property("description", 0x10dead60cf2L).type(PrimitiveTypeId.STRING).origin("1159286099186").done();
     b.aggregate("searchScopeFactory", 0x10dead647b3L).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x74999a95393c73aaL).optional(false).ordered(true).multiple(false).origin("1159286114227").done();
     b.aggregate("presentation", 0x36367902116b5f22L).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L).optional(true).ordered(true).multiple(false).origin("3906442776579628834").done();
     b.alias("default search scope");

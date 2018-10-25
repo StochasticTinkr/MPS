@@ -26,12 +26,16 @@ import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild;
 import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeParent;
 import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeRoot;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SType;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -190,5 +194,25 @@ public class ModelConstraints {
     SAbstractConcept cc = ConceptRegistryUtil.getConstraintsDescriptor(concept).getDefaultConcreteConcept();
     // FIXME see ConstraintsDescriptor#getDefaultConcreteConcept() which shall return SConcept right away
     return MetaAdapterByDeclaration.asInstanceConcept(cc);
+  }
+
+  // properties part
+
+  /**
+   * Validates both structure constraints ({@link SType#isInstanceOf(Object)})
+   * and language constraints (property validation functions in constraints aspect)
+   */
+  public static boolean validatePropertyValue(SNode node, SProperty property, Object propertyValue) {
+    final SDataType type = property.getType();
+    if (!type.isInstanceOf(propertyValue)) {
+      return false;
+    }
+    if (propertyValue == null && type.isInstanceOf("")) {
+      // existent property constraints relies to take empty string values instead of null as its argument
+      // this is inconsistent with all other smodel code that works with nullable strings
+      propertyValue = "";
+    }
+    PropertyConstraintsDescriptor pcd = ConceptRegistryUtil.getConstraintsDescriptor(node.getConcept()).getProperty(property);
+    return pcd != null && pcd.validateValue(node, propertyValue);
   }
 }

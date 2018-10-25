@@ -24,8 +24,8 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class TransactionalPropertyAccessor extends PropertyAccessor implements TransactionalModelAccessor {
-  private String myOldValue;
-  private String myUncommittedValue;
+  private Object myOldValue;
+  private Object myUncommittedValue;
   private boolean myHasValueToCommit = false;
 
   private EditorCell myEditorCell;
@@ -40,7 +40,7 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
   }
 
   @Override
-  public String doGetValue() {
+  public Object doGetValue() {
     if (myHasValueToCommit) {
       return myUncommittedValue;
     }
@@ -48,8 +48,8 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
   }
 
   @Override
-  public void doSetValue(String newText) {
-    myUncommittedValue = newText;
+  public void doSetValue(Object newValue) {
+    myUncommittedValue = newValue;
     myHasValueToCommit = true;
     myOldValue = super.doGetValue();
   }
@@ -70,7 +70,7 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
   @Override
   public void commit() {
     if (myHasValueToCommit) {
-      doCommit(myOldValue, myUncommittedValue);
+      doCommit(getProperty().getType().toString(myOldValue), getProperty().getType().toString(myUncommittedValue));
 
       getRepository().getModelAccess().executeCommand(new ChangePropertyEditorCommand(myEditorCell.getContext(), getGroupId()) {
         @Override

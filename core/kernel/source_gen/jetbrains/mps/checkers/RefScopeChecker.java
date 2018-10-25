@@ -71,12 +71,15 @@ public class RefScopeChecker extends AbstractNodeCheckerInEditor implements IChe
         if (scopeProvider != null) {
           ruleNode = scopeProvider.getSearchScopeValidatorNode();
         }
-        errorsCollector.addError(new OutOfScopeReferenceReportItem(ref, ruleNode, createResolveReferenceQuickfix(ref, repository, executeImmediately)));
+        errorsCollector.addError(new OutOfScopeReferenceReportItem(ref, ruleNode, createResolveReferenceQuickfix(ref, executeImmediately), createAddImportQuickfix(ref)));
       }
     }
   }
-  protected EditorQuickFix createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
+  protected EditorQuickFix createResolveReferenceQuickfix(SReference reference, boolean executeImmediately) {
     return new RefScopeChecker.ResolveReferenceQuickFix(reference, executeImmediately);
+  }
+  protected EditorQuickFix createAddImportQuickfix(SReference reference) {
+    return null;
   }
   protected static class ResolveReferenceQuickFix implements EditorQuickFix, NodeFeatureFlavouredItem {
     protected SReference myReference;

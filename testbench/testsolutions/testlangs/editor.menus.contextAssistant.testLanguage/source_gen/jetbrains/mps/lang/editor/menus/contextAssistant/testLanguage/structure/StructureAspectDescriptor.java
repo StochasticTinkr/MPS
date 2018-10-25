@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptChild = createDescriptorForChild();
@@ -90,6 +92,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         return null;
     }
+  }
+
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -201,8 +208,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:965ddf1f-d8c1-4f52-b6c1-9bbaf0a8af5b(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure)/379023083996575362");
     b.version(2);
-    b.prop("initiallyCollapsed", 0x5428f7c9b49f683L, "379023083996575363");
-    b.prop("secondAssistant", 0x5428f7c9b4b9f22L, "379023083996684066");
+    b.property("initiallyCollapsed", 0x5428f7c9b49f683L).type(PrimitiveTypeId.BOOLEAN).origin("379023083996575363").done();
+    b.property("secondAssistant", 0x5428f7c9b4b9f22L).type(PrimitiveTypeId.BOOLEAN).origin("379023083996684066").done();
     b.alias("parent collapsed");
     return b.create();
   }

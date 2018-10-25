@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptContainer = createDescriptorForContainer();
@@ -44,6 +46,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -71,7 +78,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("MultiTarget.structure.Member", 0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L);
     b.origin("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)/852022627621592973");
     b.version(2);
-    b.prop("value", 0xbd2fe10cbfadf8eL, "852022627621592974");
+    b.property("value", 0xbd2fe10cbfadf8eL).type(PrimitiveTypeId.INTEGER).origin("852022627621592974").done();
     b.alias("numeric value");
     return b.create();
   }
@@ -81,7 +88,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("MultiTarget.structure.Member", 0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L);
     b.origin("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)/852022627621592927");
     b.version(2);
-    b.prop("value", 0xbd2fe10cbfadf60L, "852022627621592928");
+    b.property("value", 0xbd2fe10cbfadf60L).type(PrimitiveTypeId.STRING).origin("852022627621592928").done();
     b.alias("string value");
     return b.create();
   }

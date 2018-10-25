@@ -4,12 +4,17 @@ package jetbrains.mps.baseLanguage.regexp.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptorImpl;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
@@ -75,6 +80,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSymbolClassRegexpAndPart = createDescriptorForSymbolClassRegexpAndPart();
   /*package*/ final ConceptDescriptor myConceptUnaryRegexp = createDescriptorForUnaryRegexp();
   /*package*/ final ConceptDescriptor myConceptUnicodeCharacterRegexp = createDescriptorForUnicodeCharacterRegexp();
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatypeFourHex = new ConstrainedStringDatatypeDescriptorImpl(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x118312777a4L, "FourHex", "r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1203415512996", "[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]");
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatype_CharacterSymbol = new ConstrainedStringDatatypeDescriptorImpl(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x418d25ccfeb5775aL, "_CharacterSymbol", "r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/4723473146558379866", "[^\\\\]");
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatype_StringRegexp = new ConstrainedStringDatatypeDescriptorImpl(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x67b772b1484362a6L, "_StringRegexp", "r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/7473568212391781030", "[^\\+?.\\[\\]]+");
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -217,6 +225,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myCSDatatypeFourHex, myCSDatatype_CharacterSymbol, myCSDatatype_StringRegexp);
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -227,7 +240,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", 0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1174904442594");
     b.version(2);
-    b.prop("n", 0x1118dc39835L, "1174904477749");
+    b.property("n", 0x1118dc39835L).type(PrimitiveTypeId.INTEGER).origin("1174904477749").done();
     b.alias("{n,}");
     return b.create();
   }
@@ -247,7 +260,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", 0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791aa602L);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1174557878319");
     b.version(2);
-    b.prop("character", 0x111791b0b58L, "1174557887320");
+    b.property("character", 0x111791b0b58L).type(MetaIdFactory.dataTypeId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x418d25ccfeb5775aL)).origin("1174557887320").done();
     b.alias("'");
     return b.create();
   }
@@ -304,8 +317,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", 0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1174904605806");
     b.version(2);
-    b.prop("n", 0x1118dc5bf75L, "1174904618869");
-    b.prop("m", 0x1118dc5ca73L, "1174904621683");
+    b.property("n", 0x1118dc5bf75L).type(PrimitiveTypeId.INTEGER).origin("1174904618869").done();
+    b.property("m", 0x1118dc5ca73L).type(PrimitiveTypeId.INTEGER).origin("1174904621683").done();
     b.alias("{n,m}");
     return b.create();
   }
@@ -315,9 +328,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression", 0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118ea37105L);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1174510540317");
     b.version(2);
-    b.prop("dotAll", 0x1119cedcf38L, "1175158902584");
-    b.prop("multiLine", 0x1119ceddfe3L, "1175158906851");
-    b.prop("caseInsensitive", 0x1119cf15020L, "1175159132192");
+    b.property("dotAll", 0x1119cedcf38L).type(PrimitiveTypeId.BOOLEAN).origin("1175158902584").done();
+    b.property("multiLine", 0x1119ceddfe3L).type(PrimitiveTypeId.BOOLEAN).origin("1175158906851").done();
+    b.property("caseInsensitive", 0x1119cf15020L).type(PrimitiveTypeId.BOOLEAN).origin("1175159132192").done();
     b.aggregate("regexp", 0x11176490e08L).target(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL).optional(false).ordered(true).multiple(false).origin("1174510571016").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("/regexp/");
@@ -340,8 +353,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", 0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791aa602L);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1174558301835");
     b.version(2);
-    b.prop("start", 0x1117921931aL, "1174558315290");
-    b.prop("end", 0x11179219cfeL, "1174558317822");
+    b.property("start", 0x1117921931aL).type(MetaIdFactory.dataTypeId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x418d25ccfeb5775aL)).origin("1174558315290").done();
+    b.property("end", 0x11179219cfeL).type(MetaIdFactory.dataTypeId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x418d25ccfeb5775aL)).origin("1174558317822").done();
     b.alias("-");
     return b.create();
   }
@@ -396,7 +409,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.regexp.structure.Replacement", 0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab952L);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/3796137614137538892");
     b.version(2);
-    b.prop("text", 0x34ae970c192b203bL, "3796137614137565243");
+    b.property("text", 0x34ae970c192b203bL).type(PrimitiveTypeId.STRING).origin("3796137614137565243").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLookRegexp() {
@@ -490,7 +503,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", 0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1174904166999");
     b.version(2);
-    b.prop("n", 0x1118dbf202dL, "1174904184877");
+    b.property("n", 0x1118dbf202dL).type(PrimitiveTypeId.INTEGER).origin("1174904184877").done();
     b.alias("{n}");
     return b.create();
   }
@@ -582,7 +595,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1174554386384");
     b.version(2);
-    b.prop("description", 0x11178e7fa54L, "1174554540628");
+    b.property("description", 0x11178e7fa54L).type(PrimitiveTypeId.STRING).origin("1174554540628").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPredefinedSymbolClassRegexp() {
@@ -634,7 +647,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1174483125581");
     b.version(2);
-    b.prop("description", 0x1117f5e9a48L, "1174662978120");
+    b.property("description", 0x1117f5e9a48L).type(PrimitiveTypeId.STRING).origin("1174662978120").done();
     b.aggregate("regexp", 0x11174a66599L).target(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL).optional(false).ordered(true).multiple(false).origin("1174483133849").done();
     return b.create();
   }
@@ -688,10 +701,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/3796137614137086346");
     b.version(2);
-    b.prop("dotAll", 0x34ae970c1924ee66L, "3796137614137159270");
-    b.prop("multiLine", 0x34ae970c1924ee67L, "3796137614137159271");
-    b.prop("caseInsensitive", 0x34ae970c1924ee68L, "3796137614137159272");
-    b.prop("globalReplace", 0x34ae970c1924ee69L, "3796137614137159273");
+    b.property("dotAll", 0x34ae970c1924ee66L).type(PrimitiveTypeId.BOOLEAN).origin("3796137614137159270").done();
+    b.property("multiLine", 0x34ae970c1924ee67L).type(PrimitiveTypeId.BOOLEAN).origin("3796137614137159271").done();
+    b.property("caseInsensitive", 0x34ae970c1924ee68L).type(PrimitiveTypeId.BOOLEAN).origin("3796137614137159272").done();
+    b.property("globalReplace", 0x34ae970c1924ee69L).type(PrimitiveTypeId.BOOLEAN).origin("3796137614137159273").done();
     b.aggregate("search", 0x34ae970c1924ee3bL).target(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL).optional(false).ordered(true).multiple(false).origin("3796137614137159227").done();
     b.aggregate("replacement", 0x34ae970c1923d18bL).target(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab952L).optional(true).ordered(true).multiple(true).origin("3796137614137086347").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
@@ -777,7 +790,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.regexp.structure.Regexp", 0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1174482753837");
     b.version(2);
-    b.prop("text", 0x11174a0b84fL, "1174482761807");
+    b.property("text", 0x11174a0b84fL).type(PrimitiveTypeId.STRING).origin("1174482761807").done();
     b.alias("'");
     return b.create();
   }
@@ -821,7 +834,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.regexp.structure.Regexp", 0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1203415418648");
     b.version(2);
-    b.prop("code", 0x1183127443bL, "1203415499835");
+    b.property("code", 0x1183127443bL).type(MetaIdFactory.dataTypeId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x118312777a4L)).origin("1203415499835").done();
     b.alias("\\uhhhh");
     return b.create();
   }

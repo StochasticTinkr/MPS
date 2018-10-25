@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
@@ -64,6 +67,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -91,10 +99,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:bd4b8fd9-079b-4b11-a733-9c0bea3600f2(jetbrains.mps.baseLanguage.constructors.structure)/526936149311701954");
     b.version(2);
-    b.prop("description", 0x2e373c3e4b60e00eL, "3330196687714050062");
-    b.prop("separator", 0x2e373c3e4b60e00fL, "3330196687714050063");
-    b.prop("leftParenthesis", 0x2e373c3e4b60e010L, "3330196687714050064");
-    b.prop("rightParenthesis", 0x2e373c3e4b60e011L, "3330196687714050065");
+    b.property("description", 0x2e373c3e4b60e00eL).type(PrimitiveTypeId.STRING).origin("3330196687714050062").done();
+    b.property("separator", 0x2e373c3e4b60e00fL).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d450137L)).origin("3330196687714050063").done();
+    b.property("leftParenthesis", 0x2e373c3e4b60e010L).type(PrimitiveTypeId.STRING).origin("3330196687714050064").done();
+    b.property("rightParenthesis", 0x2e373c3e4b60e011L).type(PrimitiveTypeId.STRING).origin("3330196687714050065").done();
     b.aggregate("returnType", 0x2e373c3e4b60e013L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL).optional(false).ordered(true).multiple(false).origin("3330196687714050067").done();
     b.aggregate("arguments", 0x4aa85872b7431817L).target(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6b7L).optional(false).ordered(true).multiple(false).origin("5379647004618201111").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);

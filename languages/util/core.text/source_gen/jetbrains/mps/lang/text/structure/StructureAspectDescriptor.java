@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptLine = createDescriptorForLine();
@@ -45,6 +47,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         return null;
     }
+  }
+
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -93,11 +100,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.text.structure.TextElement", 0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35ee7L);
     b.origin("r:59e90602-6655-4552-86eb-441a42a9a0e4(jetbrains.mps.lang.text.structure)/155656958578482948");
     b.version(2);
-    b.prop("value", 0x229012ddae35f05L, "155656958578482949");
-    b.prop("bold", 0x57d1fa7f2af1d47eL, "6328114375520539774");
-    b.prop("italic", 0x57d1fa7f2af1d481L, "6328114375520539777");
-    b.prop("underlined", 0x57d1fa7f2af1d494L, "6328114375520539796");
-    b.prop("url", 0x57d1fa7f2af1d485L, "6328114375520539781");
+    b.property("value", 0x229012ddae35f05L).type(PrimitiveTypeId.STRING).origin("155656958578482949").done();
+    b.property("bold", 0x57d1fa7f2af1d47eL).type(PrimitiveTypeId.BOOLEAN).origin("6328114375520539774").done();
+    b.property("italic", 0x57d1fa7f2af1d481L).type(PrimitiveTypeId.BOOLEAN).origin("6328114375520539777").done();
+    b.property("underlined", 0x57d1fa7f2af1d494L).type(PrimitiveTypeId.BOOLEAN).origin("6328114375520539796").done();
+    b.property("url", 0x57d1fa7f2af1d485L).type(PrimitiveTypeId.STRING).origin("6328114375520539781").done();
     return b.create();
   }
 }

@@ -257,6 +257,7 @@ public class Script {
     putProperty(ScriptProperties.GENERATE_PERFORMANCE_REPORT, reports);
   }
 
+
   private static File createTmpFile() {
     File result = null;
     try {

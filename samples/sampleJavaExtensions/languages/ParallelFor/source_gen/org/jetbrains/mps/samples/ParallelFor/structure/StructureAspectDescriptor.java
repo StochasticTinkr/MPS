@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
@@ -49,6 +51,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -69,7 +76,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L);
     b.origin("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/8923957828369477802");
     b.version(2);
-    b.prop("nowait", 0x74391c966b0f1304L, "8374756414438970116");
+    b.property("nowait", 0x74391c966b0f1304L).type(PrimitiveTypeId.BOOLEAN).origin("8374756414438970116").done();
     b.aggregate("loopVariable", 0x7bd8445d1e8810c2L).target(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770abL).optional(false).ordered(true).multiple(false).origin("8923957828369518786").done();
     b.aggregate("inputSequence", 0x7bd8445d1e888c7eL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("8923957828369550462").done();
     b.aggregate("threadPool", 0x40a8d217b6d881feL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("4659204813808501246").done();
@@ -91,7 +98,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/633195941006921788");
     b.version(2);
-    b.prop("numberOfThreads", 0x8c9905a80efd045L, "633195941006921797");
+    b.property("numberOfThreads", 0x8c9905a80efd045L).type(PrimitiveTypeId.INTEGER).origin("633195941006921797").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("thread pool");
     return b.create();

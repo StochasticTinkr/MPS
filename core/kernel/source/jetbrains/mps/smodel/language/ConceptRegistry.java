@@ -21,13 +21,16 @@ import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
@@ -112,6 +115,13 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     // If yes, handle gracefully or assert !=
     ConceptDescriptor cd = myStructureRegistry.getConceptDescriptor(id);
     return cd == null ? new IllegalConceptDescriptor(id) : cd;
+  }
+
+  @Nullable
+  public DataTypeDescriptor getDataTypeDescriptor(@NotNull SDataTypeId id) {
+    DataTypeDescriptor dtd = myStructureRegistry.getDataTypeDescriptor(id);
+    // TODO Introduce IllegalConstrainedStringDatatypeDescriptor in order to make this non-null
+    return dtd;
   }
 
   public ConceptPresentation getConceptProperties(@NotNull SAbstractConcept concept){

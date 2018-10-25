@@ -15,10 +15,16 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
 /**
  * Author: Sergey Dmitriev.
  * Time: Dec 5, 2003 1:24:11 PM
+ *
+ * @deprecated Use {@code jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes} instead
  */
+@Deprecated
+@ToRemove(version = 2018.3)
 public class Primitives {
   public static final String STRING_TYPE = "string";
   public static final String INTEGER_TYPE = "integer";

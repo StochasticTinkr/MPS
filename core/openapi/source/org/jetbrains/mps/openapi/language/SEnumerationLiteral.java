@@ -15,6 +15,9 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
 /**
  * Represents an option in an enumeration
  */
@@ -29,8 +32,14 @@ public interface SEnumerationLiteral {
    */
   String getPresentation();
 
-  /**
-   * The name of the option, must be unique within the enumeration.
-   */
+  @Nullable
   String getName();
+
+  /**
+   * Returns reference to the node, which declares this literal.
+   */
+  @Nullable
+  default SNodeReference getSourceNode() {
+    return null;
+  }
 }

@@ -4,14 +4,19 @@ package jetbrains.mps.execution.settings.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptorImpl;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptApplyTo_Function = createDescriptorForApplyTo_Function();
@@ -45,6 +50,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTemplateParameter = createDescriptorForTemplateParameter();
   /*package*/ final ConceptDescriptor myConceptTemplateParameterReference = createDescriptorForTemplateParameterReference();
   /*package*/ final ConceptDescriptor myConceptTemplatePersistentConfigurationType = createDescriptorForTemplatePersistentConfigurationType();
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatypeGridBagConstraintsKind = new ConstrainedStringDatatypeDescriptorImpl(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x25c8b83a7e4bb489L, "GridBagConstraintsKind", "r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)/2722628536111969417", "field|label|panel");
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -127,6 +133,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myCSDatatypeGridBagConstraintsKind);
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -188,8 +199,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
     b.origin("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)/9191251033651632153");
     b.version(2);
-    b.prop("since", 0x7f8de21e263f581bL, "9191251033651632155");
-    b.prop("comment", 0x7f8de21e263f581cL, "9191251033651632156");
+    b.property("since", 0x7f8de21e263f581bL).type(PrimitiveTypeId.STRING).origin("9191251033651632155").done();
+    b.property("comment", 0x7f8de21e263f581cL).type(PrimitiveTypeId.STRING).origin("9191251033651632156").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDispose_Function() {
@@ -266,7 +277,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)/2722628536111969416");
     b.version(2);
-    b.prop("constraintsKind", 0x25c8b83a7e4bb48aL, "2722628536111969418");
+    b.property("constraintsKind", 0x25c8b83a7e4bb48aL).type(MetaIdFactory.dataTypeId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x25c8b83a7e4bb489L)).origin("2722628536111969418").done();
     b.aggregate("order", 0x25c8b83a7e4e6246L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("2722628536112144966").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("grid bag constraints");

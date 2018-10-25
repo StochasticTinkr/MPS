@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptEntity = createDescriptorForEntity();
@@ -44,6 +46,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -62,7 +69,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.files.structure.Entity", 0x9e34de6fa11f4866L, 0xa52c3e2e545d3d90L, 0x3b29e241360a204eL);
     b.origin("r:7941fa10-49cc-4b8d-a644-440c04f37cf8(jetbrains.mps.samples.files.structure)/4263187291990270040");
     b.version(2);
-    b.prop("text", 0x3b29e241360a205aL, "4263187291990270042");
+    b.property("text", 0x3b29e241360a205aL).type(PrimitiveTypeId.STRING).origin("4263187291990270042").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForFile2() {
@@ -71,8 +78,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:7941fa10-49cc-4b8d-a644-440c04f37cf8(jetbrains.mps.samples.files.structure)/3668150981114258056");
     b.version(2);
-    b.prop("path", 0x32e7e3e1f3d0e28bL, "3668150981114258059");
-    b.prop("text", 0x32e7e3e1f3d0e28dL, "3668150981114258061");
+    b.property("path", 0x32e7e3e1f3d0e28bL).type(PrimitiveTypeId.STRING).origin("3668150981114258059").done();
+    b.property("text", 0x32e7e3e1f3d0e28dL).type(PrimitiveTypeId.STRING).origin("3668150981114258061").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForFolder() {

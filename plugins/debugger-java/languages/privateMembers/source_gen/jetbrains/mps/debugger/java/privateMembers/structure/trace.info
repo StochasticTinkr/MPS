@@ -15,7 +15,7 @@
       <unit at="10,0,34,0" name="jetbrains.mps.debugger.java.privateMembers.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,90,0" name="jetbrains.mps.debugger.java.privateMembers.structure.StructureAspectDescriptor" />
+      <unit at="17,0,96,0" name="jetbrains.mps.debugger.java.privateMembers.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/3374946611454212811">
@@ -36,21 +36,21 @@
       <node id="3374946611454212811" at="21,66,22,62" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="3374946611454212811" at="20,0,21,0" concept="1" trace="myConceptPrivateStaticMethodCall" />
-      <node id="3374946611454212811" at="42,57,43,48" concept="4" />
-      <node id="3374946611454212811" at="80,81,81,200" concept="3" />
-      <node id="3374946611454212811" at="81,200,82,34" concept="0" />
-      <node id="3374946611454212811" at="82,34,83,127" concept="0" />
-      <node id="3374946611454212811" at="83,127,84,129" concept="0" />
-      <node id="3374946611454212811" at="84,129,85,17" concept="0" />
-      <node id="3374946611454212811" at="85,17,86,49" concept="0" />
-      <node id="3374946611454212811" at="86,49,87,22" concept="4" />
-      <node id="3374946611454212811" at="80,0,89,0" concept="6" trace="createDescriptorForPrivateStaticMethodCall#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="3374946611454212811" at="42,57,43,48" />
-      <scope id="3374946611454212811" at="80,81,87,22">
+      <node id="3374946611454212811" at="21,0,22,0" concept="1" trace="myConceptPrivateStaticMethodCall" />
+      <node id="3374946611454212811" at="43,57,44,48" concept="4" />
+      <node id="3374946611454212811" at="86,81,87,200" concept="3" />
+      <node id="3374946611454212811" at="87,200,88,34" concept="0" />
+      <node id="3374946611454212811" at="88,34,89,127" concept="0" />
+      <node id="3374946611454212811" at="89,127,90,129" concept="0" />
+      <node id="3374946611454212811" at="90,129,91,17" concept="0" />
+      <node id="3374946611454212811" at="91,17,92,49" concept="0" />
+      <node id="3374946611454212811" at="92,49,93,22" concept="4" />
+      <node id="3374946611454212811" at="86,0,95,0" concept="6" trace="createDescriptorForPrivateStaticMethodCall#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="3374946611454212811" at="43,57,44,48" />
+      <scope id="3374946611454212811" at="86,81,93,22">
         <var name="b" id="3374946611454212811" />
       </scope>
-      <scope id="3374946611454212811" at="80,0,89,0" />
+      <scope id="3374946611454212811" at="86,0,95,0" />
     </file>
   </root>
   <root nodeRef="r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/4107550939057698505">
@@ -71,21 +71,21 @@
       <node id="4107550939057698505" at="20,73,21,66" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="4107550939057698505" at="19,0,20,0" concept="1" trace="myConceptPrivateStaticFieldReference" />
-      <node id="4107550939057698505" at="40,61,41,52" concept="4" />
-      <node id="4107550939057698505" at="71,85,72,204" concept="3" />
-      <node id="4107550939057698505" at="72,204,73,34" concept="0" />
-      <node id="4107550939057698505" at="73,34,74,131" concept="0" />
-      <node id="4107550939057698505" at="74,131,75,129" concept="0" />
-      <node id="4107550939057698505" at="75,129,76,17" concept="0" />
-      <node id="4107550939057698505" at="76,17,77,49" concept="0" />
-      <node id="4107550939057698505" at="77,49,78,22" concept="4" />
-      <node id="4107550939057698505" at="71,0,80,0" concept="6" trace="createDescriptorForPrivateStaticFieldReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="4107550939057698505" at="40,61,41,52" />
-      <scope id="4107550939057698505" at="71,85,78,22">
+      <node id="4107550939057698505" at="20,0,21,0" concept="1" trace="myConceptPrivateStaticFieldReference" />
+      <node id="4107550939057698505" at="41,61,42,52" concept="4" />
+      <node id="4107550939057698505" at="77,85,78,204" concept="3" />
+      <node id="4107550939057698505" at="78,204,79,34" concept="0" />
+      <node id="4107550939057698505" at="79,34,80,131" concept="0" />
+      <node id="4107550939057698505" at="80,131,81,129" concept="0" />
+      <node id="4107550939057698505" at="81,129,82,17" concept="0" />
+      <node id="4107550939057698505" at="82,17,83,49" concept="0" />
+      <node id="4107550939057698505" at="83,49,84,22" concept="4" />
+      <node id="4107550939057698505" at="77,0,86,0" concept="6" trace="createDescriptorForPrivateStaticFieldReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4107550939057698505" at="41,61,42,52" />
+      <scope id="4107550939057698505" at="77,85,84,22">
         <var name="b" id="4107550939057698505" />
       </scope>
-      <scope id="4107550939057698505" at="71,0,80,0" />
+      <scope id="4107550939057698505" at="77,0,86,0" />
     </file>
   </root>
   <root nodeRef="r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/6825241477451043705">
@@ -106,21 +106,21 @@
       <node id="6825241477451043705" at="18,116,19,69" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="6825241477451043705" at="17,0,18,0" concept="1" trace="myConceptPrivateFieldReferenceOperation" />
-      <node id="6825241477451043705" at="36,64,37,55" concept="4" />
-      <node id="6825241477451043705" at="53,88,54,207" concept="3" />
-      <node id="6825241477451043705" at="54,207,55,34" concept="0" />
-      <node id="6825241477451043705" at="55,34,56,135" concept="0" />
-      <node id="6825241477451043705" at="56,135,57,129" concept="0" />
-      <node id="6825241477451043705" at="57,129,58,17" concept="0" />
-      <node id="6825241477451043705" at="58,17,59,49" concept="0" />
-      <node id="6825241477451043705" at="59,49,60,22" concept="4" />
-      <node id="6825241477451043705" at="53,0,62,0" concept="6" trace="createDescriptorForPrivateFieldReferenceOperation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6825241477451043705" at="36,64,37,55" />
-      <scope id="6825241477451043705" at="53,88,60,22">
+      <node id="6825241477451043705" at="18,0,19,0" concept="1" trace="myConceptPrivateFieldReferenceOperation" />
+      <node id="6825241477451043705" at="37,64,38,55" concept="4" />
+      <node id="6825241477451043705" at="59,88,60,207" concept="3" />
+      <node id="6825241477451043705" at="60,207,61,34" concept="0" />
+      <node id="6825241477451043705" at="61,34,62,135" concept="0" />
+      <node id="6825241477451043705" at="62,135,63,129" concept="0" />
+      <node id="6825241477451043705" at="63,129,64,17" concept="0" />
+      <node id="6825241477451043705" at="64,17,65,49" concept="0" />
+      <node id="6825241477451043705" at="65,49,66,22" concept="4" />
+      <node id="6825241477451043705" at="59,0,68,0" concept="6" trace="createDescriptorForPrivateFieldReferenceOperation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6825241477451043705" at="37,64,38,55" />
+      <scope id="6825241477451043705" at="59,88,66,22">
         <var name="b" id="6825241477451043705" />
       </scope>
-      <scope id="6825241477451043705" at="53,0,62,0" />
+      <scope id="6825241477451043705" at="59,0,68,0" />
     </file>
   </root>
   <root nodeRef="r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/6825241477451051014">
@@ -141,21 +141,21 @@
       <node id="6825241477451051014" at="19,69,20,73" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="6825241477451051014" at="18,0,19,0" concept="1" trace="myConceptPrivateInstanceMethodCallOperation" />
-      <node id="6825241477451051014" at="38,68,39,59" concept="4" />
-      <node id="6825241477451051014" at="62,92,63,211" concept="3" />
-      <node id="6825241477451051014" at="63,211,64,34" concept="0" />
-      <node id="6825241477451051014" at="64,34,65,139" concept="0" />
-      <node id="6825241477451051014" at="65,139,66,129" concept="0" />
-      <node id="6825241477451051014" at="66,129,67,17" concept="0" />
-      <node id="6825241477451051014" at="67,17,68,49" concept="0" />
-      <node id="6825241477451051014" at="68,49,69,22" concept="4" />
-      <node id="6825241477451051014" at="62,0,71,0" concept="6" trace="createDescriptorForPrivateInstanceMethodCallOperation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6825241477451051014" at="38,68,39,59" />
-      <scope id="6825241477451051014" at="62,92,69,22">
+      <node id="6825241477451051014" at="19,0,20,0" concept="1" trace="myConceptPrivateInstanceMethodCallOperation" />
+      <node id="6825241477451051014" at="39,68,40,59" concept="4" />
+      <node id="6825241477451051014" at="68,92,69,211" concept="3" />
+      <node id="6825241477451051014" at="69,211,70,34" concept="0" />
+      <node id="6825241477451051014" at="70,34,71,139" concept="0" />
+      <node id="6825241477451051014" at="71,139,72,129" concept="0" />
+      <node id="6825241477451051014" at="72,129,73,17" concept="0" />
+      <node id="6825241477451051014" at="73,17,74,49" concept="0" />
+      <node id="6825241477451051014" at="74,49,75,22" concept="4" />
+      <node id="6825241477451051014" at="68,0,77,0" concept="6" trace="createDescriptorForPrivateInstanceMethodCallOperation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6825241477451051014" at="39,68,40,59" />
+      <scope id="6825241477451051014" at="68,92,75,22">
         <var name="b" id="6825241477451051014" />
       </scope>
-      <scope id="6825241477451051014" at="62,0,71,0" />
+      <scope id="6825241477451051014" at="68,0,77,0" />
     </file>
   </root>
 </debug-info>

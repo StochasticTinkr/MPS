@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
@@ -55,6 +57,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -72,7 +79,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.origin("r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)/4504141816188599482");
     b.version(2);
-    b.prop("muted", 0x776b1eb017f5bc5eL, "8605005254686522462");
+    b.property("muted", 0x776b1eb017f5bc5eL).type(PrimitiveTypeId.BOOLEAN).origin("8605005254686522462").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForJUnit3TestCaseRef() {
@@ -109,8 +116,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1d7a3L);
     b.origin("r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)/1280144168199506908");
     b.version(2);
-    b.prop("moduleFQName", 0x11c3fc56a6d1cbddL, "1280144168199506909");
-    b.prop("moduleID", 0x11c3fc56a6d1cbdeL, "1280144168199506910");
+    b.property("moduleFQName", 0x11c3fc56a6d1cbddL).type(PrimitiveTypeId.STRING).origin("1280144168199506909").done();
+    b.property("moduleID", 0x11c3fc56a6d1cbdeL).type(PrimitiveTypeId.STRING).origin("1280144168199506910").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     return b.create();
   }

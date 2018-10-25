@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptImageGenerator = createDescriptorForImageGenerator();
@@ -35,6 +38,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -45,10 +53,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:a7cbf330-9260-4b6d-8d53-3b6cb70171c0(jetbrains.mps.lang.editor.imageGen.structure)/2359976223559993484");
     b.version(2);
-    b.prop("fileName", 0x20c051df23a9da87L, "2359976223560030855");
-    b.prop("id", 0x2d0ad2528389ad26L, "3245637733309852966");
-    b.prop("imageFormat", 0x132781a3b11568fbL, "1380214350862969083");
-    b.prop("scale", 0x132781a3b11572e9L, "1380214350862971625");
+    b.property("fileName", 0x20c051df23a9da87L).type(PrimitiveTypeId.STRING).origin("2359976223560030855").done();
+    b.property("id", 0x2d0ad2528389ad26L).type(PrimitiveTypeId.STRING).origin("3245637733309852966").done();
+    b.property("imageFormat", 0x132781a3b11568fbL).type(PrimitiveTypeId.STRING).origin("1380214350862969083").done();
+    b.property("scale", 0x132781a3b11572e9L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10324579ea7L)).origin("1380214350862971625").done();
     b.associate("node", 0x2d0ad25283902716L).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(true).origin("3245637733310277398").done();
     b.alias("image");
     return b.create();

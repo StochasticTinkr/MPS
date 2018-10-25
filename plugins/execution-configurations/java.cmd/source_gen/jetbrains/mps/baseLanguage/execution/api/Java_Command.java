@@ -43,9 +43,6 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.util.SystemProperties;
 import java.util.LinkedList;
-import java.io.FileNotFoundException;
-import jetbrains.mps.util.FileUtil;
-import java.io.PrintWriter;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
@@ -293,17 +290,6 @@ public class Java_Command {
       return "\"" + result + "\"";
     }
     return result;
-  }
-  private static File writeToTmpFile(Iterable<String> text) throws FileNotFoundException {
-    File tmpFile = FileUtil.createTmpFile();
-    tmpFile.deleteOnExit();
-    PrintWriter writer = new PrintWriter(tmpFile);
-    for (String line : text) {
-      writer.println(line);
-    }
-    writer.flush();
-    writer.close();
-    return tmpFile;
   }
 
   public static IDebuggerConfiguration getDebuggerConfiguration() {

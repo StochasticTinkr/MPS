@@ -72,7 +72,6 @@ public final class MacrosFactory implements MacroHelper.Source {
         return new MacroHelperImpl(moduleFile, new ModuleMacros());
       }
     }
-
     return null;
   }
 

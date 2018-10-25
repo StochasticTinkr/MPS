@@ -78,7 +78,7 @@
       <node id="2269491314711071708" at="102,0,105,0" concept="9" trace="getIcon#(Z)Ljavax/swing/Icon;" />
       <node id="2269491314711071716" at="105,0,108,0" concept="9" trace="getText#()Ljava/lang/String;" />
       <node id="2269491314711635896" at="110,77,113,15" concept="8" />
-      <node id="2269491314711500562" at="120,52,123,13" concept="8" />
+      <node id="2269491314711500562" at="120,66,123,13" concept="8" />
       <node id="4474271214083125676" at="128,77,131,7" concept="17" />
       <node id="4474271214083125748" at="132,33,135,9" concept="7" />
       <node id="4474271214083125721" at="141,18,144,13" concept="7" />
@@ -87,7 +87,7 @@
       <node id="4474271214083125209" at="62,0,66,0" concept="9" trace="getSubGroupKind#()Ljetbrains/mps/debugger/api/ui/breakpoints/GroupedTree/GroupKind;" />
       <node id="4474271214083125523" at="70,48,74,9" concept="8" />
       <node id="4474271214083125719" at="141,16,145,11" concept="0" />
-      <node id="2269491314711616552" at="109,52,114,13" concept="8" />
+      <node id="2269491314711616552" at="109,66,114,13" concept="8" />
       <node id="2269491314711406341" at="119,51,124,11" concept="7" />
       <node id="4474271214083125332" at="22,0,29,0" concept="9" trace="createNodeData#(Z)Ljetbrains/mps/ide/platform/ui/CheckBoxNodeRenderer/NodeData;" />
       <node id="4474271214083125374" at="41,0,48,0" concept="9" trace="findNodeForData#(null)Ljetbrains/mps/ide/ui/tree/MPSTreeNode;" />
@@ -142,7 +142,7 @@
       </scope>
       <scope id="2269491314711071716" at="105,0,108,0" />
       <scope id="2269491314711616553" at="110,77,113,15" />
-      <scope id="2269491314711406343" at="120,52,123,13" />
+      <scope id="2269491314711406343" at="120,66,123,13" />
       <scope id="4474271214083125747" at="132,33,135,9" />
       <scope id="4474271214083125748" at="132,33,135,9">
         <var name="d" id="4474271214083125750" />
@@ -164,7 +164,7 @@
       <scope id="2269491314711406341" at="119,51,124,11">
         <var name="c" id="2269491314711406344" />
       </scope>
-      <scope id="2269491314711616551" at="109,52,115,39" />
+      <scope id="2269491314711616551" at="109,66,115,39" />
       <scope id="4474271214083125332" at="22,0,29,0">
         <var name="selected" id="4474271214083125335" />
       </scope>

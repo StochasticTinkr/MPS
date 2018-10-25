@@ -51,7 +51,7 @@ public class Switch_switch_toLinkRoleSLinkExp extends TemplateSwitchBase impleme
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_52_0(new SourceSubstituteMacroNodeContext(context, callMacro_gqxre5_b0a0a2a1h));
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_45_0(new SourceSubstituteMacroNodeContext(context, callMacro_gqxre5_b0a0a2a1h));
       TemplateContext context1;
       context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
@@ -68,7 +68,7 @@ public class Switch_switch_toLinkRoleSLinkExp extends TemplateSwitchBase impleme
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_52_1(new SourceSubstituteMacroNodeContext(context, callMacro_gqxre5_b0a0a2a1i));
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_45_1(new SourceSubstituteMacroNodeContext(context, callMacro_gqxre5_b0a0a2a1i));
       TemplateContext context1;
       context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
@@ -85,7 +85,7 @@ public class Switch_switch_toLinkRoleSLinkExp extends TemplateSwitchBase impleme
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_52_2(new SourceSubstituteMacroNodeContext(context, callMacro_gqxre5_b0a0a2a1j));
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_45_2(new SourceSubstituteMacroNodeContext(context, callMacro_gqxre5_b0a0a2a1j));
       TemplateContext context1;
       context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
@@ -102,7 +102,7 @@ public class Switch_switch_toLinkRoleSLinkExp extends TemplateSwitchBase impleme
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_52_3(new SourceSubstituteMacroNodeContext(context, copySrcMacro_gqxre5_b0a0d0b01));
+      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_45_3(new SourceSubstituteMacroNodeContext(context, copySrcMacro_gqxre5_b0a0d0b01));
       tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_gqxre5_b0a0d0b01, "tpl/r:00000000-0000-4000-0000-011c89590303/1205435561388", context);
       return tlist1;
     }

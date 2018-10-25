@@ -37,7 +37,7 @@ public class Template_reduce_ConceptMethodCallReflectiveCommon extends TemplateD
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    if (QueriesGenerated.ifMacro_Condition_84_0(new IfMacroContext(context, ifMacroRef_id0vkc_b0a0c0g))) {
+    if (QueriesGenerated.ifMacro_Condition_77_0(new IfMacroContext(context, ifMacroRef_id0vkc_b0a0c0g))) {
       final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
       try {
         TemplateContext context1 = context.subContext();
@@ -51,7 +51,7 @@ public class Template_reduce_ConceptMethodCallReflectiveCommon extends TemplateD
         }
         {
           Collection<SNode> tlist5 = null;
-          final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_84_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_id0vkc_b0a0c0c0b0c0g));
+          final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_77_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_id0vkc_b0a0c0c0b0c0g));
           tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_id0vkc_b0a0c0c0b0c0g, "tpl/r:00000000-0000-4000-0000-011c89590303/4598718932037655771", context1);
           for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
             tnode2.addChild(myAggregationLinks[1], child6);

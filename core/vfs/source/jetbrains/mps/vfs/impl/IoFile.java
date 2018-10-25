@@ -19,7 +19,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.path.UniPath;
 import jetbrains.mps.vfs.openapi.FileSystem;
-import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
@@ -35,7 +34,7 @@ import java.util.List;
  * TODO rewrite using {@link Path}.
  */
 @Immutable
-public class IoFile implements IFileEx {
+public class IoFile implements IFile {
   @NotNull private final File myFile; // always absolute
   private final static IoFileSystem ourFS = IoFileSystem.INSTANCE;
 

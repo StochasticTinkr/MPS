@@ -2,9 +2,9 @@
 <model ref="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
-    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -27,6 +27,7 @@
     <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="8xvf" ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
@@ -234,6 +235,9 @@
       <concept id="7342352913006985483" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Action" flags="ng" index="3eGOop">
         <child id="8612453216082699922" name="substituteHandler" index="3aKz83" />
       </concept>
+      <concept id="414384289274424754" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept" flags="ng" index="3ft5Ry">
+        <reference id="697754674827630451" name="concept" index="4PJHt" />
+      </concept>
       <concept id="414384289274418283" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Group" flags="ng" index="3ft6gV">
         <child id="540685334802084769" name="variables" index="23Ddnj" />
         <child id="414384289274424750" name="condition" index="3ft5RY" />
@@ -377,6 +381,7 @@
         <child id="7783170064869818501" name="referentPresentation" index="2N1_XE" />
       </concept>
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
+      <concept id="2722384699544370949" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Placeholder" flags="ng" index="3VyMlK" />
       <concept id="1176749715029" name="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" flags="in" index="3VJUX4" />
       <concept id="4307758654696938365" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_RefPresentation" flags="ig" index="1WAQ3h" />
       <concept id="4307758654696952957" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ReferencedNode" flags="ng" index="1WAUZh" />
@@ -10659,6 +10664,48 @@
       </node>
     </node>
     <node concept="382kZG" id="47y0FrqhJAa" role="lGtFl" />
+  </node>
+  <node concept="24kQdi" id="7aRQeqpPzUJ">
+    <property role="3GE5qa" value="SourceSet.Files" />
+    <ref role="1XX52x" to="3ior:7aRQeqpPz8i" resolve="BuildInputSingleFileAbsolutePath" />
+    <node concept="3EZMnI" id="7aRQeqpPzUL" role="2wV5jI">
+      <node concept="PMmxH" id="7aRQeqpPzUM" role="3EZMnx">
+        <property role="1cu_pB" value="0" />
+        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <node concept="OXEIz" id="7aRQeqpPzUN" role="P5bDN">
+          <node concept="UkePV" id="7aRQeqpPzUO" role="OY2wv">
+            <ref role="Ul1FP" to="3ior:4zlO3QT8mNE" resolve="BuildInputResourceSet" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0A7n" id="7aRQeqpPzV5" role="3EZMnx">
+        <ref role="1NtTu8" to="3ior:7aRQeqpPz8j" resolve="path" />
+      </node>
+      <node concept="l2Vlx" id="7aRQeqpPzUQ" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="3p36aQ" id="7aRQeqpP$Oc">
+    <property role="3GE5qa" value="SourceSet.Files" />
+    <ref role="aqKnT" to="3ior:7aRQeqpPz8i" resolve="BuildInputSingleFileAbsolutePath" />
+    <node concept="2VfDsV" id="7aRQeqpP$VI" role="3ft7WO" />
+    <node concept="3ft6gV" id="7aRQeqpP$VJ" role="3ft7WO">
+      <node concept="3ft5Ry" id="7aRQeqpP$VK" role="3ft5RZ">
+        <ref role="4PJHt" to="3ior:7aRQeqpPz8i" resolve="BuildInputSingleFileAbsolutePath" />
+      </node>
+      <node concept="3ft6gW" id="7aRQeqpP$VL" role="3ft5RY">
+        <node concept="3clFbS" id="7aRQeqpP$VM" role="2VODD2">
+          <node concept="3clFbF" id="7aRQeqpP$VN" role="3cqZAp">
+            <node concept="2YIFZM" id="7aRQeqpP$VO" role="3clFbG">
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <node concept="1rpKSd" id="7aRQeqpP$VP" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3VyMlK" id="7aRQeqpP$Oi" role="3ft7WO" />
   </node>
 </model>
 

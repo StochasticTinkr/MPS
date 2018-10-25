@@ -23,19 +23,20 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.smodel.presentation.IPropertyPresentationProvider;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,11 +65,9 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     }
 
     final PostfixGroup postfixGroup = new PostfixGroup(postfixes);
-    final PropertySupport propertySupport = PropertySupport.getPropertySupport(property);
     List<SubstituteAction> actions = new ArrayList<>(postfixes.size());
     for (final String postfix : postfixes) {
-      actions.add(new PostfixSubstituteAction(postfix, node, postfixGroup,
-          propertySupport, property.getName()));
+      actions.add(new PostfixSubstituteAction(postfix, node, postfixGroup, property));
     }
     return actions;
   }
@@ -162,17 +161,17 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
   }
 
   private static class PostfixSubstituteAction extends AbstractNodeSubstituteAction {
-    private final String myPostfix;
-    private final PostfixGroup myPostfixGroup;
-    private final PropertySupport myPropertySupport;
-    private final String myPropertyName;
+    @NotNull private final String myPostfix;
+    @NotNull private final PostfixGroup myPostfixGroup;
+    @NotNull private final SProperty myProperty;
+    @NotNull private final IPropertyPresentationProvider myPresentationProvider;
 
-    public PostfixSubstituteAction(String postfix, SNode node, PostfixGroup postfixGroup, PropertySupport propertySupport, String propertyName) {
+    public PostfixSubstituteAction(@NotNull String postfix, @NotNull SNode node, @NotNull PostfixGroup postfixGroup, @NotNull SProperty property) {
       super(null, postfix, node);
       myPostfix = postfix;
       myPostfixGroup = postfixGroup;
-      myPropertySupport = propertySupport;
-      myPropertyName = propertyName;
+      myProperty = property;
+      myPresentationProvider = IPropertyPresentationProvider.getPresentationProviderFor(property);
     }
 
     @Override
@@ -184,7 +183,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     public boolean canSubstitute(String pattern) {
       if (myPostfixGroup.canSubstitute(pattern, myPostfix)) {
         String text = myPostfixGroup.getMatchingText(pattern, myPostfix);
-        return myPropertySupport.canSetValue(getSourceNode(), myPropertyName, text);
+        return ModelConstraints.validatePropertyValue(getSourceNode(), myProperty, myPresentationProvider.fromPresentation(text));
       } else {
         return false;
       }
@@ -197,9 +196,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
 
     @Override
     public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-      String propertyName = myPropertyName;
-      assert propertyName != null;
-      SNodeAccessUtil.setProperty(getSourceNode(), propertyName, myPostfixGroup.getMatchingText(pattern, myPostfix));
+      SNodeAccessUtil.setProperty(getSourceNode(), myProperty, myPostfixGroup.getMatchingText(pattern, myPostfix));
 
       if (editorContext != null) {
         // put caret at the end of text, TODO use editorContext.select(getSourceNode(), myPropertyName, -1 /* end */);

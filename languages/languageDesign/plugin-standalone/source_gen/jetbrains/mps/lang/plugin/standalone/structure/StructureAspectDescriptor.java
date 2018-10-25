@@ -8,10 +8,12 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptApplicationPluginDeclaration = createDescriptorForApplicationPluginDeclaration();
@@ -68,6 +70,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         return null;
     }
+  }
+
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -194,7 +201,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, true);
     b.origin("r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)/7520713872864775836");
     b.version(2);
-    b.prop("needInitConfig", 0x5f3b7568ba8feb0fL, "6862207549896125199");
+    b.property("needInitConfig", 0x5f3b7568ba8feb0fL).type(PrimitiveTypeId.BOOLEAN).origin("6862207549896125199").done();
     return b.create();
   }
 }

@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 import java.util.List;
@@ -32,7 +31,7 @@ import java.util.Set;
  * IMPLEMENTATION NOTE: this is our internal interface and it's not part of generated language/structure aspect code. There's
  * ConceptDescriptorBuilder which creates appropriate instance, thus giving us freedom to modify this interface as we see fit.
  */
-public interface ConceptDescriptor {
+public interface ConceptDescriptor extends NamedElementDescriptor {
 
   //------------ concept props
 
@@ -53,9 +52,6 @@ public interface ConceptDescriptor {
   ConceptKind getConceptKind(); // since 3.0
 
   boolean isInterfaceConcept(); // since 3.0
-
-  @Nullable
-  SNodeReference getSourceNode();
 
   //------------ hierarchy
 

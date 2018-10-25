@@ -21,8 +21,6 @@ import com.intellij.compiler.instrumentation.InstrumenterClassWriter;
 import com.intellij.compiler.notNullVerification.NotNullVerifyingInstrumenter;
 import jetbrains.mps.make.CompilationErrorsHandler.ClassesErrorsTracker;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.RealClassPathItem;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.eclipse.jdt.internal.compiler.ClassFile;
@@ -39,6 +37,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -49,7 +48,7 @@ import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
 /**
  * Write compiled java classes to disk, also instruments the notnull annotations
- *
+ * <p>
  * fixme use bundle for this package
  * Created by apyshkin on 5/26/16.
  */
@@ -66,14 +65,14 @@ public class ClassFileWriter {
   private final Map<String, InputStream> myClassFile2Bytes = new LinkedHashMap<>();
 
   // fixme think about class path
-  public ClassFileWriter(ModulesContainer modulesContainer, CompositeTracer tracer, IClassPathItem classPath) {
+  public ClassFileWriter(ModulesContainer modulesContainer, CompositeTracer tracer, Collection<String> classPath) {
     myModulesContainer = modulesContainer;
     mySender = tracer.getSender();
     myFinder = createInstrumentationClassFinder(classPath);
   }
 
   @NotNull
-  private InstrumentationClassFinder createInstrumentationClassFinder(final IClassPathItem classPath) {
+  private InstrumentationClassFinder createInstrumentationClassFinder(final Collection<String> classPath) {
     final URL[] urlsArr = convertClassPathToUrls(classPath);
     return new InstrumentationClassFinder(urlsArr) { // fixme separate platform cp from usual cp
       @Override
@@ -84,11 +83,16 @@ public class ClassFileWriter {
   }
 
   @NotNull
-  private static URL[] convertClassPathToUrls(IClassPathItem classPath) {
+  private static URL[] convertClassPathToUrls(Collection<String> classPath) {
     final List<URL> urls = new ArrayList<>();
-    for (RealClassPathItem flatten : classPath.flatten()) {
+    for (String cp : classPath) {
+      assert !(cp.startsWith("file://") || cp.startsWith("jar://") || cp.startsWith("jrt://")) : "change the following code after migrating to URLPaths";
       try {
-        urls.add(new File(flatten.getPath()).toURI().toURL());
+        if (!cp.endsWith(".jar") && !cp.endsWith("/") && !cp.endsWith("\\")) {
+          cp = cp + "/";
+        }
+        urls.add(new URL("file://" + cp));
+        //urls.add(new URL(cp)); - enable this after migrating to URLs
       } catch (MalformedURLException e) {
         e.printStackTrace();
       }
@@ -196,7 +200,11 @@ public class ClassFileWriter {
     FailSafeClassReader reader = new FailSafeClassReader(classContent, 0, classContent.length);
     ClassWriter writer = new InstrumenterClassWriter(reader, ClassWriter.COMPUTE_FRAMES, myFinder);
     // To understand why last parameter was added - see commits 250331a & 490d4e6 in IDEA Community
-    NotNullVerifyingInstrumenter.processClassFile(reader, writer, new String[]{NotNull.class.getName()});
+    try {
+      NotNullVerifyingInstrumenter.processClassFile(reader, writer, new String[]{NotNull.class.getName()});
+    } catch (Throwable t) {
+      t.printStackTrace();
+    }
     return writer.toByteArray();
 //    return classContent;
   }

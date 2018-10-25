@@ -44,7 +44,7 @@ public interface SProperty extends SConceptFeature {
   /**
    * @return {@link SDataType} of the given SProperty
    */
-//  @NotNull
+  @NotNull
   SDataType getType();
 
   /**

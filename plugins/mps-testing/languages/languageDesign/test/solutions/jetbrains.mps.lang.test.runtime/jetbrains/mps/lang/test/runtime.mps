@@ -1924,6 +1924,22 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3clFbF" id="2JPaDJ5m78R" role="3cqZAp">
+                    <node concept="2OqwBi" id="2JPaDJ5m7ME" role="3clFbG">
+                      <node concept="37vLTw" id="2JPaDJ5m78P" role="2Oq$k0">
+                        <ref role="3cqZAo" node="ORe5oE9CMg" resolve="myEditor" />
+                      </node>
+                      <node concept="liA8E" id="2JPaDJ5m8gP" role="2OqNvi">
+                        <ref role="37wK5l" to="cj4x:~Editor.showNode(org.jetbrains.mps.openapi.model.SNode,boolean):void" resolve="showNode" />
+                        <node concept="37vLTw" id="2JPaDJ5m8Ke" role="37wK5m">
+                          <ref role="3cqZAo" node="hSPZLlg" resolve="myBefore" />
+                        </node>
+                        <node concept="3clFbT" id="2JPaDJ5m9N9" role="37wK5m">
+                          <property role="3clFbU" value="false" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="7Uk8E1kG1RD" role="3cqZAp">
                     <node concept="37vLTI" id="7Uk8E1kG1RF" role="3clFbG">
                       <node concept="2OqwBi" id="7Uk8E1kFS8s" role="37vLTx">

@@ -36,7 +36,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mc_Condition_63(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mc_Condition_56(new TemplateQueryContext(getMappingNode(), generator));
   }
   @Override
   public Collection<TemplateReductionRule> getReductionRules() {
@@ -83,7 +83,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist3 = null;
-              SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_63_0(new SourceSubstituteMacroNodeContext(context2, callMacro_szb33j_b0a0a1a2a1a1a2a1f));
+              SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_56_0(new SourceSubstituteMacroNodeContext(context2, callMacro_szb33j_b0a0a1a2a1a1a2a1f));
               TemplateContext context3;
               context3 = context2.subContext(null, callInputNode3);
               if (callInputNode3 != null) {
@@ -121,7 +121,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist3 = null;
-              SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_63_1(new SourceSubstituteMacroNodeContext(context2, callMacro_szb33j_b0a0a1a2a1a1a2a1g));
+              SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_56_1(new SourceSubstituteMacroNodeContext(context2, callMacro_szb33j_b0a0a1a2a1a1a2a1g));
               TemplateContext context3;
               context3 = context2.subContext(null, callInputNode3);
               if (callInputNode3 != null) {
@@ -135,7 +135,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
             {
               Collection<SNode> tlist5 = null;
               {
-                final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_63_2(new SourceSubstituteMacroNodeContext(context2, switchMacroRef_szb33j_b0a0a0a1a3a1a1a2a1g));
+                final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_56_2(new SourceSubstituteMacroNodeContext(context2, switchMacroRef_szb33j_b0a0a0a1a3a1a1a2a1g));
                 if (switchInput5 == null) {
                   tlist5 = Collections.emptyList();
                 } else {
@@ -185,7 +185,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist3 = null;
-              SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_63_3(new SourceSubstituteMacroNodeContext(context2, callMacro_szb33j_b0a0a1a2a1a1a2a1h));
+              SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_56_3(new SourceSubstituteMacroNodeContext(context2, callMacro_szb33j_b0a0a1a2a1a1a2a1h));
               TemplateContext context3;
               context3 = context2.subContext(null, callInputNode3);
               if (callInputNode3 != null) {
@@ -199,7 +199,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
             {
               Collection<SNode> tlist5 = null;
               {
-                final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_63_4(new SourceSubstituteMacroNodeContext(context2, switchMacroRef_szb33j_b0a0a0a1a3a1a1a2a1h));
+                final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_56_4(new SourceSubstituteMacroNodeContext(context2, switchMacroRef_szb33j_b0a0a0a1a3a1a1a2a1h));
                 if (switchInput5 == null) {
                   tlist5 = Collections.emptyList();
                 } else {
@@ -249,7 +249,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist3 = null;
-              SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_63_5(new SourceSubstituteMacroNodeContext(context2, callMacro_szb33j_b0a0a1a2a1a1a2a1i));
+              SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_56_5(new SourceSubstituteMacroNodeContext(context2, callMacro_szb33j_b0a0a1a2a1a1a2a1i));
               TemplateContext context3;
               context3 = context2.subContext(null, callInputNode3);
               if (callInputNode3 != null) {
@@ -263,7 +263,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
             {
               Collection<SNode> tlist5 = null;
               {
-                final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_63_6(new SourceSubstituteMacroNodeContext(context2, switchMacroRef_szb33j_b0a0a0a1a3a1a1a2a1i));
+                final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_56_6(new SourceSubstituteMacroNodeContext(context2, switchMacroRef_szb33j_b0a0a0a1a3a1a1a2a1i));
                 if (switchInput5 == null) {
                   tlist5 = Collections.emptyList();
                 } else {
@@ -304,7 +304,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.rule_Condition_63_0(new BaseMappingRuleContext(context, rule_szb33j_b0a0c0b9))) {
+      if (QueriesGenerated.rule_Condition_56_0(new BaseMappingRuleContext(context, rule_szb33j_b0a0c0b9))) {
         final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"));
         try {
           tnode2.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode2, PersistenceFacade.getInstance().createModelReference("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), PersistenceFacade.getInstance().createNodeId("6407023681583065611")));
@@ -312,7 +312,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
           TemplateContext context1 = context.subContext();
           {
             Collection<SNode> tlist3 = null;
-            final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_63_7(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0d0b0c0b9));
+            final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_56_7(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0d0b0c0b9));
             tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_szb33j_b0a0c0d0b0c0b9, "tpl/r:00000000-0000-4000-0000-011c89590303/2788452359612089275", context1);
             for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
               tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
@@ -321,7 +321,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
           }
           {
             Collection<SNode> tlist5 = null;
-            final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_63_8(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0e0b0c0b9));
+            final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_56_8(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0e0b0c0b9));
             tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_szb33j_b0a0c0e0b0c0b9, "tpl/r:00000000-0000-4000-0000-011c89590303/2788452359612089283", context1);
             for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
               tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child6);
@@ -339,7 +339,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
           TemplateContext context2 = context.subContext();
           {
             Collection<SNode> tlist8 = null;
-            final SNode copySrcInput8 = QueriesGenerated.sourceNodeQuery_63_9(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_szb33j_b0a0c0d0b0a2a1j));
+            final SNode copySrcInput8 = QueriesGenerated.sourceNodeQuery_56_9(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_szb33j_b0a0c0d0b0a2a1j));
             tlist8 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput8), copySrcMacro_szb33j_b0a0c0d0b0a2a1j, "tpl/r:00000000-0000-4000-0000-011c89590303/2788452359612089241", context2);
             for (SNode child9 : TemplateUtil.asNotNull(tlist8)) {
               tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child9);
@@ -348,7 +348,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
           }
           {
             Collection<SNode> tlist10 = null;
-            final SNode copySrcInput10 = QueriesGenerated.sourceNodeQuery_63_10(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_szb33j_b0a0c0e0b0a2a1j));
+            final SNode copySrcInput10 = QueriesGenerated.sourceNodeQuery_56_10(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_szb33j_b0a0c0e0b0a2a1j));
             tlist10 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput10), copySrcMacro_szb33j_b0a0c0e0b0a2a1j, "tpl/r:00000000-0000-4000-0000-011c89590303/2788452359612089249", context2);
             for (SNode child11 : TemplateUtil.asNotNull(tlist10)) {
               tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child11);
@@ -368,7 +368,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.rule_Condition_63_1(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_56_1(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -380,7 +380,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_63_11(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0d0c0c01));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_56_11(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0d0c0c01));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_szb33j_b0a0c0d0c0c01, "tpl/r:00000000-0000-4000-0000-011c89590303/6407023681583065564", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -389,7 +389,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         }
         {
           Collection<SNode> tlist4 = null;
-          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_63_12(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0e0c0c01));
+          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_56_12(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0e0c0c01));
           tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_szb33j_b0a0c0e0c0c01, "tpl/r:00000000-0000-4000-0000-011c89590303/6407023681583065566", context1);
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -398,7 +398,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         }
         {
           Collection<SNode> tlist6 = null;
-          final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_63_13(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0f0c0c01));
+          final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_56_13(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0f0c0c01));
           tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_szb33j_b0a0c0f0c0c01, "tpl/r:00000000-0000-4000-0000-011c89590303/6407023681583065568", context1);
           for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child7);
@@ -416,7 +416,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.rule_Condition_63_2(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_56_2(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -428,7 +428,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_63_14(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0d0c0c11));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_56_14(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0d0c0c11));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_szb33j_b0a0c0d0c0c11, "tpl/r:00000000-0000-4000-0000-011c89590303/6407023681583065594", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -437,7 +437,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         }
         {
           Collection<SNode> tlist4 = null;
-          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_63_15(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0e0c0c11));
+          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_56_15(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0e0c0c11));
           tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_szb33j_b0a0c0e0c0c11, "tpl/r:00000000-0000-4000-0000-011c89590303/6407023681583065596", context1);
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -446,7 +446,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         }
         {
           Collection<SNode> tlist6 = null;
-          final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_63_16(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0f0c0c11));
+          final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_56_16(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0f0c0c11));
           tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_szb33j_b0a0c0f0c0c11, "tpl/r:00000000-0000-4000-0000-011c89590303/6407023681583065598", context1);
           for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child7);
@@ -464,7 +464,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.rule_Condition_63_3(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_56_3(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -476,7 +476,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_63_17(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0d0c0c21));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_56_17(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0d0c0c21));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_szb33j_b0a0c0d0c0c21, "tpl/r:00000000-0000-4000-0000-011c89590303/6235208612539804485", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -485,7 +485,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         }
         {
           Collection<SNode> tlist4 = null;
-          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_63_18(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0e0c0c21));
+          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_56_18(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0e0c0c21));
           tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_szb33j_b0a0c0e0c0c21, "tpl/r:00000000-0000-4000-0000-011c89590303/6235208612539804493", context1);
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -494,7 +494,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         }
         {
           Collection<SNode> tlist6 = null;
-          SNode callInputNode6 = QueriesGenerated.sourceNodeQuery_63_19(new SourceSubstituteMacroNodeContext(context1, callMacro_szb33j_b0a0a1a5a2a2m));
+          SNode callInputNode6 = QueriesGenerated.sourceNodeQuery_56_19(new SourceSubstituteMacroNodeContext(context1, callMacro_szb33j_b0a0a1a5a2a2m));
           TemplateContext context2;
           context2 = context1.subContext(null, callInputNode6);
           if (callInputNode6 != null) {
@@ -516,7 +516,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.rule_Condition_63_4(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_56_4(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -528,7 +528,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_63_20(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0d0c0c31));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_56_20(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0d0c0c31));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_szb33j_b0a0c0d0c0c31, "tpl/r:00000000-0000-4000-0000-011c89590303/3878331446150797048", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -537,7 +537,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         }
         {
           Collection<SNode> tlist4 = null;
-          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_63_21(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0e0c0c31));
+          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_56_21(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_szb33j_b0a0c0e0c0c31));
           tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_szb33j_b0a0c0e0c0c31, "tpl/r:00000000-0000-4000-0000-011c89590303/3878331446150797056", context1);
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -546,7 +546,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
         }
         {
           Collection<SNode> tlist6 = null;
-          SNode callInputNode6 = QueriesGenerated.sourceNodeQuery_63_22(new SourceSubstituteMacroNodeContext(context1, callMacro_szb33j_b0a0a1a5a2a2n));
+          SNode callInputNode6 = QueriesGenerated.sourceNodeQuery_56_22(new SourceSubstituteMacroNodeContext(context1, callMacro_szb33j_b0a0a1a5a2a2n));
           TemplateContext context2;
           context2 = context1.subContext(null, callInputNode6);
           if (callInputNode6 != null) {

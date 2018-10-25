@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Collections;
+import java.util.Enumeration;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.tree.TreePath;
 import java.util.Objects;
@@ -109,7 +110,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       DiffModelTree.TreeNode parentNode = modelNode;
       if (isNotEmptyString(rtn.myVirtualPackage)) {
         for (final String sub : Sequence.fromArray(rtn.myVirtualPackage.split("\\."))) {
-          Iterable<DiffModelTree.TreeNode> children = Collections.list(parentNode.children());
+          Iterable<DiffModelTree.TreeNode> children = Collections.list(((Enumeration) parentNode.children()));
           DiffModelTree.TreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<DiffModelTree.TreeNode>() {
             public boolean accept(DiffModelTree.TreeNode c) {
               return c instanceof DiffModelTree.PackageTreeNode && sub.equals(c.getText());

@@ -1233,11 +1233,12 @@
                         <node concept="3uibUv" id="3u6SZi0yBNb" role="1tU5fm">
                           <ref role="3uigEE" to="guwi:~InputStream" resolve="InputStream" />
                         </node>
-                        <node concept="2YIFZM" id="3u6SZi0yBNe" role="33vP2m">
-                          <ref role="37wK5l" to="18ew:~URLUtil.openStream(java.net.URL):java.io.InputStream" resolve="openStream" />
-                          <ref role="1Pybhc" to="18ew:~URLUtil" resolve="URLUtil" />
-                          <node concept="37vLTw" id="3u6SZi0yBNf" role="37wK5m">
+                        <node concept="2OqwBi" id="5fPzS2nS3yI" role="33vP2m">
+                          <node concept="37vLTw" id="5fPzS2nS35s" role="2Oq$k0">
                             <ref role="3cqZAo" node="3u6SZi0yBnp" resolve="url" />
+                          </node>
+                          <node concept="liA8E" id="5fPzS2nS7h9" role="2OqNvi">
+                            <ref role="37wK5l" to="zf81:~URL.openStream():java.io.InputStream" resolve="openStream" />
                           </node>
                         </node>
                       </node>

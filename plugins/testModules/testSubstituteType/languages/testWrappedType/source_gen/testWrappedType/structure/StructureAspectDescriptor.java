@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
@@ -40,6 +42,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -50,7 +57,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("testWrappedType.structure.WrapperType", 0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL);
     b.origin("r:58c474dc-af49-44e4-a2d1-3b8edbb18985(testWrappedType.structure)/1252378774017430315");
     b.version(2);
-    b.prop("unit", 0x116157dc0d8c532cL, "1252378774017430316");
+    b.property("unit", 0x116157dc0d8c532cL).type(PrimitiveTypeId.STRING).origin("1252378774017430316").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     return b.create();
   }

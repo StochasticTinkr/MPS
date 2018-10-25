@@ -58,6 +58,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class GeneratorPrioritiesTree {
 
@@ -65,7 +66,8 @@ public class GeneratorPrioritiesTree {
   private CheckboxTree myCheckboxTree;
 
   // FIXME isRight = !isLeft, depGenerators used only when isRight - bloody sh!t. Why not initTree is package local, so that caller could configure this Tree(?!) as needed?
-  public GeneratorPrioritiesTree(@NotNull final SRepository repo, @NotNull final Generator generator, @NotNull MappingConfig_AbstractRef mapping, boolean isLeft, final Set<SModuleReference> depGenerators) {
+  public GeneratorPrioritiesTree(@NotNull final SRepository repo, @NotNull final Generator generator, @NotNull MappingConfig_AbstractRef mapping,
+                                 boolean isLeft, final Set<SModuleReference> depGenerators) {
     myRootNode = new CheckedTreeNodeEx(null, "Generators", Nodes.Generator);
     final boolean isRight = !isLeft;
 
@@ -74,8 +76,9 @@ public class GeneratorPrioritiesTree {
       if (isRight) {
         for (SModuleReference ref : depGenerators) {
           SModule gen = ref.resolve(repo);
-          if (gen instanceof Generator)
+          if (gen instanceof Generator) {
             initTree((Generator) gen);
+          }
         }
       }
     });
@@ -85,9 +88,15 @@ public class GeneratorPrioritiesTree {
     myCheckboxTree = new CheckboxTree(getCheckboxTreeCellRenderer(), myRootNode, new CheckPolicy(true, true, false, true));
     myCheckboxTree.addFocusListener(new FocusListener() {
       @Override
-      public void focusGained(FocusEvent e) { if(myCheckboxTree.getSelectionCount() == 0) myCheckboxTree.setSelectionRow(0); }
+      public void focusGained(FocusEvent e) {
+        if (myCheckboxTree.getSelectionCount() == 0) {
+          myCheckboxTree.setSelectionRow(0);
+        }
+      }
+
       @Override
-      public void focusLost(FocusEvent e) {}
+      public void focusLost(FocusEvent e) {
+      }
     });
     myCheckboxTree.setRootVisible(isRight);
     expandAllRows(myCheckboxTree);
@@ -268,13 +277,11 @@ public class GeneratorPrioritiesTree {
   }
 
   private static boolean setCheckedUnder(CheckedTreeNodeEx root) {
-    boolean childChecks = false;
-    Enumeration<CheckedTreeNodeEx> children = root.children();
-    while (children.hasMoreElements()) {
-      CheckedTreeNodeEx child = children.nextElement();
-      childChecks = childChecks | setCheckedUnder(child);
-    }
-    boolean checksUnder = root.isChecked() || childChecks;
+    AtomicBoolean childChecks = new AtomicBoolean(false);
+    Collections.list(root.children()).forEach(child -> {
+      childChecks.set(childChecks.get() | setCheckedUnder(((CheckedTreeNodeEx) child)));
+    });
+    boolean checksUnder = root.isChecked() || childChecks.get();
     root.setChecksUnder(checksUnder);
     return checksUnder;
   }
@@ -290,6 +297,7 @@ public class GeneratorPrioritiesTree {
   public static CheckboxTreeCellRenderer getCheckboxTreeCellRenderer() {
     return getCheckboxTreeCellRenderer(true);
   }
+
   public static CheckboxTreeCellRenderer getCheckboxTreeCellRenderer(final boolean withCheckboxes) {
     return new CheckboxTreeCellRenderer() {
       @Override
@@ -307,31 +315,32 @@ public class GeneratorPrioritiesTree {
           checkBox.setSelected(checkedTreeNode.isChecked());
           checkBox.setVisible(withCheckboxes);
 
-          if(checkedTreeNode.equals(tree.getModel().getRoot())) {
-            if(!GeneratorPrioritiesTree.setCheckedUnder(checkedTreeNode))
+          if (checkedTreeNode.equals(tree.getModel().getRoot())) {
+            if (!GeneratorPrioritiesTree.setCheckedUnder(checkedTreeNode)) {
               tree.setBorder(new ColoredSideBorder(JBColor.RED, JBColor.RED, JBColor.RED, JBColor.RED, 1));
-            else
+            } else {
               tree.setBorder(BorderFactory.createEmptyBorder());
+            }
           }
         }
       }
     };
   }
 
-  public static final void expandAllRows(JTree tree) {
+  public static void expandAllRows(JTree tree) {
     for (int i = 0; i < tree.getRowCount(); i++) {
       tree.expandRow(i);
     }
   }
 
   private static void checkChildren(CheckboxTree checkboxTree) {
-    if(checkboxTree.getModel().getRoot() instanceof CheckedTreeNodeEx) {
+    if (checkboxTree.getModel().getRoot() instanceof CheckedTreeNodeEx) {
       Queue<CheckedTreeNodeEx> treeNodes = new LinkedList<>();
       treeNodes.add((CheckedTreeNodeEx) checkboxTree.getModel().getRoot());
       while (!treeNodes.isEmpty()) {
         CheckedTreeNodeEx treeNode = treeNodes.poll();
-        treeNodes.addAll(Collections.list(treeNode.children()));
-        if(treeNode.getParent() instanceof CheckedTreeNodeEx && ((CheckedTreeNodeEx)treeNode.getParent()).isChecked()) {
+        treeNodes.addAll((List)Collections.list(treeNode.children()));
+        if (treeNode.getParent() instanceof CheckedTreeNodeEx && ((CheckedTreeNodeEx) treeNode.getParent()).isChecked()) {
           treeNode.setChecked(true);
         }
       }

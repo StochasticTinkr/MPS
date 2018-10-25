@@ -151,7 +151,6 @@
       <concept id="6911370362349121511" name="jetbrains.mps.lang.smodel.structure.ConceptId" flags="nn" index="2x4n5u">
         <property id="6911370362349122519" name="conceptName" index="2x4mPI" />
         <property id="6911370362349121516" name="conceptId" index="2x4n5l" />
-        <property id="6911370362349133804" name="isInterface" index="2x4o5l" />
         <child id="6911370362349121514" name="languageIdentity" index="2x4n5j" />
       </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
@@ -1393,7 +1392,6 @@
             <property role="2$VJBR" value="1237483235720" />
             <node concept="2x4n5u" id="7_" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="7A" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1414,7 +1412,6 @@
             <property role="2$VJBR" value="1237483307729" />
             <node concept="2x4n5u" id="7E" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="7F" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1435,7 +1432,6 @@
             <property role="2$VJBR" value="1234275154402" />
             <node concept="2x4n5u" id="7J" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="7K" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1456,7 +1452,6 @@
             <property role="2$VJBR" value="1237483338873" />
             <node concept="2x4n5u" id="7O" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="7P" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1477,7 +1472,6 @@
             <property role="2$VJBR" value="1237483407146" />
             <node concept="2x4n5u" id="7T" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="7U" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1498,7 +1492,6 @@
             <property role="2$VJBR" value="1237483202466" />
             <node concept="2x4n5u" id="7Y" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="7Z" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1519,7 +1512,6 @@
             <property role="2$VJBR" value="1237483413134" />
             <node concept="2x4n5u" id="83" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="84" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1540,7 +1532,6 @@
             <property role="2$VJBR" value="1237483419497" />
             <node concept="2x4n5u" id="88" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="89" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1561,7 +1552,6 @@
             <property role="2$VJBR" value="1237483518260" />
             <node concept="2x4n5u" id="8d" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="8e" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1582,7 +1572,6 @@
             <property role="2$VJBR" value="1237483382474" />
             <node concept="2x4n5u" id="8i" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="8j" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1603,7 +1592,6 @@
             <property role="2$VJBR" value="1237483388947" />
             <node concept="2x4n5u" id="8n" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="8o" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1624,7 +1612,6 @@
             <property role="2$VJBR" value="1234274918427" />
             <node concept="2x4n5u" id="8s" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="8t" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1645,7 +1632,6 @@
             <property role="2$VJBR" value="1234274822179" />
             <node concept="2x4n5u" id="8x" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="8y" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1666,7 +1652,6 @@
             <property role="2$VJBR" value="1237297500008" />
             <node concept="2x4n5u" id="8A" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="8B" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1687,7 +1672,6 @@
             <property role="2$VJBR" value="1237297544949" />
             <node concept="2x4n5u" id="8F" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="8G" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -1708,7 +1692,6 @@
             <property role="2$VJBR" value="1237297313040" />
             <node concept="2x4n5u" id="8K" role="3iCydw">
               <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fe8cg7jp" />
               <node concept="2V$Bhx" id="8L" role="2x4n5j">
                 <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />

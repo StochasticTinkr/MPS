@@ -2394,7 +2394,7 @@
   </node>
   <node concept="Az7Fb" id="htXhg4R">
     <property role="TrG5h" value="_CharConstant_String" />
-    <property role="FLfZY" value="[^\\\\'&quot;]|(\\\\([btnfr\&quot;'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))" />
+    <property role="FLfZY" value="[^\\\\']|(\\\\([btnfr\&quot;'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))" />
   </node>
   <node concept="PlHQZ" id="huG8N3O">
     <property role="TrG5h" value="TypeDerivable" />
@@ -4464,6 +4464,14 @@
       <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
     </node>
   </node>
+  <node concept="1TIwiD" id="5fcjBnBAGcU">
+    <property role="EcuMT" value="6038287468700812090" />
+    <property role="TrG5h" value="ValueRef" />
+    <property role="34LRSv" value="value" />
+    <property role="3GE5qa" value="ext.references" />
+    <property role="R4oN_" value="value to assign" />
+    <ref role="1TJDcQ" node="fz3vP1J" resolve="Expression" />
+  </node>
   <node concept="1TIwiD" id="5Z1N4vbhybE">
     <property role="EcuMT" value="6900020712833426154" />
     <property role="3GE5qa" value="ext.references" />
@@ -4478,14 +4486,6 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="5fcjBnBAGcU">
-    <property role="EcuMT" value="6038287468700812090" />
-    <property role="TrG5h" value="ValueRef" />
-    <property role="34LRSv" value="value" />
-    <property role="3GE5qa" value="ext.references" />
-    <property role="R4oN_" value="value to assign" />
-    <ref role="1TJDcQ" node="fz3vP1J" resolve="Expression" />
   </node>
 </model>
 

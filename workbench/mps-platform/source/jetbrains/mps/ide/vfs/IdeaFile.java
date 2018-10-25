@@ -32,7 +32,6 @@ import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.path.UniPath;
-import jetbrains.mps.vfs.ex.IFileEx;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -59,7 +58,7 @@ import java.util.List;
  * TODO rewrite using {@link Path}; rewrite {@link #getChildren(),#getDescendant(String)} behavior in the case of jar system
  */
 @Immutable
-public class IdeaFile implements IFileEx, CachingFile {
+public class IdeaFile implements IFile, CachingFile {
   private final static Logger LOG = LogManager.getLogger(IdeaFile.class);
 
   private final IdeaFileSystem myFileSystem;

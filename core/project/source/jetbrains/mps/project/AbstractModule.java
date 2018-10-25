@@ -72,6 +72,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -298,6 +299,49 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public void save() {
     assertCanChange();
+    final ModuleDescriptor moduleDescriptor = getModuleDescriptor();
+    // ensure ModelRoot has a chance to serialize their changes, if any
+    // For now, we don't account for added/removed model roots as there's no API other than ModuleDescriptor, hence we only try to change matching MR-MRD pairs
+    if (moduleDescriptor != null) {
+      LinkedList<ModelRootDescriptor> descriptors = new LinkedList<>(moduleDescriptor.getModelRootDescriptors());
+      // I can't change MRD.memento, therefore need to replace MRD instance with new memento, next collection is to ensure root ordering persists.
+      ArrayList<ModelRootDescriptor> newDescriptors = new ArrayList<>(moduleDescriptor.getModelRootDescriptors().size());
+      for (ModelRoot mr : mySModelRoots) {
+        ModelRootDescriptor mrd = null;
+        // here we assume order of descriptors correspond to the order of loaded MR, and new descriptors, if any, are at the end of
+        // getModelRootDescriptors collection
+        for (Iterator<ModelRootDescriptor> it = descriptors.iterator(); it.hasNext(); ) {
+          ModelRootDescriptor next = it.next();
+          if (mr.getType().equals(next.getType())) {
+            mrd = next;
+            // in case there's more than 1 descriptor and MR with the same type, don't modify the same descriptor again and again with different MRs
+            it.remove();
+            break;
+          }
+        }
+        if (mrd == null) {
+          // now there's no way to add new MR other than by new MRD in MD, therefore mrd == null here means
+          // we likely got MR instance for removed root. Once there's a mechanism to add/remove MRs without need to deal with ModuleDescriptor,
+          // then shall uncomment the code below and review the code above to account for MD with stale MRDs.
+//          mrd = new ModelRootDescriptor(mr.getType(), new MementoImpl());
+//          // we've got a copy of original set, therefore can modify original value here
+//          moduleDescriptor.getModelRootDescriptors().add(mrd);
+          continue;
+        }
+        MementoImpl clearMemento = new MementoImpl();
+        mr.save(clearMemento);
+        if (!clearMemento.equals(mrd.getMemento())) {
+          // root settings changed
+          newDescriptors.add(new ModelRootDescriptor(mrd.getType(), clearMemento));
+        } else {
+          // just reuse existing instance
+          newDescriptors.add(mrd);
+        }
+      }
+      newDescriptors.addAll(descriptors);
+      moduleDescriptor.getModelRootDescriptors().clear();
+      moduleDescriptor.getModelRootDescriptors().addAll(newDescriptors);
+    }
     myChanged = false;
   }
 

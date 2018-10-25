@@ -22,26 +22,19 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.core.xml.structure.LanguageConceptSwitch" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptKind" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.DataTypeDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StaticScope" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.core.xml.structure.xmlEncoding_PropertySupport">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.core.xml.structure.xmlVersionString_PropertySupport">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.core.xml.structure.yesNoString_PropertySupport">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
 </dependenciesRoot>
 

@@ -304,7 +304,6 @@
       <concept id="6911370362349121511" name="jetbrains.mps.lang.smodel.structure.ConceptId" flags="nn" index="2x4n5u">
         <property id="6911370362349122519" name="conceptName" index="2x4mPI" />
         <property id="6911370362349121516" name="conceptId" index="2x4n5l" />
-        <property id="6911370362349133804" name="isInterface" index="2x4o5l" />
         <child id="6911370362349121514" name="languageIdentity" index="2x4n5j" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
@@ -10697,7 +10696,6 @@
             <property role="2$VJBR" value="1229065756974292339" />
             <node concept="2x4n5u" id="YZ" role="3iCydw">
               <property role="2x4mPI" value="IconResourceExpression" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="19fgrdbcyblum" />
               <node concept="2V$Bhx" id="Z0" role="2x4n5j">
                 <property role="2V$B1T" value="982eb8df-2c96-4bd7-9963-11712ea622e5" />
@@ -10718,7 +10716,6 @@
             <property role="2$VJBR" value="1229065756974292875" />
             <node concept="2x4n5u" id="Z4" role="3iCydw">
               <property role="2x4mPI" value="IconResourceExpression" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="19fgrdbcyblum" />
               <node concept="2V$Bhx" id="Z5" role="2x4n5j">
                 <property role="2V$B1T" value="982eb8df-2c96-4bd7-9963-11712ea622e5" />

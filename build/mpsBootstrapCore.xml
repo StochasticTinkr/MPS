@@ -11179,7 +11179,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.editor.imageGen#3245637733310290135" depends="java.compile.mps-generator, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-references, java.compile.mps-debuginfo-api, java.compile.mps-textgen, java.compile.jetbrains.mps.baseLanguage.logging.runtime, java.compile.mps-editing, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.idea-platform, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-ui, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.editor.imageGen">
+  <target name="java.compile.jetbrains.mps.lang.editor.imageGen#3245637733310290135" depends="java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-editing, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.idea-platform, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-references, java.compile.mps-debuginfo-api, java.compile.mps-textgen, java.compile.mps-ui, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.logging.runtime, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.editor.imageGen, java.compile.jetbrains.mps.lang.traceable">
     <mkdir dir="${mps_home}/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen#3245637733310290135" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen#3245637733310290135" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -11188,7 +11188,10 @@
         <path location="${mps_home}/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/generator/source_gen" />
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/mps-generator" />
+        <pathelement path="${build.tmp}/java/out/mps-behavior-api" />
+        <pathelement path="${build.tmp}/java/out/mps-behavior-runtime" />
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-annotations" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
         <pathelement path="${build.tmp}/java/out/mps-core-components" />
@@ -11196,34 +11199,34 @@
         <pathelement path="${build.tmp}/java/out/vfs" />
         <pathelement path="${build.tmp}/java/out/util-core" />
         <pathelement path="${build.tmp}/java/out/mps-smodel" />
-        <pathelement path="${build.tmp}/java/out/mps-closures" />
-        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <pathelement path="${build.tmp}/java/out/mps-project" />
-        <pathelement path="${build.tmp}/java/out/mps-behavior-api" />
-        <pathelement path="${build.tmp}/java/out/mps-behavior-runtime" />
         <pathelement path="${build.tmp}/java/out/mps-messaging" />
         <pathelement path="${build.tmp}/java/out/mps-boot-util" />
         <pathelement path="${build.tmp}/java/out/mps-kernel" />
-        <pathelement path="${build.tmp}/java/out/kernel-resources" />
-        <pathelement path="${build.tmp}/java/out/mps-make-rt" />
-        <pathelement path="${build.tmp}/java/out/mps-migration" />
-        <pathelement path="${build.tmp}/java/out/mps-persistence" />
-        <pathelement path="${build.tmp}/java/out/mps-references" />
-        <pathelement path="${build.tmp}/java/out/mps-debuginfo-api" />
-        <pathelement path="${build.tmp}/java/out/mps-textgen" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.logging.runtime" />
         <pathelement path="${build.tmp}/java/out/mps-editing" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-editorlang-runtime" />
         <pathelement path="${build.tmp}/java/out/mps-editor" />
+        <pathelement path="${build.tmp}/java/out/mps-generator" />
+        <pathelement path="${build.tmp}/java/out/kernel-resources" />
+        <pathelement path="${build.tmp}/java/out/mps-make-rt" />
+        <pathelement path="${build.tmp}/java/out/mps-migration" />
+        <pathelement path="${build.tmp}/java/out/mps-persistence" />
         <pathelement path="${build.tmp}/java/out/idea-platform" />
         <pathelement path="${build.tmp}/java/out/platform" />
         <pathelement path="${build.tmp}/java/out/mps-environment" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <pathelement path="${build.tmp}/java/out/mps-references" />
+        <pathelement path="${build.tmp}/java/out/mps-debuginfo-api" />
+        <pathelement path="${build.tmp}/java/out/mps-textgen" />
         <pathelement path="${build.tmp}/java/out/mps-ui" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.logging.runtime" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.jdom-lib" />

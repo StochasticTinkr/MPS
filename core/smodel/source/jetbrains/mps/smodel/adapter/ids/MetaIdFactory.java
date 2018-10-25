@@ -51,6 +51,14 @@ public abstract class MetaIdFactory {
     return new SConceptId(langId, concept);
   }
 
+  public static SDataTypeId dataTypeId(long uuidHigh, long uuidLow, long dataType) {
+    return dataTypeId(langId(uuidHigh, uuidLow), dataType);
+  }
+
+  public static SDataTypeId dataTypeId(SLanguageId langId, long dataType) {
+    return new SDataTypeId(langId, dataType);
+  }
+
   @Deprecated
   public static SPropertyId propId(UUID lang, long concept, long prop) {
     return new SPropertyId(conceptId(lang, concept), prop);

@@ -62,7 +62,7 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_124_0(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a3a2a1h));
+          SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_117_0(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a3a2a1h));
           TemplateContext context2;
           context2 = context1.subContext(null, callInputNode2);
           if (callInputNode2 != null) {
@@ -76,7 +76,7 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         {
           final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x3b418722717710b4L, "LongLiteral"));
           try {
-            SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3b418722717710b4L, 0x3b418722717710b5L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_124_0(new PropertyMacroContext(context1, "1L", propertyMacro_r03umb_c0a0c0a0b0e0c0b7))));
+            SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3b418722717710b4L, 0x3b418722717710b5L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_117_0(new PropertyMacroContext(context1, "1L", propertyMacro_r03umb_c0a0c0a0b0e0c0b7))));
           } finally {
           }
           tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), tnode4);
@@ -84,10 +84,10 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         }
         {
           Collection<SNode> tlist5 = null;
-          if (QueriesGenerated.ifMacro_Condition_124_0(new IfMacroContext(context1, ifMacroRef_r03umb_b0a0b0f0c0b7))) {
+          if (QueriesGenerated.ifMacro_Condition_117_0(new IfMacroContext(context1, ifMacroRef_r03umb_b0a0b0f0c0b7))) {
             final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf93d565d10L, "StringLiteral"));
             try {
-              SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_124_1(new PropertyMacroContext(context1, "v", propertyMacro_r03umb_c0a0c0a0b0b0f0c0b7))));
+              SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_117_1(new PropertyMacroContext(context1, "v", propertyMacro_r03umb_c0a0c0a0b0b0f0c0b7))));
             } finally {
             }
             tlist5 = TemplateUtil.singletonList(tnode6);
@@ -122,7 +122,7 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_124_1(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a3a2a1i));
+          SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_117_1(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a3a2a1i));
           TemplateContext context2;
           context2 = context1.subContext(null, callInputNode2);
           if (callInputNode2 != null) {
@@ -152,7 +152,7 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_124_2(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_r03umb_b0a0c0d0c0b9));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_117_2(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_r03umb_b0a0c0d0c0b9));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_r03umb_b0a0c0d0c0b9, "tpl/r:00000000-0000-4000-0000-011c89590303/2733396919553280458", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -161,7 +161,7 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         }
         {
           Collection<SNode> tlist4 = null;
-          SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_124_3(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a4a2a1j));
+          SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_117_3(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a4a2a1j));
           TemplateContext context2;
           context2 = context1.subContext(null, callInputNode4);
           if (callInputNode4 != null) {
@@ -191,7 +191,7 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          if (QueriesGenerated.ifMacro_Condition_124_1(new IfMacroContext(context1, ifMacroRef_r03umb_b0a0b0d0c0b01))) {
+          if (QueriesGenerated.ifMacro_Condition_117_1(new IfMacroContext(context1, ifMacroRef_r03umb_b0a0b0d0c0b01))) {
             final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7fbL, "PlusExpression"));
             try {
               TemplateContext context2 = context1.subContext();
@@ -206,7 +206,7 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
               }
               {
                 Collection<SNode> tlist5 = null;
-                final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_124_5(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_r03umb_b0a0c0c0b0b0d0c0b01));
+                final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_117_5(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_r03umb_b0a0c0c0b0b0d0c0b01));
                 tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_r03umb_b0a0c0c0b0b0d0c0b01, "tpl/r:00000000-0000-4000-0000-011c89590303/2733396919553298545", context2);
                 for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
                   tnode3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), child6);
@@ -218,7 +218,7 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
             tlist2 = TemplateUtil.singletonList(tnode3);
           } else {
             Collection<SNode> tlist7 = null;
-            final SNode copySrcInput7 = QueriesGenerated.sourceNodeQuery_124_4(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_r03umb_b0a0c0a1a3a2a1k));
+            final SNode copySrcInput7 = QueriesGenerated.sourceNodeQuery_117_4(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_r03umb_b0a0c0a1a3a2a1k));
             tlist7 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput7), copySrcMacro_r03umb_b0a0c0a1a3a2a1k, "tpl/r:00000000-0000-4000-0000-011c89590303/2733396919553298532", context1);
             tlist2 = tlist7;
           }
@@ -229,7 +229,7 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         }
         {
           Collection<SNode> tlist9 = null;
-          SNode callInputNode9 = QueriesGenerated.sourceNodeQuery_124_6(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a4a2a1k));
+          SNode callInputNode9 = QueriesGenerated.sourceNodeQuery_117_6(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a4a2a1k));
           TemplateContext context3;
           context3 = context1.subContext(null, callInputNode9);
           if (callInputNode9 != null) {

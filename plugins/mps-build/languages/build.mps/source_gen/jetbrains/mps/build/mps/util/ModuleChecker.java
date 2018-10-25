@@ -27,14 +27,13 @@ import java.util.Set;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.build.util.RelativePathHelper;
-import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.build.mps.behavior.BuildMps_Solution__BehaviorDescriptor;
+import jetbrains.mps.build.util.RelativePathHelper;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
-import jetbrains.mps.build.mps.behavior.BuildMps_Solution__BehaviorDescriptor;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import java.util.Map;
@@ -50,9 +49,9 @@ import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.MPSModuleOwner;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.smodel.ModelImports;
@@ -467,48 +466,12 @@ public final class ModuleChecker {
 
   public void collectSources(ModuleChecker.CheckType type) {
     SNode module = SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
-    Iterable<ModelRootDescriptor> modelRoots = myModuleDescriptor.getModelRootDescriptors();
-    boolean hasModels = false;
-    final ModuleChecker.BuildModuleFacade buildModuleFacade = new ModuleChecker.BuildModuleFacade(module);
-    // see comment next to makeRelative use, below, regarding hardcoded parent location knowledge 
-    // XXX instead of myModuleDescriptoFile, could use module.path.getLocalPath() 
-    RelativePathHelper moduleRelativePathHelper = new RelativePathHelper(myModuleDescriptorFile.getParent().getPath());
-    for (ModelRootDescriptor modelRootDescriptor : modelRoots) {
-      // FIXME Though use of ModelRootFactory is much better than to instantiate DefaultModelRoot directly, still uncertain if  
-      //       alternative with myLoadedModule.getModelRoots() is not better. 
-      // XXX it's not clear why we do not copy model roots other than default here. 
-      ModelRootFactory mrFactory = PersistenceRegistry.getInstance().getModelRootFactory(modelRootDescriptor.getType());
-      if (mrFactory == null) {
-        continue;
+    // indeed, it's odd way to figure out if there's a model that would produce sources to compile, but ModuleChecker as a whole is odd, why would I bother to make this one perfect? 
+    final boolean hasModels = Sequence.fromIterable(((Iterable<ModelRootDescriptor>) myModuleDescriptor.getModelRootDescriptors())).any(new IWhereFilter<ModelRootDescriptor>() {
+      public boolean accept(ModelRootDescriptor it) {
+        return PersistenceRegistry.DEFAULT_MODEL_ROOT.equals(it.getType());
       }
-      ModelRoot mr = mrFactory.create();
-      if (!(mr instanceof DefaultModelRoot)) {
-        continue;
-      }
-      mr.load(modelRootDescriptor.getMemento());
-      for (SourceRoot sr : ((DefaultModelRoot) mr).getSourceRoots(SourceRootKinds.SOURCES)) {
-        String path = sr.getAbsolutePath().getPath();
-        SNode p = convertPath(path);
-        if (p == null) {
-          continue;
-        }
-
-        if (type.doFullImport) {
-          String deployName;
-          try {
-            // We used to imply model roots reside under a parent folder of a module descriptor file (in contentOf_BuildMpsLayout_ModuleSources). 
-            // Now, we just extracted the logic here and make the name of the deployment folder explicit. 
-            // FIXME in fact, we shall reference these names inside generated/copied module descriptors and stop implying they match names in the original descriptor source 
-            deployName = moduleRelativePathHelper.makeRelative(path);
-          } catch (RelativePathHelper.PathException ex) {
-            report(String.format("Failed to make model root path %s relative to module %s, using default folder name for deployment", sr, moduleRelativePathHelper.getBasePath()), ex);
-            deployName = "models";
-          }
-          buildModuleFacade.addModelSources(p, deployName);
-        }
-        hasModels = true;
-      }
-    }
+    });
 
     final boolean doNotCompile;
     if (myModuleDescriptor instanceof SolutionDescriptor && SNodeOperations.isInstanceOf(module, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"))) {
@@ -522,11 +485,42 @@ public final class ModuleChecker {
     if (type.doCheck && SPropertyOperations.getBoolean(module, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x14d3fb6fb84ac614L, "doNotCompile")) != doNotCompile) {
       report("compile in MPS flag doesn't match file content " + SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ", should be: " + doNotCompile);
     }
+
     if (type.doPartialImport) {
       SPropertyOperations.assign(module, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x14d3fb6fb84ac614L, "doNotCompile"), "" + (doNotCompile));
     }
 
     if (type.doFullImport) {
+      final ModuleChecker.BuildModuleFacade buildModuleFacade = new ModuleChecker.BuildModuleFacade(module);
+      // see comment next to makeRelative use, below, regarding hardcoded parent location knowledge 
+      // XXX instead of myModuleDescriptoFile, could use module.path.getLocalPath() 
+      RelativePathHelper moduleRelativePathHelper = new RelativePathHelper(myModuleDescriptorFile.getParent().getPath());
+      // getLoadedModule(), below, needs myRepository which is available in doFullImport only 
+      for (ModelRoot mr : getLoadedModule().getModelRoots()) {
+        // XXX it's not clear why we do not copy model roots other than default here. 
+        if (!(mr instanceof DefaultModelRoot)) {
+          continue;
+        }
+        for (SourceRoot sr : ((DefaultModelRoot) mr).getSourceRoots(SourceRootKinds.SOURCES)) {
+          String path = sr.getAbsolutePath().getPath();
+          SNode p = convertPath(path);
+          if (p == null) {
+            continue;
+          }
+
+          String deployName;
+          try {
+            // We used to imply model roots reside under a parent folder of a module descriptor file (in contentOf_BuildMpsLayout_ModuleSources). 
+            // Now, we just extracted the logic here and make the name of the deployment folder explicit. 
+            // FIXME in fact, we shall reference these names inside generated/copied module descriptors and stop implying they match names in the original descriptor source 
+            deployName = moduleRelativePathHelper.makeRelative(path);
+          } catch (RelativePathHelper.PathException ex) {
+            report(String.format("Failed to make model root path %s relative to module %s, using default folder name for deployment", sr, moduleRelativePathHelper.getBasePath()), ex);
+            deployName = "models";
+          }
+          buildModuleFacade.addModelSources(p, deployName);
+        }
+      }
       for (String path : myModuleDescriptor.getSourcePaths()) {
         SNode p = convertPath(path);
         buildModuleFacade.addJavaSources(p, false);
@@ -845,17 +839,24 @@ public final class ModuleChecker {
       }
     }
   }
+
+  private SModule getLoadedModule() {
+    if (myLoadedModule == null) {
+      myLoadedModule = myRepository.instantiateModule(new ModulesMiner.ModuleHandle(myModuleDescriptorFile, myModuleDescriptor), new MPSModuleOwner() {
+        public boolean isHidden() {
+          return true;
+        }
+      });
+    }
+    return myLoadedModule;
+  }
+
   private void collectLocalDependencies() {
     SNode module = SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
     Set<SLanguage> usedLanguage = new HashSet<SLanguage>();
     Set<SModuleReference> usedDevkits = new HashSet<SModuleReference>();
 
-    myLoadedModule = myRepository.instantiateModule(new ModulesMiner.ModuleHandle(myModuleDescriptorFile, myModuleDescriptor), new MPSModuleOwner() {
-      public boolean isHidden() {
-        return true;
-      }
-    });
-    for (SModel m : myLoadedModule.getModels()) {
+    for (SModel m : getLoadedModule().getModels()) {
       // we are going to generate models only that are deemed to, therefore, we don't need to respect dependencies of other models, 
       // like accessory models that otherwise result in bootstrap dependency. 
       // This check doesn't help to eliminate bootstrap issue completely (i.e. a language is often in use by its typesystem aspect to specify  

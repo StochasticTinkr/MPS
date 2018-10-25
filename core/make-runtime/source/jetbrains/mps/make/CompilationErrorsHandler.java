@@ -16,18 +16,15 @@
 package jetbrains.mps.make;
 
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.NameUtil;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by apyshkin on 5/26/16.
- */
 public class CompilationErrorsHandler {
   private final static int MAX_ERRORS = 100;
   private final static String MODULES_CLASSPATH_STR = "Modules: %s;\nClasspath: %s\n"; // FIXME: transfer
@@ -38,10 +35,10 @@ public class CompilationErrorsHandler {
   private final ModulesContainer myModulesContainer;
   private final MessageSender mySender;
   private final ClassesErrorsTracker myErrorTracker = new ClassesErrorsTracker();
-  private IClassPathItem myClassPath;
+  private Collection<String> myClassPath;
 
   public CompilationErrorsHandler(@NotNull ModulesContainer modulesContainer, @NotNull MessageSender sender,
-      IClassPathItem classPath) {
+                                  Collection<String> classPath) {
     myModulesContainer = modulesContainer;
     myClassPath = classPath;
     mySender = new MessageSender(sender, this);

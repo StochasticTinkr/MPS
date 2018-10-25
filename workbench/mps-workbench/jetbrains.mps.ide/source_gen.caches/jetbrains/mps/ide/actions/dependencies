@@ -390,6 +390,7 @@
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelFactoryService" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

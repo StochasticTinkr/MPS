@@ -11,6 +11,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -44,8 +45,7 @@ public class TestSubstituteParentPropertyAndReference_Constraints extends BaseCo
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "enumPropertyWithIsValidConstraints";
-        // todo this is the hack for the constraints since the enum name is passed here instead of the value 
-        return (SPropertyOperations.getString(propertyValue)).contains("first");
+        return Objects.equals((SPropertyOperations.getString(propertyValue)), "myFirstValue");
       }
     });
     properties.put(MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, 0x1609dca8f16901efL, "enumPropertyWithGetter"), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, 0x1609dca8f16901efL), this) {

@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCustomFontContainer = createDescriptorForCustomFontContainer();
@@ -71,6 +73,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -81,8 +88,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", 0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL);
     b.origin("r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)/8545423393708171824");
     b.version(2);
-    b.prop("fontFamily", 0x7697714d0d4a3399L, "8545423393708192665");
-    b.prop("fontSize", 0x7697714d0d4e935bL, "8545423393708479323");
+    b.property("fontFamily", 0x7697714d0d4a3399L).type(PrimitiveTypeId.STRING).origin("8545423393708192665").done();
+    b.property("fontSize", 0x7697714d0d4e935bL).type(PrimitiveTypeId.INTEGER).origin("8545423393708479323").done();
     b.alias("customFontContainer");
     return b.create();
   }
@@ -160,7 +167,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", 0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL);
     b.origin("r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)/8917170296719630045");
     b.version(2);
-    b.prop("value", 0x7bc02723c1a35edeL, "8917170296719630046");
+    b.property("value", 0x7bc02723c1a35edeL).type(PrimitiveTypeId.STRING).origin("8917170296719630046").done();
     b.alias("test-inherited-attribute");
     return b.create();
   }
@@ -170,7 +177,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", 0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL);
     b.origin("r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)/8917170296719628637");
     b.version(2);
-    b.prop("value", 0x7bc02723c1a35ed3L, "8917170296719630035");
+    b.property("value", 0x7bc02723c1a35ed3L).type(PrimitiveTypeId.BOOLEAN).origin("8917170296719630035").done();
     b.alias("test-simple-attribute");
     return b.create();
   }
@@ -179,7 +186,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)/7577899271414667639");
     b.version(2);
-    b.prop("customUrl", 0x2349ec7bddecf3dbL, "2542823481375781851");
+    b.property("customUrl", 0x2349ec7bddecf3dbL).type(PrimitiveTypeId.STRING).origin("2542823481375781851").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUnapplyPriorityStyleCopy() {

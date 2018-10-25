@@ -24,7 +24,6 @@ import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleCoreService;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -48,6 +47,7 @@ import jetbrains.mps.smodel.PropertySupport.PropertySupportCache;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeAccessUtilImpl;
+import jetbrains.mps.smodel.adapter.structure.types.TypeRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -71,11 +71,13 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   private PersistenceRegistry myPersistenceFacade;
   private MPSModuleRepository myModuleRepository;
   private LanguageRegistry myLanguageRegistry;
+  private TypeRegistry myTypeRegistry;
   private SRepositoryRegistry myRepositoryRegistry;
   private FacetsRegistry myModuleFacetsRegistry;
   private PathMacros myPathMacros;
   private ExtensionRegistry myExtensionRegistry;
   private DataSourceFactoryRuleService myDataSourceService;
+  private ModelFactoryService myModelFactoryService;
   private ModelsAutoImportsManager myAutoImportsManager;
 
   /**
@@ -96,6 +98,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   public void dispose() {
     super.dispose();
     myAutoImportsManager = null;
+    myModelFactoryService = null;
     myClassLoaderManager = null;
     myLibraryInitializer = null;
     myPersistenceFacade = null;
@@ -113,8 +116,8 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     // in fact, could be part of PersistenceRegistry to minimize number of components. OTOH, complicates access
     // to the instance, findComponent(PersistenceRegistry.class).getDataSourceService() is longer than just findComponent(DataSourceFactoryRuleService.class)
     myDataSourceService = init(new DataSourceFactoryRuleService());
-    init(new DataSourceFactoryRuleCoreService(myDataSourceService));
-    myPersistenceFacade = init(new PersistenceRegistry(myDataSourceService));
+    myModelFactoryService = init(new ModelFactoryService());
+    myPersistenceFacade = init(new PersistenceRegistry(myModelFactoryService, myDataSourceService));
     myModuleFacetsRegistry = init(new FacetsRegistry());
 
     myRepositoryRegistry = init(new SRepositoryRegistry());
@@ -144,6 +147,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
                                       new LanguageDescriptorModelProvider(myLanguageRegistry),
                                       new GeneratorDescriptorModelProvider(),
                                       new GenericDescriptorModelProvider()));
+    init(new TypeRegistry());
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
 
     init(new ResolverComponent());
@@ -201,11 +205,6 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     return myModuleFacetsRegistry;
   }
 
-  @NotNull
-  public ModelFactoryRegistry getModelFactoryRegistry() {
-    return ModelFactoryService.getInstance();
-  }
-
   @Nullable
   @Override
   public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
@@ -228,8 +227,8 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     if (LanguageRegistry.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myLanguageRegistry);
     }
-    if (ModelFactoryRegistry.class.isAssignableFrom(componentClass)) {
-      return componentClass.cast(getModelFactoryRegistry());
+    if (ModelFactoryRegistry.class.isAssignableFrom(componentClass) || ModelFactoryService.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myModelFactoryService);
     }
     if (SRepositoryRegistry.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myRepositoryRegistry);

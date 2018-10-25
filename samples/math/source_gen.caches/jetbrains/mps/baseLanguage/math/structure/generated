@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <product version="3" modelHash="-37aqjwzt7zqm3g3l52k0iou6m9kwv3c">
-  <files names="CastTargetDescriptor.java:CastTargetDescriptor_PropertySupport.java:ConceptPresentationAspectImpl.java:LanguageConceptSwitch.java:MatrixNormKind.java:MatrixNormKind_PropertySupport.java:PrecisionSetting.java:PrecisionSetting_PropertySupport.java:RoundingMode.java:RoundingMode_PropertySupport.java:StructureAspectDescriptor.java" />
+  <files names="ConceptPresentationAspectImpl.java:EnumerationDescriptor_CastTargetDescriptor.java:EnumerationDescriptor_MatrixNormKind.java:EnumerationDescriptor_PrecisionSetting.java:EnumerationDescriptor_RoundingMode.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
 </product>
 

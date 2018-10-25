@@ -9,7 +9,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,108,0" name="jetbrains.mps.lang.smodelTests.structure.ConceptPresentationAspectImpl" />
@@ -18,565 +19,193 @@
       <unit at="10,0,48,0" name="jetbrains.mps.lang.smodelTests.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,169,0" name="jetbrains.mps.lang.smodelTests.structure.StructureAspectDescriptor" />
+      <unit at="16,0,182,0" name="jetbrains.mps.lang.smodelTests.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/1322863731089346289">
-    <file name="TestEnum_DeriveFromPresentation.java">
-      <node id="1322863731089346289" at="13,0,14,0" concept="2" trace="myName" />
-      <node id="1322863731089346289" at="14,27,15,18" concept="6" />
-      <node id="1322863731089346289" at="17,0,18,0" concept="2" trace="myValue" />
-      <node id="1322863731089346289" at="18,70,19,18" concept="1" />
-      <node id="1322863731089346289" at="19,18,20,20" concept="1" />
-      <node id="1322863731089346289" at="22,28,23,19" concept="6" />
-      <node id="1322863731089346289" at="25,36,26,19" concept="6" />
-      <node id="1322863731089346289" at="28,70,29,122" concept="5" />
-      <node id="1322863731089346290" at="29,122,30,91" concept="1" />
-      <node id="1322863731089346291" at="30,91,31,91" concept="1" />
-      <node id="1322863731089346289" at="31,91,32,16" concept="6" />
-      <node id="1322863731089346289" at="34,62,35,58" concept="6" />
-      <node id="1322863731089346289" at="38,24,39,58" concept="6" />
-      <node id="1322863731089346290" at="41,90,42,60" concept="6" />
-      <node id="1322863731089346291" at="44,90,45,60" concept="6" />
-      <node id="1322863731089346289" at="46,5,47,56" concept="6" />
-      <node id="1322863731089346289" at="14,0,17,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1322863731089346289" at="22,0,25,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1322863731089346289" at="25,0,28,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1322863731089346289" at="34,0,37,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/smodelTests/structure/TestEnum_DeriveFromPresentation;" />
-      <node id="1322863731089346289" at="37,74,40,5" concept="3" />
-      <node id="1322863731089346290" at="40,5,43,5" concept="3" />
-      <node id="1322863731089346291" at="43,5,46,5" concept="3" />
-      <node id="1322863731089346289" at="18,0,22,0" concept="0" trace="TestEnum_DeriveFromPresentation#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1322863731089346289" at="28,0,34,0" concept="8" trace="getConstants#()Ljava/util/List;" />
-      <node id="1322863731089346289" at="37,0,49,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/smodelTests/structure/TestEnum_DeriveFromPresentation;" />
-      <scope id="1322863731089346289" at="14,27,15,18" />
-      <scope id="1322863731089346289" at="22,28,23,19" />
-      <scope id="1322863731089346289" at="25,36,26,19" />
-      <scope id="1322863731089346289" at="34,62,35,58" />
-      <scope id="1322863731089346289" at="38,24,39,58" />
-      <scope id="1322863731089346290" at="41,90,42,60" />
-      <scope id="1322863731089346291" at="44,90,45,60" />
-      <scope id="1322863731089346289" at="18,70,20,20" />
+    <file name="EnumerationDescriptor_TestEnum_DeriveFromPresentation.java">
+      <node id="1322863731089346289" at="14,66,15,212" concept="9" />
+      <node id="1322863731089346290" at="18,0,19,0" concept="2" trace="VALUE_value_1_0" />
+      <node id="1322863731089346291" at="19,0,20,0" concept="2" trace="VALUE_value_2_0" />
+      <node id="1322863731089346289" at="23,62,24,27" concept="6" />
+      <node id="1322863731089346289" at="29,74,30,59" concept="6" />
+      <node id="1322863731089346289" at="36,25,37,18" concept="6" />
+      <node id="1322863731089346290" at="40,21,41,31" concept="6" />
+      <node id="1322863731089346291" at="42,21,43,31" concept="6" />
+      <node id="1322863731089346289" at="44,5,45,16" concept="6" />
+      <node id="1322863731089346289" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_TestEnum_DeriveFromPresentation#()V" />
+      <node id="1322863731089346289" at="35,84,38,5" concept="3" />
+      <node id="1322863731089346289" at="21,0,26,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="1322863731089346289" at="27,0,32,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="1322863731089346289" at="38,5,44,5" concept="10" />
+      <node id="1322863731089346289" at="33,0,47,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="1322863731089346289" at="14,66,15,212" />
+      <scope id="1322863731089346289" at="23,62,24,27" />
+      <scope id="1322863731089346289" at="29,74,30,59" />
+      <scope id="1322863731089346289" at="36,25,37,18" />
+      <scope id="1322863731089346290" at="40,21,41,31" />
+      <scope id="1322863731089346291" at="42,21,43,31" />
       <scope id="1322863731089346289" at="14,0,17,0" />
-      <scope id="1322863731089346289" at="22,0,25,0" />
-      <scope id="1322863731089346289" at="25,0,28,0" />
-      <scope id="1322863731089346289" at="34,0,37,0" />
-      <scope id="1322863731089346289" at="18,0,22,0">
-        <var name="name" id="1322863731089346289" />
-        <var name="value" id="1322863731089346289" />
+      <scope id="1322863731089346289" at="21,0,26,0" />
+      <scope id="1322863731089346289" at="27,0,32,0" />
+      <scope id="1322863731089346289" at="35,84,45,16" />
+      <scope id="1322863731089346289" at="33,0,47,0">
+        <var name="string" id="1322863731089346289" />
       </scope>
-      <scope id="1322863731089346289" at="28,70,32,16">
-        <var name="list" id="1322863731089346289" />
-      </scope>
-      <scope id="1322863731089346289" at="28,0,34,0" />
-      <scope id="1322863731089346289" at="37,74,47,56" />
-      <scope id="1322863731089346289" at="37,0,49,0">
-        <var name="value" id="1322863731089346289" />
-      </scope>
-      <unit id="1322863731089346289" at="9,0,50,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_DeriveFromPresentation" />
+      <unit id="1322863731089346289" at="12,0,48,0" name="jetbrains.mps.lang.smodelTests.structure.EnumerationDescriptor_TestEnum_DeriveFromPresentation" />
     </file>
-    <file name="TestEnum_DeriveFromPresentation_PropertySupport.java">
-      <node id="1322863731089346289" at="11,24,12,18" concept="6" />
-      <node id="1322863731089346289" at="13,5,14,139" concept="5" />
-      <node id="1322863731089346289" at="15,33,16,66" concept="5" />
-      <node id="1322863731089346289" at="17,45,18,20" concept="6" />
-      <node id="1322863731089346289" at="20,5,21,17" concept="6" />
-      <node id="1322863731089346289" at="24,24,25,18" concept="6" />
-      <node id="1322863731089346289" at="26,5,27,139" concept="5" />
-      <node id="1322863731089346289" at="28,33,29,66" concept="5" />
-      <node id="1322863731089346289" at="30,45,31,43" concept="6" />
-      <node id="1322863731089346289" at="33,5,34,16" concept="6" />
-      <node id="1322863731089346289" at="36,49,37,97" concept="5" />
-      <node id="1322863731089346289" at="38,27,39,32" concept="6" />
-      <node id="1322863731089346289" at="40,5,41,14" concept="6" />
-      <node id="1322863731089346289" at="10,44,13,5" concept="3" />
-      <node id="1322863731089346289" at="16,66,19,7" concept="3" />
-      <node id="1322863731089346289" at="23,47,26,5" concept="3" />
-      <node id="1322863731089346289" at="29,66,32,7" concept="3" />
-      <node id="1322863731089346289" at="37,97,40,5" concept="3" />
-      <node id="1322863731089346289" at="14,139,20,5" concept="9" />
-      <node id="1322863731089346289" at="27,139,33,5" concept="9" />
-      <node id="1322863731089346289" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1322863731089346289" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1322863731089346289" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1322863731089346289" at="11,24,12,18" />
-      <scope id="1322863731089346289" at="17,45,18,20" />
-      <scope id="1322863731089346289" at="24,24,25,18" />
-      <scope id="1322863731089346289" at="30,45,31,43" />
-      <scope id="1322863731089346289" at="38,27,39,32" />
-      <scope id="1322863731089346289" at="15,33,19,7">
-        <var name="constant" id="1322863731089346289" />
-      </scope>
-      <scope id="1322863731089346289" at="28,33,32,7">
-        <var name="constant" id="1322863731089346289" />
-      </scope>
-      <scope id="1322863731089346289" at="36,49,41,14">
-        <var name="constant" id="1322863731089346289" />
-      </scope>
-      <scope id="1322863731089346289" at="36,0,43,0">
-        <var name="value" id="1322863731089346289" />
-      </scope>
-      <scope id="1322863731089346289" at="10,44,21,17">
-        <var name="constants" id="1322863731089346289" />
-      </scope>
-      <scope id="1322863731089346289" at="23,47,34,16">
-        <var name="constants" id="1322863731089346289" />
-      </scope>
-      <scope id="1322863731089346289" at="10,0,23,0">
-        <var name="value" id="1322863731089346289" />
-      </scope>
-      <scope id="1322863731089346289" at="23,0,36,0">
-        <var name="value" id="1322863731089346289" />
-      </scope>
-      <unit id="1322863731089346289" at="9,0,44,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_DeriveFromPresentation_PropertySupport" />
+    <file name="StructureAspectDescriptor.java">
+      <node id="1322863731089346289" at="31,0,32,0" concept="2" trace="myEnumerationTestEnum_DeriveFromPresentation" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/1322863731089346294">
-    <file name="TestEnum_DeriveFromInternalValue.java">
-      <node id="1322863731089346294" at="13,0,14,0" concept="2" trace="myName" />
-      <node id="1322863731089346294" at="14,27,15,18" concept="6" />
-      <node id="1322863731089346294" at="17,0,18,0" concept="2" trace="myValue" />
-      <node id="1322863731089346294" at="18,71,19,18" concept="1" />
-      <node id="1322863731089346294" at="19,18,20,20" concept="1" />
-      <node id="1322863731089346294" at="22,28,23,19" concept="6" />
-      <node id="1322863731089346294" at="25,36,26,19" concept="6" />
-      <node id="1322863731089346294" at="28,71,29,124" concept="5" />
-      <node id="1322863731089346295" at="29,124,30,85" concept="1" />
-      <node id="1322863731089346296" at="30,85,31,85" concept="1" />
-      <node id="1322863731089346294" at="31,85,32,16" concept="6" />
-      <node id="1322863731089346294" at="34,63,35,52" concept="6" />
-      <node id="1322863731089346294" at="38,24,39,59" concept="6" />
-      <node id="1322863731089346295" at="41,84,42,54" concept="6" />
-      <node id="1322863731089346296" at="44,84,45,54" concept="6" />
-      <node id="1322863731089346294" at="46,5,47,57" concept="6" />
-      <node id="1322863731089346294" at="14,0,17,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1322863731089346294" at="22,0,25,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1322863731089346294" at="25,0,28,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1322863731089346294" at="34,0,37,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/smodelTests/structure/TestEnum_DeriveFromInternalValue;" />
-      <node id="1322863731089346294" at="37,75,40,5" concept="3" />
-      <node id="1322863731089346295" at="40,5,43,5" concept="3" />
-      <node id="1322863731089346296" at="43,5,46,5" concept="3" />
-      <node id="1322863731089346294" at="18,0,22,0" concept="0" trace="TestEnum_DeriveFromInternalValue#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1322863731089346294" at="28,0,34,0" concept="8" trace="getConstants#()Ljava/util/List;" />
-      <node id="1322863731089346294" at="37,0,49,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/smodelTests/structure/TestEnum_DeriveFromInternalValue;" />
-      <scope id="1322863731089346294" at="14,27,15,18" />
-      <scope id="1322863731089346294" at="22,28,23,19" />
-      <scope id="1322863731089346294" at="25,36,26,19" />
-      <scope id="1322863731089346294" at="34,63,35,52" />
-      <scope id="1322863731089346294" at="38,24,39,59" />
-      <scope id="1322863731089346295" at="41,84,42,54" />
-      <scope id="1322863731089346296" at="44,84,45,54" />
-      <scope id="1322863731089346294" at="18,71,20,20" />
+    <file name="EnumerationDescriptor_TestEnum_DeriveFromInternalValue.java">
+      <node id="1322863731089346294" at="14,67,15,213" concept="9" />
+      <node id="1322863731089346295" at="18,0,19,0" concept="2" trace="VALUE_value_1_0" />
+      <node id="1322863731089346296" at="19,0,20,0" concept="2" trace="VALUE_value_2_0" />
+      <node id="1322863731089346294" at="23,62,24,27" concept="6" />
+      <node id="1322863731089346294" at="29,74,30,59" concept="6" />
+      <node id="1322863731089346294" at="36,25,37,18" concept="6" />
+      <node id="1322863731089346295" at="40,21,41,31" concept="6" />
+      <node id="1322863731089346296" at="42,21,43,31" concept="6" />
+      <node id="1322863731089346294" at="44,5,45,16" concept="6" />
+      <node id="1322863731089346294" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_TestEnum_DeriveFromInternalValue#()V" />
+      <node id="1322863731089346294" at="35,84,38,5" concept="3" />
+      <node id="1322863731089346294" at="21,0,26,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="1322863731089346294" at="27,0,32,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="1322863731089346294" at="38,5,44,5" concept="10" />
+      <node id="1322863731089346294" at="33,0,47,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="1322863731089346294" at="14,67,15,213" />
+      <scope id="1322863731089346294" at="23,62,24,27" />
+      <scope id="1322863731089346294" at="29,74,30,59" />
+      <scope id="1322863731089346294" at="36,25,37,18" />
+      <scope id="1322863731089346295" at="40,21,41,31" />
+      <scope id="1322863731089346296" at="42,21,43,31" />
       <scope id="1322863731089346294" at="14,0,17,0" />
-      <scope id="1322863731089346294" at="22,0,25,0" />
-      <scope id="1322863731089346294" at="25,0,28,0" />
-      <scope id="1322863731089346294" at="34,0,37,0" />
-      <scope id="1322863731089346294" at="18,0,22,0">
-        <var name="name" id="1322863731089346294" />
-        <var name="value" id="1322863731089346294" />
+      <scope id="1322863731089346294" at="21,0,26,0" />
+      <scope id="1322863731089346294" at="27,0,32,0" />
+      <scope id="1322863731089346294" at="35,84,45,16" />
+      <scope id="1322863731089346294" at="33,0,47,0">
+        <var name="string" id="1322863731089346294" />
       </scope>
-      <scope id="1322863731089346294" at="28,71,32,16">
-        <var name="list" id="1322863731089346294" />
-      </scope>
-      <scope id="1322863731089346294" at="28,0,34,0" />
-      <scope id="1322863731089346294" at="37,75,47,57" />
-      <scope id="1322863731089346294" at="37,0,49,0">
-        <var name="value" id="1322863731089346294" />
-      </scope>
-      <unit id="1322863731089346294" at="9,0,50,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_DeriveFromInternalValue" />
+      <unit id="1322863731089346294" at="12,0,48,0" name="jetbrains.mps.lang.smodelTests.structure.EnumerationDescriptor_TestEnum_DeriveFromInternalValue" />
     </file>
-    <file name="TestEnum_DeriveFromInternalValue_PropertySupport.java">
-      <node id="1322863731089346294" at="11,24,12,18" concept="6" />
-      <node id="1322863731089346294" at="13,5,14,141" concept="5" />
-      <node id="1322863731089346294" at="15,33,16,67" concept="5" />
-      <node id="1322863731089346294" at="17,45,18,20" concept="6" />
-      <node id="1322863731089346294" at="20,5,21,17" concept="6" />
-      <node id="1322863731089346294" at="24,24,25,18" concept="6" />
-      <node id="1322863731089346294" at="26,5,27,141" concept="5" />
-      <node id="1322863731089346294" at="28,33,29,67" concept="5" />
-      <node id="1322863731089346294" at="30,45,31,43" concept="6" />
-      <node id="1322863731089346294" at="33,5,34,16" concept="6" />
-      <node id="1322863731089346294" at="36,49,37,99" concept="5" />
-      <node id="1322863731089346294" at="38,27,39,32" concept="6" />
-      <node id="1322863731089346294" at="40,5,41,14" concept="6" />
-      <node id="1322863731089346294" at="10,44,13,5" concept="3" />
-      <node id="1322863731089346294" at="16,67,19,7" concept="3" />
-      <node id="1322863731089346294" at="23,47,26,5" concept="3" />
-      <node id="1322863731089346294" at="29,67,32,7" concept="3" />
-      <node id="1322863731089346294" at="37,99,40,5" concept="3" />
-      <node id="1322863731089346294" at="14,141,20,5" concept="9" />
-      <node id="1322863731089346294" at="27,141,33,5" concept="9" />
-      <node id="1322863731089346294" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1322863731089346294" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1322863731089346294" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1322863731089346294" at="11,24,12,18" />
-      <scope id="1322863731089346294" at="17,45,18,20" />
-      <scope id="1322863731089346294" at="24,24,25,18" />
-      <scope id="1322863731089346294" at="30,45,31,43" />
-      <scope id="1322863731089346294" at="38,27,39,32" />
-      <scope id="1322863731089346294" at="15,33,19,7">
-        <var name="constant" id="1322863731089346294" />
-      </scope>
-      <scope id="1322863731089346294" at="28,33,32,7">
-        <var name="constant" id="1322863731089346294" />
-      </scope>
-      <scope id="1322863731089346294" at="36,49,41,14">
-        <var name="constant" id="1322863731089346294" />
-      </scope>
-      <scope id="1322863731089346294" at="36,0,43,0">
-        <var name="value" id="1322863731089346294" />
-      </scope>
-      <scope id="1322863731089346294" at="10,44,21,17">
-        <var name="constants" id="1322863731089346294" />
-      </scope>
-      <scope id="1322863731089346294" at="23,47,34,16">
-        <var name="constants" id="1322863731089346294" />
-      </scope>
-      <scope id="1322863731089346294" at="10,0,23,0">
-        <var name="value" id="1322863731089346294" />
-      </scope>
-      <scope id="1322863731089346294" at="23,0,36,0">
-        <var name="value" id="1322863731089346294" />
-      </scope>
-      <unit id="1322863731089346294" at="9,0,44,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_DeriveFromInternalValue_PropertySupport" />
+    <file name="StructureAspectDescriptor.java">
+      <node id="1322863731089346294" at="30,0,31,0" concept="2" trace="myEnumerationTestEnum_DeriveFromInternalValue" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/1322863731089346297">
-    <file name="TestEnum_CustomIdentifier.java">
-      <node id="1322863731089346297" at="13,0,14,0" concept="2" trace="myName" />
-      <node id="1322863731089346297" at="14,27,15,18" concept="6" />
-      <node id="1322863731089346297" at="17,0,18,0" concept="2" trace="myValue" />
-      <node id="1322863731089346297" at="18,64,19,18" concept="1" />
-      <node id="1322863731089346297" at="19,18,20,20" concept="1" />
-      <node id="1322863731089346297" at="22,28,23,19" concept="6" />
-      <node id="1322863731089346297" at="25,36,26,19" concept="6" />
-      <node id="1322863731089346297" at="28,64,29,110" concept="5" />
-      <node id="1322863731089346298" at="29,110,30,83" concept="1" />
-      <node id="1322863731089346299" at="30,83,31,83" concept="1" />
-      <node id="1322863731089346297" at="31,83,32,16" concept="6" />
-      <node id="1322863731089346297" at="34,56,35,50" concept="6" />
-      <node id="1322863731089346297" at="38,24,39,52" concept="6" />
-      <node id="1322863731089346298" at="41,82,42,52" concept="6" />
-      <node id="1322863731089346299" at="44,82,45,52" concept="6" />
-      <node id="1322863731089346297" at="46,5,47,50" concept="6" />
-      <node id="1322863731089346297" at="14,0,17,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1322863731089346297" at="22,0,25,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1322863731089346297" at="25,0,28,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1322863731089346297" at="34,0,37,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/smodelTests/structure/TestEnum_CustomIdentifier;" />
-      <node id="1322863731089346297" at="37,68,40,5" concept="3" />
-      <node id="1322863731089346298" at="40,5,43,5" concept="3" />
-      <node id="1322863731089346299" at="43,5,46,5" concept="3" />
-      <node id="1322863731089346297" at="18,0,22,0" concept="0" trace="TestEnum_CustomIdentifier#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1322863731089346297" at="28,0,34,0" concept="8" trace="getConstants#()Ljava/util/List;" />
-      <node id="1322863731089346297" at="37,0,49,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/smodelTests/structure/TestEnum_CustomIdentifier;" />
-      <scope id="1322863731089346297" at="14,27,15,18" />
-      <scope id="1322863731089346297" at="22,28,23,19" />
-      <scope id="1322863731089346297" at="25,36,26,19" />
-      <scope id="1322863731089346297" at="34,56,35,50" />
-      <scope id="1322863731089346297" at="38,24,39,52" />
-      <scope id="1322863731089346298" at="41,82,42,52" />
-      <scope id="1322863731089346299" at="44,82,45,52" />
-      <scope id="1322863731089346297" at="18,64,20,20" />
+    <file name="EnumerationDescriptor_TestEnum_CustomIdentifier.java">
+      <node id="1322863731089346297" at="14,60,15,206" concept="9" />
+      <node id="1322863731089346298" at="18,0,19,0" concept="2" trace="VALUE_value_1_0" />
+      <node id="1322863731089346299" at="19,0,20,0" concept="2" trace="VALUE_value_2_0" />
+      <node id="1322863731089346297" at="23,62,24,27" concept="6" />
+      <node id="1322863731089346297" at="29,74,30,59" concept="6" />
+      <node id="1322863731089346297" at="36,25,37,18" concept="6" />
+      <node id="1322863731089346298" at="40,21,41,31" concept="6" />
+      <node id="1322863731089346299" at="42,21,43,31" concept="6" />
+      <node id="1322863731089346297" at="44,5,45,16" concept="6" />
+      <node id="1322863731089346297" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_TestEnum_CustomIdentifier#()V" />
+      <node id="1322863731089346297" at="35,84,38,5" concept="3" />
+      <node id="1322863731089346297" at="21,0,26,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="1322863731089346297" at="27,0,32,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="1322863731089346297" at="38,5,44,5" concept="10" />
+      <node id="1322863731089346297" at="33,0,47,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="1322863731089346297" at="14,60,15,206" />
+      <scope id="1322863731089346297" at="23,62,24,27" />
+      <scope id="1322863731089346297" at="29,74,30,59" />
+      <scope id="1322863731089346297" at="36,25,37,18" />
+      <scope id="1322863731089346298" at="40,21,41,31" />
+      <scope id="1322863731089346299" at="42,21,43,31" />
       <scope id="1322863731089346297" at="14,0,17,0" />
-      <scope id="1322863731089346297" at="22,0,25,0" />
-      <scope id="1322863731089346297" at="25,0,28,0" />
-      <scope id="1322863731089346297" at="34,0,37,0" />
-      <scope id="1322863731089346297" at="18,0,22,0">
-        <var name="name" id="1322863731089346297" />
-        <var name="value" id="1322863731089346297" />
+      <scope id="1322863731089346297" at="21,0,26,0" />
+      <scope id="1322863731089346297" at="27,0,32,0" />
+      <scope id="1322863731089346297" at="35,84,45,16" />
+      <scope id="1322863731089346297" at="33,0,47,0">
+        <var name="string" id="1322863731089346297" />
       </scope>
-      <scope id="1322863731089346297" at="28,64,32,16">
-        <var name="list" id="1322863731089346297" />
-      </scope>
-      <scope id="1322863731089346297" at="28,0,34,0" />
-      <scope id="1322863731089346297" at="37,68,47,50" />
-      <scope id="1322863731089346297" at="37,0,49,0">
-        <var name="value" id="1322863731089346297" />
-      </scope>
-      <unit id="1322863731089346297" at="9,0,50,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_CustomIdentifier" />
+      <unit id="1322863731089346297" at="12,0,48,0" name="jetbrains.mps.lang.smodelTests.structure.EnumerationDescriptor_TestEnum_CustomIdentifier" />
     </file>
-    <file name="TestEnum_CustomIdentifier_PropertySupport.java">
-      <node id="1322863731089346297" at="11,24,12,18" concept="6" />
-      <node id="1322863731089346297" at="13,5,14,127" concept="5" />
-      <node id="1322863731089346297" at="15,33,16,60" concept="5" />
-      <node id="1322863731089346297" at="17,45,18,20" concept="6" />
-      <node id="1322863731089346297" at="20,5,21,17" concept="6" />
-      <node id="1322863731089346297" at="24,24,25,18" concept="6" />
-      <node id="1322863731089346297" at="26,5,27,127" concept="5" />
-      <node id="1322863731089346297" at="28,33,29,60" concept="5" />
-      <node id="1322863731089346297" at="30,45,31,43" concept="6" />
-      <node id="1322863731089346297" at="33,5,34,16" concept="6" />
-      <node id="1322863731089346297" at="36,49,37,85" concept="5" />
-      <node id="1322863731089346297" at="38,27,39,32" concept="6" />
-      <node id="1322863731089346297" at="40,5,41,14" concept="6" />
-      <node id="1322863731089346297" at="10,44,13,5" concept="3" />
-      <node id="1322863731089346297" at="16,60,19,7" concept="3" />
-      <node id="1322863731089346297" at="23,47,26,5" concept="3" />
-      <node id="1322863731089346297" at="29,60,32,7" concept="3" />
-      <node id="1322863731089346297" at="37,85,40,5" concept="3" />
-      <node id="1322863731089346297" at="14,127,20,5" concept="9" />
-      <node id="1322863731089346297" at="27,127,33,5" concept="9" />
-      <node id="1322863731089346297" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1322863731089346297" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1322863731089346297" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1322863731089346297" at="11,24,12,18" />
-      <scope id="1322863731089346297" at="17,45,18,20" />
-      <scope id="1322863731089346297" at="24,24,25,18" />
-      <scope id="1322863731089346297" at="30,45,31,43" />
-      <scope id="1322863731089346297" at="38,27,39,32" />
-      <scope id="1322863731089346297" at="15,33,19,7">
-        <var name="constant" id="1322863731089346297" />
-      </scope>
-      <scope id="1322863731089346297" at="28,33,32,7">
-        <var name="constant" id="1322863731089346297" />
-      </scope>
-      <scope id="1322863731089346297" at="36,49,41,14">
-        <var name="constant" id="1322863731089346297" />
-      </scope>
-      <scope id="1322863731089346297" at="36,0,43,0">
-        <var name="value" id="1322863731089346297" />
-      </scope>
-      <scope id="1322863731089346297" at="10,44,21,17">
-        <var name="constants" id="1322863731089346297" />
-      </scope>
-      <scope id="1322863731089346297" at="23,47,34,16">
-        <var name="constants" id="1322863731089346297" />
-      </scope>
-      <scope id="1322863731089346297" at="10,0,23,0">
-        <var name="value" id="1322863731089346297" />
-      </scope>
-      <scope id="1322863731089346297" at="23,0,36,0">
-        <var name="value" id="1322863731089346297" />
-      </scope>
-      <unit id="1322863731089346297" at="9,0,44,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_CustomIdentifier_PropertySupport" />
+    <file name="StructureAspectDescriptor.java">
+      <node id="1322863731089346297" at="29,0,30,0" concept="2" trace="myEnumerationTestEnum_CustomIdentifier" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/1408723013993599810">
-    <file name="TestEnum_NoDefaultValue.java">
-      <node id="1408723013993599810" at="14,0,15,0" concept="2" trace="myName" />
-      <node id="1408723013993599810" at="15,27,16,18" concept="6" />
-      <node id="1408723013993599810" at="18,0,19,0" concept="2" trace="myValue" />
-      <node id="1408723013993599810" at="19,62,20,18" concept="1" />
-      <node id="1408723013993599810" at="20,18,21,20" concept="1" />
-      <node id="1408723013993599810" at="23,28,24,19" concept="6" />
-      <node id="1408723013993599810" at="26,36,27,19" concept="6" />
-      <node id="1408723013993599810" at="29,62,30,106" concept="5" />
-      <node id="1408723013993599811" at="30,106,31,70" concept="1" />
-      <node id="1408723013993599812" at="31,70,32,70" concept="1" />
-      <node id="1408723013993599815" at="32,70,33,70" concept="1" />
-      <node id="1408723013993599810" at="33,70,34,16" concept="6" />
-      <node id="1408723013993599810" at="36,54,37,16" concept="6" />
-      <node id="1408723013993599810" at="40,24,41,50" concept="6" />
-      <node id="1408723013993599811" at="43,69,44,39" concept="6" />
-      <node id="1408723013993599812" at="46,69,47,39" concept="6" />
-      <node id="1408723013993599815" at="49,69,50,39" concept="6" />
-      <node id="1408723013993599810" at="51,5,52,48" concept="6" />
-      <node id="1408723013993599810" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1408723013993599810" at="23,0,26,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1408723013993599810" at="26,0,29,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1408723013993599810" at="36,0,39,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/smodelTests/structure/TestEnum_NoDefaultValue;" />
-      <node id="1408723013993599810" at="39,66,42,5" concept="3" />
-      <node id="1408723013993599811" at="42,5,45,5" concept="3" />
-      <node id="1408723013993599812" at="45,5,48,5" concept="3" />
-      <node id="1408723013993599815" at="48,5,51,5" concept="3" />
-      <node id="1408723013993599810" at="19,0,23,0" concept="0" trace="TestEnum_NoDefaultValue#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1408723013993599810" at="29,0,36,0" concept="8" trace="getConstants#()Ljava/util/List;" />
-      <node id="1408723013993599810" at="39,0,54,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/smodelTests/structure/TestEnum_NoDefaultValue;" />
-      <scope id="1408723013993599810" at="15,27,16,18" />
-      <scope id="1408723013993599810" at="23,28,24,19" />
-      <scope id="1408723013993599810" at="26,36,27,19" />
-      <scope id="1408723013993599810" at="36,54,37,16" />
-      <scope id="1408723013993599810" at="40,24,41,50" />
-      <scope id="1408723013993599811" at="43,69,44,39" />
-      <scope id="1408723013993599812" at="46,69,47,39" />
-      <scope id="1408723013993599815" at="49,69,50,39" />
-      <scope id="1408723013993599810" at="19,62,21,20" />
-      <scope id="1408723013993599810" at="15,0,18,0" />
-      <scope id="1408723013993599810" at="23,0,26,0" />
-      <scope id="1408723013993599810" at="26,0,29,0" />
-      <scope id="1408723013993599810" at="36,0,39,0" />
-      <scope id="1408723013993599810" at="19,0,23,0">
-        <var name="name" id="1408723013993599810" />
-        <var name="value" id="1408723013993599810" />
+    <file name="EnumerationDescriptor_TestEnum_NoDefaultValue.java">
+      <node id="1408723013993599810" at="14,58,15,204" concept="9" />
+      <node id="1408723013993599811" at="18,0,19,0" concept="2" trace="VALUE_a_0" />
+      <node id="1408723013993599812" at="19,0,20,0" concept="2" trace="VALUE_b_0" />
+      <node id="1408723013993599815" at="20,0,21,0" concept="2" trace="VALUE_c_0" />
+      <node id="1408723013993599810" at="24,62,25,16" concept="6" />
+      <node id="1408723013993599810" at="30,74,31,58" concept="6" />
+      <node id="1408723013993599810" at="37,25,38,18" concept="6" />
+      <node id="1408723013993599811" at="41,15,42,25" concept="6" />
+      <node id="1408723013993599812" at="43,15,44,25" concept="6" />
+      <node id="1408723013993599815" at="45,15,46,25" concept="6" />
+      <node id="1408723013993599810" at="47,5,48,16" concept="6" />
+      <node id="1408723013993599810" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_TestEnum_NoDefaultValue#()V" />
+      <node id="1408723013993599810" at="36,84,39,5" concept="3" />
+      <node id="1408723013993599810" at="22,0,27,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="1408723013993599810" at="28,0,33,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="1408723013993599810" at="39,5,47,5" concept="10" />
+      <node id="1408723013993599810" at="34,0,50,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="1408723013993599810" at="14,58,15,204" />
+      <scope id="1408723013993599810" at="24,62,25,16" />
+      <scope id="1408723013993599810" at="30,74,31,58" />
+      <scope id="1408723013993599810" at="37,25,38,18" />
+      <scope id="1408723013993599811" at="41,15,42,25" />
+      <scope id="1408723013993599812" at="43,15,44,25" />
+      <scope id="1408723013993599815" at="45,15,46,25" />
+      <scope id="1408723013993599810" at="14,0,17,0" />
+      <scope id="1408723013993599810" at="22,0,27,0" />
+      <scope id="1408723013993599810" at="28,0,33,0" />
+      <scope id="1408723013993599810" at="36,84,48,16" />
+      <scope id="1408723013993599810" at="34,0,50,0">
+        <var name="string" id="1408723013993599810" />
       </scope>
-      <scope id="1408723013993599810" at="29,62,34,16">
-        <var name="list" id="1408723013993599810" />
-      </scope>
-      <scope id="1408723013993599810" at="29,0,36,0" />
-      <scope id="1408723013993599810" at="39,66,52,48" />
-      <scope id="1408723013993599810" at="39,0,54,0">
-        <var name="value" id="1408723013993599810" />
-      </scope>
-      <unit id="1408723013993599810" at="9,0,55,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_NoDefaultValue" />
+      <unit id="1408723013993599810" at="12,0,51,0" name="jetbrains.mps.lang.smodelTests.structure.EnumerationDescriptor_TestEnum_NoDefaultValue" />
     </file>
-    <file name="TestEnum_NoDefaultValue_PropertySupport.java">
-      <node id="1408723013993599810" at="11,24,12,18" concept="6" />
-      <node id="1408723013993599810" at="13,5,14,123" concept="5" />
-      <node id="1408723013993599810" at="15,33,16,58" concept="5" />
-      <node id="1408723013993599810" at="17,45,18,20" concept="6" />
-      <node id="1408723013993599810" at="20,5,21,17" concept="6" />
-      <node id="1408723013993599810" at="24,24,25,18" concept="6" />
-      <node id="1408723013993599810" at="26,5,27,123" concept="5" />
-      <node id="1408723013993599810" at="28,33,29,58" concept="5" />
-      <node id="1408723013993599810" at="30,45,31,43" concept="6" />
-      <node id="1408723013993599810" at="33,5,34,16" concept="6" />
-      <node id="1408723013993599810" at="36,49,37,81" concept="5" />
-      <node id="1408723013993599810" at="38,27,39,32" concept="6" />
-      <node id="1408723013993599810" at="40,5,41,14" concept="6" />
-      <node id="1408723013993599810" at="10,44,13,5" concept="3" />
-      <node id="1408723013993599810" at="16,58,19,7" concept="3" />
-      <node id="1408723013993599810" at="23,47,26,5" concept="3" />
-      <node id="1408723013993599810" at="29,58,32,7" concept="3" />
-      <node id="1408723013993599810" at="37,81,40,5" concept="3" />
-      <node id="1408723013993599810" at="14,123,20,5" concept="9" />
-      <node id="1408723013993599810" at="27,123,33,5" concept="9" />
-      <node id="1408723013993599810" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1408723013993599810" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1408723013993599810" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1408723013993599810" at="11,24,12,18" />
-      <scope id="1408723013993599810" at="17,45,18,20" />
-      <scope id="1408723013993599810" at="24,24,25,18" />
-      <scope id="1408723013993599810" at="30,45,31,43" />
-      <scope id="1408723013993599810" at="38,27,39,32" />
-      <scope id="1408723013993599810" at="15,33,19,7">
-        <var name="constant" id="1408723013993599810" />
-      </scope>
-      <scope id="1408723013993599810" at="28,33,32,7">
-        <var name="constant" id="1408723013993599810" />
-      </scope>
-      <scope id="1408723013993599810" at="36,49,41,14">
-        <var name="constant" id="1408723013993599810" />
-      </scope>
-      <scope id="1408723013993599810" at="36,0,43,0">
-        <var name="value" id="1408723013993599810" />
-      </scope>
-      <scope id="1408723013993599810" at="10,44,21,17">
-        <var name="constants" id="1408723013993599810" />
-      </scope>
-      <scope id="1408723013993599810" at="23,47,34,16">
-        <var name="constants" id="1408723013993599810" />
-      </scope>
-      <scope id="1408723013993599810" at="10,0,23,0">
-        <var name="value" id="1408723013993599810" />
-      </scope>
-      <scope id="1408723013993599810" at="23,0,36,0">
-        <var name="value" id="1408723013993599810" />
-      </scope>
-      <unit id="1408723013993599810" at="9,0,44,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_NoDefaultValue_PropertySupport" />
+    <file name="StructureAspectDescriptor.java">
+      <node id="1408723013993599810" at="33,0,34,0" concept="2" trace="myEnumerationTestEnum_NoDefaultValue" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/1408723013993599819">
-    <file name="TestEnum_CustomDefaultValue.java">
-      <node id="1408723013993599819" at="14,0,15,0" concept="2" trace="myName" />
-      <node id="1408723013993599819" at="15,27,16,18" concept="6" />
-      <node id="1408723013993599819" at="18,0,19,0" concept="2" trace="myValue" />
-      <node id="1408723013993599819" at="19,66,20,18" concept="1" />
-      <node id="1408723013993599819" at="20,18,21,20" concept="1" />
-      <node id="1408723013993599819" at="23,28,24,19" concept="6" />
-      <node id="1408723013993599819" at="26,36,27,19" concept="6" />
-      <node id="1408723013993599819" at="29,66,30,114" concept="5" />
-      <node id="1408723013993599820" at="30,114,31,74" concept="1" />
-      <node id="1408723013993599821" at="31,74,32,74" concept="1" />
-      <node id="1408723013993599824" at="32,74,33,74" concept="1" />
-      <node id="1408723013993599819" at="33,74,34,16" concept="6" />
-      <node id="1408723013993599819" at="36,58,37,41" concept="6" />
-      <node id="1408723013993599819" at="40,24,41,54" concept="6" />
-      <node id="1408723013993599820" at="43,73,44,43" concept="6" />
-      <node id="1408723013993599821" at="46,73,47,43" concept="6" />
-      <node id="1408723013993599824" at="49,73,50,43" concept="6" />
-      <node id="1408723013993599819" at="51,5,52,52" concept="6" />
-      <node id="1408723013993599819" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1408723013993599819" at="23,0,26,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1408723013993599819" at="26,0,29,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1408723013993599819" at="36,0,39,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/smodelTests/structure/TestEnum_CustomDefaultValue;" />
-      <node id="1408723013993599819" at="39,70,42,5" concept="3" />
-      <node id="1408723013993599820" at="42,5,45,5" concept="3" />
-      <node id="1408723013993599821" at="45,5,48,5" concept="3" />
-      <node id="1408723013993599824" at="48,5,51,5" concept="3" />
-      <node id="1408723013993599819" at="19,0,23,0" concept="0" trace="TestEnum_CustomDefaultValue#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1408723013993599819" at="29,0,36,0" concept="8" trace="getConstants#()Ljava/util/List;" />
-      <node id="1408723013993599819" at="39,0,54,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/smodelTests/structure/TestEnum_CustomDefaultValue;" />
-      <scope id="1408723013993599819" at="15,27,16,18" />
-      <scope id="1408723013993599819" at="23,28,24,19" />
-      <scope id="1408723013993599819" at="26,36,27,19" />
-      <scope id="1408723013993599819" at="36,58,37,41" />
-      <scope id="1408723013993599819" at="40,24,41,54" />
-      <scope id="1408723013993599820" at="43,73,44,43" />
-      <scope id="1408723013993599821" at="46,73,47,43" />
-      <scope id="1408723013993599824" at="49,73,50,43" />
-      <scope id="1408723013993599819" at="19,66,21,20" />
-      <scope id="1408723013993599819" at="15,0,18,0" />
-      <scope id="1408723013993599819" at="23,0,26,0" />
-      <scope id="1408723013993599819" at="26,0,29,0" />
-      <scope id="1408723013993599819" at="36,0,39,0" />
-      <scope id="1408723013993599819" at="19,0,23,0">
-        <var name="name" id="1408723013993599819" />
-        <var name="value" id="1408723013993599819" />
+    <file name="EnumerationDescriptor_TestEnum_CustomDefaultValue.java">
+      <node id="1408723013993599819" at="14,62,15,208" concept="9" />
+      <node id="1408723013993599820" at="18,0,19,0" concept="2" trace="VALUE_a_0" />
+      <node id="1408723013993599821" at="19,0,20,0" concept="2" trace="VALUE_b_0" />
+      <node id="1408723013993599824" at="20,0,21,0" concept="2" trace="VALUE_c_0" />
+      <node id="1408723013993599819" at="24,62,25,21" concept="6" />
+      <node id="1408723013993599819" at="30,74,31,58" concept="6" />
+      <node id="1408723013993599819" at="37,25,38,18" concept="6" />
+      <node id="1408723013993599820" at="41,15,42,25" concept="6" />
+      <node id="1408723013993599821" at="43,15,44,25" concept="6" />
+      <node id="1408723013993599824" at="45,15,46,25" concept="6" />
+      <node id="1408723013993599819" at="47,5,48,16" concept="6" />
+      <node id="1408723013993599819" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_TestEnum_CustomDefaultValue#()V" />
+      <node id="1408723013993599819" at="36,84,39,5" concept="3" />
+      <node id="1408723013993599819" at="22,0,27,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="1408723013993599819" at="28,0,33,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="1408723013993599819" at="39,5,47,5" concept="10" />
+      <node id="1408723013993599819" at="34,0,50,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="1408723013993599819" at="14,62,15,208" />
+      <scope id="1408723013993599819" at="24,62,25,21" />
+      <scope id="1408723013993599819" at="30,74,31,58" />
+      <scope id="1408723013993599819" at="37,25,38,18" />
+      <scope id="1408723013993599820" at="41,15,42,25" />
+      <scope id="1408723013993599821" at="43,15,44,25" />
+      <scope id="1408723013993599824" at="45,15,46,25" />
+      <scope id="1408723013993599819" at="14,0,17,0" />
+      <scope id="1408723013993599819" at="22,0,27,0" />
+      <scope id="1408723013993599819" at="28,0,33,0" />
+      <scope id="1408723013993599819" at="36,84,48,16" />
+      <scope id="1408723013993599819" at="34,0,50,0">
+        <var name="string" id="1408723013993599819" />
       </scope>
-      <scope id="1408723013993599819" at="29,66,34,16">
-        <var name="list" id="1408723013993599819" />
-      </scope>
-      <scope id="1408723013993599819" at="29,0,36,0" />
-      <scope id="1408723013993599819" at="39,70,52,52" />
-      <scope id="1408723013993599819" at="39,0,54,0">
-        <var name="value" id="1408723013993599819" />
-      </scope>
-      <unit id="1408723013993599819" at="9,0,55,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_CustomDefaultValue" />
+      <unit id="1408723013993599819" at="12,0,51,0" name="jetbrains.mps.lang.smodelTests.structure.EnumerationDescriptor_TestEnum_CustomDefaultValue" />
     </file>
-    <file name="TestEnum_CustomDefaultValue_PropertySupport.java">
-      <node id="1408723013993599819" at="11,24,12,18" concept="6" />
-      <node id="1408723013993599819" at="13,5,14,131" concept="5" />
-      <node id="1408723013993599819" at="15,33,16,62" concept="5" />
-      <node id="1408723013993599819" at="17,45,18,20" concept="6" />
-      <node id="1408723013993599819" at="20,5,21,17" concept="6" />
-      <node id="1408723013993599819" at="24,24,25,18" concept="6" />
-      <node id="1408723013993599819" at="26,5,27,131" concept="5" />
-      <node id="1408723013993599819" at="28,33,29,62" concept="5" />
-      <node id="1408723013993599819" at="30,45,31,43" concept="6" />
-      <node id="1408723013993599819" at="33,5,34,16" concept="6" />
-      <node id="1408723013993599819" at="36,49,37,89" concept="5" />
-      <node id="1408723013993599819" at="38,27,39,32" concept="6" />
-      <node id="1408723013993599819" at="40,5,41,14" concept="6" />
-      <node id="1408723013993599819" at="10,44,13,5" concept="3" />
-      <node id="1408723013993599819" at="16,62,19,7" concept="3" />
-      <node id="1408723013993599819" at="23,47,26,5" concept="3" />
-      <node id="1408723013993599819" at="29,62,32,7" concept="3" />
-      <node id="1408723013993599819" at="37,89,40,5" concept="3" />
-      <node id="1408723013993599819" at="14,131,20,5" concept="9" />
-      <node id="1408723013993599819" at="27,131,33,5" concept="9" />
-      <node id="1408723013993599819" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1408723013993599819" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1408723013993599819" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1408723013993599819" at="11,24,12,18" />
-      <scope id="1408723013993599819" at="17,45,18,20" />
-      <scope id="1408723013993599819" at="24,24,25,18" />
-      <scope id="1408723013993599819" at="30,45,31,43" />
-      <scope id="1408723013993599819" at="38,27,39,32" />
-      <scope id="1408723013993599819" at="15,33,19,7">
-        <var name="constant" id="1408723013993599819" />
-      </scope>
-      <scope id="1408723013993599819" at="28,33,32,7">
-        <var name="constant" id="1408723013993599819" />
-      </scope>
-      <scope id="1408723013993599819" at="36,49,41,14">
-        <var name="constant" id="1408723013993599819" />
-      </scope>
-      <scope id="1408723013993599819" at="36,0,43,0">
-        <var name="value" id="1408723013993599819" />
-      </scope>
-      <scope id="1408723013993599819" at="10,44,21,17">
-        <var name="constants" id="1408723013993599819" />
-      </scope>
-      <scope id="1408723013993599819" at="23,47,34,16">
-        <var name="constants" id="1408723013993599819" />
-      </scope>
-      <scope id="1408723013993599819" at="10,0,23,0">
-        <var name="value" id="1408723013993599819" />
-      </scope>
-      <scope id="1408723013993599819" at="23,0,36,0">
-        <var name="value" id="1408723013993599819" />
-      </scope>
-      <unit id="1408723013993599819" at="9,0,44,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_CustomDefaultValue_PropertySupport" />
+    <file name="StructureAspectDescriptor.java">
+      <node id="1408723013993599819" at="28,0,29,0" concept="2" trace="myEnumerationTestEnum_CustomDefaultValue" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/278471160714141631">
@@ -597,24 +226,24 @@
       <node id="278471160714141631" at="25,116,26,43" concept="1" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="278471160714141631" at="15,0,16,0" concept="2" trace="myConceptChild" />
-      <node id="278471160714141631" at="41,39,42,30" concept="6" />
-      <node id="278471160714141631" at="72,63,73,169" concept="5" />
-      <node id="278471160714141631" at="73,169,74,34" concept="1" />
-      <node id="278471160714141631" at="74,34,75,71" concept="1" />
-      <node id="278471160714141631" at="75,71,76,116" concept="1" />
-      <node id="278471160714141631" at="76,116,77,17" concept="1" />
-      <node id="278471160714141632" at="77,17,78,204" concept="1" />
-      <node id="278471160714141633" at="78,204,79,203" concept="1" />
-      <node id="278471160714141634" at="79,203,80,203" concept="1" />
-      <node id="278471160714141635" at="80,203,81,204" concept="1" />
-      <node id="278471160714141631" at="81,204,82,22" concept="6" />
-      <node id="278471160714141631" at="72,0,84,0" concept="8" trace="createDescriptorForChild#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="278471160714141631" at="41,39,42,30" />
-      <scope id="278471160714141631" at="72,63,82,22">
+      <node id="278471160714141631" at="17,0,18,0" concept="2" trace="myConceptChild" />
+      <node id="278471160714141631" at="49,39,50,30" concept="6" />
+      <node id="278471160714141631" at="85,63,86,169" concept="5" />
+      <node id="278471160714141631" at="86,169,87,34" concept="1" />
+      <node id="278471160714141631" at="87,34,88,71" concept="1" />
+      <node id="278471160714141631" at="88,71,89,116" concept="1" />
+      <node id="278471160714141631" at="89,116,90,17" concept="1" />
+      <node id="278471160714141632" at="90,17,91,204" concept="1" />
+      <node id="278471160714141633" at="91,204,92,203" concept="1" />
+      <node id="278471160714141634" at="92,203,93,203" concept="1" />
+      <node id="278471160714141635" at="93,203,94,204" concept="1" />
+      <node id="278471160714141631" at="94,204,95,22" concept="6" />
+      <node id="278471160714141631" at="85,0,97,0" concept="8" trace="createDescriptorForChild#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="278471160714141631" at="49,39,50,30" />
+      <scope id="278471160714141631" at="85,63,95,22">
         <var name="b" id="278471160714141631" />
       </scope>
-      <scope id="278471160714141631" at="72,0,84,0" />
+      <scope id="278471160714141631" at="85,0,97,0" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/278471160714141636">
@@ -635,19 +264,19 @@
       <node id="278471160714141636" at="27,52,28,48" concept="1" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="278471160714141636" at="17,0,18,0" concept="2" trace="myConceptGrandChild" />
-      <node id="278471160714141636" at="45,44,46,35" concept="6" />
-      <node id="278471160714141636" at="92,68,93,174" concept="5" />
-      <node id="278471160714141636" at="93,174,94,34" concept="1" />
-      <node id="278471160714141636" at="94,34,95,116" concept="1" />
-      <node id="278471160714141636" at="95,116,96,17" concept="1" />
-      <node id="278471160714141636" at="96,17,97,22" concept="6" />
-      <node id="278471160714141636" at="92,0,99,0" concept="8" trace="createDescriptorForGrandChild#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="278471160714141636" at="45,44,46,35" />
-      <scope id="278471160714141636" at="92,68,97,22">
+      <node id="278471160714141636" at="19,0,20,0" concept="2" trace="myConceptGrandChild" />
+      <node id="278471160714141636" at="53,44,54,35" concept="6" />
+      <node id="278471160714141636" at="105,68,106,174" concept="5" />
+      <node id="278471160714141636" at="106,174,107,34" concept="1" />
+      <node id="278471160714141636" at="107,34,108,116" concept="1" />
+      <node id="278471160714141636" at="108,116,109,17" concept="1" />
+      <node id="278471160714141636" at="109,17,110,22" concept="6" />
+      <node id="278471160714141636" at="105,0,112,0" concept="8" trace="createDescriptorForGrandChild#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="278471160714141636" at="53,44,54,35" />
+      <scope id="278471160714141636" at="105,68,110,22">
         <var name="b" id="278471160714141636" />
       </scope>
-      <scope id="278471160714141636" at="92,0,99,0" />
+      <scope id="278471160714141636" at="105,0,112,0" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/278471160714141637">
@@ -668,24 +297,24 @@
       <node id="278471160714141637" at="35,67,36,42" concept="1" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="278471160714141637" at="25,0,26,0" concept="2" trace="myConceptRoot" />
-      <node id="278471160714141637" at="61,38,62,29" concept="6" />
-      <node id="278471160714141637" at="156,62,157,168" concept="5" />
-      <node id="278471160714141637" at="157,168,158,34" concept="1" />
-      <node id="278471160714141637" at="158,34,159,71" concept="1" />
-      <node id="278471160714141637" at="159,71,160,76" concept="1" />
-      <node id="278471160714141637" at="160,76,161,116" concept="1" />
-      <node id="278471160714141637" at="161,116,162,17" concept="1" />
-      <node id="278471160714141638" at="162,17,163,198" concept="1" />
-      <node id="278471160714141639" at="163,198,164,199" concept="1" />
-      <node id="34342663958604624" at="164,199,165,205" concept="1" />
-      <node id="278471160714141637" at="165,205,166,22" concept="6" />
-      <node id="278471160714141637" at="156,0,168,0" concept="8" trace="createDescriptorForRoot#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="278471160714141637" at="61,38,62,29" />
-      <scope id="278471160714141637" at="156,62,166,22">
+      <node id="278471160714141637" at="27,0,28,0" concept="2" trace="myConceptRoot" />
+      <node id="278471160714141637" at="69,38,70,29" concept="6" />
+      <node id="278471160714141637" at="169,62,170,168" concept="5" />
+      <node id="278471160714141637" at="170,168,171,34" concept="1" />
+      <node id="278471160714141637" at="171,34,172,71" concept="1" />
+      <node id="278471160714141637" at="172,71,173,76" concept="1" />
+      <node id="278471160714141637" at="173,76,174,116" concept="1" />
+      <node id="278471160714141637" at="174,116,175,17" concept="1" />
+      <node id="278471160714141638" at="175,17,176,198" concept="1" />
+      <node id="278471160714141639" at="176,198,177,199" concept="1" />
+      <node id="34342663958604624" at="177,199,178,205" concept="1" />
+      <node id="278471160714141637" at="178,205,179,22" concept="6" />
+      <node id="278471160714141637" at="169,0,181,0" concept="8" trace="createDescriptorForRoot#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="278471160714141637" at="69,38,70,29" />
+      <scope id="278471160714141637" at="169,62,179,22">
         <var name="b" id="278471160714141637" />
       </scope>
-      <scope id="278471160714141637" at="156,0,168,0" />
+      <scope id="278471160714141637" at="169,0,181,0" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/2854075155748534270">
@@ -706,20 +335,20 @@
       <node id="2854075155748534270" at="34,57,35,67" concept="1" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="2854075155748534270" at="24,0,25,0" concept="2" trace="myConceptReferenceContainerSubConcept" />
-      <node id="2854075155748534270" at="59,62,60,53" concept="6" />
-      <node id="2854075155748534270" at="148,86,149,193" concept="5" />
-      <node id="2854075155748534270" at="149,193,150,34" concept="1" />
-      <node id="2854075155748534270" at="150,34,151,139" concept="1" />
-      <node id="2854075155748534270" at="151,139,152,117" concept="1" />
-      <node id="2854075155748534270" at="152,117,153,17" concept="1" />
-      <node id="2854075155748534270" at="153,17,154,22" concept="6" />
-      <node id="2854075155748534270" at="148,0,156,0" concept="8" trace="createDescriptorForReferenceContainerSubConcept#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="2854075155748534270" at="59,62,60,53" />
-      <scope id="2854075155748534270" at="148,86,154,22">
+      <node id="2854075155748534270" at="26,0,27,0" concept="2" trace="myConceptReferenceContainerSubConcept" />
+      <node id="2854075155748534270" at="67,62,68,53" concept="6" />
+      <node id="2854075155748534270" at="161,86,162,193" concept="5" />
+      <node id="2854075155748534270" at="162,193,163,34" concept="1" />
+      <node id="2854075155748534270" at="163,34,164,139" concept="1" />
+      <node id="2854075155748534270" at="164,139,165,117" concept="1" />
+      <node id="2854075155748534270" at="165,117,166,17" concept="1" />
+      <node id="2854075155748534270" at="166,17,167,22" concept="6" />
+      <node id="2854075155748534270" at="161,0,169,0" concept="8" trace="createDescriptorForReferenceContainerSubConcept#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2854075155748534270" at="67,62,68,53" />
+      <scope id="2854075155748534270" at="161,86,167,22">
         <var name="b" id="2854075155748534270" />
       </scope>
-      <scope id="2854075155748534270" at="148,0,156,0" />
+      <scope id="2854075155748534270" at="161,0,169,0" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/34342663958604621">
@@ -740,134 +369,59 @@
       <node id="34342663958604621" at="26,43,27,52" concept="1" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="34342663958604621" at="16,0,17,0" concept="2" trace="myConceptChildSubConcept" />
-      <node id="34342663958604621" at="43,49,44,40" concept="6" />
-      <node id="34342663958604621" at="84,73,85,178" concept="5" />
-      <node id="34342663958604621" at="85,178,86,34" concept="1" />
-      <node id="34342663958604621" at="86,34,87,125" concept="1" />
-      <node id="34342663958604621" at="87,125,88,115" concept="1" />
-      <node id="34342663958604621" at="88,115,89,17" concept="1" />
-      <node id="34342663958604621" at="89,17,90,22" concept="6" />
-      <node id="34342663958604621" at="84,0,92,0" concept="8" trace="createDescriptorForChildSubConcept#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="34342663958604621" at="43,49,44,40" />
-      <scope id="34342663958604621" at="84,73,90,22">
+      <node id="34342663958604621" at="18,0,19,0" concept="2" trace="myConceptChildSubConcept" />
+      <node id="34342663958604621" at="51,49,52,40" concept="6" />
+      <node id="34342663958604621" at="97,73,98,178" concept="5" />
+      <node id="34342663958604621" at="98,178,99,34" concept="1" />
+      <node id="34342663958604621" at="99,34,100,125" concept="1" />
+      <node id="34342663958604621" at="100,125,101,115" concept="1" />
+      <node id="34342663958604621" at="101,115,102,17" concept="1" />
+      <node id="34342663958604621" at="102,17,103,22" concept="6" />
+      <node id="34342663958604621" at="97,0,105,0" concept="8" trace="createDescriptorForChildSubConcept#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="34342663958604621" at="51,49,52,40" />
+      <scope id="34342663958604621" at="97,73,103,22">
         <var name="b" id="34342663958604621" />
       </scope>
-      <scope id="34342663958604621" at="84,0,92,0" />
+      <scope id="34342663958604621" at="97,0,105,0" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/382176667807293511">
-    <file name="TestEnum_FirstMemberDefaultValue.java">
-      <node id="382176667807293511" at="14,0,15,0" concept="2" trace="myName" />
-      <node id="382176667807293511" at="15,27,16,18" concept="6" />
-      <node id="382176667807293511" at="18,0,19,0" concept="2" trace="myValue" />
-      <node id="382176667807293511" at="19,71,20,18" concept="1" />
-      <node id="382176667807293511" at="20,18,21,20" concept="1" />
-      <node id="382176667807293511" at="23,28,24,19" concept="6" />
-      <node id="382176667807293511" at="26,36,27,19" concept="6" />
-      <node id="382176667807293511" at="29,71,30,124" concept="5" />
-      <node id="382176667807293512" at="30,124,31,79" concept="1" />
-      <node id="382176667807293513" at="31,79,32,79" concept="1" />
-      <node id="382176667807293516" at="32,79,33,79" concept="1" />
-      <node id="382176667807293511" at="33,79,34,16" concept="6" />
-      <node id="382176667807293511" at="36,63,37,46" concept="6" />
-      <node id="382176667807293511" at="40,24,41,59" concept="6" />
-      <node id="382176667807293512" at="43,78,44,48" concept="6" />
-      <node id="382176667807293513" at="46,78,47,48" concept="6" />
-      <node id="382176667807293516" at="49,78,50,48" concept="6" />
-      <node id="382176667807293511" at="51,5,52,57" concept="6" />
-      <node id="382176667807293511" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="382176667807293511" at="23,0,26,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="382176667807293511" at="26,0,29,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="382176667807293511" at="36,0,39,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/smodelTests/structure/TestEnum_FirstMemberDefaultValue;" />
-      <node id="382176667807293511" at="39,75,42,5" concept="3" />
-      <node id="382176667807293512" at="42,5,45,5" concept="3" />
-      <node id="382176667807293513" at="45,5,48,5" concept="3" />
-      <node id="382176667807293516" at="48,5,51,5" concept="3" />
-      <node id="382176667807293511" at="19,0,23,0" concept="0" trace="TestEnum_FirstMemberDefaultValue#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="382176667807293511" at="29,0,36,0" concept="8" trace="getConstants#()Ljava/util/List;" />
-      <node id="382176667807293511" at="39,0,54,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/smodelTests/structure/TestEnum_FirstMemberDefaultValue;" />
-      <scope id="382176667807293511" at="15,27,16,18" />
-      <scope id="382176667807293511" at="23,28,24,19" />
-      <scope id="382176667807293511" at="26,36,27,19" />
-      <scope id="382176667807293511" at="36,63,37,46" />
-      <scope id="382176667807293511" at="40,24,41,59" />
-      <scope id="382176667807293512" at="43,78,44,48" />
-      <scope id="382176667807293513" at="46,78,47,48" />
-      <scope id="382176667807293516" at="49,78,50,48" />
-      <scope id="382176667807293511" at="19,71,21,20" />
-      <scope id="382176667807293511" at="15,0,18,0" />
-      <scope id="382176667807293511" at="23,0,26,0" />
-      <scope id="382176667807293511" at="26,0,29,0" />
-      <scope id="382176667807293511" at="36,0,39,0" />
-      <scope id="382176667807293511" at="19,0,23,0">
-        <var name="name" id="382176667807293511" />
-        <var name="value" id="382176667807293511" />
+    <file name="EnumerationDescriptor_TestEnum_FirstMemberDefaultValue.java">
+      <node id="382176667807293511" at="14,67,15,211" concept="9" />
+      <node id="382176667807293512" at="18,0,19,0" concept="2" trace="VALUE_a_0" />
+      <node id="382176667807293513" at="19,0,20,0" concept="2" trace="VALUE_b_0" />
+      <node id="382176667807293516" at="20,0,21,0" concept="2" trace="VALUE_c_0" />
+      <node id="382176667807293511" at="24,62,25,21" concept="6" />
+      <node id="382176667807293511" at="30,74,31,58" concept="6" />
+      <node id="382176667807293511" at="37,25,38,18" concept="6" />
+      <node id="382176667807293512" at="41,15,42,25" concept="6" />
+      <node id="382176667807293513" at="43,15,44,25" concept="6" />
+      <node id="382176667807293516" at="45,15,46,25" concept="6" />
+      <node id="382176667807293511" at="47,5,48,16" concept="6" />
+      <node id="382176667807293511" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_TestEnum_FirstMemberDefaultValue#()V" />
+      <node id="382176667807293511" at="36,84,39,5" concept="3" />
+      <node id="382176667807293511" at="22,0,27,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="382176667807293511" at="28,0,33,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="382176667807293511" at="39,5,47,5" concept="10" />
+      <node id="382176667807293511" at="34,0,50,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="382176667807293511" at="14,67,15,211" />
+      <scope id="382176667807293511" at="24,62,25,21" />
+      <scope id="382176667807293511" at="30,74,31,58" />
+      <scope id="382176667807293511" at="37,25,38,18" />
+      <scope id="382176667807293512" at="41,15,42,25" />
+      <scope id="382176667807293513" at="43,15,44,25" />
+      <scope id="382176667807293516" at="45,15,46,25" />
+      <scope id="382176667807293511" at="14,0,17,0" />
+      <scope id="382176667807293511" at="22,0,27,0" />
+      <scope id="382176667807293511" at="28,0,33,0" />
+      <scope id="382176667807293511" at="36,84,48,16" />
+      <scope id="382176667807293511" at="34,0,50,0">
+        <var name="string" id="382176667807293511" />
       </scope>
-      <scope id="382176667807293511" at="29,71,34,16">
-        <var name="list" id="382176667807293511" />
-      </scope>
-      <scope id="382176667807293511" at="29,0,36,0" />
-      <scope id="382176667807293511" at="39,75,52,57" />
-      <scope id="382176667807293511" at="39,0,54,0">
-        <var name="value" id="382176667807293511" />
-      </scope>
-      <unit id="382176667807293511" at="9,0,55,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_FirstMemberDefaultValue" />
+      <unit id="382176667807293511" at="12,0,51,0" name="jetbrains.mps.lang.smodelTests.structure.EnumerationDescriptor_TestEnum_FirstMemberDefaultValue" />
     </file>
-    <file name="TestEnum_FirstMemberDefaultValue_PropertySupport.java">
-      <node id="382176667807293511" at="11,24,12,18" concept="6" />
-      <node id="382176667807293511" at="13,5,14,141" concept="5" />
-      <node id="382176667807293511" at="15,33,16,67" concept="5" />
-      <node id="382176667807293511" at="17,45,18,20" concept="6" />
-      <node id="382176667807293511" at="20,5,21,17" concept="6" />
-      <node id="382176667807293511" at="24,24,25,18" concept="6" />
-      <node id="382176667807293511" at="26,5,27,141" concept="5" />
-      <node id="382176667807293511" at="28,33,29,67" concept="5" />
-      <node id="382176667807293511" at="30,45,31,43" concept="6" />
-      <node id="382176667807293511" at="33,5,34,16" concept="6" />
-      <node id="382176667807293511" at="36,49,37,99" concept="5" />
-      <node id="382176667807293511" at="38,27,39,32" concept="6" />
-      <node id="382176667807293511" at="40,5,41,14" concept="6" />
-      <node id="382176667807293511" at="10,44,13,5" concept="3" />
-      <node id="382176667807293511" at="16,67,19,7" concept="3" />
-      <node id="382176667807293511" at="23,47,26,5" concept="3" />
-      <node id="382176667807293511" at="29,67,32,7" concept="3" />
-      <node id="382176667807293511" at="37,99,40,5" concept="3" />
-      <node id="382176667807293511" at="14,141,20,5" concept="9" />
-      <node id="382176667807293511" at="27,141,33,5" concept="9" />
-      <node id="382176667807293511" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="382176667807293511" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="382176667807293511" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="382176667807293511" at="11,24,12,18" />
-      <scope id="382176667807293511" at="17,45,18,20" />
-      <scope id="382176667807293511" at="24,24,25,18" />
-      <scope id="382176667807293511" at="30,45,31,43" />
-      <scope id="382176667807293511" at="38,27,39,32" />
-      <scope id="382176667807293511" at="15,33,19,7">
-        <var name="constant" id="382176667807293511" />
-      </scope>
-      <scope id="382176667807293511" at="28,33,32,7">
-        <var name="constant" id="382176667807293511" />
-      </scope>
-      <scope id="382176667807293511" at="36,49,41,14">
-        <var name="constant" id="382176667807293511" />
-      </scope>
-      <scope id="382176667807293511" at="36,0,43,0">
-        <var name="value" id="382176667807293511" />
-      </scope>
-      <scope id="382176667807293511" at="10,44,21,17">
-        <var name="constants" id="382176667807293511" />
-      </scope>
-      <scope id="382176667807293511" at="23,47,34,16">
-        <var name="constants" id="382176667807293511" />
-      </scope>
-      <scope id="382176667807293511" at="10,0,23,0">
-        <var name="value" id="382176667807293511" />
-      </scope>
-      <scope id="382176667807293511" at="23,0,36,0">
-        <var name="value" id="382176667807293511" />
-      </scope>
-      <unit id="382176667807293511" at="9,0,44,0" name="jetbrains.mps.lang.smodelTests.structure.TestEnum_FirstMemberDefaultValue_PropertySupport" />
+    <file name="StructureAspectDescriptor.java">
+      <node id="382176667807293511" at="32,0,33,0" concept="2" trace="myEnumerationTestEnum_FirstMemberDefaultValue" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/535833678905714286">
@@ -887,20 +441,20 @@
       <node id="535833678905714286" at="30,59,31,55" concept="1" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="535833678905714286" at="20,0,21,0" concept="2" trace="myConceptNPTypesystem_IntA" />
-      <node id="535833678905714286" at="51,51,52,42" concept="6" />
-      <node id="535833678905714286" at="101,34,102,75" concept="1" />
-      <node id="535833678905714286" at="115,75,116,181" concept="5" />
-      <node id="535833678905714286" at="116,181,117,19" concept="1" />
-      <node id="535833678905714286" at="117,19,118,116" concept="1" />
-      <node id="535833678905714286" at="118,116,119,17" concept="1" />
-      <node id="535833678905714286" at="119,17,120,22" concept="6" />
-      <node id="535833678905714286" at="115,0,122,0" concept="8" trace="createDescriptorForNPTypesystem_IntA#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="535833678905714286" at="51,51,52,42" />
-      <scope id="535833678905714286" at="115,75,120,22">
+      <node id="535833678905714286" at="22,0,23,0" concept="2" trace="myConceptNPTypesystem_IntA" />
+      <node id="535833678905714286" at="59,51,60,42" concept="6" />
+      <node id="535833678905714286" at="114,34,115,75" concept="1" />
+      <node id="535833678905714286" at="128,75,129,181" concept="5" />
+      <node id="535833678905714286" at="129,181,130,19" concept="1" />
+      <node id="535833678905714286" at="130,19,131,116" concept="1" />
+      <node id="535833678905714286" at="131,116,132,17" concept="1" />
+      <node id="535833678905714286" at="132,17,133,22" concept="6" />
+      <node id="535833678905714286" at="128,0,135,0" concept="8" trace="createDescriptorForNPTypesystem_IntA#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="535833678905714286" at="59,51,60,42" />
+      <scope id="535833678905714286" at="128,75,133,22">
         <var name="b" id="535833678905714286" />
       </scope>
-      <scope id="535833678905714286" at="115,0,122,0" />
+      <scope id="535833678905714286" at="128,0,135,0" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/535833678905714287">
@@ -920,20 +474,20 @@
       <node id="535833678905714287" at="31,55,32,55" concept="1" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="535833678905714287" at="21,0,22,0" concept="2" trace="myConceptNPTypesystem_IntB" />
-      <node id="535833678905714287" at="53,51,54,42" concept="6" />
-      <node id="535833678905714287" at="109,34,110,75" concept="1" />
-      <node id="535833678905714287" at="122,75,123,181" concept="5" />
-      <node id="535833678905714287" at="123,181,124,19" concept="1" />
-      <node id="535833678905714287" at="124,19,125,116" concept="1" />
-      <node id="535833678905714287" at="125,116,126,17" concept="1" />
-      <node id="535833678905714287" at="126,17,127,22" concept="6" />
-      <node id="535833678905714287" at="122,0,129,0" concept="8" trace="createDescriptorForNPTypesystem_IntB#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="535833678905714287" at="53,51,54,42" />
-      <scope id="535833678905714287" at="122,75,127,22">
+      <node id="535833678905714287" at="23,0,24,0" concept="2" trace="myConceptNPTypesystem_IntB" />
+      <node id="535833678905714287" at="61,51,62,42" concept="6" />
+      <node id="535833678905714287" at="122,34,123,75" concept="1" />
+      <node id="535833678905714287" at="135,75,136,181" concept="5" />
+      <node id="535833678905714287" at="136,181,137,19" concept="1" />
+      <node id="535833678905714287" at="137,19,138,116" concept="1" />
+      <node id="535833678905714287" at="138,116,139,17" concept="1" />
+      <node id="535833678905714287" at="139,17,140,22" concept="6" />
+      <node id="535833678905714287" at="135,0,142,0" concept="8" trace="createDescriptorForNPTypesystem_IntB#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="535833678905714287" at="61,51,62,42" />
+      <scope id="535833678905714287" at="135,75,140,22">
         <var name="b" id="535833678905714287" />
       </scope>
-      <scope id="535833678905714287" at="122,0,129,0" />
+      <scope id="535833678905714287" at="135,0,142,0" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/535833678905839903">
@@ -954,19 +508,19 @@
       <node id="535833678905839903" at="28,48,29,59" concept="1" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="535833678905839903" at="18,0,19,0" concept="2" trace="myConceptNPTypesystem_ConceptA" />
-      <node id="535833678905839903" at="47,55,48,46" concept="6" />
-      <node id="535833678905839903" at="99,79,100,185" concept="5" />
-      <node id="535833678905839903" at="100,185,101,34" concept="1" />
-      <node id="535833678905839903" at="102,75,103,116" concept="1" />
-      <node id="535833678905839903" at="103,116,104,17" concept="1" />
-      <node id="535833678905839903" at="104,17,105,22" concept="6" />
-      <node id="535833678905839903" at="99,0,107,0" concept="8" trace="createDescriptorForNPTypesystem_ConceptA#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="535833678905839903" at="47,55,48,46" />
-      <scope id="535833678905839903" at="99,79,105,22">
+      <node id="535833678905839903" at="20,0,21,0" concept="2" trace="myConceptNPTypesystem_ConceptA" />
+      <node id="535833678905839903" at="55,55,56,46" concept="6" />
+      <node id="535833678905839903" at="112,79,113,185" concept="5" />
+      <node id="535833678905839903" at="113,185,114,34" concept="1" />
+      <node id="535833678905839903" at="115,75,116,116" concept="1" />
+      <node id="535833678905839903" at="116,116,117,17" concept="1" />
+      <node id="535833678905839903" at="117,17,118,22" concept="6" />
+      <node id="535833678905839903" at="112,0,120,0" concept="8" trace="createDescriptorForNPTypesystem_ConceptA#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="535833678905839903" at="55,55,56,46" />
+      <scope id="535833678905839903" at="112,79,118,22">
         <var name="b" id="535833678905839903" />
       </scope>
-      <scope id="535833678905839903" at="99,0,107,0" />
+      <scope id="535833678905839903" at="112,0,120,0" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/535833678905839906">
@@ -987,19 +541,19 @@
       <node id="535833678905839906" at="29,59,30,59" concept="1" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="535833678905839906" at="19,0,20,0" concept="2" trace="myConceptNPTypesystem_ConceptB" />
-      <node id="535833678905839906" at="49,55,50,46" concept="6" />
-      <node id="535833678905839906" at="107,79,108,185" concept="5" />
-      <node id="535833678905839906" at="108,185,109,34" concept="1" />
-      <node id="535833678905839906" at="110,75,111,116" concept="1" />
-      <node id="535833678905839906" at="111,116,112,17" concept="1" />
-      <node id="535833678905839906" at="112,17,113,22" concept="6" />
-      <node id="535833678905839906" at="107,0,115,0" concept="8" trace="createDescriptorForNPTypesystem_ConceptB#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="535833678905839906" at="49,55,50,46" />
-      <scope id="535833678905839906" at="107,79,113,22">
+      <node id="535833678905839906" at="21,0,22,0" concept="2" trace="myConceptNPTypesystem_ConceptB" />
+      <node id="535833678905839906" at="57,55,58,46" concept="6" />
+      <node id="535833678905839906" at="120,79,121,185" concept="5" />
+      <node id="535833678905839906" at="121,185,122,34" concept="1" />
+      <node id="535833678905839906" at="123,75,124,116" concept="1" />
+      <node id="535833678905839906" at="124,116,125,17" concept="1" />
+      <node id="535833678905839906" at="125,17,126,22" concept="6" />
+      <node id="535833678905839906" at="120,0,128,0" concept="8" trace="createDescriptorForNPTypesystem_ConceptB#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="535833678905839906" at="57,55,58,46" />
+      <scope id="535833678905839906" at="120,79,126,22">
         <var name="b" id="535833678905839906" />
       </scope>
-      <scope id="535833678905839906" at="107,0,115,0" />
+      <scope id="535833678905839906" at="120,0,128,0" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/535833678905974372">
@@ -1020,20 +574,20 @@
       <node id="535833678905974372" at="32,55,33,60" concept="1" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="535833678905974372" at="22,0,23,0" concept="2" trace="myConceptNPTypesystem_RefToIntA" />
-      <node id="535833678905974372" at="55,56,56,47" concept="6" />
-      <node id="535833678905974372" at="129,80,130,186" concept="5" />
-      <node id="535833678905974372" at="130,186,131,34" concept="1" />
-      <node id="535833678905974372" at="131,34,132,116" concept="1" />
-      <node id="535833678905974372" at="132,116,133,17" concept="1" />
-      <node id="535833678905974373" at="133,17,134,164" concept="1" />
-      <node id="535833678905974372" at="134,164,135,22" concept="6" />
-      <node id="535833678905974372" at="129,0,137,0" concept="8" trace="createDescriptorForNPTypesystem_RefToIntA#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="535833678905974372" at="55,56,56,47" />
-      <scope id="535833678905974372" at="129,80,135,22">
+      <node id="535833678905974372" at="24,0,25,0" concept="2" trace="myConceptNPTypesystem_RefToIntA" />
+      <node id="535833678905974372" at="63,56,64,47" concept="6" />
+      <node id="535833678905974372" at="142,80,143,186" concept="5" />
+      <node id="535833678905974372" at="143,186,144,34" concept="1" />
+      <node id="535833678905974372" at="144,34,145,116" concept="1" />
+      <node id="535833678905974372" at="145,116,146,17" concept="1" />
+      <node id="535833678905974373" at="146,17,147,164" concept="1" />
+      <node id="535833678905974372" at="147,164,148,22" concept="6" />
+      <node id="535833678905974372" at="142,0,150,0" concept="8" trace="createDescriptorForNPTypesystem_RefToIntA#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="535833678905974372" at="63,56,64,47" />
+      <scope id="535833678905974372" at="142,80,148,22">
         <var name="b" id="535833678905974372" />
       </scope>
-      <scope id="535833678905974372" at="129,0,137,0" />
+      <scope id="535833678905974372" at="142,0,150,0" />
     </file>
   </root>
   <root nodeRef="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/8758390115028851398">
@@ -1054,23 +608,23 @@
       <node id="8758390115028851398" at="33,60,34,57" concept="1" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="8758390115028851398" at="23,0,24,0" concept="2" trace="myConceptReferenceContainer" />
-      <node id="8758390115028851398" at="57,52,58,43" concept="6" />
-      <node id="8758390115028851398" at="137,76,138,183" concept="5" />
-      <node id="8758390115028851398" at="138,183,139,34" concept="1" />
-      <node id="8758390115028851398" at="139,34,140,76" concept="1" />
-      <node id="8758390115028851398" at="140,76,141,117" concept="1" />
-      <node id="8758390115028851398" at="141,117,142,17" concept="1" />
-      <node id="8758390115028851399" at="142,17,143,167" concept="1" />
-      <node id="8758390115028851400" at="143,167,144,171" concept="1" />
-      <node id="8758390115028851401" at="144,171,145,172" concept="1" />
-      <node id="8758390115028851398" at="145,172,146,22" concept="6" />
-      <node id="8758390115028851398" at="137,0,148,0" concept="8" trace="createDescriptorForReferenceContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="8758390115028851398" at="57,52,58,43" />
-      <scope id="8758390115028851398" at="137,76,146,22">
+      <node id="8758390115028851398" at="25,0,26,0" concept="2" trace="myConceptReferenceContainer" />
+      <node id="8758390115028851398" at="65,52,66,43" concept="6" />
+      <node id="8758390115028851398" at="150,76,151,183" concept="5" />
+      <node id="8758390115028851398" at="151,183,152,34" concept="1" />
+      <node id="8758390115028851398" at="152,34,153,76" concept="1" />
+      <node id="8758390115028851398" at="153,76,154,117" concept="1" />
+      <node id="8758390115028851398" at="154,117,155,17" concept="1" />
+      <node id="8758390115028851399" at="155,17,156,167" concept="1" />
+      <node id="8758390115028851400" at="156,167,157,171" concept="1" />
+      <node id="8758390115028851401" at="157,171,158,172" concept="1" />
+      <node id="8758390115028851398" at="158,172,159,22" concept="6" />
+      <node id="8758390115028851398" at="150,0,161,0" concept="8" trace="createDescriptorForReferenceContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="8758390115028851398" at="65,52,66,43" />
+      <scope id="8758390115028851398" at="150,76,159,22">
         <var name="b" id="8758390115028851398" />
       </scope>
-      <scope id="8758390115028851398" at="137,0,148,0" />
+      <scope id="8758390115028851398" at="150,0,161,0" />
     </file>
   </root>
 </debug-info>

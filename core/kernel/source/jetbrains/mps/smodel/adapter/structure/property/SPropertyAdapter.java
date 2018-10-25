@@ -15,21 +15,23 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
-import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.STypeId;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.concept.SDataTypeAdapter;
-import jetbrains.mps.smodel.adapter.structure.concept.SPrimitiveDataTypeAdapter;
-import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.smodel.adapter.structure.SEnumAdapter;
+import jetbrains.mps.smodel.adapter.structure.types.InvalidDataType;
+import jetbrains.mps.smodel.adapter.structure.types.SInterpretedConstrainedStringDataTypeAdapter;
+import jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes;
+import jetbrains.mps.smodel.adapter.structure.types.TypeRegistry;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SDataType;
-import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SType;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class SPropertyAdapter implements SProperty {
   public static final String ID_DELIM = ":";
@@ -57,36 +59,58 @@ public abstract class SPropertyAdapter implements SProperty {
   }
 
   @Override
+  @NotNull
   public SDataType getType() {
-    // TODO reimplement using ConceptDescriptor
+    PropertyDescriptor pd = getPropertyDescriptor();
+    if (pd == null) {
+      return new InvalidDataType("??? (no property descriptor)");
+    }
+
+    final STypeId dataTypeId = pd.getDataTypeId();
+    if (dataTypeId != null) {
+      final SType type = TypeRegistry.getInstance().getType(dataTypeId);
+      if (type instanceof SDataType) {
+        return (SDataType) type;
+      }
+      return new InvalidDataType(type.toString() + " (not a data type)");
+    }
+
+    // datatype hasn't found in generated classes, trying to find it in sources.
+    // TODO code below is only for compatibility issues with legacy interpreted datatypes. Shall be removed after 2018.3.
+
     SNode propertyNode = getDeclarationNode();
     if (propertyNode == null) {
-      return null;
+      return new InvalidDataType("??? (no property declaration)");
     }
 
-    SNode dataType = propertyNode.getReferenceTarget("dataType");
-    if (dataType == null) {
-      return null;
+    SNode dataTypeNode = SNodeUtil.getPropertyDeclaration_DataType(propertyNode);
+    if (dataTypeNode == null) {
+      return new InvalidDataType("??? (no datatype declaration)");
     }
-    if (dataType.isInstanceOfConcept(SNodeUtil.concept_PrimitiveDataTypeDeclaration)) {
-      Boolean isBoolean = (Boolean) BHReflection.invoke(dataType, SMethodTrimmedId.create("isBoolean",
-          MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L,
-              "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "hKtG1tp"));
-      Boolean isInteger = (Boolean) BHReflection.invoke(dataType, SMethodTrimmedId.create("isInteger",
-          MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L,
-              "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "hKtFYCF"));
-
-      return new SPrimitiveDataTypeAdapter((
-          isBoolean ? SPrimitiveDataType.BOOL : ((isInteger ? SPrimitiveDataType.INT : SPrimitiveDataType.STRING)))
-      );
+    if (SNodeUtil.isInstanceOfPrimitiveDataTypeDeclaration(dataTypeNode)) {
+      String name = dataTypeNode.getProperty(SNodeUtil.property_INamedConcept_name);
+      if ("string".equals(name)) {
+        return SPrimitiveTypes.STRING;
+      }
+      if ("boolean".equals(name)) {
+        return SPrimitiveTypes.BOOLEAN;
+      }
+      if ("integer".equals(name)) {
+        return SPrimitiveTypes.INTEGER;
+      }
     }
-    return new SDataTypeAdapter();
+    if (SNodeUtil.isInstanceOfEnumerationDataTypeDeclaration(dataTypeNode)) {
+      return new SInterpretedConstrainedStringDataTypeAdapter(dataTypeNode);
+    }
+    if (SNodeUtil.isInstanceOfConstrainedStringDataTypeDeclaration(dataTypeNode)) {
+      return new SInterpretedConstrainedStringDataTypeAdapter(dataTypeNode);
+    }
+    return new InvalidDataType("??? (type id not specified)");
   }
 
   @Override
   public boolean isValid(String string) {
-    // TODO implement
-    return true;
+    return getType().fromString(string) != SType.NOT_A_VALUE;
   }
 
   public abstract String serialize();

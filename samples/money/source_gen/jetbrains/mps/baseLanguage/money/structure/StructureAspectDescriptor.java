@@ -4,14 +4,19 @@ package jetbrains.mps.baseLanguage.money.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptorImpl;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMoneyCreator = createDescriptorForMoneyCreator();
@@ -21,6 +26,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMoneyLiteral = createDescriptorForMoneyLiteral();
   /*package*/ final ConceptDescriptor myConceptMoneyMethodCall = createDescriptorForMoneyMethodCall();
   /*package*/ final ConceptDescriptor myConceptMoneyType = createDescriptorForMoneyType();
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatypeBigDecimal = new ConstrainedStringDatatypeDescriptorImpl(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144aeececfL, "BigDecimal", "r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)/1186668138191", "[0-9]+(.[0-9]+)?");
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -53,6 +59,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         return null;
     }
+  }
+
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myCSDatatypeBigDecimal);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -107,8 +118,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)/1186667651178");
     b.version(2);
-    b.prop("currency", 0x1144aebdf40L, "1186667945792");
-    b.prop("amount", 0x1144aec21fdL, "1186667962877");
+    b.property("currency", 0x1144aebdf40L).type(PrimitiveTypeId.STRING).origin("1186667945792").done();
+    b.property("amount", 0x1144aec21fdL).type(MetaIdFactory.dataTypeId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144aeececfL)).origin("1186667962877").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }

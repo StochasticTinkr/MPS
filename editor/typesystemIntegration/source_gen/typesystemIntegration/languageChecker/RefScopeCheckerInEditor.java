@@ -5,18 +5,86 @@ package typesystemIntegration.languageChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.errors.item.EditorQuickFix;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.errors.item.NodeFeatureFlavouredItem;
 import jetbrains.mps.nodeEditor.checking.EditorContextQuickfix;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.annotations.NotNull;
+import java.util.Set;
+import jetbrains.mps.errors.item.FlavouredItem;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.openapi.editor.EditorContext;
+import java.awt.Component;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
 
 public class RefScopeCheckerInEditor extends RefScopeChecker {
   @Override
-  protected EditorQuickFix createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
+  protected EditorQuickFix createResolveReferenceQuickfix(SReference reference, boolean executeImmediately) {
     return new RefScopeCheckerInEditor.ResolveReferenceEditorBasedQuickFix(reference, executeImmediately);
   }
+
+  @Override
+  protected EditorQuickFix createAddImportQuickfix(SReference reference) {
+    if (new DependencyHelper(reference).isApplicable()) {
+      return new RefScopeCheckerInEditor.AddImportQuickfix(reference);
+    } else {
+      return null;
+    }
+  }
+
+  private static class AddImportQuickfix implements EditorQuickFix, NodeFeatureFlavouredItem, EditorContextQuickfix {
+    private final SReferenceLink myLink;
+    private final SNodeReference mySourceNode;
+    private AddImportQuickfix(SReference reference) {
+      myLink = reference.getLink();
+      mySourceNode = reference.getSourceNode().getReference();
+    }
+    @Override
+    public String getDescription(SRepository repository) {
+      return "Add Model Dependency on the Reference Target";
+    }
+    @Override
+    public SConceptFeature getConceptFeature() {
+      return myLink;
+    }
+    @NotNull
+    @Override
+    public SNodeReference getNode() {
+      return mySourceNode;
+    }
+    @Override
+    public Set<FlavouredItem.ReportItemFlavour<?, ?>> getIdFlavours() {
+      return SetSequence.fromSetAndArray(new HashSet<FlavouredItem.ReportItemFlavour<?, ?>>(), FLAVOUR_CLASS, FLAVOUR_NODE, FLAVOUR_NODE_FEATURE);
+    }
+    @Override
+    public boolean isExecutedImmediately() {
+      return false;
+    }
+    @Override
+    public boolean isAlive(SRepository repository) {
+      return mySourceNode.resolve(repository) != null;
+    }
+    @Override
+    public void execute(EditorContext editorContext) {
+      new DependencyHelper(mySourceNode.resolve(editorContext.getRepository()).getReference(myLink)).execute(getParentComponent(editorContext));
+    }
+    private Component getParentComponent(EditorContext editorContext) {
+      EditorComponent ec = editorContext.getEditorComponent();
+      return (ec instanceof Component ? ((Component) ec) : ProjectHelper.toMainFrame(editorContext.getOperationContext().getProject()));
+    }
+    @Override
+    public void execute(SRepository repository) {
+      // do nothing if we are not inside editor 
+    }
+  }
+
 
   private static class ResolveReferenceEditorBasedQuickFix extends RefScopeChecker.ResolveReferenceQuickFix implements EditorContextQuickfix {
     public ResolveReferenceEditorBasedQuickFix(SReference reference, boolean executeImmediately) {

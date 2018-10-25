@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptApplyGenerators = createDescriptorForApplyGenerators();
@@ -80,6 +82,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -90,8 +97,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.generator.plan.structure.Step", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL);
     b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/8296877263936070001");
     b.version(2);
-    b.prop("withExtended", 0xc11e5088a799353L, "869728027904938835");
-    b.prop("withPriorityRules", 0xf738996443c35afL, "1113384811373540783");
+    b.property("withExtended", 0xc11e5088a799353L).type(PrimitiveTypeId.BOOLEAN).origin("869728027904938835").done();
+    b.property("withPriorityRules", 0xf738996443c35afL).type(PrimitiveTypeId.BOOLEAN).origin("1113384811373540783").done();
     b.aggregate("generator", 0x73246de9adf5a45cL).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adeca173L).optional(false).ordered(true).multiple(true).origin("8296877263936660572").done();
     return b.create();
   }
@@ -217,7 +224,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc6a8aea78a50f67L);
     b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/2959971211779300533");
     b.version(2);
-    b.prop("text", 0x2913ee226f7cdcd3L, "2959971211779300563");
+    b.property("text", 0x2913ee226f7cdcd3L).type(PrimitiveTypeId.STRING).origin("2959971211779300563").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransform() {

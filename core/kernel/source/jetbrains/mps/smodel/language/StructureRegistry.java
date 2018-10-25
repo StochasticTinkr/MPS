@@ -17,7 +17,9 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -85,6 +87,19 @@ public class StructureRegistry implements CoreAspectRegistry {
     } finally {
       myStorage.finishLoading(concept);
     }
+  }
+
+  @Nullable
+  public DataTypeDescriptor getDataTypeDescriptor(SDataTypeId id) {
+    final LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(id.getLanguageId());
+    if (languageRuntime == null) {
+      return null;
+    }
+    final StructureAspectDescriptor aspect = languageRuntime.getAspect(StructureAspectDescriptor.class);
+    if (aspect == null) {
+      return null;
+    }
+    return aspect.getDataTypeDescriptor(id);
   }
 
   @Override

@@ -54,16 +54,14 @@
     <classNode dependClassName="java.awt.event.ItemListener" />
     <classNode dependClassName="java.awt.event.KeyAdapter" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
-    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="javax.lang.model.SourceVersion" />
     <classNode dependClassName="javax.swing.DefaultComboBoxModel" />
     <classNode dependClassName="javax.swing.DefaultListCellRenderer" />
@@ -74,20 +72,21 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="jetbrains.mps.extapi.model.GeneratableSModel" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.DefaultSourceRoot" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelFactoryService" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.SourceRoot" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.SourceRootKinds" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable" />
+    <classNode dependClassName="jetbrains.mps.kernel.model.MissingDependenciesFixer" />
     <classNode dependClassName="jetbrains.mps.persistence.DefaultModelRoot" />
-    <classNode dependClassName="jetbrains.mps.persistence.MementoImpl" />
     <classNode dependClassName="jetbrains.mps.persistence.ModelCannotBeCreatedException" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.ModelsAutoImportsManager" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
@@ -102,10 +101,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelName" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelFactoryType" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
 </dependenciesRoot>

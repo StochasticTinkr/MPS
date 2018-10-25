@@ -155,7 +155,12 @@ public class SModuleOperations {
     return null;
   }
 
+  /**
+   * @deprecated to become private, don't use
+   */
   @NotNull
+  @ToRemove(version = 2018.3)
+  @Deprecated
   public static EditableSModel createModelWithAdjustments(@NotNull String name,
                                                           @NotNull ModelRoot root,
                                                           @Nullable ModelFactoryType modelFactoryType) throws ModelCannotBeCreatedException {

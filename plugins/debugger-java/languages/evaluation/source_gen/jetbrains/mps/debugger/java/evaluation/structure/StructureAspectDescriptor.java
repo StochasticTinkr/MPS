@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
@@ -73,6 +75,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -83,7 +90,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Type", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL);
     b.origin("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)/4544608336420691672");
     b.version(2);
-    b.prop("isHigh", 0x3f11b1341fa25eedL, "4544608336420691693");
+    b.property("isHigh", 0x3f11b1341fa25eedL).type(PrimitiveTypeId.BOOLEAN).origin("4544608336420691693").done();
     b.aggregate("lowType", 0x3f11b1341fa25ed9L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL).optional(false).ordered(true).multiple(false).origin("4544608336420691673").done();
     b.aggregate("highType", 0x3f11b1341fa25edaL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL).optional(false).ordered(true).multiple(false).origin("4544608336420691674").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
@@ -127,7 +134,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7f4a99699cea367bL);
     b.origin("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)/6036237525966182693");
     b.version(2);
-    b.prop("isShowContext", 0x53c5060c6b19c79bL, "6036237525966243739");
+    b.property("isShowContext", 0x53c5060c6b19c79bL).type(PrimitiveTypeId.BOOLEAN).origin("6036237525966243739").done();
     b.aggregate("variables", 0x53c5060c6b19c797L).target(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L).optional(true).ordered(true).multiple(true).origin("6036237525966243735").done();
     b.aggregate("thisNode", 0x3f11b1341fa23613L).target(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L).optional(true).ordered(true).multiple(false).origin("4544608336420681235").done();
     b.aggregate("contextNode", 0x3f11b1341fa23615L).target(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L).optional(true).ordered(true).multiple(false).origin("4544608336420681237").done();
@@ -175,9 +182,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L);
     b.origin("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)/6036237525966182694");
     b.version(2);
-    b.prop("isOutOfScope", 0x554b4e03d5950431L, "6146091894852355121");
-    b.prop("highLevelNodeId", 0x6db8b4aef007e84fL, "7906267809293264975");
-    b.prop("lowLevelName", 0x4db8c07036eb94eeL, "5600437724825490670");
+    b.property("isOutOfScope", 0x554b4e03d5950431L).type(PrimitiveTypeId.BOOLEAN).origin("6146091894852355121").done();
+    b.property("highLevelNodeId", 0x6db8b4aef007e84fL).type(PrimitiveTypeId.STRING).origin("7906267809293264975").done();
+    b.property("lowLevelName", 0x4db8c07036eb94eeL).type(PrimitiveTypeId.STRING).origin("5600437724825490670").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLowLevelVariableReference() {
@@ -194,7 +201,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)/4336756357323803637");
     b.version(2);
-    b.prop("highLevelNodeId", 0x3c2f40ee0bb3cbf8L, "4336756357323803640");
+    b.property("highLevelNodeId", 0x3c2f40ee0bb3cbf8L).type(PrimitiveTypeId.STRING).origin("4336756357323803640").done();
     b.aggregate("debuggedType", 0x3f11b1341fa2c39cL).target(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L).optional(false).ordered(true).multiple(false).origin("4544608336420717468").done();
     return b.create();
   }
