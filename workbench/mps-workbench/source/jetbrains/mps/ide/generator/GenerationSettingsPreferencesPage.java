@@ -51,15 +51,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 class GenerationSettingsPreferencesPage implements SearchableConfigurable {
-  private static final String APPLY_TRANSFORMATIONS_IN_PLACE = "Apply transformations in place";
-  private static final String SAVE_TRANSIENT_MODELS_ON_GENERATION = "Save transient models on generation";
   private final JPanel myPage;
-  private final JCheckBox mySaveTransientModelsCheckBox = new JCheckBox(SAVE_TRANSIENT_MODELS_ON_GENERATION);
+  private final JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
   private final JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
   private final JCheckBox myStrictMode = new JCheckBox("Strict mode");
   private final JCheckBox myUseNewGenerator = new JCheckBox("Generate in parallel.");
   private final JFormattedTextField myNumberOfParallelThreads = new JFormattedTextField(new RangeDecimalFormatter(2, 32));
-  private final JCheckBox myInplaceTransform = new JCheckBox(APPLY_TRANSFORMATIONS_IN_PLACE);
+  private final JCheckBox myInplaceTransform = new JCheckBox("Apply transformations in place");
   private final JCheckBox myAvoidDynamicRefs = new JCheckBox("Resort to static references");
 
   private JRadioButton myTraceNone = new JRadioButton("None");
@@ -127,7 +125,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     myMainPanel.add(new JPanel(), c);
     c.gridy++;
     c.weighty = 0;
-    c.fill = GridBagConstraints.VERTICAL;
+    c.fill = GridBagConstraints.HORIZONTAL;
     c.anchor = GridBagConstraints.WEST;
     myStatusLabel = new JLabel();
     myStatusLabel.setBorder(new JBEmptyBorder(JBUI.insets(5)));
@@ -348,8 +346,8 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     myStatusLabel.setVisible(false);
     ArrayList<String> messages = new ArrayList<>();
     if (myInplaceTransform.isSelected() && mySaveTransientModelsCheckBox.isSelected()) {
-      messages.add(String.format("<h2>Warning:</h2>Using <strong>%s</strong><br>together with <strong>%s</strong><br>may slow down generation process significantly",
-                                 APPLY_TRANSFORMATIONS_IN_PLACE, SAVE_TRANSIENT_MODELS_ON_GENERATION));
+      messages.add(String.format("<h2>Warning:</h2>Using <strong>%s</strong><br>together with <strong>%s</strong>may slow down generation process significantly",
+                                 myInplaceTransform.getText(), mySaveTransientModelsCheckBox.getText()));
     }
     if (!messages.isEmpty()) {
       myStatusLabel.setText(String.format("<html>%s</html>", String.join("<br/>", messages)));
