@@ -3232,12 +3232,6 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }
   }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
-  }
   private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0cm(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, "jetbrains.mps.build.mps.structure.GeneratorInternal_String"), null, null, false);
@@ -3256,5 +3250,11 @@ public class QueriesGenerated extends QueryProviderBase {
     n1.setProperty(MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, 0x5830b38e16a017bdL, "path"), p0 + "");
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, 0x5830b38e16d823d3L, "project"), (SNode) p1);
     return n1;
+  }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
   }
 }
