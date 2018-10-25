@@ -19,6 +19,7 @@ import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.CopyableModelRoot;
 import jetbrains.mps.extapi.persistence.DefaultSourceRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.SourceRoot;
@@ -30,6 +31,7 @@ import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -338,6 +340,34 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
     } catch (IOException e) {
       throw new ModelCannotBeCreatedException(e);
     }
+  }
+
+
+  public void rename(FileDataSource dataSource, String newName) throws DataSourceFactoryNotFoundException, NoSourceRootsInModelRootException, SourceRootDoesNotExistException {
+    IFile oldFile = dataSource.getFile();
+    SourceRoot sourceRoot = findSourceRootOf(oldFile);
+    CompositeResult<DataSource> result = getDataSourceFactoryBridge().createFileDataSource(new SModelName(newName), sourceRoot);
+    FileDataSource source = (FileDataSource) result.getDataSource();
+    IFile newFile = source.getFile();
+    if (!newFile.equals(oldFile)) {
+      newFile.getParent().mkdirs();
+      newFile.createNewFile();
+      source.setFile(newFile);
+      FileUtil.deleteWithAllEmptyDirs(oldFile);
+    }
+  }
+
+  private SourceRoot findSourceRootOf(IFile oldFile) {
+    List<SourceRoot> sourceRoots = getSourceRoots(SourceRootKinds.SOURCES);
+    SourceRoot sourceRoot = sourceRoots.get(0); // first one by default
+    for (SourceRoot sourceRoot0 : sourceRoots) {
+      if (oldFile.getPath().startsWith(sourceRoot0.getAbsolutePath().getPath())) {
+        // using the same sourceRoot
+        sourceRoot = sourceRoot0;
+        break;
+      }
+    }
+    return sourceRoot;
   }
 
   @Override

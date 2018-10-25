@@ -18,24 +18,17 @@ package jetbrains.mps.extapi.model;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker;
-import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker.ReloadCallback;
-import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.DataSourceFactoryBridge;
-import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.persistence.DataSourceFactoryNotFoundException;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.NoSourceRootsInModelRootException;
 import jetbrains.mps.persistence.SourceRootDoesNotExistException;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -45,7 +38,6 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Editable model (generally) backed up by file. Implicitly bound to files due to
@@ -159,22 +151,6 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     return false;
   }
 
-  private void changeModelFile(IFile newModelFile) {
-    assertCanChange();
-    if (!(getSource() instanceof FileDataSource)) {
-      throw new UnsupportedOperationException("cannot change model file on non-file data source");
-    }
-
-    FileDataSource source = (FileDataSource) getSource();
-    if (source.getFile().getPath().equals(newModelFile.getPath())) return;
-
-    IFile oldFile = source.getFile();
-    fireBeforeModelFileChanged(new SModelFileChangedEvent(this, oldFile, newModelFile));
-    source.setFile(newModelFile);
-    updateTimestamp();
-    fireModelFileChanged(new SModelFileChangedEvent(this, oldFile, newModelFile));
-  }
-
   @Override
   public final void save() {
     assertCanChange();
@@ -234,55 +210,35 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     fireBeforeModelRenamed(newModelReference);
     changeModelReference(newModelReference);
 
-    if (!changeFile) {
-      save();
-    } else {
-      if (!(getSource() instanceof FileDataSource)) {
-        throw new UnsupportedOperationException("cannot change model file on non-file data source");
-      }
+    try {
+      if (changeFile) {
+        if (!(getSource() instanceof FileDataSource)) {
+          throw new UnsupportedOperationException("cannot change model file on non-file data source");
+        }
+        // FIXME it's odd to send out model file changed event from the model, and it's legacy with no uses (I didn't find any neither in ext nor in mbeddr)
+        //       there are legacy listener implementations in mbeddr and 4 references to ModelFileChangedEvent, but no special handling.
+        // FIXME shall just drop these
+        IFile oldFile = ((FileDataSource) getSource()).getFile();
+        fireBeforeModelFileChanged(new SModelFileChangedEvent(this, oldFile, null));
 
-      try {
         ModelRoot root = getModelRoot();
         if (root instanceof DefaultModelRoot) { // todo only default model root? this code does not belong here but model root
-          DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
-          IFile oldFile = ((FileDataSource) getSource()).getFile();
-          SourceRoot sourceRoot = findSourceRootOfMyself(oldFile, defaultModelRoot);
-          CompositeResult<DataSource> result = new DataSourceFactoryBridge(defaultModelRoot).createFileDataSource(new SModelName(newModelName), sourceRoot);
-          FileDataSource source = (FileDataSource) result.getDataSource();
-          IFile newFile = source.getFile();
-          if (!newFile.equals(oldFile)) {
-            newFile.getParent().mkdirs();
-            newFile.createNewFile();
-            changeModelFile(newFile);
-            deleteOldFile(oldFile);
-          }
-          save();
+          ((DefaultModelRoot) root).rename(((FileDataSource) getSource()), newModelName);
+          updateTimestamp();
         }
-      } catch (DataSourceFactoryNotFoundException | NoSourceRootsInModelRootException | SourceRootDoesNotExistException e) {
-        LOG.error(e);
+        // XXX see above, just drop it
+        final IFile newFile = ((FileDataSource) getSource()).getFile();
+        if (!oldFile.getPath().equals(newFile.getPath())) {
+          fireModelFileChanged(new SModelFileChangedEvent(this, oldFile, newFile));
+        }
       }
+    } catch (DataSourceFactoryNotFoundException | NoSourceRootsInModelRootException | SourceRootDoesNotExistException e) {
+      LOG.error(e);
     }
+    save();
 
     fireModelRenamed(new SModelRenamedEvent(this, oldName.getModelName(), newModelName));
     fireModelRenamed(oldName);
-  }
-
-  @SuppressWarnings("ConstantConditions")
-  private void deleteOldFile(IFile oldFile) {
-    FileUtil.deleteWithAllEmptyDirs(oldFile);
-  }
-
-  private SourceRoot findSourceRootOfMyself(IFile oldFile, DefaultModelRoot defaultModelRoot) {
-    List<SourceRoot> sourceRoots = defaultModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
-    SourceRoot sourceRoot = sourceRoots.get(0); // first one by default
-    for (SourceRoot sourceRoot0 : sourceRoots) {
-      if (oldFile.getPath().startsWith(sourceRoot0.getAbsolutePath().getPath())) {
-        // using the same sourceRoot
-        sourceRoot = sourceRoot0;
-        break;
-      }
-    }
-    return sourceRoot;
   }
 
   @Override

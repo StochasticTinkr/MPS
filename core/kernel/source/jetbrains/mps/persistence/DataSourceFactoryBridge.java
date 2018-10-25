@@ -61,6 +61,7 @@ public final class DataSourceFactoryBridge {
   @ToRemove(version = 2018.3)
   public DataSourceFactoryBridge(@NotNull FileBasedModelRoot modelRoot) {
     this(modelRoot, DataSourceFactoryRuleService.getInstance());
+    LOG.error("This ctor would be removed in the next release!", new Throwable());
   }
 
   public DataSourceFactoryBridge(@NotNull FileBasedModelRoot modelRoot, @NotNull DataSourceFactoryRuleService dsFactorySerice) {

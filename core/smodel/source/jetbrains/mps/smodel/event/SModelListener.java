@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,9 +58,17 @@ public interface SModelListener {
 
   void modelRenamed(SModelRenamedEvent event);
 
-  void beforeModelFileChanged(SModelFileChangedEvent event);
+  /**
+   * @deprecated MPS will cease to send out this event, use {@link org.jetbrains.mps.openapi.persistence.DataSourceListener} instead
+   */
+  @Deprecated
+  default void beforeModelFileChanged(SModelFileChangedEvent event) {}
 
-  void modelFileChanged(SModelFileChangedEvent event);
+  /**
+   * @deprecated MPS will cease to send out this event, use {@link org.jetbrains.mps.openapi.persistence.DataSourceListener} instead
+   */
+  @Deprecated
+  default void modelFileChanged(SModelFileChangedEvent event) {}
 
   void propertyChanged(SModelPropertyEvent event);
 
