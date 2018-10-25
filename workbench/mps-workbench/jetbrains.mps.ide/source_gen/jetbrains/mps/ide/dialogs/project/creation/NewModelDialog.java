@@ -340,6 +340,14 @@ public class NewModelDialog extends DialogWrapper {
   }
 
   private boolean check() {
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return checkImpl();
+      }
+    });
+  }
+
+  private boolean checkImpl() {
     Object selected = myModelRoots.getSelectedItem();
 
     if (!((selected instanceof ModelRoot))) {
