@@ -435,7 +435,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       if (model.getSource() instanceof FilePerRootDataSource) {
         final IFile iFile = ((FilePerRootDataSource) model.getSource()).getFile(rootName + MPSExtentions.DOT_MODEL_ROOT);
         VirtualFile virtualFile = VirtualFileUtils.getProjectVirtualFile(iFile);
-        if (virtualFile == null) virtualFile = VirtualFileUtils.getVirtualFile(iFile.toPath().toString());
+        if (virtualFile == null) virtualFile = VirtualFileUtils.getVirtualFile(iFile.getPath());
         PsiFile psiFile = virtualFile != null ? tryReuseRootPsiFile(virtualFile) : null;
         rootNode = psiFile != null && psiFile instanceof MPSPsiRootNode
           ? (MPSPsiRootNode) psiFile :

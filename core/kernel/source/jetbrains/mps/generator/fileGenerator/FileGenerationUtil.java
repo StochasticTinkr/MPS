@@ -43,7 +43,7 @@ public class FileGenerationUtil {
   }
 
   public static IFile getCachesDir(IFile outputRoot) {
-    return outputRoot.getFileSystem().getFile(outputRoot.toPath() + CACHES_SUFFIX);
+    return outputRoot.getFileSystem().getFile(outputRoot.getPath() + CACHES_SUFFIX);
   }
 
   public static IFile getDefaultOutputDir(org.jetbrains.mps.openapi.model.SModel model, @NotNull IFile outputRootDir) {

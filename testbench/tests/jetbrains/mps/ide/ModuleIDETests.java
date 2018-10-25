@@ -247,7 +247,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
       // Check module folder rename
       final IFile moduleDir = descriptorFile.getParent();
       Assert.assertNotNull(moduleDir);
-      String moduleDirName = moduleDir.toPath().getFileName();
+      String moduleDirName = moduleDir.getName();
       Assert.assertNotNull(moduleDirName);
       Assert.assertTrue(mustBeMoved == moduleDirName.equals(newModuleName));
 
@@ -259,7 +259,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
         final IFile contentDirectory = ((FileBasedModelRoot) modelRoot).getContentDirectory();
         Assert.assertNotNull(contentDirectory);
         Assert.assertTrue(contentDirectory.exists());
-        Assert.assertTrue(contentDirectory.toPath().startsWith(moduleDir.toPath()));
+        Assert.assertTrue(contentDirectory.isDescendant(moduleDir));
       }
 
       final String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(module.getModuleDescriptor());
@@ -283,7 +283,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
 
       // Check submodules
       for (AbstractModule subModule : subModules) {
-        Assert.assertTrue(subModule.getModuleSourceDir().toPath().startsWith(module.getModuleSourceDir().toPath()));
+        Assert.assertTrue(subModule.getModuleSourceDir().isDescendant(module.getModuleSourceDir()));
 
         // Check that model roots content folder is updated
         for (ModelRoot modelRoot : subModule.getModelRoots()) {
@@ -294,7 +294,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
           final IFile contentDirectory = ((FileBasedModelRoot) modelRoot).getContentDirectory();
           Assert.assertNotNull(contentDirectory);
           Assert.assertTrue(contentDirectory.exists());
-          Assert.assertTrue(contentDirectory.toPath().startsWith(module.getModuleSourceDir().toPath()));
+          Assert.assertTrue(contentDirectory.isDescendant(module.getModuleSourceDir()));
         }
 
         final String generatorOutputPathSub = ProjectPathUtil.getGeneratorOutputPath(subModule.getModuleDescriptor());

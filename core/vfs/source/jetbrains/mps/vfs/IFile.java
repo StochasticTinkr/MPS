@@ -148,7 +148,7 @@ public interface IFile {
 
   /**
    * @return the jar or folder which contains this file
-   * @deprecated use {@link #toPath()} and extract the path you need
+   * @deprecated use {@link #getPath()} and extract the path you need
    */
   @Deprecated
   @ToRemove(version = 3.4)
@@ -232,4 +232,9 @@ public interface IFile {
   InputStream openInputStream() throws IOException;
 
   OutputStream openOutputStream() throws IOException;
+
+  //this is provisional API. We need to think how to compare files from different FSes
+  default boolean isDescendant(IFile file){
+    return getPath().startsWith(file.getPath());
+  }
 }

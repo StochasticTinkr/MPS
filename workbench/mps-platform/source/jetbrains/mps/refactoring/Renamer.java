@@ -154,24 +154,27 @@ public final class Renamer {
     // Expect maximum of two submodules for language: sandbox and runtime.
     // There is no way to create other submodules from MPS UI, so other cases are rare.
     final List<AbstractModule> subModules = new ArrayList<>(2);
-    final Path renamingModulePath = module.getModuleSourceDir().toPath();
 
     repository.getModelAccess().runReadAction(() -> {
       for (SModule repositoryModule : repository.getModules()) {
-        if (!(repositoryModule instanceof AbstractModule) || repositoryModule.isPackaged() || repositoryModule.isReadOnly() ||
-            repositoryModule instanceof Generator || ((AbstractModule) repositoryModule).getModuleSourceDir() == null ||
-            repositoryModule.equals(module)) {
+        if (!(repositoryModule instanceof AbstractModule)) {
           continue;
         }
 
-        Path modulePath = ((AbstractModule) repositoryModule).getModuleSourceDir().toPath();
-        if (modulePath.startsWith(renamingModulePath)) {
+        IFile moduleSourceDir = ((AbstractModule) repositoryModule).getModuleSourceDir();
+        if(repositoryModule.isPackaged() || repositoryModule.isReadOnly() ||
+           repositoryModule instanceof Generator || moduleSourceDir == null ||
+           repositoryModule.equals(module)){
+          continue;
+        }
+
+        if (moduleSourceDir.isDescendant(module.getModuleSourceDir())) {
           subModules.add((AbstractModule) repositoryModule);
         }
       }
     });
 
-    subModules.sort(Comparator.comparingInt(moduleToCompare -> moduleToCompare.getModuleSourceDir().toPath().toString().length()));
+    subModules.sort(Comparator.comparingInt(moduleToCompare -> moduleToCompare.getModuleSourceDir().getPath().length()));
     return subModules;
   }
 

@@ -121,7 +121,7 @@ public final class ModuleFileTracker {
   //       and how to make sure we didn't error on 'file/pathLong'.startsWith('file/path'). Perhaps, would be better to have isAncestor
   //       for Path objects then (so that one knows it's not about existence or canonical)
   private static boolean isAncestor(IFile f1, IFile f2) {
-    return f1.toPath().startsWith(f2.toPath());
+    return f1.getPath().startsWith(f2.getPath());
   }
 
 

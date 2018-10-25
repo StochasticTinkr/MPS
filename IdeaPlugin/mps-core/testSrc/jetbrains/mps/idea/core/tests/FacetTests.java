@@ -85,7 +85,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
       // Commented out: jdk is connected like a real module sdk, which is probably absent in this test environment
 //    assertEquals(1, solution.getDependencies().size());
 
-      assertEquals(getModuleHome() + "/src_gen", solution.getFacet(JavaModuleFacet.class).getOutputRoot().toPath().toString());
+      assertEquals(getModuleHome() + "/src_gen", solution.getFacet(JavaModuleFacet.class).getOutputRoot().getPath());
 
       Solution repositorySolution = myModuleRepositoryFacade.getModule(solution.getModuleReference(), Solution.class);
       assertEquals(solution, repositorySolution);
@@ -167,7 +167,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     getMpsFixture().getMpsFacet().setConfiguration(configurationBean);
     getMpsFixture().flushEDT();
 
-    assertEquals(generatorOutputPath, getMpsFixture().getMpsFacet().getSolution().getFacet(JavaModuleFacet.class).getOutputRoot().toPath().toString());
+    assertEquals(generatorOutputPath, getMpsFixture().getMpsFacet().getSolution().getFacet(JavaModuleFacet.class).getOutputRoot().getPath());
   }
 
   public void testDefaultOutput() {

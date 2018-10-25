@@ -113,7 +113,7 @@ public final class ModuleMaker {
           monitor.step(module.getModuleName());
           JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
           assert facet != null && facet.getClassesGen() != null;
-          File classesGenFile = new File(facet.getClassesGen().toPath().toString());
+          File classesGenFile = new File(facet.getClassesGen().getPath());
           FileUtil.delete(classesGenFile);
         }
         monitor.advance(1);
