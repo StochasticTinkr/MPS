@@ -95,16 +95,6 @@ public interface IFile {
   @NotNull String getPath();
 
   /**
-   * @deprecated use #path instead
-   */
-  @Deprecated
-  @NotNull UniPath toPath();
-
-  @NotNull default Path path() {
-    return toPath();
-  }
-
-  /**
    * Null if an error has occured.
    */
   @Nullable

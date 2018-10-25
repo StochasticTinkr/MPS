@@ -132,12 +132,6 @@ public class JarEntryFile implements IFile {
     return myJarFile.getAbsolutePath() + "!/" + myEntryPath;
   }
 
-  @NotNull
-  @Override
-  public UniPath toPath() {
-    return UniPath.fromString(getPath());
-  }
-
   @Override
   public long lastModified() {
     return myJarFile.lastModified();
