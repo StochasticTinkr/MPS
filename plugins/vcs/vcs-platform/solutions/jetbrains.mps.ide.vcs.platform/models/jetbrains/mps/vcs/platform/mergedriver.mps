@@ -7734,7 +7734,7 @@
         <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
         <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
         <node concept="Xl_RD" id="4Xk_ETUgCUS" role="37wK5m">
-          <property role="Xl_RC" value="asm-all-6.2.1.jar" />
+          <property role="Xl_RC" value="asm-all-7.0-beta.jar" />
         </node>
         <node concept="Xl_RD" id="6gjr9XnnBRi" role="37wK5m">
           <property role="Xl_RC" value="xstream-1.4.8.jar" />

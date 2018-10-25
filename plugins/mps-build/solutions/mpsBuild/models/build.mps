@@ -532,7 +532,7 @@
             <node concept="2Ry0Ak" id="1s0vtrx9SbO" role="iGT6I">
               <property role="2Ry0Am" value="lib" />
               <node concept="2Ry0Ak" id="3DoJIjdXZwS" role="2Ry0An">
-                <property role="2Ry0Am" value="asm-all-6.2.1.jar" />
+                <property role="2Ry0Am" value="asm-all-7.0-beta.jar" />
               </node>
             </node>
           </node>
@@ -18129,7 +18129,7 @@
       <node concept="13uQ2_" id="4Xk_ETUiPTn" role="39821P">
         <node concept="3_J27D" id="4Xk_ETUiPTp" role="13uQ07">
           <node concept="3Mxwew" id="4Xk_ETUiPU7" role="3MwsjC">
-            <property role="3MwjfP" value="asm-all-6.2.1.jar" />
+            <property role="3MwjfP" value="asm-all-7.0-beta.jar" />
           </node>
         </node>
       </node>

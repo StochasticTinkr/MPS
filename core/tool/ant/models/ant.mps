@@ -4612,7 +4612,7 @@
             <property role="Xl_RC" value="xstream-1.4.8.jar" />
           </node>
           <node concept="Xl_RD" id="4Xk_ETUhYpB" role="3g7hyw">
-            <property role="Xl_RC" value="asm-all-6.2.1.jar" />
+            <property role="Xl_RC" value="asm-all-7.0-beta.jar" />
           </node>
           <node concept="Xl_RD" id="6IC6gZqCBz0" role="3g7hyw">
             <property role="Xl_RC" value="ext/diffutils-1.2.1.jar" />
