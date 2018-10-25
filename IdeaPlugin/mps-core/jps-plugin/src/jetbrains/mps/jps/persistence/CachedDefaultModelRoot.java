@@ -16,6 +16,7 @@
 
 package jetbrains.mps.jps.persistence;
 
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.extapi.persistence.SourceRoot;
@@ -106,6 +107,14 @@ public class CachedDefaultModelRoot extends ModelRootBase {
   public void load(@NotNull Memento memento) {
     // get delegate ready to load models if we fail
     myDelegate.load(memento);
+  }
+
+  @Override
+  public void setModule(@NotNull SModuleBase module) {
+    super.setModule(module);
+    // get delegate ready to load models, just in case there's no cached data.
+    // delegate needs access to module to find out model creation options, see j.m.persistence.ParametersCalculator
+    myDelegate.setModule(module);
   }
 
   @NotNull
