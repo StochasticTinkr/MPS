@@ -1824,7 +1824,7 @@
               <ref role="3cqZAo" node="4riYepdjGdc" resolve="searchResults" />
             </node>
             <node concept="liA8E" id="4riYepdjJId" role="2OqNvi">
-              <ref role="37wK5l" to="g4jo:J2bOg02Hc_" resolve="getSearchResults" />
+              <ref role="37wK5l" to="g4jo:4mN_90IMjqo" resolve="getSearchResults2" />
             </node>
           </node>
           <node concept="3cpWsn" id="4riYepdjGds" role="1Duv9x">

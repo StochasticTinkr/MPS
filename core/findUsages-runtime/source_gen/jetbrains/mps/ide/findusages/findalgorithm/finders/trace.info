@@ -328,14 +328,14 @@
       <node id="5103414995787364766" at="23,45,24,43" concept="8" />
       <node id="5103414995787367245" at="31,123,32,58" concept="7" />
       <node id="5103414995787367251" at="32,58,33,77" concept="2" />
-      <node id="5103414995787367257" at="34,69,35,36" concept="2" />
+      <node id="5103414995787367257" at="34,70,35,36" concept="2" />
       <node id="5103414995787425670" at="40,0,41,0" concept="6" trace="onUsageFound#(Ljetbrains/mps/ide/findusages/model/SearchResult;)V" />
       <node id="5103414995787425678" at="42,0,44,0" concept="6" trace="onSearchedObjectsCalculated#(Ljetbrains/mps/ide/findusages/findalgorithm/finders/SearchedObjects;)V" />
       <node id="5103414995787367254" at="33,77,36,5" concept="4" />
       <node id="8267733531687413178" at="20,0,26,0" concept="6" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="5103414995787367228" at="30,0,38,0" concept="6" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/ide/findusages/findalgorithm/finders/IFinder/FindCallback;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
       <scope id="5103414995787425685" at="42,91,42,91" />
-      <scope id="5103414995787367256" at="34,69,35,36" />
+      <scope id="5103414995787367256" at="34,70,35,36" />
       <scope id="5103414995787425670" at="40,0,41,0">
         <var name="result" id="5103414995787425672" />
       </scope>
