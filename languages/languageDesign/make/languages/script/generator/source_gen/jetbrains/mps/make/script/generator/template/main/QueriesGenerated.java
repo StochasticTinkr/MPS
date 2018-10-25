@@ -183,7 +183,12 @@ public class QueriesGenerated extends QueryProviderBase {
     }) : null);
   }
   public static Object referenceMacro_GetReferent_0_17(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dabL, "jetbrains.mps.make.script.structure.JobDefinition"), false, false), "JobDefinition_jobMonitor");
+    SNode ancestorJob = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dabL, "jetbrains.mps.make.script.structure.JobDefinition"), false, false);
+    if ((ancestorJob != null)) {
+      return _context.getOutputNodeByInputNodeAndMappingLabel(ancestorJob, "JobDefinition_jobMonitor");
+    }
+    SNode ancestorConfig = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dcbee4L, "jetbrains.mps.make.script.structure.ConfigDefinition"), false, false);
+    return _context.getOutputNodeByInputNodeAndMappingLabel(ancestorConfig, "ConfigDefinition_jobMonitor");
   }
   public static Object referenceMacro_GetReferent_2_0(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49b2bL, 0x70276038dc4d7c4L, "expected")), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7bbL, "jetbrains.mps.make.script.structure.ExpectedOption")), "ExpectedOption_enum");

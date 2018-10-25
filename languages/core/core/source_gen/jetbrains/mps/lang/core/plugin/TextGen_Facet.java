@@ -18,10 +18,6 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.make.script.IConfig;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.smodel.resources.GResource;
 import java.util.stream.IntStream;
@@ -63,6 +59,9 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.TResource;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class TextGen_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -102,7 +101,6 @@ public class TextGen_Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              // FIXME drop MakeSession property after 2017.2 
               // no-op now 
             default:
               progressMonitor.done();
@@ -146,31 +144,11 @@ public class TextGen_Facet extends IFacet.Stub {
       return null;
     }
     public <T> T createParameters(Class<T> cls) {
-      return cls.cast(new Parameters());
+      return null;
     }
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
-      if (t != null) {
-        ((Tuples._1) t).assign((Tuples._1) copyFrom);
-      }
       return t;
-    }
-    public static TextGen_Facet.Target_configure.Parameters vars(IPropertiesPool ppool) {
-      return ppool.properties(name, TextGen_Facet.Target_configure.Parameters.class);
-    }
-    public static class Parameters extends MultiTuple._1<MakeSession> {
-      public Parameters() {
-        super();
-      }
-      public Parameters(MakeSession unused) {
-        super(unused);
-      }
-      public MakeSession unused(MakeSession value) {
-        return super._0(value);
-      }
-      public MakeSession unused() {
-        return super._0();
-      }
     }
   }
   public static class Target_textGen implements ITargetEx2 {
@@ -449,7 +427,7 @@ public class TextGen_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._2) t).assign((Tuples._2) copyFrom);
+        ((Tuples._1) t).assign((Tuples._1) copyFrom);
       }
       return t;
     }
@@ -459,24 +437,18 @@ public class TextGen_Facet extends IFacet.Stub {
     public static TextGen_Facet.Target_textGen.Parameters vars(IPropertiesPool ppool) {
       return ppool.properties(name, TextGen_Facet.Target_textGen.Parameters.class);
     }
-    public static class Parameters extends MultiTuple._2<Boolean, Boolean> {
+    public static class Parameters extends MultiTuple._1<Boolean> {
       public Parameters() {
         super();
       }
-      public Parameters(Boolean unused, Boolean generateDebugInfo) {
-        super(unused, generateDebugInfo);
-      }
-      public Boolean unused(Boolean value) {
-        return super._0(value);
+      public Parameters(Boolean generateDebugInfo) {
+        super(generateDebugInfo);
       }
       public Boolean generateDebugInfo(Boolean value) {
-        return super._1(value);
-      }
-      public Boolean unused() {
-        return super._0();
+        return super._0(value);
       }
       public Boolean generateDebugInfo() {
-        return super._1();
+        return super._0();
       }
     }
   }
@@ -590,17 +562,9 @@ public class TextGen_Facet extends IFacet.Stub {
     }
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
-        ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.configure");
-        if (properties.hasProperties(name)) {
-          TextGen_Facet.Target_configure.Parameters props = properties.properties(name, TextGen_Facet.Target_configure.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.configure.unused", null);
-        }
-      }
-      {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
         if (properties.hasProperties(name)) {
           TextGen_Facet.Target_textGen.Parameters props = properties.properties(name, TextGen_Facet.Target_textGen.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.unused", String.valueOf(props.unused()));
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo", String.valueOf(props.generateDebugInfo()));
         }
       }
@@ -608,18 +572,8 @@ public class TextGen_Facet extends IFacet.Stub {
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {
-          ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.configure");
-          TextGen_Facet.Target_configure.Parameters props = properties.properties(name, TextGen_Facet.Target_configure.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.configure.unused")) {
-            props.unused(null);
-          }
-        }
-        {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
           TextGen_Facet.Target_textGen.Parameters props = properties.properties(name, TextGen_Facet.Target_textGen.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.unused")) {
-            props.unused(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.unused")));
-          }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo")) {
             props.generateDebugInfo(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo")));
           }
