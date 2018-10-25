@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vfs.path;
 
-import jetbrains.mps.vfs.Watchable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -33,7 +32,7 @@ import java.util.List;
  *
  * Created by apyshkin on 6/17/16.
  */
-public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchable {
+public interface Path extends Comparable<Path>{
   /**
    * current system defaults
    */
