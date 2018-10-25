@@ -48,6 +48,7 @@ public class VaraibleTypeUtil {
     return null;
   }
 
+
   public static SNode toLocalVariableClassType(SNode valueType) {
     TypeDescriptor td = fromType(valueType);
     SNode res = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
@@ -94,7 +95,7 @@ public class VaraibleTypeUtil {
       return null;
     }
     public SNode handleClassifier(SNode classifer) {
-      return createClassifierType_c9xwxw_a0a1a0a02(classifer);
+      return createClassifierType_c9xwxw_a0a1a0a12(classifer);
     }
   };
 
@@ -353,7 +354,7 @@ public class VaraibleTypeUtil {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf940cc380dL, "ShortType"), null, null, false);
     return quotedNode_1;
   }
-  private static SNode createClassifierType_c9xwxw_a0a1a0a02(Object p0) {
+  private static SNode createClassifierType_c9xwxw_a0a1a0a12(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) p0);
