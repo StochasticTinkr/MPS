@@ -167,19 +167,12 @@ public class ModelCheckerBuilder {
     };
   }
 
-  public static <O> IAbstractChecker<O, IssueKindReportItem> wrapWithFiltering(IAbstractChecker<O, ? extends IssueKindReportItem> specificChecker, final String checkerName) {
+  public static <O> IAbstractChecker<O, IssueKindReportItem> wrapWithFiltering(IAbstractChecker<O, ? extends IssueKindReportItem> specificChecker, String checkerName) {
     return new FilteringChecker<O, IssueKindReportItem>(specificChecker, new _FunctionTypes._return_P2_E0<Boolean, IssueKindReportItem, SRepository>() {
       public Boolean invoke(IssueKindReportItem item, SRepository repository) {
         if (item instanceof NodeReportItem) {
           NodeReportItem nodeReportItem = (NodeReportItem) item;
-          if (ErrorReportUtil.shouldReportError(nodeReportItem, repository)) {
-            return true;
-          } else {
-            if (LOG.isInfoEnabled()) {
-              LOG.info("Specific checker " + checkerName + " returned error that is supposed to be skipped. Node " + nodeReportItem.getNode().getNodeId() + " in model " + nodeReportItem.getNode().getModelReference());
-            }
-            return false;
-          }
+          return ErrorReportUtil.shouldReportError(nodeReportItem, repository);
         } else {
           return true;
         }

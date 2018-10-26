@@ -18,15 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.validation.ValidationSettings;
-import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
-import jetbrains.mps.checkers.ConstraintsChecker;
-import jetbrains.mps.checkers.RefScopeChecker;
-import jetbrains.mps.checkers.TargetConceptChecker;
-import jetbrains.mps.checkers.UsedLanguagesChecker;
-import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
-import jetbrains.mps.project.validation.StructureChecker;
-import jetbrains.mps.checkers.ModelPropertiesChecker;
-import jetbrains.mps.checkers.ModuleChecker;
 
 @State(name = "ModelCheckerSettings", storages = @Storage(value = "modelCheckerSettings.xml")
 )
@@ -79,29 +70,6 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     }
 
     return result;
-  }
-  public List<IChecker<?, ?>> getSpecificCheckers_(@NotNull Project mpsProject) {
-    List<IChecker<?, ?>> checkers = ListSequence.fromList(new ArrayList<IChecker<?, ?>>());
-    switch (myState.myCheckingLevel) {
-      case TYPESYSTEM:
-        ListSequence.fromList(checkers).addElement(new TypesystemChecker());
-      case CONSTRAINTS:
-        ListSequence.fromList(checkers).addElement(new ConstraintsChecker());
-        ListSequence.fromList(checkers).addElement(new RefScopeChecker());
-        ListSequence.fromList(checkers).addElement(new TargetConceptChecker());
-        ListSequence.fromList(checkers).addElement(new UsedLanguagesChecker());
-      case STRUCTURE:
-        ListSequence.fromList(checkers).addElement((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker().withoutBrokenReferences());
-      default:
-        ListSequence.fromList(checkers).addElement(new ModelPropertiesChecker());
-        ListSequence.fromList(checkers).addElement(new UnresolvedReferencesChecker(mpsProject));
-        ListSequence.fromList(checkers).addElement(new ModuleChecker());
-    }
-
-    if (isIncludeAdditionalChecks()) {
-      ListSequence.fromList(checkers).addElement(new GeneratorTemplatesChecker());
-    }
-    return checkers;
   }
 
   public ModelCheckerSettings.CheckingLevel getCheckingLevel() {
