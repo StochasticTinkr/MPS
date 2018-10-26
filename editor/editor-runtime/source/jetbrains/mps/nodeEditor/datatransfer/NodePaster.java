@@ -93,9 +93,9 @@ public class NodePaster {
       return false;
     }
     SNode firstNode = pasteTargets.get(0);
-    String role = firstNode.getRoleInParent();
+    SContainmentLink role = firstNode.getContainmentLink();
     for (SNode node : pasteTargets) {
-      String role1 = node.getRoleInParent();
+      SContainmentLink role1 = node.getContainmentLink();
       if (role1 == null || !role1.equals(role)) {
         return false;
       }
