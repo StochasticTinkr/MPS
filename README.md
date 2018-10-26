@@ -22,6 +22,9 @@ Building MPS from sources
 1. Clone MPS
 2. Open the project in [IntelliJ IDEA](http://www.jetbrains.com/idea) (either Community or Ultimate Edition)
 3. Attach JDK 8 to the project
+* Main menu item "File -> Project Structure" opens the Project Structure dialog
+* Under "Platform Settings -> SDK", make sure the JDK 8 or later is available
+* In the Classpath tab of the JDK, make sure that the %JDK_HOME%/lib/tools.jar is available, it is required to build MPS
 4. Rebuild the project from the _Build_ menu (will take quite a while the first time)
 5. Run the _MPSLauncher_ run configuration in the _Run_ menu
 6. Once MPS starts, open the _MPS_ project (point MPS to the root folder of what you've cloned)
@@ -49,6 +52,7 @@ For *MacOS* users it is required to use the JetBrains JDK (https://bintray.com/j
 
 Additionally, the *IntelliJ Platform Plugin SDK* must be added in the IntelliJ IDEA's "Project Settings" in the "Platform Settings" section. The name of this SDK must be "IDEA IC".
 The *ideaIntegrationCommon* and *IDEAPlugin* modules need this SDK and they will be using automatically as soon as you create it and give it the "IDEA IC" name.
+For more details on how to add an SDK in IntelliJ IDEA, consult this [help page](https://www.jetbrains.com/help/idea/configuring-intellij-platform-plugin-sdk.html).
 
 
 ----------------------
