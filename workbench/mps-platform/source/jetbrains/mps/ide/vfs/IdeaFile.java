@@ -32,7 +32,6 @@ import jetbrains.mps.vfs.FileListener;
 import jetbrains.mps.vfs.FileListenerAdapter;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
-import jetbrains.mps.vfs.path.UniPath;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;

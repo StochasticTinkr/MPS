@@ -28,11 +28,9 @@ import java.io.File;
 import java.util.Set;
 
 /**
- * TODO AP rewrite everything using {@link jetbrains.mps.vfs.path.Path}
+ * TODO AP rewrite everything using Path
  */
 class Macros {
-  private static final Logger LOG = LogManager.getLogger(Macros.class);
-
   @NotNull private final static PathMacros PATH_MACROS = PathMacros.getInstance();
 
   @NotNull

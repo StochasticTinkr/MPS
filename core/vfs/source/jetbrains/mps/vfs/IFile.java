@@ -17,7 +17,6 @@ package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.path.Path;
-import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;

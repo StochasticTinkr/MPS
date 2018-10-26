@@ -57,8 +57,6 @@ import org.junit.runners.model.RunnerBuilder;
 //    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,  //TODO: move this test to closed repository
     jetbrains.mps.smodel.TreeIteratorTest.class,
     jetbrains.mps.smodel.SModelReferenceTest.class,
-    jetbrains.mps.vfs.path.UniPathTest.class,
-    jetbrains.mps.vfs.path.CommonPathTest.class,
     jetbrains.mps.smodel.adapter.SAdapterEqualityTest.class,
     jetbrains.mps.smodel.ModelImplementationTest.class,
     jetbrains.mps.smodel.ModelListenerTest.class,

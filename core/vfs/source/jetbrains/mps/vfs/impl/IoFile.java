@@ -16,13 +16,17 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.path.Path;
-import jetbrains.mps.vfs.path.UniPath;
 import jetbrains.mps.vfs.openapi.FileSystem;
+import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -48,10 +52,6 @@ public class IoFile implements IFile {
 
   IoFile(@NotNull File file, IoFileSystem fileSystem) {
     myFile = file.getAbsoluteFile();
-  }
-
-  public IoFile(@NotNull UniPath path) {
-    this(path.toString());
   }
 
   @NotNull
