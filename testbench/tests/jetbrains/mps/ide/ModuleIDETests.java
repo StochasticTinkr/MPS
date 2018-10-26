@@ -107,7 +107,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void renameLanguage() {
     renameModule(
         (moduleName) -> {
-          File moduleFolder = new File(myProject.getProjectFile(), "languages");
+          File moduleFolder = new File(getProjectRoot(), "languages");
           moduleFolder = new File(moduleFolder, moduleName);
           return NewModuleUtil.createLanguage(moduleName, moduleFolder.getAbsolutePath(), myProject);
         },
@@ -123,7 +123,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
     final String someUnexpectedSolutionName = getNewModuleName();
     renameModule(
         (moduleName) -> {
-          File moduleFolder = new File(myProject.getProjectFile(), "languages");
+          File moduleFolder = new File(getProjectRoot(), "languages");
           moduleFolder = new File(moduleFolder, moduleName);
           final Language language = NewModuleUtil.createLanguage(moduleName, moduleFolder.getAbsolutePath(), myProject);
           try {
@@ -160,7 +160,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void renameSolution() {
     renameModule(
         (moduleName) -> {
-          File moduleFolder = new File(myProject.getProjectFile(), "solutions");
+          File moduleFolder = new File(getProjectRoot(), "solutions");
           moduleFolder = new File(moduleFolder, moduleName);
           return NewModuleUtil.createSolution(moduleName, moduleFolder.getAbsolutePath(), myProject);
         },
@@ -172,7 +172,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void renameSolutionWithSpecialFolder() {
     renameModule(
         (moduleName) -> {
-          File moduleFolder = new File(myProject.getProjectFile(), "solutions");
+          File moduleFolder = new File(getProjectRoot(), "solutions");
           moduleFolder = new File(moduleFolder, moduleName);
           // Create module with name different from folder name
           return NewModuleUtil.createSolution(getNewModuleName(), moduleFolder.getAbsolutePath(), myProject);
@@ -185,12 +185,23 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void renameDevkit() {
     renameModule(
         (moduleName) -> {
-          File moduleFolder = new File(myProject.getProjectFile(), "devkits");
+          File moduleFolder = new File(getProjectRoot(), "devkits");
           moduleFolder = new File(moduleFolder, moduleName);
           return NewModuleUtil.createDevKit(moduleName, moduleFolder.getAbsolutePath(), myProject);
         },
         (moduleName, module) -> Assert.assertTrue(module instanceof DevKit)
     );
+  }
+
+  private File getProjectRoot() {
+    try {
+      // On Mac, "/var/xxx" is "/private/var/xxx" in canonical. Since we use 'startsWith' check,
+      // make sure we start module descriptor loading from canonical file location (module macro performs
+      // canonicalization of file, if we supply non-canonical, paths of model roots would differ)
+      return myProject.getProjectFile().getCanonicalFile();
+    } catch (IOException ex) {
+      throw new IllegalStateException(ex);
+    }
   }
 
   private interface ModuleSupplier {

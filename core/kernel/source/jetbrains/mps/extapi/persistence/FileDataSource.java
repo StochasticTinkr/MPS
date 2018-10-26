@@ -92,6 +92,8 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
         stopListening();
         myFile = file;
         startListening();
+      } else {
+        myFile = file;
       }
     }
   }
