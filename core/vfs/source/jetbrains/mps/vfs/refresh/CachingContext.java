@@ -13,32 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.refresh;
 
 /**
- * These parameters are used by idea virtual file system
+ * Context for the {@link CachingFile#refresh(CachingContext)}
  *
  * Created by apyshkin on 6/19/16.
  */
-public final class DefaultCachingContext implements CachingContext {
-  private final boolean mySynchronous;
-  private final boolean myRecursive;
-
-  /**
-   * fixme bad style -- turn into cascade method call
-   */
-  public DefaultCachingContext(boolean synchronous, boolean recursive) {
-    mySynchronous = synchronous;
-    myRecursive = recursive;
-  }
-
-  @Override
-  public boolean isRecursive() {
-    return myRecursive;
-  }
-
-  @Override
-  public boolean isSynchronous() {
-    return mySynchronous;
-  }
+public interface CachingContext {
+  boolean isRecursive();
+  boolean isSynchronous();
 }

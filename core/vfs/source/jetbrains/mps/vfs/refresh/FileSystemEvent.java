@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.refresh;
 
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFile;
 
 import java.util.Set;
 

@@ -13,14 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.refresh;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Collection;
 
 /**
- * Context for the {@link CachingFile#refresh(CachingContext)}
+ * special fs for the caching files
  *
- * Created by apyshkin on 6/19/16.
+ * Created by apyshkin on 6/20/16.
  */
-public interface CachingContext {
-  boolean isRecursive();
-  boolean isSynchronous();
+public interface CachingFileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
+  /**
+   * group refresh
+   */
+  void refresh(@NotNull CachingContext context, Collection<CachingFile> files);
+
+  @NotNull CachingFile getFile(@NotNull String path);
 }

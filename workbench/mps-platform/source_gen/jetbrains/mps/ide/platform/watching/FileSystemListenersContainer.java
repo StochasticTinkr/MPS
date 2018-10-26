@@ -5,7 +5,7 @@ package jetbrains.mps.ide.platform.watching;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.ConcurrentMap;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.path.Path;
-import jetbrains.mps.vfs.FileListener;
+import jetbrains.mps.vfs.refresh.FileListener;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collections;
 

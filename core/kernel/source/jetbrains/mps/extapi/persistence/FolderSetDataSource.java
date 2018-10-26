@@ -16,13 +16,12 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.CachingFile;
-import jetbrains.mps.vfs.CachingFileSystem;
-import jetbrains.mps.vfs.DefaultCachingContext;
-import jetbrains.mps.vfs.FileSystemEvent;
+import jetbrains.mps.vfs.refresh.CachingFile;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
+import jetbrains.mps.vfs.refresh.DefaultCachingContext;
+import jetbrains.mps.vfs.refresh.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemExtPoint;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.path.Path;

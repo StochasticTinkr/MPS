@@ -43,7 +43,7 @@ import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.io.ModelInputStream;
-import jetbrains.mps.vfs.FileRefresh;
+import jetbrains.mps.vfs.refresh.FileRefresh;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;

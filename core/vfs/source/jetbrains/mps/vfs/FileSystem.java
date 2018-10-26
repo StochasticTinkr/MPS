@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import org.jetbrains.annotations.NotNull;
 
 /**

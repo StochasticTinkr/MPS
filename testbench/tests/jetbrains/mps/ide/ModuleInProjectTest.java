@@ -27,7 +27,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.Reference;
-import jetbrains.mps.vfs.DefaultCachingContext;
+import jetbrains.mps.vfs.refresh.DefaultCachingContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.junit.After;

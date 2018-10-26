@@ -13,25 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
+package jetbrains.mps.vfs.refresh;
 
 /**
- * A listener to a file
+ * These parameters are used by idea virtual file system
  *
- * Created by apyshkin on 6/23/16.
+ * Created by apyshkin on 6/19/16.
  */
-public interface FileListener {
-  /**
-   * listener gets here all the events
-   */
-  void update(ProgressMonitor monitor, @NotNull FileSystemEvent event);
+public final class DefaultCachingContext implements CachingContext {
+  private final boolean mySynchronous;
+  private final boolean myRecursive;
 
-  @NotNull
-  default FileListeningPreferences listeningPreferences() {
-    // the default comes totally from the legacy -- it must be changed later [AP]
-    return FileListeningPreferences.construct().notifyOnDescendantCreation().notifyOnDescendantChange().notifyOnDescendantRemoval().build();
+  /**
+   * fixme bad style -- turn into cascade method call
+   */
+  public DefaultCachingContext(boolean synchronous, boolean recursive) {
+    mySynchronous = synchronous;
+    myRecursive = recursive;
+  }
+
+  @Override
+  public boolean isRecursive() {
+    return myRecursive;
+  }
+
+  @Override
+  public boolean isSynchronous() {
+    return mySynchronous;
   }
 }

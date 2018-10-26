@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.vfs.FileSystemEvent;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.refresh.FileSystemEvent;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
