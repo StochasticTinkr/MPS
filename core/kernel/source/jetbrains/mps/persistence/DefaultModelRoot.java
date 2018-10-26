@@ -352,7 +352,8 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
     if (!newFile.equals(oldFile)) {
       newFile.getParent().mkdirs();
       newFile.createNewFile();
-      source.setFile(newFile);
+      // at the moment, there's no mechanism to replace model's datasource, hence we replace file of the original source here.
+      dataSource.setFile(newFile);
       FileUtil.deleteWithAllEmptyDirs(oldFile);
     }
   }
