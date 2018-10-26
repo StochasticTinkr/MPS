@@ -33,6 +33,7 @@
     <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
     <import index="ab4o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs.newvfs.impl(MPS.IDEA/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
+    <import index="7nyy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.refresh(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1598,8 +1599,8 @@
             <node concept="3cpWs8" id="1_ERPxYOnoo" role="3cqZAp">
               <node concept="3cpWsn" id="1_ERPxYOnop" role="3cpWs9">
                 <property role="TrG5h" value="fs" />
-                <node concept="3uibUv" id="1_ERPxYOnoq" role="1tU5fm">
-                  <ref role="3uigEE" to="3ju5:~CachingFileSystem" resolve="CachingFileSystem" />
+                <node concept="3uibUv" id="7LZvUiIId4K" role="1tU5fm">
+                  <ref role="3uigEE" to="7nyy:~CachingFileSystem" resolve="CachingFileSystem" />
                 </node>
                 <node concept="2OqwBi" id="1_ERPxYOnBw" role="33vP2m">
                   <node concept="2YIFZM" id="1_ERPxYOnzK" role="2Oq$k0">
@@ -1622,17 +1623,17 @@
                     <ref role="3cqZAo" node="1_ERPxYOnop" resolve="fs" />
                   </node>
                   <node concept="liA8E" id="1_ERPxYOoMU" role="2OqNvi">
-                    <ref role="37wK5l" to="3ju5:~CachingFileSystem.getFile(java.lang.String):jetbrains.mps.vfs.CachingFile" resolve="getFile" />
+                    <ref role="37wK5l" to="7nyy:~CachingFileSystem.getFile(java.lang.String):jetbrains.mps.vfs.refresh.CachingFile" resolve="getFile" />
                     <node concept="37vLTw" id="1_ERPxYOoS_" role="37wK5m">
                       <ref role="3cqZAo" node="1_ERPxYOjig" resolve="basePath" />
                     </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="1_ERPxYOpks" role="2OqNvi">
-                  <ref role="37wK5l" to="3ju5:~CachingFile.refresh(jetbrains.mps.vfs.CachingContext):void" resolve="refresh" />
+                  <ref role="37wK5l" to="7nyy:~CachingFile.refresh(jetbrains.mps.vfs.refresh.CachingContext):void" resolve="refresh" />
                   <node concept="2ShNRf" id="1_ERPxYOppQ" role="37wK5m">
                     <node concept="1pGfFk" id="1_ERPxYOTWt" role="2ShVmc">
-                      <ref role="37wK5l" to="3ju5:~DefaultCachingContext.&lt;init&gt;(boolean,boolean)" resolve="DefaultCachingContext" />
+                      <ref role="37wK5l" to="7nyy:~DefaultCachingContext.&lt;init&gt;(boolean,boolean)" resolve="DefaultCachingContext" />
                       <node concept="3clFbT" id="1_ERPxYOU1R" role="37wK5m">
                         <property role="3clFbU" value="true" />
                       </node>

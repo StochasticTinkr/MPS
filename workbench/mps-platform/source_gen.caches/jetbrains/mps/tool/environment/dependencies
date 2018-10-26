@@ -40,8 +40,8 @@
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.Reference" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
-    <classNode dependClassName="jetbrains.mps.vfs.CachingFileSystem" />
-    <classNode dependClassName="jetbrains.mps.vfs.DefaultCachingContext" />
+    <classNode dependClassName="jetbrains.mps.vfs.refresh.CachingFileSystem" />
+    <classNode dependClassName="jetbrains.mps.vfs.refresh.DefaultCachingContext" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
