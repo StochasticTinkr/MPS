@@ -31,4 +31,8 @@ public interface CachingFileSystem extends jetbrains.mps.vfs.openapi.FileSystem 
   void refresh(@NotNull CachingContext context, Collection<CachingFile> files);
 
   @NotNull CachingFile getFile(@NotNull String path);
+
+  void addListener(@NotNull FileSystemListener listener);
+
+  void removeListener(@NotNull FileSystemListener listener);
 }
