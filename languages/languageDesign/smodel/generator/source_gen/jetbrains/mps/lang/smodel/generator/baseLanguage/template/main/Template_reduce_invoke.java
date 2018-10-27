@@ -61,7 +61,7 @@ public class Template_reduce_invoke extends TemplateDeclarationBase implements T
           {
             Collection<SNode> tlist5 = null;
             TemplateContext context3;
-            context3 = context2.withVariable("methodDeclaration", ((SNode) QueriesGenerated.templateArgumentQuery_116_0(new TemplateArgumentContext(context2, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3866789353799066937")))));
+            context3 = context2.withVariable("methodDeclaration", ((SNode) QueriesGenerated.templateArgumentQuery_109_0(new TemplateArgumentContext(context2, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3866789353799066937")))));
             tlist5 = new Template_reduce_Parameters().apply(environment, context3);
             for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
               tnode2.addChild(myAggregationLinks[0], child6);
@@ -76,8 +76,8 @@ public class Template_reduce_invoke extends TemplateDeclarationBase implements T
       {
         final SNode tnode7 = environment.createOutputNode(myConcepts[2]);
         try {
-          SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_116_0(new PropertyMacroContext(context1, "A_BehaviorDescriptor", propertyMacro_eur96u_c0a0c0a0b0c0c0g))));
-          SNodeAccessUtil.setProperty(tnode7, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_116_1(new PropertyMacroContext(context1, "fooMethod", propertyMacro_eur96u_c0a0c0b0b0c0c0g))));
+          SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_109_0(new PropertyMacroContext(context1, "A_BehaviorDescriptor", propertyMacro_eur96u_c0a0c0a0b0c0c0g))));
+          SNodeAccessUtil.setProperty(tnode7, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_109_1(new PropertyMacroContext(context1, "fooMethod", propertyMacro_eur96u_c0a0c0b0b0c0c0g))));
           TemplateContext context4 = context1.subContext();
           {
             final SNode tnode8 = environment.createOutputNode(myConcepts[3]);
@@ -86,7 +86,7 @@ public class Template_reduce_invoke extends TemplateDeclarationBase implements T
               TemplateContext context5 = context4.subContext();
               {
                 Collection<SNode> tlist9 = null;
-                final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_116_0(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_eur96u_b0a0c0c0b0d0b0c0c0g));
+                final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_109_0(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_eur96u_b0a0c0c0b0d0b0c0c0g));
                 tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro_eur96u_b0a0c0c0b0d0b0c0c0g, "tpl/r:00000000-0000-4000-0000-011c89590303/3866789353799066942", context5);
                 for (SNode child10 : TemplateUtil.asNotNull(tlist9)) {
                   tnode8.addChild(myAggregationLinks[2], child10);

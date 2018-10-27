@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MementoWithFS;
 import jetbrains.mps.util.FileUtil;
@@ -168,11 +169,16 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   @NotNull
   @Immutable
   public final List<SourceRoot> getSourceRoots(@NotNull SourceRootKind kind) {
+    assertCanRead();
     return mySourcePathStorage.getByKind(kind);
   }
 
   public final void addSourceRoot(@NotNull SourceRootKind kind, @NotNull SourceRoot root) {
+    assertCanChange();
     mySourcePathStorage.addSourceRoot(kind, root);
+    if (getModule() instanceof EditableSModule) {
+      ((EditableSModule) getModule()).setChanged();
+    }
   }
 
   /**
@@ -180,7 +186,12 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
    */
   @Nullable
   public final SourceRootKind removeSourceRoot(@NotNull SourceRoot root) {
-    return mySourcePathStorage.removeSourceRoot(root);
+    assertCanChange();
+    final SourceRootKind rv = mySourcePathStorage.removeSourceRoot(root);
+    if (rv != null && getModule() instanceof EditableSModule) {
+      ((EditableSModule) getModule()).setChanged();
+    }
+    return rv;
   }
 
   /**

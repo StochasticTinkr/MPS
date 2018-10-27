@@ -45,9 +45,6 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-/**
- * @author Kostik
- */
 public class FileUtil {
   private static final Logger LOG = LogManager.getLogger(FileUtil.class);
 
@@ -95,7 +92,7 @@ public class FileUtil {
     try {
       result.createNewFile();
     } catch (IOException e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
     return result;
   }
@@ -447,18 +444,6 @@ public class FileUtil {
     }
 
     return false;
-  }
-
-  public static File getMaxContainingFile(List<File> files) {
-    if (files.size() == 0) return null;
-    Iterator<File> fileIterator = files.iterator();
-    File max = fileIterator.next();
-    while (fileIterator.hasNext()) {
-      if (max == null) return null;
-      max = getMaxContainingFile(max, fileIterator.next());
-    }
-
-    return max;
   }
 
   public static File getMaxContainingFile(File file1, File file2) {

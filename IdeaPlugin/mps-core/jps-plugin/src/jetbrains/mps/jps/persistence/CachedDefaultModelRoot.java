@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,11 @@
 
 package jetbrains.mps.jps.persistence;
 
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.ModelRootBase;
+import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.idea.core.module.CachedModelData;
 import jetbrains.mps.idea.core.module.CachedModelData.Kind;
 import jetbrains.mps.idea.core.module.CachedModuleData;
@@ -32,8 +36,11 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -48,12 +55,66 @@ import java.util.Map;
  * evgeny, 12/11/12
  * XXX imo, the only justification for this class to subclass DefaultModelRoot is that there's code in MPS that does instanceof check
  */
-public class CachedDefaultModelRoot extends DefaultModelRoot {
+public class CachedDefaultModelRoot extends ModelRootBase {
 
-  private CachedRepositoryData myCachedRepository;
+  private final CachedRepositoryData myCachedRepository;
+  private final DefaultModelRoot myDelegate;
 
-  public CachedDefaultModelRoot(CachedRepositoryData repo) {
+  public CachedDefaultModelRoot(CachedRepositoryData repo, DefaultModelRoot delegate) {
     myCachedRepository = repo;
+    myDelegate = delegate;
+  }
+
+  @Override
+  public String getType() {
+    return myDelegate.getType();
+  }
+
+  @Override
+  public String getPresentation() {
+    return getClass().getName();
+  }
+
+  @Nullable
+  @Override
+  public SModel getModel(@NotNull SModelId id) {
+    // assertCanRead(); - private in superclass
+    return getModels().stream().filter(m -> id.equals(m.getModelId())).findFirst().orElse(null);
+  }
+
+  @Override
+  public boolean canCreateModels() {
+    return false;
+  }
+
+  @Override
+  public boolean canCreateModel(@NotNull String modelName) {
+    return false;
+  }
+
+  @Nullable
+  @Override
+  public SModel createModel(@NotNull String modelName) {
+    return null;
+  }
+
+  @Override
+  public void save(@NotNull Memento memento) {
+    // intentionally no-op
+  }
+
+  @Override
+  public void load(@NotNull Memento memento) {
+    // get delegate ready to load models if we fail
+    myDelegate.load(memento);
+  }
+
+  @Override
+  public void setModule(@NotNull SModuleBase module) {
+    super.setModule(module);
+    // get delegate ready to load models, just in case there's no cached data.
+    // delegate needs access to module to find out model creation options, see j.m.persistence.ParametersCalculator
+    myDelegate.setModule(module);
   }
 
   @NotNull
@@ -64,17 +125,17 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
       module = ((Generator) module).getSourceLanguage();
     }
     if (module == null) {
-      return super.loadModels();
+      return myDelegate.loadModels();
     }
 
     CachedModuleData moduleData = myCachedRepository.getModuleData(module.getModuleReference());
     if (moduleData == null) {
-      return super.loadModels();
+      return myDelegate.loadModels();
     }
 
-    List<CachedModelData> models = moduleData.getModels(this);
+    List<CachedModelData> models = moduleData.getModels(myDelegate);
     if (models == null) {
-      return super.loadModels();
+      return myDelegate.loadModels();
     }
 
     List<SModel> result = new ArrayList<SModel>();
@@ -82,17 +143,17 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
     options.put(ModelFactory.OPTION_MODULEREF, module.getModuleReference().toString());
 
     for (CachedModelData mdata : models) {
-      IFile file = getFileSystem().getFile(mdata.getFile());
+      IFile file = myDelegate.getFileSystem().getFile(mdata.getFile());
 
       Object header = mdata.getHeader();
       if (mdata.getCacheKind() == CachedModelData.Kind.Binary) {
-        result.add(BinaryModelFactory.createFromHeader(((SModelHeader) header), new FileDataSource(file, this)));
+        result.add(BinaryModelFactory.createFromHeader(((SModelHeader) header), new FileDataSource(file)));
       } else if (mdata.getCacheKind() == CachedModelData.Kind.Regular) {
-        result.add(DefaultModelPersistence.createFromHeader((SModelHeader) header, new FileDataSource(file, this)));
+        result.add(DefaultModelPersistence.createFromHeader((SModelHeader) header, new FileDataSource(file)));
       } else if (mdata.getCacheKind() == Kind.RegularFilePerRoot) {
         result.add(FilePerRootModelFactory.createFromHeader((SModelHeader) header, new FilePerRootDataSource(file, this)));
       } else {
-        FileDataSource source = new FileDataSource(file, this);
+        FileDataSource source = new FileDataSource(file);
         String fileName = file.getName();
         String extension = FileUtil.getExtension(fileName);
 
@@ -115,8 +176,8 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
   private void fillOptions(IFile file, Map<String, String> options) {
     String relPath = null;
     String filePath = file.getPath().replace("\\", "/");
-    for (String path : getFiles(SOURCE_ROOTS)) {
-      String normalized = FileUtil.getAbsolutePath(path).replace("\\", "/");
+    for (SourceRoot sr : myDelegate.getSourceRoots(SourceRootKinds.SOURCES)) {
+      String normalized = sr.getAbsolutePath().getPath().replace("\\", "/");
       if (!normalized.endsWith("/")) {
         normalized = normalized + "/";
       }
@@ -126,7 +187,6 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
       }
     }
 
-    options.put(ModelFactory.OPTION_RELPATH, relativize(filePath, getContentDirectory()));
     options.remove(ModelFactory.OPTION_PACKAGE);
     options.remove(ModelFactory.OPTION_MODELNAME);
     if (relPath != null) {

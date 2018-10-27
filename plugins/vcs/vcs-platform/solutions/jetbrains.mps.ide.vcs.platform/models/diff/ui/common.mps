@@ -11258,12 +11258,19 @@
                         <node concept="2YIFZM" id="Z3SJ0B5L2c" role="33vP2m">
                           <ref role="37wK5l" to="33ny:~Collections.list(java.util.Enumeration):java.util.ArrayList" resolve="list" />
                           <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-                          <node concept="2OqwBi" id="Z3SJ0B5L1h" role="37wK5m">
-                            <node concept="liA8E" id="Z3SJ0B5L1m" role="2OqNvi">
-                              <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.children():java.util.Enumeration" resolve="children" />
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagT_sC" role="2Oq$k0">
-                              <ref role="3cqZAo" node="42hl10VHaNj" resolve="parentNode" />
+                          <node concept="1eOMI4" id="63BtclJ$LJj" role="37wK5m">
+                            <node concept="10QFUN" id="63BtclJ$LJi" role="1eOMHV">
+                              <node concept="2OqwBi" id="63BtclJ$LJf" role="10QFUP">
+                                <node concept="liA8E" id="63BtclJ$LJg" role="2OqNvi">
+                                  <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.children():java.util.Enumeration" resolve="children" />
+                                </node>
+                                <node concept="37vLTw" id="63BtclJ$LJh" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="42hl10VHaNj" resolve="parentNode" />
+                                </node>
+                              </node>
+                              <node concept="3uibUv" id="63BtclJ$LJd" role="10QFUM">
+                                <ref role="3uigEE" to="33ny:~Enumeration" resolve="Enumeration" />
+                              </node>
                             </node>
                           </node>
                         </node>

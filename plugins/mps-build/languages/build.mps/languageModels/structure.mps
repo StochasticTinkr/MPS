@@ -1185,15 +1185,15 @@
     <property role="3GE5qa" value="Project.Plugin" />
     <property role="EcuMT" value="4034578608468929319" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="asaX9" id="36cV00Cx3ar" role="lGtFl">
+      <property role="YLQ7P" value="the packaging is to be defined in the layout section" />
+    </node>
     <node concept="1TJgyj" id="3vXGXT8byGC" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4034578608468929320" />
       <ref role="20lvS9" node="hS0KzPONfF" resolve="BuildMps_AbstractModule" />
-    </node>
-    <node concept="asaX9" id="36cV00Cx3ar" role="lGtFl">
-      <property role="YLQ7P" value="the packaging is to be defined in the layout section" />
     </node>
   </node>
   <node concept="1TIwiD" id="6MNA4JYmRbj">
@@ -1519,13 +1519,104 @@
       <property role="1uS6qo" value="never" />
     </node>
   </node>
-  <node concept="1TIwiD" id="36cV00CpqQv">
-    <property role="EcuMT" value="3570488090019868063" />
-    <property role="3GE5qa" value="Layout" />
-    <property role="TrG5h" value="BuildMpsLayout_PluginLayoutTypeBase" />
+  <node concept="1TIwiD" id="75N6LqycVf4">
+    <property role="EcuMT" value="8174907532632110020" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
+    <property role="TrG5h" value="BuildMps_TipsSolution" />
+    <property role="34LRSv" value="from solution" />
+    <property role="R4oN_" value="containing MPSTipsAndTricks instances" />
+    <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
+    <node concept="1TJgyj" id="7uJAFPqNf3a" role="1TKVEi">
+      <property role="IQ2ns" value="8624281949500666058" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="path" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyj" id="5J862cnMvcw" role="1TKVEi">
+      <property role="IQ2ns" value="6613562591795606304" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="solution" />
+      <ref role="20lvS9" node="2L4pT56gD3R" resolve="BuildMps_Solution" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="75N6Lqyb05w">
+    <property role="EcuMT" value="8174907532631605600" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
+    <property role="TrG5h" value="BuildMps_TipsDir" />
+    <property role="34LRSv" value="from directory" />
+    <property role="R4oN_" value="with predefined structure" />
+    <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
+    <node concept="1TJgyj" id="4reBHdWN7OG" role="1TKVEi">
+      <property role="IQ2ns" value="5102190059026414892" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="path" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyi" id="4reBHdWN7OI" role="1TKVEl">
+      <property role="IQ2nx" value="5102190059026414894" />
+      <property role="TrG5h" value="language" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="75N6Lqya9Ap">
+    <property role="EcuMT" value="8174907532631382425" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
+    <property role="TrG5h" value="BuildMps_TipsMps" />
+    <property role="34LRSv" value="from MPS" />
+    <property role="R4oN_" value="generic distribution" />
+    <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
+  </node>
+  <node concept="1TIwiD" id="75N6Lqy0tuW">
+    <property role="EcuMT" value="8174907532628842428" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
+    <property role="TrG5h" value="BuildMps_Tips" />
+    <property role="34LRSv" value="tips &amp; tricks" />
+    <ref role="1TJDcQ" to="3ior:6qcrfIJFdK8" resolve="BuildProjectPart" />
+    <node concept="1TJgyj" id="75N6Lqya9An" role="1TKVEi">
+      <property role="IQ2ns" value="8174907532631382423" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="imports" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
+    </node>
+    <node concept="PrWs8" id="4Y6KxqRnnDs" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="75N6Lqya9Am">
+    <property role="EcuMT" value="8174907532631382422" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
+    <property role="TrG5h" value="BuildMps_TipsImport" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="5Ux$AZuOzjJ">
+    <property role="EcuMT" value="6818892319992984815" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Package" />
+    <property role="TrG5h" value="BuildMps_TipsPackage" />
+    <property role="R4oN_" value="as jar with predefined layout" />
+    <property role="34LRSv" value="package tips &amp; tricks" />
+    <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+    <node concept="1TJgyj" id="6mx7ef$41ej" role="1TKVEi">
+      <property role="IQ2ns" value="7323166234190549907" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="tips" />
+      <ref role="20lvS9" node="75N6Lqy0tuW" resolve="BuildMps_Tips" />
+    </node>
+    <node concept="PrWs8" id="6mx7ef$3$pu" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="36cV00CpqQx">
+    <property role="EcuMT" value="3570488090019868065" />
+    <property role="3GE5qa" value="Layout" />
+    <property role="TrG5h" value="BuildMpsLayout_AutoPluginLayoutType" />
+    <property role="34LRSv" value="auto packaging" />
+    <property role="R4oN_" value="all modules are placed into the folder 'languages', which is created in the root of the plugin" />
+    <ref role="1TJDcQ" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
   </node>
   <node concept="1TIwiD" id="36cV00CpqQw">
     <property role="EcuMT" value="3570488090019868064" />
@@ -1535,13 +1626,13 @@
     <property role="R4oN_" value="packaging of the plugin is to be provided by the user" />
     <ref role="1TJDcQ" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
   </node>
-  <node concept="1TIwiD" id="36cV00CpqQx">
-    <property role="EcuMT" value="3570488090019868065" />
+  <node concept="1TIwiD" id="36cV00CpqQv">
+    <property role="EcuMT" value="3570488090019868063" />
     <property role="3GE5qa" value="Layout" />
-    <property role="TrG5h" value="BuildMpsLayout_AutoPluginLayoutType" />
-    <property role="34LRSv" value="auto packaging" />
-    <property role="R4oN_" value="all modules are placed into the folder 'languages', which is created in the root of the plugin" />
-    <ref role="1TJDcQ" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
+    <property role="TrG5h" value="BuildMpsLayout_PluginLayoutTypeBase" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 

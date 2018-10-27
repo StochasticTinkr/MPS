@@ -7,9 +7,8 @@ import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import java.util.LinkedHashSet;
-import java.util.stream.Stream;
-import java.util.stream.Collectors;
 import java.util.Collections;
+import jetbrains.mps.util.annotation.ToRemove;
 
 @Immutable
 public class SearchedObjects<K> {
@@ -19,16 +18,22 @@ public class SearchedObjects<K> {
     mySearchedNodes = new LinkedHashSet<K>(collection);
   }
 
-  public static <K> SearchedObjects<K> union(SearchedObjects<K> one, SearchedObjects<K> another) {
-    return new SearchedObjects(Stream.concat(one.getElements().stream(), another.getElements().stream()).collect(Collectors.toList()));
-  }
-
   public Set<K> getElements() {
     return Collections.unmodifiableSet(mySearchedNodes);
   }
 
+  /**
+   * 
+   * @deprecated mutates
+   */
+  @ToRemove(version = 183)
+  @Deprecated
+  public Set<K> getElements0() {
+    return mySearchedNodes;
+  }
+
   public boolean contains(K k) {
-    return getElements().contains(k);
+    return mySearchedNodes.contains(k);
   }
 
   @NotNull

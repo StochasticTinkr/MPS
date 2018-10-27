@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractionVarRef = createDescriptorForAbstractionVarRef();
@@ -117,6 +119,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         return null;
     }
+  }
+
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -308,7 +315,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression", 0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L);
     b.origin("r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)/4022026349914762709");
     b.version(2);
-    b.prop("value", 0x37d11ba7d7ee2dd6L, "4022026349914762710");
+    b.property("value", 0x37d11ba7d7ee2dd6L).type(PrimitiveTypeId.INTEGER).origin("4022026349914762710").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForParenthesisExpression() {
@@ -336,7 +343,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression", 0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L);
     b.origin("r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)/4022026349914762696");
     b.version(2);
-    b.prop("value", 0x37d11ba7d7ee2dc9L, "4022026349914762697");
+    b.property("value", 0x37d11ba7d7ee2dc9L).type(PrimitiveTypeId.STRING).origin("4022026349914762697").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForStringType() {

@@ -46,13 +46,13 @@ public class CellProperties {
     myCellEffectiveWidth = cell.getEffectiveWidth() + "";
     myRootCell = (cell.getEditorComponent().getRootCell() == cell) ? "Yes" : "No";
     myCellID = cell.getCellId();
-    myCellRole = "" + cell.getSRole().getName();
+    myCellRole = "" + (cell.getSRole() == null ? "" : cell.getSRole().getName());
 
     mySNode = cell.getSNode();
     String name = mySNode.getName();
     name = name != null ? name : "<no name>";
     myCellSNode = mySNode == null ? "no node" :
-        name + " (" + NameUtil.shortNameFromLongName(mySNode.getConcept().getQualifiedName()) + ") [" + mySNode.getNodeId().toString() + "]";
+                  name + " (" + NameUtil.shortNameFromLongName(mySNode.getConcept().getQualifiedName()) + ") [" + mySNode.getNodeId().toString() + "]";
     if (cell.getParent() != null) {
       myCellNumber = String.valueOf(IterableUtil.indexOf(cell.getParent(), cell));
     }

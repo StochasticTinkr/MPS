@@ -8,10 +8,12 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptXMLSAXAttributeHandler = createDescriptorForXMLSAXAttributeHandler();
@@ -112,6 +114,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -152,7 +159,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140363");
     b.version(2);
-    b.prop("isRequired", 0x1f6c736337b5e2ccL, "2264311582634140364");
+    b.property("isRequired", 0x1f6c736337b5e2ccL).type(PrimitiveTypeId.BOOLEAN).origin("2264311582634140364").done();
     b.aggregate("handler", 0x1f6c736337b5e2cdL).target(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2c1L).optional(true).ordered(true).multiple(false).origin("2264311582634140365").done();
     return b.create();
   }
@@ -193,8 +200,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
     b.origin("r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140376");
     b.version(2);
-    b.prop("tagName", 0x1f6c736337b5e2daL, "2264311582634140378");
-    b.prop("overrideTag", 0x1f6c736337b5e2dbL, "2264311582634140379");
+    b.property("tagName", 0x1f6c736337b5e2daL).type(PrimitiveTypeId.STRING).origin("2264311582634140378").done();
+    b.property("overrideTag", 0x1f6c736337b5e2dbL).type(PrimitiveTypeId.BOOLEAN).origin("2264311582634140379").done();
     b.associate("rule", 0x1f6c736337b5e2dcL).target(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L).optional(false).origin("2264311582634140380").done();
     b.aggregate("condition", 0x4180d2369beda765L).target(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x4180d2369bed9265L).optional(true).ordered(true).multiple(false).origin("4720003541470390117").done();
     b.aggregate("handler", 0x1f6c736337b5e2d9L).target(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d2L).optional(true).ordered(true).multiple(false).origin("2264311582634140377").done();
@@ -304,8 +311,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140402");
     b.version(2);
-    b.prop("tagName", 0x1f6c736337b5e2f9L, "2264311582634140409");
-    b.prop("isCompact", 0x1f6c736337b5e2faL, "2264311582634140410");
+    b.property("tagName", 0x1f6c736337b5e2f9L).type(PrimitiveTypeId.STRING).origin("2264311582634140409").done();
+    b.property("isCompact", 0x1f6c736337b5e2faL).type(PrimitiveTypeId.BOOLEAN).origin("2264311582634140410").done();
     b.aggregate("type", 0x1f6c736337b5e2f3L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL).optional(true).ordered(true).multiple(false).origin("2264311582634140403").done();
     b.aggregate("params", 0xd9be961730be2e2L).target(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0xd9be961730be3edL).optional(true).ordered(true).multiple(true).origin("980633948634473186").done();
     b.aggregate("attrs", 0x1f6c736337b5e2f4L).target(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cbL).optional(true).ordered(true).multiple(true).origin("2264311582634140404").done();

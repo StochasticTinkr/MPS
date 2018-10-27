@@ -47,10 +47,12 @@ public final class EnumerationMemberDeclaration__BehaviorDescriptor extends Base
   }
   /*package*/ static String getName_idi2ZRO7Q(@NotNull SNode __thisNode__) {
     SNode enumType = SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
-    if (SPropertyOperations.hasValue(enumType, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_internal_value", "derive_from_presentation")) {
+    // FIXME had to break bootstrap cycle that occur since we have interpreted enumerations in SProperty#getType(). Return back original code after 2018.3 
+    String property = enumType.getProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"));
+    if ("derive_from_internal_value".equals(property)) {
       return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue"));
     }
-    if (SPropertyOperations.hasValue(enumType, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation", "derive_from_presentation")) {
+    if ("derive_from_presentation".equals(property) || property == null) {
       return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
     }
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0x1158fb58479L, "javaIdentifier"));

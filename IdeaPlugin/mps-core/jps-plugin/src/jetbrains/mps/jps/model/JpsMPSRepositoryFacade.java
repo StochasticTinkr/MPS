@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.ModuleId;
@@ -150,15 +151,21 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         }
 
         // use optimized implementation of default model root
-        PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.DEFAULT_MODEL_ROOT, new ModelRootFactory() {
+        final PersistenceRegistry persistenceRegistry = PersistenceRegistry.getInstance();
+        final ModelRootFactory originalDefaultModelRootFactory = persistenceRegistry.getModelRootFactory(PersistenceRegistry.DEFAULT_MODEL_ROOT);
+        persistenceRegistry.setModelRootFactory(PersistenceRegistry.DEFAULT_MODEL_ROOT, new ModelRootFactory() {
           @NotNull
           @Override
           public ModelRoot create() {
-            return new CachedDefaultModelRoot(myRepo);
+            // I know it's not nice to assume specific instance to come from the factory, but I don't like this CachedDefaultModelRoot anyway
+            // First, I'm not sure we earn that much with it (we save fs walk at the price of limited set of supported models).
+            // Second, even if we do save a lot, I'd rather avoid use of ModelRoot at all, and just feed models into SModule (or use custom MR type and
+            // serialize models I can not recognize (custom persistence) in a supported format, e.g. binary).
+            return new CachedDefaultModelRoot(myRepo, (DefaultModelRoot) originalDefaultModelRootFactory.create());
           }
         });
 
-        PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT, new ModelRootFactory() {
+        persistenceRegistry.setModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT, new ModelRootFactory() {
           @NotNull
           @Override
           public ModelRoot create() {

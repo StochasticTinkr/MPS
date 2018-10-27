@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -231,6 +232,12 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public String getConceptFqName() {
     return myConceptFqName;
+  }
+
+  @NotNull
+  @Override
+  public String getName() {
+    return NameUtil.shortNameFromLongName(myConceptFqName);
   }
 
   @Override

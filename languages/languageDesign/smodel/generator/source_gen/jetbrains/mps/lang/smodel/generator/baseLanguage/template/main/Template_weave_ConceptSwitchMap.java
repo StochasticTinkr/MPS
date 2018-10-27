@@ -49,7 +49,7 @@ public class Template_weave_ConceptSwitchMap extends TemplateDeclarationBase imp
       SNodeAccessUtil.setProperty(tnode1, myProperties[0], "false");
       SNodeAccessUtil.setProperty(tnode1, myProperties[1], "false");
       SNodeAccessUtil.setProperty(tnode1, myProperties[2], "true");
-      SNodeAccessUtil.setProperty(tnode1, myProperties[3], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_105_3(new PropertyMacroContext(context, "index", propertyMacro_d69nxd_c0a0c0d0d0g))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[3], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_98_3(new PropertyMacroContext(context, "index", propertyMacro_d69nxd_c0a0c0d0d0g))));
       TemplateContext context1 = context.subContext();
       {
         final SNode tnode2 = environment.createOutputNode(myConcepts[1]);
@@ -92,14 +92,14 @@ public class Template_weave_ConceptSwitchMap extends TemplateDeclarationBase imp
                   TemplateContext context5 = context3.subContext();
                   {
                     final List<SNode> tlist8 = new ArrayList<SNode>();
-                    final Iterable<SNode> loopList8 = QueriesGenerated.sourceNodesQuery_105_0(new SourceSubstituteMacroNodesContext(context5, loopMacroRef_d69nxd_b0a0a1a2a1a2a1a1a1a6a3a6));
+                    final Iterable<SNode> loopList8 = QueriesGenerated.sourceNodesQuery_98_0(new SourceSubstituteMacroNodesContext(context5, loopMacroRef_d69nxd_b0a0a1a2a1a2a1a1a1a6a3a6));
                     for (SNode itnode8 : loopList8) {
                       if (itnode8 == null) {
                         continue;
                       }
                       TemplateContext context6 = context5.subContext(itnode8);
                       Collection<SNode> tlist9 = null;
-                      final Object varValue9 = QueriesGenerated.varMacro_Value_105_0(new TemplateVarContext(context6, varMacroRef_d69nxd_b0a0a3a2a2a1a2a1a1a1a6a3a6));
+                      final Object varValue9 = QueriesGenerated.varMacro_Value_98_0(new TemplateVarContext(context6, varMacroRef_d69nxd_b0a0a3a2a2a1a2a1a1a1a6a3a6));
                       TemplateContext context7 = context6.withVariable("var:cid", varValue9);
                       final SNode tnode10 = environment.createOutputNode(myConcepts[6]);
                       try {
@@ -109,7 +109,7 @@ public class Template_weave_ConceptSwitchMap extends TemplateDeclarationBase imp
                         {
                           final SNode tnode11 = environment.createOutputNode(myConcepts[7]);
                           try {
-                            SNodeAccessUtil.setProperty(tnode11, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_105_0(new PropertyMacroContext(context8, "0L", propertyMacro_d69nxd_c0a0c0a0b0d0g0c0c0b0c0b0b0b0g0d0g))));
+                            SNodeAccessUtil.setProperty(tnode11, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_98_0(new PropertyMacroContext(context8, "0L", propertyMacro_d69nxd_c0a0c0a0b0d0g0c0c0b0c0b0b0b0g0d0g))));
                           } finally {
                           }
                           tnode10.addChild(myAggregationLinks[3], tnode11);
@@ -118,7 +118,7 @@ public class Template_weave_ConceptSwitchMap extends TemplateDeclarationBase imp
                         {
                           final SNode tnode12 = environment.createOutputNode(myConcepts[7]);
                           try {
-                            SNodeAccessUtil.setProperty(tnode12, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_105_1(new PropertyMacroContext(context8, "0L", propertyMacro_d69nxd_c0a0c0a0b0e0g0c0c0b0c0b0b0b0g0d0g))));
+                            SNodeAccessUtil.setProperty(tnode12, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_98_1(new PropertyMacroContext(context8, "0L", propertyMacro_d69nxd_c0a0c0a0b0e0g0c0c0b0c0b0b0b0g0d0g))));
                           } finally {
                           }
                           tnode10.addChild(myAggregationLinks[3], tnode12);
@@ -127,7 +127,7 @@ public class Template_weave_ConceptSwitchMap extends TemplateDeclarationBase imp
                         {
                           final SNode tnode13 = environment.createOutputNode(myConcepts[7]);
                           try {
-                            SNodeAccessUtil.setProperty(tnode13, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_105_2(new PropertyMacroContext(context8, "0L", propertyMacro_d69nxd_c0a0c0a0b0f0g0c0c0b0c0b0b0b0g0d0g))));
+                            SNodeAccessUtil.setProperty(tnode13, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_98_2(new PropertyMacroContext(context8, "0L", propertyMacro_d69nxd_c0a0c0a0b0f0g0c0c0b0c0b0b0b0g0d0g))));
                           } finally {
                           }
                           tnode10.addChild(myAggregationLinks[3], tnode13);

@@ -106,7 +106,7 @@ public class WatchableNode extends AbstractWatchableNode {
               if (placeholder != null) {
                 boolean placeholderWithChildren = placeholder.getChildCount() > 0;
                 // placeholder's chilren shall become children of a node that replaces it 
-                for (MPSTreeNode ch : placeholder) {
+                for (MPSTreeNode ch : placeholder.getChildren()) {
                   newNode.add(ch);
                 }
                 add(newNode);

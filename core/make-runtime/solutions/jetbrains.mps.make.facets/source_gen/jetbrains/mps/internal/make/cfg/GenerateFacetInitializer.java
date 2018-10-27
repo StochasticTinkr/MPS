@@ -4,7 +4,6 @@ package jetbrains.mps.internal.make.cfg;
 
 import jetbrains.mps.make.script.PropertyPoolInitializer;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.facet.ITarget;
@@ -21,19 +20,6 @@ public final class GenerateFacetInitializer implements PropertyPoolInitializer {
   public GenerateFacetInitializer() {
   }
 
-  /**
-   * Override clean make argument from MakeSession. 
-   * FIXME Theres's only 1 use, in BuildMakeService, likely we can get rid of it, and always use value from MakeSession
-   * 
-   * @deprecated no-op, do not use
-   * @param cleanMake true to force complete generation
-   * @return <code>this</code> for convenience
-   */
-  @Deprecated
-  @ToRemove(version = 2017.3)
-  public GenerateFacetInitializer cleanMake(boolean cleanMake) {
-    return this;
-  }
   public GenerateFacetInitializer setGenerationOptions(GenerationOptions.OptionsBuilder optionsBuilder) {
     myGenOptions = optionsBuilder;
     return this;
@@ -42,6 +28,7 @@ public final class GenerateFacetInitializer implements PropertyPoolInitializer {
   @Override
   public void populate(IPropertiesPool ppool) {
     if (myGenOptions != null) {
+      // in fact, there are more than 2 properties, but Tuples._2 is superclass of Tuples._5, so I don't care 
       Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Object.class);
       if (params != null) {
         params._1(myGenOptions);

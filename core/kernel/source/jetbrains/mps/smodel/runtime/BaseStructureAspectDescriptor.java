@@ -16,13 +16,18 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Base implementation generated code shall use to facilitate future changes in {@link jetbrains.mps.smodel.runtime.StructureAspectDescriptor}.
+ *
+ * FIXME RS Why we need here complex concurrent initialization logic here if all generated subclasses override it???
  */
 public abstract class BaseStructureAspectDescriptor implements StructureAspectDescriptor {
   private static final Object LOCK = new Object();
@@ -53,5 +58,15 @@ public abstract class BaseStructureAspectDescriptor implements StructureAspectDe
       }
       myDescriptors = descriptors;
     }
+  }
+
+  @Override
+  public DataTypeDescriptor getDataTypeDescriptor(SDataTypeId id) {
+    return getDataTypeDescriptors().stream().filter(it -> it.getId().equals(id)).findFirst().orElse(null);
+  }
+
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Collections.emptyList();
   }
 }

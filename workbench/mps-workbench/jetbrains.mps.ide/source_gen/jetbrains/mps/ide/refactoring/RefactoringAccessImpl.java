@@ -18,65 +18,74 @@ import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class RefactoringAccessImpl extends RefactoringAccessEx implements ApplicationComponent {
   private static final int MAX_SEARCH_RESULTS = 30000;
+
   public RefactoringAccessImpl(MPSCoreComponents coreComponents) {
     super(coreComponents.getPlatform());
   }
+
   @Override
   public void initComponent() {
     RefactoringAccessEx.setInstance(this);
   }
+
   @Override
   public void disposeComponent() {
     RefactoringAccessEx.setInstance(null);
   }
+
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "MPS Workbench-specific Refactoring Access implementation";
   }
+
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SModel model) {
     ModelOrNodeChooser rv = new ModelOrNodeChooser(project);
     rv.select(model);
     return rv;
   }
+
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {
     ModelOrNodeChooser rv = new ModelOrNodeChooser(project);
     rv.select(node);
     return rv;
   }
+
   @Deprecated
   public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     showRefactoringView(project, callback, null, searchResults, null, name);
   }
+
   @Deprecated
   public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     showRefactoringView(refactoringContext, callback, null, searchResults, null, name);
   }
+
   @Override
   public void showRefactoringView(Project project, RefactoringViewAction refactoringViewAction, Runnable disposeAction, SearchResults searchResults, SearchTask searchTask, String name) {
     RefactoringView refactoringView = project.getComponent(RefactoringView.class);
     refactoringView.showRefactoringView(project, refactoringViewAction, disposeAction, truncateSearchResults(project, searchResults), searchTask, name);
   }
+
   @Override
   public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction refactoringViewAction, Runnable disposeAction, SearchResults searchResults, SearchTask searchTask, String name) {
     RefactoringView refactoringView = refactoringContext.getSelectedProject().getComponent(RefactoringView.class);
     refactoringView.showRefactoringView(refactoringContext, refactoringViewAction, disposeAction, truncateSearchResults(ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()), searchResults), searchTask);
   }
+
   private SearchResults truncateSearchResults(Project project, SearchResults searchResults) {
-    if (searchResults.getSearchResults().size() > MAX_SEARCH_RESULTS) {
+    if (searchResults.getSearchResults2().size() > MAX_SEARCH_RESULTS) {
       Messages.showWarningDialog(project, "More than " + MAX_SEARCH_RESULTS + " usages found. Only first " + MAX_SEARCH_RESULTS + " results will be displayed.", "Refactor");
 
-      SearchResults truncatedSearchResults = new SearchResults();
-      truncatedSearchResults.getSearchedNodes().addAll(searchResults.getSearchedNodes());
-      truncatedSearchResults.getSearchResults().addAll(ListSequence.fromList(((List<? extends SearchResult<Object>>) searchResults.getSearchResults())).take(MAX_SEARCH_RESULTS).toListSequence());
+      SearchResults truncatedSearchResults = new SearchResults(searchResults.getSearchedObjects(), ListSequence.fromList((ListSequence.fromListWithValues(new ArrayList<SearchResult<Object>>(), searchResults.getSearchResults2()))).take(MAX_SEARCH_RESULTS).toListSequence());
       return truncatedSearchResults;
     }
     return searchResults;

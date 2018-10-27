@@ -18,7 +18,6 @@ package jetbrains.mps.vfs.impl;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.ex.IFileEx;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.path.UniPath;
@@ -39,7 +38,7 @@ import java.util.List;
  * Todo rewrite using {@link Path}
  */
 @Immutable
-public class JarEntryFile implements IFileEx {
+public class JarEntryFile implements IFile {
   public static final String JAR = "jar";
   private static final String DOT = ".";
   public static final String DOT_JAR = DOT + JAR;

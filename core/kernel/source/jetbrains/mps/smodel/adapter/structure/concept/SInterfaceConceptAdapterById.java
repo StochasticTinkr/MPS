@@ -19,6 +19,7 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
@@ -97,6 +98,11 @@ public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter
   @Override
   public SLanguage getLanguage() {
     return MetaAdapterFactory.getLanguage(myConceptId.getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));
+  }
+
+  @Override
+  protected boolean isBootstrap() {
+    return myIsBootstrap;
   }
 
   @Override

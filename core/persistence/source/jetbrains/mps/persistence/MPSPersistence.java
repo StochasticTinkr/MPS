@@ -18,6 +18,8 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import org.jetbrains.annotations.NotNull;
@@ -28,16 +30,22 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
  * evgeny, 11/9/12
  */
 public final class MPSPersistence extends ComponentPlugin implements ComponentHost {
-  @NotNull private final PersistenceFacade myPersistenceFacade;
+  private final PersistenceFacade myPersistenceFacade;
+  private final ModelFactoryService myModelFactoryService;
+  private final DataSourceFactoryRuleService myDataSourceService;
   private DescriptorIOFacade myModuleDescriptorFacade;
 
-  public MPSPersistence(@NotNull PersistenceFacade persistenceFacade) {
-    myPersistenceFacade = persistenceFacade;
+  public MPSPersistence(@NotNull ComponentHost mpsCore) {
+    myModelFactoryService = mpsCore.findComponent(ModelFactoryService.class);
+    myDataSourceService = mpsCore.findComponent(DataSourceFactoryRuleService.class);
+    myPersistenceFacade = mpsCore.findComponent(PersistenceRegistry.class);
   }
 
   @Override
   public void init() {
     super.init();
+    init(new DataSourceFactoryRuleCoreService(myDataSourceService));
+    init(new ModelFactoryCoreService(myModelFactoryService));
     init(new JavaClassesPersistence(myPersistenceFacade));
     init(myModuleDescriptorFacade = new DescriptorIOFacade());
   }

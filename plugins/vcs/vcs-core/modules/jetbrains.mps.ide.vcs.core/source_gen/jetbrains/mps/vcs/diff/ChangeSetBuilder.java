@@ -10,9 +10,8 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.language.SDataType;
+import java.util.Objects;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -21,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Objects;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -78,13 +76,10 @@ public class ChangeSetBuilder {
   }
 
   public void buildForProperty(SNode oldNode, SNode newNode, SProperty property) {
-    PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
-    if (!(RuntimeFlags.isMergeDriverMode())) {
-      propertySupport = PropertySupport.getPropertySupport(property);
-    }
-    String oldPresentableValue = propertySupport.fromInternalValue(oldNode.getProperty(property));
-    String newPresentableValue = propertySupport.fromInternalValue(newNode.getProperty(property));
-    if (!(EqualUtil.equals(oldPresentableValue, newPresentableValue))) {
+    SDataType type = property.getType();
+    Object oldValue = type.fromString(oldNode.getProperty(property));
+    Object newValue = type.fromString(newNode.getProperty(property));
+    if (!(Objects.equals(oldValue, newValue))) {
       ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getNodeId(), property, newNode.getProperty(property)));
     }
   }
@@ -340,16 +335,6 @@ public class ChangeSetBuilder {
 
   public static ChangeSetBuilder createBuilder(ChangeSet changeSet) {
     return new ChangeSetBuilder((ChangeSetImpl) changeSet);
-  }
-
-  /*package*/ static class DefaultPropertySupport extends PropertySupport {
-    /*package*/ DefaultPropertySupport() {
-    }
-
-    @Override
-    protected boolean canSetValue(String string) {
-      return true;
-    }
   }
   private static SNodeId check_nbyrtw_a0a2a51(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {

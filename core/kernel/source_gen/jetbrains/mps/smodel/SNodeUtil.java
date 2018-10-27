@@ -101,6 +101,7 @@ public final class SNodeUtil {
   public static final SReferenceLink link_LinkDeclaration_specializedLink = BootstrapAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink");
   public static final SProperty property_BaseConcept_virtualPackage = BootstrapAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage");
   public static final SContainmentLink link_BaseConcept_smodelAttribute = BootstrapAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
+
   private SNodeUtil() {
   }
   public static String getPresentation(SNode node) {
@@ -222,6 +223,13 @@ public final class SNodeUtil {
     }
     return SNodeOperations.getConcept(node).equals(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
+  public static boolean isInstanceOfConstrainedStringDataTypeDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    return SNodeOperations.getConcept(node).equals(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration"));
+  }
+
   public static boolean getLinkDeclaration_IsReference(SNode link) {
     return SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference");
   }
@@ -261,5 +269,17 @@ public final class SNodeUtil {
   public static boolean isAssociationLink(String metaclass) {
     // same as cardinality, would like to access LinkDeclaration.metaClass via bootstrap property 
     return metaclass == null || "reference".equals(metaclass);
+  }
+  public static String getConstrainedDataTypeDeclaration_constraint(SNode constrainedDataType) {
+    return SPropertyOperations.getString(constrainedDataType, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L, 0xfc2bc4ff02L, "constraint"));
+  }
+  public static boolean isStringDatatypeDeclaration(SNode datatype) {
+    return SNodeOperations.is(datatype, new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1082983041843"));
+  }
+  public static boolean isBooleanDatatypeDeclaration(SNode datatype) {
+    return SNodeOperations.is(datatype, new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1082983657063"));
+  }
+  public static boolean isIntegerDatatypeDeclaration(SNode datatype) {
+    return SNodeOperations.is(datatype, new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1082983657062"));
   }
 }

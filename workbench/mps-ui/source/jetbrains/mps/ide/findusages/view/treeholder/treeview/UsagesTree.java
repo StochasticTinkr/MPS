@@ -313,8 +313,8 @@ public class UsagesTree extends MPSTree {
     return child;
   }
 
-  private void sortByCaption(List<UsagesTreeNode> children) {
-    Collections.sort(children, new Comparator<UsagesTreeNode>() {
+  private void sortByCaption(List<? extends UsagesTreeNode> children) {
+    children.sort(new Comparator<UsagesTreeNode>() {
       private boolean isIgnored(UsagesTreeNode node) {
         // need to keep order of non-root nodes as they seen in an editor (see MPS-6113)
         BaseNodeData data = node.getUserObject().getData();
@@ -332,7 +332,7 @@ public class UsagesTree extends MPSTree {
       }
     });
     for (UsagesTreeNode child : children) {
-      sortByCaption(child.internalGetChildren());
+      sortByCaption(child.getChildren());
     }
   }
 
@@ -357,7 +357,7 @@ public class UsagesTree extends MPSTree {
 
   private int buildCounters(UsagesTreeNode root) {
     int num = 0;
-    for (UsagesTreeNode child : root.internalGetChildren()) {
+    for (UsagesTreeNode child : root.getChildren()) {
       num += buildCounters(child);
     }
 
@@ -384,7 +384,7 @@ public class UsagesTree extends MPSTree {
         if (addToNode == null) {
           childMap.put(additionID, child);
         } else {
-          List<UsagesTreeNode> addition = new ArrayList<>(child.internalGetChildren());
+          List<UsagesTreeNode> addition = new ArrayList<>(child.getChildren());
           for (UsagesTreeNode additionChild : addition) {
             addToNode.add(additionChild);
           }
@@ -394,7 +394,7 @@ public class UsagesTree extends MPSTree {
     mergedChildren.addAll(childMap.values());
 
     for (UsagesTreeNode child : mergedChildren) {
-      mergeChildren(child.internalGetChildren());
+      mergeChildren(child.getChildren());
     }
 
     children.clear();
@@ -536,7 +536,7 @@ public class UsagesTree extends MPSTree {
       return root;
     }
 
-    for (MPSTreeNode node : root) {
+    for (MPSTreeNode node : root.getChildren()) {
       UsagesTreeNode result = findFirstResultInSubtree(((UsagesTreeNode) node), true);
       if (result != null) {
         return result;
@@ -549,10 +549,7 @@ public class UsagesTree extends MPSTree {
   private UsagesTreeNode findLastResultInSubtree(UsagesTreeNode root, boolean includeRoot) {
     assert root != null;
 
-    List<MPSTreeNode> children = new ArrayList<>();
-    for (MPSTreeNode node : root) {
-      children.add(node);
-    }
+    List<MPSTreeNode> children = new ArrayList<>(root.getChildren());
     Collections.reverse(children);
 
     for (MPSTreeNode node : children) {
@@ -671,6 +668,11 @@ public class UsagesTree extends MPSTree {
     }
 
     @Override
+    public List<UsagesTreeNode> getChildren() {
+      return ((List) super.getChildren());
+    }
+
+    @Override
     protected void updateErrorState() {
       //disable for
     }
@@ -709,10 +711,6 @@ public class UsagesTree extends MPSTree {
     @Override
     public DataNode getUserObject() {
       return (DataNode) super.getUserObject();
-    }
-
-    List<UsagesTreeNode> internalGetChildren() {
-      return children == null ? Collections.emptyList() : children;
     }
   }
 }

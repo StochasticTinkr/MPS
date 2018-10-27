@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDeletedAbstractChild = createDescriptorForDeletedAbstractChild();
@@ -44,6 +46,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -67,7 +74,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:f7ab8cfc-135f-4339-bd76-ff57cf78dd74(jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts.structure)/3900306178895370238");
     b.version(2);
-    b.prop("name", 0x3620abce1452aa52L, "3900306178895424082");
+    b.property("name", 0x3620abce1452aa52L).type(PrimitiveTypeId.STRING).origin("3900306178895424082").done();
     b.associate("deletedParentReference", 0x3620abce1452aa54L).target(0xd8e56c33e3084c18L, 0xbe6a751cd5d3c5ceL, 0x3620abce1451d7feL).optional(true).origin("3900306178895424084").done();
     b.aggregate("deletedChild", 0x3620abce1452aa50L).target(0xd8e56c33e3084c18L, 0xbe6a751cd5d3c5ceL, 0x3620abce1452aa4fL).optional(false).ordered(true).multiple(false).origin("3900306178895424080").done();
     b.aggregate("abstractDeletedChild", 0x2ec5f83c162e472aL).target(0xd8e56c33e3084c18L, 0xbe6a751cd5d3c5ceL, 0x19896b9a4f67ba8fL).optional(false).ordered(true).multiple(false).origin("3370372833110542122").done();

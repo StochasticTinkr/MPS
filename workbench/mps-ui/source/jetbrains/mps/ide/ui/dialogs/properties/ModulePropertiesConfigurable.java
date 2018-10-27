@@ -1131,7 +1131,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         }
 
         private boolean allChildrenChecked(CheckedTreeNode node) {
-          List<CheckedTreeNode> children = Collections.list(node.children());
+          List<CheckedTreeNode> children = (List)Collections.list(node.children());
           boolean allChildrenChecked = true;
           for (CheckedTreeNode child : children) {
             if (!allChildrenChecked(child) || !child.isChecked()) {
@@ -1148,7 +1148,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         }
 
         private boolean noCheckedChildren(CheckedTreeNode node) {
-          List<CheckedTreeNode> children = Collections.list(node.children());
+          List<CheckedTreeNode> children = (List) Collections.list(node.children());
           for (CheckedTreeNode child : children) {
             if (noCheckedChildren(child) && !child.isChecked()) {
               node.remove(child);

@@ -4,12 +4,17 @@ package jetbrains.mps.samples.formulaLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptorImpl;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAndOperation = createDescriptorForAndOperation();
@@ -34,6 +39,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptPlusOperation = createDescriptorForPlusOperation();
   /*package*/ final ConceptDescriptor myConceptReference = createDescriptorForReference();
   /*package*/ final ConceptDescriptor myConceptStringConstant = createDescriptorForStringConstant();
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatype_FPNumber = new ConstrainedStringDatatypeDescriptorImpl(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x1033347a631L, "_FPNumber", "r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)/1113256863281", "-?[0-9]+(\\.?[0-9]*)");
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -98,6 +104,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myCSDatatype_FPNumber);
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -141,7 +152,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.formulaLanguage.structure.Constant", 0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L);
     b.origin("r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)/1111784926012");
     b.version(2);
-    b.prop("value", 0x1033349beb2L, "1113257000626");
+    b.property("value", 0x1033349beb2L).type(MetaIdFactory.dataTypeId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x1033347a631L)).origin("1113257000626").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForFormula() {
@@ -187,7 +198,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.formulaLanguage.structure.Constant", 0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L);
     b.origin("r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)/1111784858617");
     b.version(2);
-    b.prop("value", 0x102db8ae25bL, "1111784874587");
+    b.property("value", 0x102db8ae25bL).type(PrimitiveTypeId.INTEGER).origin("1111784874587").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIsNullOperation() {
@@ -296,7 +307,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.formulaLanguage.structure.Constant", 0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L);
     b.origin("r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)/1133954660098");
     b.version(2);
-    b.prop("value", 0x10804f794c0L, "1133954700480");
+    b.property("value", 0x10804f794c0L).type(PrimitiveTypeId.STRING).origin("1133954700480").done();
     b.alias("\"");
     return b.create();
   }

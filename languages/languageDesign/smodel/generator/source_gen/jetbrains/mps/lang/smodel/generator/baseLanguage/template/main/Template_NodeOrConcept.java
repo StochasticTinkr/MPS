@@ -38,13 +38,13 @@ public class Template_NodeOrConcept extends TemplateDeclarationBase implements T
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    if (QueriesGenerated.ifMacro_Condition_89_0(new IfMacroContext(context, ifMacroRef_uearkf_b0a0c0g))) {
+    if (QueriesGenerated.ifMacro_Condition_82_0(new IfMacroContext(context, ifMacroRef_uearkf_b0a0c0g))) {
       final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
       try {
         environment.resolve(new RefResolver(tnode2, myAssociationLinks[0], context, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6862765979525447835"), "thisConcept") {
           @Override
           public Object resolve() {
-            return QueriesGenerated.referenceMacro_GetReferent_89_1(createQueryContext());
+            return QueriesGenerated.referenceMacro_GetReferent_82_1(createQueryContext());
           }
         });
       } finally {
@@ -56,7 +56,7 @@ public class Template_NodeOrConcept extends TemplateDeclarationBase implements T
         environment.resolve(new RefResolver(tnode3, myAssociationLinks[0], context, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8560627202335352618"), "thisNode") {
           @Override
           public Object resolve() {
-            return QueriesGenerated.referenceMacro_GetReferent_89_0(createQueryContext());
+            return QueriesGenerated.referenceMacro_GetReferent_82_0(createQueryContext());
           }
         });
       } finally {

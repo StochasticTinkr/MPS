@@ -18,12 +18,8 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.make.script.IConfig;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
@@ -32,6 +28,9 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.smodel.resources.CleanupActivityResource;
 import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.smodel.resources.MResource;
 import java.util.stream.IntStream;
@@ -94,8 +93,7 @@ public class Generate_Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              // FIXME drop unused parameters once MPS 2017.2 is out 
-              //       cleanMake was abandoned in 2017.3, but I doubt it has been in use outside of MPS itself 
+              // no-op now 
             default:
               progressMonitor.done();
               return new IResult.SUCCESS(_output_fi61u2_a0a);
@@ -138,40 +136,14 @@ public class Generate_Facet extends IFacet.Stub {
       return null;
     }
     public <T> T createParameters(Class<T> cls) {
-      return cls.cast(new Variables());
+      return null;
     }
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
-      if (t != null) {
-        ((Tuples._2) t).assign((Tuples._2) copyFrom);
-      }
       return t;
     }
     public int workEstimate() {
       return 10;
-    }
-    public static Generate_Facet.Target_checkParameters.Variables vars(IPropertiesPool ppool) {
-      return ppool.properties(name, Generate_Facet.Target_checkParameters.Variables.class);
-    }
-    public static class Variables extends MultiTuple._2<MakeSession, Boolean> {
-      public Variables() {
-        super();
-      }
-      public Variables(MakeSession unused1, Boolean cleanMake) {
-        super(unused1, cleanMake);
-      }
-      public MakeSession unused1(MakeSession value) {
-        return super._0(value);
-      }
-      public Boolean cleanMake(Boolean value) {
-        return super._1(value);
-      }
-      public MakeSession unused1() {
-        return super._0();
-      }
-      public Boolean cleanMake() {
-        return super._1();
-      }
     }
   }
   public static class Target_configure implements ITargetEx2 {
@@ -186,7 +158,8 @@ public class Generate_Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
+              GenerationSettingsProvider gsp = monitor.getSession().getProject().getComponent(GenerationSettingsProvider.class);
+              IModifiableGenerationSettings settings = gsp.getGenerationSettings();
               if (vars(pa.global()).generationOptions() == null) {
                 vars(pa.global()).generationOptions(GenerationOptions.fromSettings(settings));
               }
@@ -227,7 +200,8 @@ public class Generate_Facet extends IFacet.Stub {
         public boolean configure(final IConfigMonitor cmonitor, final IPropertiesAccessor pa) {
           switch (0) {
             case 0:
-              IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
+              GenerationSettingsProvider gsp = cmonitor.getSession().getProject().getComponent(GenerationSettingsProvider.class);
+              IModifiableGenerationSettings settings = gsp.getGenerationSettings();
               vars(pa.global()).saveTransient(settings.isSaveTransientModels());
             default:
               return true;
@@ -574,14 +548,6 @@ public class Generate_Facet extends IFacet.Stub {
     }
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
-        ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
-        if (properties.hasProperties(name)) {
-          Generate_Facet.Target_checkParameters.Variables props = properties.properties(name, Generate_Facet.Target_checkParameters.Variables.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.unused1", null);
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake", String.valueOf(props.cleanMake()));
-        }
-      }
-      {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.configure");
         if (properties.hasProperties(name)) {
           Generate_Facet.Target_configure.Variables props = properties.properties(name, Generate_Facet.Target_configure.Variables.class);
@@ -595,16 +561,6 @@ public class Generate_Facet extends IFacet.Stub {
     }
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
-        {
-          ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
-          Generate_Facet.Target_checkParameters.Variables props = properties.properties(name, Generate_Facet.Target_checkParameters.Variables.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.unused1")) {
-            props.unused1(null);
-          }
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")) {
-            props.cleanMake(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")));
-          }
-        }
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.configure");
           Generate_Facet.Target_configure.Variables props = properties.properties(name, Generate_Facet.Target_configure.Variables.class);

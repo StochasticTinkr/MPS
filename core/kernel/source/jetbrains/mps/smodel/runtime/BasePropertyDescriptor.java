@@ -16,28 +16,44 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.STypeId;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BasePropertyDescriptor implements PropertyDescriptor {
   private final SPropertyId myId;
+  private final STypeId myTypeId;
   private final String myName;
   private SNodeReference mySrcNode;
 
   @Deprecated
+  @ToRemove(version = 2018.3)
   public BasePropertyDescriptor(SPropertyId id, String name) {
-    this(id,name,null);
+    this(id, name,null, null);
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public BasePropertyDescriptor(SPropertyId id, String name, @Nullable SNodeReference srcNode) {
+    this(id, name,null, srcNode);
+  }
+
+  public BasePropertyDescriptor(SPropertyId id, String name, STypeId typeId, @Nullable SNodeReference srcNode) {
     myId = id;
     myName = name;
+    myTypeId = typeId;
     mySrcNode = srcNode;
   }
 
   @Override
   public SPropertyId getId() {
     return myId;
+  }
+
+  @Override
+  public STypeId getDataTypeId() {
+    return myTypeId;
   }
 
   @Override

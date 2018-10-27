@@ -37,13 +37,13 @@ public class Template_reduce_ConceptMethodCallCommon extends TemplateDeclaration
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    if (QueriesGenerated.ifMacro_Condition_92_0(new IfMacroContext(context, ifMacroRef_2swv9b_b0a0c0g))) {
+    if (QueriesGenerated.ifMacro_Condition_85_0(new IfMacroContext(context, ifMacroRef_2swv9b_b0a0c0g))) {
       final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
       try {
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist3 = null;
-          final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_92_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_2swv9b_b0a0c0b0b0c0g));
+          final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_85_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_2swv9b_b0a0c0b0b0c0g));
           tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_2swv9b_b0a0c0b0b0c0g, "tpl/r:00000000-0000-4000-0000-011c89590303/4598718932037613732", context1);
           for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
             tnode2.addChild(myAggregationLinks[0], child4);

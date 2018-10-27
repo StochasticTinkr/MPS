@@ -25,6 +25,7 @@ public abstract class RefactoringAccessEx extends RefactoringAccess {
   protected RefactoringAccessEx(Platform mpsPlatform) {
     myPlatform = mpsPlatform;
   }
+
   @Override
   public RefactoringFacadeImpl getRefactoringFacade() {
     if (myRefactoringFacade == null) {
@@ -32,13 +33,19 @@ public abstract class RefactoringAccessEx extends RefactoringAccess {
     }
     return myRefactoringFacade;
   }
+
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SNode node);
+
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SModel model);
+
   @Deprecated
   public abstract void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
+
   public abstract void showRefactoringView(Project project, RefactoringViewAction refactoringViewAction, Runnable disposeAction, SearchResults searchResults, SearchTask searchTask, String name);
+
   @Deprecated
   public abstract void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
+
   public abstract void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction refactoringViewAction, Runnable disposeAction, SearchResults searchResults, SearchTask searchTask, String name);
 
   public static RefactoringAccessEx getInstance() {

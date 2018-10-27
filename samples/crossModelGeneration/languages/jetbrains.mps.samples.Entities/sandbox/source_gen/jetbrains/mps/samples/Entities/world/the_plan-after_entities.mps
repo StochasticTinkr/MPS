@@ -82,7 +82,6 @@
       <concept id="6911370362349121511" name="jetbrains.mps.lang.smodel.structure.ConceptId" flags="nn" index="2x4n5u">
         <property id="6911370362349122519" name="conceptName" index="2x4mPI" />
         <property id="6911370362349121516" name="conceptId" index="2x4n5l" />
-        <property id="6911370362349133804" name="isInterface" index="2x4o5l" />
         <child id="6911370362349121514" name="languageIdentity" index="2x4n5j" />
       </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
@@ -194,7 +193,6 @@
             <property role="2$VJBR" value="4053600266038343136" />
             <node concept="2x4n5u" id="B" role="3iCydw">
               <property role="2x4mPI" value="Entity" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="uspdda9xsgqb" />
               <node concept="2V$Bhx" id="C" role="2x4n5j">
                 <property role="2V$B1T" value="7917ee54-129c-42c6-8b53-ba6a5e718e32" />

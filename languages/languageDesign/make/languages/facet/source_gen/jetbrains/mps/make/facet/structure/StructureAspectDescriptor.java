@@ -4,14 +4,18 @@ package jetbrains.mps.make.facet.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptExtendsFacetReference = createDescriptorForExtendsFacetReference();
@@ -34,6 +38,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTargetDeclaration = createDescriptorForTargetDeclaration();
   /*package*/ final ConceptDescriptor myConceptTargetDependency = createDescriptorForTargetDependency();
   /*package*/ final ConceptDescriptor myConceptTargetReferenceExpression = createDescriptorForTargetReferenceExpression();
+  /*package*/ final EnumerationDescriptor myEnumerationResourcesPolicy = new EnumerationDescriptor_ResourcesPolicy();
+  /*package*/ final EnumerationDescriptor myEnumerationTargetDependencyQualifier = new EnumerationDescriptor_TargetDependencyQualifier();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -92,6 +98,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         return null;
     }
+  }
+
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationResourcesPolicy, myEnumerationTargetDependencyQualifier);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -261,9 +272,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ff8b7a0d94242e1L);
     b.origin("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)/6418371274763029565");
     b.version(2);
-    b.prop("resourcesPolicy", 0x1740bd43b75c4b28L, "1675547159918562088");
-    b.prop("optional", 0x642ffc6d854ec1c5L, "7219266275016360389");
-    b.prop("weight", 0x28fa08363635e31L, "184542595914096177");
+    b.property("resourcesPolicy", 0x1740bd43b75c4b28L).type(MetaIdFactory.dataTypeId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1740bd43b75c4b23L)).origin("1675547159918562088").done();
+    b.property("optional", 0x642ffc6d854ec1c5L).type(PrimitiveTypeId.BOOLEAN).origin("7219266275016360389").done();
+    b.property("weight", 0x28fa08363635e31L).type(PrimitiveTypeId.INTEGER).origin("184542595914096177").done();
     b.associate("overrides", 0x5912a2ab1cd24c55L).target(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL).optional(true).origin("6418371274763029589").done();
     b.aggregate("parameters", 0x6598ce4d2f20bbdfL).target(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x6598ce4d2f22a97eL).optional(true).ordered(true).multiple(false).origin("7320828025189219295").done();
     b.aggregate("dependency", 0x5912a2ab1cd41539L).target(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L).optional(true).ordered(true).multiple(true).origin("6418371274763146553").done();
@@ -277,7 +288,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)/6418371274763029600");
     b.version(2);
-    b.prop("qualifier", 0x73e720709e3139e9L, "8351679702044326377");
+    b.property("qualifier", 0x73e720709e3139e9L).type(MetaIdFactory.dataTypeId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x73e720709e3139e2L)).origin("8351679702044326377").done();
     b.associate("dependsOn", 0x5912a2ab1cd24c63L).target(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL).optional(false).origin("6418371274763029603").done();
     return b.create();
   }

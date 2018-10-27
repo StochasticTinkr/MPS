@@ -277,7 +277,7 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
                   return JavaModuleOperations.collectCompileClasspath(modules, false);
                 }
               });
-              javaCompiler.compile(JavaModuleOperations.createClassPathItem(cp, new IFacet.Name("jetbrains.mps.debugger.java.evaluation.JavaDebugEvaluate").getName()), options);
+              javaCompiler.compile(cp, options);
               javaCompiler.removeCompilationResultListener(listener);
               if (compilationResult.isNull()) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Compilation did not complete")));

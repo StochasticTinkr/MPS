@@ -481,27 +481,11 @@
       <node concept="2aLE7I" id="72ouys9JzGi" role="ElM8M">
         <node concept="ElOhj" id="72ouys9JzGj" role="2aLE7H">
           <node concept="3clFbS" id="72ouys9JzGk" role="2VODD2">
-            <node concept="3SKdUt" id="1LzZ23Mgaq3" role="3cqZAp">
-              <node concept="3SKdUq" id="1LzZ23Mgaq4" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME drop MakeSession property after 2017.2" />
-              </node>
-            </node>
             <node concept="3SKdUt" id="1LzZ23Mgaqr" role="3cqZAp">
               <node concept="3SKdUq" id="1LzZ23Mgaqt" role="3SKWNk">
                 <property role="3SKdUp" value="no-op now" />
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-      <node concept="1aIAsN" id="72ouys9JDlJ" role="1aI7mi">
-        <property role="TrG5h" value="Parameters" />
-        <node concept="3Tm1VV" id="72ouys9JDlK" role="1B3o_S" />
-        <node concept="2lGYhJ" id="72ouys9JDlL" role="2pHZQ9">
-          <property role="3dDGau" value="false" />
-          <property role="TrG5h" value="unused" />
-          <node concept="3uibUv" id="72ouys9JDlT" role="2lK19J">
-            <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
           </node>
         </node>
       </node>
@@ -2649,13 +2633,6 @@
       <node concept="1aIAsN" id="5L5h3brvDMK" role="1aI7mi">
         <property role="TrG5h" value="Parameters" />
         <node concept="3Tm1VV" id="5L5h3brvDML" role="1B3o_S" />
-        <node concept="2lGYhJ" id="5L5h3brvDMQ" role="2pHZQ9">
-          <property role="3dDGau" value="false" />
-          <property role="TrG5h" value="unused" />
-          <node concept="3uibUv" id="5L5h3brvDMR" role="2lK19J">
-            <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
-          </node>
-        </node>
         <node concept="2lGYhJ" id="5L5h3brvDMS" role="2pHZQ9">
           <property role="3dDGau" value="false" />
           <property role="TrG5h" value="generateDebugInfo" />
@@ -3056,36 +3033,13 @@
       <node concept="2aLE7I" id="5L5h3brvz7l" role="ElM8M">
         <node concept="ElOhj" id="5L5h3brvz7m" role="2aLE7H">
           <node concept="3clFbS" id="5L5h3brvz7n" role="2VODD2">
-            <node concept="3SKdUt" id="3D3uKT_MUna" role="3cqZAp">
-              <node concept="3SKdUq" id="3D3uKT_MUnc" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME drop unused parameters once MPS 2017.2 is out" />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="MCybJ58S4B" role="3cqZAp">
-              <node concept="3SKdUq" id="MCybJ58S4D" role="3SKWNk">
-                <property role="3SKdUp" value="      cleanMake was abandoned in 2017.3, but I doubt it has been in use outside of MPS itself" />
+            <node concept="3SKdUt" id="1hl5evVegnV" role="3cqZAp">
+              <node concept="3SKdUq" id="1hl5evVegnW" role="3SKWNk">
+                <property role="3SKdUp" value="no-op now" />
               </node>
             </node>
           </node>
         </node>
-      </node>
-      <node concept="1aIAsN" id="5L5h3brvz7Q" role="1aI7mi">
-        <property role="TrG5h" value="Variables" />
-        <node concept="2lGYhJ" id="5L5h3brvz7T" role="2pHZQ9">
-          <property role="3dDGau" value="false" />
-          <property role="TrG5h" value="unused1" />
-          <node concept="3uibUv" id="5jLBleAiEoP" role="2lK19J">
-            <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
-          </node>
-        </node>
-        <node concept="2lGYhJ" id="5L5h3brvz7V" role="2pHZQ9">
-          <property role="3dDGau" value="false" />
-          <property role="TrG5h" value="cleanMake" />
-          <node concept="3uibUv" id="5L5h3brvz7W" role="2lK19J">
-            <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="5L5h3brvz80" role="1B3o_S" />
       </node>
     </node>
     <node concept="15KeUm" id="5L5h3brvz8m" role="15LFul">
@@ -3095,13 +3049,34 @@
       <node concept="2aLE7I" id="5L5h3brvz8n" role="ElM8M">
         <node concept="ElOhj" id="5L5h3brvz8x" role="2aLE7H">
           <node concept="3clFbS" id="5L5h3brvz8y" role="2VODD2">
+            <node concept="3cpWs8" id="1hl5evVe4rW" role="3cqZAp">
+              <node concept="3cpWsn" id="1hl5evVe4rX" role="3cpWs9">
+                <property role="TrG5h" value="gsp" />
+                <node concept="3uibUv" id="1hl5evVe4rN" role="1tU5fm">
+                  <ref role="3uigEE" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
+                </node>
+                <node concept="2OqwBi" id="1hl5evVe4rY" role="33vP2m">
+                  <node concept="2OqwBi" id="1hl5evVe4rZ" role="2Oq$k0">
+                    <node concept="2_BwXt" id="1hl5evVe4s0" role="2Oq$k0" />
+                    <node concept="liA8E" id="1hl5evVe4s1" role="2OqNvi">
+                      <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1hl5evVe4s2" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <node concept="3VsKOn" id="1hl5evVe4s3" role="37wK5m">
+                      <ref role="3VsUkX" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="5L5h3brvz8z" role="3cqZAp">
               <node concept="3cpWsn" id="5L5h3brvz8$" role="3cpWs9">
                 <property role="TrG5h" value="settings" />
                 <node concept="2OqwBi" id="71x3hr4juIH" role="33vP2m">
-                  <node concept="2YIFZM" id="71x3hr4juIG" role="2Oq$k0">
-                    <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getInstance():jetbrains.mps.generator.GenerationSettingsProvider" resolve="getInstance" />
-                    <ref role="1Pybhc" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
+                  <node concept="37vLTw" id="1hl5evVe54A" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1hl5evVe4rX" resolve="gsp" />
                   </node>
                   <node concept="liA8E" id="71x3hr4juIL" role="2OqNvi">
                     <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getGenerationSettings():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getGenerationSettings" />
@@ -3412,6 +3387,28 @@
         </node>
         <node concept="bFUmx" id="5L5h3brvz9T" role="bFwIG">
           <node concept="3clFbS" id="5L5h3brvz9U" role="2VODD2">
+            <node concept="3cpWs8" id="1hl5evVe57P" role="3cqZAp">
+              <node concept="3cpWsn" id="1hl5evVe57Q" role="3cpWs9">
+                <property role="TrG5h" value="gsp" />
+                <node concept="3uibUv" id="1hl5evVe57R" role="1tU5fm">
+                  <ref role="3uigEE" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
+                </node>
+                <node concept="2OqwBi" id="1hl5evVe57S" role="33vP2m">
+                  <node concept="2OqwBi" id="1hl5evVe57T" role="2Oq$k0">
+                    <node concept="2_BwXt" id="1hl5evVe57U" role="2Oq$k0" />
+                    <node concept="liA8E" id="1hl5evVe57V" role="2OqNvi">
+                      <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1hl5evVe57W" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <node concept="3VsKOn" id="1hl5evVe57X" role="37wK5m">
+                      <ref role="3VsUkX" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="50BeIrVdp$A" role="3cqZAp">
               <node concept="3cpWsn" id="50BeIrVdp$B" role="3cpWs9">
                 <property role="TrG5h" value="settings" />
@@ -3419,9 +3416,8 @@
                   <ref role="3uigEE" to="ap4t:~IModifiableGenerationSettings" resolve="IModifiableGenerationSettings" />
                 </node>
                 <node concept="2OqwBi" id="50BeIrVdp$D" role="33vP2m">
-                  <node concept="2YIFZM" id="50BeIrVdp$E" role="2Oq$k0">
-                    <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getInstance():jetbrains.mps.generator.GenerationSettingsProvider" resolve="getInstance" />
-                    <ref role="1Pybhc" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
+                  <node concept="37vLTw" id="1hl5evVe5ct" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1hl5evVe57Q" resolve="gsp" />
                   </node>
                   <node concept="liA8E" id="50BeIrVdp$F" role="2OqNvi">
                     <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getGenerationSettings():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getGenerationSettings" />

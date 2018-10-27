@@ -24,7 +24,7 @@ public class ModelTreeNode extends DefaultMutableTreeNode {
   }
   @Override
   public boolean isLeaf() {
-    if (!(isLeafPosition()) && children == null) {
+    if (!(isLeafPosition()) && getChildCount() == 0) {
       return false;
     }
     return super.isLeaf();

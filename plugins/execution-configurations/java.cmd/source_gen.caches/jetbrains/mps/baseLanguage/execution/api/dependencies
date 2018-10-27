@@ -77,9 +77,7 @@
     <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
     <classNode dependClassName="com.intellij.util.SystemProperties" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.PrintWriter" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -117,7 +115,6 @@
     <classNode dependClassName="jetbrains.mps.textgen.trace.TraceInfo" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.TraceablePositionInfo" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.UnitPositionInfo" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />

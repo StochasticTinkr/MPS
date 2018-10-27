@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <product version="3" modelHash="1eh2151fgdvetf4wpwx5pq8eohn2g5x">
-  <files names="ConceptPresentationAspectImpl.java:IconContainer.java:InequalityProperty.java:InequalityProperty_PropertySupport.java:InequationPriority.java:InequationPriority_PropertySupport.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
+  <files names="ConceptPresentationAspectImpl.java:EnumerationDescriptor_InequalityProperty.java:EnumerationDescriptor_InequationPriority.java:IconContainer.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
 </product>
 

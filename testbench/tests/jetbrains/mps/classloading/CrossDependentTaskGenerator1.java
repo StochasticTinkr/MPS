@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.reloading.FakeClassPathItem;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.SDependencyImpl;
 import org.apache.log4j.LogManager;

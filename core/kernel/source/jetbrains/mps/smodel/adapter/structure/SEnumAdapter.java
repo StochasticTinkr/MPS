@@ -17,14 +17,19 @@ package jetbrains.mps.smodel.adapter.structure;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.SNodeId.Regular;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -33,7 +38,12 @@ import java.util.Objects;
  *
  * @author Artem Tikhomirov
  * @since 2017.2
+ *
+ * @deprecated Do not use it!!! This class do not implement its contract!
+ *             Use {@code SEnumerationAdapter} that delegates to generated descriptors
  */
+@Deprecated
+@ToRemove(version = 2018.3)
 public class SEnumAdapter implements SEnumeration {
   private final Literal[] myLiterals;
   private final Literal myDefaultLiteral;
@@ -66,11 +76,11 @@ public class SEnumAdapter implements SEnumeration {
     }
   }
 
+  @NotNull
   @Override
-  public Collection<SEnumerationLiteral> getLiterals() {
+  public List<SEnumerationLiteral> getLiterals() {
     return Arrays.asList(myLiterals);
   }
-
 
   @Override
   public SEnumerationLiteral getLiteral(String name) {
@@ -88,23 +98,6 @@ public class SEnumAdapter implements SEnumeration {
   }
 
   @Override
-  public int hashCode() {
-    return (int) myEnumDeclId;
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (obj == this) {
-      return true;
-    }
-    if (myEnumDeclId == -1 || false == obj instanceof SEnumAdapter) {
-      // non-existend enum doesn't match any other
-      return false;
-    }
-    return myEnumDeclId == ((SEnumAdapter) obj).myEnumDeclId;
-  }
-
-  @Override
   public Object fromString(String value) {
     // XXX I don't think we use these for SEnumeration. Need to check how node.property of enum type is set, whether there's literal name and no conversion
     //     There's conversion code in lang.smodel generator, perhaps, it's the answer?
@@ -114,6 +107,50 @@ public class SEnumAdapter implements SEnumeration {
   @Override
   public String toString(Object value) {
     return ((SEnumerationLiteral) value).getName();
+  }
+
+  @NotNull
+  @Override
+  public String getName() {
+    return "";
+  }
+
+  @Override
+  public boolean isInstanceOf(@Nullable Object value) {
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    final SNodeReference sourceNode = getSourceNode();
+    if (sourceNode == null) {
+      return -1;
+    }
+    return sourceNode.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj instanceof SEnumAdapter) {
+      SEnumAdapter other = (SEnumAdapter) obj;
+      return Objects.equals(this.getSourceNode(), other.getSourceNode());
+    }
+    return false;
+  }
+
+  @Nullable
+  @Override
+  public SLanguage getLanguage() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getSourceNode() {
+    return null;
   }
 
   private class Literal implements SEnumerationLiteral {
@@ -150,7 +187,7 @@ public class SEnumAdapter implements SEnumeration {
     }
 
     /**
-     * Literal value.
+     * Literal name.
      *
      * Corresponds to {@code enumMemberDecl.internalValue } in structure aspect
      *         and to {@code enumMember.value } and {@code enum/.../.getMemberFromValue("...") } in smodel lang.

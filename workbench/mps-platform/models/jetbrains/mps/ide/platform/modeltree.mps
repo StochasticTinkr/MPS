@@ -126,6 +126,9 @@
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
@@ -1258,10 +1261,12 @@
                 <ref role="338YkT" node="3I2kZbZOf7O" resolve="leafPosition" />
               </node>
             </node>
-            <node concept="3clFbC" id="3I2kZbZOf97" role="3uHU7w">
-              <node concept="10Nm6u" id="3I2kZbZOf98" role="3uHU7w" />
-              <node concept="37vLTw" id="2BHiRxeuqOo" role="3uHU7B">
-                <ref role="3cqZAo" to="rgfa:~DefaultMutableTreeNode.children" resolve="children" />
+            <node concept="3clFbC" id="5fPzS2nPo5$" role="3uHU7w">
+              <node concept="3cmrfG" id="5fPzS2nPoKo" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="1rXfSq" id="5fPzS2nPmWI" role="3uHU7B">
+                <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.getChildCount():int" resolve="getChildCount" />
               </node>
             </node>
           </node>

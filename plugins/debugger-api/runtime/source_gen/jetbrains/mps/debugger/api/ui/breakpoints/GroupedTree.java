@@ -106,7 +106,7 @@ import javax.swing.UIManager;
           return GroupTreeNode.this.getText();
         }
         public boolean isSelected() {
-          for (MPSTreeNode c : GroupTreeNode.this) {
+          for (MPSTreeNode c : GroupTreeNode.this.getChildren()) {
             if (c.getUserObject() instanceof CheckBoxNodeRenderer.NodeData) {
               if (!(((CheckBoxNodeRenderer.NodeData) c.getUserObject()).isSelected())) {
                 return false;
@@ -117,7 +117,7 @@ import javax.swing.UIManager;
           return true;
         }
         public void setSelected(boolean selected) {
-          for (MPSTreeNode c : GroupTreeNode.this) {
+          for (MPSTreeNode c : GroupTreeNode.this.getChildren()) {
             if (c.getUserObject() instanceof CheckBoxNodeRenderer.NodeData) {
               ((CheckBoxNodeRenderer.NodeData) c.getUserObject()).setSelected(selected);
             }

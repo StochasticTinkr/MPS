@@ -485,7 +485,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   private void expandAllImpl(MPSTreeNode node) {
     expandPath(new TreePath(node.getPath()));
-    for (MPSTreeNode c : node) {
+    for (MPSTreeNode c : node.getChildren()) {
       expandAllImpl(c);
     }
   }
@@ -501,7 +501,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   private void collapseAllImpl(MPSTreeNode node) {
-    for (MPSTreeNode c : node) {
+    for (MPSTreeNode c : node.getChildren()) {
       collapseAllImpl(c);
     }
     if (node.isInitialized()) {
@@ -661,7 +661,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     if (!(root.isInitialized() || root.hasInfiniteSubtree())) {
       root.init();
     }
-    for (MPSTreeNode child : root) {
+    for (MPSTreeNode child : root.getChildren()) {
       MPSTreeNode result = findNodeWith(child, userObject);
       if (result != null) {
         return result;

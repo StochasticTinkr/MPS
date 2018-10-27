@@ -76,6 +76,9 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
       <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
         <child id="1160998896846" name="condition" index="1gVkn0" />
       </concept>
@@ -316,6 +319,35 @@
   <node concept="18kY7G" id="1muh51orlNA">
     <property role="TrG5h" value="check_DefaultMethodIsNotAbstract" />
     <node concept="3clFbS" id="1muh51orlNB" role="18ibNy">
+      <node concept="3cpWs8" id="3R8Ssjf99M_" role="3cqZAp">
+        <node concept="3cpWsn" id="3R8Ssjf99MA" role="3cpWs9">
+          <property role="TrG5h" value="parent" />
+          <node concept="3Tqbb2" id="3R8Ssjf99M$" role="1tU5fm" />
+          <node concept="2OqwBi" id="3R8Ssjf99MB" role="33vP2m">
+            <node concept="1YBJjd" id="3R8Ssjf99MC" role="2Oq$k0">
+              <ref role="1YBMHb" node="1muh51orlND" resolve="modifier" />
+            </node>
+            <node concept="1mfA1w" id="3R8Ssjf99MD" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3R8Ssjf99UZ" role="3cqZAp">
+        <node concept="3clFbS" id="3R8Ssjf99V1" role="3clFbx">
+          <node concept="3cpWs6" id="3R8Ssjf9fmR" role="3cqZAp" />
+        </node>
+        <node concept="3fqX7Q" id="3R8Ssjf9fe8" role="3clFbw">
+          <node concept="2OqwBi" id="3R8Ssjf9fea" role="3fr31v">
+            <node concept="37vLTw" id="3R8Ssjf9feb" role="2Oq$k0">
+              <ref role="3cqZAo" node="3R8Ssjf99MA" resolve="parent" />
+            </node>
+            <node concept="1mIQ4w" id="3R8Ssjf9fec" role="2OqNvi">
+              <node concept="chp4Y" id="3R8Ssjf9fis" role="cj9EA">
+                <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3cpWs8" id="1muh51ormSZ" role="3cqZAp">
         <node concept="3cpWsn" id="1muh51ormT0" role="3cpWs9">
           <property role="TrG5h" value="method" />
@@ -326,11 +358,8 @@
             <node concept="chp4Y" id="1muh51ormT2" role="3oSUPX">
               <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
             </node>
-            <node concept="2OqwBi" id="1muh51ormT3" role="1m5AlR">
-              <node concept="1YBJjd" id="1muh51ormT4" role="2Oq$k0">
-                <ref role="1YBMHb" node="1muh51orlND" resolve="modifier" />
-              </node>
-              <node concept="1mfA1w" id="1muh51ormT5" role="2OqNvi" />
+            <node concept="37vLTw" id="3R8Ssjf99ME" role="1m5AlR">
+              <ref role="3cqZAo" node="3R8Ssjf99MA" resolve="parent" />
             </node>
           </node>
         </node>

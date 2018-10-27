@@ -4,12 +4,16 @@ package jetbrains.mps.lang.core.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAttribute = createDescriptorForAttribute();
@@ -50,6 +54,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptScopeProvider = createDescriptorForScopeProvider();
   /*package*/ final ConceptDescriptor myConceptSideTransformInfo = createDescriptorForSideTransformInfo();
   /*package*/ final ConceptDescriptor myConceptSuppressErrorsAnnotation = createDescriptorForSuppressErrorsAnnotation();
+  /*package*/ final EnumerationDescriptor myEnumerationSideTransformSide = new EnumerationDescriptor_SideTransformSide();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -146,6 +151,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationSideTransformSide);
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -175,8 +185,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/1133920641626");
     b.version(2);
-    b.prop("shortDescription", 0x10d34f97574L, "1156234966388");
-    b.prop("virtualPackage", 0x115eca8579fL, "1193676396447");
+    b.property("shortDescription", 0x10d34f97574L).type(PrimitiveTypeId.STRING).origin("1156234966388").done();
+    b.property("virtualPackage", 0x115eca8579fL).type(PrimitiveTypeId.STRING).origin("1193676396447").done();
     b.aggregate("smodelAttribute", 0x47bf8397520e5942L).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L).optional(true).ordered(true).multiple(true).origin("5169995583184591170").done();
     return b.create();
   }
@@ -195,8 +205,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.core.structure.Attribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/709746936026466394");
     b.version(2);
-    b.prop("role_DebugInfo", 0x9d98713f249b585L, "709746936026609029");
-    b.prop("linkId", 0x9d98713f249b587L, "709746936026609031");
+    b.property("role_DebugInfo", 0x9d98713f249b585L).type(PrimitiveTypeId.STRING).origin("709746936026609029").done();
+    b.property("linkId", 0x9d98713f249b587L).type(PrimitiveTypeId.STRING).origin("709746936026609031").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIAntisuppressErrors() {
@@ -253,7 +263,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/1169194658468");
     b.version(2);
-    b.prop("name", 0x110396ec041L, "1169194664001");
+    b.property("name", 0x110396ec041L).type(PrimitiveTypeId.STRING).origin("1169194664001").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIOldCommentContainer() {
@@ -275,7 +285,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/1196978630214");
     b.version(2);
-    b.prop("resolveInfo", 0x116b17cd415L, "1196978656277");
+    b.property("resolveInfo", 0x116b17cd415L).type(PrimitiveTypeId.STRING).origin("1196978656277").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForISkipConstraintsChecking() {
@@ -357,8 +367,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.core.structure.Attribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/3364660638048049745");
     b.version(2);
-    b.prop("role_DebugInfo", 0x18649a5c82123514L, "1757699476691236116");
-    b.prop("linkId", 0x129f3f612792fc5cL, "1341860900488019036");
+    b.property("role_DebugInfo", 0x18649a5c82123514L).type(PrimitiveTypeId.STRING).origin("1757699476691236116").done();
+    b.property("linkId", 0x129f3f612792fc5cL).type(PrimitiveTypeId.STRING).origin("1341860900488019036").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMigrationAnnotation() {
@@ -367,7 +377,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/8703179436979359251");
     b.version(2);
-    b.prop("createdByScript", 0x78c7e79625a38e14L, "8703179436979359252");
+    b.property("createdByScript", 0x78c7e79625a38e14L).type(PrimitiveTypeId.STRING).origin("8703179436979359252").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMigrationAnnotation_old() {
@@ -401,8 +411,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.core.structure.Attribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/3364660638048049750");
     b.version(2);
-    b.prop("name_DebugInfo", 0x18649a5c82123515L, "1757699476691236117");
-    b.prop("propertyId", 0x129f3f61278d556dL, "1341860900487648621");
+    b.property("name_DebugInfo", 0x18649a5c82123515L).type(PrimitiveTypeId.STRING).origin("1757699476691236117").done();
+    b.property("propertyId", 0x129f3f61278d556dL).type(PrimitiveTypeId.STRING).origin("1341860900487648621").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReviewMigration() {
@@ -412,9 +422,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e13L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/8703179436979359238");
     b.version(2);
-    b.prop("reasonShort", 0x78c7e79625a38e07L, "8703179436979359239");
-    b.prop("todo", 0x78c7e79625a38e08L, "8703179436979359240");
-    b.prop("readableId", 0x78c7e79625a38e09L, "8703179436979359241");
+    b.property("reasonShort", 0x78c7e79625a38e07L).type(PrimitiveTypeId.STRING).origin("8703179436979359239").done();
+    b.property("todo", 0x78c7e79625a38e08L).type(PrimitiveTypeId.STRING).origin("8703179436979359240").done();
+    b.property("readableId", 0x78c7e79625a38e09L).type(PrimitiveTypeId.STRING).origin("8703179436979359241").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReviewMigration_old() {
@@ -424,9 +434,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/2482611074346661065");
     b.version(2);
-    b.prop("reasonShort", 0x2274019e61e234d6L, "2482611074346661078");
-    b.prop("todo", 0x2274019e61e234d1L, "2482611074346661073");
-    b.prop("readableId", 0x2274019e61e9f6eaL, "2482611074347169514");
+    b.property("reasonShort", 0x2274019e61e234d6L).type(PrimitiveTypeId.STRING).origin("2482611074346661078").done();
+    b.property("todo", 0x2274019e61e234d1L).type(PrimitiveTypeId.STRING).origin("2482611074346661073").done();
+    b.property("readableId", 0x2274019e61e9f6eaL).type(PrimitiveTypeId.STRING).origin("2482611074347169514").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForScopeFacade() {
@@ -449,9 +459,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/779128492853369165");
     b.version(2);
-    b.prop("side", 0xad0053c7aee2321L, "779128492853699361");
-    b.prop("cellId", 0xad0053c7af1b9bbL, "779128492853934523");
-    b.prop("anchorTag", 0xad0053c7af1bf58L, "779128492853935960");
+    b.property("side", 0xad0053c7aee2321L).type(MetaIdFactory.dataTypeId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7aee25ecL)).origin("779128492853699361").done();
+    b.property("cellId", 0xad0053c7af1b9bbL).type(PrimitiveTypeId.STRING).origin("779128492853934523").done();
+    b.property("anchorTag", 0xad0053c7af1bf58L).type(PrimitiveTypeId.STRING).origin("779128492853935960").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSuppressErrorsAnnotation() {
@@ -461,7 +471,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/4222318806802425298");
     b.version(2);
-    b.prop("whichError", 0x21a1b53c6f2a72edL, "2423417345669755629");
+    b.property("whichError", 0x21a1b53c6f2a72edL).type(PrimitiveTypeId.STRING).origin("2423417345669755629").done();
     return b.create();
   }
 }

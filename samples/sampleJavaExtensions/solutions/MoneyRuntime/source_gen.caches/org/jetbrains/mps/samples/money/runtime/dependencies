@@ -46,7 +46,6 @@
     <classNode dependClassName="java.util.StringTokenizer" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.util.URLUtil" />
     <classNode dependClassName="org.jetbrains.mps.samples.money.runtime.DailyStockPrice" />
     <classNode dependClassName="org.jetbrains.mps.samples.money.runtime.Money" />
   </dependency>

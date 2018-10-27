@@ -2394,7 +2394,7 @@
   </node>
   <node concept="Az7Fb" id="htXhg4R">
     <property role="TrG5h" value="_CharConstant_String" />
-    <property role="FLfZY" value="[^\\\\'&quot;]|(\\\\([btnfr\&quot;'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))" />
+    <property role="FLfZY" value="[^\\\\']|(\\\\([btnfr\&quot;'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))" />
   </node>
   <node concept="PlHQZ" id="huG8N3O">
     <property role="TrG5h" value="TypeDerivable" />
@@ -4428,6 +4428,63 @@
     <ref role="1TJDcQ" node="25pbpTNtsmA" resolve="Modifier" />
     <node concept="t5JxF" id="10BRnhaa76p" role="lGtFl">
       <property role="t5JxN" value="pure java modifier. Note that for the historical reasons all the java modifiers are still implemented via the concept properties" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5fcjBnBAG8N">
+    <property role="EcuMT" value="6038287468700811827" />
+    <property role="TrG5h" value="GenericLValueExpression" />
+    <property role="34LRSv" value="generic lvalue" />
+    <property role="3GE5qa" value="ext.references" />
+    <property role="R4oN_" value="generation purpose generic lvalue concept" />
+    <ref role="1TJDcQ" node="fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="78UfAlSgtJM" role="1TKVEi">
+      <property role="IQ2ns" value="8230959874503203826" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="5Z1N4vbhycU" role="1TKVEi">
+      <property role="IQ2ns" value="6900020712833426234" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="referenceExpression" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="5fcjBnBAGc2" role="1TKVEi">
+      <property role="IQ2ns" value="6038287468700812034" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="getValueExpression" />
+      <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="7TdXYpy3Y5P" role="1TKVEi">
+      <property role="IQ2ns" value="9101202990845387125" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="assignValueExression" />
+      <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5fcjBnBAGcU">
+    <property role="EcuMT" value="6038287468700812090" />
+    <property role="TrG5h" value="ValueRef" />
+    <property role="34LRSv" value="value" />
+    <property role="3GE5qa" value="ext.references" />
+    <property role="R4oN_" value="value to assign" />
+    <ref role="1TJDcQ" node="fz3vP1J" resolve="Expression" />
+  </node>
+  <node concept="1TIwiD" id="5Z1N4vbhybE">
+    <property role="EcuMT" value="6900020712833426154" />
+    <property role="3GE5qa" value="ext.references" />
+    <property role="TrG5h" value="PassByRefExpression" />
+    <property role="34LRSv" value="byRef" />
+    <property role="R4oN_" value="pass value by reference" />
+    <ref role="1TJDcQ" node="fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="5Z1N4vbhycR" role="1TKVEi">
+      <property role="IQ2ns" value="6900020712833426231" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="expr" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
     </node>
   </node>
 </model>

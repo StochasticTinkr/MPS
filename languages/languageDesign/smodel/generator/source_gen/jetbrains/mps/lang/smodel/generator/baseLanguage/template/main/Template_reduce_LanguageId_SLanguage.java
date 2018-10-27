@@ -42,7 +42,7 @@ public class Template_reduce_LanguageId_SLanguage extends TemplateDeclarationBas
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    final Object varValue1 = QueriesGenerated.varMacro_Value_94_0(new TemplateVarContext(context, varMacroRef_3k4iw9_b0a0a2a6));
+    final Object varValue1 = QueriesGenerated.varMacro_Value_87_0(new TemplateVarContext(context, varMacroRef_3k4iw9_b0a0a2a6));
     TemplateContext context1 = context.withVariable("var:idValue", varValue1);
     final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
     try {
@@ -52,7 +52,7 @@ public class Template_reduce_LanguageId_SLanguage extends TemplateDeclarationBas
       {
         final SNode tnode3 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode3, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_94_0(new PropertyMacroContext(context2, "0L", propertyMacro_3k4iw9_c0a0c0a0b0d0f0g))));
+          SNodeAccessUtil.setProperty(tnode3, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_87_0(new PropertyMacroContext(context2, "0L", propertyMacro_3k4iw9_c0a0c0a0b0d0f0g))));
         } finally {
         }
         tnode2.addChild(myAggregationLinks[0], tnode3);
@@ -61,7 +61,7 @@ public class Template_reduce_LanguageId_SLanguage extends TemplateDeclarationBas
       {
         final SNode tnode4 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_94_1(new PropertyMacroContext(context2, "0L", propertyMacro_3k4iw9_c0a0c0a0b0e0f0g))));
+          SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_87_1(new PropertyMacroContext(context2, "0L", propertyMacro_3k4iw9_c0a0c0a0b0e0f0g))));
         } finally {
         }
         tnode2.addChild(myAggregationLinks[0], tnode4);
@@ -70,7 +70,7 @@ public class Template_reduce_LanguageId_SLanguage extends TemplateDeclarationBas
       {
         final SNode tnode5 = environment.createOutputNode(myConcepts[2]);
         try {
-          SNodeAccessUtil.setProperty(tnode5, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_94_2(new PropertyMacroContext(context2, "", propertyMacro_3k4iw9_c0a0c0a0b0f0f0g))));
+          SNodeAccessUtil.setProperty(tnode5, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_87_2(new PropertyMacroContext(context2, "", propertyMacro_3k4iw9_c0a0c0a0b0f0f0g))));
         } finally {
         }
         tnode2.addChild(myAggregationLinks[0], tnode5);

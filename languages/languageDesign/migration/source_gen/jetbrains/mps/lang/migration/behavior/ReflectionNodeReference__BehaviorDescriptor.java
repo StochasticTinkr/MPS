@@ -113,13 +113,13 @@ public final class ReflectionNodeReference__BehaviorDescriptor extends BaseBHDes
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
-  }
   private static SNode check_gp0spl_a0a1(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
   }
 }

@@ -100,7 +100,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
               public void performAction(RefactoringViewItem refactoringViewItem) {
                 refactoringViewItem.close();
               }
-            }, new SearchResults<SNode>(concepts.value.getSearchedNodes(), results.value), false, "Safe Delete");
+            }, new SearchResults<SNode>(concepts.value.getSearchedObjects(), results.value), false, "Safe Delete");
           }
         });
       }

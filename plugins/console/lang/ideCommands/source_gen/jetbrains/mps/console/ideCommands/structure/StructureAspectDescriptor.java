@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbsractMake = createDescriptorForAbsractMake();
@@ -116,6 +118,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -182,7 +189,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L);
     b.origin("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)/3894227536041114995");
     b.version(2);
-    b.prop("moduleId", 0x360b134fc0525d7fL, "3894227536041893247");
+    b.property("moduleId", 0x360b134fc0525d7fL).type(PrimitiveTypeId.STRING).origin("3894227536041893247").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGlobalScope() {
@@ -343,7 +350,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.console.base.structure.InterpretedCommand", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L);
     b.origin("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)/7057947030097724900");
     b.version(2);
-    b.prop("ignoreExternalPlan", 0x2c510b378f8ce5ddL, "3193345944041874909");
+    b.property("ignoreExternalPlan", 0x2c510b378f8ce5ddL).type(PrimitiveTypeId.BOOLEAN).origin("3193345944041874909").done();
     b.aggregate("targetModelOld", 0x61f2dd6de47f867aL).target(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L).optional(true).ordered(true).multiple(false).origin("7057947030097725050").done();
     b.aggregate("targetModel", 0x70ee8fac615b4f33L).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L).optional(true).ordered(true).multiple(false).origin("8137599547235585843").done();
     b.alias("#showGenPlan");

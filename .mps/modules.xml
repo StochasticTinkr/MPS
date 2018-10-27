@@ -78,6 +78,7 @@
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/logging/runtime/jetbrains.mps.baseLanguage.logging.runtime.msd" folder="core.baseLanguage.logging" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/jetbrains.mps.baseLanguage.overloadedOperators.mpl" folder="core.baseLanguage.overloadedOperators" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.msd" folder="core.baseLanguage.overloadedOperators" />
+      <modulePath path="$PROJECT_DIR$/languages/baseLanguage/references/runtime/jetbrains.mps.baseLanguage.references.runtime.msd" folder="core.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/tuples/languages/tuples/jetbrains.mps.baseLanguage.tuples.mpl" folder="core.baseLanguage.tuples" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" folder="core.baseLanguage.tuples" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.sandbox/jetbrains.mps.baseLanguage.tuples.sandbox.msd" folder="core.baseLanguage.tuples" />
@@ -242,6 +243,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.mps.tests/jetbrains.mps.build.mps.tests.mpl" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.mps/jetbrains.mps.build.mps.mpl" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.startup/jetbrains.mps.build.startup.mpl" folder="platform.build" />
+      <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.tips/jetbrains.mps.build.tips.mpl" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.workflow/jetbrains.mps.build.workflow.mpl" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build/jetbrains.mps.build.mpl" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.migration/jetbrains.mps.build.migration.msd" folder="platform.build" />
@@ -446,6 +448,8 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/build.mps.runner.test/jetbrains.mps.build.mps.runner.test.test4/jetbrains.mps.build.mps.runner.test.test4.msd" folder="platform.build.runner.test" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/build.mps.runner.test/project/solutions/jetbrains.mps.build.mps.runner.test.solution/jetbrains.mps.build.mps.runner.test.solution.msd" folder="platform.build.runner.test" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/generator-tests/smodel/jetbrains.mps.test.smodel.msd" folder="tests.Generator Tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/jetbrains.mps.baseLanguage.testRefs.testLang/jetbrains.mps.baseLanguage.testRefs.testLang.mpl" folder="tests.BL references" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/jetbrains.mps.baseLanguage.testRefs/jetbrains.mps.baseLanguage.testRefs.msd" folder="tests.BL references" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/simpleProject/solutions/simpleProject/simpleProject.msd" folder="tests.diskMemoryConflict" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testActions/jetbrains.mps.testActions.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L1/BHL1.mpl" folder="tests.testBehavior" />

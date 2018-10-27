@@ -4,15 +4,17 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.SearchedObjects;
+import java.util.Collections;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -25,9 +27,9 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 public class AspectMethodsFinder extends BaseFinder implements Finder {
   public AspectMethodsFinder() {
   }
+
   @Override
-  @NotNull
-  public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
+  public void find(SearchQuery query, @NotNull IFinder.FindCallback callback, ProgressMonitor monitor) {
     // I've got no idea what aspect methods it looks for. MPS Integration plugin in Idea takes PsiMethod and pass here package statement and method name 
     final AspectMethodsFinder.AspectMethodQueryData data = (AspectMethodsFinder.AspectMethodQueryData) query.getObjectHolder().getObject();
     final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
@@ -36,21 +38,20 @@ public class AspectMethodsFinder extends BaseFinder implements Finder {
         applicableModelDescriptors.add(model);
       }
     }
-    SearchResults<SNode> res = new SearchResults<SNode>();
-    res.getSearchedNodes().add(data.myModelName + '#' + data.myMethodName);
+    callback.onSearchedObjectsCalculated(new SearchedObjects(Collections.singleton(data.myModelName + '#' + data.myMethodName)));
     for (SModel model : applicableModelDescriptors) {
       for (SNode node : SNodeUtil.getDescendants(model)) {
         for (SProperty prop : node.getProperties()) {
           String value = node.getProperty(prop);
           if (data.myMethodName.endsWith(value)) {
-            res.getSearchResults().add(new SearchResult<SNode>(node, "Aspect methods"));
+            callback.onUsageFound(new SearchResult<SNode>(node, "Aspect methods"));
             break;
           }
         }
       }
     }
-    return res;
   }
+
   public String getDescription() {
     return "Aspect Methods";
   }

@@ -75,7 +75,7 @@ public class NamespaceTextNode extends TextTreeNode implements TreeElement {
 
   public List<SModel> getModelsUnder() {
     List<SModel> models = new ArrayList<>();
-    for (MPSTreeNode child : this) {
+    for (MPSTreeNode child : getChildren()) {
       if (child instanceof SModelTreeNode) {
         models.add(((SModelTreeNode) child).getModel());
         for (SModelTreeNode childTreeNode : ((SModelTreeNode) child).getAllSubfolderSModelTreeNodes()) {
@@ -100,7 +100,7 @@ public class NamespaceTextNode extends TextTreeNode implements TreeElement {
 
   public List<SModule> getModulesUnder() {
     List<SModule> modules = new ArrayList<>();
-    for (MPSTreeNode child : this) {
+    for (MPSTreeNode child : getChildren()) {
       if (child instanceof ProjectModuleTreeNode) {
         modules.add(((ProjectModuleTreeNode) child).getModule());
       } else if (child instanceof NamespaceTextNode) {

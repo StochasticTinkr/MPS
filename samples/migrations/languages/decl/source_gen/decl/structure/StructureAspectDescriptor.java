@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDeclMigrationData = createDescriptorForDeclMigrationData();
@@ -47,6 +49,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -56,8 +63,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)/2482611074346661065");
     b.version(2);
-    b.prop("oldId", 0x3abe707a89857bdeL, "4232944371370392542");
-    b.prop("newId", 0x3abe707a89857bdfL, "4232944371370392543");
+    b.property("oldId", 0x3abe707a89857bdeL).type(PrimitiveTypeId.STRING).origin("4232944371370392542").done();
+    b.property("newId", 0x3abe707a89857bdfL).type(PrimitiveTypeId.STRING).origin("4232944371370392543").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNewComponent() {

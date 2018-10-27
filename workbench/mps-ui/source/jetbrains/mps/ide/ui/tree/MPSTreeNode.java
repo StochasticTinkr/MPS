@@ -18,6 +18,7 @@ package jetbrains.mps.ide.ui.tree;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -43,6 +44,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * @author Kostik
  */
+//todo[MM]: unimplement iterable after 2019.1, use getChildren()
 public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
   private static final Logger LOG = LogManager.getLogger(MPSTreeNode.class);
 
@@ -80,11 +82,17 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   @NotNull
   @Override
   @SuppressWarnings("unchecked")
+  @Deprecated
+  @ToRemove(version = 2019.1)
   public Iterator<MPSTreeNode> iterator() {
     if (children == null) {
       return Collections.<MPSTreeNode>emptySet().iterator();
     }
-    return children.iterator();
+    return (Iterator)children.iterator();
+  }
+
+  public List<? extends MPSTreeNode> getChildren() {
+    return children == null ? Collections.emptyList() : ((List) children);
   }
 
   public MPSTree getTree() {
@@ -95,17 +103,17 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   }
 
   /**
-   *  returns the closest ancestor (nodes or the containing tree) which implements the given class
+   * returns the closest ancestor (nodes or the containing tree) which implements the given class
    */
-  public <T> T getAncestor(@NotNull Class<T> cls) {
-    TreeNode parent = getParent();
-    while (parent != null) {
-      if (cls.isInstance(parent)) {
-        return cls.cast(parent);
+  public <AT> AT getAncestor(@NotNull Class<AT> cls) {
+    TreeNode p = getParent();
+    while (p != null) {
+      if (cls.isInstance(p)) {
+        return cls.cast(p);
       }
-      parent = parent.getParent();
+      p = p.getParent();
     }
-    if (myTree != null && cls.isInstance(myTree)) {
+    if (cls.isInstance(myTree)) {
       return cls.cast(myTree);
     }
     return null;
@@ -207,7 +215,9 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
 
   public boolean hasChild(MutableTreeNode node) {
     for (int i = 0; i < getChildCount(); i++) {
-      if (getChildAt(i) == node) return true;
+      if (getChildAt(i) == node) {
+        return true;
+      }
     }
     return false;
   }
@@ -221,7 +231,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     if (!myAdded) {
       throw new IllegalStateException(
           String.format("Trying to remove tree node which have not been added, tree=%s, node=%s",
-              myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
+                        myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
     }
     try {
       onRemove();
@@ -232,7 +242,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     if (!isInitialized()) {
       return;
     }
-    for (MPSTreeNode node : this) {
+    for (MPSTreeNode node : getChildren()) {
       node.removeThisAndChildren();
     }
   }
@@ -246,7 +256,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     if (myAdded) {
       throw new IllegalStateException(
           String.format("Trying to add tree node which have already been added, tree=%s, node=%s",
-              myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
+                        myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
     }
     try {
       onAdd();
@@ -264,8 +274,10 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   }
 
   public MPSTreeNode findExactChildWith(Object userObject) {
-    for (MPSTreeNode child : this) {
-      if (child.getUserObject() == userObject) return child;
+    for (MPSTreeNode child : getChildren()) {
+      if (child.getUserObject() == userObject) {
+        return child;
+      }
     }
     return null;
   }
@@ -275,11 +287,15 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
    */
   @Nullable
   public final MPSTreeNode findDescendantWith(Object userObject) {
-    if (getUserObject() == null ? userObject == null : getUserObject().equals(userObject)) return this;
+    if (getUserObject() == null ? userObject == null : getUserObject().equals(userObject)) {
+      return this;
+    }
     if (isInitialized()) {
       for (int i = 0; i < getChildCount(); i++) {
         MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findDescendantWith(userObject);
-        if (result != null) return result;
+        if (result != null) {
+          return result;
+        }
       }
     }
     return null;
@@ -334,8 +350,8 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
 
   /**
    * @deprecated odd and unclear contract (e.g. {@link #update()} and {@link #updateSubTree()} imply structure refresh, while this one does not),
-   *             parameters that merely control invocation of other public methods.
-   *             Use respective methods directly, instead.
+   * parameters that merely control invocation of other public methods.
+   * Use respective methods directly, instead.
    */
   @Deprecated
   public void updatePresentation(final boolean reloadSubTree, final boolean updateAncestors) {
@@ -354,6 +370,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
    * This method may be invoked from any thread, and doesn't trigger UI update, use {@link #renewPresentation()} from correct (EDT/UI) thread
    * if needed (e.g. if messages are attached the moment tree is being constructed, there's no reason to renew each node individually,
    * they get a chance to update them once tree becomes visible)
+   *
    * @param message message to attach
    */
   public void addTreeMessage(@NotNull TreeMessage message) {
@@ -373,6 +390,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
    * Detach all messages of the specified owner.
    * This method can be invoked from any thread.
    * To trigger UI update, use {@link #renewPresentation()} from correct (EDT/UI) thread.
+   *
    * @param owner identifies messages to remove
    * @return set of detached messages, or empty collection if none found
    */
@@ -447,7 +465,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
         parentId = ((MPSTreeNode) getParent()).getNodeIdentifier();
       }
       throw new IllegalStateException("MPSTreeNode identifier cannot be null, class="
-          + getClass().getName() + ", parent id=" + parentId);
+                                      + getClass().getName() + ", parent id=" + parentId);
     } else {
       return myNodeIdentifier;
     }
@@ -505,7 +523,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   protected void updateErrorState() {
     ErrorState state = ErrorState.NONE;
     if (propogateErrorUpwards()) {
-      for (MPSTreeNode node : this) {
+      for (MPSTreeNode node : getChildren()) {
         state = state.combine(node.getAggregatedErrorState());
       }
     }

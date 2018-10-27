@@ -6,57 +6,33 @@ import java.util.List;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.language.SEnumeration;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.menus.transformation.PropertyTransformationMenuItem;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.runtime.IconResource;
-import jetbrains.mps.smodel.runtime.IconResourceUtil;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 public class EnumSPropertyTransformationItemFactory {
   private EnumSPropertyTransformationItemFactory() {
   }
   public static List<TransformationMenuItem> createItems(SProperty property, TransformationMenuContext transformationMenuContext) {
-    SNode enumDataType = ((SNode) SLinkOperations.getTarget(((SNode) property.getDeclarationNode()), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType")));
-    List<TransformationMenuItem> items = ListSequence.fromList(new ArrayList<TransformationMenuItem>(ListSequence.fromList(SLinkOperations.getChildren(enumDataType, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).count()));
-    PropertySupport propertySupport = PropertySupport.getPropertySupport(property);
-    for (final SNode enumMemberDeclaration : SLinkOperations.getChildren(enumDataType, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))) {
-      final String externalValue = SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
-      if (propertySupport.canSetValue(transformationMenuContext.getNode(), property, externalValue)) {
+    SDataType type = property.getType();
+    if (!((type instanceof SEnumeration))) {
+      return Collections.<TransformationMenuItem>emptyList();
+    }
+    SEnumeration enumm = as_7biv4j_a0a2a1(type, SEnumeration.class);
+    List<TransformationMenuItem> items = ListSequence.fromList(new ArrayList<TransformationMenuItem>(enumm.getLiterals().size()));
+    for (final SEnumerationLiteral literal : enumm.getLiterals()) {
+      if (ModelConstraints.validatePropertyValue(transformationMenuContext.getNode(), property, literal)) {
         transformationMenuContext.getEditorMenuTrace().pushTraceInfo();
 
         try {
-          transformationMenuContext.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")), SNodeOperations.getPointer(enumMemberDeclaration), true));
-          PropertyTransformationMenuItem item = new PropertyTransformationMenuItem(property, SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")), transformationMenuContext) {
-
-
-            @Nullable
-            @Override
-            public IconResource getIcon(String pattern) {
-              return IconResourceUtil.getIconResourceForNode(enumMemberDeclaration);
-            }
-
-
-            @Nullable
-            @Override
-            public String getShortDescriptionText(@NotNull String pattern) {
-              return NodePresentationUtil.descriptionText(enumMemberDeclaration);
-            }
-
-            @Override
-            public String getLabelText(String pattern) {
-              return externalValue;
-            }
-          };
+          transformationMenuContext.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + literal.getPresentation(), literal.getSourceNode(), true));
+          PropertyTransformationMenuItem item = new PropertyTransformationMenuItem(property, literal, transformationMenuContext);
           ListSequence.fromList(items).addElement(item);
         } finally {
           transformationMenuContext.getEditorMenuTrace().popTraceInfo();
@@ -65,5 +41,8 @@ public class EnumSPropertyTransformationItemFactory {
     }
 
     return items;
+  }
+  private static <T> T as_7biv4j_a0a2a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

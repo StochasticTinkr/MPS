@@ -4,14 +4,17 @@ package jetbrains.mps.lang.refactoring.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractMoveExpression = createDescriptorForAbstractMoveExpression();
@@ -62,6 +65,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptRepositoryOperation = createDescriptorForRepositoryOperation();
   /*package*/ final ConceptDescriptor myConceptScopeOperation = createDescriptorForScopeOperation();
   /*package*/ final ConceptDescriptor myConceptUpdateModelProcedure = createDescriptorForUpdateModelProcedure();
+  /*package*/ final EnumerationDescriptor myEnumerationRefactoringTargetKind_Enum = new EnumerationDescriptor_RefactoringTargetKind_Enum();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -176,6 +180,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         return null;
     }
+  }
+
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationRefactoringTargetKind_Enum);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -551,7 +560,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L);
     b.origin("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)/6895093993902236229");
     b.version(2);
-    b.prop("userFriendlyName", 0x5fb04b74a778e2d3L, "6895093993902236371");
+    b.property("userFriendlyName", 0x5fb04b74a778e2d3L).type(PrimitiveTypeId.STRING).origin("6895093993902236371").done();
     b.associate("overrides", 0x5fb04b74a778e2e3L).target(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L).optional(true).origin("6895093993902236387").done();
     b.aggregate("target", 0x5fb04b74a77a0656L).target(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0569L).optional(false).ordered(true).multiple(false).origin("6895093993902310998").done();
     b.aggregate("parameter", 0x5fb04b74a778e2d8L).target(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0664L).optional(true).ordered(true).multiple(true).origin("6895093993902236376").done();
@@ -639,7 +648,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.origin("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)/6895093993902310761");
     b.version(2);
-    b.prop("allowMultiple", 0x5fb04b74a77a0657L, "6895093993902310999");
+    b.property("allowMultiple", 0x5fb04b74a77a0657L).type(PrimitiveTypeId.BOOLEAN).origin("6895093993902310999").done();
     b.aggregate("isApplicableBlock", 0x4c4b92003e4d7817L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L).optional(true).ordered(true).multiple(false).origin("5497648299878742039").done();
     return b.create();
   }

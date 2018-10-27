@@ -111,6 +111,11 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
   }
 
   @Override
+  protected boolean isBootstrap() {
+    return myIsBootstrap;
+  }
+
+  @Override
   protected SNode findInModel(SModel structureModel) {
     return structureModel.getNode(new Regular(myConceptId.getIdValue()));
   }

@@ -19,7 +19,6 @@ import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.JBColor;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import sun.swing.SwingUtilities2;
 
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
@@ -33,7 +32,6 @@ import javax.swing.plaf.ButtonUI;
 import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Insets;
 import java.awt.Rectangle;
@@ -159,14 +157,8 @@ class ButtonCustomizations {
 
     @Override
     protected void paintText(Graphics g, AbstractButton b, Rectangle textRect, String text) {
-      FontMetrics fm = SwingUtilities2.getFontMetrics(b, g);
-      int mnemonicIndex = b.getDisplayedMnemonicIndex();
-
-      // paint the text normally
-      g.setColor(getForeground(b));
-      SwingUtilities2.drawStringUnderlineCharAt(b, g, text, mnemonicIndex,
-          textRect.x + getTextShiftOffset(),
-          textRect.y + fm.getAscent() + getTextShiftOffset());
+      b.setForeground(getForeground(b));
+      super.paintText(g, b, textRect, text);
     }
 
     private Color getForeground(JComponent c) {

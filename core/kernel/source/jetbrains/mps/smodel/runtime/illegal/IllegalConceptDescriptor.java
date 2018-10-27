@@ -220,6 +220,13 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
     return null;
   }
 
+  @NotNull
+  @Override
+  public String getName() {
+    reportWarn();
+    return NameUtil.shortNameFromLongName(myConceptName);
+  }
+
   @Override
   public int getVersion() {
     // we are capable to tell getStubConceptId()

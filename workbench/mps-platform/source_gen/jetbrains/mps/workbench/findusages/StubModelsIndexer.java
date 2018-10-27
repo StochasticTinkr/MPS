@@ -15,7 +15,7 @@ import java.util.Collections;
 import org.jetbrains.org.objectweb.asm.ClassReader;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
-import jetbrains.mps.reloading.AbstractClassPathItem;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 
@@ -57,7 +57,7 @@ public class StubModelsIndexer implements ApplicationComponent {
       }
       ASMClass ac = new ASMClass(reader, false);
       String fqName = ac.getFqName();
-      if (AbstractClassPathItem.isAnonymous(NameUtil.namespaceFromLongName(fqName))) {
+      if (JavaNameUtil.isAnonymous(NameUtil.namespaceFromLongName(fqName))) {
         return Collections.emptyMap();
       }
 

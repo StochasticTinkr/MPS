@@ -106,9 +106,6 @@ public class IntroduceSmartRefAttribute extends MigrationScriptBase {
     }
     return false;
   }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
-  }
   private static SNode createSmartReferenceAttribute_nopsft_a0f0d0h0c0a0g(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute"), null, null, false);
@@ -121,5 +118,8 @@ public class IntroduceSmartRefAttribute extends MigrationScriptBase {
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b59L, "prefix"), p0 + "");
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b5cL, "suffix"), p1 + "");
     return n1;
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
   }
 }

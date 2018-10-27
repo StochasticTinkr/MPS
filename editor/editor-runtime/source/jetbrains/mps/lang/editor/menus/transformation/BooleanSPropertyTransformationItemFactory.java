@@ -18,7 +18,7 @@ package jetbrains.mps.lang.editor.menus.transformation;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
-import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.mps.openapi.language.SProperty;
 
 import java.util.ArrayList;
@@ -26,16 +26,15 @@ import java.util.List;
 
 class BooleanSPropertyTransformationItemFactory {
 
-  private static final String[] BOOLEAN_VALUES = new String[]{"true", null};
+  private static final boolean[] BOOLEAN_VALUES = new boolean[]{true, false};
 
   private BooleanSPropertyTransformationItemFactory() {
   }
 
   public static List<TransformationMenuItem> createItems(TransformationMenuContext transformationMenuContext, SProperty property) {
     ArrayList<TransformationMenuItem> result = new ArrayList<>();
-    for (String booleanValue : BOOLEAN_VALUES) {
-      PropertySupport propertySupport = PropertySupport.getPropertySupport(property);
-      if (propertySupport.canSetValue(transformationMenuContext.getNode(), property, booleanValue)) {
+    for (boolean booleanValue : BOOLEAN_VALUES) {
+      if (ModelConstraints.validatePropertyValue(transformationMenuContext.getNode(), property, booleanValue)) {
         transformationMenuContext.getEditorMenuTrace().pushTraceInfo();
         try {
           transformationMenuContext.getEditorMenuTrace()

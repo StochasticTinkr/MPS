@@ -4,12 +4,16 @@ package jetbrains.mps.samples.agreementLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAccountType = createDescriptorForAccountType();
@@ -29,6 +33,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTemporalProperty = createDescriptorForTemporalProperty();
   /*package*/ final ConceptDescriptor myConceptValue = createDescriptorForValue();
   /*package*/ final ConceptDescriptor myConceptValueReference = createDescriptorForValueReference();
+  /*package*/ final EnumerationDescriptor myEnumerationTaxable = new EnumerationDescriptor_Taxable();
+  /*package*/ final EnumerationDescriptor myEnumerationUnit = new EnumerationDescriptor_Unit();
+  /*package*/ final EnumerationDescriptor myEnumerationValueType = new EnumerationDescriptor_ValueType();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -83,6 +90,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationTaxable, myEnumerationUnit, myEnumerationValueType);
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -110,9 +122,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)/1111792389581");
     b.version(2);
-    b.prop("year", 0x102dbfdda29L, "1111792409129");
-    b.prop("month", 0x102dbfdfa93L, "1111792417427");
-    b.prop("day", 0x102dbfdfcb7L, "1111792417975");
+    b.property("year", 0x102dbfdda29L).type(PrimitiveTypeId.INTEGER).origin("1111792409129").done();
+    b.property("month", 0x102dbfdfa93L).type(PrimitiveTypeId.INTEGER).origin("1111792417427").done();
+    b.property("day", 0x102dbfdfcb7L).type(PrimitiveTypeId.INTEGER).origin("1111792417975").done();
     b.alias("date");
     return b.create();
   }
@@ -139,7 +151,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)/1111791038612");
     b.version(2);
-    b.prop("taxable", 0x103ecb90e78L, "1116368080504");
+    b.property("taxable", 0x103ecb90e78L).type(MetaIdFactory.dataTypeId(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x103ecb77bbfL)).origin("1116368080504").done();
     b.associate("type", 0x102dc111024L).target(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc1185c3L).optional(false).origin("1111793668132").done();
     b.aggregate("postingRule", 0x102dc1ff7b7L).target(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc2154d7L).optional(true).ordered(true).multiple(true).origin("1111794644919").done();
     return b.create();
@@ -159,7 +171,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)/1111793755198");
     b.version(2);
-    b.prop("type", 0x102dc1330d6L, "1111793807574");
+    b.property("type", 0x102dc1330d6L).type(MetaIdFactory.dataTypeId(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc04d86aL)).origin("1111793807574").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForEventVariableReference() {
@@ -204,7 +216,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.formulaLanguage.structure.Constant", 0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L);
     b.origin("r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)/1111792102248");
     b.version(2);
-    b.prop("unit", 0x102dc0c5503L, "1111793358083");
+    b.property("unit", 0x102dc0c5503L).type(MetaIdFactory.dataTypeId(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc0a8282L)).origin("1111793358083").done();
     b.aggregate("amount", 0x102dc0c6b1dL).target(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL).optional(false).ordered(true).multiple(false).origin("1111793363741").done();
     return b.create();
   }
@@ -231,7 +243,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)/1111791020814");
     b.version(2);
-    b.prop("type", 0x102dc063221L, "1111792955937");
+    b.property("type", 0x102dc063221L).type(MetaIdFactory.dataTypeId(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc04d86aL)).origin("1111792955937").done();
     b.aggregate("quantity", 0x102dbf4f67eL).target(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbff8d6dL).optional(true).ordered(true).multiple(true).origin("1111791826558").done();
     return b.create();
   }

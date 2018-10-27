@@ -4,10 +4,12 @@ package jetbrains.mps.lang.smodelTests.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
@@ -23,6 +25,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptReferenceContainer = createDescriptorForReferenceContainer();
   /*package*/ final ConceptDescriptor myConceptReferenceContainerSubConcept = createDescriptorForReferenceContainerSubConcept();
   /*package*/ final ConceptDescriptor myConceptRoot = createDescriptorForRoot();
+  /*package*/ final EnumerationDescriptor myEnumerationTestEnum_CustomDefaultValue = new EnumerationDescriptor_TestEnum_CustomDefaultValue();
+  /*package*/ final EnumerationDescriptor myEnumerationTestEnum_CustomIdentifier = new EnumerationDescriptor_TestEnum_CustomIdentifier();
+  /*package*/ final EnumerationDescriptor myEnumerationTestEnum_DeriveFromInternalValue = new EnumerationDescriptor_TestEnum_DeriveFromInternalValue();
+  /*package*/ final EnumerationDescriptor myEnumerationTestEnum_DeriveFromPresentation = new EnumerationDescriptor_TestEnum_DeriveFromPresentation();
+  /*package*/ final EnumerationDescriptor myEnumerationTestEnum_FirstMemberDefaultValue = new EnumerationDescriptor_TestEnum_FirstMemberDefaultValue();
+  /*package*/ final EnumerationDescriptor myEnumerationTestEnum_NoDefaultValue = new EnumerationDescriptor_TestEnum_NoDefaultValue();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -63,6 +71,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         return null;
     }
+  }
+
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationTestEnum_CustomDefaultValue, myEnumerationTestEnum_CustomIdentifier, myEnumerationTestEnum_DeriveFromInternalValue, myEnumerationTestEnum_DeriveFromPresentation, myEnumerationTestEnum_FirstMemberDefaultValue, myEnumerationTestEnum_NoDefaultValue);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
