@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.deprecated.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Document;

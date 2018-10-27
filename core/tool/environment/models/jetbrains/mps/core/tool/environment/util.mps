@@ -20,9 +20,10 @@
     <import index="y8s3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.project(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="ddon" ref="r:58ba176b-8a52-400c-bf27-725996471cb9(jetbrains.mps.core.tool.environment.common)" />
+    <import index="gn4j" ref="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" />
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
-    <import index="gn4j" ref="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" />
+    <import index="ghe1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.deprecated(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2587,8 +2588,8 @@
               <ref role="3cqZAo" node="4937uxYQnjb" resolve="resultPath" />
             </node>
             <node concept="2YIFZM" id="4937uxYQnld" role="37vLTx">
-              <ref role="1Pybhc" to="18ew:~URLUtil" resolve="URLUtil" />
-              <ref role="37wK5l" to="18ew:~URLUtil.unescapePercentSequences(java.lang.String):java.lang.String" resolve="unescapePercentSequences" />
+              <ref role="1Pybhc" to="ghe1:~URLUtil" resolve="URLUtil" />
+              <ref role="37wK5l" to="ghe1:~URLUtil.unescapePercentSequences(java.lang.String):java.lang.String" resolve="unescapePercentSequences" />
               <node concept="37vLTw" id="3GM_nagT$o_" role="37wK5m">
                 <ref role="3cqZAo" node="4937uxYQnjb" resolve="resultPath" />
               </node>
@@ -3184,7 +3185,7 @@
                 <ref role="3cqZAo" node="4937uxYQnoG" resolve="props" />
               </node>
               <node concept="liA8E" id="4937uxYQnoO" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Hashtable.keySet():java.util.Set" resolve="keySet" />
+                <ref role="37wK5l" to="33ny:~Properties.keySet():java.util.Set" resolve="keySet" />
               </node>
             </node>
           </node>

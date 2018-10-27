@@ -19,7 +19,7 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.Files;
+import jetbrains.mps.deprecated.Files;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

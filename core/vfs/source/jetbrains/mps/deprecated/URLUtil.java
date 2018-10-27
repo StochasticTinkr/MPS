@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.util;
+package jetbrains.mps.deprecated;
 
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -22,11 +24,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Partially copied from IDEA
- *
- * @since 1/13/12
- */
+@Deprecated
+//this should go away since we will operate only path-urls
 public class URLUtil {
   public static final String SCHEME_SEPARATOR = "://";
   public static final String FILE_PROTOCOL = "file";

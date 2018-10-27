@@ -2,9 +2,9 @@
 <model ref="r:478bf62d-84fb-4fba-aeda-183fb2769e64(jetbrains.mps.ide.dialogs.project.creation)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
@@ -42,7 +42,6 @@
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" />
-    <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3375,25 +3374,6 @@
             <node concept="10Nm6u" id="1pyYjDPRan$" role="3uHU7w" />
           </node>
         </node>
-        <node concept="3cpWs8" id="1pyYjDPRan_" role="3cqZAp">
-          <node concept="3cpWsn" id="1pyYjDPRanA" role="3cpWs9">
-            <property role="TrG5h" value="path" />
-            <node concept="17QB3L" id="3pKdce5nktU" role="1tU5fm" />
-            <node concept="2OqwBi" id="58TyP8j_sjH" role="33vP2m">
-              <node concept="2OqwBi" id="1pyYjDPRanC" role="2Oq$k0">
-                <node concept="37vLTw" id="3GM_nagT$tK" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1pyYjDPRans" resolve="moduleDir" />
-                </node>
-                <node concept="liA8E" id="1pyYjDPRanG" role="2OqNvi">
-                  <ref role="37wK5l" to="3ju5:~IFile.path():jetbrains.mps.vfs.path.Path" resolve="path" />
-                </node>
-              </node>
-              <node concept="liA8E" id="58TyP8j_tJt" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="1pyYjDPRanH" role="3cqZAp">
           <node concept="3cpWsn" id="1pyYjDPRanI" role="3cpWs9">
             <property role="TrG5h" value="modelsDir" />
@@ -3402,12 +3382,17 @@
               <node concept="3cpWs3" id="1pyYjDPRanL" role="3uHU7B">
                 <node concept="3cpWs3" id="1pyYjDPRanM" role="3uHU7B">
                   <node concept="3cpWs3" id="1pyYjDPRanN" role="3uHU7B">
-                    <node concept="37vLTw" id="3GM_nagTtS1" role="3uHU7B">
-                      <ref role="3cqZAo" node="1pyYjDPRanA" resolve="path" />
-                    </node>
                     <node concept="10M0yZ" id="1pyYjDPRanP" role="3uHU7w">
                       <ref role="1PxDUh" to="guwi:~File" resolve="File" />
                       <ref role="3cqZAo" to="guwi:~File.separatorChar" resolve="separatorChar" />
+                    </node>
+                    <node concept="2OqwBi" id="5UptKEdcxBO" role="3uHU7B">
+                      <node concept="37vLTw" id="5UptKEdcxc7" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1pyYjDPRans" resolve="moduleDir" />
+                      </node>
+                      <node concept="liA8E" id="5UptKEdcyv8" role="2OqNvi">
+                        <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                      </node>
                     </node>
                   </node>
                   <node concept="Xl_RD" id="1pyYjDPRanQ" role="3uHU7w">
@@ -3519,19 +3504,30 @@
       <node concept="3Tmbuc" id="1FESrqAay3U" role="1B3o_S" />
       <node concept="3cqZAl" id="1FESrqAay3W" role="3clF45" />
       <node concept="3clFbS" id="1FESrqAay3X" role="3clF47">
+        <node concept="3cpWs8" id="5UptKEdczHM" role="3cqZAp">
+          <node concept="3cpWsn" id="5UptKEdczHN" role="3cpWs9">
+            <property role="TrG5h" value="filePath" />
+            <node concept="3uibUv" id="5UptKEdczHJ" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2OqwBi" id="5UptKEdczHO" role="33vP2m">
+              <node concept="37vLTw" id="5UptKEdczHP" role="2Oq$k0">
+                <ref role="3cqZAo" node="1pyYjDPRajK" resolve="myTemplateModelsDir" />
+              </node>
+              <node concept="liA8E" id="5UptKEdczHQ" role="2OqNvi">
+                <ref role="37wK5l" to="jkm4:~TextFieldWithBrowseButton.getText():java.lang.String" resolve="getText" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="1pyYjDPRaoC" role="3cqZAp">
           <node concept="3clFbC" id="1pyYjDPRaoD" role="3clFbw">
             <node concept="2OqwBi" id="1pyYjDPRaoE" role="3uHU7B">
-              <node concept="2OqwBi" id="eb0uW_jRXU" role="2Oq$k0">
-                <node concept="37vLTw" id="eb0uW_jRXV" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1pyYjDPRajK" resolve="myTemplateModelsDir" />
-                </node>
-                <node concept="liA8E" id="eb0uW_jRXW" role="2OqNvi">
-                  <ref role="37wK5l" to="jkm4:~TextFieldWithBrowseButton.getText():java.lang.String" resolve="getText" />
-                </node>
-              </node>
               <node concept="liA8E" id="1pyYjDPRaoG" role="2OqNvi">
                 <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
+              </node>
+              <node concept="37vLTw" id="5UptKEdczHS" role="2Oq$k0">
+                <ref role="3cqZAo" node="5UptKEdczHN" resolve="filePath" />
               </node>
             </node>
             <node concept="3cmrfG" id="1pyYjDPRaoH" role="3uHU7w">
@@ -3561,13 +3557,8 @@
               </node>
               <node concept="liA8E" id="eb0uW_jMEn" role="2OqNvi">
                 <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
-                <node concept="2OqwBi" id="1pyYjDPRao_" role="37wK5m">
-                  <node concept="37vLTw" id="2BHiRxeuktv" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1pyYjDPRajK" resolve="myTemplateModelsDir" />
-                  </node>
-                  <node concept="liA8E" id="1pyYjDPRaoB" role="2OqNvi">
-                    <ref role="37wK5l" to="jkm4:~TextFieldWithBrowseButton.getText():java.lang.String" resolve="getText" />
-                  </node>
+                <node concept="37vLTw" id="5UptKEdczHR" role="37wK5m">
+                  <ref role="3cqZAo" node="5UptKEdczHN" resolve="filePath" />
                 </node>
               </node>
             </node>
@@ -3577,19 +3568,6 @@
           </node>
         </node>
         <node concept="3clFbJ" id="1pyYjDPRaoT" role="3cqZAp">
-          <node concept="2OqwBi" id="eb0uW_jPl2" role="3clFbw">
-            <node concept="2OqwBi" id="1pyYjDPRaoV" role="2Oq$k0">
-              <node concept="37vLTw" id="3GM_nagTum0" role="2Oq$k0">
-                <ref role="3cqZAo" node="1pyYjDPRaoO" resolve="templateModelsPath" />
-              </node>
-              <node concept="liA8E" id="3R5e$_HRkYc" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~IFile.path():jetbrains.mps.vfs.path.Path" resolve="path" />
-              </node>
-            </node>
-            <node concept="liA8E" id="eb0uW_jRya" role="2OqNvi">
-              <ref role="37wK5l" to="eurq:~Path.isRelative():boolean" resolve="isRelative" />
-            </node>
-          </node>
           <node concept="3clFbS" id="1pyYjDPRaoY" role="3clFbx">
             <node concept="3clFbF" id="1pyYjDPRaoZ" role="3cqZAp">
               <node concept="1rXfSq" id="4hiugqyzc6D" role="3clFbG">
@@ -3600,6 +3578,21 @@
               </node>
             </node>
             <node concept="3cpWs6" id="1pyYjDPRap2" role="3cqZAp" />
+          </node>
+          <node concept="3fqX7Q" id="5UptKEdcAab" role="3clFbw">
+            <node concept="2OqwBi" id="5UptKEdcMJl" role="3fr31v">
+              <node concept="2ShNRf" id="5UptKEdcAwT" role="2Oq$k0">
+                <node concept="1pGfFk" id="5UptKEdcMu3" role="2ShVmc">
+                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                  <node concept="37vLTw" id="5UptKEdcMyF" role="37wK5m">
+                    <ref role="3cqZAo" node="5UptKEdczHN" resolve="filePath" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="5UptKEdcNJQ" role="2OqNvi">
+                <ref role="37wK5l" to="guwi:~File.isAbsolute():boolean" resolve="isAbsolute" />
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3cpWs8" id="1pyYjDPRapd" role="3cqZAp">

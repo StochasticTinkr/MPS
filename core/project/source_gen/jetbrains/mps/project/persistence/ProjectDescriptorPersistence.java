@@ -14,7 +14,7 @@ import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.xml.XmlUtil;
-import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.deprecated.Path;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;

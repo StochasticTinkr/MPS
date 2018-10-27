@@ -18,7 +18,6 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.util.iterable.IterableEnumeration;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
-import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;

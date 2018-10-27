@@ -85,10 +85,10 @@
     <classNode dependClassName="java.util.concurrent.ConcurrentMap" />
     <classNode dependClassName="java.util.concurrent.locks.ReadWriteLock" />
     <classNode dependClassName="java.util.concurrent.locks.ReentrantReadWriteLock" />
+    <classNode dependClassName="jetbrains.mps.deprecated.Path" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.vfs.path.Path" />
     <classNode dependClassName="jetbrains.mps.vfs.refresh.FileListener" />
     <classNode dependClassName="jetbrains.mps.vfs.refresh.FileSystemListener" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

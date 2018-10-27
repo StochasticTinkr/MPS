@@ -22,7 +22,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.deprecated.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;

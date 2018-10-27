@@ -13,20 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.path;
+package jetbrains.mps.deprecated;
 
 import java.io.File;
 
-/**
- * Alike to the {@link java.nio.file.Path}.
- * Might be absolute or relative. The path is split up into so-called name components. Let us call
- * the first name component the <em>root</em> component.
- *
- * The aim of this class is to get rid of working with the file paths (simply Strings) in the client code.
- * This comprises working with separators as well as working with archives.
- *
- * Created by apyshkin on 6/17/16.
- */
+@Deprecated
 public interface Path extends Comparable<Path>{
   /**
    * current system defaults

@@ -19,7 +19,7 @@ import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.deprecated.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;

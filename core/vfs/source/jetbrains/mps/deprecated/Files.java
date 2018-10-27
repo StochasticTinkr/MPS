@@ -13,18 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.deprecated;
 
+import jetbrains.mps.vfs.FileSystemExtPoint;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.net.URL;
 import java.util.Locale;
 
-/**
- * Shorthand for {@link IFile} management.
- *
- * @author apyshkin
- */
+@Deprecated
+//this should go away since we will operate only path-urls
 public final class Files {
   private Files() {
   }

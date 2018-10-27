@@ -29,7 +29,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.model.EditableSModel;

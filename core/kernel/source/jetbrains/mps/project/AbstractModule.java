@@ -43,7 +43,7 @@ import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.openapi.FileSystem;
-import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.deprecated.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Contract;

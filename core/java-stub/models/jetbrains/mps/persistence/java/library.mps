@@ -28,7 +28,7 @@
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="w827" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.openapi(MPS.Core/)" />
-    <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" />
+    <import index="ghe1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.deprecated(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1755,9 +1755,9 @@
                         <node concept="liA8E" id="2Dokkv7kvEb" role="2OqNvi">
                           <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                           <node concept="3cpWs3" id="2Dokkv7kx4g" role="37wK5m">
-                            <node concept="10M0yZ" id="1OabvAsfIZj" role="3uHU7w">
-                              <ref role="1PxDUh" to="eurq:~Path" resolve="Path" />
-                              <ref role="3cqZAo" to="eurq:~Path.ARCHIVE_SEPARATOR" resolve="ARCHIVE_SEPARATOR" />
+                            <node concept="10M0yZ" id="5UptKEdaeMy" role="3uHU7w">
+                              <ref role="3cqZAo" to="ghe1:~Path.ARCHIVE_SEPARATOR" resolve="ARCHIVE_SEPARATOR" />
+                              <ref role="1PxDUh" to="ghe1:~Path" resolve="Path" />
                             </node>
                             <node concept="2OqwBi" id="2Dokkv7kw9U" role="3uHU7B">
                               <node concept="37vLTw" id="2Dokkv7kvTy" role="2Oq$k0">

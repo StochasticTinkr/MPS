@@ -60,10 +60,10 @@
     <classNode dependClassName="jetbrains.mps.core.tool.environment.common.FileUtil" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.common.StringUtil" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.common.SystemInfo" />
+    <classNode dependClassName="jetbrains.mps.deprecated.URLUtil" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.util.PathUtil" />
     <classNode dependClassName="jetbrains.mps.util.StringUtil" />
-    <classNode dependClassName="jetbrains.mps.util.URLUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
