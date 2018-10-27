@@ -15,15 +15,8 @@
  */
 package jetbrains.mps.deprecated;
 
-import java.io.File;
-
 @Deprecated
 public interface Path extends Comparable<Path>{
-  /**
-   * current system defaults
-   */
-  String SYSTEM_SEPARATOR = File.separator;
-
   /**
    * any path one can get from this API must use this separator
    * default separator is UNIX-style
@@ -33,9 +26,6 @@ public interface Path extends Comparable<Path>{
 
   char WIN_SEPARATOR_CHAR = '\\'; // this is used for so-called dependent paths
   String WIN_SEPARATOR = String.valueOf(WIN_SEPARATOR_CHAR);
-
-  String ZIP = "zip";
-  String DOT_ZIP = "." + ZIP;
 
   String JAR = "jar";
   String DOT_JAR = "." + JAR;

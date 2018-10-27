@@ -168,7 +168,7 @@ public class FileUtil {
     if (path == null) {
       path = "";
     }
-    path = normalize0(path, Path.SYSTEM_SEPARATOR);
+    path = normalize0(path, File.separator);
     File file = new File(path);
     try {
       return file.getCanonicalPath();
