@@ -14090,8 +14090,8 @@
           <node concept="3cpWsn" id="6CKW2FPjXKf" role="3cpWs9">
             <property role="TrG5h" value="contents" />
             <node concept="2YIFZM" id="317B3Pc$yhB" role="33vP2m">
-              <ref role="37wK5l" to="3ju5:~IFileUtils.getTextContents(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getTextContents" />
-              <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
+              <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+              <ref role="37wK5l" to="18ew:~IFileUtil.getTextContents(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getTextContents" />
               <node concept="37vLTw" id="2BHiRxgkX5$" role="37wK5m">
                 <ref role="3cqZAo" node="6CKW2FPjFm$" resolve="file" />
               </node>
@@ -23973,8 +23973,8 @@
             <property role="TrG5h" value="contents" />
             <node concept="17QB3L" id="2Uk7YSyBCn_" role="1tU5fm" />
             <node concept="2YIFZM" id="2Uk7YSyBCNF" role="33vP2m">
-              <ref role="37wK5l" to="3ju5:~IFileUtils.getTextContents(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getTextContents" />
-              <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
+              <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+              <ref role="37wK5l" to="18ew:~IFileUtil.getTextContents(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getTextContents" />
               <node concept="37vLTw" id="2Uk7YSyULME" role="37wK5m">
                 <ref role="3cqZAo" node="2Uk7YSyB28L" resolve="file" />
               </node>
@@ -30328,8 +30328,8 @@
                     </node>
                   </node>
                   <node concept="2YIFZM" id="3jGGvHIl43O" role="2GsD0m">
-                    <ref role="37wK5l" to="3ju5:~IFileUtils.getAllFiles(jetbrains.mps.vfs.IFile):java.util.List" resolve="getAllFiles" />
-                    <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
+                    <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+                    <ref role="37wK5l" to="18ew:~IFileUtil.getAllFiles(jetbrains.mps.vfs.IFile):java.util.List" resolve="getAllFiles" />
                     <node concept="2GrUjf" id="3jGGvHIl43P" role="37wK5m">
                       <ref role="2Gs0qQ" node="3jGGvHIjU9t" resolve="entry" />
                     </node>

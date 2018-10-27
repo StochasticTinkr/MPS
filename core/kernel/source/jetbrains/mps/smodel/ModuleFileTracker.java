@@ -17,8 +17,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -59,7 +59,7 @@ public class ModuleFileTracker {
     if (myCanonicalFileToModuleMap.isEmpty()) {
       myRepo.getModelAccess().runReadAction(this::initModuleFileMap);
     }
-    return myCanonicalFileToModuleMap.get(IFileUtils.getCanonicalPath(file));
+    return myCanonicalFileToModuleMap.get(IFileUtil.getCanonicalPath(file));
   }
 
   private void initModuleFileMap() {
@@ -80,7 +80,7 @@ public class ModuleFileTracker {
 
   private void addCanonicalFile(@Nullable IFile file, SModule module) {
     if (file != null) {
-      String canonicalDescriptorPath = IFileUtils.getCanonicalPath(file);
+      String canonicalDescriptorPath = IFileUtil.getCanonicalPath(file);
       if (canonicalDescriptorPath != null && !myCanonicalFileToModuleMap.containsKey(canonicalDescriptorPath)) {
         myCanonicalFileToModuleMap.put(canonicalDescriptorPath, module);
       }
@@ -89,7 +89,7 @@ public class ModuleFileTracker {
 
   private void removeModuleFile(@Nullable IFile file) {
     if (file != null) {
-      String canonicalPath = IFileUtils.getCanonicalPath(file);
+      String canonicalPath = IFileUtil.getCanonicalPath(file);
       if (canonicalPath != null) {
         myCanonicalFileToModuleMap.remove(canonicalPath);
       }

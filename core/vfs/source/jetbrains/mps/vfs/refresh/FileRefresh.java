@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.vfs.refresh;
 
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -67,8 +67,8 @@ public final class FileRefresh implements Runnable {
               if (!file.isInArchive() && file.isDirectory()) {
                 List<IFile> children = file.getChildren();
                 return children != null ? children.stream().map(iFile -> (CachingFile) iFile) : Stream.empty();
-              } else if (IFileUtils.isJarFile(file)) {
-                return Stream.of(((CachingFile) IFileUtils.stepIntoJar(file)));
+              } else if (IFileUtil.isJarFile(file)) {
+                return Stream.of(((CachingFile) IFileUtil.stepIntoJar(file)));
               }
               return Stream.empty();
             }).distinct().collect(Collectors.toList());

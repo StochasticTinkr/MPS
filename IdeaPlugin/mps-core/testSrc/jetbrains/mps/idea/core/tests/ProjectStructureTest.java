@@ -16,9 +16,9 @@
 package jetbrains.mps.idea.core.tests;
 
 import com.intellij.testFramework.UsefulTestCase;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +40,7 @@ public class ProjectStructureTest extends UsefulTestCase {
 
     for (String libFile : MODULE_LIBRAIES) {
       IFile file = FileSystem.getInstance().getFileByPath(LIBRARIES_PREFIX + libFile);
-      String contents = IFileUtils.getTextContents(file);
+      String contents = IFileUtil.getTextContents(file);
       if (!contents.contains(MARKER)) {
         damaged.add(libFile);
       }

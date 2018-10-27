@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -45,7 +45,7 @@ public class RemoveHistoryFiles extends BaseProjectMigration {
         }
       }).where(new NotNullWhereFilter<IFile>()).translate(new ITranslator2<IFile, IFile>() {
         public Iterable<IFile> translate(IFile it) {
-          return IFileUtils.getAllFiles(it);
+          return IFileUtil.getAllFiles(it);
         }
       }).where(new IWhereFilter<IFile>() {
         public boolean accept(IFile it) {

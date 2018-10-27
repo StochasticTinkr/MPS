@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.util;
 
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.deprecated.Path;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -33,10 +33,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class IFileUtils {
-  private static final Logger LOG = LogManager.getLogger(IFileUtils.class);
+public class IFileUtil {
+  private static final Logger LOG = LogManager.getLogger(IFileUtil.class);
   private static final String JAR_SEPARATOR = Path.ARCHIVE_SEPARATOR;
-  private static final String DOT_JAR = Path.DOT_JAR;
 
   public static boolean copyFileContent(IFile oldFile, IFile newFile) {
     BufferedInputStream in = null;
@@ -121,20 +120,14 @@ public class IFileUtils {
   }
 
   public static String getTextContents(IFile file) throws IOException {
-    BufferedReader br = null;
-
-    try {
-      br = new BufferedReader(new InputStreamReader(file.openInputStream()));
+    try (BufferedReader br = new BufferedReader(new InputStreamReader(file.openInputStream()))) {
       StringBuilder sb = new StringBuilder();
       while (br.ready()) {
-        sb.append( br.readLine() );
+        sb.append(br.readLine());
         // FIXME preserve original line ednings
         sb.append('\n');
       }
       return sb.toString();
-
-    } finally {
-      if (br!=null) { br.close(); }
     }
   }
 

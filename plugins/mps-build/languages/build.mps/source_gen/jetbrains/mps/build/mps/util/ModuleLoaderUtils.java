@@ -10,7 +10,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -43,7 +43,7 @@ public class ModuleLoaderUtils {
 
       if (moduleSourceDir != null && path.startsWith(MacrosFactory.MODULE)) {
         String relPath = path.substring(path.indexOf('}') + 1);
-        return IFileUtils.getCanonicalPath(moduleSourceDir.getDescendant(relPath));
+        return IFileUtil.getCanonicalPath(moduleSourceDir.getDescendant(relPath));
       }
       if (path.startsWith("${")) {
         int index = path.indexOf("}");
@@ -74,7 +74,7 @@ public class ModuleLoaderUtils {
         }
 
         String relPath = path.substring(index + 1);
-        return IFileUtils.getCanonicalPath(moduleSourceDir.getFileSystem().getFile(localPath).getDescendant(relPath));
+        return IFileUtil.getCanonicalPath(moduleSourceDir.getFileSystem().getFile(localPath).getDescendant(relPath));
       }
       return path;
     }

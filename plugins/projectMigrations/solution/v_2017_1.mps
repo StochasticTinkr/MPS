@@ -27,6 +27,7 @@
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -1246,8 +1247,8 @@
                         <node concept="3clFbS" id="250772$5WQD" role="1bW5cS">
                           <node concept="3clFbF" id="250772$5Xhs" role="3cqZAp">
                             <node concept="2YIFZM" id="250772$5Xhu" role="3clFbG">
-                              <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
-                              <ref role="37wK5l" to="3ju5:~IFileUtils.getAllFiles(jetbrains.mps.vfs.IFile):java.util.List" resolve="getAllFiles" />
+                              <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+                              <ref role="37wK5l" to="18ew:~IFileUtil.getAllFiles(jetbrains.mps.vfs.IFile):java.util.List" resolve="getAllFiles" />
                               <node concept="37vLTw" id="250772$5XGJ" role="37wK5m">
                                 <ref role="3cqZAo" node="250772$5WQE" resolve="it" />
                               </node>

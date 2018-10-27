@@ -30,13 +30,13 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.LibraryDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.vfs.impl.JarEntryFile;
 import jetbrains.mps.deprecated.Path;
 import org.apache.log4j.LogManager;
@@ -125,7 +125,7 @@ public final class ModulesMiner {
     if (file.isDirectory()) {
       readModuleDescriptorsFromFolder(file);
     } else {
-      if (IFileUtils.isJarFile(file)) {
+      if (IFileUtil.isJarFile(file)) {
         readModuleDescriptorsFromJarFile(file);
       } else {
         trySourceModuleDescriptorsFromFile(file);
@@ -216,7 +216,7 @@ public final class ModulesMiner {
       // nor expect jar with modules nested into another module, and
       // do not look into jars under a folder with either META-INF/ or modules/ they are likely auxiliary.
       for (IFile f : files) {
-        if (IFileUtils.isJarFile(f)) {
+        if (IFileUtil.isJarFile(f)) {
           readModuleDescriptorsFromJarFile(f);
         }
       }
@@ -245,8 +245,8 @@ public final class ModulesMiner {
    * @param jarFile {@code folder/module.name.jar} from the sample layouts above.
    */
   private void readModuleDescriptorsFromJarFile(IFile jarFile) {
-    assert IFileUtils.isJarFile(jarFile);
-    IFile jarFileRoot = IFileUtils.stepIntoJar(jarFile);
+    assert IFileUtil.isJarFile(jarFile);
+    IFile jarFileRoot = IFileUtil.stepIntoJar(jarFile);
 
     if (tryModuleFromDeploymentDescriptor(jarFile, jarFileRoot.getDescendant(META_INF).getDescendant(MODULE_XML))) {
       return;
@@ -441,8 +441,8 @@ public final class ModulesMiner {
           it.set(moduleHome.getPath());
         } else if (!cpEntry.isEmpty()) {
           StringBuilder moduleHomePath = new StringBuilder();
-          if (IFileUtils.isJarFile(moduleHome)) {
-            moduleHomePath.append(IFileUtils.stepIntoJar(moduleHome).getPath());
+          if (IFileUtil.isJarFile(moduleHome)) {
+            moduleHomePath.append(IFileUtil.stepIntoJar(moduleHome).getPath());
           } else {
             moduleHomePath.append(moduleHome.getPath());
           }

@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentAware;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -97,7 +98,7 @@ public class VfsTest implements EnvironmentAware {
   }
 
   private static void doBaseVfsTest() {
-    IFile tmpDir = IFileUtils.createTmpDir();
+    IFile tmpDir = IFileUtil.createTmpDir();
     assertTrue("Temp dir does not exist", tmpDir.exists());
     assertTrue("Created temp directory is not directory", tmpDir.isDirectory());
     assertFalse("Could create file with the same name as the directory", tmpDir.createNewFile());

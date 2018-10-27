@@ -17,10 +17,7 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.vfs.impl.IoFileSystem;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,7 +32,7 @@ class Macros {
 
   @NotNull
   private String getFullPath(@NotNull String anchorPath, @NotNull String relativePath) {
-    return IFileUtils.getCanonicalPath(IoFileSystem.INSTANCE.getFile(anchorPath).getDescendant(relativePath));
+    return IFileUtil.getCanonicalPath(IoFileSystem.INSTANCE.getFile(anchorPath).getDescendant(relativePath));
   }
 
   protected String expand(String path, @Nullable IFile anchorFile) {

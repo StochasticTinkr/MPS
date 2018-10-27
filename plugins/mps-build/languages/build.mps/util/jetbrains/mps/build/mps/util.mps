@@ -11954,8 +11954,8 @@
               </node>
               <node concept="3cpWs6" id="7AaordoBmat" role="3cqZAp">
                 <node concept="2YIFZM" id="7AaordoBmaL" role="3cqZAk">
-                  <ref role="37wK5l" to="3ju5:~IFileUtils.getCanonicalPath(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getCanonicalPath" />
-                  <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
+                  <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+                  <ref role="37wK5l" to="18ew:~IFileUtil.getCanonicalPath(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getCanonicalPath" />
                   <node concept="2OqwBi" id="7AaordoBmbM" role="37wK5m">
                     <node concept="37vLTw" id="2BHiRxeuyJe" role="2Oq$k0">
                       <ref role="3cqZAo" node="7AaordoBmal" resolve="moduleSourceDir" />
@@ -12323,8 +12323,8 @@
               </node>
               <node concept="3cpWs6" id="7AaordoBmAN" role="3cqZAp">
                 <node concept="2YIFZM" id="7AaordoBmAO" role="3cqZAk">
-                  <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
-                  <ref role="37wK5l" to="3ju5:~IFileUtils.getCanonicalPath(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getCanonicalPath" />
+                  <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+                  <ref role="37wK5l" to="18ew:~IFileUtil.getCanonicalPath(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getCanonicalPath" />
                   <node concept="2OqwBi" id="7AaordoBmAP" role="37wK5m">
                     <node concept="2OqwBi" id="7AaordoBnOX" role="2Oq$k0">
                       <node concept="liA8E" id="7AaordoBnP7" role="2OqNvi">

@@ -2971,8 +2971,8 @@
                     <property role="TrG5h" value="code" />
                     <node concept="17QB3L" id="3se2Fvx_29L" role="1tU5fm" />
                     <node concept="2YIFZM" id="3se2Fvx_212" role="33vP2m">
-                      <ref role="37wK5l" to="3ju5:~IFileUtils.getTextContents(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getTextContents" />
-                      <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
+                      <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+                      <ref role="37wK5l" to="18ew:~IFileUtil.getTextContents(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getTextContents" />
                       <node concept="37vLTw" id="3se2Fvx_23x" role="37wK5m">
                         <ref role="3cqZAo" node="3se2Fvx_1cs" resolve="file" />
                       </node>

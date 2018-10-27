@@ -19,7 +19,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -123,7 +123,7 @@ public class Utils {
           anchorFolder = anchorFolder.getParent();
         }
         String modelRelativePath = removePrefix(path);
-        return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
+        return IFileUtil.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
       }
       if (path.startsWith(MacrosFactory.MPS_HOME)) {
         String relativePath = removePrefix(path);

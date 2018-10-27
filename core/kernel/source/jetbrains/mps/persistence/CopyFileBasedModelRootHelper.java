@@ -23,7 +23,7 @@ import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -118,7 +118,7 @@ public class CopyFileBasedModelRootHelper<ModelRoot extends FileBasedModelRoot> 
    * @param targetModelSourceRoot source root of new model root
    */
   protected void copySourceRootData(SourceRoot sourceModelSourceRoot, SourceRoot targetModelSourceRoot) {
-    IFileUtils.copyDirectoryContent(
+    IFileUtil.copyDirectoryContent(
         sourceModelSourceRoot.getAbsolutePath(),
         targetModelSourceRoot.getAbsolutePath()
     );

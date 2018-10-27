@@ -45,7 +45,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -388,7 +388,7 @@ public class JavaToMpsConverter {
   }
 
   private void parseFile(IFile file) throws JavaParseException, IOException {
-    String contents = IFileUtils.getTextContents(file);
+    String contents = IFileUtil.getTextContents(file);
     JavaParser.JavaParseResult parseResult = myJavaParser.parseCompilationUnit(contents);
     String pkg = parseResult.getPackage();
 

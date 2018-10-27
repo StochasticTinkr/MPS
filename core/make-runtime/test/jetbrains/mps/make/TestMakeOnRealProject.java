@@ -44,7 +44,7 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -224,7 +224,7 @@ public class TestMakeOnRealProject implements EnvironmentAware {
     ourModelAccess.runWriteAction(new Runnable() {
       @Override
       public void run() {
-        myTmpDir = IFileUtils.createTmpDir();
+        myTmpDir = IFileUtil.createTmpDir();
 
         myCreatedRuntimeSolution = createNewRuntimeSolution();
         createJavaFiles(myCreatedRuntimeSolution);

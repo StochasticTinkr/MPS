@@ -33,8 +33,8 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -138,11 +138,11 @@ public class ModuleLibrariesUtil {
     // Bizarre way to get canonical path because we want to compare to canonical path of e.g. JarEntryFile,
     // which is not an idea's VirtualFile, rather IFile.
     // We want to make sure same logic is used.
-    return IFileUtils.getCanonicalPath(VirtualFileUtils.toIFile(vfile));
+    return IFileUtil.getCanonicalPath(VirtualFileUtils.toIFile(vfile));
   }
 
   private static String canonical(IFile ifile) {
-    return IFileUtils.getCanonicalPath(ifile);
+    return IFileUtil.getCanonicalPath(ifile);
   }
 
   @Nullable
