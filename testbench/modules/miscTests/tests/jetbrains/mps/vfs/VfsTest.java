@@ -162,7 +162,7 @@ public class VfsTest implements EnvironmentAware {
     assertEquals(jarRoot.getChildren().size(), 3);
     assertTrue(jarRoot.isDirectory());
     assertTrue(jarRoot.isReadOnly());
-    assertTrue(fileSystem.isPackaged(jarRoot));
+    assertTrue(jarRoot.isPackaged());
     IFile readmeFile = jarRoot.getDescendant("README");
     assertFalse(readmeFile.isDirectory());
     try {

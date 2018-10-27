@@ -87,12 +87,4 @@ public class IoFileSystem implements FileSystem {
     }
     return true;
   }
-
-  @Override
-  public void addListener(@NotNull FileSystemListener listener) {
-  }
-
-  @Override
-  public void removeListener(@NotNull FileSystemListener listener) {
-  }
 }

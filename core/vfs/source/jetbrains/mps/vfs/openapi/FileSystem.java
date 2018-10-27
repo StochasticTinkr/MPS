@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vfs.openapi;
 
-import jetbrains.mps.vfs.refresh.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 

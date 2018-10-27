@@ -45,50 +45,11 @@ public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
   }
 
   /**
-   * use FileS
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  @NotNull IFile getFile(@NotNull String path);
-
-  /**
-   * @deprecated the place is in the file interface, not here
-   * @see IFile#isArchive()
-   */
-  @ToRemove(version = 3.4)
-  @Deprecated
-  default boolean isPackaged(@NotNull IFile file) {
-    return file.isPackaged();
-  }
-
-  /**
    * @deprecated pure platform method with one usage, will be removed!
    */
   @ToRemove(version = 3.4)
   @Deprecated
   boolean isFileIgnored(@NotNull String name);
-
-  /**
-   * @deprecated the place is in the file interface, not here
-   */
-  @ToRemove(version = 3.4)
-  @Deprecated
-  default boolean setTimeStamp(@NotNull IFile file, long time) {
-    return file.setTimeStamp(time);
-  }
-
-  @ToRemove(version = 3.4)
-  @Deprecated
-  default void refresh(@NotNull IFile file) {
-    file.refresh();
-  }
-
-  /**
-   * AP: I am going to rewrite the whole fs listening subsystem
-   */
-  void addListener(@NotNull FileSystemListener listener);
-
-  void removeListener(@NotNull FileSystemListener listener);
 
   @ToRemove(version = 3.4)
   void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);

@@ -269,7 +269,7 @@ public class TestMakeOnRealProject implements EnvironmentAware {
         }
       }
     }
-    if (!fileSystem.setTimeStamp(ifile, System.currentTimeMillis() - 1000)) {
+    if (!ifile.setTimeStamp(System.currentTimeMillis() - 1000)) {
       Assert.fail("Can't touch the file " + ifile);
     }
   }
