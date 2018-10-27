@@ -2345,7 +2345,7 @@
     <property role="TrG5h" value="VCS Integration for MPS" />
     <property role="9BnSO" value="182.1" />
     <property role="1qHB85" value="/MPS_16.png" />
-    <property role="9BnSK" value="2018.2.5" />
+    <property role="9BnSK" value="2018.2.6" />
   </node>
   <node concept="1ESbSp" id="10cWl49AXwe">
     <property role="TrG5h" value="IDEAChangesViewPopup" />
