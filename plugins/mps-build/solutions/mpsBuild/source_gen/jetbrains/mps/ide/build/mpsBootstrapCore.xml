@@ -6748,7 +6748,10 @@
     <mkdir dir="${build.tmp}/java/out/vfs" />
     <javac2 destdir="${build.tmp}/java/out/vfs" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${mps_home}/core/vfs/source" />
+      <src>
+        <pathelement path="${mps_home}/core/vfs/source" />
+        <pathelement path="${mps_home}/core/vfs/deprecated" />
+      </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-annotations" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -6761,6 +6764,7 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/vfs">
       <fileset dir="${mps_home}/core/vfs/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
+      <fileset dir="${mps_home}/core/vfs/deprecated" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
     </copy>
   </target>
   

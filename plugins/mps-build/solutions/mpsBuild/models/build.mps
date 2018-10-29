@@ -1182,6 +1182,10 @@
           <property role="3LZaj6" value="source" />
           <property role="nFU4j" value="source" />
         </node>
+        <node concept="nFU4i" id="Cv6g7YdC2t" role="nFU4p">
+          <property role="3LZaj6" value="source" />
+          <property role="nFU4j" value="deprecated" />
+        </node>
       </node>
       <node concept="nCB5N" id="7FonrDkmYch" role="nCB5Z">
         <ref role="nCB5Y" node="1s0vtrwURQP" resolve="mps-annotations" />
@@ -5997,6 +6001,11 @@
         <node concept="1SiIV0" id="1ZViq9opxBQ" role="3bR37C">
           <node concept="3bR9La" id="1ZViq9opxBR" role="1SiIV1">
             <ref role="3bR37D" node="7Kfy9QB6Lg2" resolve="jetbrains.mps.smodel.resources" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="Cv6g7YdF6B" role="3bR37C">
+          <node concept="3bR9La" id="Cv6g7YdF6C" role="1SiIV1">
+            <ref role="3bR37D" node="1TaHNgiIbJb" resolve="MPS.Platform" />
           </node>
         </node>
       </node>
