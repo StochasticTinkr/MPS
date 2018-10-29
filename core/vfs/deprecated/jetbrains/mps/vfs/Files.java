@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.deprecated;
+package jetbrains.mps.vfs;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -23,6 +24,7 @@ import java.net.URL;
 import java.util.Locale;
 
 @Deprecated
+@ToRemove(version = 2019.1)
 //this should go away since we will operate only path-urls
 public final class Files {
   private Files() {

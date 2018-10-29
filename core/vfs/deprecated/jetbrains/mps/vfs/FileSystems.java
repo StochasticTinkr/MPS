@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.vfs;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.annotations.Singleton;
 
 /**
- * Static methods for access to installed file systems
- *
- * @author apyshkin on 3/5/17.
+ * Use VFSManager
  */
-@Singleton
+@Deprecated
+@ToRemove(version = 2019.1)
 public final class FileSystems {
   private FileSystems() {}
 

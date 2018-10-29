@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.deprecated.Path;
+import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MementoWithFS;

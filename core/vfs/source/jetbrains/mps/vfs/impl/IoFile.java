@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.vfs.impl;
 
-import jetbrains.mps.deprecated.Path;
+import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;

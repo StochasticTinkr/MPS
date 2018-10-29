@@ -20,9 +20,10 @@ import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Class for file system registration
+ * Use VFSManager
  */
-@ToRemove(version = 3.4)
+@Deprecated
+@ToRemove(version = 2019.1)
 public final class FileSystemExtPoint {
   private static FileSystem ourFS = IoFileSystem.INSTANCE;
 

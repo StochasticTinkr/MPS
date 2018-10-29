@@ -33,8 +33,7 @@
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="mcvo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure.language(MPS.Core/)" />
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
-    <import index="ghe1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.deprecated(MPS.Core/)" />
-    <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" implicit="true" />
+    <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -8832,12 +8831,12 @@
             <node concept="liA8E" id="7hpnsN_sP0T" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolve="replace" />
               <node concept="10M0yZ" id="5UptKEdaBkD" role="37wK5m">
-                <ref role="3cqZAo" to="ghe1:~Path.WIN_SEPARATOR" resolve="WIN_SEPARATOR" />
-                <ref role="1PxDUh" to="ghe1:~Path" resolve="Path" />
+                <ref role="1PxDUh" to="eurq:~Path" resolve="Path" />
+                <ref role="3cqZAo" to="eurq:~Path.WIN_SEPARATOR" resolve="WIN_SEPARATOR" />
               </node>
               <node concept="10M0yZ" id="5UptKEdaCNe" role="37wK5m">
-                <ref role="3cqZAo" to="ghe1:~Path.UNIX_SEPARATOR" resolve="UNIX_SEPARATOR" />
-                <ref role="1PxDUh" to="ghe1:~Path" resolve="Path" />
+                <ref role="1PxDUh" to="eurq:~Path" resolve="Path" />
+                <ref role="3cqZAo" to="eurq:~Path.UNIX_SEPARATOR" resolve="UNIX_SEPARATOR" />
               </node>
             </node>
           </node>

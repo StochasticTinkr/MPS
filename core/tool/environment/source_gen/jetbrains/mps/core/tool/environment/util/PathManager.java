@@ -11,7 +11,7 @@ import jetbrains.mps.core.tool.environment.common.FileUtil;
 import org.jetbrains.annotations.Nullable;
 import java.net.URL;
 import jetbrains.mps.util.StringUtil;
-import jetbrains.mps.deprecated.URLUtil;
+import jetbrains.mps.util.URLUtil;
 import java.io.InputStream;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

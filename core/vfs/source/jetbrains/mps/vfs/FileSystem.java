@@ -31,11 +31,10 @@ public interface FileSystem {
   @NotNull IFile getFile(@NotNull String path);
 
   /**
-   * @deprecated use it only when you really do not care about the file system implementation. Otherwise consider using context {@link IFile#getFileSystem()};
-   * This singleton (as always) will be available via core MPSComponents some time later.
+   * Use VFSManager
    */
-  @ToRemove(version = 3.4)
   @Deprecated
+  @ToRemove(version = 2019.1)
   static FileSystem getInstance() {
     return FileSystemExtPoint.getFS();
   }

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.deprecated.Path;
+import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.refresh.FileListener;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collections;

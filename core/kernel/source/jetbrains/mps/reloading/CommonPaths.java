@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.deprecated.URLUtil;
+import jetbrains.mps.util.URLUtil;
 import jetbrains.mps.util.ClassPathReader;
 import jetbrains.mps.util.ClassType;
 import jetbrains.mps.util.Pair;
