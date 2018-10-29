@@ -35,16 +35,6 @@ public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
   }
 
   /**
-   * @deprecated use {@link #getFile(String)} instead
-   */
-  @Deprecated
-  @NotNull
-  @ToRemove(version = 3.4)
-  default IFile getFileByPath(@NotNull String path) {
-    return getFile(path);
-  }
-
-  /**
    * @deprecated pure platform method with one usage, will be removed!
    */
   @ToRemove(version = 3.4)
