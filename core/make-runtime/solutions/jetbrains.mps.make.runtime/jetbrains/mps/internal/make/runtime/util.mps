@@ -416,6 +416,7 @@
         <child id="1197687026896" name="keyType" index="3rHrn6" />
         <child id="1197687035757" name="valueType" index="3rHtpV" />
       </concept>
+      <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1184963466173" name="jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation" flags="nn" index="3_kTaI" />
@@ -3189,6 +3190,27 @@
         <property role="TrG5h" value="copyFrom" />
         <node concept="3uibUv" id="s2Jv$gDz7j" role="1tU5fm">
           <ref role="3uigEE" node="s2Jv$gDl8s" resolve="FilesDelta" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6SL1vERuyYS" role="jymVt" />
+    <node concept="3clFb_" id="6SL1vERu$RR" role="jymVt">
+      <property role="TrG5h" value="isEmpty" />
+      <node concept="10P_77" id="6SL1vERuAEr" role="3clF45" />
+      <node concept="3Tm1VV" id="6SL1vERu$RU" role="1B3o_S" />
+      <node concept="3clFbS" id="6SL1vERu$RV" role="3clF47">
+        <node concept="3SKdUt" id="6SL1vERuECm" role="3cqZAp">
+          <node concept="3SKdUq" id="6SL1vERuECo" role="3SKWNk">
+            <property role="3SKdUp" value="tell if there's any information has been recorded with this delta object" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="6SL1vERuDY0" role="3cqZAp">
+          <node concept="2OqwBi" id="6SL1vERuEg4" role="3clFbG">
+            <node concept="37vLTw" id="6SL1vERuDXZ" role="2Oq$k0">
+              <ref role="3cqZAo" node="s2Jv$gDwDs" resolve="files" />
+            </node>
+            <node concept="1v1jN8" id="6SL1vERuEz2" role="2OqNvi" />
+          </node>
         </node>
       </node>
     </node>

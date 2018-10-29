@@ -205,7 +205,11 @@ public class TextGen_Facet extends IFacet.Stub {
                     }
                   }));
                 }
-                sfm.collectGeneratedFiles(resource.model());
+                if (monitor.getSession().isCleanMake()) {
+                  sfm.collectGeneratedFilesForceClean(resource.model());
+                } else {
+                  sfm.collectGeneratedFiles(resource.model());
+                }
               }
               final Project mpsProject = monitor.getSession().getProject();
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(messageHandler);

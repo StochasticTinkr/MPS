@@ -14,6 +14,8 @@ import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
 import java.util.HashMap;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.facets.GenerationTargetFacet;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -25,6 +27,7 @@ import jetbrains.mps.internal.make.runtime.util.DeltaKey;
 import java.util.function.Consumer;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import java.util.ArrayDeque;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 /*package*/ class ModuleStaleFileManager {
@@ -35,6 +38,10 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
   private final Map<IFile, FileDeltaCollector> myModelLocationStreams = new HashMap<IFile, FileDeltaCollector>();
   private final FileProcessor myFileStorage;
   private final GenerationDependenciesCache myGenDeps;
+  /**
+   * in use for 'clean' make only, for #collectGeneratedFilesForceClean not to walk same output root again and again, reporting same files as stale multiple times.
+   */
+  private final Set<IFile> myStaleFoldersWalked = new HashSet<IFile>();
 
   public ModuleStaleFileManager(SModule module, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile, GenerationDependenciesCache genDeps, IMessageHandler msgHandler) {
     myModule = module;
@@ -106,9 +113,13 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     }
   }
 
+  /**
+   * find out files that were generated during previous run that they might be stale at this run
+   */
   /*package*/ void collectGeneratedFiles(SModel generatedInputModel) {
     // each file of generated model reported as stale 
-    // or collect files of generatedModels, then update with delta of generated, and those that left report as 'stale' (not to merge stale delta with written/touched) 
+    // alternatively, collect files of generatedModels (recorded in 'generated'), then update with delta of generated files (i.e. substract),  
+    // and those that left report as 'stale' (not to merge stale delta with written/touched) 
     final FilesDelta fd = new FilesDelta(new DeltaKey(myModule, generatedInputModel));
     visitGeneratedFiles(generatedInputModel, new Consumer<IFile>() {
       public void accept(IFile f) {
@@ -116,6 +127,58 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
       }
     });
     ListSequence.fromList(myStaleFilesDelta).addElement(fd);
+  }
+
+  /**
+   * Alternative to {@link jetbrains.mps.lang.core.plugin.ModuleStaleFileManager#collectGeneratedFiles(SModel) }, with all files under model's output root considered as 'stale'. Walks actual FS to find out existing files
+   */
+  /*package*/ void collectGeneratedFilesForceClean(SModel generatedInputModel) {
+    final GenerationTargetFacet gtf = getGenerationTargetFacet(generatedInputModel);
+    if (gtf == null) {
+      return;
+    }
+    final IFile outputRoot = gtf.getOutputRoot(generatedInputModel);
+    // XXX what if model ceased to have output, here we don't recognize scenario when model used to be generated somewhere.  
+    // Seems we are not capable to report these files as generated/stale here 
+    if (outputRoot == null) {
+      return;
+    }
+    IFile actualOutputRoot = myPath2File.invoke(outputRoot.getPath());
+    final FilesDelta fd = new FilesDelta(new DeltaKey(myModule, generatedInputModel));
+    Consumer<IFile> staleDeltaReporter = new Consumer<IFile>() {
+      public void accept(IFile f) {
+        fd.stale(f);
+      }
+    };
+    if (myStaleFoldersWalked.add(actualOutputRoot)) {
+      visitFilesDeep(actualOutputRoot, staleDeltaReporter);
+    }
+    final IFile outputCacheRoot = gtf.getOutputCacheRoot(generatedInputModel);
+    IFile actualOutputCacheRoot = (outputCacheRoot == null ? null : myPath2File.invoke(outputCacheRoot.getPath()));
+    if (outputCacheRoot != null && myStaleFoldersWalked.add(actualOutputCacheRoot)) {
+      visitFilesDeep(actualOutputCacheRoot, staleDeltaReporter);
+    }
+    if (!(fd.isEmpty())) {
+      ListSequence.fromList(myStaleFilesDelta).addElement(fd);
+    }
+  }
+
+  private static void visitFilesDeep(IFile startDir, Consumer<IFile> visitor) {
+    // reports files only, not directories 
+    assert startDir != null;
+    if (!(startDir.exists())) {
+      return;
+    }
+    ArrayDeque<IFile> fqueue = new ArrayDeque<IFile>();
+    fqueue.add(startDir);
+    do {
+      IFile f = fqueue.removeFirst();
+      if (f.isDirectory()) {
+        fqueue.addAll(f.getChildren());
+      } else {
+        visitor.accept(f);
+      }
+    } while (!(fqueue.isEmpty()));
   }
 
   /**
