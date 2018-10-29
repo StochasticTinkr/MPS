@@ -47,9 +47,6 @@ public interface FileSystem {
   @Deprecated
   boolean isFileIgnored(@NotNull String name);
 
-  @ToRemove(version = 3.4)
-  void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
-
   /**
    * Write files from appropriate thread and with appropriate locks
    * @param r code to execute within platform write lock

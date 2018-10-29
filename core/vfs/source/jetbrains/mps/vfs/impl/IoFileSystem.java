@@ -73,11 +73,6 @@ public class IoFileSystem implements FileSystem {
   }
 
   @Override
-  public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles) {
-    // do nothing
-  }
-
-  @Override
   public boolean runWriteTransaction(@NotNull Runnable r) {
     try {
       r.run();

@@ -86,7 +86,6 @@ public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequesto
     return FileTypeManager.getInstance().isFileIgnored(name);
   }
 
-  @Override
   public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles) {
     final List<IFile> newFiles = new ArrayList<>();
     final List<IFile> updatedFiles = new ArrayList<>();
