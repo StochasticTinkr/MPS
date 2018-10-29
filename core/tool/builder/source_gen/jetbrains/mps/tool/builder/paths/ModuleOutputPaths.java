@@ -106,7 +106,7 @@ public class ModuleOutputPaths {
 
     this.sortedModelDirs = DirUtil.sortDirs(Sequence.fromIterable(modelRootPaths).select(new ISelector<String, IFile>() {
       public IFile select(String path) {
-        return FileSystem.getInstance().getFileByPath(path);
+        return FileSystem.getInstance().getFile(path);
       }
     }).where(new IWhereFilter<IFile>() {
       public boolean accept(IFile f) {

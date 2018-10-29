@@ -17,6 +17,7 @@
     <import index="fy8e" ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" />
     <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" implicit="true" />
+    <import index="w827" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.openapi(MPS.Core/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -335,7 +336,7 @@
                                 <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
                               </node>
                               <node concept="liA8E" id="Ik4DRK775Y" role="2OqNvi">
-                                <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                                <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                                 <node concept="2OqwBi" id="38mXUTXNh0x" role="37wK5m">
                                   <node concept="2YIFZM" id="6tm98vZh9Yz" role="2Oq$k0">
                                     <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />

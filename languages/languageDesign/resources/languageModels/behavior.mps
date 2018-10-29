@@ -898,7 +898,7 @@
                 <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
               </node>
               <node concept="liA8E" id="7Mb2akaesur" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                 <node concept="37vLTw" id="3GM_nagTzdY" role="37wK5m">
                   <ref role="3cqZAo" node="7Mb2akaesu6" resolve="path" />
                 </node>
@@ -2542,7 +2542,7 @@
                 <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
               </node>
               <node concept="liA8E" id="Ib_Fk7zRLH" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                 <node concept="37vLTw" id="Ib_Fk7zRLI" role="37wK5m">
                   <ref role="3cqZAo" node="Ib_Fk7zRLp" resolve="path" />
                 </node>

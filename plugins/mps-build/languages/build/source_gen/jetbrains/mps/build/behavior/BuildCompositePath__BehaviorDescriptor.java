@@ -75,7 +75,7 @@ public final class BuildCompositePath__BehaviorDescriptor extends BaseBHDescript
       relativePath += "/" + BuildCompositePath__BehaviorDescriptor.getPathToHead_id3skBIrUiCOV.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath")));
     }
 
-    IFile file = FileSystem.getInstance().getFileByPath(relativePath);
+    IFile file = FileSystem.getInstance().getFile(relativePath);
     if (!(file.exists())) {
       return ListSequence.fromList(new ArrayList<String>());
     }
@@ -101,7 +101,7 @@ public final class BuildCompositePath__BehaviorDescriptor extends BaseBHDescript
     }
 
     basePath += "/" + BuildCompositePath__BehaviorDescriptor.getPathToHead_id3skBIrUiCOV.invoke(__thisNode__);
-    return FileSystem.getInstance().getFileByPath(basePath);
+    return FileSystem.getInstance().getFile(basePath);
   }
 
   /*package*/ BuildCompositePath__BehaviorDescriptor() {

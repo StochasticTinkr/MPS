@@ -38,7 +38,7 @@ public class ConvertToBinaryWorker {
   }
 
   private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) {
-    IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
+    IFile source = FileSystem.getInstance().getFile(sourceFile);
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(FileUtil.getExtension(source.getName()));
     if (modelFactory == null) {
       // assuming user knows what he's doing and supplied us with a model file, try default factory. 
@@ -49,7 +49,7 @@ public class ConvertToBinaryWorker {
       options.put(DefaultModelPersistence.OPTION_STRIP_IMPLEMENTATION, Boolean.toString(stripImplementation));
       options.put(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO, Boolean.TRUE.toString());
       SModel model = modelFactory.load(new FileDataSource(source), options);
-      PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY).save(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
+      PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY).save(model, new FileDataSource(FileSystem.getInstance().getFile(destFile)));
     } catch (RuntimeException ex) {
       System.out.printf("Conversion of %s\n", sourceFile);
       ex.printStackTrace();

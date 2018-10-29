@@ -56,6 +56,7 @@
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
     <import index="3fye" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application.impl(MPS.IDEA/)" />
     <import index="xq5q" ref="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)" />
+    <import index="w827" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.openapi(MPS.Core/)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -2277,7 +2278,7 @@
                       <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
                     </node>
                     <node concept="liA8E" id="3jGGvHImGRg" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                      <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                       <node concept="2OqwBi" id="3jGGvHInwAM" role="37wK5m">
                         <node concept="2GrUjf" id="3jGGvHInw4Z" role="2Oq$k0">
                           <ref role="2Gs0qQ" node="3jGGvHImtSC" resolve="vfile" />
@@ -2991,7 +2992,7 @@
                       <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
                     </node>
                     <node concept="liA8E" id="3WFlNYtDLle" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                      <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                       <node concept="2GrUjf" id="3WFlNYtDN1y" role="37wK5m">
                         <ref role="2Gs0qQ" node="3WFlNYtD40P" resolve="path" />
                       </node>

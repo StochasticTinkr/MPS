@@ -111,7 +111,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     FileSystem.getInstance().runWriteTransaction(new Runnable() {
       @Override
       public void run() {
-        IFile baseDir = FileSystem.getInstance().getFileByPath(getBasePath());
+        IFile baseDir = FileSystem.getInstance().getFile(getBasePath());
         IFile iconsDir = baseDir.getDescendant(BuildGeneratorImpl.ICONS);
         iconsDir.mkdirs();
 
@@ -183,7 +183,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     if (getCreateModel()) {
       Solution solution;
       if (getCreateSolution()) {
-        IFile projectBaseDir = FileSystem.getInstance().getFileByPath(getBasePath());
+        IFile projectBaseDir = FileSystem.getInstance().getFile(getBasePath());
         //  get solution 
         String solutionName = getNewSolutionName();
         IFile solutionBaseDir = projectBaseDir.getDescendant("solutions").getDescendant(solutionName);

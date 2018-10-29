@@ -44,13 +44,13 @@ public class OutputPathRedirects implements IRedirects {
     }
 
     // can't convert, return the literal path 
-    return FileSystem.getInstance().getFileByPath(path);
+    return FileSystem.getInstance().getFile(path);
   }
   public IFile getOutputRedirect(String path) {
     if (outputRoot != null) {
       String localOutPath = moduleOutputPaths.toLocalPath(path);
       if (localOutPath != null) {
-        return FileSystem.getInstance().getFileByPath(outputRoot).getDescendant(localOutPath);
+        return FileSystem.getInstance().getFile(outputRoot).getDescendant(localOutPath);
       }
     }
     return null;
@@ -59,7 +59,7 @@ public class OutputPathRedirects implements IRedirects {
     if (cachesOutputRoot != null) {
       String localOutCachePath = moduleOutputPaths.toLocalCachePath(path);
       if (localOutCachePath != null) {
-        return FileSystem.getInstance().getFileByPath(cachesOutputRoot).getDescendant(localOutCachePath);
+        return FileSystem.getInstance().getFile(cachesOutputRoot).getDescendant(localOutCachePath);
       }
     }
     return null;

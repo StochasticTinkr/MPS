@@ -149,7 +149,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     if (module != null) {
       path = MacrosFactory.forModule(module).expandPath(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b7665563ef3L, 0x47047b76655643d4L, "iconPath")));
     }
-    return path != null && FileSystem.getInstance().getFileByPath(path).exists();
+    return path != null && FileSystem.getInstance().getFile(path).exists();
   }
   private EditorCell createCollection_3() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());

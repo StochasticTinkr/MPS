@@ -2,10 +2,10 @@
 <model ref="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
@@ -741,11 +741,11 @@
             </node>
           </node>
           <node concept="2OqwBi" id="3GsVPVaOk6H" role="2GsD0m">
-            <node concept="37vLTw" id="6UWbfHqheYQ" role="2Oq$k0">
-              <ref role="3cqZAo" node="6UWbfHqh1Gg" resolve="checkerRegistry" />
-            </node>
             <node concept="liA8E" id="3GsVPVaOk6L" role="2OqNvi">
               <ref role="37wK5l" to="2gg1:~CheckerRegistry.getCheckers():java.util.List" resolve="getCheckers" />
+            </node>
+            <node concept="37vLTw" id="6UWbfHqheYQ" role="2Oq$k0">
+              <ref role="3cqZAo" node="6UWbfHqh1Gg" resolve="checkerRegistry" />
             </node>
           </node>
         </node>
@@ -8210,14 +8210,14 @@
           <node concept="3clFbS" id="xWHpBq6iv_" role="2LFqv$">
             <node concept="3clFbF" id="xWHpBq6ivA" role="3cqZAp">
               <node concept="2OqwBi" id="xWHpBq6ivB" role="3clFbG">
-                <node concept="37vLTw" id="6UWbfHqhJAZ" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6UWbfHqhELf" resolve="checkerRegistry" />
-                </node>
                 <node concept="liA8E" id="xWHpBq6ivF" role="2OqNvi">
                   <ref role="37wK5l" to="2gg1:~CheckerRegistry.registerChecker(jetbrains.mps.checkers.IChecker):void" resolve="registerChecker" />
                   <node concept="2GrUjf" id="xWHpBq6ivG" role="37wK5m">
                     <ref role="2Gs0qQ" node="xWHpBq6ivz" resolve="checker" />
                   </node>
+                </node>
+                <node concept="37vLTw" id="6UWbfHqhJAZ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6UWbfHqhELf" resolve="checkerRegistry" />
                 </node>
               </node>
             </node>
@@ -8281,14 +8281,14 @@
           <node concept="3clFbS" id="xWHpBq6eRV" role="2LFqv$">
             <node concept="3clFbF" id="xWHpBq6hU$" role="3cqZAp">
               <node concept="2OqwBi" id="xWHpBq6iei" role="3clFbG">
-                <node concept="37vLTw" id="6UWbfHqhKic" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6UWbfHqhJCx" resolve="checkerRegistry" />
-                </node>
                 <node concept="liA8E" id="xWHpBq6ikB" role="2OqNvi">
                   <ref role="37wK5l" to="2gg1:~CheckerRegistry.unregisterChecker(jetbrains.mps.checkers.IChecker):void" resolve="unregisterChecker" />
                   <node concept="2GrUjf" id="xWHpBq6itv" role="37wK5m">
                     <ref role="2Gs0qQ" node="xWHpBq6eRT" resolve="checker" />
                   </node>
+                </node>
+                <node concept="37vLTw" id="6UWbfHqhKic" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6UWbfHqhJCx" resolve="checkerRegistry" />
                 </node>
               </node>
             </node>

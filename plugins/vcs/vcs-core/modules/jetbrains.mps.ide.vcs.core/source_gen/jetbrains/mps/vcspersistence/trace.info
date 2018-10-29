@@ -339,7 +339,7 @@
       <node id="320507183292194109" at="259,29,260,52" concept="14" />
       <node id="5317173964875527627" at="265,68,266,43" concept="7" />
       <node id="5317173964875527633" at="266,43,267,117" concept="7" />
-      <node id="5317173964875527659" at="267,117,268,77" concept="7" />
+      <node id="5317173964875527659" at="267,117,268,71" concept="7" />
       <node id="5317173964874517902" at="269,35,270,18" concept="8" />
       <node id="5317173964874517904" at="271,5,272,57" concept="8" />
       <node id="5317173964874517947" at="276,9,277,56" concept="2" />
@@ -376,7 +376,7 @@
       <node id="5317173964874517310" at="193,73,196,5" concept="5" />
       <node id="5317173964874517418" at="221,76,224,7" concept="5" />
       <node id="5317173964874517430" at="226,87,229,7" concept="5" />
-      <node id="5317173964874517897" at="268,77,271,5" concept="5" />
+      <node id="5317173964874517897" at="268,71,271,5" concept="5" />
       <node id="5317173964874516742" at="290,0,293,0" concept="1" trace="MyDescriptorHandler#(Ljetbrains/mps/smodel/SModelHeader;)V" />
       <node id="5317173964874516865" at="315,24,319,11" concept="15" />
       <node id="5317173964874516886" at="328,0,332,0" concept="6" trace="endElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />

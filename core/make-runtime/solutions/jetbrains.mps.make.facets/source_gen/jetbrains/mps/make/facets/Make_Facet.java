@@ -291,7 +291,7 @@ public class Make_Facet extends IFacet.Stub {
               if (vars(pa.global()).pathToFile() == null) {
                 vars(pa.global()).pathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
                   public IFile invoke(String p) {
-                    return FileSystem.getInstance().getFileByPath(p);
+                    return FileSystem.getInstance().getFile(p);
                   }
                 });
               }

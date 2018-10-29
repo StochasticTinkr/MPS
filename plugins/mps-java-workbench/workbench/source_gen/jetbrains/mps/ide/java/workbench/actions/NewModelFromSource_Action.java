@@ -160,7 +160,7 @@ public class NewModelFromSource_Action extends BaseAction {
 
     List<IFile> chosenIFiles = ListSequence.fromList(new ArrayList<IFile>(chosen.length));
     for (VirtualFile vfile : chosen) {
-      ListSequence.fromList(chosenIFiles).addElement(FileSystem.getInstance().getFileByPath(vfile.getPath()));
+      ListSequence.fromList(chosenIFiles).addElement(FileSystem.getInstance().getFile(vfile.getPath()));
     }
     final List<IFile> ifilesToParse = Sequence.fromIterable(JavaConvertUtil.flattenDirs(chosenIFiles)).toListSequence();
 

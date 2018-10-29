@@ -87,7 +87,7 @@ public class ConflictingModelsUtil {
     for (VirtualFile file : Sequence.fromIterable(conflictedFiles)) {
       MergeData mergeData = loadRevisions(provider, file);
 
-      IFile iFile = FileSystem.getInstance().getFileByPath(file.getPath());
+      IFile iFile = FileSystem.getInstance().getFile(file.getPath());
       String ext = file.getExtension();
       if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
         ext = MPSExtentions.MODEL;
@@ -157,7 +157,7 @@ public class ConflictingModelsUtil {
         for (final VirtualFile file : ListSequence.fromList(myConflictedModelFiles)) {
           monitor.step(file.getCanonicalPath());
 
-          final IFile iFile = FileSystem.getInstance().getFileByPath(file.getPath());
+          final IFile iFile = FileSystem.getInstance().getFile(file.getPath());
           final Wrappers._T<String> ext = new Wrappers._T<String>(file.getExtension());
           if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
             ext.value = MPSExtentions.MODEL;
