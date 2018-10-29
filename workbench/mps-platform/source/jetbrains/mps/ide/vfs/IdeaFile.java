@@ -29,6 +29,8 @@ import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.vfs.CachingContext;
 import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.CachingFileSystem;
+import jetbrains.mps.vfs.FileListener;
+import jetbrains.mps.vfs.FileListenerAdapter;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.path.UniPath;
@@ -48,7 +50,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * NOTE the IdeaFiles' equality now totally depends on the starting string.
@@ -62,6 +66,8 @@ public class IdeaFile implements IFile, CachingFile {
   private final static Logger LOG = LogManager.getLogger(IdeaFile.class);
 
   private final IdeaFileSystem myFileSystem;
+
+  private final Map<FileListener, FileListenerAdapter> myListenerLegacy2New = new HashMap<>();
 
   /*
    * remember the name used to create this instance, as it might be different from a name in fs on case-insensitive filesystem
@@ -504,6 +510,21 @@ public class IdeaFile implements IFile, CachingFile {
       return "IdeaFile[" + myVirtualFilePtr + "]";
     } else {
       return "IdeaFile[path: " + myPath + "]";
+    }
+  }
+
+  @Override
+  public void addListener(@NotNull FileListener listener) {
+    FileListenerAdapter listenerAdapter = new FileListenerAdapter(this, listener);
+    myListenerLegacy2New.put(listener, listenerAdapter);
+    getFileSystem().addListener(listenerAdapter);
+  }
+
+  @Override
+  public void removeListener(@NotNull FileListener listener) {
+    FileListenerAdapter fileListenerAdapter = myListenerLegacy2New.remove(listener);
+    if (fileListenerAdapter != null) {
+      getFileSystem().removeListener(fileListenerAdapter);
     }
   }
 }
