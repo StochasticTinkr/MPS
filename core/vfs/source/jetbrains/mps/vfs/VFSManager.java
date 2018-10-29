@@ -42,30 +42,39 @@ public class VFSManager implements CoreComponent {
     INSTANCE = null;
   }
 
-  public void registerFS(@NotNull String protocol, @NotNull FileSystem fs){
-    if (myFileSystems.containsKey(protocol)){
-      LOG.error("File system is already registered for protocol " + protocol);
+  public void registerFS(@NotNull String fsId, @NotNull FileSystem fs) {
+    if (myFileSystems.containsKey(fsId)) {
+      LOG.error("File system is already registered for protocol " + fsId);
       return;
     }
 
-    myFileSystems.put(protocol, fs);
+    myFileSystems.put(fsId, fs);
   }
 
-  public void unregisterFS(@NotNull String protocol){
-    if (!myFileSystems.containsKey(protocol)){
-      LOG.error("File system is not registered for protocol " + protocol);
+  public void unregisterFS(@NotNull String fsId) {
+    if (!myFileSystems.containsKey(fsId)) {
+      LOG.error("File system is not registered for protocol " + fsId);
       return;
     }
 
-    myFileSystems.remove(protocol);
+    myFileSystems.remove(fsId);
   }
 
-  public FileSystem getFileSystem(@NotNull String protocol) {
-    if (!myFileSystems.containsKey(protocol)){
-      LOG.error("File system not found for protocol " + protocol);
+  public FileSystem getFileSystem(@NotNull String fsId) {
+    if (!myFileSystems.containsKey(fsId)) {
+      LOG.error("File system not found for protocol " + fsId);
       return null;
     }
 
-    return myFileSystems.get(protocol);
+    return myFileSystems.get(fsId);
+  }
+
+  public IFile getFile(QualifiedPath path) {
+    FileSystem fs = getFileSystem(path.getFsId());
+    if (fs == null) {
+      return null;
+    }
+
+    return fs.getFile(path.getPath());
   }
 }
