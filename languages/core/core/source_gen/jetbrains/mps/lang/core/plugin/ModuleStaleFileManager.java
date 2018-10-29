@@ -17,8 +17,8 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.project.facets.GenerationTargetFacet;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.project.facets.GenerationTargetFacet;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -48,6 +48,12 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     myFileStorage = new FileProcessor(msgHandler);
     myPath2File = getFile;
     myGenDeps = genDeps;
+  }
+
+  /*package*/ boolean hasGenerationTarget(SModel inputModel) {
+    // tells if we got an idea where we'd like to generate a model to 
+    // generic alternative to SModelOperations.getOutputLocation() != null check 
+    return getGenerationTargetFacet(inputModel) != null;
   }
 
   private GenerationTargetFacet getGenerationTargetFacet(SModel model) {

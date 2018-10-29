@@ -646,57 +646,6 @@
                 <property role="TrG5h" value="resource" />
               </node>
               <node concept="3clFbS" id="22g6WSZINs" role="2LFqv$">
-                <node concept="3SKdUt" id="TDp769cy3u" role="3cqZAp">
-                  <node concept="3SKdUq" id="TDp769cygf" role="3SKWNk">
-                    <property role="3SKdUp" value="Perhaps, shall check res.status.isError(), however not sure if there" />
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="TDp769c_6r" role="3cqZAp">
-                  <node concept="3SKdUq" id="TDp769c_j9" role="3SKWNk">
-                    <property role="3SKdUp" value="couldn't be an output model with error state, and we'd like to see erroneous text to localize error" />
-                  </node>
-                </node>
-                <node concept="3clFbJ" id="22g6WSZQpO" role="3cqZAp">
-                  <node concept="3clFbC" id="22g6WT01mC" role="3clFbw">
-                    <node concept="2YIFZM" id="5gvmGjUruzi" role="3uHU7B">
-                      <ref role="37wK5l" to="w1kc:~SModelOperations.getOutputLocation(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.vfs.IFile" resolve="getOutputLocation" />
-                      <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
-                      <node concept="2OqwBi" id="5gvmGjUruzj" role="37wK5m">
-                        <node concept="2sxana" id="5gvmGjUruzk" role="2OqNvi">
-                          <ref role="2sxfKC" to="fn29:1Xl3kQ1uadB" resolve="model" />
-                        </node>
-                        <node concept="2GrUjf" id="5gvmGjUruzl" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="22g6WSZINo" resolve="resource" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="10Nm6u" id="22g6WT02ZM" role="3uHU7w" />
-                  </node>
-                  <node concept="3clFbS" id="22g6WSZQpQ" role="3clFbx">
-                    <node concept="1daRAt" id="22g6WT05ai" role="3cqZAp">
-                      <property role="1daRAr" value="ERROR" />
-                      <node concept="3cpWs3" id="22g6WT05aj" role="1daK9t">
-                        <node concept="2OqwBi" id="5gvmGjUrlwS" role="3uHU7w">
-                          <node concept="2OqwBi" id="791rit5f65M" role="2Oq$k0">
-                            <node concept="2GrUjf" id="791rit5f65N" role="2Oq$k0">
-                              <ref role="2Gs0qQ" node="22g6WSZINo" resolve="resource" />
-                            </node>
-                            <node concept="2sxana" id="791rit5f65O" role="2OqNvi">
-                              <ref role="2sxfKC" to="fn29:1Xl3kQ1uadB" resolve="model" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="5gvmGjUrr2t" role="2OqNvi">
-                            <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="22g6WT05ak" role="3uHU7B">
-                          <property role="Xl_RC" value="no output location for " />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3N13vt" id="6eeqGPaoHN_" role="3cqZAp" />
-                  </node>
-                </node>
                 <node concept="3cpWs8" id="6eeqGPaoZxE" role="3cqZAp">
                   <node concept="3cpWsn" id="6eeqGPaoZxF" role="3cpWs9">
                     <property role="TrG5h" value="outputModels" />
@@ -731,43 +680,6 @@
                     </node>
                     <node concept="liA8E" id="6eeqGPapdcu" role="2OqNvi">
                       <ref role="37wK5l" to="33ny:~Collection.isEmpty():boolean" resolve="isEmpty" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="6eeqGPan2Rl" role="3cqZAp">
-                  <node concept="3SKdUq" id="6eeqGPan2Rn" role="3SKWNk">
-                    <property role="3SKdUp" value="need exact number of textgen tasks I'm going to schedule as it's the counter for the poll() loop, and we might get into trouble if" />
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="6eeqGPan557" role="3cqZAp">
-                  <node concept="3SKdUq" id="6eeqGPan559" role="3SKWNk">
-                    <property role="3SKdUp" value="number of scheduled models doesn't match that we expect to poll." />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="6eeqGPalXcq" role="3cqZAp">
-                  <node concept="d57v9" id="6eeqGPalXZS" role="3clFbG">
-                    <node concept="2OqwBi" id="6eeqGPam96D" role="37vLTx">
-                      <node concept="37vLTw" id="6eeqGPaoZxL" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6eeqGPaoZxF" resolve="outputModels" />
-                      </node>
-                      <node concept="liA8E" id="6eeqGPamc4c" role="2OqNvi">
-                        <ref role="37wK5l" to="33ny:~Collection.size():int" resolve="size" />
-                      </node>
-                    </node>
-                    <node concept="37vLTw" id="6eeqGPalXcp" role="37vLTJ">
-                      <ref role="3cqZAo" node="7A08csWcBKP" resolve="modelsCount" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="6eeqGPao_C_" role="3cqZAp">
-                  <node concept="2OqwBi" id="6eeqGPaoCRJ" role="3clFbG">
-                    <node concept="37vLTw" id="6eeqGPao_Cz" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6eeqGPaohYb" resolve="resourcesWithOutput" />
-                    </node>
-                    <node concept="TSZUe" id="6eeqGPaoDOk" role="2OqNvi">
-                      <node concept="2GrUjf" id="6eeqGPaoEy3" role="25WWJ7">
-                        <ref role="2Gs0qQ" node="22g6WSZINo" resolve="resource" />
-                      </node>
                     </node>
                   </node>
                 </node>
@@ -905,6 +817,60 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3SKdUt" id="TDp769cy3u" role="3cqZAp">
+                  <node concept="3SKdUq" id="TDp769cygf" role="3SKWNk">
+                    <property role="3SKdUp" value="Perhaps, shall check res.status.isError(), however not sure if there" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="TDp769c_6r" role="3cqZAp">
+                  <node concept="3SKdUq" id="TDp769c_j9" role="3SKWNk">
+                    <property role="3SKdUp" value="couldn't be an output model with error state, and we'd like to see erroneous text to localize error" />
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="6gksJButiHQ" role="3cqZAp">
+                  <node concept="3clFbS" id="6gksJButiHS" role="3clFbx">
+                    <node concept="1daRAt" id="22g6WT05ai" role="3cqZAp">
+                      <property role="1daRAr" value="ERROR" />
+                      <node concept="3cpWs3" id="22g6WT05aj" role="1daK9t">
+                        <node concept="2OqwBi" id="5gvmGjUrlwS" role="3uHU7w">
+                          <node concept="2OqwBi" id="791rit5f65M" role="2Oq$k0">
+                            <node concept="2GrUjf" id="791rit5f65N" role="2Oq$k0">
+                              <ref role="2Gs0qQ" node="22g6WSZINo" resolve="resource" />
+                            </node>
+                            <node concept="2sxana" id="791rit5f65O" role="2OqNvi">
+                              <ref role="2sxfKC" to="fn29:1Xl3kQ1uadB" resolve="model" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="5gvmGjUrr2t" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="22g6WT05ak" role="3uHU7B">
+                          <property role="Xl_RC" value="no output location for " />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3N13vt" id="6eeqGPaoHN_" role="3cqZAp" />
+                  </node>
+                  <node concept="3fqX7Q" id="6gksJBuudtd" role="3clFbw">
+                    <node concept="2OqwBi" id="6gksJBuudtf" role="3fr31v">
+                      <node concept="37vLTw" id="6gksJBuudtg" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6Fk9mCuRrlR" resolve="sfm" />
+                      </node>
+                      <node concept="liA8E" id="6gksJBuudth" role="2OqNvi">
+                        <ref role="37wK5l" node="6gksJBus$dz" resolve="hasGenerationTarget" />
+                        <node concept="2OqwBi" id="6gksJBuudti" role="37wK5m">
+                          <node concept="2GrUjf" id="6gksJBuudtj" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="22g6WSZINo" resolve="resource" />
+                          </node>
+                          <node concept="2sxana" id="6gksJBuudtk" role="2OqNvi">
+                            <ref role="2sxfKC" to="fn29:1Xl3kQ1uadB" resolve="model" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbJ" id="6SL1vERsBF_" role="3cqZAp">
                   <node concept="3clFbS" id="6SL1vERsBFB" role="3clFbx">
                     <node concept="3clFbF" id="6SL1vERsEub" role="3cqZAp">
@@ -951,6 +917,44 @@
                             </node>
                           </node>
                         </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbH" id="6gksJBuuATr" role="3cqZAp" />
+                <node concept="3SKdUt" id="6eeqGPan2Rl" role="3cqZAp">
+                  <node concept="3SKdUq" id="6eeqGPan2Rn" role="3SKWNk">
+                    <property role="3SKdUp" value="need exact number of textgen tasks I'm going to schedule as it's the counter for the poll() loop, and we might get into trouble if" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="6eeqGPan557" role="3cqZAp">
+                  <node concept="3SKdUq" id="6eeqGPan559" role="3SKWNk">
+                    <property role="3SKdUp" value="number of scheduled models doesn't match that we expect to poll." />
+                  </node>
+                </node>
+                <node concept="3clFbF" id="6eeqGPalXcq" role="3cqZAp">
+                  <node concept="d57v9" id="6eeqGPalXZS" role="3clFbG">
+                    <node concept="2OqwBi" id="6eeqGPam96D" role="37vLTx">
+                      <node concept="37vLTw" id="6eeqGPaoZxL" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6eeqGPaoZxF" resolve="outputModels" />
+                      </node>
+                      <node concept="liA8E" id="6eeqGPamc4c" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~Collection.size():int" resolve="size" />
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="6eeqGPalXcp" role="37vLTJ">
+                      <ref role="3cqZAo" node="7A08csWcBKP" resolve="modelsCount" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="6eeqGPao_C_" role="3cqZAp">
+                  <node concept="2OqwBi" id="6eeqGPaoCRJ" role="3clFbG">
+                    <node concept="37vLTw" id="6eeqGPao_Cz" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6eeqGPaohYb" resolve="resourcesWithOutput" />
+                    </node>
+                    <node concept="TSZUe" id="6eeqGPaoDOk" role="2OqNvi">
+                      <node concept="2GrUjf" id="6eeqGPaoEy3" role="25WWJ7">
+                        <ref role="2Gs0qQ" node="22g6WSZINo" resolve="resource" />
                       </node>
                     </node>
                   </node>
@@ -5741,6 +5745,40 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5pk83j3v9lG" role="jymVt" />
+    <node concept="3clFb_" id="6gksJBus$dz" role="jymVt">
+      <property role="TrG5h" value="hasGenerationTarget" />
+      <node concept="10P_77" id="6gksJBusAv0" role="3clF45" />
+      <node concept="3clFbS" id="6gksJBus$dA" role="3clF47">
+        <node concept="3SKdUt" id="6gksJBut8qe" role="3cqZAp">
+          <node concept="3SKdUq" id="6gksJBut8qg" role="3SKWNk">
+            <property role="3SKdUp" value="tells if we got an idea where we'd like to generate a model to" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6gksJButcz3" role="3cqZAp">
+          <node concept="3SKdUq" id="6gksJButcz5" role="3SKWNk">
+            <property role="3SKdUp" value="generic alternative to SModelOperations.getOutputLocation() != null check" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6gksJBusWdf" role="3cqZAp">
+          <node concept="3y3z36" id="6gksJBut1kS" role="3cqZAk">
+            <node concept="10Nm6u" id="6gksJBut3Aw" role="3uHU7w" />
+            <node concept="1rXfSq" id="6gksJBusWen" role="3uHU7B">
+              <ref role="37wK5l" node="5pk83j3vdO4" resolve="getGenerationTargetFacet" />
+              <node concept="37vLTw" id="6gksJBusYtH" role="37wK5m">
+                <ref role="3cqZAo" node="6gksJBusTWT" resolve="inputModel" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="6gksJBusTWT" role="3clF46">
+        <property role="TrG5h" value="inputModel" />
+        <node concept="3uibUv" id="6gksJBusTWS" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6gksJBusDEl" role="jymVt" />
     <node concept="3clFb_" id="5pk83j3vdO4" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getGenerationTargetFacet" />
