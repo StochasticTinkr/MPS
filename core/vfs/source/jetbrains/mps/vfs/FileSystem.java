@@ -40,11 +40,6 @@ public interface FileSystem {
     return FileSystemExtPoint.getFS();
   }
 
-  /**
-   * @deprecated pure platform method with one usage, will be removed!
-   */
-  @ToRemove(version = 3.4)
-  @Deprecated
   boolean isFileIgnored(@NotNull String name);
 
   /**
