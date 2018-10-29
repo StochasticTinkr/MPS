@@ -136,6 +136,11 @@ public abstract class ModelRootBase implements ModelRoot {
     return myRepository != null;
   }
 
+  @Nullable
+  protected final SRepository getRepository() {
+    return myRepository;
+  }
+
   /**
    * @param model is the model to be registered here as well as in the enclosing module.
    */

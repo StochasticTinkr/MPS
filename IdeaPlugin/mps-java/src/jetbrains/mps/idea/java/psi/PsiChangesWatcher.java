@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.idea.java.psi;
 
 import com.intellij.openapi.components.ProjectComponent;
@@ -25,6 +24,7 @@ import com.intellij.refactoring.rename.inplace.InplaceRefactoring;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.platform.watching.ReloadAction;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.java.psi.JavaPsiListener.PsiEvent;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import org.jetbrains.annotations.NotNull;
@@ -113,13 +113,18 @@ public class PsiChangesWatcher implements ProjectComponent {
   }
 
   // called by PsiChangeProcessor
-  /* package */ void notifyListeners(PsiEvent event) {
+  /* package */ void notifyListeners(final PsiEvent event) {
     synchronized (LOCK) {
       try {
         isNotifying = true;
-        for (JavaPsiListener l : myListeners) {
-          l.psiChanged(event);
-        }
+        ProjectHelper.fromIdeaProject(myProject).getModelAccess().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            for (JavaPsiListener l : myListeners) {
+              l.psiChanged(event);
+            }
+          }
+        });
       } finally {
 
         isNotifying = false;

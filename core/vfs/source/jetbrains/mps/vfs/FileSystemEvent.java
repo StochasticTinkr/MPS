@@ -41,5 +41,7 @@ public interface FileSystemEvent {
 //  @Deprecated
   // XXX seems that we can replace FSL with {@code FileListener} here and go on using this re-dispatch mechanism, handy for cases when there's single place
   //     that handles changes in few otherwise individual files (e.g. model root and file data sources)
+  //     There are no uses in Ext and mbeddr projects, I'd replace it with just FL (or even extract FL::update into distinct iface not to get confused
+  //     with other FL attributes, like 'preferences') as it doesn't look like a breaking change
   void notify(FileSystemListener listener);
 }

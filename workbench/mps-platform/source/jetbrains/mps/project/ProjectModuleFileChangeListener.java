@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,27 +64,29 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
      */
     @Override
     public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-      Set<SModuleReference> mRefs2Remove = new LinkedHashSet<>();
-      for (IFile file : event.getRemoved()) {
-        for (IFile moduleFile : myFile2Module.keySet()) {
-          if (moduleFile.toPath().startsWith(file.toPath())) {
-            mRefs2Remove.addAll(myFile2Module.get(moduleFile));
+      // removeModule0, below, grabs model write anyway, hence runWriteAction
+      myRepository.getModelAccess().runWriteAction(() -> {
+        Set<SModuleReference> mRefs2Remove = new LinkedHashSet<>();
+        for (IFile file : event.getRemoved()) {
+          for (IFile moduleFile : myFile2Module.keySet()) {
+            if (moduleFile.toPath().startsWith(file.toPath())) {
+              mRefs2Remove.addAll(myFile2Module.get(moduleFile));
+            }
           }
         }
-      }
-      mRefs2Remove.forEach(mRef -> {
-        ModulePath path = myMpsProject.getPath(mRef);
-        if (path != null) {
-          moduleNotFound(path);
-        }
-        myRepository.getModelAccess().runReadAction(() -> {
+
+        mRefs2Remove.forEach(mRef -> {
+          ModulePath path = myMpsProject.getPath(mRef);
+          if (path != null) {
+            moduleNotFound(path);
+          }
           SModule resolved = mRef.resolve(myRepository);
           if (resolved != null) {
             myMpsProject.removeModule0(resolved);
           }
         });
+        super.update(monitor, event);
       });
-      super.update(monitor, event);
     }
   }
 

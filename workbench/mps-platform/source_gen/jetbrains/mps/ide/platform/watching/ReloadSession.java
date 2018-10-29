@@ -14,8 +14,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
+import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import java.util.function.Supplier;
 
@@ -66,11 +66,11 @@ public class ReloadSession {
     });
   }
 
-  /*package*/ void doReload(final ProgressMonitor monitor) {
+  /*package*/ void doReload(ProgressMonitor monitor) {
     assert !(myReloaded) : "Contract: do not call doReload twice on one reload session";
     myReloaded = true;
 
-    final Iterable<ReloadParticipant> participants = getParticipants();
+    Iterable<ReloadParticipant> participants = getParticipants();
     monitor.start("Reloading Files", Sequence.fromIterable(participants).count());
     long beginTime = System.nanoTime();
     try {
@@ -78,13 +78,15 @@ public class ReloadSession {
         LOG.debug("File system reload started");
       }
       fireReloadStarted();
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          for (ReloadParticipant rp : participants) {
-            rp.update(monitor.subTask(1, SubProgressKind.REPLACING));
+      for (ReloadParticipant rp : participants) {
+        try {
+          rp.update(monitor.subTask(1, SubProgressKind.REPLACING));
+        } catch (Exception ex) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error(String.format("Reload participant %s failed", rp.getClass().getName()), ex);
           }
         }
-      });
+      }
     } finally {
       if (LOG.isInfoEnabled()) {
         LOG.info(String.format("File system reload finished in %.3f s", (System.nanoTime() - beginTime) / 1000000000.));

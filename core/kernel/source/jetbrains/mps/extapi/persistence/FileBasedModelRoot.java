@@ -358,8 +358,15 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
+    if (!isRegistered()) {
+      // XXX not sure there's any reason to update MR if it's not part of any accessible model structure
+      return;
+    }
     if (!event.getCreated().isEmpty() || !event.getRemoved().isEmpty()) {
-      update();
+      assert isRegistered();
+      // indeed, it's not nice to have distinct model writes for each model root, still it's better
+      // than global model write in a reload manager (which is not even FS aware, let alone FS-Model relation aware.
+      getRepository().getModelAccess().runWriteAction(this::update);
     }
   }
 

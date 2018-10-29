@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,39 +129,39 @@ public class ModuleFileTracker implements FileListener {
 
   @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-    final Set<SModuleReference> modules2Remove = new THashSet<>();
-    final Set<SModuleReference> modules2Reload = new THashSet<>();
-
-    for (IFile file : event.getRemoved()) {
-      for (IFile moduleFile : myFile2Module.keySet()) {
-        if (moduleFile.toPath().startsWith(file.toPath())) {
-          modules2Remove.addAll(myFile2Module.get(moduleFile));
+    myRepository.getModelAccess().runWriteAction(() -> {
+      final Set<SModuleReference> modules2Remove = new THashSet<>();
+      final Set<SModuleReference> modules2Reload = new THashSet<>();
+      for (IFile file : event.getRemoved()) {
+        for (IFile moduleFile : myFile2Module.keySet()) {
+          if (moduleFile.toPath().startsWith(file.toPath())) {
+            modules2Remove.addAll(myFile2Module.get(moduleFile));
+          }
         }
       }
-    }
-    for (IFile file : event.getChanged()) {
-      Set<SModuleReference> mRefs = myFile2Module.get(file);
-      if (mRefs != null) {
-        for (SModuleReference mRef : mRefs) {
-          // if module file comes both removed and changed (is it reasonable to expect?), pretend it's gone, do not revive it.
-          if (!modules2Remove.contains(mRef)) {
-            SModule m = mRef.resolve(myRepository);
-            if (m instanceof AbstractModule) {
-              modules2Reload.add(mRef);
+      for (IFile file : event.getChanged()) {
+        Set<SModuleReference> mRefs = myFile2Module.get(file);
+        if (mRefs != null) {
+          for (SModuleReference mRef : mRefs) {
+            // if module file comes both removed and changed (is it reasonable to expect?), pretend it's gone, do not revive it.
+            if (!modules2Remove.contains(mRef)) {
+              SModule m = mRef.resolve(myRepository);
+              if (m instanceof AbstractModule) {
+                modules2Reload.add(mRef);
+              }
             }
           }
         }
       }
-    }
 
-    // XXX why not unregister with the owner of the library, perhaps other owners listen to the change and unregister themselves, or have better idea what to
-    //     do when a module/file is removed
-    // XXX unregisterModule(Language) unregisters its generators as well (Language.dispose() -> MRF.unregister(all with owner == language). Is it nice?
-    myRepository.getModelAccess().runReadAction(() -> {
+      final ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(myRepository);
+      // XXX why not unregister with the owner of the library, perhaps other owners listen to the change and unregister themselves, or have better idea what to
+      //     do when a module/file is removed
+      // XXX unregisterModule(Language) unregisters its generators as well (Language.dispose() -> MRF.unregister(all with owner == language). Is it nice?
       modules2Remove.forEach(mRef -> {
         SModule module = mRef.resolve(myRepository);
         if (module != null) {
-          new ModuleRepositoryFacade(myRepository).unregisterModule(module);
+          repoFacade.unregisterModule(module);
         }
       });
       modules2Reload.forEach(mRef -> {

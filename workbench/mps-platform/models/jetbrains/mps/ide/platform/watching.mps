@@ -6205,57 +6205,82 @@
                 <ref role="37wK5l" node="9H$2_ta27k" resolve="fireReloadStarted" />
               </node>
             </node>
-            <node concept="3clFbF" id="1uGzTZfTvL5" role="3cqZAp">
-              <node concept="2OqwBi" id="1uGzTZfTvQQ" role="3clFbG">
-                <node concept="2YIFZM" id="1uGzTZfTvLX" role="2Oq$k0">
-                  <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                  <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                </node>
-                <node concept="liA8E" id="1uGzTZfTw4u" role="2OqNvi">
-                  <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
-                  <node concept="1bVj0M" id="1uGzTZfTwe3" role="37wK5m">
-                    <node concept="3clFbS" id="1uGzTZfTwe4" role="1bW5cS">
-                      <node concept="1DcWWT" id="1KUoCiqb5V4" role="3cqZAp">
-                        <node concept="3clFbS" id="1KUoCiqb5V5" role="2LFqv$">
-                          <node concept="3clFbF" id="1KUoCiqb5V6" role="3cqZAp">
-                            <node concept="2OqwBi" id="1KUoCiqb5V7" role="3clFbG">
-                              <node concept="liA8E" id="1KUoCiqb5V8" role="2OqNvi">
-                                <ref role="37wK5l" node="491od_XJVMt" resolve="update" />
-                                <node concept="2OqwBi" id="1KUoCiqb5V9" role="37wK5m">
-                                  <node concept="liA8E" id="1KUoCiqb5Va" role="2OqNvi">
-                                    <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int,org.jetbrains.mps.openapi.util.SubProgressKind):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
-                                    <node concept="3cmrfG" id="75V64qGXPjM" role="37wK5m">
-                                      <property role="3cmrfH" value="1" />
-                                    </node>
-                                    <node concept="Rm8GO" id="1KUoCiqb5Vd" role="37wK5m">
-                                      <ref role="1Px2BO" to="yyf4:~SubProgressKind" resolve="SubProgressKind" />
-                                      <ref role="Rm8GQ" to="yyf4:~SubProgressKind.REPLACING" resolve="REPLACING" />
-                                    </node>
-                                  </node>
-                                  <node concept="37vLTw" id="1KUoCiqb5Ve" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="9H$2_ta27i" resolve="monitor" />
-                                  </node>
-                                </node>
+            <node concept="1DcWWT" id="1KUoCiqb5V4" role="3cqZAp">
+              <node concept="3clFbS" id="1KUoCiqb5V5" role="2LFqv$">
+                <node concept="SfApY" id="7ueaBSNtyTi" role="3cqZAp">
+                  <node concept="3clFbS" id="7ueaBSNtyEz" role="SfCbr">
+                    <node concept="3clFbF" id="7ueaBSNtyE$" role="3cqZAp">
+                      <node concept="2OqwBi" id="7ueaBSNtyE_" role="3clFbG">
+                        <node concept="liA8E" id="7ueaBSNtyEA" role="2OqNvi">
+                          <ref role="37wK5l" node="491od_XJVMt" resolve="update" />
+                          <node concept="2OqwBi" id="7ueaBSNtyEB" role="37wK5m">
+                            <node concept="liA8E" id="7ueaBSNtyEC" role="2OqNvi">
+                              <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int,org.jetbrains.mps.openapi.util.SubProgressKind):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                              <node concept="3cmrfG" id="7ueaBSNtyED" role="37wK5m">
+                                <property role="3cmrfH" value="1" />
                               </node>
-                              <node concept="37vLTw" id="1KUoCiqb5Vf" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1KUoCiqb5Vg" resolve="rp" />
+                              <node concept="Rm8GO" id="7ueaBSNtyEE" role="37wK5m">
+                                <ref role="1Px2BO" to="yyf4:~SubProgressKind" resolve="SubProgressKind" />
+                                <ref role="Rm8GQ" to="yyf4:~SubProgressKind.REPLACING" resolve="REPLACING" />
                               </node>
+                            </node>
+                            <node concept="37vLTw" id="7ueaBSNtyEF" role="2Oq$k0">
+                              <ref role="3cqZAo" node="9H$2_ta27i" resolve="monitor" />
                             </node>
                           </node>
                         </node>
-                        <node concept="3cpWsn" id="1KUoCiqb5Vg" role="1Duv9x">
-                          <property role="TrG5h" value="rp" />
-                          <node concept="3uibUv" id="6tgrhRIdHaW" role="1tU5fm">
-                            <ref role="3uigEE" node="491od_XJIzm" resolve="ReloadParticipant" />
-                          </node>
+                        <node concept="37vLTw" id="7ueaBSNtyEG" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1KUoCiqb5Vg" resolve="rp" />
                         </node>
-                        <node concept="37vLTw" id="75V64qGXCMx" role="1DdaDG">
-                          <ref role="3cqZAo" node="75V64qGXCMv" resolve="participants" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="TDmWw" id="7ueaBSNtyPe" role="TEbGg">
+                    <node concept="3cpWsn" id="7ueaBSNtyPf" role="TDEfY">
+                      <property role="TrG5h" value="ex" />
+                      <node concept="3uibUv" id="7ueaBSNtz0$" role="1tU5fm">
+                        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="7ueaBSNtyPh" role="TDEfX">
+                      <node concept="RRSsy" id="7ueaBSNtz4Z" role="3cqZAp">
+                        <property role="RRSoG" value="error" />
+                        <node concept="37vLTw" id="7ueaBSNtz53" role="RRSow">
+                          <ref role="3cqZAo" node="7ueaBSNtyPf" resolve="ex" />
+                        </node>
+                        <node concept="2YIFZM" id="7ueaBSNtzeo" role="RRSoy">
+                          <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                          <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                          <node concept="Xl_RD" id="7ueaBSNtz51" role="37wK5m">
+                            <property role="Xl_RC" value="Reload participant %s failed" />
+                          </node>
+                          <node concept="2OqwBi" id="7ueaBSNtzUK" role="37wK5m">
+                            <node concept="2OqwBi" id="7ueaBSNtzBu" role="2Oq$k0">
+                              <node concept="37vLTw" id="7ueaBSNtzyD" role="2Oq$k0">
+                                <ref role="3cqZAo" node="1KUoCiqb5Vg" resolve="rp" />
+                              </node>
+                              <node concept="liA8E" id="7ueaBSNtzFy" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="7ueaBSNt$xS" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
+              </node>
+              <node concept="3cpWsn" id="1KUoCiqb5Vg" role="1Duv9x">
+                <property role="TrG5h" value="rp" />
+                <node concept="3uibUv" id="6tgrhRIdHaW" role="1tU5fm">
+                  <ref role="3uigEE" node="491od_XJIzm" resolve="ReloadParticipant" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="75V64qGXCMx" role="1DdaDG">
+                <ref role="3cqZAo" node="75V64qGXCMv" resolve="participants" />
               </node>
             </node>
           </node>
