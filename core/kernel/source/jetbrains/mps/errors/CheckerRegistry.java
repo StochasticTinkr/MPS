@@ -20,16 +20,20 @@ import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.checkers.ModelPropertiesChecker;
 import jetbrains.mps.checkers.ModuleChecker;
+import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.checkers.UsedLanguagesChecker;
+import jetbrains.mps.errors.item.IssueKindReportItem.CheckerCategory;
 import jetbrains.mps.project.validation.StructureChecker;
+import jetbrains.mps.util.containers.MultiMap;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public final class CheckerRegistry {
 
-  private List<IChecker<?, ?>> myCheckers;
+  private MultiMap<CheckerCategory, IChecker<?, ?>> myCheckers;
+  private MultiMap<CheckerCategory, AbstractNodeCheckerInEditor> myEditorCheckers;
 
   public CheckerRegistry() {
     clear();
@@ -42,32 +46,42 @@ public final class CheckerRegistry {
     registerChecker(new StructureChecker().withoutBrokenReferences());
     registerChecker(new ModelPropertiesChecker());
     registerChecker(new ModuleChecker());
+    registerChecker(new RefScopeChecker());
   }
 
   public void registerChecker(IChecker<?, ?> checker) {
-    myCheckers.add(checker);
+    myCheckers.putValue(checker.getCategory(), checker);
   }
 
   public void unregisterChecker(IChecker<?, ?> checker) {
-    myCheckers.remove(checker);
+    myCheckers.removeValue(checker.getCategory(), checker);
+  }
+
+  public void registerEditorChecker(AbstractNodeCheckerInEditor checker) {
+    myEditorCheckers.putValue(checker.getCategory(), checker);
+  }
+
+  public void unregisterEditorChecker(AbstractNodeCheckerInEditor checker) {
+    myEditorCheckers.removeValue(checker.getCategory(), checker);
   }
 
   public List<IChecker<?, ?>> getCheckers() {
-    return new ArrayList<>(myCheckers);
+    return new ArrayList<>(myCheckers.values());
   }
 
   public List<AbstractNodeCheckerInEditor> getEditorCheckers() {
-    List<AbstractNodeCheckerInEditor> result = new ArrayList<>();
-    for (IChecker<?, ?> checker: myCheckers){
-      if (checker instanceof AbstractNodeCheckerInEditor) {
+    ArrayList<AbstractNodeCheckerInEditor> result = new ArrayList<>(myEditorCheckers.values());
+    for (IChecker<?, ?> checker: myCheckers.values()){
+      if (checker instanceof AbstractNodeCheckerInEditor && myEditorCheckers.get(checker.getCategory()).isEmpty()) {
         result.add((AbstractNodeCheckerInEditor) checker);
       }
     }
     return result;
   }
 
-  public void clear() {
-    myCheckers = new ArrayList<>();
+  private void clear() {
+    myCheckers = new MultiMap<>();
+    myEditorCheckers = new MultiMap<>();
     registerCoreCheckers();
   }
 

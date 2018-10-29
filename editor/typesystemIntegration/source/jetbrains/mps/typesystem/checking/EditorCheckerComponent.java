@@ -25,23 +25,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EditorCheckerComponent implements ApplicationComponent {
-  private List<IChecker<?, ?>> myCheckers;
+  private TypesystemChecker myTypesystemChecker;
+  private RefScopeCheckerInEditor myRefScopeCheckerInEditor;
 
   @Override
   public void initComponent() {
-    myCheckers = new ArrayList<>();
-    myCheckers.add(new RefScopeCheckerInEditor());
-    myCheckers.add(new TypesystemChecker());
-    for (IChecker<?, ?> checker: myCheckers) {
-      ValidationSettings.getInstance().getCheckerRegistry().registerChecker(checker);
-    }
+    myRefScopeCheckerInEditor = new RefScopeCheckerInEditor();
+    myTypesystemChecker = new TypesystemChecker();
+    ValidationSettings.getInstance().getCheckerRegistry().registerChecker(myTypesystemChecker);
+    ValidationSettings.getInstance().getCheckerRegistry().registerEditorChecker(myRefScopeCheckerInEditor);
   }
 
   @Override
   public void disposeComponent() {
-    for (IChecker<?, ?> checker: myCheckers) {
-      ValidationSettings.getInstance().getCheckerRegistry().unregisterChecker(checker);
-    }
-    myCheckers = null;
+    ValidationSettings.getInstance().getCheckerRegistry().unregisterChecker(myTypesystemChecker);
+    ValidationSettings.getInstance().getCheckerRegistry().unregisterEditorChecker(myRefScopeCheckerInEditor);
   }
 }

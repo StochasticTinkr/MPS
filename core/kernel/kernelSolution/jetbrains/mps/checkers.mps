@@ -3985,8 +3985,8 @@
       </node>
       <node concept="3clFbS" id="dTvp$YV2le" role="3clF47">
         <node concept="3clFbF" id="dTvp$YV3L9" role="3cqZAp">
-          <node concept="10M0yZ" id="dTvp$YV3NZ" role="3clFbG">
-            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CONSTRAINTS" resolve="CONSTRAINTS" />
+          <node concept="10M0yZ" id="5VulHRveene" role="3clFbG">
+            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.REFERENCE_SCOPES" resolve="REFERENCE_SCOPES" />
             <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
           </node>
         </node>
@@ -6218,6 +6218,13 @@
       <node concept="3Tm1VV" id="3xfDcbRdDBc" role="1B3o_S" />
       <node concept="3uibUv" id="dQllQpifd$" role="3clF45">
         <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
+      <node concept="P$JXv" id="5VulHRveIUQ" role="lGtFl">
+        <node concept="TZ5HA" id="5VulHRveIUR" role="TZ5H$">
+          <node concept="1dT_AC" id="5VulHRveIUS" role="1dT_Ay">
+            <property role="1dT_AB" value="Checker's category can be not unique but checkers with the same category are treated as inseparable group" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="3RAxiQnF7LR" role="jymVt" />

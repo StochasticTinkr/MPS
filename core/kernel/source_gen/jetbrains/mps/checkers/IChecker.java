@@ -22,6 +22,9 @@ import org.jetbrains.mps.util.DescendantsTreeIterator;
  * Custom checker should extend one of the following base classes depending on preciseness of the checker
  */
 public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChecker<O, I> {
+  /**
+   * Checker's category can be not unique but checkers with the same category are treated as inseparable group
+   */
   IssueKindReportItem.CheckerCategory getCategory();
 
 

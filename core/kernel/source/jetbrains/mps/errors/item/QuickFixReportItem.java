@@ -22,7 +22,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public interface QuickFixReportItem extends ReportItem {
 
@@ -33,15 +35,14 @@ public interface QuickFixReportItem extends ReportItem {
     @Nullable
     public Q getAutoApplicable(ReportItem reportItem) {
       Collection<Q> allQuickfixes = this.getCollection(reportItem);
-      if (allQuickfixes.size() != 1) {
+      List<Q> autoApplicable = allQuickfixes.stream().filter(QuickFixBase::isExecutedImmediately).collect(Collectors.toList());
+      if (autoApplicable.isEmpty()) {
         return null;
       }
-      Q singleQuickFix = allQuickfixes.iterator().next();
-      if (singleQuickFix.isExecutedImmediately()) {
-        return singleQuickFix;
-      } else {
-        return null;
+      if (autoApplicable.size() > 1) {
+        throw new IllegalStateException("More that one autoapplicable quickfix for " + this);
       }
+      return autoApplicable.get(0);
     }
   }
 

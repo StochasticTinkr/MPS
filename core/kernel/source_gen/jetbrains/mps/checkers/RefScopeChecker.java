@@ -33,7 +33,7 @@ public class RefScopeChecker extends AbstractNodeCheckerInEditor implements IChe
   }
   @Override
   public IssueKindReportItem.CheckerCategory getCategory() {
-    return IssueKindReportItem.CONSTRAINTS;
+    return IssueKindReportItem.REFERENCE_SCOPES;
   }
   @Override
   public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
