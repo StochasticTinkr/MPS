@@ -161,7 +161,7 @@ public class JpsSolutionIdea extends Solution {
           File outputDir = JpsJavaExtensionService.getInstance().getOutputDirectory(myModule, false);
           if (outputDir == null) return null;
           MPSCompilerUtil.debug(myCompileContext, " ClassesGen from module " + outputDir.getPath());
-          return FileSystem.getInstance().getFileByPath(outputDir.getPath());
+          return FileSystem.getInstance().getFile(outputDir.getPath());
         }
       };
     }

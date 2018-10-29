@@ -39,7 +39,7 @@ public class ProjectStructureTest extends UsefulTestCase {
     List<String> damaged = new ArrayList<>();
 
     for (String libFile : MODULE_LIBRAIES) {
-      IFile file = FileSystem.getInstance().getFileByPath(LIBRARIES_PREFIX + libFile);
+      IFile file = FileSystem.getInstance().getFile(LIBRARIES_PREFIX + libFile);
       String contents = IFileUtil.getTextContents(file);
       if (!contents.contains(MARKER)) {
         damaged.add(libFile);

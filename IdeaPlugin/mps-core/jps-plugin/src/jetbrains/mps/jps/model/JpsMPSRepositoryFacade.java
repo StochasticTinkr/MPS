@@ -192,7 +192,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       List<ModuleHandle> loadedModules = new ArrayList<ModuleHandle>();
       List<IFile> filesToLoad = new ArrayList<>();
       for (String path: languages.split(";")) {
-        IFile ipath = FileSystem.getInstance().getFileByPath(path);
+        IFile ipath = FileSystem.getInstance().getFile(path);
         filesToLoad.add(ipath);
       }
       new FileRefresh(filesToLoad).run();

@@ -86,7 +86,7 @@ public abstract class MPSSingleRootFileViewProvider extends SingleRootFileViewPr
     if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE) {
       return null;
     }
-    final IFile modelFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+    final IFile modelFile = FileSystem.getInstance().getFile(virtualFile.getPath());
 
     SRepository repository = ProjectHelper.getProjectRepository(getManager().getProject());
     FileSourcePsiFile psiFile = new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<FileSourcePsiFile>() {

@@ -44,7 +44,7 @@ public class ModelDataRule implements GetDataRule {
       return null;
     }
 
-    return SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(project)).findModel(FileSystem.getInstance().getFileByPath(virtualFile.getPath()));
+    return SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(project)).findModel(FileSystem.getInstance().getFile(virtualFile.getPath()));
   }
 }
 

@@ -95,7 +95,7 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
   @NotNull
   @Override
   public IFile getFileToListen() {
-    return FileSystem.getInstance().getFileByPath(getPath());
+    return FileSystem.getInstance().getFile(getPath());
   }
 
   @Override

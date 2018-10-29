@@ -50,7 +50,7 @@ public class ModelsDataRule implements GetDataRule {
 
     List<SModel> result = new ArrayList<SModel>();
     for (VirtualFile f : virtualFiles) {
-      final SModel model = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(project)).findModel(FileSystem.getInstance().getFileByPath(f.getPath()));
+      final SModel model = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(project)).findModel(FileSystem.getInstance().getFile(f.getPath()));
       if (model != null) {
         result.add(model);
       }
