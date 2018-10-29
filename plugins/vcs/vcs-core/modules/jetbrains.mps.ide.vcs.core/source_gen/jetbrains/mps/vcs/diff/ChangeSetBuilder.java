@@ -117,6 +117,15 @@ public class ChangeSetBuilder {
     }
   }
 
+  public void buildForRoot(@Nullable SNode oldNode, @Nullable SNode newNode) {
+    if (SNodeOperations.getContainingRoot(oldNode) != oldNode) {
+      oldNode = null;
+    }
+    if (SNodeOperations.getContainingRoot(newNode) != newNode) {
+      newNode = null;
+    }
+    buildForNode(oldNode, newNode);
+  }
   public void buildForNode(@Nullable final SNode oldNode, @Nullable SNode newNode) {
     assert oldNode != null || newNode != null;
 
@@ -191,9 +200,9 @@ public class ChangeSetBuilder {
     Iterable<D> added;
     Iterable<D> deleted;
     {
-      Tuples._2<Iterable<D>, Iterable<D>> _tmp_nbyrtw_c0w = getAddedAndDeleted(referencesExtractor);
-      added = _tmp_nbyrtw_c0w._0();
-      deleted = _tmp_nbyrtw_c0w._1();
+      Tuples._2<Iterable<D>, Iterable<D>> _tmp_nbyrtw_c0x = getAddedAndDeleted(referencesExtractor);
+      added = _tmp_nbyrtw_c0x._0();
+      deleted = _tmp_nbyrtw_c0x._1();
     }
     ListSequence.fromList(myNewChanges).addSequence(Sequence.fromIterable(added).select(new ISelector<D, DependencyChange>() {
       public DependencyChange select(D r) {
@@ -279,7 +288,7 @@ public class ChangeSetBuilder {
       }
     });
     for (SNodeId rootId : SetSequence.fromSetWithValues(new HashSet<SNodeId>(), allRootIds)) {
-      buildForNode(myOldModel.getNode(rootId), myNewModel.getNode(rootId));
+      buildForRoot(myOldModel.getNode(rootId), myNewModel.getNode(rootId));
     }
 
     buildForMetadata();
@@ -310,7 +319,7 @@ public class ChangeSetBuilder {
   }
 
   private <D> Tuples._2<Iterable<D>, Iterable<D>> getAddedAndDeleted(_FunctionTypes._return_P1_E0<? extends Iterable<D>, ? super SModelBase> itemsExtractor) {
-    return getAddedAndDeleted(itemsExtractor.invoke(as_nbyrtw_a0a0a0qb(myOldModel, SModelBase.class)), itemsExtractor.invoke(as_nbyrtw_a0b0a0qb(myNewModel, SModelBase.class)));
+    return getAddedAndDeleted(itemsExtractor.invoke(as_nbyrtw_a0a0a0rb(myOldModel, SModelBase.class)), itemsExtractor.invoke(as_nbyrtw_a0b0a0rb(myNewModel, SModelBase.class)));
   }
 
   public static ModelChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
@@ -384,10 +393,10 @@ public class ChangeSetBuilder {
     }
     return null;
   }
-  private static <T> T as_nbyrtw_a0a0a0qb(Object o, Class<T> type) {
+  private static <T> T as_nbyrtw_a0a0a0rb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_nbyrtw_a0b0a0qb(Object o, Class<T> type) {
+  private static <T> T as_nbyrtw_a0b0a0rb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
