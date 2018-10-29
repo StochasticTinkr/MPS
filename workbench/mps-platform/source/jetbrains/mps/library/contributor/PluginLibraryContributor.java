@@ -19,6 +19,7 @@ import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.LanguageLibrary;
+import jetbrains.mps.vfs.FileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -33,9 +34,9 @@ import java.util.Set;
  */
 public final class PluginLibraryContributor implements LibraryContributor {
   private static final Logger LOG = LogManager.getLogger(PluginLibraryContributor.class);
-  private final jetbrains.mps.vfs.openapi.FileSystem myFileSystem;
+  private final FileSystem myFileSystem;
 
-  public PluginLibraryContributor(jetbrains.mps.vfs.openapi.FileSystem fileSystem) {
+  public PluginLibraryContributor(FileSystem fileSystem) {
     myFileSystem = fileSystem;
   }
 

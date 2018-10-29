@@ -73,7 +73,7 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
     super.attach();
     SModule module = getModule();
     if (module instanceof AbstractModule) {
-      jetbrains.mps.vfs.openapi.FileSystem fs = ((AbstractModule) module).getFileSystem();
+      FileSystem fs = ((AbstractModule) module).getFileSystem();
       if (fs instanceof CachingFileSystem) {
         ((CachingFileSystem) fs).addListener(this);
       }
@@ -84,7 +84,7 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
   public void dispose() {
     SModule module = getModule();
     if (module instanceof AbstractModule) {
-      jetbrains.mps.vfs.openapi.FileSystem fs = ((AbstractModule) module).getFileSystem();
+      FileSystem fs = ((AbstractModule) module).getFileSystem();
       if (fs instanceof CachingFileSystem) {
         ((CachingFileSystem) fs).removeListener(this);
       }

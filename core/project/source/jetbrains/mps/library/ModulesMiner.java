@@ -486,7 +486,7 @@ public final class ModulesMiner {
   }
 
   // part of processExcludes() with common code for any module type
-  private void processModuleExcludes(jetbrains.mps.vfs.openapi.FileSystem fileSystem, ModuleDescriptor descriptor) {
+  private void processModuleExcludes(FileSystem fileSystem, ModuleDescriptor descriptor) {
     String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(descriptor);
     if (generatorOutputPath != null) {
       IFile genOutputFile = fileSystem.getFile(generatorOutputPath);
@@ -531,7 +531,7 @@ public final class ModulesMiner {
     if (descriptor == null || descriptorFile.isReadOnly()) {
       return;
     }
-    jetbrains.mps.vfs.openapi.FileSystem fileSystem = descriptorFile.getFileSystem();
+    FileSystem fileSystem = descriptorFile.getFileSystem();
     processModuleExcludes(fileSystem, descriptor);
 
     if (descriptor instanceof LanguageDescriptor) {
@@ -582,7 +582,7 @@ public final class ModulesMiner {
     } else {
       // FIXME any idea why the code below mangles path instead of going up/down with regular FS getParent/getDescendant operations?
       //       I suspect it's just incomplete refactoring in 4c5b44bc9e1242d4e4399dc816e5caa01855dc00, right?
-      jetbrains.mps.vfs.openapi.FileSystem fileSystem = deploymentFile.getFileSystem();
+      FileSystem fileSystem = deploymentFile.getFileSystem();
       String deploymentPath = deploymentFile.getPath();
       String moduleJarPath = deploymentPath.substring(0, deploymentPath.length() - SLASH_META_INF_MODULE_XML.length());
       IFile moduleJar = fileSystem.getFile(moduleJarPath);

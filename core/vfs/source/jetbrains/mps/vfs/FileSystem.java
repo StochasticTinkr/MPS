@@ -23,7 +23,13 @@ import org.jetbrains.annotations.NotNull;
  * Works as a factory for IFile, also provides file system listening mechanism (e.g. {@link #addListener(FileSystemListener)}.
  * Currently it is a singleton; will be moved to the core components
  */
-public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
+public interface FileSystem {
+  /**
+   * Creates an appropriate IFile from the path parameter,
+   * depending on the current fs provider and paths itself
+   */
+  @NotNull IFile getFile(@NotNull String path);
+
   /**
    * @deprecated use it only when you really do not care about the file system implementation. Otherwise consider using context {@link IFile#getFileSystem()};
    * This singleton (as always) will be available via core MPSComponents some time later.

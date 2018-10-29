@@ -16,6 +16,7 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.iterable.IterableEnumeration;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
@@ -31,7 +32,7 @@ import java.util.List;
 public abstract class RealClassPathItem extends AbstractClassPathItem {
   private static Logger LOG = LogManager.getLogger(RealClassPathItem.class);
 
-  private static final jetbrains.mps.vfs.openapi.FileSystem FS = IoFileSystem.INSTANCE;
+  private static final FileSystem FS = IoFileSystem.INSTANCE;
 
   public abstract String getPath();
 

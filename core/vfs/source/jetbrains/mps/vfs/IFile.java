@@ -79,7 +79,7 @@ public interface IFile {
   /**
    * @return the file system which this file belongs to
    */
-  @NotNull jetbrains.mps.vfs.openapi.FileSystem getFileSystem();
+  @NotNull FileSystem getFileSystem();
 
   /**
    * @return simply the last name of the file (the furthest one)

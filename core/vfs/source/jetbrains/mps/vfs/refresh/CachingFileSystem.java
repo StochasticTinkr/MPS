@@ -24,7 +24,7 @@ import java.util.Collection;
  *
  * Created by apyshkin on 6/20/16.
  */
-public interface CachingFileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
+public interface CachingFileSystem extends jetbrains.mps.vfs.FileSystem {
   /**
    * group refresh
    */
