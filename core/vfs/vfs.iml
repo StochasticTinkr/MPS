@@ -16,5 +16,6 @@
     <orderEntry type="module" module-name="logging" />
     <orderEntry type="module" module-name="util-core" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
+    <orderEntry type="module" module-name="components" />
   </component>
 </module>
