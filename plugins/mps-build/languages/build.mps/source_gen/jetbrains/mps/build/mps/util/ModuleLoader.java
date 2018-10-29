@@ -5,7 +5,7 @@ package jetbrains.mps.build.mps.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.vfs.openapi.FileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
@@ -72,12 +72,12 @@ public final class ModuleLoader {
     myVisibleModules.collect();
     myMsgHandler = msgHandler;
     // TODO enforce outer code to specify FS to avoid singleton access 
-    myFS = jetbrains.mps.vfs.FileSystem.getInstance();
+    myFS = FileSystem.getInstance();
     // TODO need access to plafrom to obtain DescriptorIOFacade instance, or supply from caller. 
     myDescriptorIO = DescriptorIOFacade.getInstance();
   }
 
-  public ModuleLoader useFileSystem(jetbrains.mps.vfs.FileSystem fs) {
+  public ModuleLoader useFileSystem(FileSystem fs) {
     myFS = fs;
     return this;
   }

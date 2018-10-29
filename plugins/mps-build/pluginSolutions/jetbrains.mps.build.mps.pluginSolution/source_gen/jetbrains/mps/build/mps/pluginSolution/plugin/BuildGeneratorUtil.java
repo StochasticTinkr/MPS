@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.vfs.openapi.FileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 
 /*package*/ class BuildGeneratorUtil {
