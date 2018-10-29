@@ -7737,10 +7737,10 @@
           <property role="Xl_RC" value="asm-all-7.0-beta.jar" />
         </node>
         <node concept="Xl_RD" id="6gjr9XnnBRi" role="37wK5m">
-          <property role="Xl_RC" value="xstream-1.4.8.jar" />
+          <property role="Xl_RC" value="xstream-1.4.10.jar" />
         </node>
         <node concept="Xl_RD" id="6gjr9XnnBRe" role="37wK5m">
-          <property role="Xl_RC" value="guava-17.0.jar" />
+          <property role="Xl_RC" value="guava-25.1-jre.jar" />
         </node>
         <node concept="Xl_RD" id="3R9KYLtnFc7" role="37wK5m">
           <property role="Xl_RC" value="jdom.jar" />
@@ -7753,24 +7753,6 @@
         </node>
         <node concept="Xl_RD" id="3R9KYLtnFca" role="37wK5m">
           <property role="Xl_RC" value="annotations.jar" />
-        </node>
-      </node>
-    </node>
-    <node concept="Wx3nA" id="346FwSU$JnM" role="jymVt">
-      <property role="TrG5h" value="svnJars" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="346FwSU$JnN" role="1B3o_S" />
-      <node concept="A3Dl8" id="346FwSU$JnO" role="1tU5fm">
-        <node concept="17QB3L" id="346FwSU$JnP" role="A3Ik2" />
-      </node>
-      <node concept="2YIFZM" id="346FwSU$JnQ" role="33vP2m">
-        <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-        <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-        <node concept="Xl_RD" id="346FwSU$JnR" role="37wK5m">
-          <property role="Xl_RC" value="svnkit.jar" />
-        </node>
-        <node concept="Xl_RD" id="346FwSU$JnS" role="37wK5m">
-          <property role="Xl_RC" value="sequence-library.jar" />
         </node>
       </node>
     </node>
@@ -8619,97 +8601,6 @@
       </node>
       <node concept="3Tm6S6" id="1mOPdaeR2jD" role="1B3o_S" />
     </node>
-    <node concept="3clFb_" id="7cEItjJE$38" role="jymVt">
-      <property role="TrG5h" value="getSvnJars" />
-      <property role="DiZV1" value="false" />
-      <node concept="A3Dl8" id="346FwSU$Jpf" role="3clF45">
-        <node concept="17QB3L" id="346FwSU$Jph" role="A3Ik2" />
-      </node>
-      <node concept="3clFbS" id="346FwSU$Jnt" role="3clF47">
-        <node concept="3cpWs8" id="346FwSU$Jnv" role="3cqZAp">
-          <node concept="3cpWsn" id="346FwSU$Jnw" role="3cpWs9">
-            <property role="TrG5h" value="svnPlugin" />
-            <node concept="3uibUv" id="346FwSU$Jnx" role="1tU5fm">
-              <ref role="3uigEE" to="ctgy:~IdeaPluginDescriptor" resolve="IdeaPluginDescriptor" />
-            </node>
-            <node concept="2YIFZM" id="346FwSU$Jny" role="33vP2m">
-              <ref role="37wK5l" to="ctgy:~PluginManager.getPlugin(com.intellij.openapi.extensions.PluginId):com.intellij.ide.plugins.IdeaPluginDescriptor" resolve="getPlugin" />
-              <ref role="1Pybhc" to="ctgy:~PluginManager" resolve="PluginManager" />
-              <node concept="2YIFZM" id="346FwSU$Jnz" role="37wK5m">
-                <ref role="1Pybhc" to="9ti4:~PluginId" resolve="PluginId" />
-                <ref role="37wK5l" to="9ti4:~PluginId.getId(java.lang.String):com.intellij.openapi.extensions.PluginId" resolve="getId" />
-                <node concept="Xl_RD" id="346FwSU$Jn$" role="37wK5m">
-                  <property role="Xl_RC" value="Subversion" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="346FwSU$JnA" role="3cqZAp">
-          <node concept="3clFbS" id="346FwSU$JnB" role="3clFbx">
-            <node concept="3cpWs6" id="346FwSU$JnX" role="3cqZAp">
-              <node concept="2OqwBi" id="346FwSU$Jof" role="3cqZAk">
-                <node concept="37vLTw" id="2BHiRxeofqZ" role="2Oq$k0">
-                  <ref role="3cqZAo" node="346FwSU$JnM" resolve="svnJars" />
-                </node>
-                <node concept="3$u5V9" id="346FwSU$Jol" role="2OqNvi">
-                  <node concept="1bVj0M" id="346FwSU$Jom" role="23t8la">
-                    <node concept="3clFbS" id="346FwSU$Jon" role="1bW5cS">
-                      <node concept="3clFbF" id="346FwSU$Joq" role="3cqZAp">
-                        <node concept="3cpWs3" id="346FwSU$Jp2" role="3clFbG">
-                          <node concept="37vLTw" id="2BHiRxgl6vs" role="3uHU7w">
-                            <ref role="3cqZAo" node="346FwSU$Joo" resolve="it" />
-                          </node>
-                          <node concept="3cpWs3" id="346FwSU$Jp4" role="3uHU7B">
-                            <node concept="3cpWs3" id="346FwSU$Jp5" role="3uHU7B">
-                              <node concept="3cpWs3" id="346FwSU$Jp6" role="3uHU7B">
-                                <node concept="2OqwBi" id="346FwSU$Jp7" role="3uHU7B">
-                                  <node concept="37vLTw" id="3GM_nagTshM" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="346FwSU$Jnw" resolve="svnPlugin" />
-                                  </node>
-                                  <node concept="liA8E" id="346FwSU$Jp9" role="2OqNvi">
-                                    <ref role="37wK5l" to="ctgy:~IdeaPluginDescriptor.getPath():java.io.File" resolve="getPath" />
-                                  </node>
-                                </node>
-                                <node concept="10M0yZ" id="346FwSU$Jpa" role="3uHU7w">
-                                  <ref role="1PxDUh" to="guwi:~File" resolve="File" />
-                                  <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
-                                </node>
-                              </node>
-                              <node concept="Xl_RD" id="346FwSU$Jpb" role="3uHU7w">
-                                <property role="Xl_RC" value="lib" />
-                              </node>
-                            </node>
-                            <node concept="10M0yZ" id="346FwSU$Jpc" role="3uHU7w">
-                              <ref role="1PxDUh" to="guwi:~File" resolve="File" />
-                              <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rh6nW" id="346FwSU$Joo" role="1bW2Oz">
-                      <property role="TrG5h" value="it" />
-                      <node concept="2jxLKc" id="346FwSU$Jop" role="1tU5fm" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3y3z36" id="346FwSU$JnF" role="3clFbw">
-            <node concept="10Nm6u" id="346FwSU$JnI" role="3uHU7w" />
-            <node concept="37vLTw" id="3GM_nagTs2Z" role="3uHU7B">
-              <ref role="3cqZAo" node="346FwSU$Jnw" resolve="svnPlugin" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="346FwSU$Jr0" role="3cqZAp">
-          <node concept="10Nm6u" id="346FwSU$Jr2" role="3cqZAk" />
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="346FwSU$Jnu" role="1B3o_S" />
-    </node>
     <node concept="3clFb_" id="7cEItjJE$3d" role="jymVt">
       <property role="TrG5h" value="getVCSCorePluginPath" />
       <property role="DiZV1" value="false" />
@@ -8992,18 +8883,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="346FwSU$Jpm" role="3cqZAp">
-          <node concept="2OqwBi" id="346FwSU$JpA" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagT_Gf" role="2Oq$k0">
-              <ref role="3cqZAo" node="49nCEysY23F" resolve="classpathItems" />
-            </node>
-            <node concept="X8dFx" id="346FwSU$JpG" role="2OqNvi">
-              <node concept="1rXfSq" id="4hiugqyyZTi" role="25WWJ7">
-                <ref role="37wK5l" node="7cEItjJE$38" resolve="getSvnJars" />
               </node>
             </node>
           </node>
