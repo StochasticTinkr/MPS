@@ -36,6 +36,7 @@ import jetbrains.mps.extapi.persistence.DefaultSourceRoot;
 import java.util.Iterator;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
@@ -153,7 +154,7 @@ public class Utils {
     mr.attach();
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-    for (SModel md : ListSequence.fromList(mr.getModels())) {
+    for (SModel md : CollectionSequence.fromCollection(mr.getModels())) {
       ListSequence.fromList(models).addElement(md);
     }
 

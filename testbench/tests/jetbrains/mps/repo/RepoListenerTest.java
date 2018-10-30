@@ -212,7 +212,7 @@ public class RepoListenerTest implements EnvironmentAware {
     project.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        solution.unregisterModel((SModelBase) solution.getModels().get(0));
+        solution.unregisterModel((SModelBase) solution.getModels().iterator().next());
       }
     });
     l.checkModelEvents(2, 1, 1);

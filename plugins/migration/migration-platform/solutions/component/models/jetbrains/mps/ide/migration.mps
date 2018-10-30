@@ -12628,7 +12628,7 @@
               <ref role="3cqZAo" node="6nqztBEtja0" resolve="module" />
             </node>
             <node concept="liA8E" id="27_Cq_TPOdP" role="2OqNvi">
-              <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.List" resolve="getModels" />
+              <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.Collection" resolve="getModels" />
             </node>
           </node>
         </node>

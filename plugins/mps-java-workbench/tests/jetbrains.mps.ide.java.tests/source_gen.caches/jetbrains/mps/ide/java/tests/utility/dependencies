@@ -49,6 +49,7 @@
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.YetUnknownResolver" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" />
     <classNode dependClassName="jetbrains.mps.ide.java.tests.utility.NodePatcher" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

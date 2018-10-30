@@ -54,8 +54,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import static jetbrains.mps.extapi.module.SModuleBase.MODEL_BY_NAME_COMPARATOR;
-
 /**
  * This model root is responsible for loading models from the source roots
  * as well as for creating models and register them in itself.
@@ -173,7 +171,6 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
     if (result.isEmpty()) {
       LOG.warn("Models have not been found within the " + sourceRoot);
     }
-    result.sort(MODEL_BY_NAME_COMPARATOR);
     return result;
   }
 

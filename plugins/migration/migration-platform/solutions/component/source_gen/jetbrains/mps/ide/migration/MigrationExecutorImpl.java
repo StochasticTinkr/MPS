@@ -21,7 +21,7 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringScript;
@@ -33,6 +33,7 @@ import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class MigrationExecutorImpl implements MigrationExecutor {
@@ -96,7 +97,7 @@ public class MigrationExecutorImpl implements MigrationExecutor {
     module.getModuleDescriptor().getLanguageVersions().put(fromLanguage, toVersion);
     module.setChanged();
 
-    for (SModel model : ListSequence.fromList(module.getModels())) {
+    for (SModel model : CollectionSequence.fromCollection(module.getModels())) {
       if (model.isReadOnly()) {
         continue;
       }

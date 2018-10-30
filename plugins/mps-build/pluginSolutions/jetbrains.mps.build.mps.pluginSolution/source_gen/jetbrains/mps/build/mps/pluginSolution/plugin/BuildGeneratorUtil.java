@@ -5,7 +5,7 @@ package jetbrains.mps.build.mps.pluginSolution.plugin;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.MPSProject;
@@ -19,7 +19,7 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
   }
 
   public static SModel createModel(SModelName modelName, Solution solution) {
-    for (SModel descriptor : ListSequence.fromList(solution.getModels())) {
+    for (SModel descriptor : CollectionSequence.fromCollection(solution.getModels())) {
       if (descriptor.getName().equals(modelName)) {
         return descriptor;
       }

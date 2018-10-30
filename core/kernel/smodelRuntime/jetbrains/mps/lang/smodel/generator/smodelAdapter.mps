@@ -16520,8 +16520,8 @@
         <node concept="3cpWs8" id="1KHvivZHmfB" role="3cqZAp">
           <node concept="3cpWsn" id="1KHvivZHmfC" role="3cpWs9">
             <property role="TrG5h" value="models" />
-            <node concept="_YKpA" id="1KHvivZHmfD" role="1tU5fm">
-              <node concept="3uibUv" id="1KHvivZHmfE" role="_ZDj9">
+            <node concept="3vKaQO" id="4kNEVvlkStA" role="1tU5fm">
+              <node concept="3uibUv" id="4kNEVvlkStC" role="3O5elw">
                 <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
               </node>
             </node>
@@ -16537,7 +16537,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1KHvivZHmfK" role="2OqNvi">
-                <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.List" resolve="getModels" />
+                <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.Collection" resolve="getModels" />
               </node>
             </node>
           </node>

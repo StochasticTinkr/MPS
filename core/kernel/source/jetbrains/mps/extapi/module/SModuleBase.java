@@ -29,6 +29,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -39,7 +41,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class SModuleBase implements SModule {
   private static final Logger LOG = LogManager.getLogger(SModuleBase.class);
-  public static final Comparator<SModel> MODEL_BY_NAME_COMPARATOR = Comparator.comparing(m -> m.getName().getValue());
 
   private volatile SRepository myRepository = null;
 
@@ -58,12 +59,9 @@ public abstract class SModuleBase implements SModule {
 
   @Override
   @NotNull
-  public final List<SModel> getModels() {
+  public final Collection<SModel> getModels() {
     assertCanRead();
-
-    ArrayList<SModel> models = new ArrayList<>(myModels);
-    models.sort(MODEL_BY_NAME_COMPARATOR);
-    return models;
+    return Collections.unmodifiableSet(myModels);
   }
 
   public void attach(@NotNull SRepository repo) {
