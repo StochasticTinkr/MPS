@@ -115,13 +115,13 @@ public class ModelCheckerBuilder {
   private IAbstractChecker<ModelCheckerBuilder.ItemsToCheck, IssueKindReportItem> createChecker(final List<IChecker<SModel, ? extends IssueKindReportItem>> specificModelCheckers, final List<IChecker<SModule, ? extends IssueKindReportItem>> specificModuleCheckers) {
     return new IAbstractChecker<ModelCheckerBuilder.ItemsToCheck, IssueKindReportItem>() {
       public void check(ModelCheckerBuilder.ItemsToCheck itemsToCheck, SRepository repository, Consumer<? super IssueKindReportItem> errorCollector, ProgressMonitor monitor) {
-        List<SModule> modules = itemsToCheck.modules;
-        modules = ListSequence.fromList(modules).translate(new ITranslator2<SModule, SModule>() {
+        List<SModule> modules = ListSequence.fromList(itemsToCheck.modules).translate(new ITranslator2<SModule, SModule>() {
           public Iterable<SModule> translate(SModule it) {
             return myModelExtractor.getSubModules(it);
           }
         }).toListSequence();
-        int work = ListSequence.fromList(itemsToCheck.models).count() + ListSequence.fromList(itemsToCheck.modules).count() + ListSequence.fromList(modules).translate(new ITranslator2<SModule, SModel>() {
+        List<SModel> models = itemsToCheck.models;
+        int work = ListSequence.fromList(models).count() + ListSequence.fromList(modules).count() + ListSequence.fromList(modules).translate(new ITranslator2<SModule, SModel>() {
           public Iterable<SModel> translate(SModule it) {
             return myModelExtractor.getModels(it);
           }
@@ -140,7 +140,7 @@ public class ModelCheckerBuilder {
             }
           }));
 
-          for (SModel model : ListSequence.fromList(itemsToCheck.models)) {
+          for (SModel model : ListSequence.fromList(models)) {
             generalModelChecker.check(model, repository, errorCollector, monitor.subTask(1, SubProgressKind.REPLACING));
             if (monitor.isCanceled()) {
               break;
