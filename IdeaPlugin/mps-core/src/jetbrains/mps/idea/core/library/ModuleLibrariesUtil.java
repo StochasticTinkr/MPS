@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.idea.core.library;
 
 import com.intellij.openapi.project.Project;
@@ -33,7 +32,6 @@ import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
-import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -94,10 +92,16 @@ public class ModuleLibrariesUtil {
     repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (IFile moduleDescriptor : moduleXmls) {
-          SModule moduleByFile = ModuleFileTracker.getInstance().getModuleByFile(moduleDescriptor);
-          if (moduleByFile != null) {
-            modules.add(moduleByFile.getModuleReference());
+        for (SModule m : repository.getModules()) {
+          if (false == m instanceof AbstractModule) {
+            continue;
+          }
+          // Indeed, we don't check for xml file of a source module descriptor (available through DeploymentDescriptor). The reason is
+          // we care about deployed modules only, therefore expect moduleXmls to be filled only with 'module.xml' files of deployed modules and
+          // straightforward IFile match against repository module's files shall suffice.
+          final IFile moduleDescriptorFile = ((AbstractModule) m).getDescriptorFile();
+          if (moduleDescriptorFile != null && moduleXmls.contains(moduleDescriptorFile)) {
+            modules.add(m.getModuleReference());
           }
         }
       }
