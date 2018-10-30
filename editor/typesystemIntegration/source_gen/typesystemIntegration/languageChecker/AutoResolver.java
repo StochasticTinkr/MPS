@@ -27,6 +27,7 @@ import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.HashSet;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
@@ -95,8 +96,7 @@ public class AutoResolver extends BaseEventProcessingEditorChecker {
     final boolean wasForceAutofix = myForceAutofix;
     myForceAutofix = false;
 
-    myProject.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         myProject.getModelAccess().executeUndoTransparentCommand(new Runnable() {
           @Override
