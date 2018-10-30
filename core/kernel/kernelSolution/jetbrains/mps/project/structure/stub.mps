@@ -184,6 +184,12 @@
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
     </language>
+    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <child id="1199569906740" name="parameter" index="1bW2Oz" />
+        <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
       <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
@@ -222,6 +228,10 @@
       </concept>
       <concept id="1883223317721008713" name="jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable" flags="ng" index="JncvC" />
       <concept id="1883223317721107059" name="jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference" flags="nn" index="Jnkvi" />
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
+      <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -244,8 +254,14 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
+        <child id="1204796294226" name="closure" index="23t8la" />
+      </concept>
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
         <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
+      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
+        <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
       <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
         <child id="1153944400369" name="variable" index="2Gsz3X" />
@@ -255,7 +271,12 @@
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
+      <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1205679737078" name="jetbrains.mps.baseLanguage.collections.structure.SortOperation" flags="nn" index="2S7cBI">
+        <child id="1205679832066" name="ascending" index="2S7zOq" />
+      </concept>
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
+      <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
     </language>
   </registry>
   <node concept="312cEu" id="3D5F99qcPzc">
@@ -2711,8 +2732,10 @@
                       <node concept="1rXfSq" id="6mz0KzMFvvs" role="25WWJ7">
                         <ref role="37wK5l" node="eY0iPzBC91" resolve="convert" />
                         <node concept="2OqwBi" id="6mz0KzMFvH5" role="37wK5m">
-                          <node concept="2GrUjf" id="6mz0KzMFvBz" role="2Oq$k0">
-                            <ref role="2Gs0qQ" node="6mz0KzMFsqc" resolve="m" />
+                          <node concept="2JrnkZ" id="2pg58iK$vJc" role="2Oq$k0">
+                            <node concept="2GrUjf" id="6mz0KzMFvBz" role="2JrQYb">
+                              <ref role="2Gs0qQ" node="6mz0KzMFsqc" resolve="m" />
+                            </node>
                           </node>
                           <node concept="liA8E" id="6mz0KzMFvYt" role="2OqNvi">
                             <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
@@ -2734,12 +2757,42 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="6mz0KzMFsUj" role="2GsD0m">
-            <node concept="37vLTw" id="6mz0KzMFsNn" role="2Oq$k0">
-              <ref role="3cqZAo" node="6mz0KzMD31i" resolve="mySourceModule" />
+          <node concept="2OqwBi" id="1kAP50l1c_X" role="2GsD0m">
+            <node concept="1eOMI4" id="1kAP50l1fWb" role="2Oq$k0">
+              <node concept="10QFUN" id="1kAP50l1fWa" role="1eOMHV">
+                <node concept="2OqwBi" id="1kAP50l1fW7" role="10QFUP">
+                  <node concept="37vLTw" id="1kAP50l1fW8" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6mz0KzMD31i" resolve="mySourceModule" />
+                  </node>
+                  <node concept="liA8E" id="1kAP50l1fW9" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
+                  </node>
+                </node>
+                <node concept="A3Dl8" id="1kAP50l1g9Z" role="10QFUM">
+                  <node concept="H_c77" id="1kAP50l1gSj" role="A3Ik2" />
+                </node>
+              </node>
             </node>
-            <node concept="liA8E" id="6mz0KzMFt23" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
+            <node concept="2S7cBI" id="1kAP50l1h4j" role="2OqNvi">
+              <node concept="1bVj0M" id="1kAP50l1h4l" role="23t8la">
+                <node concept="3clFbS" id="1kAP50l1h4m" role="1bW5cS">
+                  <node concept="3clFbF" id="1kAP50l1hbc" role="3cqZAp">
+                    <node concept="2OqwBi" id="1kAP50l1hmH" role="3clFbG">
+                      <node concept="37vLTw" id="1kAP50l1hbb" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1kAP50l1h4n" resolve="it" />
+                      </node>
+                      <node concept="LkI2h" id="1kAP50l1hwv" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="1kAP50l1h4n" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="1kAP50l1h4o" role="1tU5fm" />
+                </node>
+              </node>
+              <node concept="1nlBCl" id="1kAP50l1h4p" role="2S7zOq">
+                <property role="3clFbU" value="true" />
+              </node>
             </node>
           </node>
         </node>
