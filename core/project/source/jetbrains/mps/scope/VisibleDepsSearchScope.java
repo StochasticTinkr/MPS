@@ -19,11 +19,13 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.MergeIterator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -31,33 +33,37 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * {@link org.jetbrains.mps.openapi.module.SearchScope} implementation that uses
  * {@link jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype#VISIBLE 'visible'} module dependencies to build a scope.
  * <p>
- *   Since this class deals with {@code SModule} and {@code SModel}, appropriate model access (at least read) is expected from the caller.
+ * Since this class deals with {@code SModule} and {@code SModel}, appropriate model access (at least read) is expected from the caller.
  * </p>
  * <p>
- *   Note, this class is stateful and doesn't track changes to initial modules, though there's no obligation it's a snapshot either.
- *   At the moment, set of modules is fixed at init time, while set of models is dynamic. This is not given, implementation may change at any moment.
- *   Likely, we will cache everything at init time (depending on observed performance).
+ * Note, this class is stateful and doesn't track changes to initial modules, though there's no obligation it's a snapshot either.
+ * At the moment, set of modules is fixed at init time, while set of models is dynamic. This is not given, implementation may change at any moment.
+ * Likely, we will cache everything at init time (depending on observed performance).
  * </p>
  * {@implNote The reason I don't want to keep scope instance along with an AbstractModule is that there's little value in caching these scopes.
- *            We need to invalidate them in bulk on any module change anyway. Most usage scenarios obtain scope instance, perform some activities and
- *            abandon it afterwards, therefore stateful instance if perfectly fine.
+ * We need to invalidate them in bulk on any module change anyway. Most usage scenarios obtain scope instance, perform some activities and
+ * abandon it afterwards, therefore stateful instance if perfectly fine.
  *
  * @author Artem Tikhomirov
  * @since 2018.2
  */
 public class VisibleDepsSearchScope extends BaseScope {
-  private final Collection<SModule> myModules;
-  private final Collection<SModel> myAccessoriesOfUsedLanguages;
+  @Nullable
+  private SRepository myRepository;
+  private final Set<SModule> myModules;
+  private final Set<SModel> myAccessoriesOfUsedLanguages;
 
   /**
    * @param repository repository to look up dependencies (dependant modules and accessory models of used languages) in. If {@code null},
    *                   scope consists of a module itself only.
-   * @param module source of dependencies to scan
+   * @param module     source of dependencies to scan
    */
   public VisibleDepsSearchScope(@Nullable SRepository repository, @NotNull SModule module) {
     // XXX for a Generator module, is module.getUsedLanguages() sufficient? Shall we include its source language explicitly (just in case it's not
@@ -67,11 +73,12 @@ public class VisibleDepsSearchScope extends BaseScope {
   }
 
   public VisibleDepsSearchScope(@Nullable SRepository repository, Collection<? extends SModule> modules, Collection<SLanguage> usedLanguages) {
+    myRepository = repository;
     // XXX not sure who's responsibility is to look at 'used devkits' and take their exported solutions. It depends whether we treat them 'visible' or not.
-    myModules = new GlobalModuleDependenciesManager(modules).getModules(Deptype.VISIBLE);
+    myModules = IterableUtil.asSet(new GlobalModuleDependenciesManager(modules).getModules(Deptype.VISIBLE));
 
     // accessory models of a language module are part of that module scope
-    ArrayList<SModel> accessoryModels = new ArrayList<>();
+    Set<SModel> accessoryModels = new HashSet<>();
     for (SModule m : modules) {
       if (m instanceof Language) {
         accessoryModels.addAll(((Language) m).getAccessoryModels());
@@ -103,5 +110,25 @@ public class VisibleDepsSearchScope extends BaseScope {
   @Override
   public Iterable<SModel> getModels() {
     return new MergeIterator<>(super.getModels(), myAccessoriesOfUsedLanguages);
+  }
+
+  @Override
+  public SModule resolve(@NotNull SModuleReference reference) {
+    if (myRepository == null) {
+      return super.resolve(reference);
+    }
+
+    SModule resolved = reference.resolve(myRepository);
+    return myModules.contains(resolved) ? resolved : null;
+  }
+
+  @Override
+  public SModel resolve(@NotNull SModelReference reference) {
+    if (myRepository == null) {
+      return super.resolve(reference);
+    }
+
+    SModel resolved = reference.resolve(myRepository);
+    return myModules.contains(resolved.getModule()) || myAccessoriesOfUsedLanguages.contains(resolved) ? resolved : null;
   }
 }
