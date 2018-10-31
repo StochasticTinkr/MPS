@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,6 +71,7 @@ public class RefReductionRuleInterpreted extends ReferenceReductionRuleBase {
       myQuery = queryProvider.getReferenceTargetQuery(myQueryKey);
     }
     /* FIXME should I take resolveInfo of present reference target, like in TemplateNode#getDefaultResolveInfo? */
+    // FIXME the same default is in generated code for RefRedRule, change both or neither.
     final String defaultResolveInfo = null;
     ReferenceInfo_Macro2 ri = new ReferenceInfo_Macro2(myQuery, context, getRuleNode(), defaultResolveInfo);
     new PostponedReference(getApplicableLink(), outputNode, ri).registerWith(context.getEnvironment().getGenerator());
