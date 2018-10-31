@@ -50,6 +50,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -157,7 +158,7 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
 
     getMpsFixture().getModelAccess().runReadAction(() -> {
       SModule module = FacetManager.getInstance(getMpsFixture().getModule()).getFacetByType(MPSFacetType.ID).getSolution();
-      List<SModel> smodels = IterableUtil.asList(module.getModels());
+      List<SModel> smodels = new ArrayList<>(IterableUtil.asCollection(module.getModels()));
       smodels.removeIf(SModelStereotype::isDescriptorModel);
       assertEquals("Exactly one model must be in the idea solution after package rename", 1, smodels.size());
       SModel smodel = smodels.get(0);

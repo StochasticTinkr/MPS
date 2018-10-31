@@ -37,6 +37,11 @@ public class FilesDelta implements IDelta {
     MapSequence.fromMap(this.files).putAll(copyFrom.files);
   }
 
+  public boolean isEmpty() {
+    // tell if there's any information has been recorded with this delta object 
+    return MapSequence.fromMap(files).isEmpty();
+  }
+
   public void written(IFile file) {
     MapSequence.fromMap(files).put(file, FilesDelta.Status.WRITTEN);
   }

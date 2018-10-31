@@ -3512,7 +3512,7 @@
                 <node concept="2pNUuL" id="4Xk_ETUivOu" role="2pNNFR">
                   <property role="2pNUuO" value="name" />
                   <node concept="2pMdtt" id="4Xk_ETUivOw" role="2pMdts">
-                    <property role="2pMdty" value="asm-all-6.2.1.jar" />
+                    <property role="2pMdty" value="asm-all-7.0-beta.jar" />
                   </node>
                 </node>
               </node>

@@ -43,6 +43,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -63,6 +64,8 @@ import java.util.Set;
  *
  */
 public final class ReferenceUpdater {
+  public static final Comparator<SModel> MODEL_BY_NAME_COMPARATOR = Comparator.comparing(m -> m.getName().getValue());
+
   private final List<SModule> myModules = new ArrayList<>();
   private final List<SModel> myModels = new ArrayList<>();
 
@@ -105,8 +108,11 @@ public final class ReferenceUpdater {
       if (!oldRoot.getClass().equals(newRoot.getClass())) {
         throw new RefUpdateException("Model roots are of different types " + oldRoot + " " + newRoot);
       }
-      List<SModel> oldModels = IterableUtil.asList(oldRoot.getModels());
-      List<SModel> newModels = IterableUtil.asList(newRoot.getModels());
+      List<SModel> oldModels = new ArrayList<SModel>(IterableUtil.asList(oldRoot.getModels()));
+      oldModels.sort(MODEL_BY_NAME_COMPARATOR);
+      List<SModel> newModels = new ArrayList<SModel>(IterableUtil.asList(newRoot.getModels()));
+      newModels.sort(MODEL_BY_NAME_COMPARATOR);
+
       if (oldModels.size() != newModels.size()) {
         throw new RefUpdateException("Model roots are supposed to have the same number of models " + oldRoot + " " + newRoot);
       }

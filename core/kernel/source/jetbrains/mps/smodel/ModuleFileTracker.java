@@ -35,6 +35,11 @@ import java.util.concurrent.ConcurrentHashMap;
  * @deprecated It's possible to have more than one module for the same file (e.g. .mpl hosts both language and its generators).
  *             Review uses of the class and decide whether its API needs an update or we don't need it altogether (there are few dubious uses, it's
  *             not evident if there's any value in this map). For the time being, whatever module it gives, is fine.
+ *
+ *             Destiny of the class seems to be as follows: uses in ShowInLogicalView are replaced with SelectInContext/SelectInTarget and therefore reduced
+ *             to ProjectPaneSelectInTarget, which is initialized from MPSProject and (a) has access to project descriptor with module files; (b) may keep
+ *             its own cache of project modules/files or build one on demand each time as needed (for specific project repository). Then, there'd be no need
+ *             to have this general component. There's also 1 use in mbeddr (mpsutil.projectview.runtime), shall reuse SelectInTarget or just walk repository modules
  */
 @Deprecated
 public class ModuleFileTracker implements CoreComponent {

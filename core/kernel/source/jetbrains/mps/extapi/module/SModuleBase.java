@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -58,12 +59,11 @@ public abstract class SModuleBase implements SModule {
 
   @Override
   @NotNull
+  //todo [MM] make it return collection instead of list, do not copy anything inside (time waste, mem fragmentation)
+  //todo [MM] this will be possible when stub node ids do not contain return values
   public final List<SModel> getModels() {
     assertCanRead();
-
-    ArrayList<SModel> models = new ArrayList<>(myModels);
-    models.sort(MODEL_BY_NAME_COMPARATOR);
-    return models;
+    return Collections.unmodifiableList(new ArrayList<>(myModels));
   }
 
   public void attach(@NotNull SRepository repo) {

@@ -25,6 +25,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -109,7 +110,8 @@ public final class ModuleDeleteHelper {
   }
 
   public void deleteModuleFiles(@NotNull SModule module) {
-    for (SModel model : module.getModels()) {
+    Iterable<SModel> models = new ArrayList<>(IterableUtil.asCollection(module.getModels()));
+    for (SModel model : models) {
       new ModelDeleteHelper(model).delete();
     }
 

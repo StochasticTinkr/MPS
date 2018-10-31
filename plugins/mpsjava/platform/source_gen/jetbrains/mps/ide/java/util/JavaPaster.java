@@ -92,7 +92,7 @@ public class JavaPaster {
         // Avoid AWT event inside write action (action calls this code from command) 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            Messages.showInfoMessage(String.format("Text buffer does not contain data, that can be parsed as %s", (featureKind == FeatureKind.CLASS_CONTENT ? "Class content" : "Java")), "Buffer Data Is Unsuitable");
+            Messages.showInfoMessage(String.format("Text buffer does not contain data that can be parsed as %s", (featureKind == FeatureKind.CLASS_CONTENT ? "Class content" : "Java")), "Buffer Data Is Unsuitable");
           }
         });
         return;

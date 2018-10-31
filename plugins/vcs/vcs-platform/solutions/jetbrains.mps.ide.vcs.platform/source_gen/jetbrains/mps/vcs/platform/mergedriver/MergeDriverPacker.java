@@ -28,18 +28,17 @@ import java.util.LinkedList;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public abstract class MergeDriverPacker {
   private static final Logger LOG = LogManager.getLogger(MergeDriverPacker.class);
   private static MergeDriverPacker ourInstance;
   private static final Iterable<String> mpsLibJars = Arrays.asList("mps-closures.jar", "mps-collections.jar", "mps-tuples.jar", "mps-core.jar", "mps-openapi.jar", "mps-behavior-api.jar", "mps-behavior-runtime.jar", "mps-logging.jar", "mps-annotations.jar", "mps-boot-util.jar");
   protected static Iterable<String> mpsAddJars = Arrays.asList("ext" + File.separator + "diffutils-1.2.1.jar");
-  private static final Iterable<String> ideaLibJars = Arrays.asList("asm-all-6.2.1.jar", "xstream-1.4.8.jar", "guava-17.0.jar", "jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar");
-  private static final Iterable<String> svnJars = Arrays.asList("svnkit.jar", "sequence-library.jar");
+  private static final Iterable<String> ideaLibJars = Arrays.asList("asm-all-7.0-beta.jar", "xstream-1.4.10.jar", "guava-25.1-jre.jar", "jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar");
   private static final String MERGEDRIVER_PATH = "mergedriver";
   private static final String MERGER_RT = "merger-rt.jar";
   private Boolean myFromSources = null;
@@ -134,17 +133,6 @@ public abstract class MergeDriverPacker {
       FileUtil.write(new File(tmpDir, "dummy.txt"), new byte[0]);
     }
   }
-  private Iterable<String> getSvnJars() {
-    final IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
-    if (svnPlugin != null) {
-      return Sequence.fromIterable(svnJars).select(new ISelector<String, String>() {
-        public String select(String it) {
-          return svnPlugin.getPath() + File.separator + "lib" + File.separator + it;
-        }
-      });
-    }
-    return null;
-  }
   protected String getVCSCorePluginPath() {
     IdeaPluginDescriptor vcsCorePlugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.vcs"));
     assert vcsCorePlugin != null;
@@ -177,7 +165,6 @@ public abstract class MergeDriverPacker {
         return PathManager.getLibPath() + File.separator + it;
       }
     }));
-    SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(getSvnJars()));
     return classpathItems;
   }
   private boolean isFromSources() {

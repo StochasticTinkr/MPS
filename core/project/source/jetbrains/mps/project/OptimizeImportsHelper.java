@@ -140,7 +140,7 @@ public class OptimizeImportsHelper {
   }
 
   private Result optimizeSolutionImports_internal(Solution solution) {
-    List<SModel> modelsToOptimize = solution.getModels();
+    Collection<SModel> modelsToOptimize = solution.getModels();
     Result result = optimizeModelsImports_internal(modelsToOptimize, new EmptyProgressMonitor());
     result.myReport = optimizeModuleImports(solution, result, Collections.emptySet()) + "\n\n" + result.myReport;
     return result;
@@ -171,7 +171,7 @@ public class OptimizeImportsHelper {
     return result;
   }
 
-  private Result optimizeModelsImports_internal(List<SModel> modelsToOptimize, ProgressMonitor monitor) {
+  private Result optimizeModelsImports_internal(Collection<SModel> modelsToOptimize, ProgressMonitor monitor) {
     Result result = new Result();
     monitor.start("working", modelsToOptimize.size());
     try {

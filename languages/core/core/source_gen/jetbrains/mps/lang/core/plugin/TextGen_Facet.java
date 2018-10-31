@@ -28,7 +28,6 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModelOperations;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.facets.Make_Facet.Target_make;
@@ -179,20 +178,10 @@ public class TextGen_Facet extends IFacet.Stub {
               final List<GResource> resourcesWithOutput = ListSequence.fromList(new ArrayList<GResource>(Sequence.fromIterable(input).count()));
               final Map<SModule, ModuleStaleFileManager> moduleStaleFilesMap = new HashMap<SModule, ModuleStaleFileManager>();
               for (GResource resource : Sequence.fromIterable(input)) {
-                // Perhaps, shall check res.status.isError(), however not sure if there 
-                // couldn't be an output model with error state, and we'd like to see erroneous text to localize error 
-                if (SModelOperations.getOutputLocation(resource.model()) == null) {
-                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + resource.model().getName())));
-                  continue;
-                }
                 Collection<SModel> outputModels = resource.status().getOutputModels();
                 if (outputModels.isEmpty()) {
                   continue;
                 }
-                // need exact number of textgen tasks I'm going to schedule as it's the counter for the poll() loop, and we might get into trouble if 
-                // number of scheduled models doesn't match that we expect to poll. 
-                modelsCount += outputModels.size();
-                ListSequence.fromList(resourcesWithOutput).addElement(resource);
                 // 
                 // collect changes in a module-wide context 
                 ModuleStaleFileManager sfm = moduleStaleFilesMap.get(resource.module());
@@ -205,7 +194,22 @@ public class TextGen_Facet extends IFacet.Stub {
                     }
                   }));
                 }
-                sfm.collectGeneratedFiles(resource.model());
+                // Perhaps, shall check res.status.isError(), however not sure if there 
+                // couldn't be an output model with error state, and we'd like to see erroneous text to localize error 
+                if (!(sfm.hasGenerationTarget(resource.model()))) {
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + resource.model().getName())));
+                  continue;
+                }
+                if (monitor.getSession().isCleanMake()) {
+                  sfm.collectGeneratedFilesForceClean(resource.model());
+                } else {
+                  sfm.collectGeneratedFiles(resource.model());
+                }
+
+                // need exact number of textgen tasks I'm going to schedule as it's the counter for the poll() loop, and we might get into trouble if 
+                // number of scheduled models doesn't match that we expect to poll. 
+                modelsCount += outputModels.size();
+                ListSequence.fromList(resourcesWithOutput).addElement(resource);
               }
               final Project mpsProject = monitor.getSession().getProject();
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(messageHandler);

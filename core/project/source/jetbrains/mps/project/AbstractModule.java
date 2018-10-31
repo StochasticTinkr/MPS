@@ -69,6 +69,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -746,7 +747,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   /*@Deprecated*/
   public void renameModels(String oldName, String newName, boolean moveModels) {
     //if module name is a prefix of it's model's name or they are equals - rename the model, too
-    for (SModel m : getModels()) {
+    Collection<SModel> models = new ArrayList<>(getModels());
+    for (SModel m : models) {
       if (!m.isReadOnly()) {
         SModelName oldModelName = m.getName();
         if (oldModelName.getNamespace().startsWith(oldName) || oldModelName.getLongName().equals(oldName)) {

@@ -29,13 +29,13 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 
-import static jetbrains.mps.extapi.module.SModuleBase.MODEL_BY_NAME_COMPARATOR;
 
 /**
  * Base model root implementation which relies on module. Note that the model root might be not attached to module.
@@ -48,7 +48,7 @@ public abstract class ModelRootBase implements ModelRoot {
 
   @Nullable private SModuleBase myModule;
   @Nullable private volatile SRepository myRepository;
-  private final Set<SModel> myModels = new TreeSet<>(MODEL_BY_NAME_COMPARATOR);
+  private final Set<SModel> myModels = new LinkedHashSet<>();
   private final SyncModuleListener myModuleListener = new SyncModuleListener();
 
   /*@NotNull*/
@@ -81,6 +81,8 @@ public abstract class ModelRootBase implements ModelRoot {
 
   @NotNull
   @Override
+  //todo [MM] make it return collection instead of list, do not copy anything inside (time waste, mem fragmentation)
+  //todo [MM] this will be possible when stub node ids do not contain return values
   public final List<SModel> getModels() {
     assertCanRead();
     return Collections.unmodifiableList(new ArrayList<>(myModels));
@@ -111,7 +113,8 @@ public abstract class ModelRootBase implements ModelRoot {
 
   public void dispose() {
     if (myModule != null) {
-      for (SModel model : getModels()) {
+      Collection<SModel> models = new ArrayList<>(getModels());
+      for (SModel model : models) {
         myModule.unregisterModel((SModelBase) model);
       }
     }
@@ -131,6 +134,11 @@ public abstract class ModelRootBase implements ModelRoot {
 
   public final boolean isRegistered() {
     return myRepository != null;
+  }
+
+  @Nullable
+  protected final SRepository getRepository() {
+    return myRepository;
   }
 
   /**
@@ -208,7 +216,8 @@ public abstract class ModelRootBase implements ModelRoot {
       }
       loaded.add(model.getModelId());
     }
-    for (SModel model : getModels()) {
+    Collection<SModel> models = new ArrayList<>(getModels());
+    for (SModel model : models) {
       if (!loaded.contains(model.getModelId())) {
         unregisterModel(model);
       }

@@ -105,18 +105,20 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
 
   @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-    // FIXME update() comes with global model write lock. This code might have better idea about what to lock
+    // FIXME update() used to come with global model write lock. This code has better idea about what to lock
     //       (although write per jar file is not the best alternative. SLibrary not always a directory, it's a single jar e.g. in Ant::generate).
-    myFileTracker.update(monitor, event);
-    // XXX Note, removed modules do not update myHandles (as it used to be with AbstractModule listening to changes). Perhaps, shall clean
-    //     respective ModuleHandles here, as well.
+    myRepository.getModelAccess().runWriteAction(() -> {
+      myFileTracker.update(monitor, event);
+      // XXX Note, removed modules do not update myHandles (as it used to be with AbstractModule listening to changes). Perhaps, shall clean
+      //     respective ModuleHandles here, as well.
 
-    for (IFile f : event.getCreated()) {
-      if (ModulesMiner.isSourceModuleFile(f)) {
-        collectAndRegisterModules();
-        return;
+      for (IFile f : event.getCreated()) {
+        if (ModulesMiner.isSourceModuleFile(f)) {
+          collectAndRegisterModules();
+          return;
+        }
       }
-    }
+    });
   }
 
   private void collectAndRegisterModules() {

@@ -123,12 +123,18 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
 
   @SuppressWarnings("WeakerAccess")
   /*package*/ void doReloadFromDiskSafe() {
-    assertCanChange();
-    if (isChanged()) {
-      resolveDiskConflict();
-    } else {
-      reloadFromSource();
+    final SRepository repo = getRepository();
+    if (repo == null) {
+      // detached model, why would anyone care to receive notifications from detached model or to keep it up-to-date?
+      return;
     }
+    repo.getModelAccess().runWriteAction(() -> {
+      if (isChanged()) {
+        resolveDiskConflict();
+      } else {
+        reloadFromSource();
+      }
+    });
   }
 
   protected abstract void reloadContents();

@@ -178,12 +178,16 @@ public interface IFile {
    */
   @Nullable List<IFile> getChildren();
 
+  /**
+   * @deprecated move to CachingFile
+   */
+  @ToRemove(version = 183)
   default void addListener(@NotNull FileListener listener) {
-    getFileSystem().addListener(new FileListenerAdapter(this, listener));
+    // nop
   }
 
   default void removeListener(@NotNull FileListener listener) {
-    getFileSystem().removeListener(new FileListenerAdapter(this, listener));
+    // nop
   }
 
   /**
