@@ -110,7 +110,7 @@
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorUtil">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />

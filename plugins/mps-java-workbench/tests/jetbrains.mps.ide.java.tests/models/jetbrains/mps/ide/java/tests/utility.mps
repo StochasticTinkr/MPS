@@ -1494,7 +1494,7 @@
         <node concept="2Gpval" id="7q5dBpSh9JW" role="3cqZAp">
           <node concept="2OqwBi" id="7q5dBpSh9JX" role="2GsD0m">
             <node concept="liA8E" id="7q5dBpSh9JY" role="2OqNvi">
-              <ref role="37wK5l" to="ends:~ModelRootBase.getModels():java.util.Collection" resolve="getModels" />
+              <ref role="37wK5l" to="ends:~ModelRootBase.getModels():java.util.List" resolve="getModels" />
             </node>
             <node concept="37vLTw" id="7q5dBpSh9JZ" role="2Oq$k0">
               <ref role="3cqZAo" node="7q5dBpSh9Jn" resolve="mr" />

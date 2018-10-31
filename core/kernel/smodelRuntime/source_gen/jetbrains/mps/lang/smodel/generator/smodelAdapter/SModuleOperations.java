@@ -5,8 +5,8 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
-import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SModelName;
 
@@ -20,8 +20,8 @@ public class SModuleOperations {
     if (!((m instanceof Language))) {
       return null;
     }
-    Collection<SModel> models = ((Language) m).getModels();
-    return CollectionSequence.fromCollection(models).findFirst(new IWhereFilter<SModel>() {
+    List<SModel> models = ((Language) m).getModels();
+    return ListSequence.fromList(models).findFirst(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return !(it.getName().hasStereotype()) && it.getName().getSimpleName().equals(name);
       }

@@ -802,7 +802,7 @@
                       <ref role="2Gs0qQ" node="4E5gGhxg_a9" resolve="generator" />
                     </node>
                     <node concept="liA8E" id="pQIap99vbJ" role="2OqNvi">
-                      <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.Collection" resolve="getModels" />
+                      <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.List" resolve="getModels" />
                     </node>
                   </node>
                 </node>
@@ -1449,7 +1449,7 @@
                                       <ref role="3cqZAo" node="3dvEHZam2VD" resolve="it" />
                                     </node>
                                     <node concept="liA8E" id="3dvEHZamoak" role="2OqNvi">
-                                      <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.Collection" resolve="getModels" />
+                                      <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.List" resolve="getModels" />
                                     </node>
                                   </node>
                                 </node>

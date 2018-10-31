@@ -81,9 +81,11 @@ public abstract class ModelRootBase implements ModelRoot {
 
   @NotNull
   @Override
-  public final Collection<SModel> getModels() {
+  //todo [MM] make it return collection instead of list, do not copy anything inside (time waste, mem fragmentation)
+  //todo [MM] this will be possible when stub node ids do not contain return values
+  public final List<SModel> getModels() {
     assertCanRead();
-    return Collections.unmodifiableSet(myModels);
+    return Collections.unmodifiableList(new ArrayList<>(myModels));
   }
 
   /**
