@@ -144,7 +144,7 @@ public interface IssueKindReportItem extends ReportItem {
   CheckerCategory CONSTRAINTS = new CheckerCategory(KindLevel.CONSTRAINTS, "constraints");
   CheckerCategory TARGET_CONCEPTS = new CheckerCategory(KindLevel.CONSTRAINTS, "target concepts");
   CheckerCategory REFERENCE_SCOPES = new CheckerCategory(KindLevel.CONSTRAINTS, "reference scopes");
-  CheckerCategory TYPESYSTEM = new CheckerCategory(KindLevel.CONSTRAINTS, "typesystem");
+  CheckerCategory TYPESYSTEM = new CheckerCategory(KindLevel.TYPESYSTEM, "typesystem");
   CheckerCategory MODEL_PROPERTIES = new CheckerCategory(KindLevel.PROJECT,"model properties");
   CheckerCategory LANGUAGE_IMPORTS = new CheckerCategory(KindLevel.STRUCTURE,"language imports");
   CheckerCategory MODULE_PROPERTIES = new CheckerCategory(KindLevel.PROJECT,"module properties");
