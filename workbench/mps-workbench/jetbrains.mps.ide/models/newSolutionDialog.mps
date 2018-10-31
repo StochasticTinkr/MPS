@@ -2027,7 +2027,7 @@
               <ref role="3cqZAo" node="eb0uW_kbSI" resolve="newGenerator" />
             </node>
             <node concept="liA8E" id="eb0uW_kbWk" role="2OqNvi">
-              <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.Collection" resolve="getModels" />
+              <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.List" resolve="getModels" />
             </node>
           </node>
           <node concept="3cpWsn" id="eb0uW_kbWl" role="1Duv9x">

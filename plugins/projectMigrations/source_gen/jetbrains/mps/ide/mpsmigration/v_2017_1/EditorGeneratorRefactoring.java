@@ -55,7 +55,7 @@ public class EditorGeneratorRefactoring extends BaseProjectMigration {
         continue;
       }
       for (Generator generator : CollectionSequence.fromCollection(language.getGenerators())) {
-        for (SModel generatorModel : CollectionSequence.fromCollection(generator.getModels())) {
+        for (SModel generatorModel : ListSequence.fromList(generator.getModels())) {
           ListSequence.fromList(SModelOperations.nodes(((SModel) generatorModel), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, 0x1179c366b2fL, "labelDeclaration")) == cellFactoryMappingLabel && SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));

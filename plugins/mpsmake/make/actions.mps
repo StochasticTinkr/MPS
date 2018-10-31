@@ -9800,7 +9800,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="3l7XKooDoev" role="1B3o_S" />
       <node concept="3uibUv" id="3LTvNgPOPyR" role="1tU5fm">
-        <ref role="3uigEE" node="C3dcc38Te3" resolve="TransientModelBallonDisplayer" />
+        <ref role="3uigEE" node="C3dcc38Te3" />
       </node>
     </node>
     <node concept="312cEg" id="3l7XKooC7wD" role="jymVt">
@@ -10630,7 +10630,7 @@
                                                 <ref role="3cqZAo" node="2lEZ2a4ZZrT" resolve="it" />
                                               </node>
                                               <node concept="liA8E" id="2lEZ2a50ayY" role="2OqNvi">
-                                                <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.Collection" resolve="getModels" />
+                                                <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.List" resolve="getModels" />
                                               </node>
                                             </node>
                                           </node>

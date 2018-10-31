@@ -1209,7 +1209,7 @@
                   <ref role="3cqZAo" node="3bdlBcZqlGu" resolve="generator" />
                 </node>
                 <node concept="liA8E" id="3bdlBcZqncN" role="2OqNvi">
-                  <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.Collection" resolve="getModels" />
+                  <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.List" resolve="getModels" />
                 </node>
               </node>
             </node>

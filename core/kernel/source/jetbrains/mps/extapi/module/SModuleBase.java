@@ -29,7 +29,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
@@ -41,6 +40,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class SModuleBase implements SModule {
   private static final Logger LOG = LogManager.getLogger(SModuleBase.class);
+  public static final Comparator<SModel> MODEL_BY_NAME_COMPARATOR = Comparator.comparing(m -> m.getName().getValue());
 
   private volatile SRepository myRepository = null;
 
@@ -59,9 +59,11 @@ public abstract class SModuleBase implements SModule {
 
   @Override
   @NotNull
-  public final Collection<SModel> getModels() {
+  //todo [MM] make it return collection instead of list, do not copy anything inside (time waste, mem fragmentation)
+  //todo [MM] this will be possible when stub node ids do not contain return values
+  public final List<SModel> getModels() {
     assertCanRead();
-    return Collections.unmodifiableSet(myModels);
+    return Collections.unmodifiableList(new ArrayList<>(myModels));
   }
 
   public void attach(@NotNull SRepository repo) {
