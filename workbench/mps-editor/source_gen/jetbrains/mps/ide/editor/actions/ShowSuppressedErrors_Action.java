@@ -24,18 +24,18 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.errors.item.FlavouredItem;
+import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.Objects;
-import jetbrains.mps.errors.item.IssueKindReportItem;
-import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
-import java.util.Collection;
+import jetbrains.mps.errors.item.FlavouredItem;
 import jetbrains.mps.errors.item.RuleIdFlavouredItem;
-import jetbrains.mps.errors.item.ReportItem;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.icons.MPSIcons;
+import java.util.Objects;
+import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.errors.item.ReportItem;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
@@ -100,31 +100,39 @@ public class ShowSuppressedErrors_Action extends BaseAction {
     ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (final SNode suppress : ListSequence.fromList(AttributeOperations.getAttributeList(((SNode) MapSequence.fromMap(_params).get("selectedNode")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"))))) {
-          CustomizedNavigatable navigatable = null;
-          Map<String, String> predicateFlavours = FlavouredItem.FlavourPredicate.deserialize(SPropertyOperations.getString(suppress, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"))).getFlavours();
-          if (Objects.equals(predicateFlavours.get(IssueKindReportItem.FLAVOUR_ISSUE_KIND.toString()), IssueKindReportItem.TYPESYSTEM.deriveItemKind().toString()) && predicateFlavours.containsKey(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.toString())) {
-            Collection<RuleIdFlavouredItem.TypesystemRuleId> rules = TypesystemReportItemAdapter.FLAVOUR_RULE_ID.deserialize(predicateFlavours.get(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.toString()));
-            String message = predicateFlavours.get(ReportItem.FLAVOUR_MESSAGE.toString());
-            if (CollectionSequence.fromCollection(rules).isNotEmpty() && message != null) {
-              DefaultActionGroup actionGroup = new DefaultActionGroup();
-              actionGroup.add(new AnAction("Stop Suppressing", "Do not suppress error", MPSIcons.Actions.SuppressedError) {
-                public void actionPerformed(@NotNull AnActionEvent event) {
-                  ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().executeCommand(new Runnable() {
-                    public void run() {
-                      SNodeOperations.deleteNode(suppress);
-                    }
-                  });
+          Map<String, String> predicateFlavours = new HashMap<String, String>();
+          final String errorSpecialization = SPropertyOperations.getString(suppress, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"));
+          try {
+            if ((errorSpecialization != null && errorSpecialization.length() > 0)) {
+              predicateFlavours = FlavouredItem.FlavourPredicate.deserialize(errorSpecialization).getFlavours();
+            }
+          } catch (RuntimeException exception) {
+          }
+          List<RuleIdFlavouredItem.TypesystemRuleId> rules = ListSequence.fromList(new ArrayList<RuleIdFlavouredItem.TypesystemRuleId>());
+          String message = null;
+          DefaultActionGroup actionGroup = new DefaultActionGroup();
+          actionGroup.add(new AnAction("Stop Suppressing", "Do not suppress error", MPSIcons.Actions.SuppressedError) {
+            public void actionPerformed(@NotNull AnActionEvent event) {
+              ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().executeCommand(new Runnable() {
+                public void run() {
+                  SNodeOperations.deleteNode(suppress);
                 }
               });
-              for (RuleIdFlavouredItem.TypesystemRuleId rule : CollectionSequence.fromCollection(rules)) {
+            }
+          });
+          if (Objects.equals(predicateFlavours.get(IssueKindReportItem.FLAVOUR_ISSUE_KIND.toString()), IssueKindReportItem.TYPESYSTEM.deriveItemKind().toString()) && predicateFlavours.containsKey(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.toString())) {
+            ListSequence.fromList(rules).addSequence(CollectionSequence.fromCollection(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.deserialize(predicateFlavours.get(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.toString()))));
+            message = predicateFlavours.get(ReportItem.FLAVOUR_MESSAGE.toString());
+            if (ListSequence.fromList(rules).isNotEmpty() && message != null) {
+              for (RuleIdFlavouredItem.TypesystemRuleId rule : ListSequence.fromList(rules)) {
                 SNodeReference ruleRef = rule.getSourceNode();
                 SNode ruleRoot = ruleRef.resolve(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()).getContainingRoot();
                 Icon ruleRootIcon = GlobalIconManager.getInstance().getIconFor(ruleRoot);
                 NodeNavigatable ruleNavigatable = new NodeNavigatable(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ruleRef);
                 String goToRuleActionText;
-                if (CollectionSequence.fromCollection(rules).count() == 1) {
-                  goToRuleActionText = "Go To Immediate Rule";
-                } else if ((int) CollectionSequence.fromCollection(rules).indexOf(rule) == 0) {
+                if (ListSequence.fromList(rules).count() == 1) {
+                  goToRuleActionText = "Go To Typesystem Rule";
+                } else if ((int) ListSequence.fromList(rules).indexOf(rule) == 0) {
                   goToRuleActionText = "Go To Immediate Rule";
                 } else {
                   goToRuleActionText = "Go To Rule " + ruleRef.getNodeId();
@@ -135,22 +143,19 @@ public class ShowSuppressedErrors_Action extends BaseAction {
                   }
                 });
               }
-              ListPopup createActionGroupPopup = JBPopupFactory.getInstance().createActionGroupPopup(message, actionGroup, event.getDataContext(), JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, false);
-              navigatable = new CustomizedNavigatable(null, message, "Suppressed", MPSIcons.Actions.SuppressedError) {
-                @Override
-                public void navigate(boolean requestFocus) {
-                  createActionGroupPopup.show(relativePoint);
-                }
-                @Override
-                public boolean canNavigate() {
-                  return true;
-                }
-              };
             }
           }
-          if (navigatable == null) {
-            navigatable = new CustomizedNavigatable(new NodeNavigatable(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), SNodeOperations.getPointer(suppress)), SPropertyOperations.getString(suppress, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError")), "Suppressed", MPSIcons.Actions.SuppressedError);
-          }
+          ListPopup createActionGroupPopup = JBPopupFactory.getInstance().createActionGroupPopup(message, actionGroup, event.getDataContext(), JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, false);
+          CustomizedNavigatable navigatable = new CustomizedNavigatable(null, ((errorSpecialization == null || errorSpecialization.length() == 0) ? "Any error" : ((message == null || message.length() == 0) ? errorSpecialization : message)), "Suppressed", MPSIcons.Actions.SuppressedError) {
+            @Override
+            public void navigate(boolean requestFocus) {
+              createActionGroupPopup.show(relativePoint);
+            }
+            @Override
+            public boolean canNavigate() {
+              return true;
+            }
+          };
           ListSequence.fromList(navigatables).addElement(navigatable);
         }
         title.value = "Errors suppressed for " + ((String) BHReflection.invoke0(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"), SMethodTrimmedId.create("nodeDescription", null, "4oS1ku9jIXr")));
