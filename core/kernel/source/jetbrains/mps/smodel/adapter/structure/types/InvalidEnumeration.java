@@ -17,48 +17,39 @@ package jetbrains.mps.smodel.adapter.structure.types;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SEnumeration;
-import org.jetbrains.mps.openapi.language.SType;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 
-/**
- * @author Radimir.Sorokin
- * @since 2018.3
- */
-public class InvalidDataType implements SDataType {
+import java.util.Collection;
+import java.util.Collections;
 
-  @NotNull
-  protected final String myName;
+public class InvalidEnumeration extends InvalidDataType implements SEnumeration {
 
-  public InvalidDataType(@NotNull String name) {
-    myName = name;
+  public InvalidEnumeration(@NotNull String name) {
+    super(name);
   }
 
   @Nullable
   @Override
-  public Object fromString(@Nullable String string) {
-    return SType.NOT_A_VALUE;
-  }
-
-  @Nullable
-  @Override
-  public String toString(@Nullable Object value) {
+  public SEnumerationLiteral getLiteral(@Nullable String name) {
     return null;
   }
 
+  @NotNull
   @Override
-  public boolean isInstanceOf(@Nullable Object value) {
-    return false;
+  public Collection<SEnumerationLiteral> getLiterals() {
+    return Collections.emptyList();
+  }
+
+  @NotNull
+  @Override
+  public String getName() {
+    return myName;
   }
 
   @Nullable
   @Override
-  public Object getDefault() {
-    return SType.NOT_A_VALUE;
-  }
-
-  @Override
-  public String toString() {
-    return "InvalidDataType{" + myName + "}";
+  public SEnumerationLiteral getDefault() {
+    return null;
   }
 }

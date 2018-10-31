@@ -36,6 +36,10 @@
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="cm63" ref="d936855b-48da-4812-a8a0-2bfddd633ac5/java:jetbrains.mps.smodel.behaviour(jetbrains.mps.lang.behavior.api/)" />
     <import index="ykok" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.constraints(MPS.Core/)" />
+    <import index="xx25" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure.types(MPS.Core/)" />
+    <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
+    <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -797,6 +801,96 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="2nIYwg$4Qeh" role="3clF47">
+        <node concept="3cpWs8" id="2JIQC9UE8Bq" role="3cqZAp">
+          <node concept="3cpWsn" id="2JIQC9UE8Br" role="3cpWs9">
+            <property role="TrG5h" value="id" />
+            <node concept="3uibUv" id="2JIQC9UE8Bn" role="1tU5fm">
+              <ref role="3uigEE" to="e8bb:~SDataTypeId" resolve="SDataTypeId" />
+            </node>
+            <node concept="2YIFZM" id="2JIQC9UE8Bs" role="33vP2m">
+              <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
+              <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(long,long,long):jetbrains.mps.smodel.adapter.ids.SDataTypeId" resolve="dataTypeId" />
+              <node concept="37vLTw" id="2JIQC9UE8Bt" role="37wK5m">
+                <ref role="3cqZAo" node="2nIYwg$4QY1" resolve="uuidHigh" />
+              </node>
+              <node concept="37vLTw" id="2JIQC9UE8Bu" role="37wK5m">
+                <ref role="3cqZAo" node="2nIYwg$4R2m" resolve="uuidLow" />
+              </node>
+              <node concept="37vLTw" id="2JIQC9UE8Bv" role="37wK5m">
+                <ref role="3cqZAo" node="2nIYwg$4R6H" resolve="enumId" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2JIQC9UE1cl" role="3cqZAp">
+          <node concept="3cpWsn" id="2JIQC9UE1cm" role="3cpWs9">
+            <property role="TrG5h" value="enumDescriptor" />
+            <node concept="3uibUv" id="2JIQC9UE1cc" role="1tU5fm">
+              <ref role="3uigEE" to="ze1i:~DataTypeDescriptor" resolve="DataTypeDescriptor" />
+            </node>
+            <node concept="2OqwBi" id="2JIQC9UE1cn" role="33vP2m">
+              <node concept="2YIFZM" id="2JIQC9UE1co" role="2Oq$k0">
+                <ref role="37wK5l" to="vndm:~ConceptRegistry.getInstance():jetbrains.mps.smodel.language.ConceptRegistry" resolve="getInstance" />
+                <ref role="1Pybhc" to="vndm:~ConceptRegistry" resolve="ConceptRegistry" />
+              </node>
+              <node concept="liA8E" id="2JIQC9UE1cp" role="2OqNvi">
+                <ref role="37wK5l" to="vndm:~ConceptRegistry.getDataTypeDescriptor(jetbrains.mps.smodel.adapter.ids.SDataTypeId):jetbrains.mps.smodel.runtime.DataTypeDescriptor" resolve="getDataTypeDescriptor" />
+                <node concept="37vLTw" id="2JIQC9UE8Bw" role="37wK5m">
+                  <ref role="3cqZAo" node="2JIQC9UE8Br" resolve="id" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2JIQC9UE3wl" role="3cqZAp">
+          <node concept="3clFbS" id="2JIQC9UE3wn" role="3clFbx">
+            <node concept="3cpWs6" id="2JIQC9UE79o" role="3cqZAp">
+              <node concept="2YIFZM" id="2JIQC9UE7Uo" role="3cqZAk">
+                <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getEnumeration(jetbrains.mps.smodel.adapter.ids.SDataTypeId,java.lang.String):org.jetbrains.mps.openapi.language.SEnumeration" resolve="getEnumeration" />
+                <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
+                <node concept="37vLTw" id="2JIQC9UEa9s" role="37wK5m">
+                  <ref role="3cqZAo" node="2JIQC9UE8Br" resolve="id" />
+                </node>
+                <node concept="2OqwBi" id="2JIQC9UEccA" role="37wK5m">
+                  <node concept="37vLTw" id="2JIQC9UEb_p" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2JIQC9UE1cm" resolve="enumDescriptor" />
+                  </node>
+                  <node concept="liA8E" id="2JIQC9UEeV1" role="2OqNvi">
+                    <ref role="37wK5l" to="ze1i:~NamedElementDescriptor.getName():java.lang.String" resolve="getName" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1Wc70l" id="2JIQC9UE5Yj" role="3clFbw">
+            <node concept="2ZW3vV" id="2JIQC9UE6XU" role="3uHU7w">
+              <node concept="3uibUv" id="2JIQC9UE761" role="2ZW6by">
+                <ref role="3uigEE" to="ze1i:~EnumerationDescriptor" resolve="EnumerationDescriptor" />
+              </node>
+              <node concept="37vLTw" id="2JIQC9UE69C" role="2ZW6bz">
+                <ref role="3cqZAo" node="2JIQC9UE1cm" resolve="enumDescriptor" />
+              </node>
+            </node>
+            <node concept="3y3z36" id="2JIQC9UE5JT" role="3uHU7B">
+              <node concept="37vLTw" id="2JIQC9UE4go" role="3uHU7B">
+                <ref role="3cqZAo" node="2JIQC9UE1cm" resolve="enumDescriptor" />
+              </node>
+              <node concept="10Nm6u" id="2JIQC9UE5T$" role="3uHU7w" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="2JIQC9UExw3" role="3cqZAp" />
+        <node concept="3SKdUt" id="2JIQC9UEgpb" role="3cqZAp">
+          <node concept="3SKdUq" id="2JIQC9UEgpc" role="3SKWNk">
+            <property role="3SKdUp" value="structure aspect of this enumeration is not regenerated" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2JIQC9UEgtJ" role="3cqZAp">
+          <node concept="3SKdUq" id="2JIQC9UEgtL" role="3SKWNk">
+            <property role="3SKdUp" value="TODO remove this code after 2018.3" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="2JIQC9UEw3o" role="3cqZAp" />
         <node concept="3cpWs8" id="2nIYwg$5kh2" role="3cqZAp">
           <node concept="3cpWsn" id="2nIYwg$5kh3" role="3cpWs9">
             <property role="TrG5h" value="language" />
@@ -864,95 +958,91 @@
         </node>
         <node concept="3clFbJ" id="2nIYwg$5pM0" role="3cqZAp">
           <node concept="3clFbS" id="2nIYwg$5pM2" role="3clFbx">
-            <node concept="3cpWs6" id="2nIYwg$5qqw" role="3cqZAp">
-              <node concept="2ShNRf" id="2nIYwg$5qtx" role="3cqZAk">
-                <node concept="1pGfFk" id="2nIYwg$5rbj" role="2ShVmc">
-                  <ref role="37wK5l" to="2k9e:~SEnumAdapter.&lt;init&gt;()" resolve="SEnumAdapter" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="2nIYwg$5qjF" role="3clFbw">
-            <node concept="10Nm6u" id="2nIYwg$5qo4" role="3uHU7w" />
-            <node concept="37vLTw" id="2nIYwg$5qbh" role="3uHU7B">
-              <ref role="3cqZAo" node="2nIYwg$5oCS" resolve="structureAspect" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="2nIYwg$5ue7" role="3cqZAp">
-          <node concept="3cpWsn" id="2nIYwg$5ue8" role="3cpWs9">
-            <property role="TrG5h" value="enumDecl" />
-            <node concept="3Tqbb2" id="2nIYwg$5uW3" role="1tU5fm" />
-            <node concept="2OqwBi" id="2nIYwg$5ue9" role="33vP2m">
-              <node concept="37vLTw" id="2nIYwg$5uea" role="2Oq$k0">
-                <ref role="3cqZAo" node="2nIYwg$5oCS" resolve="structureAspect" />
-              </node>
-              <node concept="liA8E" id="2nIYwg$5ueb" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getNode(org.jetbrains.mps.openapi.model.SNodeId):org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                <node concept="2ShNRf" id="2nIYwg$5uec" role="37wK5m">
-                  <node concept="1pGfFk" id="2nIYwg$5ued" role="2ShVmc">
-                    <ref role="37wK5l" to="w1kc:~SNodeId$Regular.&lt;init&gt;(long)" resolve="SNodeId.Regular" />
-                    <node concept="37vLTw" id="2nIYwg$5uee" role="37wK5m">
-                      <ref role="3cqZAo" node="2nIYwg$4R6H" resolve="enumId" />
+            <node concept="3cpWs8" id="2nIYwg$5ue7" role="3cqZAp">
+              <node concept="3cpWsn" id="2nIYwg$5ue8" role="3cpWs9">
+                <property role="TrG5h" value="enumDecl" />
+                <node concept="3Tqbb2" id="2nIYwg$5uW3" role="1tU5fm" />
+                <node concept="2OqwBi" id="2nIYwg$5ue9" role="33vP2m">
+                  <node concept="37vLTw" id="2nIYwg$5uea" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2nIYwg$5oCS" resolve="structureAspect" />
+                  </node>
+                  <node concept="liA8E" id="2nIYwg$5ueb" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getNode(org.jetbrains.mps.openapi.model.SNodeId):org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                    <node concept="2ShNRf" id="2nIYwg$5uec" role="37wK5m">
+                      <node concept="1pGfFk" id="2nIYwg$5ued" role="2ShVmc">
+                        <ref role="37wK5l" to="w1kc:~SNodeId$Regular.&lt;init&gt;(long)" resolve="SNodeId.Regular" />
+                        <node concept="37vLTw" id="2nIYwg$5uee" role="37wK5m">
+                          <ref role="3cqZAo" node="2nIYwg$4R6H" resolve="enumId" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="2nIYwg$5vuO" role="3cqZAp">
-          <node concept="3clFbS" id="2nIYwg$5vuQ" role="3clFbx">
-            <node concept="1gVbGN" id="2nIYwg$5AHv" role="3cqZAp">
-              <node concept="2OqwBi" id="2nIYwg$5Bmo" role="1gVkn0">
-                <node concept="37vLTw" id="2nIYwg$5ANe" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2nIYwg$5j4N" resolve="enumNameHint" />
-                </node>
-                <node concept="liA8E" id="2nIYwg$5BN1" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                  <node concept="2OqwBi" id="2nIYwg$5Af6" role="37wK5m">
-                    <node concept="1PxgMI" id="2nIYwg$5A2F" role="2Oq$k0">
-                      <property role="1BlNFB" value="true" />
-                      <node concept="chp4Y" id="2nIYwg$5A5b" role="3oSUPX">
-                        <ref role="cht4Q" to="tpce:fKAxPRV" resolve="EnumerationDataTypeDeclaration" />
+            <node concept="3clFbJ" id="2nIYwg$5vuO" role="3cqZAp">
+              <node concept="3clFbS" id="2nIYwg$5vuQ" role="3clFbx">
+                <node concept="1gVbGN" id="2nIYwg$5AHv" role="3cqZAp">
+                  <node concept="2OqwBi" id="2nIYwg$5Bmo" role="1gVkn0">
+                    <node concept="37vLTw" id="2nIYwg$5ANe" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2nIYwg$5j4N" resolve="enumNameHint" />
+                    </node>
+                    <node concept="liA8E" id="2nIYwg$5BN1" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <node concept="2OqwBi" id="2nIYwg$5Af6" role="37wK5m">
+                        <node concept="1PxgMI" id="2nIYwg$5A2F" role="2Oq$k0">
+                          <property role="1BlNFB" value="true" />
+                          <node concept="chp4Y" id="2nIYwg$5A5b" role="3oSUPX">
+                            <ref role="cht4Q" to="tpce:fKAxPRV" resolve="EnumerationDataTypeDeclaration" />
+                          </node>
+                          <node concept="37vLTw" id="2nIYwg$5$0x" role="1m5AlR">
+                            <ref role="3cqZAo" node="2nIYwg$5ue8" resolve="enumDecl" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="2nIYwg$5AtO" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
                       </node>
-                      <node concept="37vLTw" id="2nIYwg$5$0x" role="1m5AlR">
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs6" id="2nIYwg$5Ceb" role="3cqZAp">
+                  <node concept="2ShNRf" id="2nIYwg$5CR3" role="3cqZAk">
+                    <node concept="1pGfFk" id="2nIYwg$5DLz" role="2ShVmc">
+                      <ref role="37wK5l" to="xx25:~SInterpretedEnumerationAdapter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SInterpretedEnumerationAdapter" />
+                      <node concept="37vLTw" id="2nIYwg$5Enl" role="37wK5m">
                         <ref role="3cqZAo" node="2nIYwg$5ue8" resolve="enumDecl" />
                       </node>
                     </node>
-                    <node concept="3TrcHB" id="2nIYwg$5AtO" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                    </node>
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="3cpWs6" id="2nIYwg$5Ceb" role="3cqZAp">
-              <node concept="2ShNRf" id="2nIYwg$5CR3" role="3cqZAk">
-                <node concept="1pGfFk" id="2nIYwg$5DLz" role="2ShVmc">
-                  <ref role="37wK5l" to="2k9e:~SEnumAdapter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SEnumAdapter" />
-                  <node concept="37vLTw" id="2nIYwg$5Enl" role="37wK5m">
-                    <ref role="3cqZAo" node="2nIYwg$5ue8" resolve="enumDecl" />
+              <node concept="2OqwBi" id="2nIYwg$5w6f" role="3clFbw">
+                <node concept="37vLTw" id="2nIYwg$5vVN" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2nIYwg$5ue8" resolve="enumDecl" />
+                </node>
+                <node concept="1mIQ4w" id="2nIYwg$5wd1" role="2OqNvi">
+                  <node concept="chp4Y" id="2nIYwg$5wgh" role="cj9EA">
+                    <ref role="cht4Q" to="tpce:fKAxPRV" resolve="EnumerationDataTypeDeclaration" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="2nIYwg$5w6f" role="3clFbw">
-            <node concept="37vLTw" id="2nIYwg$5vVN" role="2Oq$k0">
-              <ref role="3cqZAo" node="2nIYwg$5ue8" resolve="enumDecl" />
+          <node concept="3y3z36" id="3FT6Ae4ICi3" role="3clFbw">
+            <node concept="37vLTw" id="2nIYwg$5qbh" role="3uHU7B">
+              <ref role="3cqZAo" node="2nIYwg$5oCS" resolve="structureAspect" />
             </node>
-            <node concept="1mIQ4w" id="2nIYwg$5wd1" role="2OqNvi">
-              <node concept="chp4Y" id="2nIYwg$5wgh" role="cj9EA">
-                <ref role="cht4Q" to="tpce:fKAxPRV" resolve="EnumerationDataTypeDeclaration" />
-              </node>
-            </node>
+            <node concept="10Nm6u" id="2nIYwg$5qo4" role="3uHU7w" />
           </node>
         </node>
         <node concept="3cpWs6" id="2nIYwg$4UJY" role="3cqZAp">
-          <node concept="2ShNRf" id="2nIYwg$5EVo" role="3cqZAk">
-            <node concept="1pGfFk" id="2nIYwg$5FQc" role="2ShVmc">
-              <ref role="37wK5l" to="2k9e:~SEnumAdapter.&lt;init&gt;()" resolve="SEnumAdapter" />
+          <node concept="2ShNRf" id="2nIYwg$5qtx" role="3cqZAk">
+            <node concept="1pGfFk" id="3FT6Ae4I$Lq" role="2ShVmc">
+              <ref role="37wK5l" to="xx25:~InvalidEnumeration.&lt;init&gt;(java.lang.String)" resolve="InvalidEnumeration" />
+              <node concept="37vLTw" id="3FT6Ae4I_v_" role="37wK5m">
+                <ref role="3cqZAo" node="2nIYwg$5j4N" resolve="enumNameHint" />
+              </node>
             </node>
           </node>
         </node>
@@ -1200,10 +1290,10 @@
               <node concept="2YIFZM" id="2$DA$ibySI" role="3clFbw">
                 <ref role="37wK5l" to="33ny:~Objects.equals(java.lang.Object,java.lang.Object):boolean" resolve="equals" />
                 <ref role="1Pybhc" to="33ny:~Objects" resolve="Objects" />
-                <node concept="2YIFZM" id="2$DA$ibz63" role="37wK5m">
-                  <ref role="1Pybhc" to="2k9e:~SEnumAdapter" resolve="SEnumAdapter" />
-                  <ref role="37wK5l" to="2k9e:~SEnumAdapter.getEnumMemberIdentifier(org.jetbrains.mps.openapi.language.SEnumerationLiteral):java.lang.String" resolve="getEnumMemberIdentifier" />
-                  <node concept="37vLTw" id="2$DA$ibzaA" role="37wK5m">
+                <node concept="2YIFZM" id="2JIQC9UDRDG" role="37wK5m">
+                  <ref role="37wK5l" to="xx25:~SEnumerationAdapter.getEnumMemberIdentifier(org.jetbrains.mps.openapi.language.SEnumerationLiteral):java.lang.String" resolve="getEnumMemberIdentifier" />
+                  <ref role="1Pybhc" to="xx25:~SEnumerationAdapter" resolve="SEnumerationAdapter" />
+                  <node concept="37vLTw" id="2JIQC9UDRDH" role="37wK5m">
                     <ref role="3cqZAo" node="2nIYwg$5a$Q" resolve="l" />
                   </node>
                 </node>
@@ -1363,17 +1453,17 @@
       <node concept="3clFbS" id="2nIYwg$4ZtD" role="3clF47">
         <node concept="3cpWs6" id="2nIYwg$53CW" role="3cqZAp">
           <node concept="3K4zz7" id="2nIYwg$62Cc" role="3cqZAk">
-            <node concept="2YIFZM" id="1sWCqWM9pH3" role="3K4GZi">
-              <ref role="37wK5l" to="2k9e:~SEnumAdapter.getEnumMemberIdentifier(org.jetbrains.mps.openapi.language.SEnumerationLiteral):java.lang.String" resolve="getEnumMemberIdentifier" />
-              <ref role="1Pybhc" to="2k9e:~SEnumAdapter" resolve="SEnumAdapter" />
-              <node concept="37vLTw" id="1sWCqWM9rU0" role="37wK5m">
-                <ref role="3cqZAo" node="2nIYwg$5hw5" resolve="enumMember" />
-              </node>
-            </node>
             <node concept="10Nm6u" id="2nIYwg$62G1" role="3K4E3e" />
             <node concept="3clFbC" id="2nIYwg$62qe" role="3K4Cdx">
               <node concept="10Nm6u" id="2nIYwg$62yv" role="3uHU7w" />
               <node concept="37vLTw" id="2nIYwg$62hp" role="3uHU7B">
+                <ref role="3cqZAo" node="2nIYwg$5hw5" resolve="enumMember" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="2JIQC9UDRtL" role="3K4GZi">
+              <ref role="37wK5l" to="xx25:~SEnumerationAdapter.getEnumMemberIdentifier(org.jetbrains.mps.openapi.language.SEnumerationLiteral):java.lang.String" resolve="getEnumMemberIdentifier" />
+              <ref role="1Pybhc" to="xx25:~SEnumerationAdapter" resolve="SEnumerationAdapter" />
+              <node concept="37vLTw" id="2JIQC9UDRtM" role="37wK5m">
                 <ref role="3cqZAo" node="2nIYwg$5hw5" resolve="enumMember" />
               </node>
             </node>

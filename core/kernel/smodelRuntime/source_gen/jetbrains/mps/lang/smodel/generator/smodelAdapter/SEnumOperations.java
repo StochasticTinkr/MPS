@@ -10,14 +10,21 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SEnumeration;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.adapter.structure.SEnumAdapter;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.adapter.structure.types.SInterpretedEnumerationAdapter;
+import jetbrains.mps.smodel.adapter.structure.types.InvalidEnumeration;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import java.util.Objects;
+import jetbrains.mps.smodel.adapter.structure.types.SEnumerationAdapter;
 
 public class SEnumOperations {
   public static List<SNode> getEnumMembers(SNode enumm) {
@@ -63,20 +70,28 @@ public class SEnumOperations {
   }
 
   private static SEnumeration getEnum(long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
+    SDataTypeId id = MetaIdFactory.dataTypeId(uuidHigh, uuidLow, enumId);
+    DataTypeDescriptor enumDescriptor = ConceptRegistry.getInstance().getDataTypeDescriptor(id);
+    if (enumDescriptor != null && enumDescriptor instanceof EnumerationDescriptor) {
+      return MetaAdapterFactory.getEnumeration(id, enumDescriptor.getName());
+    }
+
+    // structure aspect of this enumeration is not regenerated 
+    // TODO remove this code after 2018.3 
+
     SLanguage language = MetaAdapterFactory.getLanguage(uuidHigh, uuidLow, languageNameHint);
     // XXX I know getSourceModule is wrong, but I hope this code won't last long and we replace it with generated EnumDescriptor in structure aspect. 
     SModule sourceModule = language.getSourceModule();
     // and this one is an ugly way to find out structure aspect model 
     SModel structureAspect = SModuleOperations.getAspect(sourceModule, "structure");
-    if (structureAspect == null) {
-      return new SEnumAdapter();
+    if (structureAspect != null) {
+      SNode enumDecl = structureAspect.getNode(new SNodeId.Regular(enumId));
+      if (SNodeOperations.isInstanceOf(enumDecl, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
+        assert enumNameHint.equals(SPropertyOperations.getString(SNodeOperations.as(enumDecl, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        return new SInterpretedEnumerationAdapter(enumDecl);
+      }
     }
-    SNode enumDecl = structureAspect.getNode(new SNodeId.Regular(enumId));
-    if (SNodeOperations.isInstanceOf(enumDecl, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
-      assert enumNameHint.equals(SPropertyOperations.getString(SNodeOperations.as(enumDecl, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-      return new SEnumAdapter(enumDecl);
-    }
-    return new SEnumAdapter();
+    return new InvalidEnumeration(enumNameHint);
   }
   public static Collection<SEnumerationLiteral> getMembers(long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
     SEnumeration e = getEnum(uuidHigh, uuidLow, languageNameHint, enumId, enumNameHint);
@@ -91,7 +106,7 @@ public class SEnumOperations {
   public static SEnumerationLiteral getMemberForName(String name, long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
     SEnumeration e = getEnum(uuidHigh, uuidLow, languageNameHint, enumId, enumNameHint);
     for (SEnumerationLiteral l : e.getLiterals()) {
-      if (Objects.equals(SEnumAdapter.getEnumMemberIdentifier(l), name)) {
+      if (Objects.equals(SEnumerationAdapter.getEnumMemberIdentifier(l), name)) {
         return l;
       }
     }
@@ -106,7 +121,7 @@ public class SEnumOperations {
     return (literal == null && value == null ? e.getDefault() : literal);
   }
   public static String getMemberName(SEnumerationLiteral enumMember) {
-    return (enumMember == null ? null : SEnumAdapter.getEnumMemberIdentifier(enumMember));
+    return (enumMember == null ? null : SEnumerationAdapter.getEnumMemberIdentifier(enumMember));
   }
   public static String getMemberValue(SEnumerationLiteral enumMember) {
     return (enumMember == null ? null : enumMember.getName());

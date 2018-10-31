@@ -173,6 +173,11 @@ public /*final*/ class SEnumerationAdapter extends SNamedElementAdapter implemen
       return myDescriptor.getName();
     }
 
+    @Nullable
+    public String getIdentifier() {
+      return myDescriptor.getIdentifier();
+    }
+
     @Override
     public boolean equals(Object o) {
       if (this == o) {
@@ -196,5 +201,12 @@ public /*final*/ class SEnumerationAdapter extends SNamedElementAdapter implemen
     public String toString() {
       return getPresentation();
     }
+  }
+
+  public static String getEnumMemberIdentifier(SEnumerationLiteral enumMember) {
+    if (enumMember instanceof SEnumLiteralAdapter) {
+      return ((SEnumLiteralAdapter) enumMember).getIdentifier();
+    }
+    return null;
   }
 }

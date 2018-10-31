@@ -25,6 +25,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,8 +67,9 @@ public class SInterpretedEnumerationAdapter extends SEnumerationAdapter {
       for (SNode/*enummember<>*/ enumMember : SEnumOperations.getEnumMembers(enumDeclaration)) {
         String value = SEnumOperations.getEnumMemberValue(enumMember);
         String presentation = SEnumOperations.getEnumMemberPresentation(enumMember);
+        String sourceNode = PersistenceFacade.getInstance().asString(enumMember.getReference());
         String identifier = SEnumOperations.getEnumMemberName(enumMember);
-        myMembers.add(new MemberDescriptor(value, presentation, identifier));
+        myMembers.add(new MemberDescriptor(value, presentation, sourceNode, identifier));
       }
       int defaultMemberIndex = SEnumOperations.getDefaultEnumMemberIndex(enumDeclaration);
       if (defaultMemberIndex == -1) {
