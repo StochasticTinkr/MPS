@@ -46,7 +46,7 @@ public class OutOfScopeReferenceReportItem extends ReferenceReportItem implement
 
   @Override
   public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
-    return new HashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_NODE, FLAVOUR_NODE_FEATURE, FLAVOUR_RULE_ID));
+    return new HashSet<>(Arrays.asList(FLAVOUR_ISSUE_KIND, FLAVOUR_NODE, FLAVOUR_NODE_FEATURE, FLAVOUR_RULE_ID));
   }
 
   public static String getMessage(String targetName, SReferenceLink referenceLink) {
