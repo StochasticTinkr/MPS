@@ -126,7 +126,6 @@ class JarFileData extends AbstractJarFileData {
       }
 
       isInitialized = true;
-      myZipFileContainer.zipFile = null;
       try {
         myZipFileContainer.zipFile = new ZipFile(getFile());
         Enumeration<? extends ZipEntry> entries = myZipFileContainer.zipFile.entries();

@@ -17,9 +17,11 @@ package jetbrains.mps.vfs.impl;
 
 import java.util.zip.ZipFile;
 
-/**
- * Created by danilla on 29/12/16.
- */
+
+// todo [MM] want to rewrite it as a weak ref to a ZipFile in JarEntryFile plus cache of already-created Zip-files.
+// todo [MM] This should allow to remove AbstractJarFileData, ZipFileContainer and JarFileData. Also, it will make possible to collect ZipFile
+// todo [MM] while JarFile is still held by someone. Last but not least, to improve readability
+// this class is needed to store a pointer to a "created on demand" ZipFile for closing it when IFile holding it is collected by GC
 class ZipFileContainer {
-  ZipFile zipFile;
+  volatile ZipFile zipFile;
 }
