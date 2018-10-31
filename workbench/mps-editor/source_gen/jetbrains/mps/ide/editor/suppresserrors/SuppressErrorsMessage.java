@@ -11,6 +11,10 @@ import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class SuppressErrorsMessage extends AbstractLeftEditorHighlighterMessage {
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(1);
@@ -29,5 +33,17 @@ public class SuppressErrorsMessage extends AbstractLeftEditorHighlighterMessage 
   @Override
   public AnAction getClickAction() {
     return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.ShowSuppressedErrors_Action"));
+  }
+
+  @Override
+  public EditorCell getCell(EditorComponent editor) {
+    SNode node = getNode();
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"))) {
+      jetbrains.mps.nodeEditor.cells.EditorCell result = editor.findCellWithId(node, "suppressedInfo");
+      if (result != null) {
+        return result;
+      }
+    }
+    return super.getCell(editor);
   }
 }

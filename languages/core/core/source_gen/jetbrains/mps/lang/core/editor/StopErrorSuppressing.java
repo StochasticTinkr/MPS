@@ -5,6 +5,7 @@ package jetbrains.mps.lang.core.editor;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -19,7 +20,9 @@ public class StopErrorSuppressing {
         this.execute_internal(editorContext, node);
       }
       public void execute_internal(EditorContext editorContext, SNode node) {
-        SNodeOperations.deleteNode(node);
+        if (!(DeletionApproverUtil.approve(editorContext, node))) {
+          SNodeOperations.deleteNode(node);
+        }
       }
 
     };

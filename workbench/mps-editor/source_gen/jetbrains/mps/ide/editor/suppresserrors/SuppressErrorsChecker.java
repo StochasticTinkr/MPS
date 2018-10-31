@@ -16,18 +16,30 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class SuppressErrorsChecker extends BaseEventProcessingEditorChecker {
 
   @NotNull
   @Override
-  public UpdateResult update(EditorComponent editorComponent, boolean incremental, boolean applyQuickFixes, Cancellable cancellable) {
+  public UpdateResult update(final EditorComponent editorComponent, boolean incremental, boolean applyQuickFixes, Cancellable cancellable) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     SNode node = editorComponent.getEditedNode();
     for (SNode n : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"), true, new SAbstractConcept[]{}))) {
-      if (ListSequence.fromList(AttributeOperations.getAttributeList(n, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")))).isNotEmpty()) {
+      List<SNode> suppresses = AttributeOperations.getAttributeList(n, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")));
+      if (ListSequence.fromList(suppresses).select(new ISelector<SNode, EditorCell>() {
+        public EditorCell select(SNode it) {
+          return editorComponent.findNodeCell(it);
+        }
+      }).distinct().count() == ListSequence.fromList(suppresses).count()) {
+        for (SNode s : ListSequence.fromList(suppresses)) {
+          SetSequence.fromSet(messages).addElement(new SuppressErrorsMessage(s, this, "Errors suppressed"));
+        }
+      } else {
         SetSequence.fromSet(messages).addElement(new SuppressErrorsMessage(n, this, "Errors suppressed"));
       }
     }

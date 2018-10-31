@@ -8,8 +8,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -22,6 +20,8 @@ import jetbrains.mps.ide.editor.util.CustomizedNavigatable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import java.util.HashMap;
@@ -68,9 +68,6 @@ public class ShowSuppressedErrors_Action extends BaseAction {
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors")))) {
-        node = null;
-      }
       MapSequence.fromMap(_params).put("selectedNode", node);
       if (node == null) {
         return false;
@@ -99,7 +96,18 @@ public class ShowSuppressedErrors_Action extends BaseAction {
     final Wrappers._T<String> title = new Wrappers._T<String>();
     ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (final SNode suppress : ListSequence.fromList(AttributeOperations.getAttributeList(((SNode) MapSequence.fromMap(_params).get("selectedNode")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"))))) {
+        List<SNode> suppressed = ListSequence.fromList(new ArrayList<SNode>());
+        SNode parent;
+        if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"))) {
+          parent = SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"));
+          ListSequence.fromList(suppressed).addSequence(ListSequence.fromList(AttributeOperations.getAttributeList(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")))));
+        } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"))) {
+          parent = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"));
+          ListSequence.fromList(suppressed).addElement(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")));
+        } else {
+          throw new IllegalStateException();
+        }
+        for (final SNode suppress : ListSequence.fromList(suppressed)) {
           Map<String, String> predicateFlavours = new HashMap<String, String>();
           final String errorSpecialization = SPropertyOperations.getString(suppress, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"));
           try {
@@ -158,7 +166,7 @@ public class ShowSuppressedErrors_Action extends BaseAction {
           };
           ListSequence.fromList(navigatables).addElement(navigatable);
         }
-        title.value = "Errors suppressed for " + ((String) BHReflection.invoke0(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"), SMethodTrimmedId.create("nodeDescription", null, "4oS1ku9jIXr")));
+        title.value = "Errors suppressed for " + ((String) BHReflection.invoke0(parent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"), SMethodTrimmedId.create("nodeDescription", null, "4oS1ku9jIXr")));
       }
     });
     GoToContextMenuHelperBase<CustomizedNavigatable> helper = new GoToContextMenuHelperBase<CustomizedNavigatable>(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), new CaptionFunction() {
