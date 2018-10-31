@@ -752,35 +752,35 @@
   </root>
   <root nodeRef="r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/476103360378640391">
     <file name="EnumerationDescriptor_TestSubstituteEnumDataType.java">
-      <node id="476103360378640391" at="14,61,15,230" concept="9" />
-      <node id="476103360378640392" at="18,0,19,0" concept="2" trace="VALUE_myFirstValue_0" />
-      <node id="476103360378640393" at="19,0,20,0" concept="2" trace="VALUE_mySecondValue_0" />
-      <node id="476103360378640391" at="23,62,24,16" concept="6" />
-      <node id="476103360378640391" at="29,74,30,70" concept="6" />
-      <node id="476103360378640391" at="36,25,37,18" concept="6" />
-      <node id="476103360378640392" at="40,26,41,36" concept="6" />
-      <node id="476103360378640393" at="42,27,43,37" concept="6" />
-      <node id="476103360378640391" at="44,5,45,16" concept="6" />
-      <node id="476103360378640391" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_TestSubstituteEnumDataType#()V" />
-      <node id="476103360378640391" at="35,84,38,5" concept="3" />
-      <node id="476103360378640391" at="21,0,26,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <node id="476103360378640391" at="27,0,32,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
-      <node id="476103360378640391" at="38,5,44,5" concept="10" />
-      <node id="476103360378640391" at="33,0,47,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <scope id="476103360378640391" at="14,61,15,230" />
-      <scope id="476103360378640391" at="23,62,24,16" />
-      <scope id="476103360378640391" at="29,74,30,70" />
-      <scope id="476103360378640391" at="36,25,37,18" />
-      <scope id="476103360378640392" at="40,26,41,36" />
-      <scope id="476103360378640393" at="42,27,43,37" />
-      <scope id="476103360378640391" at="14,0,17,0" />
-      <scope id="476103360378640391" at="21,0,26,0" />
-      <scope id="476103360378640391" at="27,0,32,0" />
-      <scope id="476103360378640391" at="35,84,45,16" />
-      <scope id="476103360378640391" at="33,0,47,0">
+      <node id="476103360378640391" at="15,61,16,254" concept="9" />
+      <node id="476103360378640392" at="19,0,20,0" concept="2" trace="VALUE_myFirstValue_0" />
+      <node id="476103360378640393" at="20,0,21,0" concept="2" trace="VALUE_mySecondValue_0" />
+      <node id="476103360378640391" at="24,62,25,16" concept="6" />
+      <node id="476103360378640391" at="30,74,31,70" concept="6" />
+      <node id="476103360378640391" at="37,25,38,18" concept="6" />
+      <node id="476103360378640392" at="41,26,42,36" concept="6" />
+      <node id="476103360378640393" at="43,27,44,37" concept="6" />
+      <node id="476103360378640391" at="45,5,46,16" concept="6" />
+      <node id="476103360378640391" at="15,0,18,0" concept="0" trace="EnumerationDescriptor_TestSubstituteEnumDataType#()V" />
+      <node id="476103360378640391" at="36,84,39,5" concept="3" />
+      <node id="476103360378640391" at="22,0,27,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="476103360378640391" at="28,0,33,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="476103360378640391" at="39,5,45,5" concept="10" />
+      <node id="476103360378640391" at="34,0,48,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="476103360378640391" at="15,61,16,254" />
+      <scope id="476103360378640391" at="24,62,25,16" />
+      <scope id="476103360378640391" at="30,74,31,70" />
+      <scope id="476103360378640391" at="37,25,38,18" />
+      <scope id="476103360378640392" at="41,26,42,36" />
+      <scope id="476103360378640393" at="43,27,44,37" />
+      <scope id="476103360378640391" at="15,0,18,0" />
+      <scope id="476103360378640391" at="22,0,27,0" />
+      <scope id="476103360378640391" at="28,0,33,0" />
+      <scope id="476103360378640391" at="36,84,46,16" />
+      <scope id="476103360378640391" at="34,0,48,0">
         <var name="string" id="476103360378640391" />
       </scope>
-      <unit id="476103360378640391" at="12,0,48,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.EnumerationDescriptor_TestSubstituteEnumDataType" />
+      <unit id="476103360378640391" at="13,0,49,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.EnumerationDescriptor_TestSubstituteEnumDataType" />
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="476103360378640391" at="94,0,95,0" concept="2" trace="myEnumerationTestSubstituteEnumDataType" />
