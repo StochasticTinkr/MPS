@@ -118,7 +118,7 @@ public final class ModuleChecker {
       checkModule(type);
     }
     if (myRepository != null && myLoadedModule != null) {
-      // XXX in case myMudyle is _Language, there' might be another _Generator that references it, and we need to keep module registered. 
+      // XXX in case myModule is _Language, there' might be another _Generator that references it, and we need to keep module registered. 
       // Don't want to deal with different module kinds right now (i.e. can drop _Solution and _Generator here) 
       myLoadedModule = null;
     }

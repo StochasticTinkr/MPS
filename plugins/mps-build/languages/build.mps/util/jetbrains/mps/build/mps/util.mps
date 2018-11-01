@@ -1121,9 +1121,111 @@
             <property role="3SKdUp" value="XXX would be great to unregister all modules here, to dispose them explicitly, but as long as its our private repo, does it matter?" />
           </node>
         </node>
+        <node concept="3SKdUt" id="30bJSo_rNzd" role="3cqZAp">
+          <node concept="3SKdUq" id="30bJSo_rNzf" role="3SKWNk">
+            <property role="3SKdUp" value="We have to dispose modules as their models/datasources attach e.g. file listeners that get notified long time after generation of a build project is over." />
+          </node>
+        </node>
         <node concept="3SKdUt" id="7uEMFG4R_rJ" role="3cqZAp">
           <node concept="3SKdUq" id="7uEMFG4R_rL" role="3SKWNk">
             <property role="3SKdUp" value="BEWARE, don't ever try to do myRepository.dispose(). MRF is CoreComponent AND singleton, dispose just makes subsequent MRF.getInstance() (yes, there are still few out there) to fail with NPE" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="30bJSo_ql23" role="3cqZAp">
+          <node concept="3clFbS" id="30bJSo_ql25" role="3clFbx">
+            <node concept="3SKdUt" id="30bJSo_qz2t" role="3cqZAp">
+              <node concept="3SKdUq" id="30bJSo_qz2v" role="3SKWNk">
+                <property role="3SKdUp" value="MRF has distinction between 'true' repo and a global one it looks into at certain moments, beware to use proper one" />
+              </node>
+            </node>
+            <node concept="3cpWs8" id="30bJSo_qo$n" role="3cqZAp">
+              <node concept="3cpWsn" id="30bJSo_qo$t" role="3cpWs9">
+                <property role="TrG5h" value="modules" />
+                <node concept="3uibUv" id="30bJSo_qo$v" role="1tU5fm">
+                  <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                  <node concept="3uibUv" id="30bJSo_qoCm" role="11_B2D">
+                    <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                  </node>
+                </node>
+                <node concept="2YIFZM" id="30bJSo_qylA" role="33vP2m">
+                  <ref role="37wK5l" to="18ew:~IterableUtil.copyToList(java.lang.Iterable):java.util.List" resolve="copyToList" />
+                  <ref role="1Pybhc" to="18ew:~IterableUtil" resolve="IterableUtil" />
+                  <node concept="2OqwBi" id="30bJSo_qo6v" role="37wK5m">
+                    <node concept="2OqwBi" id="30bJSo_qlXs" role="2Oq$k0">
+                      <node concept="37vLTw" id="30bJSo_qlJJ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5IzazlwNp2b" resolve="myRepository" />
+                      </node>
+                      <node concept="liA8E" id="30bJSo_qnZs" role="2OqNvi">
+                        <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="30bJSo_qoik" role="2OqNvi">
+                      <ref role="37wK5l" to="lui2:~SRepository.getModules():java.lang.Iterable" resolve="getModules" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2Gpval" id="30bJSo_qzcO" role="3cqZAp">
+              <node concept="2GrKxI" id="30bJSo_qzcQ" role="2Gsz3X">
+                <property role="TrG5h" value="m" />
+              </node>
+              <node concept="37vLTw" id="30bJSo_qzki" role="2GsD0m">
+                <ref role="3cqZAo" node="30bJSo_qo$t" resolve="modules" />
+              </node>
+              <node concept="3clFbS" id="30bJSo_qzcU" role="2LFqv$">
+                <node concept="3SKdUt" id="30bJSo_rhvs" role="3cqZAp">
+                  <node concept="3SKdUq" id="30bJSo_rhvu" role="3SKWNk">
+                    <property role="3SKdUp" value="would be great to myRepository.unregisterModule(m) here, but there are 2 obstacles:" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="30bJSo_rhGP" role="3cqZAp">
+                  <node concept="3SKdUq" id="30bJSo_rhGR" role="3SKWNk">
+                    <property role="3SKdUp" value="first, MRF doesn't use true repo; second, we need to know module owner which is internal class in ModuleChecker now" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="30bJSo_rqsd" role="3cqZAp">
+                  <node concept="3SKdUq" id="30bJSo_rqsf" role="3SKWNk">
+                    <property role="3SKdUp" value="As I'm about to throw myRepository away, I don't care that much it is to hold information about disposed modules" />
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="30bJSo_roVI" role="3cqZAp">
+                  <node concept="3clFbS" id="30bJSo_roVK" role="3clFbx">
+                    <node concept="3clFbF" id="30bJSo_rwD6" role="3cqZAp">
+                      <node concept="2OqwBi" id="30bJSo_rwIx" role="3clFbG">
+                        <node concept="1eOMI4" id="30bJSo_rxca" role="2Oq$k0">
+                          <node concept="10QFUN" id="30bJSo_rxc7" role="1eOMHV">
+                            <node concept="3uibUv" id="30bJSo_rxji" role="10QFUM">
+                              <ref role="3uigEE" to="31cb:~SModuleBase" resolve="SModuleBase" />
+                            </node>
+                            <node concept="2GrUjf" id="30bJSo_rwD4" role="10QFUP">
+                              <ref role="2Gs0qQ" node="30bJSo_qzcQ" resolve="m" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="30bJSo_rN32" role="2OqNvi">
+                          <ref role="37wK5l" to="31cb:~SModuleBase.dispose():void" resolve="dispose" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2ZW3vV" id="30bJSo_rwq1" role="3clFbw">
+                    <node concept="3uibUv" id="30bJSo_rwyb" role="2ZW6by">
+                      <ref role="3uigEE" to="31cb:~SModuleBase" resolve="SModuleBase" />
+                    </node>
+                    <node concept="2GrUjf" id="30bJSo_rp1H" role="2ZW6bz">
+                      <ref role="2Gs0qQ" node="30bJSo_qzcQ" resolve="m" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="30bJSo_qlC4" role="3clFbw">
+            <node concept="10Nm6u" id="30bJSo_qlHP" role="3uHU7w" />
+            <node concept="37vLTw" id="30bJSo_qloq" role="3uHU7B">
+              <ref role="3cqZAo" node="5IzazlwNp2b" resolve="myRepository" />
+            </node>
           </node>
         </node>
       </node>
@@ -12408,7 +12510,7 @@
           <node concept="3clFbS" id="1_93eakWHk0" role="3clFbx">
             <node concept="3SKdUt" id="5IzazlwNA2C" role="3cqZAp">
               <node concept="3SKdUq" id="5IzazlwNA2E" role="3SKWNk">
-                <property role="3SKdUp" value="XXX in case myMudyle is _Language, there' might be another _Generator that references it, and we need to keep module registered." />
+                <property role="3SKdUp" value="XXX in case myModule is _Language, there' might be another _Generator that references it, and we need to keep module registered." />
               </node>
             </node>
             <node concept="3SKdUt" id="5IzazlwNA8w" role="3cqZAp">
