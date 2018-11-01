@@ -16,11 +16,14 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.MacroProcessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
-public interface MacroHelper {
+@Deprecated
+//todo [MM]: switch to MacroProcessor. There's no difference between these two, except MacroProcessor is a part of vfs package and module
+public interface MacroHelper extends MacroProcessor {
   String expandPath(@Nullable String path);
   String shrinkPath(@Nullable String absolutePath);
 

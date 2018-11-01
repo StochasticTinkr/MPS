@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 
 /**
@@ -34,7 +35,7 @@ public final class QualifiedPath {
   private final String myPath;
 
   /**
-   * @param fs must consist of letters only
+   * @param fs   must consist of letters only
    * @param path could be any
    */
   public QualifiedPath(@NotNull String fs, @NotNull String path) {
@@ -54,16 +55,17 @@ public final class QualifiedPath {
   }
 
   @NotNull
-  public String serialize() {
-    return myFsId + FS_DELIM + myPath;
+  public String serialize(@Nullable MacroProcessor mp) {
+    return myFsId + FS_DELIM + (mp == null ? myPath : mp.shrinkPath(myPath));
   }
 
   @NotNull
-  public static QualifiedPath deserialize(String s) {
+  public static QualifiedPath deserialize(@NotNull String s, @Nullable MacroProcessor mp) {
     int index = s.indexOf(FS_DELIM);
     if (index <= 0) {
       throw new IllegalStateException("Wrong format:" + s);
     }
-    return new QualifiedPath(s.substring(0, index), s.substring(index + FS_DELIM.length() + 1));
+    String path = s.substring(index + FS_DELIM.length() + 1);
+    return new QualifiedPath(s.substring(0, index), mp == null ? path : mp.expandPath(path));
   }
 }
