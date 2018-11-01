@@ -222,9 +222,11 @@ public final class MergeSession {
         ChangeSetImpl changeSet = as_bow6nj_a0a2a5a4a13(ch.getChangeSet(), ChangeSetImpl.class);
         assert changeSet != null;
         NodeGroupChange newChange = new NodeGroupChange(changeSet, ch.getParentNodeId(), ch.getRoleLink(), anchorIndex, anchorIndex, ch.getResultBegin(), ch.getResultEnd());
-        changeSet.add(newChange);
-        ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(ch.getRootId())).addElement(newChange);
-        ListSequence.fromList(MapSequence.fromMap(myNodeToChanges).get(ch.getParentNodeId())).addElement(newChange);
+        if (newChange.getBegin() < newChange.getEnd() || newChange.getResultBegin() < newChange.getResultEnd()) {
+          changeSet.add(newChange);
+          ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(ch.getRootId())).addElement(newChange);
+          ListSequence.fromList(MapSequence.fromMap(myNodeToChanges).get(ch.getParentNodeId())).addElement(newChange);
+        }
 
       }
     } else {
