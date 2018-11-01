@@ -37,7 +37,6 @@ public class MPSModuleClosureTest_Test extends EnvironmentAwareTestCase {
   public void test_l2DesignClosureContainsDirectDeps() throws Exception {
     MPSModulesClosure closure = new MPSModulesClosure(l2, new MPSModulesClosure.ModuleDependenciesOptions()).designtimeClosure();
     Iterable<SNode> designDeps = closure.getAllModules();
-    Assert.assertTrue(Sequence.fromIterable(designDeps).contains(l21));
     Assert.assertTrue(Sequence.fromIterable(designDeps).contains(l4));
     Assert.assertTrue(Sequence.fromIterable(designDeps).contains(sln4));
   }
@@ -130,7 +129,6 @@ public class MPSModuleClosureTest_Test extends EnvironmentAwareTestCase {
     // we do not need to design l2 we only need for it to run 
     Assert.assertTrue(!(Sequence.fromIterable(designDeps).contains(l2)));
     Assert.assertTrue(!(Sequence.fromIterable(designDeps).contains(l21)));
-    Assert.assertTrue(!(Sequence.fromIterable(designDeps).contains(l4)));
     Assert.assertTrue(!(Sequence.fromIterable(designDeps).contains(l4)));
     Assert.assertTrue(!(Sequence.fromIterable(designDeps).contains(rt4)));
     Assert.assertTrue(!(Sequence.fromIterable(designDeps).contains(sln21)));
@@ -291,7 +289,7 @@ public class MPSModuleClosureTest_Test extends EnvironmentAwareTestCase {
   public void test_l1GenerateClosureContainsSuperOfUsedLang() throws Exception {
     MPSModulesClosure closure = new MPSModulesClosure(l1, new MPSModulesClosure.ModuleDependenciesOptions()).generationDependenciesClosure();
     Iterable<SNode> genDeps = closure.getAllModules();
-    Assert.assertTrue(Sequence.fromIterable(genDeps).contains(l2));
+    Assert.assertTrue(Sequence.fromIterable(genDeps).contains(l21));
   }
   public void test_l1GenerateClosureContainsUsedLangDeps() throws Exception {
     MPSModulesClosure closure = new MPSModulesClosure(l1, new MPSModulesClosure.ModuleDependenciesOptions()).generationDependenciesClosure();
@@ -305,7 +303,7 @@ public class MPSModuleClosureTest_Test extends EnvironmentAwareTestCase {
     Iterable<SNode> genDeps = closure.getAllModules();
     Assert.assertTrue(Sequence.fromIterable(genDeps).contains(sln5));
   }
-  public void test_l1GenerateClosureDoesNotContainsRTofUsedLanng() throws Exception {
+  public void test_l1GenerateClosureDoesNotContainsRTofUsedLang() throws Exception {
     MPSModulesClosure closure = new MPSModulesClosure(l1, new MPSModulesClosure.ModuleDependenciesOptions()).generationDependenciesClosure();
     Iterable<SNode> genDeps = closure.getAllModules();
     Assert.assertTrue(!(Sequence.fromIterable(genDeps).contains(rt2)));
