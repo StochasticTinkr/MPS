@@ -33078,11 +33078,11 @@
           <ref role="3_I8Xa" node="1QfYSWzYzJR" resolve="vcs-platform.jar" />
         </node>
         <node concept="L2wRC" id="1QfYSWzZotz" role="39821P">
-          <ref role="L2wRA" node="4WGKd_KIwrs" />
+          <ref role="L2wRA" node="4WGKd_KIwrs" resolve="jetbrains.mps.vcs.mergehints.runtime" />
           <node concept="3yLZsm" id="1QfYSWzZMd$" role="3yL2VB">
             <property role="3yLZsk" value="../lib/vcs-core.jar" />
             <node concept="398BVA" id="1QfYSWzZMd_" role="3yLZsn">
-              <ref role="398BVh" node="6ifcnI8$2ke" />
+              <ref role="398BVh" node="6ifcnI8$2ke" resolve="mps_home" />
               <node concept="2Ry0Ak" id="1QfYSWzZMdA" role="iGT6I">
                 <property role="2Ry0Am" value="plugins" />
                 <node concept="2Ry0Ak" id="1QfYSWzZMdB" role="2Ry0An">
@@ -33096,16 +33096,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-      <node concept="398223" id="306QkZP3gt9" role="39821P">
-        <node concept="L2wRC" id="306QkZP3gta" role="39821P">
-          <ref role="L2wRA" node="6ifcnI8$2iU" resolve="jetbrains.mps.ide.vcs.modelmetadata" />
-        </node>
-        <node concept="3_J27D" id="306QkZP3gte" role="Nbhlr">
-          <node concept="3Mxwew" id="306QkZP3gtf" role="3MwsjC">
-            <property role="3MwjfP" value="languages" />
           </node>
         </node>
         <node concept="L2wRC" id="1QfYSWzZooj" role="39821P">
@@ -33148,6 +33138,16 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+      <node concept="398223" id="306QkZP3gt9" role="39821P">
+        <node concept="L2wRC" id="306QkZP3gta" role="39821P">
+          <ref role="L2wRA" node="6ifcnI8$2iU" resolve="jetbrains.mps.ide.vcs.modelmetadata" />
+        </node>
+        <node concept="3_J27D" id="306QkZP3gte" role="Nbhlr">
+          <node concept="3Mxwew" id="306QkZP3gtf" role="3MwsjC">
+            <property role="3MwjfP" value="languages" />
           </node>
         </node>
       </node>
