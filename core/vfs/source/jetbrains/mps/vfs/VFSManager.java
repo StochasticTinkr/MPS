@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -24,6 +25,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class VFSManager implements CoreComponent {
+  public static final String FILE_FS = "file";
+  public static final String JAR_FS = "jar";
+  public static final String JRT_FS = "jrt";
+
   private static final Logger LOG = LogManager.getLogger(VFSManager.class);
 
   private static VFSManager INSTANCE;
@@ -62,8 +67,17 @@ public class VFSManager implements CoreComponent {
 
   public FileSystem getFileSystem(@NotNull String fsId) {
     if (!myFileSystems.containsKey(fsId)) {
-      LOG.error("File system not found for protocol " + fsId);
-      return null;
+      switch (fsId) {
+        case FILE_FS:
+          return IoFileSystem.INSTANCE;
+        case JAR_FS:
+          return IoFileSystem.INSTANCE;
+        case JRT_FS:
+          throw new IllegalArgumentException("not supported yet");
+        default:
+          LOG.error("File system not found for protocol " + fsId);
+          return null;
+      }
     }
 
     return myFileSystems.get(fsId);

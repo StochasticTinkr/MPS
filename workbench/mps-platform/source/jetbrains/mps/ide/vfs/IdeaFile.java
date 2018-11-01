@@ -26,6 +26,7 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.newvfs.ArchiveFileSystem;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.vfs.QualifiedPath;
+import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.impl.IoFile;
 import jetbrains.mps.vfs.impl.JarEntryFile;
 import jetbrains.mps.vfs.refresh.CachingContext;
@@ -107,7 +108,7 @@ public class IdeaFile implements IFile, CachingFile {
   @Override
   public QualifiedPath getQualifiedPath() {
     String path = getPath();
-    return new QualifiedPath(path.contains(Path.ARCHIVE_SEPARATOR)? IoFile.FILE_FS_ID: JarEntryFile.JAR, path);
+    return new QualifiedPath(path.contains(Path.ARCHIVE_SEPARATOR) ? VFSManager.FILE_FS : VFSManager.JAR_FS, path);
   }
 
   @Override

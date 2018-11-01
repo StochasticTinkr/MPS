@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.vfs.QualifiedPath;
+import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Hack;
@@ -36,7 +37,6 @@ import java.util.List;
 
 @Immutable
 public class JarEntryFile implements IFile {
-  public static final String JAR = "jar"; //todo move to FS
   private static final IoFileSystem FS = IoFileSystem.INSTANCE;
 
   private final AbstractJarFileData myJarFileData;
@@ -129,7 +129,7 @@ public class JarEntryFile implements IFile {
 
   @Override
   public QualifiedPath getQualifiedPath() {
-    return new QualifiedPath(JAR, getPath());
+    return new QualifiedPath(VFSManager.JAR_FS, getPath());
   }
 
   @Override
