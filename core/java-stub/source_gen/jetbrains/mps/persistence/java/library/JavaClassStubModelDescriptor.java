@@ -134,16 +134,25 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
 
   @Override
   public void reloadFromDiskSafe() {
-    assertCanChange();
-    if (getSource().getPaths().isEmpty()) {
-      SModule module = getModule();
-      if (module instanceof SModuleBase) {
-        ((SModuleBase) module).unregisterModel(this);
-      }
+    SRepository repo = getRepository();
+    if (repo == null) {
+      // detached model, don't care to make it up-to-date 
+      // XXX same code is in EitableSModelBase, could I refactor to avoid that? 
       return;
     }
-    reload();
-    myTimestampTracker.updateTimestamp(getSource());
+    repo.getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        if (getSource().getPaths().isEmpty()) {
+          SModule module = getModule();
+          if (module instanceof SModuleBase) {
+            ((SModuleBase) module).unregisterModel(JavaClassStubModelDescriptor.this);
+          }
+          return;
+        }
+        reload();
+        myTimestampTracker.updateTimestamp(getSource());
+      }
+    });
   }
 
   private void reload() {
