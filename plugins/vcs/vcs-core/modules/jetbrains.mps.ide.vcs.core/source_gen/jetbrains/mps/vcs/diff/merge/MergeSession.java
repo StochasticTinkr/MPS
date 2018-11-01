@@ -208,8 +208,12 @@ public final class MergeSession {
     }
     if (change instanceof NodeGroupChange && ((NodeGroupChange) change).getRoleLink().isMultiple()) {
       // adjust conflicting changes: leave possibility to reject or insert them separately 
-      NodeGroupChange ngc = (NodeGroupChange) change;
-      List<NodeGroupChange> conflictedChanges = Sequence.fromIterable(getConflictedWith(ngc)).ofType(NodeGroupChange.class).toListSequence();
+      final NodeGroupChange ngc = (NodeGroupChange) change;
+      List<NodeGroupChange> conflictedChanges = Sequence.fromIterable(getConflictedWith(ngc)).ofType(NodeGroupChange.class).where(new IWhereFilter<NodeGroupChange>() {
+        public boolean accept(NodeGroupChange ch) {
+          return ch.getParentNodeId().equals(ngc.getParentNodeId());
+        }
+      }).toListSequence();
       int anchorIndex = ngc.getEnd();
       ngc.apply(myResultModel, myNodeCopier);
       for (NodeGroupChange ch : ListSequence.fromList(conflictedChanges)) {
