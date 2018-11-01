@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
 /**
@@ -32,26 +33,37 @@ public final class QualifiedPath {
   private final String myFsId;
   private final String myPath;
 
-  public QualifiedPath(String fs, String path) {
+  /**
+   * @param fs must consist of letters only
+   * @param path could be any
+   */
+  public QualifiedPath(@NotNull String fs, @NotNull String path) {
+    assert fs.chars().allMatch(Character::isLetter);
     myFsId = fs;
     myPath = path;
   }
 
+  @NotNull
   public String getFsId() {
     return myFsId;
   }
 
+  @NotNull
   public String getPath() {
     return myPath;
   }
 
+  @NotNull
   public String serialize() {
     return myFsId + FS_DELIM + myPath;
   }
 
+  @NotNull
   public static QualifiedPath deserialize(String s) {
     int index = s.indexOf(FS_DELIM);
-    assert index > 0;
+    if (index <= 0) {
+      throw new IllegalStateException("Wrong format:" + s);
+    }
     return new QualifiedPath(s.substring(0, index), s.substring(index + FS_DELIM.length() + 1));
   }
 }
