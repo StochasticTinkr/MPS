@@ -87,23 +87,19 @@ public interface IFile {
   @NotNull String getName();
 
   /**
-   * @return the whole path to the abstract location.
-   * The current contract:
-   * the resulting path will be canonical, absolute
-   * and the folders are separated with {@link Path#UNIX_SEPARATOR_CHAR} // todo explain more
-   *
-   * @see File#getCanonicalPath()
-   * @see Path
+   * Returns a path of this file in a file system.
    */
-  @ToRemove(version = 3.5)
-  /*@Deprecated*/
   @NotNull String getPath();
 
   /**
-   * Null if an error has occured.
+   * use getQualifiedPath()
    */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 2019.1)
   URL getUrl() throws MalformedURLException;
+
+  QualifiedPath getQualifiedPath();
 
   /**
    * @return null iff the instance is root and has no parent, the parent folder otherwise

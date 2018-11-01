@@ -63,7 +63,6 @@ import java.util.Set;
  */
 public final class ModulesMiner {
   private static final Logger LOG = LogManager.getLogger(ModulesMiner.class);
-  private static final String DOT_JAR = JarEntryFile.DOT_JAR;
   public static final String META_INF = "META-INF";
   private static final String JAR_SEPARATOR = Path.ARCHIVE_SEPARATOR;
   public static final String MODULE_XML = "module.xml";

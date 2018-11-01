@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs.impl;
 
+import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Hack;
@@ -33,14 +34,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Todo rewrite using {@link Path}
- */
 @Immutable
 public class JarEntryFile implements IFile {
-  public static final String JAR = "jar";
-  private static final String DOT = ".";
-  public static final String DOT_JAR = DOT + JAR;
+  public static final String JAR = "jar"; //todo move to FS
   private static final IoFileSystem FS = IoFileSystem.INSTANCE;
 
   private final AbstractJarFileData myJarFileData;
@@ -129,6 +125,11 @@ public class JarEntryFile implements IFile {
   @Override
   public String getPath() {
     return myJarFile.getAbsolutePath() + "!/" + myEntryPath;
+  }
+
+  @Override
+  public QualifiedPath getQualifiedPath() {
+    return new QualifiedPath(JAR, getPath());
   }
 
   @Override

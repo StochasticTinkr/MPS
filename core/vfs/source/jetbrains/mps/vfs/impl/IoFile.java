@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs.impl;
 
+import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -39,6 +40,7 @@ import java.util.List;
  */
 @Immutable
 public class IoFile implements IFile {
+  public static final String FILE_FS_ID = "file";
   @NotNull private final File myFile; // always absolute
   private final static IoFileSystem ourFS = IoFileSystem.INSTANCE;
 
@@ -84,6 +86,11 @@ public class IoFile implements IFile {
   @Override
   public String getPath() {
     return toSystemIndependentName(myFile.getAbsolutePath());
+  }
+
+  @Override
+  public QualifiedPath getQualifiedPath() {
+    return new QualifiedPath(FILE_FS_ID, getPath());
   }
 
   @NotNull

@@ -25,6 +25,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.newvfs.ArchiveFileSystem;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
+import jetbrains.mps.vfs.QualifiedPath;
+import jetbrains.mps.vfs.impl.IoFile;
+import jetbrains.mps.vfs.impl.JarEntryFile;
 import jetbrains.mps.vfs.refresh.CachingContext;
 import jetbrains.mps.vfs.refresh.CachingFile;
 import jetbrains.mps.vfs.refresh.CachingFileSystem;
@@ -51,6 +54,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.jar.JarFile;
 
 /**
  * NOTE the IdeaFiles' equality now totally depends on the starting string.
@@ -98,6 +102,12 @@ public class IdeaFile implements IFile, CachingFile {
     } else {
       return myPath;
     }
+  }
+
+  @Override
+  public QualifiedPath getQualifiedPath() {
+    String path = getPath();
+    return new QualifiedPath(path.contains(Path.ARCHIVE_SEPARATOR)? IoFile.FILE_FS_ID: JarEntryFile.JAR, path);
   }
 
   @Override
