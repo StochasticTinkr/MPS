@@ -3512,7 +3512,7 @@
                 <node concept="2pNUuL" id="4Xk_ETUivOu" role="2pNNFR">
                   <property role="2pNUuO" value="name" />
                   <node concept="2pMdtt" id="4Xk_ETUivOw" role="2pMdts">
-                    <property role="2pMdty" value="asm-all-7.0-beta.jar" />
+                    <property role="2pMdty" value="asm-all-*.jar" />
                   </node>
                 </node>
               </node>
@@ -3522,7 +3522,7 @@
                 <node concept="2pNUuL" id="1Mjrj7j4BBx" role="2pNNFR">
                   <property role="2pNUuO" value="name" />
                   <node concept="2pMdtt" id="1Mjrj7j4BBD" role="2pMdts">
-                    <property role="2pMdty" value="forms-1.1-preview.jar" />
+                    <property role="2pMdty" value="forms-*.jar" />
                   </node>
                 </node>
               </node>
