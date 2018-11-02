@@ -320,31 +320,28 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
       return new Template_reduce_ModelPointerExpression();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139337716713"))) {
-      return new Template_reduce_EnumMemberReference_null_internalValue();
-    }
-    if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146178533035"))) {
-      return new Template_reduce_Property_HasValue_Enum_nullDefaultValue();
+      return new Template_reduce_EnumerationMemberDeclaration_nameLiteral();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3320646261222031787"))) {
       return new Template_reduce_NodeIdentity_SNodeReference();
-    }
-    if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146249898887"))) {
-      return new Template_reduce_SPropertyAccess_enum();
-    }
-    if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139337080836"))) {
-      return new Template_reduce_EnumMemberReference_notNull_internalValue();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146256190196"))) {
       return new Template_reduce_Property_HasValue_Simple();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139275804866"))) {
-      return new Template_reduce_SPropertyAccess_simple();
+      return new Template_reduce_SPropertyAccess();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3506770386464377169"))) {
       return new Template_reduce_Model_PointerOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146176981592"))) {
-      return new Template_reduce_Property_HasValue_Enum_notNullDefaultValue();
+      return new Template_reduce_Property_HasValue_Enum();
+    }
+    if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1189519421088849776"))) {
+      return new Template_reduce_Property_SetOperation();
+    }
+    if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1189519421088884847"))) {
+      return new Template_reduce_Property_RemoveOperation();
     }
     return null;
   }

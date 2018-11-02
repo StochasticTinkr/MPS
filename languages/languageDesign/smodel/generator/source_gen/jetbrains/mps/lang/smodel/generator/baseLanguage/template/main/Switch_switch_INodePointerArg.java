@@ -51,7 +51,7 @@ public class Switch_switch_INodePointerArg extends TemplateSwitchBase implements
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_128_0(new SourceSubstituteMacroNodeContext(context, copySrcMacro_230kvm_b0a0d0b7));
+      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_126_0(new SourceSubstituteMacroNodeContext(context, copySrcMacro_230kvm_b0a0d0b7));
       tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_230kvm_b0a0d0b7, "tpl/r:00000000-0000-4000-0000-011c89590303/3320646261222008452", context);
       return tlist1;
     }
@@ -64,7 +64,7 @@ public class Switch_switch_INodePointerArg extends TemplateSwitchBase implements
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_128_1(new SourceSubstituteMacroNodeContext(context, callMacro_230kvm_b0a0a2a1i));
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_126_1(new SourceSubstituteMacroNodeContext(context, callMacro_230kvm_b0a0a2a1i));
       TemplateContext context1;
       context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {

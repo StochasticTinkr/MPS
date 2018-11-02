@@ -12,11 +12,12 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.template.IfMacroContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import java.util.Collection;
 import java.util.ArrayList;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -25,24 +26,34 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 @Generated
-public class Template_reduce_EnumMemberReference_notNull_internalValue extends TemplateDeclarationBase implements TemplateDeclaration2 {
+public class Template_reduce_EnumerationMemberDeclaration_nameLiteral extends TemplateDeclarationBase implements TemplateDeclaration2 {
 
-  public Template_reduce_EnumMemberReference_notNull_internalValue() {
+  public Template_reduce_EnumerationMemberDeclaration_nameLiteral() {
   }
 
   public SNodeReference getTemplateNode() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139337080836");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139337716713");
   }
 
 
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
-    final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
-    try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_131_0(new PropertyMacroContext(context, "_internal_value_", propertyMacro_gvjlvq_c0a0c0a0c0g))));
-    } finally {
+    Collection<SNode> tlist1 = null;
+    if (QueriesGenerated.ifMacro_Condition_124_0(new IfMacroContext(context, ifMacroRef_jdvjnt_b0a0c0g))) {
+      final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
+      try {
+        SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_124_0(new PropertyMacroContext(context, null, propertyMacro_jdvjnt_c0a0c0a0b0c0g))));
+      } finally {
+      }
+      tlist1 = TemplateUtil.singletonList(tnode2);
+    } else {
+      final SNode tnode3 = environment.createOutputNode(myConcepts[1]);
+      try {
+      } finally {
+      }
+      tlist1 = TemplateUtil.singletonList(tnode3);
     }
-    FragmentResult rv = nodeFragment(0, tnode1);
+    FragmentResult rv = listFragment(0, tlist1);
     return rv;
   }
   @Override
@@ -60,8 +71,9 @@ public class Template_reduce_EnumMemberReference_notNull_internalValue extends T
   }
   @Override
   protected SConcept[] initConcepts() {
-    SConcept[] rv = new SConcept[1];
+    SConcept[] rv = new SConcept[2];
     rv[0] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf93d565d10L, "StringLiteral");
+    rv[1] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf940cd6167L, "NullLiteral");
     return rv;
   }
   @Override
@@ -76,5 +88,6 @@ public class Template_reduce_EnumMemberReference_notNull_internalValue extends T
     rv[0] = MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode");
     return rv;
   }
-  private static SNodePointer propertyMacro_gvjlvq_c0a0c0a0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139337213373");
+  private static SNodePointer propertyMacro_jdvjnt_c0a0c0a0b0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1189519421088903919");
+  private static SNodePointer ifMacroRef_jdvjnt_b0a0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1189519421088892595");
 }
