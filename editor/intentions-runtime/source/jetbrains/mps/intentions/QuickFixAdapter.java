@@ -18,12 +18,12 @@ package jetbrains.mps.intentions;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.RuleIdFlavouredItem.TypesystemRuleId;
+import jetbrains.mps.nodeEditor.checking.QuickFixRuntimeEditorWrapper;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.intentions.Kind;
-import jetbrains.mps.nodeEditor.checking.QuickFixRuntimeEditorWrapper;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -45,7 +45,7 @@ public class QuickFixAdapter extends OldBaseIntentionFactory {
 
   @Override
   public String getPersistentStateKey() {
-    return getClass().getName();
+    return myQuickFix.toPredicate(myQuickFix.getIdFlavours()).serialize();
   }
 
   @Override

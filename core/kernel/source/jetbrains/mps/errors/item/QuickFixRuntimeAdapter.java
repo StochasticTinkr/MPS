@@ -20,7 +20,6 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -81,7 +80,7 @@ public class QuickFixRuntimeAdapter implements EditorQuickFix, NodeFlavouredItem
 
   @Override
   public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
-    return new HashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_QUICKFIX_RUNTIME, FLAVOUR_NODE));
+    return new HashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_RULE_ID, FLAVOUR_NODE));
   }
 
   @Override

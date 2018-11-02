@@ -18,11 +18,14 @@ package jetbrains.mps.errors.item;
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
 import jetbrains.mps.util.ListMap;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -112,7 +115,9 @@ public interface FlavouredItem {
     }
     public String serialize() {
       StringBuilder result = new StringBuilder();
-      for (Entry<String, String> flavour : myFlavours.entrySet()) {
+      List<Entry<String, String>> entries = new ArrayList<>(myFlavours.entrySet());
+      entries.sort(Comparator.comparing(Entry::getKey));
+      for (Entry<String, String> flavour : entries) {
         result.append(flavour.getKey()).append("=\"").append(NameUtil.escapeString(flavour.getValue())).append("\";");
       }
       return result.toString();
@@ -120,16 +125,21 @@ public interface FlavouredItem {
   }
 
   default FlavourPredicate toPredicate(Set<ReportItemFlavour<?, ?>> idFlavours) {
+    Set<ReportItemFlavour<?, ?>> flavourKeys = new HashSet<>(idFlavours);
     Map<String, String> flavours = new HashMap<>();
-    idFlavours.remove(FLAVOUR_NODE);
-    idFlavours.add(ReportItem.FLAVOUR_MESSAGE);
-    for (ReportItemFlavour flavour : idFlavours) {
-      Object value = flavour.tryToGet(this);
-      if (value != null) {
-        flavours.put(flavour.getId(), flavour.serialize(value));
-      }
+    flavourKeys.remove(FLAVOUR_NODE);
+    flavourKeys.add(ReportItem.FLAVOUR_MESSAGE);
+    for (ReportItemFlavour<?, ?> flavour : flavourKeys) {
+      serializeFlavour(this, flavours, flavour);
     }
     return new FlavourPredicate(flavours);
+  }
+
+  static <T>void serializeFlavour(FlavouredItem fI, Map<String, String> flavours, ReportItemFlavour<?, T> flavour) {
+    T value = flavour.tryToGet(fI);
+    if (value != null) {
+      flavours.put(flavour.getId(), flavour.serialize(value));
+    }
   }
 
   ReportItemFlavour<FlavouredItem, Class<? extends FlavouredItem>> FLAVOUR_CLASS = new SimpleReportItemFlavour<>("FLAVOUR_CLASS", FlavouredItem.class, FlavouredItem::getClass);
