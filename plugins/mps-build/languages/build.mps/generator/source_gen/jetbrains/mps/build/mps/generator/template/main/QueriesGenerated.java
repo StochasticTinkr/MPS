@@ -61,7 +61,7 @@ import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.build.util.LocalSourcePathArtifact;
-import jetbrains.mps.build.mps.util.RequiredPlugins;
+import jetbrains.mps.build.mps.util.ModulePlugins;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.util.ProjectDependency;
 import java.util.Map;
@@ -1724,61 +1724,23 @@ public class QueriesGenerated extends QueryProviderBase {
     });
   }
   public static Object varMacro_Value_10_6(final TemplateVarContext _context) {
-    final DependenciesHelper helper = new DependenciesHelper(_context, _context.getNode());
-    return Sequence.fromIterable(new RequiredPlugins(_context.getNode(), _context).getDependency()).select(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        SNode layoutNode = helper.getArtifact(it);
-        if ((layoutNode == null)) {
-          return null;
-        }
-        String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, it);
-        if (val == null) {
-          return null;
-        }
-        return val;
-      }
-    }).where(new IWhereFilter<String>() {
-      public boolean accept(String it) {
-        return (it != null && it.length() > 0);
-      }
-    }).sort(new ISelector<String, String>() {
-      public String select(String it) {
-        return it;
-      }
-    }, true).toGenericArray(String.class);
+    ModulePlugins plugins = new ModulePlugins(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), _context);
+    plugins.collect(((MPSModulesPartitioner) _context.getVariable("var:closure")).getExternal());
+    return plugins.getPluginPaths();
   }
   public static Object varMacro_Value_10_7(final TemplateVarContext _context) {
     return (MPSModulesPartitioner.Chunk) _context.getNode().getUserObject("chunk");
   }
   public static Object varMacro_Value_10_8(final TemplateVarContext _context) {
-    final DependenciesHelper helper = new DependenciesHelper(_context, _context.getNode());
-    return Sequence.fromIterable(new RequiredPlugins(_context.getNode(), _context).getDependency()).select(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        SNode layoutNode = helper.getArtifact(it);
-        if ((layoutNode == null)) {
-          return null;
-        }
-        String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, it);
-        if (val == null) {
-          return null;
-        }
-        return val;
-      }
-    }).where(new IWhereFilter<String>() {
-      public boolean accept(String it) {
-        return (it != null && it.length() > 0);
-      }
-    }).sort(new ISelector<String, String>() {
-      public String select(String it) {
-        return it;
-      }
-    }, true).toGenericArray(String.class);
+    ModulePlugins plugins = new ModulePlugins(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), _context);
+    plugins.collect(((MPSModulesPartitioner) _context.getVariable("var:closure")).getExternal());
+    return plugins.getPluginPaths();
   }
   public static Object varMacro_Value_10_9(final TemplateVarContext _context) {
     VisibleModules visibleModules = new VisibleModules(_context.getNode());
     visibleModules.collect();
     SNode gentest = visibleModules.resolve("jetbrains.mps.tool.gentest", "3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7");
-    MPSModulesClosure closure = new MPSModulesClosure(SNodeOperations.cast(gentest, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")), new MPSModulesClosure.ModuleDependenciesOptions());
+    MPSModulesClosure closure = new MPSModulesClosure(SNodeOperations.cast(gentest, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")));
     Iterable<SNode> allModules = Sequence.fromIterable(closure.runtimeClosure().getAllModules()).union(Sequence.fromIterable(((MPSModulesPartitioner) _context.getVariable("var:closure")).getExternal())).union(Sequence.fromIterable(Sequence.<SNode>singleton(gentest)));
     return ModuleFinder.findModules(allModules, _context, _context.getNode());
   }

@@ -14,9 +14,10 @@ import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.InitializationError;
 import junit.framework.TestSuite;
 import org.junit.runner.manipulation.Filterable;
-import java.util.List;
+import java.util.Set;
 import junit.framework.Test;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import junit.framework.TestResult;
 import org.junit.runner.manipulation.Filter;
 import org.junit.runner.manipulation.NoTestsRemainException;
@@ -80,16 +81,16 @@ public final class PushEnvironmentRunnerBuilder extends RunnerBuilder {
    * TestSuite subclass
    */
   /*package*/ class JUnit38SuiteAdapter extends TestSuite implements Filterable {
-    private final List<Test> myFilteredTests;
+    private final Set<Test> myFilteredTests;
 
     /*package*/ JUnit38SuiteAdapter(Class<?> klass) {
       super(klass);
-      myFilteredTests = new ArrayList<Test>();
+      myFilteredTests = SetSequence.fromSet(new HashSet<Test>());
     }
 
     @Override
     public void runTest(Test test, TestResult result) {
-      if (myFilteredTests.contains(test)) {
+      if (SetSequence.fromSet(myFilteredTests).contains(test)) {
         return;
       }
       if (test instanceof EnvironmentAware) {
@@ -101,12 +102,12 @@ public final class PushEnvironmentRunnerBuilder extends RunnerBuilder {
 
     @Override
     public int testCount() {
-      return super.testCount() - myFilteredTests.size();
+      return super.testCount() - SetSequence.fromSet(myFilteredTests).count();
     }
 
     @Override
     public int countTestCases() {
-      return super.countTestCases() - myFilteredTests.size();
+      return super.countTestCases() - SetSequence.fromSet(myFilteredTests).count();
     }
 
     @Override
@@ -116,9 +117,9 @@ public final class PushEnvironmentRunnerBuilder extends RunnerBuilder {
         if (t instanceof TestCase && filter.shouldRun(Description.createTestDescription(t.getClass(), ((TestCase) t).getName()))) {
           continue;
         }
-        myFilteredTests.add(t);
+        SetSequence.fromSet(myFilteredTests).addElement(t);
       }
-      if (myFilteredTests.size() == super.testCount()) {
+      if (SetSequence.fromSet(myFilteredTests).count() == super.testCount()) {
         throw new NoTestsRemainException();
       }
     }
