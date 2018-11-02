@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.adapter.structure.types.SEnumerationAdapter;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
@@ -79,8 +80,8 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
         final SDataType type = property.getType();
         // FIXME `node.enumProp` how has pure raw value type while here we have to return SEnumerationLiteral instance
         // FIXME remove this when typeof(`node.enumProp`) become SEnumLiteral
-        if (type instanceof SEnumeration) {
-          return ((SEnumeration) type).getLiteral(value == null ? null : String.valueOf(value));
+        if (type instanceof SEnumerationAdapter) {
+          return ((SEnumerationAdapter) type).convertValueToLiteral(value);
         }
         // FIXME mbeddr ext `propertydefault` might also return serialized value from `descriptor.getValue()` so here we have to deserialize it
         // FIXME remove it after 2018.3 so instances of `propertydefault` will be regenerated
@@ -126,6 +127,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   @Override
   public void setPropertyValueImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property, Object propertyValue) {
     // FIXME Unfortunately there're some generators to LongLiteral that relies on committing invalid property values
+    // FIXME Also for now (2018.3) we can set invalid enum property values from smodel for compatibility reasons
 //    if (!property.getType().isInstanceOf(propertyValue)) {
 //      return;
 //    }

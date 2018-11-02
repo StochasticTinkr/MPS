@@ -67,11 +67,8 @@ public interface IPropertyPresentationProvider {
       @Nullable
       @Override
       public String getPresentation(@Nullable Object value) {
-        if (value instanceof SEnumerationLiteral) {
-          SEnumerationLiteral literal = (SEnumerationLiteral) value;
-          if (enumeration.equals(literal.getEnumeration())) {
-            return literal.getPresentation();
-          }
+        if (value instanceof SEnumerationLiteral && enumeration.isInstanceOf(value)) {
+          return ((SEnumerationLiteral) value).getPresentation();
         }
         return null;
       }

@@ -63,11 +63,7 @@ public final class TypeRegistry implements CoreComponent {
   public SType getType(STypeId id) {
     // FIXME make extensible
     if (id instanceof PrimitiveTypeId) {
-      switch ((PrimitiveTypeId) id) {
-        case STRING: return SPrimitiveTypes.STRING;
-        case BOOLEAN: return SPrimitiveTypes.BOOLEAN;
-        case INTEGER: return SPrimitiveTypes.INTEGER;
-      }
+      return SPrimitiveTypes.getType((PrimitiveTypeId) id);
     }
     if (id instanceof SDataTypeId) {
       final SDataTypeId dataTypeId = (SDataTypeId) id;
