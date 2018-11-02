@@ -467,11 +467,13 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Void" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.MPSModulesClosure" />
+    <classNode dependClassName="jetbrains.mps.build.mps.util.ModulePlugins" />
     <classNode dependClassName="jetbrains.mps.build.util.JavaExportUtil" />
     <classNode dependClassName="jetbrains.mps.build.util.RequiredDependenciesBuilder" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
@@ -484,6 +486,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

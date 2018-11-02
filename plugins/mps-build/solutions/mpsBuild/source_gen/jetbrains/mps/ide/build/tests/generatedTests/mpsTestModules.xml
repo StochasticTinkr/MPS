@@ -651,6 +651,14 @@
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" skipUnmodifiedModels="${mps.generator.skipUnmodifiedModels}">
+      <plugin path="${artifacts.mps}/plugins/migration" />
+      <plugin path="${artifacts.mps}/plugins/modelchecker" />
+      <plugin path="${artifacts.mps}/plugins/mps-build" />
+      <plugin path="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
+      <plugin path="${artifacts.mps}/plugins/mps-devkit/META-INF/plugin.xml/../.." />
+      <plugin path="${artifacts.mps}/plugins/mps-make" />
+      <plugin path="${artifacts.mps}/plugins/mps-testing" />
+      <plugin path="${build.tmp}/deps/mpsWorkbench/mps-workbench.jar/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -1554,6 +1562,7 @@
     <path id="mps.plugins.path">
       <pathelement location="${artifacts.mps}/plugins/migration" />
       <pathelement location="${artifacts.mps}/plugins/modelchecker" />
+      <pathelement location="${artifacts.mps}/plugins/mps-build" />
       <pathelement location="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
       <pathelement location="${artifacts.mps}/plugins/mps-devkit/META-INF/plugin.xml/../.." />
       <pathelement location="${artifacts.mps}/plugins/mps-make" />
@@ -1581,6 +1590,9 @@
         <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/modelchecker">
+        <patternset refid="plugin.deployed.jars" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-build">
         <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">

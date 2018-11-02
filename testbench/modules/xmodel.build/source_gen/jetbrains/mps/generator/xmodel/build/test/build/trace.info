@@ -7,7 +7,7 @@
   </root>
   <root nodeRef="r:c038eee7-4c1b-499b-b130-c7394a2f3517(jetbrains.mps.generator.xmodel.build.test.build)/4147559706650342953">
     <file name="p2.xml">
-      <unit id="4147559706650342953" at="1,0,188,10" name="jetbrains.mps.generator.xmodel.build.test.build.p2" />
+      <unit id="4147559706650342953" at="1,0,190,10" name="jetbrains.mps.generator.xmodel.build.test.build.p2" />
     </file>
   </root>
 </debug-info>

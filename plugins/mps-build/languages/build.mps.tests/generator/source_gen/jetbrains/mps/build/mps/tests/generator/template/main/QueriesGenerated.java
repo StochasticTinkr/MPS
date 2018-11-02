@@ -28,6 +28,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.build.mps.util.ModulePlugins;
+import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import java.util.HashMap;
@@ -158,10 +159,12 @@ public class QueriesGenerated extends QueryProviderBase {
       public Iterable<SNode> translate(SNode it) {
         return (Iterable<SNode>) BuildMpsLayout_TestModules_Content__BehaviorDescriptor.getModules_id3X9rC2XzJij.invoke(it);
       }
-    }), new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).designtimeClosure();
+    }), new MPSModulesClosure.ModuleDependenciesOptions().setTrackDevkits()).designtimeClosure();
   }
   public static Object varMacro_Value_0_2(final TemplateVarContext _context) {
-    return new ModulePlugins(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), _context).getPluginPaths();
+    ModulePlugins plugins = new ModulePlugins(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), _context);
+    plugins.collect(((MPSModulesClosure) _context.getVariable("var:closure")).getAllModules(), new ArrayList<SNode>());
+    return plugins.getPluginPaths();
   }
   private final Map<String, SourceNodesQuery> snsqMethods = new HashMap<String, SourceNodesQuery>();
   {

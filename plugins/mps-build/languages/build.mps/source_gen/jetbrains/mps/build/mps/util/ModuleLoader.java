@@ -19,6 +19,11 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.List;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
@@ -34,7 +39,6 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SModule;
 import java.util.HashMap;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.AbstractModule;
@@ -98,7 +102,20 @@ public final class ModuleLoader {
     });
 
     // XXX would be great to unregister all modules here, to dispose them explicitly, but as long as its our private repo, does it matter? 
+    // We have to dispose modules as their models/datasources attach e.g. file listeners that get notified long time after generation of a build project is over. 
     // BEWARE, don't ever try to do myRepository.dispose(). MRF is CoreComponent AND singleton, dispose just makes subsequent MRF.getInstance() (yes, there are still few out there) to fail with NPE 
+    if (myRepository != null) {
+      // MRF has distinction between 'true' repo and a global one it looks into at certain moments, beware to use proper one 
+      List<SModule> modules = IterableUtil.copyToList(myRepository.getRepository().getModules());
+      for (SModule m : ListSequence.fromList(modules)) {
+        // would be great to myRepository.unregisterModule(m) here, but there are 2 obstacles: 
+        // first, MRF doesn't use true repo; second, we need to know module owner which is internal class in ModuleChecker now 
+        // As I'm about to throw myRepository away, I don't care that much it is to hold information about disposed modules 
+        if (m instanceof SModuleBase) {
+          ((SModuleBase) m).dispose();
+        }
+      }
+    }
   }
 
   public ModuleChecker createModuleChecker(SNode module) {

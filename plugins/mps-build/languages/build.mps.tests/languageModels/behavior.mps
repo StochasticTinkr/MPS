@@ -464,12 +464,12 @@
                   </node>
                   <node concept="2OqwBi" id="5I1s5NvyQLu" role="37wK5m">
                     <node concept="2ShNRf" id="5I1s5NvyQLv" role="2Oq$k0">
-                      <node concept="HV5vD" id="5I1s5NvyQLw" role="2ShVmc">
-                        <ref role="HV5vE" to="tken:ECLZhkrFpC" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
+                      <node concept="1pGfFk" id="3x_dLGIxR8B" role="2ShVmc">
+                        <ref role="37wK5l" to="tken:1BCLQMpCXII" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
                       </node>
                     </node>
                     <node concept="liA8E" id="5I1s5NvyQLx" role="2OqNvi">
-                      <ref role="37wK5l" to="tken:6qlcPcv9UhQ" resolve="trackDevkits" />
+                      <ref role="37wK5l" to="tken:6qlcPcv9UhQ" resolve="setTrackDevkits" />
                     </node>
                   </node>
                 </node>
@@ -483,9 +483,14 @@
         <node concept="3clFbF" id="3qWAZKIrtqD" role="3cqZAp">
           <node concept="2OqwBi" id="3qWAZKIrtD_" role="3clFbG">
             <node concept="liA8E" id="3qWAZKIruuj" role="2OqNvi">
-              <ref role="37wK5l" to="tken:3pzPpUFO9x9" resolve="collect" />
-              <node concept="37vLTw" id="5I1s5NvyQLz" role="37wK5m">
-                <ref role="3cqZAo" node="5I1s5NvyQLd" resolve="runtimeClosure" />
+              <ref role="37wK5l" to="tken:5VKiljgm7i" resolve="collect" />
+              <node concept="2OqwBi" id="3x_dLGIxRCg" role="37wK5m">
+                <node concept="37vLTw" id="5I1s5NvyQLz" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5I1s5NvyQLd" resolve="runtimeClosure" />
+                </node>
+                <node concept="liA8E" id="3x_dLGIxZKs" role="2OqNvi">
+                  <ref role="37wK5l" to="tken:2pk5iwY3SS_" resolve="getAllModules" />
+                </node>
               </node>
               <node concept="37vLTw" id="5I1s5Nvyo7U" role="37wK5m">
                 <ref role="3cqZAo" node="5I1s5Nvyo7Q" resolve="additionalPlugins" />
@@ -627,7 +632,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="7QNcMbqv$2Z" role="2OqNvi">
-                          <ref role="37wK5l" to="tken:6qlcPcv9UhQ" resolve="trackDevkits" />
+                          <ref role="37wK5l" to="tken:6qlcPcv9UhQ" resolve="setTrackDevkits" />
                         </node>
                       </node>
                     </node>

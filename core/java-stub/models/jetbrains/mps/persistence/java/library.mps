@@ -1079,84 +1079,130 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
       <node concept="3clFbS" id="5JsnGMj1qhP" role="3clF47">
-        <node concept="3clFbF" id="3qdwkcFLsDc" role="3cqZAp">
-          <node concept="1rXfSq" id="3qdwkcFLsDa" role="3clFbG">
-            <ref role="37wK5l" to="g3l6:~SModelBase.assertCanChange():void" resolve="assertCanChange" />
+        <node concept="3cpWs8" id="30bJSo_kWZT" role="3cqZAp">
+          <node concept="3cpWsn" id="30bJSo_kWZU" role="3cpWs9">
+            <property role="TrG5h" value="repo" />
+            <node concept="3uibUv" id="30bJSo_kWZS" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+            </node>
+            <node concept="1rXfSq" id="30bJSo_kWZV" role="33vP2m">
+              <ref role="37wK5l" to="g3l6:~SModelBase.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="5JsnGMj1qhS" role="3cqZAp">
-          <node concept="2OqwBi" id="5JsnGMj1qhT" role="3clFbw">
-            <node concept="2OqwBi" id="5JsnGMj1qhU" role="2Oq$k0">
-              <node concept="1rXfSq" id="4hiugqyz9EO" role="2Oq$k0">
-                <ref role="37wK5l" node="5JsnGMj1qdA" resolve="getSource" />
-              </node>
-              <node concept="liA8E" id="5JsnGMj1qhW" role="2OqNvi">
-                <ref role="37wK5l" to="ends:~FolderSetDataSource.getPaths():java.util.Collection" resolve="getPaths" />
+        <node concept="3clFbJ" id="30bJSo_kXOG" role="3cqZAp">
+          <node concept="3clFbS" id="30bJSo_kXOI" role="3clFbx">
+            <node concept="3SKdUt" id="30bJSo_kYkK" role="3cqZAp">
+              <node concept="3SKdUq" id="30bJSo_kYkN" role="3SKWNk">
+                <property role="3SKdUp" value="detached model, don't care to make it up-to-date" />
               </node>
             </node>
-            <node concept="liA8E" id="5JsnGMj1qhX" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Collection.isEmpty():boolean" resolve="isEmpty" />
+            <node concept="3SKdUt" id="30bJSo_kYnc" role="3cqZAp">
+              <node concept="3SKdUq" id="30bJSo_kYne" role="3SKWNk">
+                <property role="3SKdUp" value="XXX same code is in EitableSModelBase, could I refactor to avoid that?" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="30bJSo_kYo1" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="30bJSo_kYd4" role="3clFbw">
+            <node concept="10Nm6u" id="30bJSo_kYk8" role="3uHU7w" />
+            <node concept="37vLTw" id="30bJSo_kY1o" role="3uHU7B">
+              <ref role="3cqZAo" node="30bJSo_kWZU" resolve="repo" />
             </node>
           </node>
-          <node concept="3clFbS" id="5JsnGMj1qhY" role="3clFbx">
-            <node concept="3cpWs8" id="2upfhDvp8gE" role="3cqZAp">
-              <node concept="3cpWsn" id="2upfhDvp8gF" role="3cpWs9">
-                <property role="TrG5h" value="module" />
-                <node concept="3uibUv" id="2upfhDvp8gD" role="1tU5fm">
-                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                </node>
-                <node concept="1rXfSq" id="2upfhDvp8gG" role="33vP2m">
-                  <ref role="37wK5l" node="390SM3Indek" resolve="getModule" />
-                </node>
+        </node>
+        <node concept="3clFbF" id="30bJSo_kY_a" role="3cqZAp">
+          <node concept="2OqwBi" id="30bJSo_kZ8R" role="3clFbG">
+            <node concept="2OqwBi" id="30bJSo_kYQ9" role="2Oq$k0">
+              <node concept="37vLTw" id="30bJSo_kY_8" role="2Oq$k0">
+                <ref role="3cqZAo" node="30bJSo_kWZU" resolve="repo" />
+              </node>
+              <node concept="liA8E" id="30bJSo_kZ40" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
               </node>
             </node>
-            <node concept="3clFbJ" id="2upfhDvp8oS" role="3cqZAp">
-              <node concept="3clFbS" id="2upfhDvp8oU" role="3clFbx">
-                <node concept="3clFbF" id="2upfhDvp8FB" role="3cqZAp">
-                  <node concept="2OqwBi" id="2upfhDvp8Kd" role="3clFbG">
-                    <node concept="1eOMI4" id="2upfhDvp8F$" role="2Oq$k0">
-                      <node concept="10QFUN" id="2upfhDvp8Fx" role="1eOMHV">
-                        <node concept="3uibUv" id="2upfhDvp8FA" role="10QFUM">
-                          <ref role="3uigEE" to="31cb:~SModuleBase" resolve="SModuleBase" />
+            <node concept="liA8E" id="30bJSo_kZnF" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+              <node concept="1bVj0M" id="30bJSo_kZph" role="37wK5m">
+                <node concept="3clFbS" id="30bJSo_kZpi" role="1bW5cS">
+                  <node concept="3clFbJ" id="5JsnGMj1qhS" role="3cqZAp">
+                    <node concept="2OqwBi" id="5JsnGMj1qhT" role="3clFbw">
+                      <node concept="2OqwBi" id="5JsnGMj1qhU" role="2Oq$k0">
+                        <node concept="1rXfSq" id="4hiugqyz9EO" role="2Oq$k0">
+                          <ref role="37wK5l" node="5JsnGMj1qdA" resolve="getSource" />
                         </node>
-                        <node concept="37vLTw" id="2upfhDvp8J$" role="10QFUP">
-                          <ref role="3cqZAo" node="2upfhDvp8gF" resolve="module" />
+                        <node concept="liA8E" id="5JsnGMj1qhW" role="2OqNvi">
+                          <ref role="37wK5l" to="ends:~FolderSetDataSource.getPaths():java.util.Collection" resolve="getPaths" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="5JsnGMj1qhX" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~Collection.isEmpty():boolean" resolve="isEmpty" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="5JsnGMj1qhY" role="3clFbx">
+                      <node concept="3cpWs8" id="2upfhDvp8gE" role="3cqZAp">
+                        <node concept="3cpWsn" id="2upfhDvp8gF" role="3cpWs9">
+                          <property role="TrG5h" value="module" />
+                          <node concept="3uibUv" id="2upfhDvp8gD" role="1tU5fm">
+                            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                          </node>
+                          <node concept="1rXfSq" id="2upfhDvp8gG" role="33vP2m">
+                            <ref role="37wK5l" node="390SM3Indek" resolve="getModule" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbJ" id="2upfhDvp8oS" role="3cqZAp">
+                        <node concept="3clFbS" id="2upfhDvp8oU" role="3clFbx">
+                          <node concept="3clFbF" id="2upfhDvp8FB" role="3cqZAp">
+                            <node concept="2OqwBi" id="2upfhDvp8Kd" role="3clFbG">
+                              <node concept="1eOMI4" id="2upfhDvp8F$" role="2Oq$k0">
+                                <node concept="10QFUN" id="2upfhDvp8Fx" role="1eOMHV">
+                                  <node concept="3uibUv" id="2upfhDvp8FA" role="10QFUM">
+                                    <ref role="3uigEE" to="31cb:~SModuleBase" resolve="SModuleBase" />
+                                  </node>
+                                  <node concept="37vLTw" id="2upfhDvp8J$" role="10QFUP">
+                                    <ref role="3cqZAo" node="2upfhDvp8gF" resolve="module" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="2upfhDvp8Nw" role="2OqNvi">
+                                <ref role="37wK5l" to="31cb:~SModuleBase.unregisterModel(jetbrains.mps.extapi.model.SModelBase):void" resolve="unregisterModel" />
+                                <node concept="Xjq3P" id="2upfhDvp8PD" role="37wK5m" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2ZW3vV" id="2upfhDvp8wT" role="3clFbw">
+                          <node concept="3uibUv" id="2upfhDvp8B9" role="2ZW6by">
+                            <ref role="3uigEE" to="31cb:~SModuleBase" resolve="SModuleBase" />
+                          </node>
+                          <node concept="37vLTw" id="2upfhDvp8um" role="2ZW6bz">
+                            <ref role="3cqZAo" node="2upfhDvp8gF" resolve="module" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3cpWs6" id="5JsnGMj1qi4" role="3cqZAp" />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="4P9E75_m7eo" role="3cqZAp">
+                    <node concept="1rXfSq" id="4P9E75_m7em" role="3clFbG">
+                      <ref role="37wK5l" node="5JsnGMj1qif" resolve="reload" />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="5JsnGMj1qim" role="3cqZAp">
+                    <node concept="2OqwBi" id="4wjoHLR4r7" role="3clFbG">
+                      <node concept="37vLTw" id="4wjoHLR4gC" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4wjoHLQEvq" resolve="myTimestampTracker" />
+                      </node>
+                      <node concept="liA8E" id="4wjoHLR4Li" role="2OqNvi">
+                        <ref role="37wK5l" to="ends:~ModelSourceChangeTracker.updateTimestamp(org.jetbrains.mps.openapi.persistence.DataSource):void" resolve="updateTimestamp" />
+                        <node concept="1rXfSq" id="4wjoHLR4Py" role="37wK5m">
+                          <ref role="37wK5l" node="5JsnGMj1qdA" resolve="getSource" />
                         </node>
                       </node>
                     </node>
-                    <node concept="liA8E" id="2upfhDvp8Nw" role="2OqNvi">
-                      <ref role="37wK5l" to="31cb:~SModuleBase.unregisterModel(jetbrains.mps.extapi.model.SModelBase):void" resolve="unregisterModel" />
-                      <node concept="Xjq3P" id="2upfhDvp8PD" role="37wK5m" />
-                    </node>
                   </node>
                 </node>
-              </node>
-              <node concept="2ZW3vV" id="2upfhDvp8wT" role="3clFbw">
-                <node concept="3uibUv" id="2upfhDvp8B9" role="2ZW6by">
-                  <ref role="3uigEE" to="31cb:~SModuleBase" resolve="SModuleBase" />
-                </node>
-                <node concept="37vLTw" id="2upfhDvp8um" role="2ZW6bz">
-                  <ref role="3cqZAo" node="2upfhDvp8gF" resolve="module" />
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="5JsnGMj1qi4" role="3cqZAp" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="4P9E75_m7eo" role="3cqZAp">
-          <node concept="1rXfSq" id="4P9E75_m7em" role="3clFbG">
-            <ref role="37wK5l" node="5JsnGMj1qif" resolve="reload" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="5JsnGMj1qim" role="3cqZAp">
-          <node concept="2OqwBi" id="4wjoHLR4r7" role="3clFbG">
-            <node concept="37vLTw" id="4wjoHLR4gC" role="2Oq$k0">
-              <ref role="3cqZAo" node="4wjoHLQEvq" resolve="myTimestampTracker" />
-            </node>
-            <node concept="liA8E" id="4wjoHLR4Li" role="2OqNvi">
-              <ref role="37wK5l" to="ends:~ModelSourceChangeTracker.updateTimestamp(org.jetbrains.mps.openapi.persistence.DataSource):void" resolve="updateTimestamp" />
-              <node concept="1rXfSq" id="4wjoHLR4Py" role="37wK5m">
-                <ref role="37wK5l" node="5JsnGMj1qdA" resolve="getSource" />
               </node>
             </node>
           </node>

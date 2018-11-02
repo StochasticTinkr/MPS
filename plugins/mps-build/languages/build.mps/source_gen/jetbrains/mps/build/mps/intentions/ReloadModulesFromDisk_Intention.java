@@ -56,7 +56,7 @@ public final class ReloadModulesFromDisk_Intention extends AbstractIntentionDesc
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Reload modules from disk";
+      return "Reload Modules From Disk";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

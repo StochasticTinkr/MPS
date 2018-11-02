@@ -208,8 +208,12 @@ public final class MergeSession {
     }
     if (change instanceof NodeGroupChange && ((NodeGroupChange) change).getRoleLink().isMultiple()) {
       // adjust conflicting changes: leave possibility to reject or insert them separately 
-      NodeGroupChange ngc = (NodeGroupChange) change;
-      List<NodeGroupChange> conflictedChanges = Sequence.fromIterable(getConflictedWith(ngc)).ofType(NodeGroupChange.class).toListSequence();
+      final NodeGroupChange ngc = (NodeGroupChange) change;
+      List<NodeGroupChange> conflictedChanges = Sequence.fromIterable(getConflictedWith(ngc)).ofType(NodeGroupChange.class).where(new IWhereFilter<NodeGroupChange>() {
+        public boolean accept(NodeGroupChange ch) {
+          return ch.getParentNodeId().equals(ngc.getParentNodeId());
+        }
+      }).toListSequence();
       int anchorIndex = ngc.getEnd();
       ngc.apply(myResultModel, myNodeCopier);
       for (NodeGroupChange ch : ListSequence.fromList(conflictedChanges)) {
@@ -218,9 +222,11 @@ public final class MergeSession {
         ChangeSetImpl changeSet = as_bow6nj_a0a2a5a4a13(ch.getChangeSet(), ChangeSetImpl.class);
         assert changeSet != null;
         NodeGroupChange newChange = new NodeGroupChange(changeSet, ch.getParentNodeId(), ch.getRoleLink(), anchorIndex, anchorIndex, ch.getResultBegin(), ch.getResultEnd());
-        changeSet.add(newChange);
-        ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(ch.getRootId())).addElement(newChange);
-        ListSequence.fromList(MapSequence.fromMap(myNodeToChanges).get(ch.getParentNodeId())).addElement(newChange);
+        if (newChange.getBegin() < newChange.getEnd() || newChange.getResultBegin() < newChange.getResultEnd()) {
+          changeSet.add(newChange);
+          ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(ch.getRootId())).addElement(newChange);
+          ListSequence.fromList(MapSequence.fromMap(myNodeToChanges).get(ch.getParentNodeId())).addElement(newChange);
+        }
 
       }
     } else {

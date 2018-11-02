@@ -72,8 +72,8 @@ public final class BuildMpsLayout_TestModules__BehaviorDescriptor extends BaseBH
       public Iterable<SNode> translate(SNode it) {
         return (Iterable<SNode>) BuildMpsLayout_TestModules_Content__BehaviorDescriptor.getModules_id3X9rC2XzJij.invoke(it);
       }
-    }), new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).runtimeClosure();
-    plugins.collect(runtimeClosure, additionalPlugins);
+    }), new MPSModulesClosure.ModuleDependenciesOptions().setTrackDevkits()).runtimeClosure();
+    plugins.collect(runtimeClosure.getAllModules(), additionalPlugins);
     for (SNode plugin : Sequence.fromIterable(plugins.getDependency())) {
       SNode pluginArtifact = SNodeOperations.as(artifacts.findArtifact(plugin), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if (pluginArtifact != null) {
@@ -87,7 +87,7 @@ public final class BuildMpsLayout_TestModules__BehaviorDescriptor extends BaseBH
         return (Iterable<SNode>) BuildMpsLayout_TestModules_Content__BehaviorDescriptor.getModules_id3X9rC2XzJij.invoke(it);
       }
     });
-    Iterable<SNode> modules = Sequence.fromIterable(new MPSModulesClosure(originalModules, new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).designtimeClosure().getAllModules()).union(Sequence.fromIterable(originalModules));
+    Iterable<SNode> modules = Sequence.fromIterable(new MPSModulesClosure(originalModules, new MPSModulesClosure.ModuleDependenciesOptions().setTrackDevkits()).designtimeClosure().getAllModules()).union(Sequence.fromIterable(originalModules));
     for (SNode m : Sequence.fromIterable(modules)) {
       SNode artifact;
       VisibleArtifacts currentArtifacts = artifacts;

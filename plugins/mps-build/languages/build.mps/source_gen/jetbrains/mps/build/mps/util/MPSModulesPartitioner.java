@@ -97,7 +97,7 @@ public class MPSModulesPartitioner {
   public void buildExternalDependencies() {
     // Though we don't care about RT dependencies to generate a module, we need runtimeClosure() here due to 
     // module compilation/reload Generate task does in addition to M2M, M2T transformations. 
-    this.external = Sequence.fromIterable(new MPSModulesClosure(modules, new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).generationDependenciesClosure().runtimeClosure().getAllModules()).where(new IWhereFilter<SNode>() {
+    this.external = Sequence.fromIterable(new MPSModulesClosure(modules, new MPSModulesClosure.ModuleDependenciesOptions().setTrackDevkits()).generationDependenciesClosure().runtimeClosure().getAllModules()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         // FIXME exclusion of generator modules here is due to the fact ModuleMiner (which eventually takes whatever we specify in <library file>)  
         //       is not ready yet to read generator modules (it's JavaModuleFacet of Language-loaded Generator that discovers -generator.jar) 
@@ -139,14 +139,14 @@ public class MPSModulesPartitioner {
 
     public void fill(Map<SNode, MPSModulesPartitioner.Node> map) {
       if (SNodeOperations.isInstanceOf(module, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
-        MPSModulesClosure closure = new MPSModulesClosure(SNodeOperations.cast(module, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")), new MPSModulesClosure.ModuleDependenciesOptions()).generationDependenciesClosure();
+        MPSModulesClosure closure = new MPSModulesClosure(SNodeOperations.cast(module, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")), new MPSModulesClosure.ModuleDependenciesOptions().setIncludeInitial()).generationDependenciesClosure();
         for (SNode q : Sequence.fromIterable(closure.getAllModules())) {
           MPSModulesPartitioner.Node node = map.get(q);
           if (node != null) {
             SetSequence.fromSet(metaDependencies).addElement(node);
           }
         }
-        closure = new MPSModulesClosure(SNodeOperations.cast(module, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")), new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).closure();
+        closure = new MPSModulesClosure(SNodeOperations.cast(module, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")), new MPSModulesClosure.ModuleDependenciesOptions().setTrackDevkits()).closure();
         for (SNode q : Sequence.fromIterable(closure.getAllModules())) {
           MPSModulesPartitioner.Node node = map.get(q);
           if (node != null) {

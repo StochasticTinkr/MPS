@@ -610,6 +610,15 @@
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" skipUnmodifiedModels="${mps.generator.skipUnmodifiedModels}">
+      <plugin path="${artifacts.mps}/plugins/mps-build" />
+      <plugin path="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
+      <plugin path="${artifacts.mps}/plugins/mps-debugger-api" />
+      <plugin path="${artifacts.mps}/plugins/mps-debugger-java" />
+      <plugin path="${artifacts.mps}/plugins/mps-execution-api" />
+      <plugin path="${artifacts.mps}/plugins/mps-execution-configurations" />
+      <plugin path="${artifacts.mps}/plugins/mps-execution-languages" />
+      <plugin path="${artifacts.mps}/plugins/mps-testing" />
+      <plugin path="${build.tmp}/deps/mpsWorkbench/mps-workbench.jar/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
