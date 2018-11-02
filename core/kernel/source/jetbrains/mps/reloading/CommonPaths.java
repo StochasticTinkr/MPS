@@ -197,7 +197,7 @@ public final class CommonPaths {
     addIfExists(result, "lib/ecj-4.7.2.jar");
     addIfExists(result, "lib/guava-25.1-jre.jar");
     addIfExists(result, "lib/xstream-1.4.8.jar");
-    addIfExists(result, "lib/asm-all-7.0-beta.jar");
+    addIfExists(result, "lib/asm-all-7.0.jar");
   }
 
   private static void addEditorJars(Collection<String> result) {

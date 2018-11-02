@@ -532,7 +532,7 @@
             <node concept="2Ry0Ak" id="1s0vtrx9SbO" role="iGT6I">
               <property role="2Ry0Am" value="lib" />
               <node concept="2Ry0Ak" id="3DoJIjdXZwS" role="2Ry0An">
-                <property role="2Ry0Am" value="asm-all-7.0-beta.jar" />
+                <property role="2Ry0Am" value="asm-all-7.0.jar" />
               </node>
             </node>
           </node>
@@ -18129,7 +18129,7 @@
       <node concept="13uQ2_" id="4Xk_ETUiPTn" role="39821P">
         <node concept="3_J27D" id="4Xk_ETUiPTp" role="13uQ07">
           <node concept="3Mxwew" id="4Xk_ETUiPU7" role="3MwsjC">
-            <property role="3MwjfP" value="asm-all-7.0-beta.jar" />
+            <property role="3MwjfP" value="asm-all-7.0.jar" />
           </node>
         </node>
       </node>
@@ -33508,11 +33508,11 @@
           <ref role="3_I8Xa" node="1QfYSWzYzJR" resolve="vcs-platform.jar" />
         </node>
         <node concept="L2wRC" id="1QfYSWzZotz" role="39821P">
-          <ref role="L2wRA" node="4WGKd_KIwrs" />
+          <ref role="L2wRA" node="4WGKd_KIwrs" resolve="jetbrains.mps.vcs.mergehints.runtime" />
           <node concept="3yLZsm" id="1QfYSWzZMd$" role="3yL2VB">
             <property role="3yLZsk" value="../lib/vcs-core.jar" />
             <node concept="398BVA" id="1QfYSWzZMd_" role="3yLZsn">
-              <ref role="398BVh" node="6ifcnI8$2ke" />
+              <ref role="398BVh" node="6ifcnI8$2ke" resolve="mps_home" />
               <node concept="2Ry0Ak" id="1QfYSWzZMdA" role="iGT6I">
                 <property role="2Ry0Am" value="plugins" />
                 <node concept="2Ry0Ak" id="1QfYSWzZMdB" role="2Ry0An">
@@ -33529,11 +33529,11 @@
           </node>
         </node>
         <node concept="L2wRC" id="1QfYSWzZooj" role="39821P">
-          <ref role="L2wRA" node="39HJr_hyEzS" />
+          <ref role="L2wRA" node="39HJr_hyEzS" resolve="jetbrains.mps.ide.vcs.platform" />
           <node concept="3yLZsm" id="1QfYSWzZLWo" role="3yL2VB">
             <property role="3yLZsk" value="../lib/vcs-platform.jar" />
             <node concept="398BVA" id="1QfYSWzZLWp" role="3yLZsn">
-              <ref role="398BVh" node="6ifcnI8$2ke" />
+              <ref role="398BVh" node="6ifcnI8$2ke" resolve="mps_home" />
               <node concept="2Ry0Ak" id="1QfYSWzZLWq" role="iGT6I">
                 <property role="2Ry0Am" value="plugins" />
                 <node concept="2Ry0Ak" id="1QfYSWzZLWr" role="2Ry0An">
@@ -33550,11 +33550,11 @@
           </node>
         </node>
         <node concept="L2wRC" id="1QfYSWzZott" role="39821P">
-          <ref role="L2wRA" node="39HJr_hyAl1" />
+          <ref role="L2wRA" node="39HJr_hyAl1" resolve="jetbrains.mps.ide.vcs.core" />
           <node concept="3yLZsm" id="1QfYSWzZMaQ" role="3yL2VB">
             <property role="3yLZsk" value="../lib/vcs-core.jar" />
             <node concept="398BVA" id="1QfYSWzZMaR" role="3yLZsn">
-              <ref role="398BVh" node="6ifcnI8$2ke" />
+              <ref role="398BVh" node="6ifcnI8$2ke" resolve="mps_home" />
               <node concept="2Ry0Ak" id="1QfYSWzZMaS" role="iGT6I">
                 <property role="2Ry0Am" value="plugins" />
                 <node concept="2Ry0Ak" id="1QfYSWzZMaT" role="2Ry0An">
