@@ -19,6 +19,7 @@ import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
+import jetbrains.mps.errors.MessageStatus;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.lang.core.behavior.ICanSuppressErrors__BehaviorDescriptor;
@@ -30,14 +31,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.item.FlavouredItem;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
-public final class SuppressErrors_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
+public final class SuppressAllTypesystemWarning_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-  public SuppressErrors_Intention() {
-    super(Kind.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "4222318806802430725"));
+  public SuppressAllTypesystemWarning_Intention() {
+    super(Kind.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "2552824637550060934"));
   }
   @Override
   public String getPresentation() {
-    return "SuppressErrors";
+    return "SuppressAllTypesystemWarning";
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -59,7 +60,11 @@ public final class SuppressErrors_Intention extends AbstractIntentionDescriptor 
       public boolean accept(IssueKindReportItem it) {
         return Objects.equals(it.getIssueKind().getChecker(), IssueKindReportItem.TYPESYSTEM);
       }
-    });
+    }) && !(CollectionSequence.fromCollection(reportItemsForCell).any(new IWhereFilter<IssueKindReportItem>() {
+      public boolean accept(IssueKindReportItem it) {
+        return Objects.equals(it.getSeverity(), MessageStatus.ERROR);
+      }
+    }));
   }
   @Override
   public boolean isSurroundWith() {
@@ -67,7 +72,7 @@ public final class SuppressErrors_Intention extends AbstractIntentionDescriptor 
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SuppressErrors_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SuppressAllTypesystemWarning_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -90,7 +95,7 @@ public final class SuppressErrors_Intention extends AbstractIntentionDescriptor 
     }
     @Override
     public IntentionDescriptor getDescriptor() {
-      return SuppressErrors_Intention.this;
+      return SuppressAllTypesystemWarning_Intention.this;
     }
   }
 }

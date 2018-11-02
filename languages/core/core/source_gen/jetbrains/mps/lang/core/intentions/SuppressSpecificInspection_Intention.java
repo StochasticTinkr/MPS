@@ -29,13 +29,13 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
-public final class SuppressInspection_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
-  public SuppressInspection_Intention() {
+public final class SuppressSpecificInspection_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
+  public SuppressSpecificInspection_Intention() {
     super(Kind.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "869282237627508178"));
   }
   @Override
   public String getPresentation() {
-    return "SuppressInspection";
+    return "SuppressSpecificInspection";
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -50,7 +50,7 @@ public final class SuppressInspection_Intention extends AbstractIntentionDescrip
     List<IssueKindReportItem> paramList = parameter(node, context);
     if (paramList != null) {
       for (IssueKindReportItem param : paramList) {
-        ListSequence.fromList(list).addElement(new SuppressInspection_Intention.IntentionImplementation(param));
+        ListSequence.fromList(list).addElement(new SuppressSpecificInspection_Intention.IntentionImplementation(param));
       }
     }
     return list;
@@ -80,7 +80,7 @@ public final class SuppressInspection_Intention extends AbstractIntentionDescrip
     }
     @Override
     public IntentionDescriptor getDescriptor() {
-      return SuppressInspection_Intention.this;
+      return SuppressSpecificInspection_Intention.this;
     }
     public Object getParameter() {
       return myParameter;
