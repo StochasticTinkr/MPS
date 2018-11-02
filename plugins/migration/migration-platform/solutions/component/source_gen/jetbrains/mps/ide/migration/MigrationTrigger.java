@@ -6,7 +6,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
@@ -14,6 +14,7 @@ import java.util.function.Consumer;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import com.intellij.notification.Notification;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
+import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
@@ -36,11 +37,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.Language;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.progress.ProgressManager;
@@ -74,12 +72,9 @@ import jetbrains.mps.smodel.ModelsEventsCollector;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.classloading.MPSClassesListenerAdapter;
-import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
-import jetbrains.mps.classloading.DeployListener;
-import jetbrains.mps.module.ReloadableModule;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -102,7 +97,7 @@ import jetbrains.mps.migration.global.ProjectMigration;
 @State(name = "MigrationTrigger", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE)
 )
 public class MigrationTrigger extends AbstractProjectComponent implements IStartupMigrationExecutor {
-  private final ClassLoaderManager myClassLoaderManager;
+  private final LanguageRegistry myLanguageRegistry;
   private MigrationOptions myOptions = new MigrationOptions();
 
   private final MPSProject myMpsProject;
@@ -122,9 +117,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
 
   private MigrationTrigger.MyRepoListener myRepoListener = new MigrationTrigger.MyRepoListener();
   private MigrationTrigger.MyReloadListener myReloadListener = new MigrationTrigger.MyReloadListener();
-  private MigrationTrigger.MyClassesListener myClassesListener = new MigrationTrigger.MyClassesListener();
   private MigrationTrigger.MyPropertiesListener myPropertiesListener = new MigrationTrigger.MyPropertiesListener();
-  private MigrationTrigger.MyDeployListener myDeployListener;
+  private final LanguageRegistryListener myLanguageDeployListener = new MigrationTrigger.MyLangDeployListener();
   private boolean myListenersAdded = false;
 
   public MigrationTrigger(Project ideaProject, MPSProject p, MigrationRegistry migrationManager, ProjectMigrationProperties props, MPSCoreComponents mpsCore, ReloadManagerComponent reloadManager) {
@@ -132,9 +126,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     myMpsProject = p;
     myMigrationRegistry = migrationManager;
     myProperties = props;
-    myClassLoaderManager = mpsCore.getClassLoaderManager();
+    myLanguageRegistry = mpsCore.getPlatform().findComponent(LanguageRegistry.class);
     myReloadManager = reloadManager;
-    this.myDeployListener = new MigrationTrigger.MyDeployListener(ideaProject);
   }
 
   public void setRebuildHandler(Consumer<Iterable<SModuleReference>> rebuildHandler) {
@@ -240,9 +233,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
 
   private void addListeners() {
     myListenersAdded = true;
-    myClassLoaderManager.addListener(this.myDeployListener);
+    myLanguageRegistry.addRegistryListener(myLanguageDeployListener);
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).attach();
-    myClassLoaderManager.addClassesHandler(this.myClassesListener);
     myProperties.addListener(myPropertiesListener);
     myReloadManager.addReloadListener(myReloadListener);
   }
@@ -252,10 +244,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       return true;
     }
     myProperties.removeListener(myPropertiesListener);
-    myClassLoaderManager.removeClassesHandler(myClassesListener);
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).detach();
     myReloadManager.removeReloadListener(myReloadListener);
-    myClassLoaderManager.removeListener(this.myDeployListener);
+    myLanguageRegistry.removeRegistryListener(myLanguageDeployListener);
     return false;
   }
 
@@ -292,7 +283,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     return current.hasSomethingToApply();
   }
 
-  private synchronized void checkMigrationNeededOnLanguageReload(Iterable<Language> languages) {
+  private synchronized void checkMigrationNeededOnLanguageReload(final List<SLanguage> addedLanguages) {
     if (myMigrationForbidden) {
       return;
     }
@@ -300,11 +291,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     // if a new language is added to a repo, all modules in project using it  
     // should be checked for whether their migration is needed  
     final Set<SModule> modules2Check = SetSequence.fromSet(new HashSet<SModule>());
-    final List<SLanguage> addedLanguages = Sequence.fromIterable(languages).select(new ISelector<Language, SLanguage>() {
-      public SLanguage select(Language it) {
-        return MetaAdapterFactory.getLanguage(it.getModuleReference());
-      }
-    }).toListSequence();
     Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject)).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
         Set<SLanguage> used = new HashSet<SLanguage>(it.getUsedLanguages());
@@ -580,22 +566,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     }
   }
 
-  private class MyClassesListener extends MPSClassesListenerAdapter {
-    @Override
-    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
-      // do not hold set of modules from notification, make a local copy 
-      final List<Language> list = SetSequence.fromSet(modules).ofType(Language.class).toListSequence();
-      if (ListSequence.fromList(list).isEmpty()) {
-        return;
-      }
-      myMpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-        public void run() {
-          checkMigrationNeededOnLanguageReload(list);
-        }
-      });
-    }
-  }
-
   private class MyPropertiesListener implements ProjectMigrationProperties.MigrationPropertiesReloadListener {
     @Override
     public void onReload() {
@@ -641,21 +611,27 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     }
   }
 
-  private class MyDeployListener implements DeployListener {
-    private final Project myIdeaProject;
-    public MyDeployListener(Project ideaProject) {
-      this.myIdeaProject = ideaProject;
-    }
-    public void onUnloaded(Set<ReloadableModule> modules, @NotNull ProgressMonitor p) {
+  private class MyLangDeployListener implements LanguageRegistryListener {
+
+    @Override
+    public void afterLanguagesLoaded(Iterable<LanguageRuntime> loaded) {
+      checkMigrationNeededOnLanguageReload(Sequence.fromIterable(loaded).select(new ISelector<LanguageRuntime, SLanguage>() {
+        public SLanguage select(LanguageRuntime it) {
+          return it.getIdentity();
+        }
+      }).toListSequence());
       checkNotDeployedLanguages();
     }
-    public void onLoaded(Set<ReloadableModule> modules, @NotNull ProgressMonitor p) {
-      checkNotDeployedLanguages();
+
+    @Override
+    public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> iterable) {
+      // languages are still loaded when this notification comes, no way we can notice any change here, therefore we don't  
+      // check for changed conditions, e.g. with checkNotDeployedLanguages() 
     }
   }
 
-  private void checkNotDeployedLanguages() {
-    Set<SLanguage> problems = getNotDeployedUsedLanguages(myMpsProject);
+  /*package*/ void checkNotDeployedLanguages() {
+    Set<SLanguage> problems = getNotDeployedUsedLanguages();
     if (SetSequence.fromSet(problems).isEmpty()) {
       if (myLastDeployWarning != null) {
         myLastNotification = null;
@@ -736,18 +712,20 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     });
   }
 
-  private Set<SLanguage> getNotDeployedUsedLanguages(jetbrains.mps.project.Project p) {
+  private Set<SLanguage> getNotDeployedUsedLanguages() {
     Iterable<SModule> projectModules = MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject);
-    Iterable<SLanguage> validLangs = Sequence.fromIterable((Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, SLanguage>() {
+    final Set<SLanguage> allUsedLanguages = SetSequence.fromSetWithValues(new HashSet<SLanguage>(), Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, SLanguage>() {
       public Iterable<SLanguage> translate(SModule it) {
         return it.getUsedLanguages();
       }
-    }))).where(new IWhereFilter<SLanguage>() {
-      public boolean accept(SLanguage it) {
-        return !(myClassLoaderManager.getModulesWatcher().getStatus(it.getSourceModuleReference()).isValid());
+    }));
+    // remove deployed languages (i.e. known to LanguageRegistry) from the set 
+    myLanguageRegistry.withAvailableLanguages(new Consumer<LanguageRuntime>() {
+      public void accept(LanguageRuntime lr) {
+        SetSequence.fromSet(allUsedLanguages).removeElement(lr.getIdentity());
       }
     });
-    return SetSequence.fromSetWithValues(new HashSet<SLanguage>(), validLangs);
+    return allUsedLanguages;
   }
 
   public static class PostponedState {

@@ -28,7 +28,7 @@ public class MigrationModuleUtil {
       public boolean accept(SModule it) {
         return isModuleMigrateable(it);
       }
-    }).ofType(SModule.class);
+    });
   }
 
   public static boolean isModuleMigrateable(SModule m) {

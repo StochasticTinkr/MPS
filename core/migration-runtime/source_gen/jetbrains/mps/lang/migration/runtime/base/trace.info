@@ -972,7 +972,7 @@
       <node id="3308027490968338455" at="59,98,62,5" concept="7" />
       <node id="5464540062512831368" at="67,88,70,5" concept="7" />
       <node id="7222086642609906342" at="78,50,81,7" concept="7" />
-      <node id="4508017205454606775" at="26,68,31,29" concept="10" />
+      <node id="4508017205454606775" at="26,68,31,7" concept="10" />
       <node id="4508017205454607010" at="42,0,47,0" concept="14" trace="getModuleDependencies#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/util/Set;" />
       <node id="5464540062512719532" at="52,0,58,0" concept="14" trace="getDependencyVersion#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/module/SModule;)I" />
       <node id="3308027490968338453" at="59,0,65,0" concept="14" trace="getUsedLanguageVersion#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/language/SLanguage;)I" />
@@ -1012,7 +1012,7 @@
         <var name="currentDepVersion" id="8242050224583359329" />
         <var name="ver" id="8242050224583359320" />
       </scope>
-      <scope id="4508017205454606766" at="25,79,31,29">
+      <scope id="4508017205454606766" at="25,79,31,7">
         <var name="modules" id="4508017205454606768" />
       </scope>
       <scope id="5464540062512719532" at="52,0,58,0">

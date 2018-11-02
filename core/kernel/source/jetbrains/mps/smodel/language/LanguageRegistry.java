@@ -543,6 +543,8 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
     monitor.advance(1);
 
     monitor.step("Language Registry Listeners");
+    // XXX perhaps, shall grab read lock of myRuntimeInstanceAccess? Or it's enough to assume we would never get into onLoaded again while we are not
+    //     over with the previous one?
     notifyLoad(loadedRuntimes);
     monitor.advance(1);
     monitor.done();
