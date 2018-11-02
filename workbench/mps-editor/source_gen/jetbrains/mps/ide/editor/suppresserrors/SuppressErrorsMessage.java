@@ -11,7 +11,7 @@ import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -35,11 +35,15 @@ public class SuppressErrorsMessage extends AbstractLeftEditorHighlighterMessage 
     return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.ShowSuppressedErrors_Action"));
   }
 
+  public static EditorCell getOwnCell(EditorComponent editor, SNode sa) {
+    return editor.findCellWithId(sa, "suppressedInfo");
+  }
+
   @Override
-  public EditorCell getCell(EditorComponent editor) {
+  public jetbrains.mps.openapi.editor.cells.EditorCell getCell(EditorComponent editor) {
     SNode node = getNode();
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"))) {
-      jetbrains.mps.nodeEditor.cells.EditorCell result = editor.findCellWithId(node, "suppressedInfo");
+      EditorCell result = getOwnCell(editor, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")));
       if (result != null) {
         return result;
       }
