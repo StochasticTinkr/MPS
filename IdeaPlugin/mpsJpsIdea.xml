@@ -22,8 +22,8 @@
     <fileset dir="${idea_home}/lib">
       <include name="javac2.jar" />
       <include name="jdom.jar" />
-      <include name="asm-all-7.0-beta.jar" />
-      <include name="forms-1.1-preview.jar" />
+      <include name="asm-all-*.jar" />
+      <include name="forms-*.jar" />
     </fileset>
   </path>
   
