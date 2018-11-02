@@ -914,7 +914,7 @@
       <node id="4557542064801959757" at="165,147,166,303" concept="3" />
       <node id="4557542064801959771" at="169,5,170,22" concept="8" />
       <node id="106891382229871002" at="172,206,173,282" concept="7" />
-      <node id="106891382229871015" at="173,282,174,79" concept="3" />
+      <node id="106891382229871015" at="173,282,174,56" concept="3" />
       <node id="106891382229871026" at="175,73,176,224" concept="7" />
       <node id="106891382229871037" at="177,35,178,36" concept="3" />
       <node id="2569834391839790363" at="183,53,184,20" concept="13" />
@@ -968,7 +968,7 @@
       <node id="4557542064801959720" at="156,39,161,11" concept="5" />
       <node id="2569834391839790363" at="239,0,244,0" concept="6" trace="getDeclaredMethods#()Ljava/util/List;" />
       <node id="2569834391839790363" at="245,0,250,0" concept="6" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="106891382229871020" at="174,79,180,5" concept="4" />
+      <node id="106891382229871020" at="174,56,180,5" concept="4" />
       <node id="4557542064801807960" at="79,7,86,7" concept="5" />
       <node id="2569834391839790363" at="91,0,98,0" concept="12" trace="getJarDeps_id3WZD5LHqufx#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="4557542064801881138" at="107,7,114,5" concept="4" />
@@ -1081,7 +1081,7 @@
       <scope id="2569834391839790363" at="239,0,244,0" />
       <scope id="2569834391839790363" at="245,0,250,0" />
       <scope id="4557542064801959719" at="156,39,162,28" />
-      <scope id="106891382229871020" at="174,79,180,5">
+      <scope id="106891382229871020" at="174,56,180,5">
         <var name="plugin" id="106891382229871024" />
       </scope>
       <scope id="2569834391839790363" at="91,0,98,0">

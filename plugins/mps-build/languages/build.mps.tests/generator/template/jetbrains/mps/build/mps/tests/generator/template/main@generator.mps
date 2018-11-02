@@ -233,7 +233,13 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
+        <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
+      </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
+      <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
+        <child id="1145567471833" name="createdType" index="2T96Bj" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -1699,6 +1705,13 @@
                         </node>
                         <node concept="liA8E" id="5VKiljKRhB" role="2OqNvi">
                           <ref role="37wK5l" to="tken:2pk5iwY3SS_" resolve="getAllModules" />
+                        </node>
+                      </node>
+                      <node concept="2ShNRf" id="3x_dLGIBSlh" role="37wK5m">
+                        <node concept="2T8Vx0" id="3x_dLGIBSlf" role="2ShVmc">
+                          <node concept="2I9FWS" id="3x_dLGIBSlg" role="2T96Bj">
+                            <ref role="2I9WkF" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
+                          </node>
                         </node>
                       </node>
                     </node>
