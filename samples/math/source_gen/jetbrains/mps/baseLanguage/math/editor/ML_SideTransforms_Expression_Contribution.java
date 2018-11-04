@@ -79,8 +79,8 @@ public class ML_SideTransforms_Expression_Contribution extends TransformationMen
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       SNode matrixType = _quotation_createNode_7vmljf_a0a0a0a();
-      SPropertyOperations.set(matrixType, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dadL, "columns"), "" + (0));
-      SPropertyOperations.set(matrixType, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dacL, "rows"), "" + (0));
+      SPropertyOperations.set(matrixType, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dadL, "columns"), 0);
+      SPropertyOperations.set(matrixType, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dacL, "rows"), 0);
       return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), matrixType);
     }
 

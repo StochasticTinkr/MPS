@@ -49,8 +49,8 @@ public class MyBlockCreationAction implements PaletteToggleAction {
             public void run() {
               SNode newBlockInstance = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance"));
               SLinkOperations.setTarget(newBlockInstance, MetaAdapterFactory.getReferenceLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec4404a9L, "metaBlock"), myMetaBlock);
-              SPropertyOperations.assign(newBlockInstance, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec440489L, "x"), "" + (event.x()));
-              SPropertyOperations.assign(newBlockInstance, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec44048aL, "y"), "" + (event.y()));
+              SPropertyOperations.assign(newBlockInstance, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec440489L, "x"), event.x());
+              SPropertyOperations.assign(newBlockInstance, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec44048aL, "y"), event.y());
               ListSequence.fromList(SLinkOperations.getChildren(((SNode) myDiagramCell.getSNode()), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0x20a804e2ec43f4b6L, "newBlocks"))).addElement(newBlockInstance);
             }
           });

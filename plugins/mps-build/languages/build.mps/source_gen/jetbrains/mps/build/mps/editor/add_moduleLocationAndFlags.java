@@ -65,7 +65,7 @@ public class add_moduleLocationAndFlags extends TransformationMenuBase {
   public class TMP_Group_vydzh3_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
-      String sourcesKind = SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), null);
+      String sourcesKind = SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"));
       return (sourcesKind == null || sourcesKind.length() == 0) || sourcesKind.equals("sources");
     }
 

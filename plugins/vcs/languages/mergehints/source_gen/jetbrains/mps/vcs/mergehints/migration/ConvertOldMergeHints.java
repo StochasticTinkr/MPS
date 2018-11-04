@@ -145,7 +145,7 @@ public class ConvertOldMergeHints extends MigrationScriptBase {
   }
 
   private SNode convertHint(SNode cNode) {
-    return ((cNode == null) ? null : ((SPropertyOperations.hasValue(cNode, MetaAdapterFactory.getProperty(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, 0x75c17d085c8e0dbaL, "hint"), "1", "1") ? createOursStrategy_fwc2c_a0a0a0m() : createTheirsStrategy_fwc2c_a0a0a0m())));
+    return ((cNode == null) ? null : ((SPropertyOperations.hasEnumValue(cNode, MetaAdapterFactory.getProperty(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, 0x75c17d085c8e0dbaL, "hint"), "1") ? createOursStrategy_fwc2c_a0a0a0m() : createTheirsStrategy_fwc2c_a0a0a0m())));
   }
   private static SNode createConceptVCSDescriptor_fwc2c_a0a0a0g0c0g(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

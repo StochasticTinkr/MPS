@@ -70,7 +70,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return !(QueriesUtil.isMoney(_context.getNode()));
   }
   public static boolean rule_Condition_2_4(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102eaa8102cL, 0x102eaa8542bL, "value")), MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8ab0eL, 0x102dc063221L, "type"), "Quantity", "Quantity");
+    return SPropertyOperations.hasEnumValue(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102eaa8102cL, 0x102eaa8542bL, "value")), MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8ab0eL, 0x102dc063221L, "type"), "Quantity");
   }
   public static boolean rule_Condition_2_5(final BaseMappingRuleContext _context) {
     SNode leftOperand = SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, 0x102db86e5b3L, "leftOperand"));
@@ -101,10 +101,10 @@ public class QueriesGenerated extends QueryProviderBase {
     return QueriesUtil.isMoney(leftOperand);
   }
   public static boolean rule_Condition_20_0(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "KWH", "USD_KWH");
+    return SPropertyOperations.hasEnumValue(_context.getNode(), MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "KWH");
   }
   public static boolean rule_Condition_20_1(final BaseMappingRuleContext _context) {
-    return !(SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "KWH", "USD_KWH"));
+    return !(SPropertyOperations.hasEnumValue(_context.getNode(), MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "KWH"));
   }
   public static Object propertyMacro_GetValue_1_0(final PropertyMacroContext _context) {
     String prefix = NameUtil.capitalize(NameUtil.shortNameFromLongName(SNodeOperations.getModelLongName(_context.getInputModel())));
@@ -122,7 +122,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static Object propertyMacro_GetValue_1_4(final PropertyMacroContext _context) {
     SNode event = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8f094L, "jetbrains.mps.samples.agreementLanguage.structure.Event"), false, false);
-    return SPropertyOperations.getBoolean_def(event, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8f094L, 0x103ecb90e78L, "taxable"), "true");
+    return SPropertyOperations.getBoolean(event, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8f094L, 0x103ecb90e78L, "taxable"));
   }
   public static Object propertyMacro_GetValue_1_5(final PropertyMacroContext _context) {
     return "setUp" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

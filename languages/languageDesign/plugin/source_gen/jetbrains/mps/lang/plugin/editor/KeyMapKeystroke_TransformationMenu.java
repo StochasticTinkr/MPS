@@ -244,7 +244,7 @@ public class KeyMapKeystroke_TransformationMenu extends TransformationMenuBase {
         }
 
         SNode keymapChangesDeclaration = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"), false, false);
-        if ((keymapChangesDeclaration == null) || !(SPropertyOperations.hasValue(keymapChangesDeclaration, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "$default", "$default"))) {
+        if ((keymapChangesDeclaration == null) || !(SPropertyOperations.hasEnumValue(keymapChangesDeclaration, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "$default"))) {
           return false;
         }
 
@@ -254,7 +254,7 @@ public class KeyMapKeystroke_TransformationMenu extends TransformationMenuBase {
 
         boolean alreadySet = ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "Mac OS X", "$default") || SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "Mac OS X 10.5+", "$default");
+            return SPropertyOperations.hasEnumValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "Mac OS X") || SPropertyOperations.hasEnumValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "Mac OS X 10.5+");
           }
         }).translate(new ITranslator2<SNode, SNode>() {
           public Iterable<SNode> translate(SNode it) {
@@ -345,7 +345,7 @@ public class KeyMapKeystroke_TransformationMenu extends TransformationMenuBase {
         }
 
         SNode keymapChangesDeclaration = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"), false, false);
-        if ((keymapChangesDeclaration == null) || !(SPropertyOperations.hasValue(keymapChangesDeclaration, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "$default", "$default"))) {
+        if ((keymapChangesDeclaration == null) || !(SPropertyOperations.hasEnumValue(keymapChangesDeclaration, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "$default"))) {
           return false;
         }
 
@@ -355,7 +355,7 @@ public class KeyMapKeystroke_TransformationMenu extends TransformationMenuBase {
 
         boolean alreadySet = ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "Default for KDE", "$default") || SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "Default for GNOME", "$default");
+            return SPropertyOperations.hasEnumValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "Default for KDE") || SPropertyOperations.hasEnumValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "Default for GNOME");
           }
         }).translate(new ITranslator2<SNode, SNode>() {
           public Iterable<SNode> translate(SNode it) {

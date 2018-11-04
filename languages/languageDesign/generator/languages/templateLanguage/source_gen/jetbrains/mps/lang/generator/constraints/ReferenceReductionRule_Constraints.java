@@ -55,7 +55,7 @@ public class ReferenceReductionRule_Constraints extends BaseConstraintsDescripto
 
               @Override
               public boolean isExcluded(SNode node) {
-                return !(SPropertyOperations.hasValue(SNodeOperations.as(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference"));
+                return !(SPropertyOperations.hasEnumValue(SNodeOperations.as(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference"));
               }
             };
           }

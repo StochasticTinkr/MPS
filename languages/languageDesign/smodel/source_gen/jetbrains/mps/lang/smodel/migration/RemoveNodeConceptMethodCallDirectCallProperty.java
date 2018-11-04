@@ -38,7 +38,7 @@ public class RemoveNodeConceptMethodCallDirectCallProperty extends MigrationScri
       };
       CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall"), false)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SPropertyOperations.set(it, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, 0x27990abcdcff2f1dL, "directCall"), null);
+          SPropertyOperations.remove(it, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, 0x27990abcdcff2f1dL, "directCall"));
         }
       });
     }

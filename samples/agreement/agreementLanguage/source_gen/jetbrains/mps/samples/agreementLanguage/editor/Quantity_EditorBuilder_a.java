@@ -76,10 +76,10 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     return editorCell;
   }
   private boolean nodeCondition_e4lyhc_a0a() {
-    return SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "USD", "USD_KWH");
+    return SPropertyOperations.hasEnumValue(myNode, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "USD");
   }
   private boolean nodeCondition_e4lyhc_a2a() {
-    return !(SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "USD", "USD_KWH"));
+    return !(SPropertyOperations.hasEnumValue(myNode, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "USD"));
   }
   private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();

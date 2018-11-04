@@ -14,7 +14,7 @@ public class QueriesUtil {
   public static boolean isTest1(SModel model) {
     List<SNode> nodes = SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"));
     for (SNode node : ListSequence.fromList(nodes)) {
-      if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "test1", "none")) {
+      if (SPropertyOperations.hasEnumValue(node, MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "test1")) {
         return true;
       }
     }

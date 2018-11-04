@@ -31,10 +31,10 @@
       <node id="8014340958387885766" at="54,87,55,176" concept="5" />
       <node id="8014340958387885772" at="55,176,56,254" concept="6" />
       <node id="6480817028662815944" at="60,172,61,343" concept="1" />
-      <node id="1225201879301" at="61,343,62,173" concept="1" />
-      <node id="8014340958384435424" at="62,173,63,171" concept="1" />
-      <node id="8014340958382902261" at="63,171,64,177" concept="1" />
-      <node id="1225201879312" at="65,7,66,324" concept="1" />
+      <node id="1225201879301" at="61,343,62,166" concept="1" />
+      <node id="8014340958384435424" at="62,166,63,164" concept="1" />
+      <node id="8014340958382902261" at="63,164,64,177" concept="1" />
+      <node id="1225201879312" at="65,7,66,317" concept="1" />
       <node id="1225201879279" at="69,48,70,56" concept="6" />
       <node id="1225201879279" at="51,0,53,0" concept="0" trace="IntentionImplementation#()V" />
       <node id="1225201879279" at="23,0,26,0" concept="0" trace="ToggleConceptMethodAbstract_Intention#()V" />
@@ -84,7 +84,7 @@
         <var name="editorContext" id="1225201879279" />
         <var name="node" id="1225201879279" />
       </scope>
-      <scope id="1225201879298" at="59,78,66,324" />
+      <scope id="1225201879298" at="59,78,66,317" />
       <scope id="1225201879279" at="58,0,68,0">
         <var name="editorContext" id="1225201879279" />
         <var name="node" id="1225201879279" />
@@ -110,9 +110,9 @@
       <node id="1225201879322" at="46,5,47,30" concept="6" />
       <node id="8014340958387903640" at="53,87,54,176" concept="5" />
       <node id="8014340958387903646" at="54,176,55,251" concept="6" />
-      <node id="1225201879342" at="58,78,59,322" concept="1" />
-      <node id="3566429363059322021" at="60,171,61,175" concept="1" />
-      <node id="8014340958382825557" at="61,175,62,177" concept="1" />
+      <node id="1225201879342" at="58,78,59,315" concept="1" />
+      <node id="3566429363059322021" at="60,171,61,168" concept="1" />
+      <node id="8014340958382825557" at="61,168,62,177" concept="1" />
       <node id="1225201879322" at="66,48,67,55" concept="6" />
       <node id="1225201879322" at="50,0,52,0" concept="0" trace="IntentionImplementation#()V" />
       <node id="1225201879322" at="22,0,25,0" concept="0" trace="ToggleConceptMethodVirtual_Intention#()V" />
@@ -121,7 +121,7 @@
       <node id="1225201879322" at="43,99,46,5" concept="3" />
       <node id="1225201879322" at="25,0,29,0" concept="4" trace="getPresentation#()Ljava/lang/String;" />
       <node id="1225201879322" at="39,0,43,0" concept="4" trace="isSurroundWith#()Z" />
-      <node id="3566429363059295340" at="59,322,63,7" concept="3" />
+      <node id="3566429363059295340" at="59,315,63,7" concept="3" />
       <node id="1225201879322" at="65,0,69,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="1225201879322" at="52,0,57,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
       <node id="1225201879322" at="43,0,49,0" concept="4" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
@@ -193,7 +193,7 @@
       <node id="1703835097133099442" at="67,37,68,438" concept="1" />
       <node id="2926695023081282686" at="70,9,71,502" concept="5" />
       <node id="2926695023081282672" at="73,37,74,439" concept="1" />
-      <node id="4748945189160287409" at="76,9,77,180" concept="1" />
+      <node id="4748945189160287409" at="76,9,77,173" concept="1" />
       <node id="4748945189160275754" at="80,48,81,47" concept="6" />
       <node id="4748945189160275754" at="55,0,57,0" concept="0" trace="IntentionImplementation#()V" />
       <node id="4748945189160275754" at="27,0,30,0" concept="0" trace="ToggleMethodStatic_Intention#()V" />
@@ -253,7 +253,7 @@
         <var name="editorContext" id="4748945189160275754" />
         <var name="node" id="4748945189160275754" />
       </scope>
-      <scope id="4748945189160275773" at="63,78,77,180">
+      <scope id="4748945189160275773" at="63,78,77,173">
         <var name="oldStatic" id="1703835097133029656" />
         <var name="superNodes" id="2926695023081282687" />
         <var name="thisNodes" id="1703835097133028946" />
@@ -356,7 +356,7 @@
       <node id="8014340958386989491" at="46,5,47,30" concept="6" />
       <node id="8014340958387659403" at="53,87,54,326" concept="5" />
       <node id="8014340958387659409" at="54,326,55,408" concept="6" />
-      <node id="8014340958386989543" at="58,78,59,628" concept="1" />
+      <node id="8014340958386989543" at="58,78,59,621" concept="1" />
       <node id="8014340958386989491" at="62,48,63,50" concept="6" />
       <node id="8014340958386989491" at="50,0,52,0" concept="0" trace="IntentionImplementation#()V" />
       <node id="8014340958386989491" at="22,0,25,0" concept="0" trace="ToggleConceptAbstract_Intention#()V" />
@@ -377,7 +377,7 @@
       <scope id="8014340958386989506" at="36,91,37,16" />
       <scope id="8014340958386989491" at="40,35,41,17" />
       <scope id="8014340958386989491" at="44,37,45,137" />
-      <scope id="8014340958386989510" at="58,78,59,628" />
+      <scope id="8014340958386989510" at="58,78,59,621" />
       <scope id="8014340958386989491" at="62,48,63,50" />
       <scope id="8014340958386989491" at="50,0,52,0" />
       <scope id="8014340958386989493" at="53,87,55,408">

@@ -171,7 +171,7 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
       firstItem = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd721ebL, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"));
       ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"))).addElement(firstItem);
     }
-    SPropertyOperations.set(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x1143bd161dbL, "flag"), "" + (newSelectable));
+    SPropertyOperations.set(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x1143bd161dbL, "flag"), newSelectable);
   }
   /*package*/ static Color getColor_idhPjC$St(@NotNull SNode __thisNode__, SNode firstItem) {
     if ((firstItem == null)) {
@@ -187,12 +187,12 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
       }
       return null;
     }
-    if (SPropertyOperations.getString_def(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, 0x1143b2c0352L, "color"), null) == null) {
+    if (SPropertyOperations.getString(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, 0x1143b2c0352L, "color")) == null) {
       return null;
     }
     Class<MPSColors> classColors = MPSColors.class;
     try {
-      return (Color) classColors.getField(SPropertyOperations.getString_def(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, 0x1143b2c0352L, "color"), null)).get(null);
+      return (Color) classColors.getField(SPropertyOperations.getString(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, 0x1143b2c0352L, "color"))).get(null);
     } catch (Throwable t) {
       t.printStackTrace();
       return null;
@@ -215,7 +215,7 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
     if ((firstItem == null)) {
       return false;
     }
-    return SPropertyOperations.hasValue(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd837d7L, 0x11abae334c9L, "underlined"), "2", "0");
+    return SPropertyOperations.hasEnumValue(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd837d7L, 0x11abae334c9L, "underlined"), "2");
   }
   /*package*/ static boolean isStrikeOut_idhNnL8J1(@NotNull SNode __thisNode__) {
     return ((boolean) EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd786e1a9L, "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"), ((boolean) false)));
@@ -236,12 +236,12 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
   }
   /*package*/ static int getFontStyle_idhLcv3Z9(@NotNull SNode __thisNode__) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"))).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"));
-    if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN") == null || SPropertyOperations.hasValue(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "QUERY", "PLAIN")) {
+    if ((firstItem == null) || SPropertyOperations.getString(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style")) == null || SPropertyOperations.hasEnumValue(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "QUERY")) {
       return ((int) EditorCellModel__BehaviorDescriptor.getDefaultFontStyle_idhL_r0Mx.invoke(__thisNode__));
     }
     Class<MPSFonts> classFonts = MPSFonts.class;
     try {
-      return (Integer) classFonts.getField(SPropertyOperations.getString_def(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN")).get(null);
+      return (Integer) classFonts.getField(SPropertyOperations.getString(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"))).get(null);
     } catch (Throwable t) {
       t.printStackTrace();
       return ((int) EditorCellModel__BehaviorDescriptor.getDefaultFontStyle_idhL_r0Mx.invoke(__thisNode__));
@@ -274,13 +274,13 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
     if (hasActionStuff) {
       result += "^";
     }
-    if (SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1074c7a5760L, "attractsFocus"), "1", "0")) {
+    if (SPropertyOperations.hasEnumValue(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1074c7a5760L, "attractsFocus"), "1")) {
       result += "F";
     }
-    if (SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1074c7a5760L, "attractsFocus"), "2", "0")) {
+    if (SPropertyOperations.hasEnumValue(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1074c7a5760L, "attractsFocus"), "2")) {
       result += "FE";
     }
-    if (SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1074c7a5760L, "attractsFocus"), "3", "0")) {
+    if (SPropertyOperations.hasEnumValue(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1074c7a5760L, "attractsFocus"), "3")) {
       result += "AR";
     }
     return result;

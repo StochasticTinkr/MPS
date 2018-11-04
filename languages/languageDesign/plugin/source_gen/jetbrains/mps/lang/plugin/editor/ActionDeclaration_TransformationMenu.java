@@ -122,7 +122,7 @@ public class ActionDeclaration_TransformationMenu extends TransformationMenuBase
       public boolean canExecute(@NotNull String pattern) {
         SNode keymapDefault = ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "$default", "$default");
+            return SPropertyOperations.hasEnumValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "$default");
           }
         });
         if ((keymapDefault == null)) {
@@ -203,7 +203,7 @@ public class ActionDeclaration_TransformationMenu extends TransformationMenuBase
         // Use only in case there is not any KeymapChangesDeclaration other than Default 
         return !(ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return !(SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "$default", "$default"));
+            return !(SPropertyOperations.hasEnumValue(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "$default"));
           }
         }));
       }

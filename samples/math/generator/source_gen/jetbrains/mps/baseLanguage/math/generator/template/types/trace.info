@@ -25,22 +25,22 @@
   <root nodeRef="r:44a13e0a-5741-450e-b617-f6a7b8d52ba5(jetbrains.mps.baseLanguage.math.generator.template.types@generator)/1237208627073">
     <file name="QueriesGenerated.java">
       <node id="7376433222636453519" at="54,83,55,26" concept="7" />
-      <node id="1238318004895" at="55,26,56,192" concept="6" />
+      <node id="1238318004895" at="55,26,56,183" concept="6" />
       <node id="7376433222636453855" at="58,83,59,26" concept="7" />
-      <node id="1237546877861" at="59,26,60,192" concept="6" />
+      <node id="1237546877861" at="59,26,60,183" concept="6" />
       <node id="7376433222636453723" at="62,83,63,25" concept="7" />
-      <node id="1238314130661" at="63,25,64,192" concept="6" />
+      <node id="1238314130661" at="63,25,64,183" concept="6" />
       <node id="7376433222636453501" at="66,83,67,28" concept="7" />
-      <node id="1238401165599" at="67,28,68,192" concept="6" />
-      <node id="1238401176812" at="70,83,71,192" concept="6" />
+      <node id="1238401165599" at="67,28,68,183" concept="6" />
+      <node id="1238401176812" at="70,83,71,183" concept="6" />
       <node id="7376433222636453435" at="73,83,74,28" concept="7" />
-      <node id="1238420071449" at="74,28,75,192" concept="6" />
-      <node id="1238420072392" at="77,83,78,192" concept="6" />
+      <node id="1238420071449" at="74,28,75,183" concept="6" />
+      <node id="1238420072392" at="77,83,78,183" concept="6" />
       <node id="7376433222636453239" at="80,83,81,32" concept="7" />
-      <node id="1238420073086" at="81,32,82,192" concept="6" />
+      <node id="1238420073086" at="81,32,82,183" concept="6" />
       <node id="7376433222636454133" at="84,83,85,29" concept="7" />
-      <node id="1238420073810" at="85,29,86,192" concept="6" />
-      <node id="5217243589490821623" at="88,83,89,377" concept="6" />
+      <node id="1238420073810" at="85,29,86,183" concept="6" />
+      <node id="5217243589490821623" at="88,83,89,359" concept="6" />
       <node id="964810815942868401" at="91,84,92,803" concept="6" />
       <node id="1238411144807" at="94,84,95,391" concept="2" />
       <node id="1237559015565" at="95,391,96,1945" concept="6" />
@@ -769,9 +769,9 @@
       <node id="4107669262321384458" at="188,0,202,0" concept="8" trace="rule_Condition_0_42#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="4107669262321384509" at="202,0,216,0" concept="8" trace="rule_Condition_0_43#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="6217769856310586282" at="758,0,772,0" concept="8" trace="sourceNodeQuery_0_72#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1238401175653" at="70,83,71,192" />
-      <scope id="1238420066501" at="77,83,78,192" />
-      <scope id="5217243589490821621" at="88,83,89,377" />
+      <scope id="1238401175653" at="70,83,71,183" />
+      <scope id="1238420066501" at="77,83,78,183" />
+      <scope id="5217243589490821621" at="88,83,89,359" />
       <scope id="1237217647583" at="91,84,92,803" />
       <scope id="6217769856310295330" at="98,84,99,343" />
       <scope id="6217769856310295341" at="101,84,102,344" />
@@ -1062,13 +1062,13 @@
       <scope id="4107669262321384508" at="2455,16,2456,59" />
       <scope id="4107669262321384586" at="2457,16,2458,59" />
       <scope id="3417571330831702205" at="2580,15,2581,70" />
-      <scope id="1238317999931" at="54,83,56,192" />
-      <scope id="1237546877860" at="58,83,60,192" />
-      <scope id="1238314128299" at="62,83,64,192" />
-      <scope id="1238400574313" at="66,83,68,192" />
-      <scope id="1238420065216" at="73,83,75,192" />
-      <scope id="1238420067021" at="80,83,82,192" />
-      <scope id="1238420067665" at="84,83,86,192" />
+      <scope id="1238317999931" at="54,83,56,183" />
+      <scope id="1237546877860" at="58,83,60,183" />
+      <scope id="1238314128299" at="62,83,64,183" />
+      <scope id="1238400574313" at="66,83,68,183" />
+      <scope id="1238420065216" at="73,83,75,183" />
+      <scope id="1238420067021" at="80,83,82,183" />
+      <scope id="1238420067665" at="84,83,86,183" />
       <scope id="1237559012517" at="94,84,96,1945" />
       <scope id="4107669262321384480" at="193,119,195,16" />
       <scope id="4107669262321384531" at="207,119,209,16" />

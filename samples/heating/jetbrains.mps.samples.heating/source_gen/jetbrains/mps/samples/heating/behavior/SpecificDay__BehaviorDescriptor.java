@@ -33,7 +33,7 @@ public final class SpecificDay__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getString_def(__thisNode__, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6b4ea6L, 0x40bcae6c0e6b4ea7L, "day"), "monday");
+    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6b4ea6L, 0x40bcae6c0e6b4ea7L, "day"));
   }
 
   /*package*/ SpecificDay__BehaviorDescriptor() {

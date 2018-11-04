@@ -19,7 +19,7 @@
       <node id="3562028609770883283" at="27,215,28,382" concept="0" />
       <node id="3562028609770883763" at="29,208,30,375" concept="0" />
       <node id="7834938100936651364" at="38,194,39,511" concept="0" />
-      <node id="224926278906398657" at="45,202,46,191" concept="0" />
+      <node id="224926278906398657" at="45,202,46,184" concept="0" />
       <node id="7834938100936651353" at="37,91,40,7" concept="1" />
       <node id="224926278906350088" at="44,91,47,7" concept="1" />
       <node id="7834938100936651350" at="37,0,42,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
@@ -34,7 +34,7 @@
       <scope id="3562028609770842206" at="27,215,28,382" />
       <scope id="3562028609770842276" at="29,208,30,375" />
       <scope id="7834938100936651355" at="38,194,39,511" />
-      <scope id="224926278906350089" at="45,202,46,191" />
+      <scope id="224926278906350089" at="45,202,46,184" />
       <scope id="7834938100936651350" at="37,91,40,7" />
       <scope id="224926278906344315" at="44,91,47,7" />
       <scope id="7834938100936651350" at="37,0,42,0">

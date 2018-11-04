@@ -220,7 +220,7 @@ public class JavaParser {
     // putting first: current package in terms of source code 
     if (compResult.currentPackage != null) {
       SNode currPkg = makeImport(compResult.currentPackage);
-      SPropertyOperations.assign(currPkg, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x64c0181e603bd0L, "onDemand"), "" + (true));
+      SPropertyOperations.assign(currPkg, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x64c0181e603bd0L, "onDemand"), true);
       ListSequence.fromList(SLinkOperations.getChildren(imports, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, 0x64c0181e6020a7L, "entries"))).addElement(currPkg);
     }
 
@@ -243,8 +243,8 @@ public class JavaParser {
     boolean onDemand = (impRef.bits & ASTNode.OnDemand) != 0;
     boolean isStatic = impRef.isStatic();
 
-    SPropertyOperations.assign(imp, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x64c0181e603bd0L, "onDemand"), "" + (onDemand));
-    SPropertyOperations.assign(imp, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x4d5c30eb30af1572L, "static"), "" + (isStatic));
+    SPropertyOperations.assign(imp, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x64c0181e603bd0L, "onDemand"), onDemand);
+    SPropertyOperations.assign(imp, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x4d5c30eb30af1572L, "static"), isStatic);
 
     char[][] toks = impRef.getImportName();
     StringBuffer sb = new StringBuffer();

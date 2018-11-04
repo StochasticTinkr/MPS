@@ -24,7 +24,7 @@ public class delete_doNotCompile {
         if (DeletionApproverUtil.approve(editorContext, node, "doNotCompile")) {
           return;
         }
-        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x14d3fb6fb84ac614L, "doNotCompile"), "" + (false));
+        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x14d3fb6fb84ac614L, "doNotCompile"), false);
       }
 
     };

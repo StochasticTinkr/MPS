@@ -105,7 +105,7 @@ public class TransferCustomPackagingToLayout extends MigrationScriptBase {
         SNode languagesFolder = findOrCreateFolder(layoutPluginNode, "languages");
         for (SNode moduleToPackage : ListSequence.fromList(modulesToPackage)) {
           addModulePackaging(SLinkOperations.getTarget(moduleToPackage, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x5b7be37b4de9bbddL, "target")), languagesFolder);
-          SPropertyOperations.assign(moduleToPackage, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x37fdb3de482cf2dfL, "customPackaging"), "" + (false));
+          SPropertyOperations.assign(moduleToPackage, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x37fdb3de482cf2dfL, "customPackaging"), false);
         }
         for (final SNode groupToPackage : ListSequence.fromList(groupsToPackage)) {
           List<SNode> modulesToInsertIntoLayout = ListSequence.fromList(new ArrayList<SNode>());

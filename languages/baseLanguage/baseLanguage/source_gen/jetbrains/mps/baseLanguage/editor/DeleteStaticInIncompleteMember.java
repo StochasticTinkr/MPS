@@ -24,7 +24,7 @@ public class DeleteStaticInIncompleteMember {
         if (DeletionApproverUtil.approve(editorContext, node, "staticKeyword")) {
           return;
         }
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x32175ac2e6fdaf94L, "static"), "" + (false));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x32175ac2e6fdaf94L, "static"), false);
         editorContext.selectWRTFocusPolicy(node);
       }
 

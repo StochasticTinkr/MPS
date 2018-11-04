@@ -9,12 +9,12 @@
     <file name="QueriesUtil.java">
       <node id="1197668860512" at="15,195,16,354" concept="3" />
       <node id="1197669021774" at="18,210,19,375" concept="2" />
-      <node id="1197668962256" at="19,375,20,192" concept="3" />
-      <node id="1197669176566" at="22,196,23,353" concept="3" />
+      <node id="1197668962256" at="19,375,20,184" concept="3" />
+      <node id="1197669176566" at="22,196,23,346" concept="3" />
       <node id="1197669219675" at="24,5,25,17" concept="3" />
       <node id="1197670629661" at="28,195,29,357" concept="3" />
       <node id="1197670654154" at="31,210,32,375" concept="2" />
-      <node id="1197670654161" at="32,375,33,195" concept="3" />
+      <node id="1197670654161" at="32,375,33,187" concept="3" />
       <node id="1197670685518" at="34,5,35,197" concept="3" />
       <node id="7946777123643164201" at="12,0,14,0" concept="0" trace="QueriesUtil#()V" />
       <node id="1197668860506" at="14,45,17,5" concept="1" />
@@ -26,13 +26,13 @@
       <node id="1197668835374" at="14,0,27,0" concept="4" trace="isMoney#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="7946777123643164203" at="12,24,12,24" />
       <scope id="1197668860511" at="15,195,16,354" />
-      <scope id="1197669150056" at="22,196,23,353" />
+      <scope id="1197669150056" at="22,196,23,346" />
       <scope id="1197670629660" at="28,195,29,357" />
       <scope id="7946777123643164201" at="12,0,14,0" />
-      <scope id="1197668912964" at="18,210,20,192">
+      <scope id="1197668912964" at="18,210,20,184">
         <var name="eventVariable" id="1197669021775" />
       </scope>
-      <scope id="1197670654153" at="31,210,33,195">
+      <scope id="1197670654153" at="31,210,33,187">
         <var name="eventVariable" id="1197670654155" />
       </scope>
       <scope id="1197670595151" at="27,48,35,197" />

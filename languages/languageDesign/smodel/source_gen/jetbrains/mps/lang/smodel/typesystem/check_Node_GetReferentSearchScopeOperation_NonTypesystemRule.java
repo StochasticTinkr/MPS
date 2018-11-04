@@ -25,7 +25,7 @@ public class check_Node_GetReferentSearchScopeOperation_NonTypesystemRule extend
     // check link role argument 
     final SNode linkDecl = SLinkOperations.getTarget(op, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11c530706b2L, 0x11c530d1574L, "referenceLink"));
     if (linkDecl != null) {
-      if (!(SPropertyOperations.hasValue(linkDecl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference"))) {
+      if (!(SPropertyOperations.hasEnumValue(linkDecl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference"))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "reference link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226068687986", null, errorTarget);
       }

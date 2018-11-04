@@ -8,12 +8,12 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895905fb(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.util)/1202246421916">
     <file name="QueriesUtil.java">
       <node id="1202246676981" at="14,47,15,210" concept="2" />
-      <node id="1202246775281" at="17,183,18,20" concept="3" />
+      <node id="1202246775281" at="17,179,18,20" concept="3" />
       <node id="1202246785068" at="20,5,21,17" concept="3" />
       <node id="1202246743792" at="16,53,19,7" concept="1" />
       <node id="1202246684910" at="15,210,20,5" concept="0" />
       <node id="1202246440418" at="14,0,23,0" concept="4" trace="isTest1#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-      <scope id="1202246743794" at="17,183,18,20" />
+      <scope id="1202246743794" at="17,179,18,20" />
       <scope id="1202246684913" at="16,53,19,7" />
       <scope id="1202246684910" at="15,210,20,5">
         <var name="node" id="1202246684911" />

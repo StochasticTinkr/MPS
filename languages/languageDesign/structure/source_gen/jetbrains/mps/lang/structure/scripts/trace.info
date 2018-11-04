@@ -171,7 +171,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)/5800912818421828062">
     <file name="RefUtil.java">
-      <node id="1709900160195163073" at="15,1086,16,24" concept="6" />
+      <node id="1709900160195163073" at="15,1052,16,24" concept="6" />
       <node id="1709900160195163078" at="18,5,19,16" concept="6" />
       <node id="8941943470987180096" at="23,328,24,24" concept="6" />
       <node id="8941943470987180098" at="26,5,27,16" concept="6" />
@@ -181,7 +181,7 @@
       <node id="8941943470987180072" at="21,74,26,5" concept="2" />
       <node id="1709900160195124941" at="13,0,21,0" concept="7" trace="findLinkToMerge#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8941943470987180068" at="21,0,29,0" concept="7" trace="findPropertyToMerge#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1709900160195127112" at="15,1086,16,24" />
+      <scope id="1709900160195127112" at="15,1052,16,24" />
       <scope id="8941943470987180095" at="23,328,24,24" />
       <scope id="1709900160195127100" at="14,144,17,7" />
       <scope id="8941943470987180077" at="22,148,25,7" />

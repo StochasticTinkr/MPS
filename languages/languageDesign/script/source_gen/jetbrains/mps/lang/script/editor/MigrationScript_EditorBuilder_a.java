@@ -92,7 +92,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     return editorCell;
   }
   private boolean nodeCondition_th2ud5_a3a0() {
-    return SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "migration", "enhancement");
+    return SPropertyOperations.hasEnumValue(myNode, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "migration");
   }
   private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();

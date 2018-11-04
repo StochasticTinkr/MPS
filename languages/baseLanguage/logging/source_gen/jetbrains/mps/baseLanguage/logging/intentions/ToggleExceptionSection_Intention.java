@@ -48,7 +48,7 @@ public final class ToggleExceptionSection_Intention extends AbstractIntentionDes
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc43f6f0fL, "hasException"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc43f6f0fL, "hasException")))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc43f6f0fL, "hasException"), !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc43f6f0fL, "hasException"))));
     }
     @Override
     public IntentionDescriptor getDescriptor() {

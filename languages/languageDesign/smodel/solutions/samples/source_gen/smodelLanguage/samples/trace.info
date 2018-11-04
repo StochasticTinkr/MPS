@@ -443,8 +443,8 @@
       <node id="4726561250374487644" at="18,165,19,168" concept="1" />
       <node id="1146073487630" at="21,50,22,72" concept="5" />
       <node id="4881134848115356914" at="22,72,23,197" concept="5" />
-      <node id="2648652578096734556" at="23,197,24,168" concept="1" />
-      <node id="4726561250374487653" at="24,168,25,172" concept="1" />
+      <node id="2648652578096734556" at="23,197,24,161" concept="1" />
+      <node id="4726561250374487653" at="24,161,25,165" concept="1" />
       <node id="1208196943628" at="27,30,28,232" concept="1" />
       <node id="6360794824234304650" at="30,55,31,43" concept="6" />
       <node id="1208196798356" at="27,0,30,0" concept="4" trace="m1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -459,7 +459,7 @@
       <scope id="6360794824234304650" at="30,0,33,0">
         <var name="str" id="6360794824234304650" />
       </scope>
-      <scope id="1146073487616" at="21,50,25,172">
+      <scope id="1146073487616" at="21,50,25,165">
         <var name="cd" id="4881134848115356915" />
         <var name="isAbstract2" id="1146073487631" />
       </scope>
@@ -493,43 +493,43 @@
       <node id="1206550869727" at="24,43,25,161" concept="1" />
       <node id="1215466164500" at="25,161,26,154" concept="1" />
       <node id="1215466550620" at="26,154,27,157" concept="1" />
-      <node id="1215467669576" at="27,157,28,154" concept="1" />
-      <node id="1229470992893" at="28,154,29,322" concept="1" />
+      <node id="1215467669576" at="27,157,28,151" concept="1" />
+      <node id="1229470992893" at="28,151,29,322" concept="1" />
       <node id="1146080832045" at="31,48,32,27" concept="5" />
       <node id="1146080867432" at="33,165,34,20" concept="1" />
       <node id="1146080764694" at="35,5,36,177" concept="5" />
       <node id="1146080941406" at="36,177,37,185" concept="5" />
-      <node id="1146081001465" at="37,185,38,318" concept="1" />
-      <node id="1206551663085" at="40,44,41,163" concept="1" />
-      <node id="1215467703484" at="41,163,42,153" concept="1" />
+      <node id="1146081001465" at="37,185,38,311" concept="1" />
+      <node id="1206551663085" at="40,44,41,156" concept="1" />
+      <node id="1215467703484" at="41,156,42,150" concept="1" />
       <node id="1146081139984" at="44,47,45,166" concept="5" />
       <node id="1146081158851" at="45,166,46,172" concept="5" />
-      <node id="1146081241420" at="47,170,48,321" concept="1" />
-      <node id="1206551719069" at="51,44,52,161" concept="1" />
-      <node id="1215467728374" at="52,161,53,153" concept="1" />
-      <node id="1229470248353" at="53,153,54,313" concept="1" />
+      <node id="1146081241420" at="47,170,48,314" concept="1" />
+      <node id="1206551719069" at="51,44,52,154" concept="1" />
+      <node id="1215467728374" at="52,154,53,150" concept="1" />
+      <node id="1229470248353" at="53,150,54,313" concept="1" />
       <node id="1229470257238" at="54,313,55,313" concept="1" />
-      <node id="1146086546631" at="57,47,58,188" concept="5" />
-      <node id="1146251209145" at="58,188,59,196" concept="5" />
-      <node id="1146156976572" at="59,196,60,167" concept="1" />
-      <node id="1146251243328" at="60,167,61,194" concept="5" />
-      <node id="1146251002600" at="64,355,65,326" concept="1" />
-      <node id="1146251031486" at="66,5,67,363" concept="5" />
-      <node id="1146251097024" at="68,191,69,201" concept="5" />
+      <node id="1146086546631" at="57,47,58,176" concept="5" />
+      <node id="1146251209145" at="58,176,59,184" concept="5" />
+      <node id="1146156976572" at="59,184,60,167" concept="1" />
+      <node id="1146251243328" at="60,167,61,190" concept="5" />
+      <node id="1146251002600" at="64,321,65,309" concept="1" />
+      <node id="1146251031486" at="66,5,67,329" concept="5" />
+      <node id="1146251097024" at="68,182,69,192" concept="5" />
       <node id="1214429607024" at="72,62,73,170" concept="1" />
-      <node id="1214429639894" at="73,170,74,327" concept="1" />
-      <node id="1214429652190" at="74,327,75,324" concept="1" />
-      <node id="1170458748584" at="77,53,78,185" concept="5" />
-      <node id="1146854741629" at="79,182,80,168" concept="1" />
-      <node id="1214429499802" at="83,54,84,174" concept="1" />
-      <node id="1214429513438" at="84,174,85,345" concept="1" />
-      <node id="1214429526624" at="85,345,86,342" concept="1" />
-      <node id="1214430372046" at="86,342,87,172" concept="1" />
+      <node id="1214429639894" at="73,170,74,310" concept="1" />
+      <node id="1214429652190" at="74,310,75,307" concept="1" />
+      <node id="1170458748584" at="77,53,78,176" concept="5" />
+      <node id="1146854741629" at="79,181,80,168" concept="1" />
+      <node id="1214429499802" at="83,54,84,167" concept="1" />
+      <node id="1214429513438" at="84,167,85,329" concept="1" />
+      <node id="1214429526624" at="85,329,86,326" concept="1" />
+      <node id="1214430372046" at="86,326,87,165" concept="1" />
       <node id="1146080849848" at="32,27,35,5" concept="3" />
       <node id="1146081199098" at="46,172,49,5" concept="3" />
       <node id="1146250966728" at="63,62,66,5" concept="3" />
-      <node id="1146251073093" at="67,363,70,5" concept="3" />
-      <node id="1146854709495" at="78,185,81,5" concept="3" />
+      <node id="1146251073093" at="67,329,70,5" concept="3" />
+      <node id="1146854709495" at="78,176,81,5" concept="3" />
       <node id="1206551631220" at="40,0,44,0" concept="4" trace="booleanProperty2#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1146255828848" at="19,0,24,0" concept="4" trace="stringProperty2#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1214429595783" at="72,0,77,0" concept="4" trace="enumProperty_string3#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -543,22 +543,22 @@
       <node id="1146080703110" at="31,0,40,0" concept="4" trace="booleanProperty#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1146250911625" at="63,0,72,0" concept="4" trace="enumProperty_string2#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1146080849850" at="33,165,34,20" />
-      <scope id="1146081199100" at="47,170,48,321" />
-      <scope id="1146250966730" at="64,355,65,326" />
-      <scope id="1146251073095" at="68,191,69,201">
+      <scope id="1146081199100" at="47,170,48,314" />
+      <scope id="1146250966730" at="64,321,65,309" />
+      <scope id="1146251073095" at="68,182,69,192">
         <var name="ok2" id="1146251097025" />
       </scope>
-      <scope id="1146854709497" at="79,182,80,168" />
-      <scope id="1206551631223" at="40,44,42,153" />
+      <scope id="1146854709497" at="79,181,80,168" />
+      <scope id="1206551631223" at="40,44,42,150" />
       <scope id="1146255828850" at="19,59,22,324">
         <var name="ok" id="1146255924815" />
       </scope>
-      <scope id="1214429595785" at="72,62,75,324" />
+      <scope id="1214429595785" at="72,62,75,307" />
       <scope id="1206551631220" at="40,0,44,0">
         <var name="node" id="1206551650568" />
       </scope>
       <scope id="1206551695847" at="51,44,55,313" />
-      <scope id="1146086375056" at="57,47,61,194">
+      <scope id="1146086375056" at="57,47,61,190">
         <var name="ok1" id="1146251209146" />
         <var name="ok2" id="1146251243329" />
         <var name="s" id="1146086546632" />
@@ -566,7 +566,7 @@
       <scope id="1146854597221" at="77,53,81,5">
         <var name="i" id="1170458748585" />
       </scope>
-      <scope id="1214429441377" at="83,54,87,172" />
+      <scope id="1214429441377" at="83,54,87,165" />
       <scope id="1146255828848" at="19,0,24,0">
         <var name="clazz1" id="1146255845133" />
         <var name="clazz2" id="1146255864561" />
@@ -603,7 +603,7 @@
       <scope id="1206550829017" at="24,0,31,0">
         <var name="node" id="1206550857193" />
       </scope>
-      <scope id="1146080703112" at="31,48,38,318">
+      <scope id="1146080703112" at="31,48,38,311">
         <var name="isTrue" id="1146080832046" />
         <var name="isTrue2" id="1146080764695" />
         <var name="isTrue3" id="1146080941407" />

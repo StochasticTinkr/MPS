@@ -210,7 +210,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
       public void actionPerformed(ActionEvent p0) {
         modelAccess.executeCommand(new EditorCommand(getEditorContext()) {
           protected void doExecute() {
-            SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive"), "" + (!(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive")))));
+            SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive"), !(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive"))));
           }
         });
       }
@@ -355,10 +355,10 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
       }
     }
     private Iterable<String> getEditorHints0() {
-      if (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x7ba12f0b1640efd3L, "presentation"), "compact", "default")) {
+      if (SPropertyOperations.hasEnumValue(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x7ba12f0b1640efd3L, "presentation"), "compact")) {
         return ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.samples.notesOrganizer.editor.NotesHints.compact");
       }
-      if (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x7ba12f0b1640efd3L, "presentation"), "inspected", "default")) {
+      if (SPropertyOperations.hasEnumValue(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x7ba12f0b1640efd3L, "presentation"), "inspected")) {
         return ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.samples.notesOrganizer.editor.NotesHints.inspected");
       }
       return Collections.<String>emptyList();

@@ -67,7 +67,7 @@ public final class ModelReference__BehaviorDescriptor extends BaseBHDescriptor {
     if (modelName.hasStereotype()) {
       SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype"), modelName.getStereotype());
     } else {
-      SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype"), null);
+      SPropertyOperations.remove(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype"));
     }
   }
 

@@ -24,7 +24,7 @@ public class TargetDeclaration_makeRequired {
         if (DeletionApproverUtil.approve(editorContext, node, "optionalKeyword")) {
           return;
         }
-        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x642ffc6d854ec1c5L, "optional"), "" + (false));
+        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x642ffc6d854ec1c5L, "optional"), false);
       }
 
     };

@@ -685,7 +685,7 @@
       </scope>
     </file>
     <file name="check_LightQuotationNode_NonTypesystemRule.java">
-      <node id="8182547171709513296" at="28,39,29,363" concept="7" />
+      <node id="8182547171709513296" at="28,39,29,355" concept="7" />
       <node id="8182547171709514493" at="33,41,34,554" concept="7" />
       <node id="8182547171709514544" at="37,9,38,62" concept="6" />
       <node id="8182547171709514544" at="38,62,39,409" concept="6" />
@@ -707,7 +707,7 @@
       <node id="8182547171709513211" at="26,117,47,5" concept="3" />
       <node id="8182547171709513208" at="26,0,49,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8182547171709513208" at="24,55,24,55" />
-      <scope id="8182547171709513293" at="28,39,29,363" />
+      <scope id="8182547171709513293" at="28,39,29,355" />
       <scope id="8182547171709514492" at="33,41,34,554" />
       <scope id="8182547171709513208" at="49,50,50,162" />
       <scope id="8182547171709513208" at="52,68,53,102" />

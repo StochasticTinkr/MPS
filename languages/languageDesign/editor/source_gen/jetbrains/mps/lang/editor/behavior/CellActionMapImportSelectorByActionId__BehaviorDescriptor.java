@@ -40,7 +40,7 @@ public final class CellActionMapImportSelectorByActionId__BehaviorDescriptor ext
   }
 
   /*package*/ static SEnumerationLiteral getActionId_id3XXPjz_5Jxc(@NotNull SNode __thisNode__) {
-    return SEnumOperations.getMemberForValue(SPropertyOperations.getString_def(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4f883d0411451703L, 0x4f883d0411451706L, "actionId"), null), 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x10951993667L, "CellActionId");
+    return SEnumOperations.getMemberForValue(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4f883d0411451703L, 0x4f883d0411451706L, "actionId")), 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x10951993667L, "CellActionId");
   }
   /*package*/ static boolean selectsActionId_id3XXPjz_pJfc(@NotNull SNode __thisNode__, SEnumerationLiteral id) {
     return Objects.equals(CellActionMapImportSelectorByActionId__BehaviorDescriptor.getActionId_id3XXPjz_5Jxc.invoke(__thisNode__), id);

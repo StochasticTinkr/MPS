@@ -5266,7 +5266,7 @@
     <file name="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java">
       <node id="7376433222636454115" at="24,115,25,32" concept="9" />
       <node id="1226068687978" at="25,32,26,185" concept="7" />
-      <node id="1226068687986" at="28,197,29,60" concept="7" />
+      <node id="1226068687986" at="28,188,29,60" concept="7" />
       <node id="1226068687986" at="29,60,30,232" concept="7" />
       <node id="1226068687995" at="31,7,32,102" concept="7" />
       <node id="1226069786866" at="32,102,33,73" concept="7" />
@@ -5289,7 +5289,7 @@
       <scope id="1226068607116" at="44,68,45,102" />
       <scope id="1226068607116" at="47,30,48,17" />
       <scope id="1226068607116" at="22,0,24,0" />
-      <scope id="1226068687986" at="28,197,30,232">
+      <scope id="1226068687986" at="28,188,30,232">
         <var name="_reporter_2309309498" id="1226068687986" />
         <var name="errorTarget" id="1226068687986" />
       </scope>
@@ -7166,7 +7166,7 @@
       <node id="2644386474301440423" at="37,0,40,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="2644386474301440423" at="40,0,43,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="2644386474301440423" at="43,0,46,0" concept="6" trace="overrides#()Z" />
-      <node id="2644386474301440425" at="23,372,28,7" concept="0" />
+      <node id="2644386474301440425" at="23,363,28,7" concept="0" />
       <node id="2644386474301986203" at="29,12,34,7" concept="0" />
       <node id="2644386474301985924" at="29,10,35,5" concept="0" />
       <node id="2644386474301440427" at="46,0,53,0" concept="11" trace="_quotation_createNode_yncvv3_a1a2a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -7191,7 +7191,7 @@
         <var name="argument" id="2644386474301440423" />
       </scope>
       <scope id="2644386474301440423" at="43,0,46,0" />
-      <scope id="2644386474301976724" at="23,372,28,7" />
+      <scope id="2644386474301976724" at="23,363,28,7" />
       <scope id="2644386474301985925" at="29,12,34,7" />
       <scope id="2644386474301440427" at="46,66,51,24">
         <var name="facade" id="2644386474301440427" />

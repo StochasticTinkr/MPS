@@ -97,14 +97,14 @@
       <unit id="1218738629621" at="27,0,80,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mapping_main" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1218738691459" at="16,83,17,215" concept="7" />
-      <node id="1218738882048" at="19,83,20,428" concept="7" />
+      <node id="1218738691459" at="16,83,17,211" concept="7" />
+      <node id="1218738882048" at="19,83,20,424" concept="7" />
       <node id="1218739852064" at="25,94,26,311" concept="7" />
       <node id="1218738676457" at="16,0,19,0" concept="10" trace="rule_Condition_0_0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="1218738876108" at="19,0,22,0" concept="10" trace="rule_Condition_0_1#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="1218738863685" at="25,0,28,0" concept="10" trace="weavingRule_ContextQuery_0_0#(Ljetbrains/mps/generator/template/WeavingMappingRuleContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1218738676458" at="16,83,17,215" />
-      <scope id="1218738876109" at="19,83,20,428" />
+      <scope id="1218738676458" at="16,83,17,211" />
+      <scope id="1218738876109" at="19,83,20,424" />
       <scope id="1218738863686" at="25,94,26,311" />
       <scope id="1218738676457" at="16,0,19,0">
         <var name="_context" id="1218738676457" />

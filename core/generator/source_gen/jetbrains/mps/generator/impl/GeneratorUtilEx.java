@@ -136,10 +136,10 @@ public final class GeneratorUtilEx {
       // this is how it used to be, although to me default to warn/info might be better 
       return null;
     }
-    if (SPropertyOperations.hasValue(generatorMessage, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, 0x11055c93e57L, "messageType"), "error", "info")) {
+    if (SPropertyOperations.hasEnumValue(generatorMessage, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, 0x11055c93e57L, "messageType"), "error")) {
       return DismissTopMappingRuleException.MessageType.error;
     } else
-    if (SPropertyOperations.hasValue(generatorMessage, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, 0x11055c93e57L, "messageType"), "warning", "info")) {
+    if (SPropertyOperations.hasEnumValue(generatorMessage, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, 0x11055c93e57L, "messageType"), "warning")) {
       return DismissTopMappingRuleException.MessageType.warning;
     } else {
       return DismissTopMappingRuleException.MessageType.info;

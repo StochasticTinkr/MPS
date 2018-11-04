@@ -172,14 +172,14 @@
     <file name="ToggleCheckboxAction_c4zoug_a.java">
       <node id="5347446703374102186" at="15,0,16,0" concept="3" trace="myNode" />
       <node id="5347446703374102186" at="17,52,18,18" concept="2" />
-      <node id="5347446703374102186" at="21,30,22,345" concept="2" />
+      <node id="5347446703374102186" at="21,30,22,338" concept="2" />
       <node id="5347446703374102186" at="25,70,26,61" concept="6" />
       <node id="5347446703374102186" at="26,61,27,111" concept="7" />
       <node id="5347446703374102186" at="17,0,20,0" concept="1" trace="ToggleCheckboxAction_c4zoug_a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5347446703374102186" at="21,0,24,0" concept="5" trace="doExecute#()V" />
       <node id="5347446703374102186" at="25,0,29,0" concept="5" trace="createCellSelector#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/selectionRestoring/CellSelector;" />
       <scope id="5347446703374102186" at="17,52,18,18" />
-      <scope id="5347446703374102186" at="21,30,22,345" />
+      <scope id="5347446703374102186" at="21,30,22,338" />
       <scope id="5347446703374102186" at="25,70,27,111">
         <var name="label" id="5347446703374102186" />
       </scope>
@@ -429,13 +429,13 @@
     <file name="ToggleCheckboxAction_7xa7wl_a.java">
       <node id="7013563450911355564" at="14,0,15,0" concept="3" trace="myNode" />
       <node id="7013563450911355564" at="16,52,17,18" concept="2" />
-      <node id="7013563450911355564" at="20,30,21,345" concept="2" />
+      <node id="7013563450911355564" at="20,30,21,338" concept="2" />
       <node id="7013563450911355564" at="24,70,25,35" concept="7" />
       <node id="7013563450911355564" at="16,0,19,0" concept="1" trace="ToggleCheckboxAction_7xa7wl_a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7013563450911355564" at="20,0,23,0" concept="5" trace="doExecute#()V" />
       <node id="7013563450911355564" at="24,0,27,0" concept="5" trace="createCellSelector#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/selectionRestoring/CellSelector;" />
       <scope id="7013563450911355564" at="16,52,17,18" />
-      <scope id="7013563450911355564" at="20,30,21,345" />
+      <scope id="7013563450911355564" at="20,30,21,338" />
       <scope id="7013563450911355564" at="24,70,25,35" />
       <scope id="7013563450911355564" at="16,0,19,0">
         <var name="node" id="7013563450911355564" />
@@ -1160,14 +1160,14 @@
     <file name="ToggleCheckboxAction_3jyf1k_b0.java">
       <node id="1340057216891299905" at="15,0,16,0" concept="3" trace="myNode" />
       <node id="1340057216891299905" at="17,53,18,18" concept="2" />
-      <node id="1340057216891299905" at="21,30,22,357" concept="2" />
+      <node id="1340057216891299905" at="21,30,22,350" concept="2" />
       <node id="1340057216891299905" at="25,70,26,61" concept="6" />
       <node id="1340057216891299905" at="26,61,27,111" concept="7" />
       <node id="1340057216891299905" at="17,0,20,0" concept="1" trace="ToggleCheckboxAction_3jyf1k_b0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1340057216891299905" at="21,0,24,0" concept="5" trace="doExecute#()V" />
       <node id="1340057216891299905" at="25,0,29,0" concept="5" trace="createCellSelector#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/selectionRestoring/CellSelector;" />
       <scope id="1340057216891299905" at="17,53,18,18" />
-      <scope id="1340057216891299905" at="21,30,22,357" />
+      <scope id="1340057216891299905" at="21,30,22,350" />
       <scope id="1340057216891299905" at="25,70,27,111">
         <var name="label" id="1340057216891299905" />
       </scope>
@@ -1183,14 +1183,14 @@
     <file name="ToggleCheckboxAction_3jyf1k_c0.java">
       <node id="8215612579904293709" at="15,0,16,0" concept="3" trace="myNode" />
       <node id="8215612579904293709" at="17,53,18,18" concept="2" />
-      <node id="8215612579904293709" at="21,30,22,357" concept="2" />
+      <node id="8215612579904293709" at="21,30,22,350" concept="2" />
       <node id="8215612579904293709" at="25,70,26,61" concept="6" />
       <node id="8215612579904293709" at="26,61,27,111" concept="7" />
       <node id="8215612579904293709" at="17,0,20,0" concept="1" trace="ToggleCheckboxAction_3jyf1k_c0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8215612579904293709" at="21,0,24,0" concept="5" trace="doExecute#()V" />
       <node id="8215612579904293709" at="25,0,29,0" concept="5" trace="createCellSelector#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/selectionRestoring/CellSelector;" />
       <scope id="8215612579904293709" at="17,53,18,18" />
-      <scope id="8215612579904293709" at="21,30,22,357" />
+      <scope id="8215612579904293709" at="21,30,22,350" />
       <scope id="8215612579904293709" at="25,70,27,111">
         <var name="label" id="8215612579904293709" />
       </scope>
@@ -1206,14 +1206,14 @@
     <file name="ToggleCheckboxAction_3jyf1k_f0.java">
       <node id="4319657350470029330" at="15,0,16,0" concept="3" trace="myNode" />
       <node id="4319657350470029330" at="17,53,18,18" concept="2" />
-      <node id="4319657350470029330" at="21,30,22,359" concept="2" />
+      <node id="4319657350470029330" at="21,30,22,352" concept="2" />
       <node id="4319657350470029330" at="25,70,26,61" concept="6" />
       <node id="4319657350470029330" at="26,61,27,111" concept="7" />
       <node id="4319657350470029330" at="17,0,20,0" concept="1" trace="ToggleCheckboxAction_3jyf1k_f0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4319657350470029330" at="21,0,24,0" concept="5" trace="doExecute#()V" />
       <node id="4319657350470029330" at="25,0,29,0" concept="5" trace="createCellSelector#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/selectionRestoring/CellSelector;" />
       <scope id="4319657350470029330" at="17,53,18,18" />
-      <scope id="4319657350470029330" at="21,30,22,359" />
+      <scope id="4319657350470029330" at="21,30,22,352" />
       <scope id="4319657350470029330" at="25,70,27,111">
         <var name="label" id="4319657350470029330" />
       </scope>
@@ -1229,13 +1229,13 @@
     <file name="ToggleCheckboxAction_3jyf1k_g0.java">
       <node id="806145720380898405" at="14,0,15,0" concept="3" trace="myNode" />
       <node id="806145720380898405" at="16,53,17,18" concept="2" />
-      <node id="806145720380898405" at="20,30,21,359" concept="2" />
+      <node id="806145720380898405" at="20,30,21,352" concept="2" />
       <node id="806145720380898405" at="24,70,25,35" concept="7" />
       <node id="806145720380898405" at="16,0,19,0" concept="1" trace="ToggleCheckboxAction_3jyf1k_g0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="806145720380898405" at="20,0,23,0" concept="5" trace="doExecute#()V" />
       <node id="806145720380898405" at="24,0,27,0" concept="5" trace="createCellSelector#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/selectionRestoring/CellSelector;" />
       <scope id="806145720380898405" at="16,53,17,18" />
-      <scope id="806145720380898405" at="20,30,21,359" />
+      <scope id="806145720380898405" at="20,30,21,352" />
       <scope id="806145720380898405" at="24,70,25,35" />
       <scope id="806145720380898405" at="16,0,19,0">
         <var name="node" id="806145720380898405" />

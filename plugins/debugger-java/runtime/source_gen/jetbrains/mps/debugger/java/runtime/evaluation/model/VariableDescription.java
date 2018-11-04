@@ -60,7 +60,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     } else {
       SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25edaL, "highType"), SNodeOperations.copyNode(lowType));
     }
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25eedL, "isHigh"), "" + (highType != null));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25eedL, "isHigh"), highType != null);
     SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25ed9L, "lowType"), lowType);
     return result;
   }

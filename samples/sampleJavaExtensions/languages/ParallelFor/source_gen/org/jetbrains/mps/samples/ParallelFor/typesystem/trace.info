@@ -730,13 +730,13 @@
     <file name="MakeDeclarationFinal_QuickFix.java">
       <node id="7793246093816040820" at="14,42,15,143" concept="9" />
       <node id="7793246093816040825" at="17,44,18,36" concept="6" />
-      <node id="7793246093816040828" at="20,35,21,493" concept="2" />
+      <node id="7793246093816040828" at="20,35,21,486" concept="2" />
       <node id="7793246093816040820" at="14,0,17,0" concept="1" trace="MakeDeclarationFinal_QuickFix#()V" />
       <node id="7793246093816040820" at="17,0,20,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="7793246093816040820" at="20,0,23,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="7793246093816040820" at="14,42,15,143" />
       <scope id="7793246093816040824" at="17,44,18,36" />
-      <scope id="7793246093816040822" at="20,35,21,493" />
+      <scope id="7793246093816040822" at="20,35,21,486" />
       <scope id="7793246093816040820" at="14,0,17,0" />
       <scope id="7793246093816040820" at="17,0,20,0">
         <var name="node" id="7793246093816040820" />

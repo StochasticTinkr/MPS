@@ -89,7 +89,7 @@ public final class ExpandBoolean_Intention extends AbstractIntentionDescriptor i
       Sequence.fromIterable(refs).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           SNode booleanConstant = SNodeFactoryOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"));
-          SPropertyOperations.set(booleanConstant, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "" + (true));
+          SPropertyOperations.set(booleanConstant, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), true);
         }
       });
       refs = ListSequence.fromList(SNodeOperations.getNodeDescendants(ListSequence.fromList(SLinkOperations.getChildren(ifFalse, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).first(), null, false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
@@ -100,7 +100,7 @@ public final class ExpandBoolean_Intention extends AbstractIntentionDescriptor i
       Sequence.fromIterable(refs).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           SNode booleanConstant = SNodeFactoryOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"));
-          SPropertyOperations.set(booleanConstant, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "" + (false));
+          SPropertyOperations.set(booleanConstant, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), false);
         }
       });
       // 

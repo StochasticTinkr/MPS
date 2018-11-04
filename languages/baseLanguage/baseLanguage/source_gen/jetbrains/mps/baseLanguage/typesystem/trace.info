@@ -11573,13 +11573,13 @@
     <file name="MakeVariableFinal_QuickFix.java">
       <node id="1241100983853" at="13,39,14,126" concept="18" />
       <node id="1241101021484" at="16,44,17,33" concept="13" />
-      <node id="1241101057690" at="19,35,20,381" concept="6" />
+      <node id="1241101057690" at="19,35,20,374" concept="6" />
       <node id="1241100983853" at="13,0,16,0" concept="3" trace="MakeVariableFinal_QuickFix#()V" />
       <node id="1241100983853" at="16,0,19,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1241100983853" at="19,0,22,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1241100983853" at="13,39,14,126" />
       <scope id="1241101017871" at="16,44,17,33" />
-      <scope id="1241100983855" at="19,35,20,381" />
+      <scope id="1241100983855" at="19,35,20,374" />
       <scope id="1241100983853" at="13,0,16,0" />
       <scope id="1241100983853" at="16,0,19,0">
         <var name="node" id="1241100983853" />
@@ -15220,14 +15220,14 @@
       <node id="2857825852301232953" at="21,35,22,183" concept="12" />
       <node id="6205351058567191973" at="22,183,23,145" concept="12" />
       <node id="6205351058567194447" at="24,35,25,209" concept="12" />
-      <node id="6205351058567192409" at="25,209,26,190" concept="6" />
+      <node id="6205351058567192409" at="25,209,26,183" concept="6" />
       <node id="2857825852301220711" at="15,0,18,0" concept="3" trace="SimplifyCondition_QuickFix#()V" />
       <node id="2857825852301220711" at="18,0,21,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="6205351058571603427" at="23,145,27,5" concept="10" />
       <node id="2857825852301220711" at="21,0,29,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="2857825852301220711" at="15,39,16,132" />
       <scope id="2857825852301222543" at="18,44,19,105" />
-      <scope id="6205351058571603429" at="24,35,26,190">
+      <scope id="6205351058571603429" at="24,35,26,183">
         <var name="v" id="6205351058567194448" />
       </scope>
       <scope id="2857825852301220711" at="15,0,18,0" />
@@ -17660,9 +17660,9 @@
       <node id="3832376534028355046" at="61,35,62,27" concept="6" />
       <node id="3832376534028359242" at="63,12,64,13" concept="13" />
       <node id="875204272654295892" at="66,210,67,209" concept="6" />
-      <node id="875204272654295885" at="67,209,68,341" concept="6" />
+      <node id="875204272654295885" at="67,209,68,334" concept="6" />
       <node id="875204272654285844" at="69,213,70,209" concept="6" />
-      <node id="875204272654291505" at="70,209,71,340" concept="6" />
+      <node id="875204272654291505" at="70,209,71,333" concept="6" />
       <node id="875204272654302700" at="72,5,73,0" concept="15" />
       <node id="3832376534028382760" at="74,5,75,58" concept="12" />
       <node id="3832376534028382760" at="75,58,76,347" concept="12" />
@@ -17698,8 +17698,8 @@
       <scope id="3832376534028051181" at="24,0,26,0" />
       <scope id="3832376534028269401" at="57,60,59,28" />
       <scope id="3832376534028350636" at="60,69,62,27" />
-      <scope id="875204272654272068" at="66,210,68,341" />
-      <scope id="875204272654283950" at="69,213,71,340" />
+      <scope id="875204272654272068" at="66,210,68,334" />
+      <scope id="875204272654283950" at="69,213,71,333" />
       <scope id="3832376534028051181" at="86,0,89,0" />
       <scope id="3832376534028051181" at="89,0,92,0">
         <var name="argument" id="3832376534028051181" />
@@ -17915,13 +17915,13 @@
       <node id="3832376534031039937" at="13,43,14,132" concept="18" />
       <node id="3832376534031111395" at="16,44,17,37" concept="13" />
       <node id="8626468694778190671" at="19,35,20,214" concept="12" />
-      <node id="3832376534031105964" at="20,214,21,234" concept="6" />
+      <node id="3832376534031105964" at="20,214,21,227" concept="6" />
       <node id="3832376534031039937" at="13,0,16,0" concept="3" trace="SimplifyNotExpression_QuickFix#()V" />
       <node id="3832376534031039937" at="16,0,19,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="3832376534031039937" at="19,0,23,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="3832376534031039937" at="13,43,14,132" />
       <scope id="3832376534031110433" at="16,44,17,37" />
-      <scope id="3832376534031039939" at="19,35,21,234">
+      <scope id="3832376534031039939" at="19,35,21,227">
         <var name="constant" id="8626468694778190672" />
       </scope>
       <scope id="3832376534031039937" at="13,0,16,0" />
@@ -18259,13 +18259,13 @@
     <file name="MakeClassAbstract_QuickFix.java">
       <node id="4271705194752231378" at="13,39,14,132" concept="18" />
       <node id="4271705194752316414" at="16,44,17,348" concept="13" />
-      <node id="4271705194752392579" at="19,35,20,331" concept="6" />
+      <node id="4271705194752392579" at="19,35,20,324" concept="6" />
       <node id="4271705194752231378" at="13,0,16,0" concept="3" trace="MakeClassAbstract_QuickFix#()V" />
       <node id="4271705194752231378" at="16,0,19,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="4271705194752231378" at="19,0,22,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="4271705194752231378" at="13,39,14,132" />
       <scope id="4271705194752267215" at="16,44,17,348" />
-      <scope id="4271705194752231731" at="19,35,20,331" />
+      <scope id="4271705194752231731" at="19,35,20,324" />
       <scope id="4271705194752231378" at="13,0,16,0" />
       <scope id="4271705194752231378" at="16,0,19,0">
         <var name="node" id="4271705194752231378" />
@@ -20168,13 +20168,13 @@
     <file name="MakeInnerClassStatic_QuickFix.java">
       <node id="498633765599637389" at="12,42,13,131" concept="18" />
       <node id="498633765599758118" at="15,44,16,251" concept="13" />
-      <node id="498633765599637904" at="18,35,19,240" concept="6" />
+      <node id="498633765599637904" at="18,35,19,233" concept="6" />
       <node id="498633765599637389" at="12,0,15,0" concept="3" trace="MakeInnerClassStatic_QuickFix#()V" />
       <node id="498633765599637389" at="15,0,18,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="498633765599637389" at="18,0,21,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="498633765599637389" at="12,42,13,131" />
       <scope id="498633765599752601" at="15,44,16,251" />
-      <scope id="498633765599637391" at="18,35,19,240" />
+      <scope id="498633765599637391" at="18,35,19,233" />
       <scope id="498633765599637389" at="12,0,15,0" />
       <scope id="498633765599637389" at="15,0,18,0">
         <var name="node" id="498633765599637389" />
@@ -20192,8 +20192,8 @@
       <node id="498633765599993133" at="22,35,23,207" concept="12" />
       <node id="498633765599997653" at="23,207,24,385" concept="6" />
       <node id="498633765599997680" at="24,385,25,414" concept="6" />
-      <node id="498633765599997579" at="25,414,26,397" concept="6" />
-      <node id="498633765599997596" at="26,397,27,404" concept="6" />
+      <node id="498633765599997579" at="25,414,26,390" concept="6" />
+      <node id="498633765599997596" at="26,390,27,404" concept="6" />
       <node id="498633765599997613" at="27,404,28,468" concept="6" />
       <node id="498633765599997026" at="28,468,29,406" concept="6" />
       <node id="498633765600135638" at="29,406,30,293" concept="6" />
@@ -20284,8 +20284,8 @@
       <node id="498633765600371362" at="19,44,20,262" concept="13" />
       <node id="498633765600371283" at="22,35,23,217" concept="12" />
       <node id="498633765600371289" at="23,217,24,388" concept="6" />
-      <node id="498633765600371305" at="24,388,25,400" concept="6" />
-      <node id="498633765600371297" at="25,400,26,405" concept="6" />
+      <node id="498633765600371305" at="24,388,25,393" concept="6" />
+      <node id="498633765600371297" at="25,393,26,405" concept="6" />
       <node id="498633765600377021" at="26,405,27,465" concept="6" />
       <node id="498633765600377072" at="27,465,28,393" concept="6" />
       <node id="498633765600377146" at="28,393,29,469" concept="6" />
@@ -22628,13 +22628,13 @@
       <node id="6640766779591088702" at="27,383,28,345" concept="6" />
       <node id="6640766779591279032" at="28,345,29,316" concept="6" />
       <node id="6640766779591319222" at="29,316,30,335" concept="6" />
-      <node id="3653081518534618697" at="32,393,33,169" concept="6" />
-      <node id="3653081518537203389" at="33,169,34,343" concept="12" />
+      <node id="3653081518534618697" at="32,393,33,162" concept="6" />
+      <node id="3653081518537203389" at="33,162,34,343" concept="12" />
       <node id="3653081518534673586" at="34,343,35,326" concept="6" />
       <node id="3653081518537206884" at="35,326,36,232" concept="6" />
       <node id="3653081518534836975" at="36,232,37,56" concept="6" />
       <node id="3653081518534841020" at="37,56,38,15" concept="13" />
-      <node id="6640766779591362306" at="40,12,41,330" concept="6" />
+      <node id="6640766779591362306" at="40,12,41,323" concept="6" />
       <node id="6640766779596327772" at="44,35,45,206" concept="12" />
       <node id="6640766779591423984" at="45,206,46,176" concept="6" />
       <node id="6640766779593924127" at="48,7,49,37" concept="6" />
@@ -22648,7 +22648,7 @@
       <node id="6640766779592686124" at="24,0,51,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="6640766779592686124" at="18,49,19,132" />
       <scope id="6640766779592699628" at="21,44,22,45" />
-      <scope id="3653081518534471126" at="40,12,41,330" />
+      <scope id="3653081518534471126" at="40,12,41,323" />
       <scope id="6640766779591423794" at="44,35,46,176">
         <var name="ref" id="6640766779596327773" />
       </scope>
@@ -27431,13 +27431,13 @@
       <node id="8626468694779185704" at="13,77,14,132" concept="18" />
       <node id="8626468694779185789" at="16,44,17,210" concept="13" />
       <node id="8626468694779190856" at="19,35,20,314" concept="12" />
-      <node id="8626468694779188138" at="20,314,21,265" concept="6" />
+      <node id="8626468694779188138" at="20,314,21,258" concept="6" />
       <node id="8626468694779185704" at="13,0,16,0" concept="3" trace="SimplifyWholeBinaryLogicalExpressionWithBooleanConstant_QuickFix#()V" />
       <node id="8626468694779185704" at="16,0,19,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8626468694779185704" at="19,0,23,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="8626468694779185704" at="13,77,14,132" />
       <scope id="8626468694779185788" at="16,44,17,210" />
-      <scope id="8626468694779185714" at="19,35,21,265">
+      <scope id="8626468694779185714" at="19,35,21,258">
         <var name="constant" id="8626468694779190857" />
       </scope>
       <scope id="8626468694779185704" at="13,0,16,0" />

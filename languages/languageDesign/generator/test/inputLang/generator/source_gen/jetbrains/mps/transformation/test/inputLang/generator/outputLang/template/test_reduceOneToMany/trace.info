@@ -343,12 +343,12 @@
       <unit id="3893401255414084744" at="26,0,74,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mapping_main" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="3893401255414132236" at="17,83,18,419" concept="9" />
-      <node id="3893401255414131864" at="20,83,21,206" concept="9" />
+      <node id="3893401255414132236" at="17,83,18,415" concept="9" />
+      <node id="3893401255414131864" at="20,83,21,202" concept="9" />
       <node id="3893401255414132234" at="17,0,20,0" concept="12" trace="rule_Condition_0_0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="3893401255414129777" at="20,0,23,0" concept="12" trace="rule_Condition_0_1#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
-      <scope id="3893401255414132235" at="17,83,18,419" />
-      <scope id="3893401255414129778" at="20,83,21,206" />
+      <scope id="3893401255414132235" at="17,83,18,415" />
+      <scope id="3893401255414129778" at="20,83,21,202" />
       <scope id="3893401255414132234" at="17,0,20,0">
         <var name="_context" id="3893401255414132234" />
       </scope>

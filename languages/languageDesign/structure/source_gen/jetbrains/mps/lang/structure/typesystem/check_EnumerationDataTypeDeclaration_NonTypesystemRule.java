@@ -26,8 +26,8 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
   public check_EnumerationDataTypeDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode enumerationDataTypeDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final boolean deriveFromExternal = Objects.equals(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_presentation");
-    final boolean deriveFromInternal = Objects.equals(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_internal_value");
+    final boolean deriveFromExternal = Objects.equals(SPropertyOperations.getString(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy")), "derive_from_presentation");
+    final boolean deriveFromInternal = Objects.equals(SPropertyOperations.getString(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy")), "derive_from_internal_value");
 
     // Suggest using internal values, if they are present in all members 
     if (deriveFromExternal && ListSequence.fromList(SLinkOperations.getChildren(enumerationDataTypeDeclaration, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).all(new IWhereFilter<SNode>() {
