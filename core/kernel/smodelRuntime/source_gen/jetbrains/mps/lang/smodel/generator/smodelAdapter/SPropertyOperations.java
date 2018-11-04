@@ -13,6 +13,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.language.SDataType;
 import jetbrains.mps.smodel.adapter.structure.types.SEnumerationAdapter;
+import jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes;
 
 public class SPropertyOperations {
   public static String assign(SNode node, SProperty property, String propertyValue) {
@@ -30,7 +31,7 @@ public class SPropertyOperations {
 
   public static void set(SNode node, SProperty property, String propertyValue) {
     if (node != null) {
-      SNodeAccessUtil.setPropertyValue(node, property, upgradeToEnumMember(property, propertyValue));
+      SNodeAccessUtil.setPropertyValue(node, property, upgradeToEnumMember(property, deserializeIfNeeded(propertyValue, property)));
     }
   }
   public static void set(SNode node, SProperty property, int propertyValue) {
@@ -200,5 +201,15 @@ public class SPropertyOperations {
       return ((SEnumerationAdapter) type).getRawValueFromLiteral((SEnumerationLiteral) propertyValue);
     }
     return propertyValue;
+  }
+  private static Object deserializeIfNeeded(String string, SProperty property) {
+    // While regenerated smodel code calls proper `assign` and `set` methods (by respecting type of a property) 
+    // old code serialize properties and then invokes `assign` and `set` with `String propertyValue` argument 
+    // To handle not-regenerated code we have this compatiblity aux until 18.3 will be released 
+    SDataType type = property.getType();
+    if (type == SPrimitiveTypes.BOOLEAN || type == SPrimitiveTypes.INTEGER) {
+      return type.fromString(string);
+    }
+    return string;
   }
 }

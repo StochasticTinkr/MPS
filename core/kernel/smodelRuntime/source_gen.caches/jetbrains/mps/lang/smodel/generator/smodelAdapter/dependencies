@@ -251,6 +251,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.types.SEnumerationAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes" />
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode dependClassName="jetbrains.mps.util.InternUtil" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />

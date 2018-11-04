@@ -13170,8 +13170,14 @@
                   <node concept="37vLTw" id="1221pLNq5pA" role="37wK5m">
                     <ref role="3cqZAo" node="5IkW5anFfny" resolve="property" />
                   </node>
-                  <node concept="37vLTw" id="1221pLNq5we" role="37wK5m">
-                    <ref role="3cqZAo" node="5IkW5anFfn$" resolve="propertyValue" />
+                  <node concept="1rXfSq" id="4IGn$Huthgn" role="37wK5m">
+                    <ref role="37wK5l" node="6WTCxA8$BIN" resolve="deserializeIfNeeded" />
+                    <node concept="37vLTw" id="4IGn$HuthIj" role="37wK5m">
+                      <ref role="3cqZAo" node="5IkW5anFfn$" resolve="propertyValue" />
+                    </node>
+                    <node concept="37vLTw" id="4IGn$HutifZ" role="37wK5m">
+                      <ref role="3cqZAo" node="5IkW5anFfny" resolve="property" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -14443,6 +14449,7 @@
         </node>
       </node>
     </node>
+    <node concept="3Tm1VV" id="5IkW5anFfno" role="1B3o_S" />
     <node concept="2tJIrI" id="1221pLNq35o" role="jymVt" />
     <node concept="2YIFZL" id="65FbRTcgdMi" role="jymVt">
       <property role="TrG5h" value="upgradeToEnumMember" />
@@ -14607,7 +14614,100 @@
         </node>
       </node>
     </node>
-    <node concept="3Tm1VV" id="5IkW5anFfno" role="1B3o_S" />
+    <node concept="2YIFZL" id="6WTCxA8$BIN" role="jymVt">
+      <property role="TrG5h" value="deserializeIfNeeded" />
+      <node concept="3clFbS" id="6WTCxA8$BIQ" role="3clF47">
+        <node concept="3SKdUt" id="4IGn$Hut2c8" role="3cqZAp">
+          <node concept="3SKdUq" id="4IGn$Hut2c9" role="3SKWNk">
+            <property role="3SKdUp" value="While regenerated smodel code calls proper `assign` and `set` methods (by respecting type of a property)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4IGn$Hut2ca" role="3cqZAp">
+          <node concept="3SKdUq" id="4IGn$Hut2cb" role="3SKWNk">
+            <property role="3SKdUp" value="old code serialize properties and then invokes `assign` and `set` with `String propertyValue` argument" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6WTCxA8$JNY" role="3cqZAp">
+          <node concept="3SKdUq" id="6WTCxA8$JO0" role="3SKWNk">
+            <property role="3SKdUp" value="To handle not-regenerated code we have this compatiblity aux until 18.3 will be released" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4IGn$Hut3Pg" role="3cqZAp">
+          <node concept="3cpWsn" id="4IGn$Hut3Ph" role="3cpWs9">
+            <property role="TrG5h" value="type" />
+            <node concept="3uibUv" id="4IGn$Hut3Pi" role="1tU5fm">
+              <ref role="3uigEE" to="c17a:~SDataType" resolve="SDataType" />
+            </node>
+            <node concept="2OqwBi" id="4IGn$Hut3Wv" role="33vP2m">
+              <node concept="37vLTw" id="4IGn$Hut4O$" role="2Oq$k0">
+                <ref role="3cqZAo" node="4IGn$Hut2cr" resolve="property" />
+              </node>
+              <node concept="liA8E" id="4IGn$Hut5tb" role="2OqNvi">
+                <ref role="37wK5l" to="c17a:~SProperty.getType():org.jetbrains.mps.openapi.language.SDataType" resolve="getType" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4IGn$Hut5v7" role="3cqZAp">
+          <node concept="3clFbS" id="4IGn$Hut5v9" role="3clFbx">
+            <node concept="3cpWs6" id="4IGn$Hut73J" role="3cqZAp">
+              <node concept="2OqwBi" id="4IGn$Hut7Fw" role="3cqZAk">
+                <node concept="37vLTw" id="4IGn$Hut7z1" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4IGn$Hut3Ph" resolve="type" />
+                </node>
+                <node concept="liA8E" id="4IGn$Hut97d" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SDataType.fromString(java.lang.String):java.lang.Object" resolve="fromString" />
+                  <node concept="37vLTw" id="4IGn$Hut9AR" role="37wK5m">
+                    <ref role="3cqZAo" node="6WTCxA8$EJ8" resolve="string" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="22lmx$" id="4IGn$Hut6s1" role="3clFbw">
+            <node concept="3clFbC" id="4IGn$Hut6V3" role="3uHU7w">
+              <node concept="10M0yZ" id="4IGn$Hut70R" role="3uHU7w">
+                <ref role="3cqZAo" to="xx25:~SPrimitiveTypes.INTEGER" resolve="INTEGER" />
+                <ref role="1PxDUh" to="xx25:~SPrimitiveTypes" resolve="SPrimitiveTypes" />
+              </node>
+              <node concept="37vLTw" id="4IGn$Hut6uY" role="3uHU7B">
+                <ref role="3cqZAo" node="4IGn$Hut3Ph" resolve="type" />
+              </node>
+            </node>
+            <node concept="3clFbC" id="4IGn$Hut5O3" role="3uHU7B">
+              <node concept="37vLTw" id="4IGn$Hut5wd" role="3uHU7B">
+                <ref role="3cqZAo" node="4IGn$Hut3Ph" resolve="type" />
+              </node>
+              <node concept="10M0yZ" id="4IGn$Hut5Tf" role="3uHU7w">
+                <ref role="3cqZAo" to="xx25:~SPrimitiveTypes.BOOLEAN" resolve="BOOLEAN" />
+                <ref role="1PxDUh" to="xx25:~SPrimitiveTypes" resolve="SPrimitiveTypes" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4IGn$Huta7i" role="3cqZAp">
+          <node concept="37vLTw" id="4IGn$HutaCs" role="3cqZAk">
+            <ref role="3cqZAo" node="6WTCxA8$EJ8" resolve="string" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="6WTCxA8$AgQ" role="1B3o_S" />
+      <node concept="3uibUv" id="6WTCxA8$B_l" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+      </node>
+      <node concept="37vLTG" id="6WTCxA8$EJ8" role="3clF46">
+        <property role="TrG5h" value="string" />
+        <node concept="3uibUv" id="6WTCxA8$EJ7" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4IGn$Hut2cr" role="3clF46">
+        <property role="TrG5h" value="property" />
+        <node concept="3uibUv" id="4IGn$Hut2TW" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="5zEkxuKh8vS">
     <property role="TrG5h" value="AttributeOperations" />
