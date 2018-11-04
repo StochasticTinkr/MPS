@@ -22,7 +22,7 @@
   <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)/192970713427711964">
     <file name="WithStatement_DeleteEditable.java">
       <node id="192970713427711965" at="19,56,20,51" concept="2" />
-      <node id="192970713427711984" at="22,77,23,192" concept="2" />
+      <node id="192970713427711984" at="22,77,23,185" concept="2" />
       <node id="192970713427711964" at="29,95,30,76" concept="6" />
       <node id="192970713427711964" at="30,76,31,82" concept="6" />
       <node id="192970713427711964" at="31,82,32,0" concept="9" />
@@ -55,7 +55,7 @@
       <node id="192970713427711965" at="17,0,28,0" concept="10" trace="createAction_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/editor/runtime/cells/AbstractCellAction;" />
       <node id="192970713427711964" at="29,0,44,0" concept="10" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="192970713427711965" at="19,56,20,51" />
-      <scope id="192970713427711967" at="22,77,23,192" />
+      <scope id="192970713427711967" at="22,77,23,185" />
       <scope id="192970713427711964" at="40,81,41,67" />
       <scope id="192970713427711965" at="59,60,60,66" />
       <scope id="192970713427711965" at="19,0,22,0">
@@ -124,7 +124,7 @@
       <node id="192970713427865413" at="82,55,83,27" concept="2" />
       <node id="192970713427865413" at="85,59,86,37" concept="2" />
       <node id="192970713427865416" at="90,50,91,33" concept="7" />
-      <node id="192970713427865420" at="95,52,96,206" concept="2" />
+      <node id="192970713427865420" at="95,52,96,199" concept="2" />
       <node id="192970713427905330" at="100,58,101,20" concept="7" />
       <node id="192970713427865413" at="107,49,108,37" concept="7" />
       <node id="192970713427855502" at="115,84,116,132" concept="6" />
@@ -142,7 +142,7 @@
       <node id="192970713427855502" at="137,55,138,27" concept="2" />
       <node id="192970713427855502" at="140,59,141,37" concept="2" />
       <node id="192970713427856081" at="145,50,146,28" concept="7" />
-      <node id="192970713427858882" at="150,52,151,205" concept="2" />
+      <node id="192970713427858882" at="150,52,151,198" concept="2" />
       <node id="192970713427923518" at="155,58,156,20" concept="7" />
       <node id="192970713427855502" at="162,49,163,37" concept="7" />
       <node id="192970713427865413" at="82,0,85,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
@@ -176,7 +176,7 @@
       <scope id="192970713427865413" at="82,55,83,27" />
       <scope id="192970713427865413" at="85,59,86,37" />
       <scope id="192970713427865415" at="90,50,91,33" />
-      <scope id="192970713427865419" at="95,52,96,206" />
+      <scope id="192970713427865419" at="95,52,96,199" />
       <scope id="192970713427904648" at="100,58,101,20" />
       <scope id="192970713427865413" at="107,49,108,37" />
       <scope id="192970713427855502" at="118,11,119,62" />
@@ -184,7 +184,7 @@
       <scope id="192970713427855502" at="137,55,138,27" />
       <scope id="192970713427855502" at="140,59,141,37" />
       <scope id="192970713427855506" at="145,50,146,28" />
-      <scope id="192970713427855510" at="150,52,151,205" />
+      <scope id="192970713427855510" at="150,52,151,198" />
       <scope id="192970713427922840" at="155,58,156,20" />
       <scope id="192970713427855502" at="162,49,163,37" />
       <scope id="192970713427855497" at="51,128,53,72" />

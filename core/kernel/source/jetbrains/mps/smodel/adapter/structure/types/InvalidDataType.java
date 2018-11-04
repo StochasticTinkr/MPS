@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.adapter.structure.types;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.language.SType;
 
 /**
@@ -27,7 +28,7 @@ import org.jetbrains.mps.openapi.language.SType;
 public class InvalidDataType implements SDataType {
 
   @NotNull
-  private final String myName;
+  protected final String myName;
 
   public InvalidDataType(@NotNull String name) {
     myName = name;

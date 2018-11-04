@@ -140,7 +140,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     }
     public SNode nodeFactory() {
       SNode ch = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionChild"));
-      SPropertyOperations.assign(ch, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, 0x617705b269dc8252L, "flag"), "" + (true));
+      SPropertyOperations.assign(ch, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, 0x617705b269dc8252L, "flag"), true);
       return ch;
     }
     public EditorCell createNodeCell(SNode elementNode) {

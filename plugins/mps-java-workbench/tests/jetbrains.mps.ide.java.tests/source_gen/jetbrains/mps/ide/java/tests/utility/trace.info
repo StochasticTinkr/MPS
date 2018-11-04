@@ -627,7 +627,7 @@
   <root nodeRef="r:6ea8585f-7b0c-4c4e-a3ae-330a49f753b2(jetbrains.mps.ide.java.tests.utility)/8083368042256395971">
     <file name="NodePatcher.java">
       <node id="7339047227027414511" at="31,273,32,345" concept="4" />
-      <node id="1369191534304326048" at="43,176,44,176" concept="4" />
+      <node id="1369191534304326048" at="43,176,44,169" concept="4" />
       <node id="7149447565294019920" at="49,270,50,171" concept="4" />
       <node id="7149447565294019998" at="54,274,55,161" concept="4" />
       <node id="7149447565294020086" at="60,975,61,171" concept="4" />
@@ -687,7 +687,7 @@
       <node id="7149447565294020241" at="65,0,98,0" concept="14" trace="removeSourceLevelAnnotations#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
       <scope id="8083368042256395976" at="28,24,28,24" />
       <scope id="8083368042256396006" at="31,273,32,345" />
-      <scope id="8083368042256398822" at="43,176,44,176" />
+      <scope id="8083368042256398822" at="43,176,44,169" />
       <scope id="7149447565294019919" at="49,270,50,171" />
       <scope id="7149447565294019997" at="54,274,55,161" />
       <scope id="7149447565294020085" at="60,975,61,171" />

@@ -341,50 +341,50 @@
   </root>
   <root nodeRef="r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/5063359128233346660">
     <file name="EnumerationDescriptor_DayDataType.java">
-      <node id="5063359128233346660" at="14,46,15,191" concept="9" />
-      <node id="5063359128233346661" at="18,0,19,0" concept="2" trace="VALUE_monday_0" />
-      <node id="5063359128233346662" at="19,0,20,0" concept="2" trace="VALUE_tuesday_0" />
-      <node id="5063359128233346665" at="20,0,21,0" concept="2" trace="VALUE_wednesday_0" />
-      <node id="5063359128233346669" at="21,0,22,0" concept="2" trace="VALUE_thursday_0" />
-      <node id="5063359128233346674" at="22,0,23,0" concept="2" trace="VALUE_friday_0" />
-      <node id="5063359128233346680" at="23,0,24,0" concept="2" trace="VALUE_saturday_0" />
-      <node id="5063359128233346687" at="24,0,25,0" concept="2" trace="VALUE_sunday_0" />
-      <node id="5063359128233346660" at="28,62,29,26" concept="6" />
-      <node id="5063359128233346660" at="34,74,35,145" concept="6" />
-      <node id="5063359128233346660" at="41,25,42,18" concept="6" />
-      <node id="5063359128233346661" at="45,20,46,30" concept="6" />
-      <node id="5063359128233346662" at="47,21,48,31" concept="6" />
-      <node id="5063359128233346665" at="49,23,50,33" concept="6" />
-      <node id="5063359128233346669" at="51,22,52,32" concept="6" />
-      <node id="5063359128233346674" at="53,20,54,30" concept="6" />
-      <node id="5063359128233346680" at="55,22,56,32" concept="6" />
-      <node id="5063359128233346687" at="57,20,58,30" concept="6" />
-      <node id="5063359128233346660" at="59,5,60,16" concept="6" />
-      <node id="5063359128233346660" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_DayDataType#()V" />
-      <node id="5063359128233346660" at="40,84,43,5" concept="3" />
-      <node id="5063359128233346660" at="26,0,31,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <node id="5063359128233346660" at="32,0,37,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
-      <node id="5063359128233346660" at="43,5,59,5" concept="10" />
-      <node id="5063359128233346660" at="38,0,62,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <scope id="5063359128233346660" at="14,46,15,191" />
-      <scope id="5063359128233346660" at="28,62,29,26" />
-      <scope id="5063359128233346660" at="34,74,35,145" />
-      <scope id="5063359128233346660" at="41,25,42,18" />
-      <scope id="5063359128233346661" at="45,20,46,30" />
-      <scope id="5063359128233346662" at="47,21,48,31" />
-      <scope id="5063359128233346665" at="49,23,50,33" />
-      <scope id="5063359128233346669" at="51,22,52,32" />
-      <scope id="5063359128233346674" at="53,20,54,30" />
-      <scope id="5063359128233346680" at="55,22,56,32" />
-      <scope id="5063359128233346687" at="57,20,58,30" />
-      <scope id="5063359128233346660" at="14,0,17,0" />
-      <scope id="5063359128233346660" at="26,0,31,0" />
-      <scope id="5063359128233346660" at="32,0,37,0" />
-      <scope id="5063359128233346660" at="40,84,60,16" />
-      <scope id="5063359128233346660" at="38,0,62,0">
+      <node id="5063359128233346660" at="15,46,16,215" concept="9" />
+      <node id="5063359128233346661" at="19,0,20,0" concept="2" trace="VALUE_monday_0" />
+      <node id="5063359128233346662" at="20,0,21,0" concept="2" trace="VALUE_tuesday_0" />
+      <node id="5063359128233346665" at="21,0,22,0" concept="2" trace="VALUE_wednesday_0" />
+      <node id="5063359128233346669" at="22,0,23,0" concept="2" trace="VALUE_thursday_0" />
+      <node id="5063359128233346674" at="23,0,24,0" concept="2" trace="VALUE_friday_0" />
+      <node id="5063359128233346680" at="24,0,25,0" concept="2" trace="VALUE_saturday_0" />
+      <node id="5063359128233346687" at="25,0,26,0" concept="2" trace="VALUE_sunday_0" />
+      <node id="5063359128233346660" at="29,62,30,26" concept="6" />
+      <node id="5063359128233346660" at="35,74,36,145" concept="6" />
+      <node id="5063359128233346660" at="42,25,43,18" concept="6" />
+      <node id="5063359128233346661" at="46,20,47,30" concept="6" />
+      <node id="5063359128233346662" at="48,21,49,31" concept="6" />
+      <node id="5063359128233346665" at="50,23,51,33" concept="6" />
+      <node id="5063359128233346669" at="52,22,53,32" concept="6" />
+      <node id="5063359128233346674" at="54,20,55,30" concept="6" />
+      <node id="5063359128233346680" at="56,22,57,32" concept="6" />
+      <node id="5063359128233346687" at="58,20,59,30" concept="6" />
+      <node id="5063359128233346660" at="60,5,61,16" concept="6" />
+      <node id="5063359128233346660" at="15,0,18,0" concept="0" trace="EnumerationDescriptor_DayDataType#()V" />
+      <node id="5063359128233346660" at="41,84,44,5" concept="3" />
+      <node id="5063359128233346660" at="27,0,32,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="5063359128233346660" at="33,0,38,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="5063359128233346660" at="44,5,60,5" concept="10" />
+      <node id="5063359128233346660" at="39,0,63,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="5063359128233346660" at="15,46,16,215" />
+      <scope id="5063359128233346660" at="29,62,30,26" />
+      <scope id="5063359128233346660" at="35,74,36,145" />
+      <scope id="5063359128233346660" at="42,25,43,18" />
+      <scope id="5063359128233346661" at="46,20,47,30" />
+      <scope id="5063359128233346662" at="48,21,49,31" />
+      <scope id="5063359128233346665" at="50,23,51,33" />
+      <scope id="5063359128233346669" at="52,22,53,32" />
+      <scope id="5063359128233346674" at="54,20,55,30" />
+      <scope id="5063359128233346680" at="56,22,57,32" />
+      <scope id="5063359128233346687" at="58,20,59,30" />
+      <scope id="5063359128233346660" at="15,0,18,0" />
+      <scope id="5063359128233346660" at="27,0,32,0" />
+      <scope id="5063359128233346660" at="33,0,38,0" />
+      <scope id="5063359128233346660" at="41,84,61,16" />
+      <scope id="5063359128233346660" at="39,0,63,0">
         <var name="string" id="5063359128233346660" />
       </scope>
-      <unit id="5063359128233346660" at="12,0,63,0" name="jetbrains.mps.samples.heating.structure.EnumerationDescriptor_DayDataType" />
+      <unit id="5063359128233346660" at="13,0,64,0" name="jetbrains.mps.samples.heating.structure.EnumerationDescriptor_DayDataType" />
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="5063359128233346660" at="30,0,31,0" concept="2" trace="myEnumerationDayDataType" />

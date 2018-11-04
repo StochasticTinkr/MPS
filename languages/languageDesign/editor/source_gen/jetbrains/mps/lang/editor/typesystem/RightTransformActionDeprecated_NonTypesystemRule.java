@@ -18,7 +18,7 @@ public class RightTransformActionDeprecated_NonTypesystemRule extends AbstractNo
   public RightTransformActionDeprecated_NonTypesystemRule() {
   }
   public void applyRule(final SNode cellActionMapItem, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SPropertyOperations.hasValue(cellActionMapItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "right_transform_action_id", null)) {
+    if (SPropertyOperations.hasEnumValue(cellActionMapItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "right_transform_action_id")) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(cellActionMapItem, "Right transform in action map is deprecated.", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "9215127012917439383", null, errorTarget);

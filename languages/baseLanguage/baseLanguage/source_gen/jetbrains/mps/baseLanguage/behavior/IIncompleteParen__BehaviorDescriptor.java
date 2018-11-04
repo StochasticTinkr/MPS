@@ -32,7 +32,7 @@ public final class IIncompleteParen__BehaviorDescriptor extends BaseBHDescriptor
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(increaseCount_idVufYxgmE1y, decreaseCount_idVufYxgmFtR, isSingleParen_idVufYxgmHsD);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xede3fe8510255edL, 0xede3fe8510255eeL, "count"), "" + (1));
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xede3fe8510255edL, 0xede3fe8510255eeL, "count"), 1);
   }
 
   /*package*/ static void increaseCount_idVufYxgmE1y(@NotNull SNode __thisNode__) {

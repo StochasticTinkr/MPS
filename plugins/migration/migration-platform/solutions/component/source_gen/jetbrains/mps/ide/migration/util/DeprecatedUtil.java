@@ -73,7 +73,7 @@ public class DeprecatedUtil {
       };
       Sequence.fromIterable(depLinks(s)).where(new IWhereFilter<SNode>() {
         public boolean accept(final SNode link) {
-          if (SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
+          if (SPropertyOperations.hasEnumValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation")) {
             return !(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), SNodeOperations.asSConcept(SNodeOperations.asSConcept(SNodeOperations.getNodeAncestor(link, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false))), false)).any(new IWhereFilter<SNode>() {
               public boolean accept(SNode ins) {
                 return ListSequence.fromList(SNodeOperations.getChildren(ins, MetaAdapterByDeclaration.getContainmentLink(link))).isNotEmpty();
@@ -225,7 +225,7 @@ public class DeprecatedUtil {
       cat.value = "Deprecated Link Instances";
       Sequence.fromIterable(dl).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
+          return SPropertyOperations.hasEnumValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation");
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode link) {
@@ -243,7 +243,7 @@ public class DeprecatedUtil {
       });
       Sequence.fromIterable(dl).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference");
+          return SPropertyOperations.hasEnumValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference");
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode link) {

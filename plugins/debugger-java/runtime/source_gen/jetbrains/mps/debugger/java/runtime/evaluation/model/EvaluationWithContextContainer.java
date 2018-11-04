@@ -112,7 +112,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   @Override
   protected SNode createEvaluatorNode() {
     SNode evaluatorConcept = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), null);
-    SPropertyOperations.set(evaluatorConcept, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, 0x53c5060c6b19c79bL, "isShowContext"), "" + (myIsInWatch));
+    SPropertyOperations.set(evaluatorConcept, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, 0x53c5060c6b19c79bL, "isShowContext"), myIsInWatch);
     return evaluatorConcept;
   }
   private void createVars() {
@@ -155,7 +155,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       // now mark vars which are currently out of scope 
       Sequence.fromIterable(MapSequence.fromMap(declaredVariables).values()).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SPropertyOperations.set(it, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, 0x554b4e03d5950431L, "isOutOfScope"), "" + (!(SetSequence.fromSet(foundVars).contains(it))));
+          SPropertyOperations.set(it, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, 0x554b4e03d5950431L, "isOutOfScope"), !(SetSequence.fromSet(foundVars).contains(it)));
         }
       });
 
@@ -245,7 +245,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       @Override
       protected SNode createEvaluatorNode() {
         SNode newEvaluator = (SNode) CopyUtil.copyAndPreserveId(reference.resolve(myDebuggerRepository), true);
-        SPropertyOperations.set(newEvaluator, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, 0x53c5060c6b19c79bL, "isShowContext"), "" + (isInWatch));
+        SPropertyOperations.set(newEvaluator, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, 0x53c5060c6b19c79bL, "isShowContext"), isInWatch);
         return newEvaluator;
       }
     };

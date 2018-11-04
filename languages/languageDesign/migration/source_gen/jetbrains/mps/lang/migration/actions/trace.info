@@ -14,7 +14,7 @@
   <root nodeRef="90746344-04fd-4286-97d5-b46ae6a81709/r:f22d27ec-c702-420c-bd15-8c30195d31df(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.actions)/1901572971594205598">
     <file name="TransformStatement.java">
       <node id="1901572971594233973" at="20,91,21,510" concept="0" />
-      <node id="7527743013694960557" at="21,510,22,183" concept="0" />
+      <node id="7527743013694960557" at="21,510,22,176" concept="0" />
       <node id="1901572971594270494" at="24,83,25,65" concept="3" />
       <node id="1901572971594270494" at="25,65,26,32" concept="3" />
       <node id="1901572971594270494" at="26,32,27,32" concept="3" />
@@ -26,7 +26,7 @@
       <node id="1901572971594270494" at="32,173,33,26" concept="4" />
       <node id="1901572971594206036" at="20,0,24,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="1901572971594270494" at="24,0,35,0" concept="5" trace="_quotation_createNode_md2x8h_a0a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1901572971594206036" at="20,91,22,183" />
+      <scope id="1901572971594206036" at="20,91,22,176" />
       <scope id="1901572971594206036" at="20,0,24,0">
         <var name="enclosingNode" id="1901572971594206036" />
         <var name="model" id="1901572971594206036" />

@@ -30,6 +30,6 @@ import org.jetbrains.mps.annotations.Immutable;
  * @version 2018.3
  */
 @Immutable
-public enum PrimitiveTypeId implements STypeId{
+public enum PrimitiveTypeId implements STypeId {
   STRING, BOOLEAN, INTEGER
 }

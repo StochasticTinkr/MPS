@@ -60,7 +60,7 @@ public class XmlConverter {
       }
 
     }
-    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x61218fae7b61b5d5L, "shortEmptyNotation"), "" + (elem.getContentSize() == 0));
+    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x61218fae7b61b5d5L, "shortEmptyNotation"), elem.getContentSize() == 0);
     return result;
   }
   private static Iterable<SNode> convertContent(Content prev, Content c, Content next) {

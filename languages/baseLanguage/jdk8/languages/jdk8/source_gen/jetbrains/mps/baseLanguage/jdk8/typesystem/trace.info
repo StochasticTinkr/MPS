@@ -123,13 +123,13 @@
       <node id="2577576048763133371" at="12,44,13,137" concept="9" />
       <node id="2577576048763133385" at="15,44,16,44" concept="7" />
       <node id="2577576048763133374" at="18,35,19,231" concept="0" />
-      <node id="2577576048763235102" at="19,231,20,234" concept="3" />
+      <node id="2577576048763235102" at="19,231,20,227" concept="3" />
       <node id="2577576048763133371" at="12,0,15,0" concept="2" trace="RemoveAbstractModifier_QuickFix#()V" />
       <node id="2577576048763133371" at="15,0,18,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="2577576048763133371" at="18,0,22,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="2577576048763133371" at="12,44,13,137" />
       <scope id="2577576048763133384" at="15,44,16,44" />
-      <scope id="2577576048763133373" at="18,35,20,234" />
+      <scope id="2577576048763133373" at="18,35,20,227" />
       <scope id="2577576048763133371" at="12,0,15,0" />
       <scope id="2577576048763133371" at="15,0,18,0">
         <var name="node" id="2577576048763133371" />

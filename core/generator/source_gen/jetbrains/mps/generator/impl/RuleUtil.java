@@ -235,7 +235,7 @@ public final class RuleUtil {
     return SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, 0x10fd54746ddL, "template"));
   }
   public static boolean getRootRuleKeepSourceRoot(SNode rule) {
-    return SPropertyOperations.hasValue(rule, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, 0x11243d5018aL, "keepSourceRoot"), "true", null);
+    return SPropertyOperations.hasEnumValue(rule, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, 0x11243d5018aL, "keepSourceRoot"), "true");
   }
   public static SNode getSwitchModifiedSwitch(SNode switchNode) {
     return SLinkOperations.getTarget(switchNode, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x1031947e414L, "modifiedSwitch"));
@@ -428,7 +428,7 @@ public final class RuleUtil {
     return SLinkOperations.getTarget(expr, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3d6f2506d88aa028L, 0x25c655ce6e80fddaL, "varmacro"));
   }
   public static boolean getMappingScript_IsPreProcess(SNode script) {
-    return SPropertyOperations.hasValue(script, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1165958fcd6L, 0x1165f0cf1aaL, "scriptKind"), "pre_processing", "post_processing");
+    return SPropertyOperations.hasEnumValue(script, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1165958fcd6L, 0x1165f0cf1aaL, "scriptKind"), "pre_processing");
   }
   public static boolean getMappingScript_ModifiesModel(SNode script) {
     return SPropertyOperations.getBoolean(script, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1165958fcd6L, 0x1165f0d3f2fL, "modifiesModel"));

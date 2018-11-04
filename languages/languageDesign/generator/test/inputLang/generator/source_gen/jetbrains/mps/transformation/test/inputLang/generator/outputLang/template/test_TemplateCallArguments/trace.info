@@ -91,7 +91,7 @@
     <file name="QueriesGenerated.java">
       <node id="6736062018948465982" at="27,90,28,17" concept="8" />
       <node id="6736062018948483009" at="30,90,31,57" concept="8" />
-      <node id="7496726876599780616" at="50,39,51,197" concept="8" />
+      <node id="7496726876599780616" at="50,39,51,193" concept="8" />
       <node id="6736062018948465982" at="27,0,30,0" concept="11" trace="templateArgumentQuery_0_0#(Ljetbrains/mps/generator/template/TemplateArgumentContext;)Ljava/lang/Object;" />
       <node id="6736062018948483009" at="30,0,33,0" concept="11" trace="templateArgumentQuery_0_1#(Ljetbrains/mps/generator/template/TemplateArgumentContext;)Ljava/lang/Object;" />
       <node id="7496726876599778520" at="50,0,53,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -99,7 +99,7 @@
       <node id="7496726876599722461" at="48,0,55,0" concept="11" trace="mc_Condition_0#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
       <scope id="6736062018948465982" at="27,90,28,17" />
       <scope id="6736062018948483009" at="30,90,31,57" />
-      <scope id="7496726876599778521" at="50,39,51,197" />
+      <scope id="7496726876599778521" at="50,39,51,193" />
       <scope id="6736062018948465982" at="27,0,30,0">
         <var name="_context" id="6736062018948465982" />
       </scope>

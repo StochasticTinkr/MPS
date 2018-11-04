@@ -76,12 +76,12 @@ public class ProjectStructureBuilder {
     LanguageDescriptor source = (LanguageDescriptor) mySource;
     SNode result = SModelOperations.createNewNode(myModel, new SNodeId.Foreign("~root"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, "jetbrains.mps.lang.project.structure.Language"));
     fillModule(result);
-    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS"), "" + (true));
+    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS"), true);
     SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x3be012d639e820aL, "genPath"), source.getGenPath());
     if (myFile != null) {
       SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5edd58f612649635L, "languagePath"), myFile.getPath());
     }
-    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x50317e9064ec725dL, "version"), "" + (source.getLanguageVersion()));
+    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x50317e9064ec725dL, "version"), source.getLanguageVersion());
     for (SModelReference ref : source.getAccessoryModels()) {
       SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x3be012d639dff80L, "accessoryModels")).add(convert(ref));
     }
@@ -99,7 +99,7 @@ public class ProjectStructureBuilder {
     SolutionDescriptor source = (SolutionDescriptor) mySource;
     SNode result = SModelOperations.createNewNode(myModel, new SNodeId.Foreign("~root"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe20L, "jetbrains.mps.lang.project.structure.Solution"));
     fillModule(result);
-    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS"), "" + (source.getCompileInMPS()));
+    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS"), source.getCompileInMPS());
     SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe20L, 0x3be012d639e8a6eL, "outputPath"), source.getOutputPath());
     if (myFile != null) {
       SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe20L, 0x5edd58f612641a9cL, "solutionPath"), myFile.getPath());
@@ -113,7 +113,7 @@ public class ProjectStructureBuilder {
 
     SNode result = SModelOperations.createNewNode(myModel, new SNodeId.Foreign("~root"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, "jetbrains.mps.lang.project.structure.DevKit"));
     fillModule(result);
-    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS"), "" + (false));
+    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS"), false);
     SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, 0x60ae235487d41768L, "devkitPath"), myFile.getPath());
     for (SModuleReference ref : source.getExtendedDevkits()) {
       SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, 0x60ae235487d41767L, "extendedDevkits")).add(convert(ref));
@@ -180,7 +180,7 @@ public class ProjectStructureBuilder {
   }
   private SNode convert(SDependency source) {
     SNode dep = SModelOperations.createNewNode(myModel, null, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, "jetbrains.mps.lang.project.structure.ModuleDependency"));
-    SPropertyOperations.assign(dep, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x5869770da61dfe29L, "reexport"), "" + (source.isReexport()));
+    SPropertyOperations.assign(dep, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x5869770da61dfe29L, "reexport"), source.isReexport());
     SLinkOperations.setTarget(dep, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x19bfb4173fb5241eL, "moduleRef"), convert(source.getTargetModule()));
     return dep;
   }
@@ -190,8 +190,8 @@ public class ProjectStructureBuilder {
     SNode generator = SModelOperations.createNewNode(myModel, null, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, "jetbrains.mps.lang.project.structure.Generator"));
     fillModule(generator);
     SPropertyOperations.assign(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x3be012d639e8a44L, "generatorUID"), source.getNamespace());
-    SPropertyOperations.assign(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x29a5716c5dfed280L, "generateTemplates"), "" + (source.isGenerateTemplates()));
-    SPropertyOperations.assign(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x64a78ad4da8f85a6L, "reflectiveQueries"), "" + (false));
+    SPropertyOperations.assign(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x29a5716c5dfed280L, "generateTemplates"), source.isGenerateTemplates());
+    SPropertyOperations.assign(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x64a78ad4da8f85a6L, "reflectiveQueries"), false);
     SPropertyOperations.assign(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x2cf7cb696461a282L, "generatorAlias"), (isNotEmptyString(source.getAlias()) ? source.getAlias() : null));
     for (MappingPriorityRule rule : source.getPriorityRules()) {
       SLinkOperations.getChildren(generator, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210bL, "priorityRules")).add(convert(rule));

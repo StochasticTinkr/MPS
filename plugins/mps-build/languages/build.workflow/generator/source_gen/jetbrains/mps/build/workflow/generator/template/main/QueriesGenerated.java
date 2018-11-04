@@ -431,11 +431,11 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static void mapSrcMacro_post_0_0(final MapSrcMacroPostProcContext _context) {
     if (ListSequence.fromList(SLinkOperations.getChildren(_context.getOutputNode(), MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x16838b3fce9a4922L, "content"))).isEmpty()) {
-      SPropertyOperations.assign(_context.getOutputNode(), MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x61218fae7b61b5d5L, "shortEmptyNotation"), "" + (true));
+      SPropertyOperations.assign(_context.getOutputNode(), MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x61218fae7b61b5d5L, "shortEmptyNotation"), true);
     }
   }
   public static void mapSrcMacro_post_0_1(final MapSrcMacroPostProcContext _context) {
-    SPropertyOperations.assign(_context.getOutputNode(), MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x61218fae7b61b5d5L, "shortEmptyNotation"), "" + (true));
+    SPropertyOperations.assign(_context.getOutputNode(), MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x61218fae7b61b5d5L, "shortEmptyNotation"), true);
   }
   public static void mapSrcMacro_post_4_0(final MapSrcMacroPostProcContext _context) {
     // FIXME this is a provisional hack to deal with MPS-26881, to deal with duplication of CopyOutcome 

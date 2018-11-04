@@ -7,24 +7,51 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.language.SType;
 import jetbrains.mps.util.InternUtil;
+import java.util.Objects;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.language.SDataType;
+import jetbrains.mps.smodel.adapter.structure.types.SEnumerationAdapter;
 
 public class SPropertyOperations {
   public static String assign(SNode node, SProperty property, String propertyValue) {
-    // this is the same as set(), but returns the assigned value 
-    if (node != null) {
-      SNodeAccessUtil.setProperty(node, property, propertyValue);
-    }
+    set(node, property, propertyValue);
     return propertyValue;
   }
+  public static int assign(SNode node, SProperty property, int propertyValue) {
+    set(node, property, propertyValue);
+    return propertyValue;
+  }
+  public static boolean assign(SNode node, SProperty property, boolean propertyValue) {
+    set(node, property, propertyValue);
+    return propertyValue;
+  }
+
   public static void set(SNode node, SProperty property, String propertyValue) {
     if (node != null) {
-      SNodeAccessUtil.setProperty(node, property, propertyValue);
+      SNodeAccessUtil.setPropertyValue(node, property, upgradeToEnumMember(property, propertyValue));
     }
   }
+  public static void set(SNode node, SProperty property, int propertyValue) {
+    if (node != null) {
+      SNodeAccessUtil.setPropertyValue(node, property, upgradeToEnumMember(property, propertyValue));
+    }
+  }
+  public static void set(SNode node, SProperty property, boolean propertyValue) {
+    if (node != null) {
+      SNodeAccessUtil.setPropertyValue(node, property, upgradeToEnumMember(property, propertyValue));
+    }
+  }
+  public static void remove(SNode node, SProperty property) {
+    if (node != null) {
+      SNodeAccessUtil.setPropertyValue(node, property, null);
+    }
+  }
+
   public static String getString(SNode node, SProperty property) {
     if (node != null) {
-      Object value = SNodeAccessUtil.getPropertyValue(node, property);
+      Object value = downgradeFromEnumMember(property, SNodeAccessUtil.getPropertyValue(node, property));
       if (value != SType.NOT_A_VALUE) {
         return (String) value;
       }
@@ -40,7 +67,7 @@ public class SPropertyOperations {
   }
   public static int getInteger(SNode node, SProperty property) {
     if (node != null) {
-      Object value = SNodeAccessUtil.getPropertyValue(node, property);
+      Object value = downgradeFromEnumMember(property, SNodeAccessUtil.getPropertyValue(node, property));
       if (value != null && value != SType.NOT_A_VALUE) {
         return (int) value;
       }
@@ -56,7 +83,7 @@ public class SPropertyOperations {
   }
   public static boolean getBoolean(SNode node, SProperty property) {
     if (node != null) {
-      Object value = SNodeAccessUtil.getPropertyValue(node, property);
+      Object value = downgradeFromEnumMember(property, SNodeAccessUtil.getPropertyValue(node, property));
       if (value != SType.NOT_A_VALUE) {
         return (boolean) value;
       }
@@ -66,17 +93,37 @@ public class SPropertyOperations {
   public static boolean getBoolean(String value) {
     return "true".equals(value);
   }
-  public static boolean hasValue(SNode node, SProperty property, String propertyValue) {
+
+  public static boolean hasValue(SNode node, SProperty property, String value) {
     if (node != null) {
-      String value = SNodeAccessUtil.getProperty(node, property);
-      if (value == null) {
-        return propertyValue == null;
-      } else {
-        return value.equals(propertyValue);
+      return Objects.equals(downgradeFromEnumMember(property, SNodeAccessUtil.getPropertyValue(node, property)), value);
+    }
+    return false;
+  }
+  public static boolean hasValue(SNode node, SProperty property, int value) {
+    if (node != null) {
+      return Objects.equals(downgradeFromEnumMember(property, SNodeAccessUtil.getPropertyValue(node, property)), value);
+    }
+    return false;
+  }
+  public static boolean hasValue(SNode node, SProperty property, boolean value) {
+    if (node != null) {
+      return Objects.equals(downgradeFromEnumMember(property, SNodeAccessUtil.getPropertyValue(node, property)), value);
+    }
+    return false;
+  }
+  public static boolean hasEnumValue(SNode node, SProperty property, String literalName) {
+    if (node != null) {
+      Object literal = SNodeAccessUtil.getPropertyValue(node, property);
+      if (literal instanceof SEnumerationLiteral) {
+        return Objects.equals(literalName, ((SEnumerationLiteral) literal).getName());
       }
     }
     return false;
   }
+
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public static String getString_def(SNode node, SProperty property, String defaultValue) {
     if (node != null) {
       String value = SNodeAccessUtil.getProperty(node, property);
@@ -89,6 +136,8 @@ public class SPropertyOperations {
     }
     return null;
   }
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public static int getInteger_def(SNode node, SProperty propertyName, String defaultValue) {
     if (node != null) {
       String value = SNodeAccessUtil.getProperty(node, propertyName);
@@ -105,6 +154,8 @@ public class SPropertyOperations {
     }
     return 0;
   }
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public static boolean getBoolean_def(SNode node, SProperty property, String defaultValue) {
     if (node != null) {
       String value = SNodeAccessUtil.getProperty(node, property);
@@ -134,5 +185,20 @@ public class SPropertyOperations {
       return value.equals(propertyValue);
     }
     return false;
+  }
+
+  private static Object upgradeToEnumMember(SProperty property, Object propertyValue) {
+    SDataType type = property.getType();
+    if (type instanceof SEnumerationAdapter) {
+      return ((SEnumerationAdapter) type).convertValueToLiteral(propertyValue);
+    }
+    return propertyValue;
+  }
+  private static Object downgradeFromEnumMember(SProperty property, Object propertyValue) {
+    SDataType type = property.getType();
+    if (propertyValue instanceof SEnumerationLiteral && type instanceof SEnumerationAdapter) {
+      return ((SEnumerationAdapter) type).getRawValueFromLiteral((SEnumerationLiteral) propertyValue);
+    }
+    return propertyValue;
   }
 }

@@ -368,15 +368,15 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590326(jetbrains.mps.baseLanguage.collections.actions)/1225119767337">
     <file name="set_ascending_order.java">
       <node id="1225119812332" at="14,91,15,342" concept="7" />
-      <node id="1225119814424" at="15,342,16,160" concept="2" />
+      <node id="1225119814424" at="15,342,16,153" concept="2" />
       <node id="1225119840482" at="20,91,21,342" concept="7" />
-      <node id="1225119840490" at="21,342,22,160" concept="2" />
+      <node id="1225119840490" at="21,342,22,153" concept="2" />
       <node id="1225119783187" at="14,0,18,0" concept="6" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="1225119833430" at="20,0,24,0" concept="6" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="1225119783187" at="14,91,16,160">
+      <scope id="1225119783187" at="14,91,16,153">
         <var name="sd" id="1225119812333" />
       </scope>
-      <scope id="1225119833430" at="20,91,22,160">
+      <scope id="1225119833430" at="20,91,22,153">
         <var name="sd" id="1225119840483" />
       </scope>
       <scope id="1225119783187" at="14,0,18,0">

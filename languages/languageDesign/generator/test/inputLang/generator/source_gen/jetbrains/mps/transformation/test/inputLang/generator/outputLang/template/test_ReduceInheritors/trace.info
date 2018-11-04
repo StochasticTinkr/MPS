@@ -153,20 +153,20 @@
       <unit id="1206459766745" at="29,0,123,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mapping_main" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1206461877477" at="21,83,22,437" concept="9" />
-      <node id="1206461190507" at="24,83,25,437" concept="9" />
-      <node id="1206461151462" at="27,83,28,437" concept="9" />
-      <node id="1206460094750" at="30,83,31,207" concept="9" />
+      <node id="1206461877477" at="21,83,22,433" concept="9" />
+      <node id="1206461190507" at="24,83,25,433" concept="9" />
+      <node id="1206461151462" at="27,83,28,433" concept="9" />
+      <node id="1206460094750" at="30,83,31,203" concept="9" />
       <node id="2507865635201740142" at="42,77,43,250" concept="9" />
       <node id="1206461877475" at="21,0,24,0" concept="13" trace="rule_Condition_0_0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="1206461190505" at="24,0,27,0" concept="13" trace="rule_Condition_0_1#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="1206461124351" at="27,0,30,0" concept="13" trace="rule_Condition_0_2#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="1206460092545" at="30,0,33,0" concept="13" trace="rule_Condition_0_3#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="2507865635201605483" at="42,0,45,0" concept="13" trace="mc_Condition_0#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
-      <scope id="1206461877476" at="21,83,22,437" />
-      <scope id="1206461190506" at="24,83,25,437" />
-      <scope id="1206461124352" at="27,83,28,437" />
-      <scope id="1206460092546" at="30,83,31,207" />
+      <scope id="1206461877476" at="21,83,22,433" />
+      <scope id="1206461190506" at="24,83,25,433" />
+      <scope id="1206461124352" at="27,83,28,433" />
+      <scope id="1206460092546" at="30,83,31,203" />
       <scope id="2507865635201605484" at="42,77,43,250" />
       <scope id="1206461877475" at="21,0,24,0">
         <var name="_context" id="1206461877475" />

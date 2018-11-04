@@ -15,16 +15,16 @@
   </root>
   <root nodeRef="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)/2500545923215239781">
     <file name="QueriesGenerated.java">
-      <node id="2500545923215242438" at="38,83,39,194" concept="2" />
-      <node id="2500545923215242449" at="41,83,42,194" concept="2" />
+      <node id="2500545923215242438" at="38,83,39,193" concept="2" />
+      <node id="2500545923215242449" at="41,83,42,193" concept="2" />
       <node id="2500545923215242434" at="75,14,76,73" concept="0" />
       <node id="2500545923215242445" at="76,73,77,73" concept="0" />
       <node id="2500545923215242434" at="96,15,97,58" concept="2" />
       <node id="2500545923215242445" at="98,15,99,58" concept="2" />
       <node id="2500545923215242436" at="38,0,41,0" concept="3" trace="rule_Condition_2_0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="2500545923215242447" at="41,0,44,0" concept="3" trace="rule_Condition_2_1#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
-      <scope id="2500545923215242437" at="38,83,39,194" />
-      <scope id="2500545923215242448" at="41,83,42,194" />
+      <scope id="2500545923215242437" at="38,83,39,193" />
+      <scope id="2500545923215242448" at="41,83,42,193" />
       <scope id="2500545923215242434" at="96,15,97,58" />
       <scope id="2500545923215242445" at="98,15,99,58" />
       <scope id="2500545923215242436" at="38,0,41,0">
@@ -82,8 +82,8 @@
   <root nodeRef="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)/5176577547833430286">
     <file name="QueriesGenerated.java">
       <node id="5176577547833752363" at="50,88,51,184" concept="2" />
-      <node id="5176577547833635184" at="61,39,62,182" concept="2" />
-      <node id="5176577547833609462" at="68,39,69,182" concept="2" />
+      <node id="5176577547833635184" at="61,39,62,181" concept="2" />
+      <node id="5176577547833609462" at="68,39,69,181" concept="2" />
       <node id="5176577547833432907" at="107,14,108,75" concept="0" />
       <node id="5176577547833431181" at="108,75,109,75" concept="0" />
       <node id="5176577547833432907" at="128,15,129,87" concept="2" />
@@ -98,8 +98,8 @@
       <node id="5176577547833432907" at="59,0,66,0" concept="3" trace="sourceNodesQuery_3_0#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
       <node id="5176577547833431181" at="66,0,73,0" concept="3" trace="sourceNodesQuery_3_1#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
       <scope id="5176577547833750248" at="50,88,51,184" />
-      <scope id="5176577547833634073" at="61,39,62,182" />
-      <scope id="5176577547833608351" at="68,39,69,182" />
+      <scope id="5176577547833634073" at="61,39,62,181" />
+      <scope id="5176577547833608351" at="68,39,69,181" />
       <scope id="5176577547833432907" at="128,15,129,87" />
       <scope id="5176577547833431181" at="130,15,131,87" />
       <scope id="5176577547833750246" at="166,15,167,66" />

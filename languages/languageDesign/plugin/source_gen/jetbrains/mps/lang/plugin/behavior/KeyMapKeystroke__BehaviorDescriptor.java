@@ -57,10 +57,10 @@ public final class KeyMapKeystroke__BehaviorDescriptor extends BaseBHDescriptor 
     return ((boolean) KeyMapKeystroke__BehaviorDescriptor.hasRemove_id4qYinf8$eal.invoke(__thisNode__)) || ((boolean) KeyMapKeystroke__BehaviorDescriptor.hasReplaceAll_id4qYinf8$enm.invoke(__thisNode__));
   }
   /*package*/ static boolean hasRemove_id4qYinf8$eal(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), "remove", null);
+    return SPropertyOperations.hasEnumValue(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), "remove");
   }
   /*package*/ static boolean hasReplaceAll_id4qYinf8$enm(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), "replace all", null);
+    return SPropertyOperations.hasEnumValue(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), "replace all");
   }
 
   /*package*/ KeyMapKeystroke__BehaviorDescriptor() {

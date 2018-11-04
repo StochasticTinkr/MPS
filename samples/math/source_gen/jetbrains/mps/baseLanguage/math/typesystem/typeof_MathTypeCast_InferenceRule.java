@@ -17,7 +17,7 @@ public class typeof_MathTypeCast_InferenceRule extends AbstractInferenceRule_Run
   public typeof_MathTypeCast_InferenceRule() {
   }
   public void applyRule(final SNode cast, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    switch (SPropertyOperations.getInteger_def(cast, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200fb8bcedL, 0x1200fbb56e7L, "target"), "1")) {
+    switch (SPropertyOperations.getInteger(cast, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200fb8bcedL, 0x1200fbb56e7L, "target"))) {
       case 1:
         {
           SNode _nodeToCheck_1029348928467 = cast;

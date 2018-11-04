@@ -94,7 +94,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
       @Override
       public SNode createNode(@NotNull String pattern) {
         SNode res = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant"));
-        SPropertyOperations.set(res, MetaAdapterFactory.getProperty(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, 0x102db8ae25bL, "value"), "" + (Integer.parseInt(pattern)));
+        SPropertyOperations.set(res, MetaAdapterFactory.getProperty(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, 0x102db8ae25bL, "value"), Integer.parseInt(pattern));
         return res;
       }
 

@@ -85,9 +85,9 @@ import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
       }
       public void setText(String text) {
         if (text.equals("true")) {
-          SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), "" + (false));
+          SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), false);
         } else if (text.equals("false")) {
-          SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), "" + (true));
+          SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), true);
         }
       }
       public boolean isValidText(String text) {
@@ -124,7 +124,7 @@ import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
     }
 
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), "" + (true));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), true);
     }
     public String getMatchingText() {
       return "false";
@@ -152,7 +152,7 @@ import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
     }
 
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), false);
     }
     public String getMatchingText() {
       return "true";
@@ -178,9 +178,9 @@ import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
       }
       public void setText(String text) {
         if (text.equals("true")) {
-          SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x57f984daa37add4aL, "needsNoWriteAction"), "" + (false));
+          SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x57f984daa37add4aL, "needsNoWriteAction"), false);
         } else if (text.equals("false")) {
-          SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x57f984daa37add4aL, "needsNoWriteAction"), "" + (true));
+          SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x57f984daa37add4aL, "needsNoWriteAction"), true);
         }
       }
       public boolean isValidText(String text) {
@@ -217,7 +217,7 @@ import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
     }
 
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x57f984daa37add4aL, "needsNoWriteAction"), "" + (true));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x57f984daa37add4aL, "needsNoWriteAction"), true);
     }
     public String getMatchingText() {
       return "false";
@@ -245,7 +245,7 @@ import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
     }
 
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x57f984daa37add4aL, "needsNoWriteAction"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x57f984daa37add4aL, "needsNoWriteAction"), false);
     }
     public String getMatchingText() {
       return "true";

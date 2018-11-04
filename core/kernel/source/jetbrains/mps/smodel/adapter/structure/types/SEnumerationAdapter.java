@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.types;
 
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.SNamedElementAdapter;
@@ -25,10 +26,10 @@ import jetbrains.mps.smodel.runtime.EnumerationDescriptor.MemberDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.language.SType;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collections;
@@ -109,7 +110,7 @@ public /*final*/ class SEnumerationAdapter extends SNamedElementAdapter implemen
       // return default for absent string
       return getDefault();
     }
-    return SType.NOT_A_VALUE;
+    return new InvalidEnumerationLiteral(this, getRawMemberType().fromString(string));
   }
 
   @Override
@@ -119,6 +120,10 @@ public /*final*/ class SEnumerationAdapter extends SNamedElementAdapter implemen
       if (equals(literal.getEnumeration())) {
         return literal.getName();
       }
+    }
+    if (value instanceof InvalidEnumerationLiteral) {
+      Object rawValue = ((InvalidEnumerationLiteral) value).getRawValue();
+      return getRawMemberType().toString(rawValue);
     }
     return null;
   }
@@ -131,7 +136,9 @@ public /*final*/ class SEnumerationAdapter extends SNamedElementAdapter implemen
     }
     if (value instanceof SEnumerationLiteral) {
       SEnumerationLiteral literal = (SEnumerationLiteral) value;
-      return equals(literal.getEnumeration());
+      if (equals(literal.getEnumeration())) {
+        return getLiterals().contains(literal);
+      }
     }
     return false;
   }
@@ -173,6 +180,11 @@ public /*final*/ class SEnumerationAdapter extends SNamedElementAdapter implemen
       return myDescriptor.getName();
     }
 
+    @Nullable
+    public String getIdentifier() {
+      return myDescriptor.getIdentifier();
+    }
+
     @Override
     public boolean equals(Object o) {
       if (this == o) {
@@ -196,5 +208,49 @@ public /*final*/ class SEnumerationAdapter extends SNamedElementAdapter implemen
     public String toString() {
       return getPresentation();
     }
+  }
+
+  @NotNull
+  public SDataType getRawMemberType() {
+    final EnumerationDescriptor descriptor = getDescriptor();
+    if (descriptor == null) {
+      return SPrimitiveTypes.STRING;
+    }
+    final PrimitiveTypeId id = descriptor.getMemberRawType();
+    if (id == null) {
+      return SPrimitiveTypes.STRING;
+    }
+    return SPrimitiveTypes.getType(id);
+  }
+
+  public static String getEnumMemberIdentifier(SEnumerationLiteral enumMember) {
+    if (enumMember instanceof SEnumLiteralAdapter) {
+      return ((SEnumLiteralAdapter) enumMember).getIdentifier();
+    }
+    return null;
+  }
+
+  public SEnumerationLiteral convertValueToLiteral(Object value) {
+    if (value instanceof SEnumerationLiteral) {
+      return (SEnumerationLiteral) value;
+    }
+    if (value == null && getDefault() == null) {
+      return null;
+    }
+    SDataType rawMemberType = getRawMemberType();
+    String name = rawMemberType.toString(value);
+    SEnumerationLiteral literal = getLiteral(name);
+    if (literal != null) {
+      return literal;
+    }
+    return new InvalidEnumerationLiteral(this, value);
+  }
+
+  public Object getRawValueFromLiteral(SEnumerationLiteral literal) {
+    if (literal instanceof InvalidEnumerationLiteral) {
+      return ((InvalidEnumerationLiteral) literal).getRawValue();
+    }
+    SDataType rawMemberType = getRawMemberType();
+    return rawMemberType.fromString(literal.getName());
   }
 }

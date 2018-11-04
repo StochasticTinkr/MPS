@@ -86,12 +86,12 @@
       <unit id="1202255161944" at="22,0,66,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mapping_main" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1202255161956" at="21,83,22,207" concept="9" />
-      <node id="1202338801831" at="24,83,25,207" concept="9" />
+      <node id="1202255161956" at="21,83,22,203" concept="9" />
+      <node id="1202338801831" at="24,83,25,203" concept="9" />
       <node id="1202255161954" at="21,0,24,0" concept="12" trace="rule_Condition_0_0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="1202338801829" at="24,0,27,0" concept="12" trace="rule_Condition_0_1#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
-      <scope id="1202255161955" at="21,83,22,207" />
-      <scope id="1202338801830" at="24,83,25,207" />
+      <scope id="1202255161955" at="21,83,22,203" />
+      <scope id="1202338801830" at="24,83,25,203" />
       <scope id="1202255161954" at="21,0,24,0">
         <var name="_context" id="1202255161954" />
       </scope>

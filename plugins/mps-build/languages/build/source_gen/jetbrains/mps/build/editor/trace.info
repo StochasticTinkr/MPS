@@ -1236,8 +1236,8 @@
       <node id="1741258697587200750" at="124,57,125,29" concept="3" />
       <node id="1741258697587200750" at="127,61,128,39" concept="3" />
       <node id="1741258697587200753" at="132,52,133,30" concept="8" />
-      <node id="1741258697587200757" at="137,54,138,198" concept="3" />
-      <node id="1741258697587200772" at="138,198,139,262" concept="3" />
+      <node id="1741258697587200757" at="137,54,138,191" concept="3" />
+      <node id="1741258697587200772" at="138,191,139,262" concept="3" />
       <node id="1741258697587200750" at="146,51,147,39" concept="8" />
       <node id="1741258697587200737" at="72,5,75,5" concept="5" />
       <node id="1741258697587200750" at="124,0,127,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
@@ -1513,8 +1513,8 @@
       <node id="1741258697587200834" at="124,57,125,29" concept="3" />
       <node id="1741258697587200834" at="127,61,128,39" concept="3" />
       <node id="1741258697587200837" at="132,52,133,30" concept="8" />
-      <node id="1741258697587200841" at="137,54,138,198" concept="3" />
-      <node id="1741258697587200856" at="138,198,139,262" concept="3" />
+      <node id="1741258697587200841" at="137,54,138,191" concept="3" />
+      <node id="1741258697587200856" at="138,191,139,262" concept="3" />
       <node id="1741258697587200834" at="146,51,147,39" concept="8" />
       <node id="1741258697587200821" at="72,5,75,5" concept="5" />
       <node id="1741258697587200834" at="124,0,127,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
@@ -1827,8 +1827,8 @@
       <node id="1741258697587200924" at="124,57,125,29" concept="3" />
       <node id="1741258697587200924" at="127,61,128,39" concept="3" />
       <node id="1741258697587200927" at="132,52,133,30" concept="8" />
-      <node id="1741258697587200931" at="137,54,138,198" concept="3" />
-      <node id="1741258697587200946" at="138,198,139,262" concept="3" />
+      <node id="1741258697587200931" at="137,54,138,191" concept="3" />
+      <node id="1741258697587200946" at="138,191,139,262" concept="3" />
       <node id="1741258697587200924" at="146,51,147,39" concept="8" />
       <node id="1741258697587200911" at="72,5,75,5" concept="5" />
       <node id="1741258697587200924" at="124,0,127,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
@@ -1962,8 +1962,8 @@
       <node id="1741258697587200968" at="124,57,125,29" concept="3" />
       <node id="1741258697587200968" at="127,61,128,39" concept="3" />
       <node id="1741258697587200971" at="132,52,133,30" concept="8" />
-      <node id="1741258697587200975" at="137,54,138,198" concept="3" />
-      <node id="1741258697587200990" at="138,198,139,262" concept="3" />
+      <node id="1741258697587200975" at="137,54,138,191" concept="3" />
+      <node id="1741258697587200990" at="138,191,139,262" concept="3" />
       <node id="1741258697587200968" at="146,51,147,39" concept="8" />
       <node id="1741258697587200955" at="72,5,75,5" concept="5" />
       <node id="1741258697587200968" at="124,0,127,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
@@ -2097,8 +2097,8 @@
       <node id="1741258697587201012" at="124,57,125,29" concept="3" />
       <node id="1741258697587201012" at="127,61,128,39" concept="3" />
       <node id="1741258697587201015" at="132,52,133,30" concept="8" />
-      <node id="1741258697587201019" at="137,54,138,196" concept="3" />
-      <node id="1741258697587201034" at="138,196,139,262" concept="3" />
+      <node id="1741258697587201019" at="137,54,138,189" concept="3" />
+      <node id="1741258697587201034" at="138,189,139,262" concept="3" />
       <node id="1741258697587201012" at="146,51,147,39" concept="8" />
       <node id="1741258697587200999" at="72,5,75,5" concept="5" />
       <node id="1741258697587201012" at="124,0,127,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
@@ -8267,7 +8267,7 @@
     <file name="delete_reexport_inJavaDependencyImportedJarFromFolder.java">
       <node id="342830306171239666" at="20,56,21,51" concept="3" />
       <node id="1241246198915933168" at="24,83,25,17" concept="8" />
-      <node id="342830306171239669" at="26,9,27,181" concept="3" />
+      <node id="342830306171239669" at="26,9,27,174" concept="3" />
       <node id="342830306171239665" at="33,95,34,76" concept="7" />
       <node id="342830306171239665" at="34,76,35,82" concept="7" />
       <node id="342830306171239665" at="35,82,36,0" concept="10" />
@@ -8307,7 +8307,7 @@
       <scope id="342830306171239666" at="20,0,23,0">
         <var name="editorContext" id="342830306171239666" />
       </scope>
-      <scope id="342830306171239668" at="23,77,27,181" />
+      <scope id="342830306171239668" at="23,77,27,174" />
       <scope id="342830306171239666" at="23,0,29,0">
         <var name="editorContext" id="342830306171239666" />
         <var name="node" id="342830306171239666" />
@@ -16584,7 +16584,7 @@
     <file name="delete_reexport_inJavaDependencyLibrary.java">
       <node id="5979287180587351168" at="20,56,21,51" concept="3" />
       <node id="1241246198915935834" at="24,83,25,17" concept="8" />
-      <node id="5979287180587351171" at="26,9,27,183" concept="3" />
+      <node id="5979287180587351171" at="26,9,27,176" concept="3" />
       <node id="5979287180587351167" at="33,95,34,76" concept="7" />
       <node id="5979287180587351167" at="34,76,35,82" concept="7" />
       <node id="5979287180587351167" at="35,82,36,0" concept="10" />
@@ -16624,7 +16624,7 @@
       <scope id="5979287180587351168" at="20,0,23,0">
         <var name="editorContext" id="5979287180587351168" />
       </scope>
-      <scope id="5979287180587351170" at="23,77,27,183" />
+      <scope id="5979287180587351170" at="23,77,27,176" />
       <scope id="5979287180587351168" at="23,0,29,0">
         <var name="editorContext" id="5979287180587351168" />
         <var name="node" id="5979287180587351168" />
@@ -17974,7 +17974,7 @@
     <file name="delete_reexport_inJavaDependencyImportedJar.java">
       <node id="6859736767834590442" at="20,56,21,51" concept="3" />
       <node id="1241246198915932379" at="24,83,25,17" concept="8" />
-      <node id="6859736767834590445" at="26,9,27,183" concept="3" />
+      <node id="6859736767834590445" at="26,9,27,176" concept="3" />
       <node id="6859736767834590441" at="33,95,34,76" concept="7" />
       <node id="6859736767834590441" at="34,76,35,82" concept="7" />
       <node id="6859736767834590441" at="35,82,36,0" concept="10" />
@@ -18014,7 +18014,7 @@
       <scope id="6859736767834590442" at="20,0,23,0">
         <var name="editorContext" id="6859736767834590442" />
       </scope>
-      <scope id="6859736767834590444" at="23,77,27,183" />
+      <scope id="6859736767834590444" at="23,77,27,176" />
       <scope id="6859736767834590442" at="23,0,29,0">
         <var name="editorContext" id="6859736767834590442" />
         <var name="node" id="6859736767834590442" />
@@ -18751,7 +18751,7 @@
     <file name="delete_reexport_inJavaDependencyModule.java">
       <node id="7259033139236546332" at="20,56,21,51" concept="3" />
       <node id="1241246198915937032" at="24,83,25,17" concept="8" />
-      <node id="7259033139236546335" at="26,9,27,183" concept="3" />
+      <node id="7259033139236546335" at="26,9,27,176" concept="3" />
       <node id="7259033139236546331" at="33,95,34,76" concept="7" />
       <node id="7259033139236546331" at="34,76,35,82" concept="7" />
       <node id="7259033139236546331" at="35,82,36,0" concept="10" />
@@ -18791,7 +18791,7 @@
       <scope id="7259033139236546332" at="20,0,23,0">
         <var name="editorContext" id="7259033139236546332" />
       </scope>
-      <scope id="7259033139236546334" at="23,77,27,183" />
+      <scope id="7259033139236546334" at="23,77,27,176" />
       <scope id="7259033139236546332" at="23,0,29,0">
         <var name="editorContext" id="7259033139236546332" />
         <var name="node" id="7259033139236546332" />
@@ -21919,7 +21919,7 @@
     <file name="delete_reexport_inJavaDependencyJar.java">
       <node id="8169228734285428616" at="20,56,21,51" concept="3" />
       <node id="1241246198915934317" at="24,83,25,17" concept="8" />
-      <node id="8169228734285428619" at="26,9,27,183" concept="3" />
+      <node id="8169228734285428619" at="26,9,27,176" concept="3" />
       <node id="8169228734285428615" at="33,95,34,76" concept="7" />
       <node id="8169228734285428615" at="34,76,35,82" concept="7" />
       <node id="8169228734285428615" at="35,82,36,0" concept="10" />
@@ -21959,7 +21959,7 @@
       <scope id="8169228734285428616" at="20,0,23,0">
         <var name="editorContext" id="8169228734285428616" />
       </scope>
-      <scope id="8169228734285428618" at="23,77,27,183" />
+      <scope id="8169228734285428618" at="23,77,27,176" />
       <scope id="8169228734285428616" at="23,0,29,0">
         <var name="editorContext" id="8169228734285428616" />
         <var name="node" id="8169228734285428616" />

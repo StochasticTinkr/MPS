@@ -499,42 +499,42 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)/1209559274358">
     <file name="EnumerationDescriptor_RefactoringTargetKind_Enum.java">
-      <node id="1209559274358" at="14,61,15,196" concept="9" />
-      <node id="1209559274359" at="18,0,19,0" concept="2" trace="VALUE__0" />
-      <node id="1209559325846" at="19,0,20,0" concept="2" trace="VALUE_model_0" />
-      <node id="1210084441783" at="20,0,21,0" concept="2" trace="VALUE_language_0" />
-      <node id="1210084444144" at="21,0,22,0" concept="2" trace="VALUE_solution_0" />
-      <node id="1210084445238" at="22,0,23,0" concept="2" trace="VALUE_devkit_0" />
-      <node id="1209559274358" at="26,62,27,20" concept="6" />
-      <node id="1209559274358" at="32,74,33,102" concept="6" />
-      <node id="1209559274358" at="39,25,40,22" concept="6" />
-      <node id="1209559325846" at="43,19,44,29" concept="6" />
-      <node id="1210084441783" at="45,22,46,32" concept="6" />
-      <node id="1210084444144" at="47,22,48,32" concept="6" />
-      <node id="1210084445238" at="49,20,50,30" concept="6" />
-      <node id="1209559274358" at="51,5,52,16" concept="6" />
-      <node id="1209559274358" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_RefactoringTargetKind_Enum#()V" />
-      <node id="1209559274358" at="38,84,41,5" concept="3" />
-      <node id="1209559274358" at="24,0,29,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <node id="1209559274358" at="30,0,35,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
-      <node id="1209559274358" at="41,5,51,5" concept="10" />
-      <node id="1209559274358" at="36,0,54,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <scope id="1209559274358" at="14,61,15,196" />
-      <scope id="1209559274358" at="26,62,27,20" />
-      <scope id="1209559274358" at="32,74,33,102" />
-      <scope id="1209559274358" at="39,25,40,22" />
-      <scope id="1209559325846" at="43,19,44,29" />
-      <scope id="1210084441783" at="45,22,46,32" />
-      <scope id="1210084444144" at="47,22,48,32" />
-      <scope id="1210084445238" at="49,20,50,30" />
-      <scope id="1209559274358" at="14,0,17,0" />
-      <scope id="1209559274358" at="24,0,29,0" />
-      <scope id="1209559274358" at="30,0,35,0" />
-      <scope id="1209559274358" at="38,84,52,16" />
-      <scope id="1209559274358" at="36,0,54,0">
+      <node id="1209559274358" at="15,61,16,220" concept="9" />
+      <node id="1209559274359" at="19,0,20,0" concept="2" trace="VALUE__0" />
+      <node id="1209559325846" at="20,0,21,0" concept="2" trace="VALUE_model_0" />
+      <node id="1210084441783" at="21,0,22,0" concept="2" trace="VALUE_language_0" />
+      <node id="1210084444144" at="22,0,23,0" concept="2" trace="VALUE_solution_0" />
+      <node id="1210084445238" at="23,0,24,0" concept="2" trace="VALUE_devkit_0" />
+      <node id="1209559274358" at="27,62,28,20" concept="6" />
+      <node id="1209559274358" at="33,74,34,102" concept="6" />
+      <node id="1209559274358" at="40,25,41,22" concept="6" />
+      <node id="1209559325846" at="44,19,45,29" concept="6" />
+      <node id="1210084441783" at="46,22,47,32" concept="6" />
+      <node id="1210084444144" at="48,22,49,32" concept="6" />
+      <node id="1210084445238" at="50,20,51,30" concept="6" />
+      <node id="1209559274358" at="52,5,53,16" concept="6" />
+      <node id="1209559274358" at="15,0,18,0" concept="0" trace="EnumerationDescriptor_RefactoringTargetKind_Enum#()V" />
+      <node id="1209559274358" at="39,84,42,5" concept="3" />
+      <node id="1209559274358" at="25,0,30,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="1209559274358" at="31,0,36,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="1209559274358" at="42,5,52,5" concept="10" />
+      <node id="1209559274358" at="37,0,55,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="1209559274358" at="15,61,16,220" />
+      <scope id="1209559274358" at="27,62,28,20" />
+      <scope id="1209559274358" at="33,74,34,102" />
+      <scope id="1209559274358" at="40,25,41,22" />
+      <scope id="1209559325846" at="44,19,45,29" />
+      <scope id="1210084441783" at="46,22,47,32" />
+      <scope id="1210084444144" at="48,22,49,32" />
+      <scope id="1210084445238" at="50,20,51,30" />
+      <scope id="1209559274358" at="15,0,18,0" />
+      <scope id="1209559274358" at="25,0,30,0" />
+      <scope id="1209559274358" at="31,0,36,0" />
+      <scope id="1209559274358" at="39,84,53,16" />
+      <scope id="1209559274358" at="37,0,55,0">
         <var name="string" id="1209559274358" />
       </scope>
-      <unit id="1209559274358" at="12,0,55,0" name="jetbrains.mps.lang.refactoring.structure.EnumerationDescriptor_RefactoringTargetKind_Enum" />
+      <unit id="1209559274358" at="13,0,56,0" name="jetbrains.mps.lang.refactoring.structure.EnumerationDescriptor_RefactoringTargetKind_Enum" />
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="1209559274358" at="68,0,69,0" concept="2" trace="myEnumerationRefactoringTargetKind_Enum" />

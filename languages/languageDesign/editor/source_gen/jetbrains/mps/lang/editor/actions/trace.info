@@ -14,20 +14,20 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590296(jetbrains.mps.lang.editor.actions)/1158947431096">
     <file name="EDTL_node_factories.java">
       <node id="1158948118952" at="17,91,18,233" concept="3" />
-      <node id="1158948141309" at="19,34,20,172" concept="0" />
+      <node id="1158948141309" at="19,34,20,165" concept="0" />
       <node id="1241444894273" at="26,204,27,103" concept="0" />
       <node id="1239813814779" at="28,359,29,535" concept="0" />
       <node id="1187370374055" at="32,196,33,228" concept="3" />
       <node id="1159287412760" at="33,228,34,219" concept="0" />
       <node id="1241444906299" at="35,292,36,107" concept="0" />
-      <node id="1165441621427" at="42,91,43,168" concept="0" />
+      <node id="1165441621427" at="42,91,43,161" concept="0" />
       <node id="1165441453675" at="44,196,45,376" concept="0" />
       <node id="1239813819483" at="52,359,53,536" concept="0" />
       <node id="5571273656752866794" at="59,91,60,101" concept="0" />
       <node id="1158948124192" at="18,233,21,7" concept="1" />
       <node id="1239813782084" at="27,103,30,9" concept="1" />
       <node id="1187370382914" at="34,219,37,9" concept="1" />
-      <node id="1165441453670" at="43,168,46,7" concept="1" />
+      <node id="1165441453670" at="43,161,46,7" concept="1" />
       <node id="1239813819481" at="51,204,54,9" concept="1" />
       <node id="5571273656752866301" at="59,0,62,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="1239813403756" at="50,91,55,7" concept="1" />
@@ -37,7 +37,7 @@
       <node id="1159287385551" at="31,7,38,7" concept="1" />
       <node id="1239813377368" at="50,0,57,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="1159287296418" at="25,0,40,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="1158948124194" at="19,34,20,172" />
+      <scope id="1158948124194" at="19,34,20,165" />
       <scope id="1239813782085" at="28,359,29,535" />
       <scope id="1187370382915" at="35,292,36,107" />
       <scope id="1165441453674" at="44,196,45,376" />
@@ -94,9 +94,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590296(jetbrains.mps.lang.editor.actions)/1222177296905">
     <file name="StyleClassItem.java">
-      <node id="1222177425047" at="16,201,17,497" concept="0" />
-      <node id="1222177551938" at="17,497,18,496" concept="0" />
-      <node id="1222178817561" at="24,203,25,495" concept="0" />
+      <node id="1222177425047" at="16,201,17,487" concept="0" />
+      <node id="1222177551938" at="17,487,18,496" concept="0" />
+      <node id="1222178817561" at="24,203,25,488" concept="0" />
       <node id="1222179024482" at="31,201,32,487" concept="0" />
       <node id="4088952938557968625" at="38,210,39,525" concept="0" />
       <node id="1222178784676" at="23,91,26,7" concept="1" />
@@ -107,7 +107,7 @@
       <node id="1222178992987" at="30,0,35,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="4088952938557965240" at="37,0,42,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="1222177342204" at="15,0,21,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="1222178784678" at="24,203,25,495" />
+      <scope id="1222178784678" at="24,203,25,488" />
       <scope id="1222179005616" at="31,201,32,487" />
       <scope id="4088952938557967598" at="38,210,39,525" />
       <scope id="1222177380023" at="16,201,18,496" />

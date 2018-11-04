@@ -394,38 +394,38 @@
   </root>
   <root nodeRef="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/1979010778009209124">
     <file name="EnumerationDescriptor_BuildLayout_TarCompression.java">
-      <node id="1979010778009209124" at="14,61,15,196" concept="9" />
-      <node id="1979010778009209125" at="18,0,19,0" concept="2" trace="VALUE_none_0" />
-      <node id="1979010778009209126" at="19,0,20,0" concept="2" trace="VALUE_gzip_0" />
-      <node id="1979010778009209127" at="20,0,21,0" concept="2" trace="VALUE_bzip2_0" />
-      <node id="1979010778009209124" at="24,62,25,24" concept="6" />
-      <node id="1979010778009209124" at="30,74,31,68" concept="6" />
-      <node id="1979010778009209124" at="37,25,38,18" concept="6" />
-      <node id="1979010778009209125" at="41,18,42,28" concept="6" />
-      <node id="1979010778009209126" at="43,18,44,28" concept="6" />
-      <node id="1979010778009209127" at="45,19,46,29" concept="6" />
-      <node id="1979010778009209124" at="47,5,48,16" concept="6" />
-      <node id="1979010778009209124" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_BuildLayout_TarCompression#()V" />
-      <node id="1979010778009209124" at="36,84,39,5" concept="3" />
-      <node id="1979010778009209124" at="22,0,27,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <node id="1979010778009209124" at="28,0,33,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
-      <node id="1979010778009209124" at="39,5,47,5" concept="10" />
-      <node id="1979010778009209124" at="34,0,50,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <scope id="1979010778009209124" at="14,61,15,196" />
-      <scope id="1979010778009209124" at="24,62,25,24" />
-      <scope id="1979010778009209124" at="30,74,31,68" />
-      <scope id="1979010778009209124" at="37,25,38,18" />
-      <scope id="1979010778009209125" at="41,18,42,28" />
-      <scope id="1979010778009209126" at="43,18,44,28" />
-      <scope id="1979010778009209127" at="45,19,46,29" />
-      <scope id="1979010778009209124" at="14,0,17,0" />
-      <scope id="1979010778009209124" at="22,0,27,0" />
-      <scope id="1979010778009209124" at="28,0,33,0" />
-      <scope id="1979010778009209124" at="36,84,48,16" />
-      <scope id="1979010778009209124" at="34,0,50,0">
+      <node id="1979010778009209124" at="15,61,16,220" concept="9" />
+      <node id="1979010778009209125" at="19,0,20,0" concept="2" trace="VALUE_none_0" />
+      <node id="1979010778009209126" at="20,0,21,0" concept="2" trace="VALUE_gzip_0" />
+      <node id="1979010778009209127" at="21,0,22,0" concept="2" trace="VALUE_bzip2_0" />
+      <node id="1979010778009209124" at="25,62,26,24" concept="6" />
+      <node id="1979010778009209124" at="31,74,32,68" concept="6" />
+      <node id="1979010778009209124" at="38,25,39,18" concept="6" />
+      <node id="1979010778009209125" at="42,18,43,28" concept="6" />
+      <node id="1979010778009209126" at="44,18,45,28" concept="6" />
+      <node id="1979010778009209127" at="46,19,47,29" concept="6" />
+      <node id="1979010778009209124" at="48,5,49,16" concept="6" />
+      <node id="1979010778009209124" at="15,0,18,0" concept="0" trace="EnumerationDescriptor_BuildLayout_TarCompression#()V" />
+      <node id="1979010778009209124" at="37,84,40,5" concept="3" />
+      <node id="1979010778009209124" at="23,0,28,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="1979010778009209124" at="29,0,34,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="1979010778009209124" at="40,5,48,5" concept="10" />
+      <node id="1979010778009209124" at="35,0,51,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="1979010778009209124" at="15,61,16,220" />
+      <scope id="1979010778009209124" at="25,62,26,24" />
+      <scope id="1979010778009209124" at="31,74,32,68" />
+      <scope id="1979010778009209124" at="38,25,39,18" />
+      <scope id="1979010778009209125" at="42,18,43,28" />
+      <scope id="1979010778009209126" at="44,18,45,28" />
+      <scope id="1979010778009209127" at="46,19,47,29" />
+      <scope id="1979010778009209124" at="15,0,18,0" />
+      <scope id="1979010778009209124" at="23,0,28,0" />
+      <scope id="1979010778009209124" at="29,0,34,0" />
+      <scope id="1979010778009209124" at="37,84,49,16" />
+      <scope id="1979010778009209124" at="35,0,51,0">
         <var name="string" id="1979010778009209124" />
       </scope>
-      <unit id="1979010778009209124" at="12,0,51,0" name="jetbrains.mps.build.structure.EnumerationDescriptor_BuildLayout_TarCompression" />
+      <unit id="1979010778009209124" at="13,0,52,0" name="jetbrains.mps.build.structure.EnumerationDescriptor_BuildLayout_TarCompression" />
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="1979010778009209124" at="159,0,160,0" concept="2" trace="myEnumerationBuildLayout_TarCompression" />
@@ -1464,44 +1464,44 @@
   </root>
   <root nodeRef="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/4198392933254416814">
     <file name="EnumerationDescriptor_BuildLayout_CopyFilterEolStyle.java">
-      <node id="4198392933254416814" at="14,65,15,200" concept="9" />
-      <node id="4198392933254427813" at="18,0,19,0" concept="2" trace="VALUE_local_0" />
-      <node id="4198392933254416815" at="19,0,20,0" concept="2" trace="VALUE_asis_0" />
-      <node id="4198392933254416816" at="20,0,21,0" concept="2" trace="VALUE_cr_0" />
-      <node id="4198392933254416817" at="21,0,22,0" concept="2" trace="VALUE_lf_0" />
-      <node id="4198392933254416818" at="22,0,23,0" concept="2" trace="VALUE_crlf_0" />
-      <node id="4198392933254416814" at="26,62,27,25" concept="6" />
-      <node id="4198392933254416814" at="32,74,33,92" concept="6" />
-      <node id="4198392933254416814" at="39,25,40,18" concept="6" />
-      <node id="4198392933254427813" at="43,19,44,29" concept="6" />
-      <node id="4198392933254416815" at="45,18,46,28" concept="6" />
-      <node id="4198392933254416816" at="47,16,48,26" concept="6" />
-      <node id="4198392933254416817" at="49,16,50,26" concept="6" />
-      <node id="4198392933254416818" at="51,18,52,28" concept="6" />
-      <node id="4198392933254416814" at="53,5,54,16" concept="6" />
-      <node id="4198392933254416814" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_BuildLayout_CopyFilterEolStyle#()V" />
-      <node id="4198392933254416814" at="38,84,41,5" concept="3" />
-      <node id="4198392933254416814" at="24,0,29,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <node id="4198392933254416814" at="30,0,35,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
-      <node id="4198392933254416814" at="41,5,53,5" concept="10" />
-      <node id="4198392933254416814" at="36,0,56,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <scope id="4198392933254416814" at="14,65,15,200" />
-      <scope id="4198392933254416814" at="26,62,27,25" />
-      <scope id="4198392933254416814" at="32,74,33,92" />
-      <scope id="4198392933254416814" at="39,25,40,18" />
-      <scope id="4198392933254427813" at="43,19,44,29" />
-      <scope id="4198392933254416815" at="45,18,46,28" />
-      <scope id="4198392933254416816" at="47,16,48,26" />
-      <scope id="4198392933254416817" at="49,16,50,26" />
-      <scope id="4198392933254416818" at="51,18,52,28" />
-      <scope id="4198392933254416814" at="14,0,17,0" />
-      <scope id="4198392933254416814" at="24,0,29,0" />
-      <scope id="4198392933254416814" at="30,0,35,0" />
-      <scope id="4198392933254416814" at="38,84,54,16" />
-      <scope id="4198392933254416814" at="36,0,56,0">
+      <node id="4198392933254416814" at="15,65,16,224" concept="9" />
+      <node id="4198392933254427813" at="19,0,20,0" concept="2" trace="VALUE_local_0" />
+      <node id="4198392933254416815" at="20,0,21,0" concept="2" trace="VALUE_asis_0" />
+      <node id="4198392933254416816" at="21,0,22,0" concept="2" trace="VALUE_cr_0" />
+      <node id="4198392933254416817" at="22,0,23,0" concept="2" trace="VALUE_lf_0" />
+      <node id="4198392933254416818" at="23,0,24,0" concept="2" trace="VALUE_crlf_0" />
+      <node id="4198392933254416814" at="27,62,28,25" concept="6" />
+      <node id="4198392933254416814" at="33,74,34,92" concept="6" />
+      <node id="4198392933254416814" at="40,25,41,18" concept="6" />
+      <node id="4198392933254427813" at="44,19,45,29" concept="6" />
+      <node id="4198392933254416815" at="46,18,47,28" concept="6" />
+      <node id="4198392933254416816" at="48,16,49,26" concept="6" />
+      <node id="4198392933254416817" at="50,16,51,26" concept="6" />
+      <node id="4198392933254416818" at="52,18,53,28" concept="6" />
+      <node id="4198392933254416814" at="54,5,55,16" concept="6" />
+      <node id="4198392933254416814" at="15,0,18,0" concept="0" trace="EnumerationDescriptor_BuildLayout_CopyFilterEolStyle#()V" />
+      <node id="4198392933254416814" at="39,84,42,5" concept="3" />
+      <node id="4198392933254416814" at="25,0,30,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="4198392933254416814" at="31,0,36,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="4198392933254416814" at="42,5,54,5" concept="10" />
+      <node id="4198392933254416814" at="37,0,57,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="4198392933254416814" at="15,65,16,224" />
+      <scope id="4198392933254416814" at="27,62,28,25" />
+      <scope id="4198392933254416814" at="33,74,34,92" />
+      <scope id="4198392933254416814" at="40,25,41,18" />
+      <scope id="4198392933254427813" at="44,19,45,29" />
+      <scope id="4198392933254416815" at="46,18,47,28" />
+      <scope id="4198392933254416816" at="48,16,49,26" />
+      <scope id="4198392933254416817" at="50,16,51,26" />
+      <scope id="4198392933254416818" at="52,18,53,28" />
+      <scope id="4198392933254416814" at="15,0,18,0" />
+      <scope id="4198392933254416814" at="25,0,30,0" />
+      <scope id="4198392933254416814" at="31,0,36,0" />
+      <scope id="4198392933254416814" at="39,84,55,16" />
+      <scope id="4198392933254416814" at="37,0,57,0">
         <var name="string" id="4198392933254416814" />
       </scope>
-      <unit id="4198392933254416814" at="12,0,57,0" name="jetbrains.mps.build.structure.EnumerationDescriptor_BuildLayout_CopyFilterEolStyle" />
+      <unit id="4198392933254416814" at="13,0,58,0" name="jetbrains.mps.build.structure.EnumerationDescriptor_BuildLayout_CopyFilterEolStyle" />
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="4198392933254416814" at="158,0,159,0" concept="2" trace="myEnumerationBuildLayout_CopyFilterEolStyle" />
@@ -2277,38 +2277,38 @@
   </root>
   <root nodeRef="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/5248329904288265463">
     <file name="EnumerationDescriptor_BuildSource_JavaContentFolderKind.java">
-      <node id="5248329904288265463" at="14,68,15,203" concept="9" />
-      <node id="5248329904288265464" at="18,0,19,0" concept="2" trace="VALUE_source_0" />
-      <node id="5248329904288265465" at="19,0,20,0" concept="2" trace="VALUE_test_0" />
-      <node id="5248329904288265466" at="20,0,21,0" concept="2" trace="VALUE_excluded_0" />
-      <node id="5248329904288265463" at="24,62,25,16" concept="6" />
-      <node id="5248329904288265463" at="30,74,31,73" concept="6" />
-      <node id="5248329904288265463" at="37,25,38,18" concept="6" />
-      <node id="5248329904288265464" at="41,20,42,30" concept="6" />
-      <node id="5248329904288265465" at="43,18,44,28" concept="6" />
-      <node id="5248329904288265466" at="45,22,46,32" concept="6" />
-      <node id="5248329904288265463" at="47,5,48,16" concept="6" />
-      <node id="5248329904288265463" at="14,0,17,0" concept="0" trace="EnumerationDescriptor_BuildSource_JavaContentFolderKind#()V" />
-      <node id="5248329904288265463" at="36,84,39,5" concept="3" />
-      <node id="5248329904288265463" at="22,0,27,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <node id="5248329904288265463" at="28,0,33,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
-      <node id="5248329904288265463" at="39,5,47,5" concept="10" />
-      <node id="5248329904288265463" at="34,0,50,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
-      <scope id="5248329904288265463" at="14,68,15,203" />
-      <scope id="5248329904288265463" at="24,62,25,16" />
-      <scope id="5248329904288265463" at="30,74,31,73" />
-      <scope id="5248329904288265463" at="37,25,38,18" />
-      <scope id="5248329904288265464" at="41,20,42,30" />
-      <scope id="5248329904288265465" at="43,18,44,28" />
-      <scope id="5248329904288265466" at="45,22,46,32" />
-      <scope id="5248329904288265463" at="14,0,17,0" />
-      <scope id="5248329904288265463" at="22,0,27,0" />
-      <scope id="5248329904288265463" at="28,0,33,0" />
-      <scope id="5248329904288265463" at="36,84,48,16" />
-      <scope id="5248329904288265463" at="34,0,50,0">
+      <node id="5248329904288265463" at="15,68,16,227" concept="9" />
+      <node id="5248329904288265464" at="19,0,20,0" concept="2" trace="VALUE_source_0" />
+      <node id="5248329904288265465" at="20,0,21,0" concept="2" trace="VALUE_test_0" />
+      <node id="5248329904288265466" at="21,0,22,0" concept="2" trace="VALUE_excluded_0" />
+      <node id="5248329904288265463" at="25,62,26,16" concept="6" />
+      <node id="5248329904288265463" at="31,74,32,73" concept="6" />
+      <node id="5248329904288265463" at="38,25,39,18" concept="6" />
+      <node id="5248329904288265464" at="42,20,43,30" concept="6" />
+      <node id="5248329904288265465" at="44,18,45,28" concept="6" />
+      <node id="5248329904288265466" at="46,22,47,32" concept="6" />
+      <node id="5248329904288265463" at="48,5,49,16" concept="6" />
+      <node id="5248329904288265463" at="15,0,18,0" concept="0" trace="EnumerationDescriptor_BuildSource_JavaContentFolderKind#()V" />
+      <node id="5248329904288265463" at="37,84,40,5" concept="3" />
+      <node id="5248329904288265463" at="23,0,28,0" concept="4" trace="getDefault#()Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <node id="5248329904288265463" at="29,0,34,0" concept="4" trace="getMembers#()Ljava/util/Collection;" />
+      <node id="5248329904288265463" at="40,5,48,5" concept="10" />
+      <node id="5248329904288265463" at="35,0,51,0" concept="4" trace="getMember#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/EnumerationDescriptor/MemberDescriptor;" />
+      <scope id="5248329904288265463" at="15,68,16,227" />
+      <scope id="5248329904288265463" at="25,62,26,16" />
+      <scope id="5248329904288265463" at="31,74,32,73" />
+      <scope id="5248329904288265463" at="38,25,39,18" />
+      <scope id="5248329904288265464" at="42,20,43,30" />
+      <scope id="5248329904288265465" at="44,18,45,28" />
+      <scope id="5248329904288265466" at="46,22,47,32" />
+      <scope id="5248329904288265463" at="15,0,18,0" />
+      <scope id="5248329904288265463" at="23,0,28,0" />
+      <scope id="5248329904288265463" at="29,0,34,0" />
+      <scope id="5248329904288265463" at="37,84,49,16" />
+      <scope id="5248329904288265463" at="35,0,51,0">
         <var name="string" id="5248329904288265463" />
       </scope>
-      <unit id="5248329904288265463" at="12,0,51,0" name="jetbrains.mps.build.structure.EnumerationDescriptor_BuildSource_JavaContentFolderKind" />
+      <unit id="5248329904288265463" at="13,0,52,0" name="jetbrains.mps.build.structure.EnumerationDescriptor_BuildSource_JavaContentFolderKind" />
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="5248329904288265463" at="160,0,161,0" concept="2" trace="myEnumerationBuildSource_JavaContentFolderKind" />

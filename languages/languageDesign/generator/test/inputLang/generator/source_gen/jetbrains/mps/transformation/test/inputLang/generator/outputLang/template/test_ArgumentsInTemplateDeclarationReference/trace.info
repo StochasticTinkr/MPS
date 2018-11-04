@@ -237,7 +237,7 @@
       <node id="7496726876599938309" at="46,90,47,47" concept="8" />
       <node id="4929591503636646799" at="49,90,50,50" concept="8" />
       <node id="4929591503636680799" at="52,90,53,56" concept="8" />
-      <node id="7496726876599780616" at="60,39,61,197" concept="8" />
+      <node id="7496726876599780616" at="60,39,61,193" concept="8" />
       <node id="7496726876599935510" at="22,0,25,0" concept="11" trace="rule_Condition_0_0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="4929591503636513204" at="25,0,28,0" concept="11" trace="rule_Condition_0_1#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="4929591503636589503" at="28,0,31,0" concept="11" trace="rule_Condition_0_2#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
@@ -261,7 +261,7 @@
       <scope id="7496726876599937590" at="46,90,47,47" />
       <scope id="4929591503636646078" at="49,90,50,50" />
       <scope id="4929591503636680080" at="52,90,53,56" />
-      <scope id="7496726876599778521" at="60,39,61,197" />
+      <scope id="7496726876599778521" at="60,39,61,193" />
       <scope id="7496726876599935510" at="22,0,25,0">
         <var name="_context" id="7496726876599935510" />
       </scope>

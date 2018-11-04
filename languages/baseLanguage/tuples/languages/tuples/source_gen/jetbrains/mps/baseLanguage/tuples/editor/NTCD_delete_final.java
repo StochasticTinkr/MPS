@@ -24,7 +24,7 @@ public class NTCD_delete_final {
         if (DeletionApproverUtil.approve(editorContext, node, "finalKeyword")) {
           return;
         }
-        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x120cda6c3beL, "final"), "" + (false));
+        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x120cda6c3beL, "final"), false);
       }
 
     };

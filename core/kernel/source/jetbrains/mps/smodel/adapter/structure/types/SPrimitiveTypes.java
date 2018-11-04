@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.smodel.adapter.structure.types;
 
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.util.StringUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
@@ -144,4 +146,17 @@ public final class SPrimitiveTypes {
       return "boolean";
     }
   };
+
+
+  public static SDataType getType(@NotNull PrimitiveTypeId id) {
+    switch (id) {
+      case STRING:
+        return STRING;
+      case BOOLEAN:
+        return BOOLEAN;
+      case INTEGER:
+        return INTEGER;
+    }
+    throw new IllegalStateException("Unknown primitive data type");
+  }
 }

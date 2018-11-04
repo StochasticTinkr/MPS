@@ -6173,10 +6173,10 @@
       <unit id="8780540425167303785" at="36,0,405,0" name="jetbrains.mps.lang.descriptor.generator.template.main.Mapping_GeneratorModule" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1820665478710839896" at="45,83,46,222" concept="9" />
-      <node id="1820665478710839913" at="48,83,49,225" concept="9" />
-      <node id="2643213347103793269" at="51,83,52,221" concept="9" />
-      <node id="2643213347103793297" at="54,83,55,224" concept="9" />
+      <node id="1820665478710839896" at="45,83,46,207" concept="9" />
+      <node id="1820665478710839913" at="48,83,49,210" concept="9" />
+      <node id="2643213347103793269" at="51,83,52,206" concept="9" />
+      <node id="2643213347103793297" at="54,83,55,209" concept="9" />
       <node id="1066600152715732139" at="57,83,58,360" concept="9" />
       <node id="1066600152715723984" at="60,83,61,363" concept="9" />
       <node id="1820665478710841041" at="78,88,79,12" concept="10" />
@@ -6221,10 +6221,10 @@
       <node id="3342058859868692955" at="232,0,235,0" concept="13" trace="sourceNodesQuery_1_0#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
       <node id="1820665478710840122" at="78,0,82,0" concept="13" trace="propertyMacro_GetValue_1_0#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
       <node id="3919235298192676609" at="293,0,297,0" concept="13" trace="mc_Condition_1#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
-      <scope id="1820665478710839842" at="45,83,46,222" />
-      <scope id="1820665478710839911" at="48,83,49,225" />
-      <scope id="2643213347103793268" at="51,83,52,221" />
-      <scope id="2643213347103793296" at="54,83,55,224" />
+      <scope id="1820665478710839842" at="45,83,46,207" />
+      <scope id="1820665478710839911" at="48,83,49,210" />
+      <scope id="2643213347103793268" at="51,83,52,206" />
+      <scope id="2643213347103793296" at="54,83,55,209" />
       <scope id="1066600152715731683" at="57,83,58,360" />
       <scope id="1066600152715720537" at="60,83,61,363" />
       <scope id="1820665478710840071" at="82,88,83,189" />

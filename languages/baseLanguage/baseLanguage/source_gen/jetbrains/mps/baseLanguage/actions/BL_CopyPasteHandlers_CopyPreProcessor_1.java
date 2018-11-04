@@ -19,7 +19,7 @@ public final class BL_CopyPasteHandlers_CopyPreProcessor_1 implements CopyPrePro
     SNode methodParent = SNodeOperations.getParent(original);
     if (SNodeOperations.isInstanceOf(methodParent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
       if (SNodeOperations.isInstanceOf(methodParent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-        SPropertyOperations.assign(copy, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), "" + (true));
+        SPropertyOperations.assign(copy, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), true);
       }
     }
   }

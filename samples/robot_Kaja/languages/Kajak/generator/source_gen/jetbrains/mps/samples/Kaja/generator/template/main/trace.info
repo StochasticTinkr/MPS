@@ -4266,18 +4266,18 @@
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/7060824959896164452">
     <file name="QueriesGenerated.java">
-      <node id="4970597638045689794" at="32,84,33,203" concept="9" />
-      <node id="4970597638045824303" at="35,84,36,202" concept="9" />
-      <node id="4970597638045859084" at="38,84,39,203" concept="9" />
-      <node id="4970597638045883426" at="41,84,42,202" concept="9" />
+      <node id="4970597638045689794" at="32,84,33,201" concept="9" />
+      <node id="4970597638045824303" at="35,84,36,200" concept="9" />
+      <node id="4970597638045859084" at="38,84,39,201" concept="9" />
+      <node id="4970597638045883426" at="41,84,42,200" concept="9" />
       <node id="7060824959896330163" at="32,0,35,0" concept="13" trace="rule_Condition_27_0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="7060824959896205081" at="35,0,38,0" concept="13" trace="rule_Condition_27_1#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="7060824959896333440" at="38,0,41,0" concept="13" trace="rule_Condition_27_2#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <node id="7060824959896333392" at="41,0,44,0" concept="13" trace="rule_Condition_27_3#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
-      <scope id="7060824959896330164" at="32,84,33,203" />
-      <scope id="7060824959896205082" at="35,84,36,202" />
-      <scope id="7060824959896333441" at="38,84,39,203" />
-      <scope id="7060824959896333393" at="41,84,42,202" />
+      <scope id="7060824959896330164" at="32,84,33,201" />
+      <scope id="7060824959896205082" at="35,84,36,200" />
+      <scope id="7060824959896333441" at="38,84,39,201" />
+      <scope id="7060824959896333393" at="41,84,42,200" />
       <scope id="7060824959896330163" at="32,0,35,0">
         <var name="_context" id="7060824959896330163" />
       </scope>

@@ -504,10 +504,10 @@
       </scope>
     </file>
     <file name="check_MappingConfiguration_NonTypesystemRule.java">
-      <node id="1195601255636" at="24,373,25,60" concept="11" />
+      <node id="1195601255636" at="24,358,25,60" concept="11" />
       <node id="1195601255636" at="25,60,26,260" concept="11" />
       <node id="7376433222636453739" at="28,5,29,10" concept="13" />
-      <node id="1195601346473" at="31,374,32,60" concept="11" />
+      <node id="1195601346473" at="31,359,32,60" concept="11" />
       <node id="1195601346473" at="32,60,33,261" concept="11" />
       <node id="1195601047105" at="37,50,38,161" concept="12" />
       <node id="1195601047105" at="40,68,41,102" concept="12" />
@@ -526,11 +526,11 @@
       <scope id="1195601047105" at="40,68,41,102" />
       <scope id="1195601047105" at="43,30,44,17" />
       <scope id="1195601047105" at="20,0,22,0" />
-      <scope id="1195601255636" at="24,373,26,260">
+      <scope id="1195601255636" at="24,358,26,260">
         <var name="_reporter_2309309498" id="1195601255636" />
         <var name="errorTarget" id="1195601255636" />
       </scope>
-      <scope id="1195601346473" at="31,374,33,261">
+      <scope id="1195601346473" at="31,359,33,261">
         <var name="_reporter_2309309498" id="1195601346473" />
         <var name="errorTarget" id="1195601346473" />
       </scope>

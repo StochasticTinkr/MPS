@@ -35,7 +35,7 @@ public final class CellActionMapItem__BehaviorDescriptor extends BaseBHDescripto
   }
 
   /*package*/ static SEnumerationLiteral getActionId_idJCy0JrvU0M(@NotNull SNode __thisNode__) {
-    return SEnumOperations.getMemberForValue(SPropertyOperations.getString_def(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), null), 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x10951993667L, "CellActionId");
+    return SEnumOperations.getMemberForValue(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId")), 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x10951993667L, "CellActionId");
   }
 
   /*package*/ CellActionMapItem__BehaviorDescriptor() {

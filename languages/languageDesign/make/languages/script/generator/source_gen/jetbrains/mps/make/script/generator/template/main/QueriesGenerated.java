@@ -60,13 +60,13 @@ public class QueriesGenerated extends QueryProviderBase {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972068L, 0x20c069f80a972071L, "resource"))), _quotation_createNode_x583g4_b0a0a1());
   }
   public static boolean rule_Condition_0_1(final BaseMappingRuleContext _context) {
-    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x20c069f80a9472daL, "Result", 0x20c069f80a9472dbL, "SUCCESS")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, 0x6237d5bb8b2a942eL, "result"), "SUCCESS"));
+    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x20c069f80a9472daL, "Result", 0x20c069f80a9472dbL, "SUCCESS")).equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, 0x6237d5bb8b2a942eL, "result")));
   }
   public static boolean rule_Condition_0_2(final BaseMappingRuleContext _context) {
     return (SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dabL, "jetbrains.mps.make.script.structure.JobDefinition"), false, false) != null);
   }
   public static boolean rule_Condition_0_3(final BaseMappingRuleContext _context) {
-    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x20c069f80a9472daL, "Result", 0x20c069f80a9472dbL, "SUCCESS")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, 0x6237d5bb8b2a942eL, "result"), "SUCCESS"));
+    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x20c069f80a9472daL, "Result", 0x20c069f80a9472dbL, "SUCCESS")).equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, 0x6237d5bb8b2a942eL, "result")));
   }
   public static boolean rule_Condition_0_4(final BaseMappingRuleContext _context) {
     return (SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dcbee4L, "jetbrains.mps.make.script.structure.ConfigDefinition"), false, false) != null);
@@ -75,16 +75,16 @@ public class QueriesGenerated extends QueryProviderBase {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a947282L, 0x2dead7037d3bef52L, "classifierType")) != null);
   }
   public static boolean rule_Condition_3_0(final BaseMappingRuleContext _context) {
-    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x32eac1b57fc1b82aL, "Feedback", 0x32eac1b57fc1b82bL, "INFO")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, 0x32eac1b57fc1b82eL, "feedback"), "INFO"));
+    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x32eac1b57fc1b82aL, "Feedback", 0x32eac1b57fc1b82bL, "INFO")).equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, 0x32eac1b57fc1b82eL, "feedback")));
   }
   public static boolean rule_Condition_3_1(final BaseMappingRuleContext _context) {
-    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x32eac1b57fc1b82aL, "Feedback", 0x32eac1b57fc1b82cL, "WARNING")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, 0x32eac1b57fc1b82eL, "feedback"), "INFO"));
+    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x32eac1b57fc1b82aL, "Feedback", 0x32eac1b57fc1b82cL, "WARNING")).equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, 0x32eac1b57fc1b82eL, "feedback")));
   }
   public static boolean rule_Condition_3_2(final BaseMappingRuleContext _context) {
-    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x32eac1b57fc1b82aL, "Feedback", 0x32eac1b57fc1b82dL, "ERROR")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, 0x32eac1b57fc1b82eL, "feedback"), "INFO"));
+    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x32eac1b57fc1b82aL, "Feedback", 0x32eac1b57fc1b82dL, "ERROR")).equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, 0x32eac1b57fc1b82eL, "feedback")));
   }
   public static boolean rule_Condition_3_3(final BaseMappingRuleContext _context) {
-    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x32eac1b57fc1b82aL, "Feedback", 0x57b831ed8283282cL, "MESSAGE")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, 0x32eac1b57fc1b82eL, "feedback"), "INFO"));
+    return SEnumOperations.getMemberValue(SEnumOperations.getMember(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x32eac1b57fc1b82aL, "Feedback", 0x57b831ed8283282cL, "MESSAGE")).equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, 0x32eac1b57fc1b82eL, "feedback")));
   }
   public static Object propertyMacro_GetValue_0_0(final PropertyMacroContext _context) {
     return _context.createUniqueName("subProgress", null);

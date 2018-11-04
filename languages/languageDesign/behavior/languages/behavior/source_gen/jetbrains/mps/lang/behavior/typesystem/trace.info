@@ -652,13 +652,13 @@
       <node id="8014340958386523432" at="12,46,13,133" concept="13" />
       <node id="8014340958386529025" at="15,44,16,41" concept="10" />
       <node id="8014340958386541145" at="18,35,19,237" concept="0" />
-      <node id="8014340958386533475" at="19,237,20,240" concept="4" />
+      <node id="8014340958386533475" at="19,237,20,233" concept="4" />
       <node id="8014340958386523432" at="12,0,15,0" concept="3" trace="RemoveFinalFromTheMethod_QuickFix#()V" />
       <node id="8014340958386523432" at="15,0,18,0" concept="8" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8014340958386523432" at="18,0,22,0" concept="8" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="8014340958386523432" at="12,46,13,133" />
       <scope id="8014340958386528474" at="15,44,16,41" />
-      <scope id="8014340958386523434" at="18,35,20,240" />
+      <scope id="8014340958386523434" at="18,35,20,233" />
       <scope id="8014340958386523432" at="12,0,15,0" />
       <scope id="8014340958386523432" at="15,0,18,0">
         <var name="node" id="8014340958386523432" />
@@ -770,13 +770,13 @@
       <node id="8014340958386764454" at="12,47,13,133" concept="13" />
       <node id="8014340958386785903" at="15,44,16,287" concept="10" />
       <node id="8014340958386772907" at="18,35,19,242" concept="0" />
-      <node id="8014340958386779413" at="19,242,20,243" concept="4" />
+      <node id="8014340958386779413" at="19,242,20,236" concept="4" />
       <node id="8014340958386764454" at="12,0,15,0" concept="3" trace="MakeAbstractMethodVirtual_QuickFix#()V" />
       <node id="8014340958386764454" at="15,0,18,0" concept="8" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8014340958386764454" at="18,0,22,0" concept="8" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="8014340958386764454" at="12,47,13,133" />
       <scope id="8014340958386785352" at="15,44,16,287" />
-      <scope id="8014340958386764456" at="18,35,20,243" />
+      <scope id="8014340958386764456" at="18,35,20,236" />
       <scope id="8014340958386764454" at="12,0,15,0" />
       <scope id="8014340958386764454" at="15,0,18,0">
         <var name="node" id="8014340958386764454" />
@@ -792,13 +792,13 @@
       <node id="8014340958386797363" at="12,49,13,133" concept="13" />
       <node id="8014340958386797380" at="15,44,16,44" concept="10" />
       <node id="8014340958386797368" at="18,35,19,244" concept="0" />
-      <node id="8014340958386797372" at="19,244,20,247" concept="4" />
+      <node id="8014340958386797372" at="19,244,20,240" concept="4" />
       <node id="8014340958386797363" at="12,0,15,0" concept="3" trace="RemoveAbstractFromTheMethod_QuickFix#()V" />
       <node id="8014340958386797363" at="15,0,18,0" concept="8" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8014340958386797363" at="18,0,22,0" concept="8" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="8014340958386797363" at="12,49,13,133" />
       <scope id="8014340958386797379" at="15,44,16,44" />
-      <scope id="8014340958386797367" at="18,35,20,247" />
+      <scope id="8014340958386797367" at="18,35,20,240" />
       <scope id="8014340958386797363" at="12,0,15,0" />
       <scope id="8014340958386797363" at="15,0,18,0">
         <var name="node" id="8014340958386797363" />
@@ -867,13 +867,13 @@
       <node id="8014340958387155517" at="14,41,15,133" concept="13" />
       <node id="8014340958387155534" at="17,44,18,88" concept="10" />
       <node id="8014340958387155522" at="20,35,21,393" concept="0" />
-      <node id="8014340958387155526" at="21,393,22,389" concept="4" />
+      <node id="8014340958387155526" at="21,393,22,382" concept="4" />
       <node id="8014340958387155517" at="14,0,17,0" concept="3" trace="MakeConceptAbstract_QuickFix#()V" />
       <node id="8014340958387155517" at="17,0,20,0" concept="8" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8014340958387155517" at="20,0,24,0" concept="8" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="8014340958387155517" at="14,41,15,133" />
       <scope id="8014340958387155533" at="17,44,18,88" />
-      <scope id="8014340958387155521" at="20,35,22,389" />
+      <scope id="8014340958387155521" at="20,35,22,382" />
       <scope id="8014340958387155517" at="14,0,17,0" />
       <scope id="8014340958387155517" at="17,0,20,0">
         <var name="node" id="8014340958387155517" />
@@ -889,13 +889,13 @@
       <node id="8014340958387190847" at="12,77,13,133" concept="13" />
       <node id="8014340958387190864" at="15,44,16,296" concept="10" />
       <node id="8014340958387190852" at="18,35,19,272" concept="0" />
-      <node id="8014340958387190856" at="19,272,20,275" concept="4" />
+      <node id="8014340958387190856" at="19,272,20,268" concept="4" />
       <node id="8014340958387190847" at="12,0,15,0" concept="3" trace="RemoveAbstractFromTheMethod_add_method_body_description_QuickFix#()V" />
       <node id="8014340958387190847" at="15,0,18,0" concept="8" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8014340958387190847" at="18,0,22,0" concept="8" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="8014340958387190847" at="12,77,13,133" />
       <scope id="8014340958387190863" at="15,44,16,296" />
-      <scope id="8014340958387190851" at="18,35,20,275" />
+      <scope id="8014340958387190851" at="18,35,20,268" />
       <scope id="8014340958387190847" at="12,0,15,0" />
       <scope id="8014340958387190847" at="15,0,18,0">
         <var name="node" id="8014340958387190847" />

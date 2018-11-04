@@ -173,13 +173,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     if (!isGetterDefault()) {
       return getterDescriptor.getValue(node);
     } else {
-      Object value = myProperty.getType().fromString(node.getProperty(myProperty));
-      if (value instanceof SEnumerationLiteral) {
-        // FIXME `node.enumProp` has pure raw value type so here we have to convert SEnumerationLiteral instance to raw value
-        // FIXME remove this when typeof(`node.enumProp`) become SEnumLiteral
-        value = ((SEnumerationLiteral) value).getName();
-      }
-      return value;
+      return myProperty.getType().fromString(node.getProperty(myProperty));
     }
   }
 

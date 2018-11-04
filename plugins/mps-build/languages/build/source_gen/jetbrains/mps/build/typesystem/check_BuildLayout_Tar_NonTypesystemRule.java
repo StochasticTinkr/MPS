@@ -23,9 +23,9 @@ public class check_BuildLayout_Tar_NonTypesystemRule extends AbstractNonTypesyst
   public void applyRule(final SNode tarArchive, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     String approxName = BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(tarArchive, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), null);
     String ext = ".tar";
-    if (SPropertyOperations.hasValue(tarArchive, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7709f0532a526203L, 0x1b76dbd13de88928L, "compression"), "bzip2", "none")) {
+    if (SPropertyOperations.hasEnumValue(tarArchive, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7709f0532a526203L, 0x1b76dbd13de88928L, "compression"), "bzip2")) {
       ext = ".tar.bz2";
-    } else if (SPropertyOperations.hasValue(tarArchive, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7709f0532a526203L, 0x1b76dbd13de88928L, "compression"), "gzip", "none")) {
+    } else if (SPropertyOperations.hasEnumValue(tarArchive, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7709f0532a526203L, 0x1b76dbd13de88928L, "compression"), "gzip")) {
       ext = ".tar.gz";
     }
     if (!(approxName.endsWith("}")) && !(approxName.toLowerCase().endsWith(ext))) {

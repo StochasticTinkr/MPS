@@ -20,7 +20,7 @@
     <file name="MakeFieldFinal.java">
       <node id="2869783065404758436" at="17,52,18,39" concept="8" />
       <node id="2869783065404758436" at="20,39,21,30" concept="8" />
-      <node id="2869783065404832785" at="23,69,24,198" concept="2" />
+      <node id="2869783065404832785" at="23,69,24,191" concept="2" />
       <node id="2869783065404832781" at="26,86,27,202" concept="8" />
       <node id="2869783065404758436" at="15,0,17,0" concept="1" trace="MakeFieldFinal#()V" />
       <node id="2869783065404758436" at="17,0,20,0" concept="6" trace="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
@@ -30,7 +30,7 @@
       <scope id="2869783065404758436" at="15,27,15,27" />
       <scope id="2869783065404758436" at="17,52,18,39" />
       <scope id="2869783065404758436" at="20,39,21,30" />
-      <scope id="2869783065404758439" at="23,69,24,198" />
+      <scope id="2869783065404758439" at="23,69,24,191" />
       <scope id="2869783065404823032" at="26,86,27,202" />
       <scope id="2869783065404758436" at="15,0,17,0" />
       <scope id="2869783065404758436" at="17,0,20,0" />

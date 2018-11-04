@@ -818,8 +818,8 @@
     <file name="TwoStepDeleteCustomChildContainer_CellWithCustomId_Delete.java">
       <node id="1241246198932971736" at="21,56,22,51" concept="2" />
       <node id="1241246198932973106" at="25,76,26,17" concept="7" />
-      <node id="1241246198932973194" at="27,9,28,195" concept="2" />
-      <node id="1241246198933062427" at="28,195,29,66" concept="2" />
+      <node id="1241246198932973194" at="27,9,28,188" concept="2" />
+      <node id="1241246198933062427" at="28,188,29,66" concept="2" />
       <node id="1241246198932971735" at="35,95,36,76" concept="6" />
       <node id="1241246198932971735" at="36,76,37,82" concept="6" />
       <node id="1241246198932971735" at="37,82,38,0" concept="9" />
@@ -900,8 +900,8 @@
     <file name="TwoStepDeleteCustomChildContainer_CellWithStringId_Delete.java">
       <node id="1241246198932976724" at="21,56,22,51" concept="2" />
       <node id="1241246198932976734" at="25,76,26,17" concept="7" />
-      <node id="1241246198932976735" at="27,9,28,195" concept="2" />
-      <node id="1241246198933063292" at="28,195,29,66" concept="2" />
+      <node id="1241246198932976735" at="27,9,28,188" concept="2" />
+      <node id="1241246198933063292" at="28,188,29,66" concept="2" />
       <node id="1241246198932976723" at="35,95,36,76" concept="6" />
       <node id="1241246198932976723" at="36,76,37,82" concept="6" />
       <node id="1241246198932976723" at="37,82,38,0" concept="9" />
@@ -3764,8 +3764,8 @@
       <node id="1741258697587171439" at="209,274,210,29" concept="2" />
       <node id="1741258697587171439" at="213,66,214,34" concept="2" />
       <node id="1741258697587171512" at="219,58,220,261" concept="6" />
-      <node id="1741258697587171518" at="220,261,221,210" concept="2" />
-      <node id="1741258697587171527" at="221,210,222,23" concept="7" />
+      <node id="1741258697587171518" at="220,261,221,203" concept="2" />
+      <node id="1741258697587171527" at="221,203,222,23" concept="7" />
       <node id="1741258697587171439" at="226,51,227,29" concept="7" />
       <node id="1741258697587171439" at="231,67,232,20" concept="7" />
       <node id="1741258697587171439" at="236,62,237,22" concept="7" />
@@ -10051,7 +10051,7 @@
   <root nodeRef="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)/5110219550150152699">
     <file name="SideTransformWrapperActionMap.java">
       <node id="5110219550150152700" at="19,56,20,51" concept="2" />
-      <node id="5110219550150152703" at="22,77,23,183" concept="2" />
+      <node id="5110219550150152703" at="22,77,23,176" concept="2" />
       <node id="5110219550150152699" at="29,95,30,76" concept="6" />
       <node id="5110219550150152699" at="30,76,31,82" concept="6" />
       <node id="5110219550150152699" at="31,82,32,0" concept="9" />
@@ -10084,7 +10084,7 @@
       <node id="5110219550150152700" at="17,0,28,0" concept="10" trace="createAction_RIGHT_TRANSFORM#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/editor/runtime/cells/AbstractCellAction;" />
       <node id="5110219550150152699" at="29,0,44,0" concept="10" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="5110219550150152700" at="19,56,20,51" />
-      <scope id="5110219550150152702" at="22,77,23,183" />
+      <scope id="5110219550150152702" at="22,77,23,176" />
       <scope id="5110219550150152699" at="40,81,41,67" />
       <scope id="5110219550150152700" at="59,69,60,75" />
       <scope id="5110219550150152700" at="19,0,22,0">
@@ -12348,8 +12348,8 @@
     <file name="SubstTestRoot_CustomSingleInsertAction.java">
       <node id="618557683845300743" at="21,56,22,51" concept="2" />
       <node id="618557683845417170" at="24,77,25,228" concept="6" />
-      <node id="618557683845418115" at="25,228,26,183" concept="2" />
-      <node id="618557683845301865" at="26,183,27,199" concept="2" />
+      <node id="618557683845418115" at="25,228,26,176" concept="2" />
+      <node id="618557683845301865" at="26,176,27,199" concept="2" />
       <node id="618557683845300743" at="30,62,31,61" concept="7" />
       <node id="618557683846373915" at="33,83,34,209" concept="7" />
       <node id="618557683845300742" at="40,95,41,76" concept="6" />
@@ -12443,8 +12443,8 @@
     <file name="SubstTestRoot_CustomEmptyCellSingleInsertAction.java">
       <node id="618557683845870256" at="21,56,22,51" concept="2" />
       <node id="618557683845870259" at="24,77,25,228" concept="6" />
-      <node id="618557683845870265" at="25,228,26,183" concept="2" />
-      <node id="618557683845870271" at="26,183,27,214" concept="2" />
+      <node id="618557683845870265" at="25,228,26,176" concept="2" />
+      <node id="618557683845870271" at="26,176,27,214" concept="2" />
       <node id="618557683845870255" at="33,95,34,76" concept="6" />
       <node id="618557683845870255" at="34,76,35,82" concept="6" />
       <node id="618557683845870255" at="35,82,36,0" concept="9" />
@@ -12525,8 +12525,8 @@
     <file name="SubstTestRoot_CustomMultipleInsertAction.java">
       <node id="618557683845875200" at="22,56,23,51" concept="2" />
       <node id="618557683845875203" at="25,77,26,228" concept="6" />
-      <node id="618557683845875209" at="26,228,27,183" concept="2" />
-      <node id="618557683845875215" at="27,183,28,234" concept="2" />
+      <node id="618557683845875209" at="26,228,27,176" concept="2" />
+      <node id="618557683845875215" at="27,176,28,234" concept="2" />
       <node id="618557683845875200" at="31,62,32,61" concept="7" />
       <node id="618557683846840771" at="34,83,35,233" concept="7" />
       <node id="618557683845875199" at="41,95,42,76" concept="6" />
@@ -12620,8 +12620,8 @@
     <file name="SubstTestRoot_CustomEmptyCellMultipleInsertAction.java">
       <node id="618557683845876396" at="22,56,23,51" concept="2" />
       <node id="618557683845876399" at="25,77,26,228" concept="6" />
-      <node id="618557683845876405" at="26,228,27,183" concept="2" />
-      <node id="618557683845876411" at="27,183,28,246" concept="2" />
+      <node id="618557683845876405" at="26,228,27,176" concept="2" />
+      <node id="618557683845876411" at="27,176,28,246" concept="2" />
       <node id="618557683845876395" at="34,95,35,76" concept="6" />
       <node id="618557683845876395" at="35,76,36,82" concept="6" />
       <node id="618557683845876395" at="36,82,37,0" concept="9" />
@@ -16252,8 +16252,8 @@
       <node id="7023088407745954402" at="135,48,136,171" concept="7" />
       <node id="7023088407745954402" at="138,66,139,27" concept="7" />
       <node id="6132666365585640597" at="141,32,142,209" concept="6" />
-      <node id="6132666365585640876" at="142,209,143,174" concept="2" />
-      <node id="6132666365585642205" at="143,174,144,16" concept="7" />
+      <node id="6132666365585640876" at="142,209,143,167" concept="2" />
+      <node id="6132666365585642205" at="143,167,144,16" concept="7" />
       <node id="7023088407745954402" at="146,57,147,83" concept="6" />
       <node id="7023088407745954402" at="147,83,148,65" concept="2" />
       <node id="7023088407745954402" at="148,65,149,247" concept="2" />
@@ -21186,8 +21186,8 @@
       <node id="957371990174136536" at="806,48,807,178" concept="7" />
       <node id="957371990174136536" at="809,66,810,27" concept="7" />
       <node id="618557683845597427" at="812,32,813,226" concept="6" />
-      <node id="618557683845597433" at="813,226,814,181" concept="2" />
-      <node id="618557683845598655" at="814,181,815,19" concept="7" />
+      <node id="618557683845597433" at="813,226,814,174" concept="2" />
+      <node id="618557683845598655" at="814,174,815,19" concept="7" />
       <node id="957371990174136536" at="817,57,818,83" concept="6" />
       <node id="957371990174136536" at="818,83,819,65" concept="2" />
       <node id="957371990174136536" at="819,65,820,25" concept="7" />

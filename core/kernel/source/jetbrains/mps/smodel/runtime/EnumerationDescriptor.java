@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -39,6 +40,12 @@ public interface EnumerationDescriptor extends DataTypeDescriptor {
   @Nullable
   MemberDescriptor getDefault();
 
+
+  @Nullable
+  default PrimitiveTypeId getMemberRawType() {
+    return null;
+  }
+
   class MemberDescriptor {
     @Nullable
     private final String myName;
@@ -47,16 +54,24 @@ public interface EnumerationDescriptor extends DataTypeDescriptor {
     private final String myPresentation;
 
     @Nullable
+    private final String myIdentifier;
+
+    @Nullable
     private final SNodeReference mySourceNode;
 
-    public MemberDescriptor(@Nullable String name, @NotNull String presentation, @Nullable String sourceNode) {
+    public MemberDescriptor(@Nullable String name, @NotNull String presentation, @Nullable String sourceNode, @Nullable String identifier) {
       myName = name;
       myPresentation = presentation;
       mySourceNode = sourceNode == null ? null : PersistenceFacade.getInstance().createNodeReference(sourceNode);
+      myIdentifier = identifier;
+    }
+
+    public MemberDescriptor(@Nullable String name, @NotNull String presentation, @Nullable String sourceNode) {
+      this(name, presentation, sourceNode, null);
     }
 
     public MemberDescriptor(@Nullable String name, @NotNull String presentation) {
-      this(name, presentation, null);
+      this(name, presentation, null, null);
     }
 
     @Nullable
@@ -72,6 +87,11 @@ public interface EnumerationDescriptor extends DataTypeDescriptor {
     @Nullable
     public SNodeReference getSourceNode() {
       return mySourceNode;
+    }
+
+    @Nullable
+    public String getIdentifier() {
+      return myIdentifier;
     }
   }
 }

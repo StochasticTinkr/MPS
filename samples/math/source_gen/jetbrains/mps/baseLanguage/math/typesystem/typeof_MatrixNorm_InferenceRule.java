@@ -38,7 +38,7 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
             }
           } else {
             SNode t = MathUtil.getUnboxedElementType(typeCheckingContext.getExpandedNode(mT));
-            boolean floatResult = SPropertyOperations.getInteger_def(norm, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0xcc7e1ce69847db2L, 0xa87de0e72c3a3efL, "deg"), "1") == 2;
+            boolean floatResult = SPropertyOperations.getInteger(norm, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0xcc7e1ce69847db2L, 0xa87de0e72c3a3efL, "deg")) == 2;
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(t, MathTypeUtil.qBigInteger)) {
               SNode f = null;
               SNode i = null;

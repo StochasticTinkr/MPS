@@ -9,8 +9,8 @@
   </root>
   <root nodeRef="r:d37d8304-386b-47d4-9fb0-209be430470a(org.jetbrains.mps.samples.ParallelFor.actions)/8923957828369569660">
     <file name="ParallelLoopVariable_Factory.java">
-      <node id="8923957828369582242" at="13,91,14,171" concept="0" />
-      <node id="7793246093816046408" at="14,171,15,161" concept="0" />
+      <node id="8923957828369582242" at="13,91,14,164" concept="0" />
+      <node id="7793246093816046408" at="14,164,15,161" concept="0" />
       <node id="8923957828369569661" at="13,0,17,0" concept="1" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="8923957828369569661" at="13,91,15,161" />
       <scope id="8923957828369569661" at="13,0,17,0">

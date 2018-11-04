@@ -48,7 +48,7 @@ public final class CellMenuPart_Abstract__BehaviorDescriptor extends BaseBHDescr
   }
   /*package*/ static SNode getEditedAggregationLink_idhJEvgUM(@NotNull SNode __thisNode__) {
     SNode editedLink = CellMenuPart_Abstract__BehaviorDescriptor.getEditedLink_idhJEvotS.invoke(__thisNode__);
-    if (SPropertyOperations.hasValue(editedLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
+    if (SPropertyOperations.hasEnumValue(editedLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation")) {
       return editedLink;
     }
     return null;

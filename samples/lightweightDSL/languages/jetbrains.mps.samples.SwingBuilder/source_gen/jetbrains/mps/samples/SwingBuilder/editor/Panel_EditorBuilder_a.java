@@ -100,9 +100,9 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
           modelAccess.executeCommand(new EditorCommand(getEditorContext()) {
             protected void doExecute() {
               if (box.isSelected()) {
-                SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical"), "" + (true));
+                SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical"), true);
               } else {
-                SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical"), "" + (false));
+                SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical"), false);
               }
             }
           });
