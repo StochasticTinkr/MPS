@@ -48,7 +48,7 @@ public class MPSCoreComponents implements ApplicationComponent {
   private MPSBaseLanguage myBaseLanguage;
   private Platform myPlatform;
 
-  public MPSCoreComponents(IdeaFSComponent fsProvider,
+  public MPSCoreComponents(
       ManagingFS fs,
       ModelAccess access,
       UndoHandler handler) {
