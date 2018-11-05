@@ -34,6 +34,10 @@ public class VFSManager implements CoreComponent {
   private static VFSManager INSTANCE;
   final private Map<String, FileSystem> myFileSystems = new HashMap<>();
 
+  public static VFSManager getInstance() {
+    return INSTANCE;
+  }
+
   @Override
   public void init() {
     if (INSTANCE != null) {
@@ -56,9 +60,15 @@ public class VFSManager implements CoreComponent {
     myFileSystems.put(fsId, fs);
   }
 
-  public void unregisterFS(@NotNull String fsId) {
+  public void unregisterFS(@NotNull String fsId, @NotNull FileSystem fs) {
     if (!myFileSystems.containsKey(fsId)) {
       LOG.error("File system is not registered for protocol " + fsId);
+      return;
+    }
+
+    FileSystem current = myFileSystems.get(fsId);
+    if (current != fs) {
+      LOG.error("File system unregister problem: asked to remove FS " + fs + " with id  " + fsId + " while the registered FS for this id is " + current);
       return;
     }
 
