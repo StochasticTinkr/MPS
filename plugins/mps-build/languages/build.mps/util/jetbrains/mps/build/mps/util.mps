@@ -14,7 +14,6 @@
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="yg2w" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.containers(MPS.Core/)" />
     <import index="2txq" ref="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
@@ -2135,6 +2134,86 @@
           </node>
         </node>
         <node concept="2AHcQZ" id="1Unlav_3leK" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="2Q$SXFRoRFI" role="jymVt" />
+      <node concept="3clFb_" id="2Q$SXFRoVl6" role="jymVt">
+        <property role="TrG5h" value="getOwners" />
+        <node concept="3Tm1VV" id="2Q$SXFRoVl7" role="1B3o_S" />
+        <node concept="3uibUv" id="2Q$SXFRoVl9" role="3clF45">
+          <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+          <node concept="3uibUv" id="2Q$SXFRoVla" role="11_B2D">
+            <ref role="3uigEE" to="w1kc:~MPSModuleOwner" resolve="MPSModuleOwner" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="2Q$SXFRoVlb" role="3clF46">
+          <property role="TrG5h" value="module" />
+          <node concept="3uibUv" id="2Q$SXFRoVlc" role="1tU5fm">
+            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+          </node>
+          <node concept="2AHcQZ" id="2Q$SXFRoVld" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="2Q$SXFRoVlg" role="3clF47">
+          <node concept="3SKdUt" id="2Q$SXFRp09X" role="3cqZAp">
+            <node concept="3SKdUq" id="2Q$SXFRp09Z" role="3SKWNk">
+              <property role="3SKdUp" value="as we ignore MPSModuleOwner when registering a module, there's no way to return a proper value" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="2Q$SXFRp2mP" role="3cqZAp">
+            <node concept="3SKdUq" id="2Q$SXFRp2mR" role="3SKWNk">
+              <property role="3SKdUp" value="OTOH, UnsupportedOperationException, though technically right, is no appropriate as there's generic code" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="2Q$SXFRp49r" role="3cqZAp">
+            <node concept="3SKdUq" id="2Q$SXFRp49t" role="3SKWNk">
+              <property role="3SKdUp" value="that expects this method not to throw an exception (i.e. Language unregistering its Generators)" />
+            </node>
+          </node>
+          <node concept="3cpWs6" id="2Q$SXFRoWYR" role="3cqZAp">
+            <node concept="2YIFZM" id="2Q$SXFRoY9q" role="3cqZAk">
+              <ref role="37wK5l" to="33ny:~Collections.emptySet():java.util.Set" resolve="emptySet" />
+              <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="2Q$SXFRoVlh" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="5Noy1Gc8GN5" role="jymVt" />
+      <node concept="2tJIrI" id="5Noy1Gc8HV1" role="jymVt" />
+      <node concept="3clFb_" id="5Noy1Gc8LbI" role="jymVt">
+        <property role="TrG5h" value="getModules" />
+        <node concept="3Tm1VV" id="5Noy1Gc8LbJ" role="1B3o_S" />
+        <node concept="3uibUv" id="5Noy1Gc8LbL" role="3clF45">
+          <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+          <node concept="3uibUv" id="5Noy1Gc8LbM" role="11_B2D">
+            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="5Noy1Gc8LbN" role="3clF46">
+          <property role="TrG5h" value="owner" />
+          <node concept="3uibUv" id="5Noy1Gc8LbO" role="1tU5fm">
+            <ref role="3uigEE" to="w1kc:~MPSModuleOwner" resolve="MPSModuleOwner" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="5Noy1Gc8LbR" role="3clF47">
+          <node concept="3SKdUt" id="5Noy1Gc8NP3" role="3cqZAp">
+            <node concept="3SKdUq" id="5Noy1Gc8NP5" role="3SKWNk">
+              <property role="3SKdUp" value="see getOwners(), above, for reasone why empty collection, not exception" />
+            </node>
+          </node>
+          <node concept="3cpWs6" id="5Noy1Gc8Mp1" role="3cqZAp">
+            <node concept="2YIFZM" id="5Noy1Gc8Mp2" role="3cqZAk">
+              <ref role="37wK5l" to="33ny:~Collections.emptySet():java.util.Set" resolve="emptySet" />
+              <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="5Noy1Gc8LbS" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>

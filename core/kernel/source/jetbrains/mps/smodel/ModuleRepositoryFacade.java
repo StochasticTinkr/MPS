@@ -63,8 +63,10 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(ModuleRepositoryFacade.class);
   private static ModuleRepositoryFacade INSTANCE;
 
-  private final MPSModuleRepository REPO;
-  private final SRepositoryExt myTrueRepo;
+  // never null, use for all SRepository API methods.
+  private final SRepository myRepo;
+  // may be null. use only when extended method of SRepositoryExt are needed.
+  private final SRepositoryExt myRepoExt;
 
   /**
    * @deprecated  This class shall cease to be CoreComponent and singleton. Instead, shall be
@@ -73,23 +75,25 @@ public final class ModuleRepositoryFacade implements CoreComponent {
    */
   @Deprecated
   public ModuleRepositoryFacade(MPSModuleRepository repo) {
-    this((SRepositoryExt) repo);
+    myRepo = repo;
+    myRepoExt = repo;
   }
 
   public ModuleRepositoryFacade(@NotNull Project mpsProject) {
-    this((SRepositoryExt) mpsProject.getRepository());
+    this(mpsProject.getRepository());
   }
 
+  /**
+   * Some methods of this facade are bound to implementation-specific {@link SRepositoryExt} and {@link MPSModuleOwner} interfaces
+   * Unless you use them, you're safe to pass any {@link SRepository} instance here.
+   * If, however, you need to register/unregister modules, make sure repository you pass is instance of {@link SRepositoryExt}
+   * @param repository container for modules as described above
+   */
   // FIXME need to distinguish between uses where regular SRepository is sufficient (like getAllModules(Class)) vs uses
   //       where SRepositoryExt is needed (like register/unregister a module)
   public ModuleRepositoryFacade(@NotNull SRepository repository) {
-    this((SRepositoryExt) repository);
-  }
-
-  private ModuleRepositoryFacade(SRepositoryExt repo) {
-    myTrueRepo = repo;
-    // FIXME REPO shall become SRepositoryExt once we add methods like getByFQN() and getOwners() there
-    REPO = MPSModuleRepository.getInstance();
+    myRepo = repository;
+    myRepoExt = repository instanceof SRepositoryExt ? ((SRepositoryExt) repository) : null;
   }
 
   @Override
@@ -119,35 +123,39 @@ public final class ModuleRepositoryFacade implements CoreComponent {
    * @since 2017.2
    */
   public SRepository getRepository() {
-    return myTrueRepo;
+    return myRepo;
   }
 
   public SModule getModule(@NotNull final SModuleReference ref) {
-    Computable<SModule> c = () -> REPO.getModule(ref.getModuleId());
-    if (REPO.getModelAccess().canRead()) {
+    Computable<SModule> c = () -> myRepo.getModule(ref.getModuleId());
+    if (myRepo.getModelAccess().canRead()) {
       return c.compute();
     }
     ComputeRunnable<SModule> r = new ComputeRunnable<>(c);
-    REPO.getModelAccess().runReadAction(r);
+    myRepo.getModelAccess().runReadAction(r);
     return r.getResult();
   }
 
   public <T extends SModule> T getModule(SModuleReference ref, Class<T> cls) {
     SModule m = getModule(ref);
-    if (!cls.isInstance(m)) return null;
+    if (!cls.isInstance(m)) {
+      return null;
+    }
     return (T) m;
   }
 
   public <T extends SModule> Collection<T> getAllModules(Class<T> cls) {
     List<T> result = new ArrayList<>();
-    for (SModule module : REPO.getModules()) {
-      if (cls.isInstance(module)) result.add((T) module);
+    for (SModule module : myRepo.getModules()) {
+      if (cls.isInstance(module)) {
+        result.add((T) module);
+      }
     }
     return result;
   }
 
   public <T extends SModule> Collection<T> getModules(MPSModuleOwner moduleOwner, @Nullable Class<T> cls) {
-    Set<SModule> modules = REPO.getModules(moduleOwner);
+    Set<SModule> modules = myRepoExt.getModules(moduleOwner);
     if (modules == null) {
       return Collections.emptyList();
     }
@@ -199,7 +207,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
     }
     // With parallel streams, beware of model read lock necessary to perform most operations over module/model (but not #getName())
     // module.models needs read lock, hence no parallel streams here
-    Stream<SModule> moduleStream = StreamSupport.stream(REPO.getModules().spliterator(), false);
+    Stream<SModule> moduleStream = StreamSupport.stream(myRepo.getModules().spliterator(), false);
     Stream<SModel> modelStream = moduleStream.flatMap(m -> StreamSupport.stream(m.getModels().spliterator(), false));
     return modelStream.filter(m -> modelName.equals(m.getName())).collect(Collectors.toList());
   }
@@ -223,7 +231,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   @NotNull
   public Collection<SModule> getModulesByName(@NotNull String moduleName) {
     // parallel == true as we are going to check module name, which doesn't require model read.
-    return StreamSupport.stream(REPO.getModules().spliterator(), true)
+    return StreamSupport.stream(myRepo.getModules().spliterator(), true)
                         .filter(module -> moduleName.equals(module.getModuleName()))
                         .collect(Collectors.toList());
   }
@@ -258,7 +266,34 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public void unregisterModules(MPSModuleOwner owner) {
-    REPO.unregisterModules(new HashSet<>(REPO.getModules(owner)), owner);
+    // if unregistering modules one by one is not fast enough, we shall come up with appropriate SRepositoryExt API
+    final ArrayList<SModule> modules = new ArrayList<>(myRepoExt.getModules(owner));
+    // XXX Here comes code complimentary to ModuleRepositoryFacade.newGeneratorInstance.
+    //     I.e. we unregister not directly owned generators only (getOwnedGenerators()), but all generators associated with the language.
+    //     Once we have FCC generator modules, we would switch to getOwnedGenerators here
+    final ArrayList<Generator> associatedGenerators = new ArrayList<>();
+    for (SModule m : modules) {
+      if (m instanceof Language) {
+        for (Generator g : ((Language) m).getGenerators()) {
+          associatedGenerators.add(g);
+        }
+      }
+    }
+    // Besides, we have to be careful not to unregister same module twice (i.e. if both language and its generator are owned by same owner, they
+    // both are in 'modules' list and are disposed in the main loop.
+    associatedGenerators.removeAll(modules);
+    // In addition, associatedGenerators might need to be filtered according to their owner, i.e. if they got 'owner' one among theirs.
+    // However, given no mechanism to have generators w/o a language, I'd rather try to dispose all of them (we do pass 'owner' to unregister call, below, though
+    // it's not clear what happens if a module doesn't belong to the owner (there's no clear contract, MPSModuleRepository logs a warning)
+    modules.addAll(associatedGenerators);
+
+    for (SModule m : modules) {
+      // XXX perhaps, shall check m is still registered just in case any module unregisters its related modules (e.g. Language may unregister its Generators)
+      //     though, not clear how to do it gracefully, m.getRepo == null?
+      myRepoExt.unregisterModule(m, owner);
+    }
+
+
   }
 
   //intended to use only when module is removed physically
@@ -267,14 +302,13 @@ public final class ModuleRepositoryFacade implements CoreComponent {
    * unregisters module from all its owners
    */
   public void unregisterModule(@NotNull SModule module) {
-    Set<MPSModuleOwner> owners = new HashSet<>(REPO.getOwners(module));
-    for (MPSModuleOwner owner : owners) {
-      REPO.unregisterModule(module, owner);
+    for (MPSModuleOwner owner : getModuleOwners(module)) {
+      myRepoExt.unregisterModule(module, owner);
     }
   }
 
   public Set<MPSModuleOwner> getModuleOwners(SModule module) {
-    return new HashSet<>(REPO.getOwners(module));
+    return new HashSet<>(myRepoExt.getOwners(module));
   }
 
   /**
@@ -313,6 +347,8 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   @Deprecated
   @ToRemove(version = 3.5)
   public static SModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
+    // 2 uses in mbeddr.
+    // need to introduce alternative with ModuleDescriptor only, not ModuleHandler/IFile
     return INSTANCE.instantiateModule(handle, owner);
   }
 
@@ -336,7 +372,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
 
   @NotNull
   private Generator newGeneratorInstance(@NotNull GeneratorDescriptor descriptor) {
-    SModule module = myTrueRepo.getModule(descriptor.getSourceLanguage().getModuleId());
+    SModule module = myRepo.getModule(descriptor.getSourceLanguage().getModuleId());
     if (module == null) {
       // XXX for the time being, we register generator modules only *after* respective source language module, although
       //     generally we shall not insist on the ordering (generator could obtain source language lazily, not at construction time,
@@ -356,6 +392,6 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   }
 
   private <T extends AbstractModule> T registerModule(T module, MPSModuleOwner moduleOwner) {
-    return myTrueRepo.registerModule(module, moduleOwner);
+    return myRepoExt.registerModule(module, moduleOwner);
   }
 }

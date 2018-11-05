@@ -28,6 +28,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
+import java.util.Set;
+
 /**
  * Repository with modules visible in MPS {@link Project project}.
  *
@@ -99,6 +101,16 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
   @Override
   public void unregisterModule(@NotNull SModule module, @NotNull MPSModuleOwner owner) {
     getRootRepository().unregisterModule(module, owner);
+  }
+
+  @Override
+  public Set<MPSModuleOwner> getOwners(@NotNull SModule module) {
+    return getRootRepository().getOwners(module);
+  }
+
+  @Override
+  public Set<SModule> getModules(MPSModuleOwner moduleOwner) {
+    return getRootRepository().getModules(moduleOwner);
   }
 
   @Override

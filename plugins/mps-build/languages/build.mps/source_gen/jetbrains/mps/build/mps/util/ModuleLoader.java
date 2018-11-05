@@ -42,6 +42,8 @@ import org.jetbrains.mps.openapi.module.SModuleId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.AbstractModule;
+import java.util.Set;
+import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.AbstractModelAccess;
 
@@ -196,6 +198,21 @@ public final class ModuleLoader {
       if (module instanceof AbstractModule) {
         ((AbstractModule) module).dispose();
       }
+    }
+
+    @Override
+    public Set<MPSModuleOwner> getOwners(@NotNull SModule module) {
+      // as we ignore MPSModuleOwner when registering a module, there's no way to return a proper value 
+      // OTOH, UnsupportedOperationException, though technically right, is no appropriate as there's generic code 
+      // that expects this method not to throw an exception (i.e. Language unregistering its Generators) 
+      return Collections.emptySet();
+    }
+
+
+    @Override
+    public Set<SModule> getModules(MPSModuleOwner owner) {
+      // see getOwners(), above, for reasone why empty collection, not exception 
+      return Collections.emptySet();
     }
 
     @Nullable

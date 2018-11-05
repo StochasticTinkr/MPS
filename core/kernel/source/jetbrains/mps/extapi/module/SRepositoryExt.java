@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Set;
+
 /**
  * Extension of {@link SRepository} API. Adds API we are either uncertain with yet, or API that at the moment
  * depends on our internal classes/interfaces, and thus not quite ready to roll out.
@@ -49,7 +51,13 @@ public interface SRepositoryExt extends SRepository {
   <T extends SModule> T registerModule(@NotNull T module, @NotNull MPSModuleOwner owner);
 
   /**
+   * Unregisters given module only (e.g. in case of a language, it's not repository responsibility to care about language generators)
    * @see #registerModule(SModule, MPSModuleOwner)
+   * If to persist, shall describe the contract, e.g. what happens when a module doesn't belong to a repo or is not associated with the supplied owner
    */
   void unregisterModule(@NotNull SModule module, @NotNull MPSModuleOwner owner);
+
+  Set<MPSModuleOwner> getOwners(@NotNull SModule module);
+
+  Set<SModule> getModules(MPSModuleOwner moduleOwner);
 }

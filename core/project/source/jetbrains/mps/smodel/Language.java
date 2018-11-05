@@ -240,12 +240,12 @@ public class Language extends ReloadableModuleBase implements ReloadableModule {
     // though MPSModuleRepository.doUnregisterModule() cares to unregister language's generators properly, seems it
     // doesn't hurt to try to unregister them here as well. Either it would end up as no-op for an empty collection, or would keep
     // repository consistent (in case dispose() has been reached not through MPSModuleRepository)
-    final SRepository repo = getRepository();
-    if (repo != null) {
-      final ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(repo);
-      // see revalidateGenerators(), above, for reasons why we unregister all associated generators, not only directly owned.
-      getGenerators().forEach(mrf::unregisterModule);
-    }
+//    final SRepository repo = getRepository();
+//    if (repo != null) {
+//      final ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(repo);
+//      // see revalidateGenerators(), above, for reasons why we unregister all associated generators, not only directly owned.
+//      getGenerators().forEach(mrf::unregisterModule);
+//    }
     super.dispose();
   }
 

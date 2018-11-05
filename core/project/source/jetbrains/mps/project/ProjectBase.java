@@ -20,6 +20,8 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -34,6 +36,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -170,7 +173,19 @@ public abstract class ProjectBase extends Project {
     SModuleListenerBase remove = myModulesListeners.remove(module.getModuleReference());
     module.removeModuleListener(remove);
     SRepositoryExt repository = (SRepositoryExt) getRepository();
-    repository.getModelAccess().runWriteAction(() -> repository.unregisterModule(module, this));
+    repository.getModelAccess().runWriteAction(() -> {
+      if (module instanceof Language) {
+        // At the moment, project doesn't notice Generator modules, and expects them to be part of Language
+        // E.g. ProjectModulesFiller doesn't tell project to addModule(Generator). However, with Language no longer owner for its Generatorsm
+        // we have to unregister them explicitly (like ModuleRepositoryFacade does)
+        // For reasons why we unregister all generators, not owned only, see ModuleRepositoryFacade.
+        Collection<Generator> allKnownLangGenerators = ((Language) module).getGenerators();
+        for (Generator g : allKnownLangGenerators) {
+          repository.unregisterModule(g, this);
+        }
+      }
+      repository.unregisterModule(module, this);
+    });
     return modulePath;
   }
 
