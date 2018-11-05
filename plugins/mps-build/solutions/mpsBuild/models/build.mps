@@ -1196,6 +1196,9 @@
       <node concept="nCB5N" id="7FonrDkn1dM" role="nCB5Z">
         <ref role="nCB5Y" node="1s0vtrwUPV$" resolve="mps-logging" />
       </node>
+      <node concept="nCB5N" id="1p6u8bgqWIY" role="nCB5Z">
+        <ref role="nCB5Y" node="5StVQ8qcIGg" resolve="mps-core-components" />
+      </node>
       <node concept="nCB5N" id="3vjn6$4v68Q" role="nCB5Z">
         <ref role="nCB5Y" node="3vjn6$4rsZc" resolve="util-core" />
       </node>

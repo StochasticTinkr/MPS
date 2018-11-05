@@ -6744,7 +6744,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.vfs" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-logging, java.compile.util-core">
+  <target name="java.compile.vfs" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-logging, java.compile.mps-core-components, java.compile.util-core">
     <mkdir dir="${build.tmp}/java/out/vfs" />
     <javac2 destdir="${build.tmp}/java/out/vfs" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -6756,6 +6756,7 @@
         <pathelement path="${build.tmp}/java/out/mps-annotations" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
         <pathelement path="${build.tmp}/java/out/mps-logging" />
+        <pathelement path="${build.tmp}/java/out/mps-core-components" />
         <pathelement path="${build.tmp}/java/out/util-core" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
