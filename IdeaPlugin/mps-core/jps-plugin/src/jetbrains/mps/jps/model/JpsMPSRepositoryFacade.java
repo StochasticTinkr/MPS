@@ -21,7 +21,6 @@ import jetbrains.mps.classloading.CustomClassLoadingFacet;
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
-import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.module.CachedModuleData;
@@ -43,7 +42,6 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.vfs.FileRefresh;
 import jetbrains.mps.vfs.FileSystem;
@@ -300,11 +298,11 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Project modules loaded in " + (System.nanoTime() - start) / 1000000 + " ms"));
 
       if (MPSCompilerUtil.isExtraTracingMode()) {
-        for (SModule m : new ModuleRepositoryFacade(myRepository).getModules(myProject, null)) {
+        for (SModule m : myProject.getProjectModules()) {
           context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Debug output: module " + m.getModuleReference().toString()));
 
           for (SModel d : m.getModels()) {
-            context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Debug output: model " + SNodeOperations.getModelLongName(d) + " / " + d.getReference().toString()));
+            context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Debug output: model " + d.getName() + " / " + d.getReference().toString()));
             // It makes model loading non-lazy and kills the whole thing if stubs are built for everything (like SDK, libs, etc)
   //          for (SNode n : d.getRootNodes()) {
   //            context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "node: " + n.getName() + " id: " + n.getSNodeId().toString()));
@@ -334,13 +332,10 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         assert facet != null;
         Memento memento = new MementoImpl();
         facet.save(memento);
-        desc.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(((ModuleFacetBase) facet).getFacetType(), memento));
-        Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(new ModuleRepositoryFacade(myRepository).getModuleOwners(existingModule));
-        for (MPSModuleOwner owner : owners) {
-//          if (owner == this) continue;
-          // fixme wanted to used ModuleRepositoryFacade but it doesn't have exactly this method
-          ((SRepositoryExt) myRepository).unregisterModule(existingModule, owner);
-        }
+        desc.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(facet.getFacetType(), memento));
+        // XXX here used to be a check not to unregister from owner == this, but as long as it was commented out, just
+        // use a method that unregisters from all owners at once.
+        new ModuleRepositoryFacade(myRepository).unregisterModule(existingModule);
       }
       desc.setId(jdkId);
     } else {

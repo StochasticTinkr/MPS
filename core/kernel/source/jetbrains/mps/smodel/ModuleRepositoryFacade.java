@@ -303,7 +303,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
     } else {
       throw new IllegalArgumentException("Unknown module " + handle.getFile().getName());
     }
-    AbstractModule actualRepoModule = registerModule(instance, instance instanceof Generator ? ((Generator) instance).getSourceLanguage(): owner);
+    AbstractModule actualRepoModule = registerModule(instance, owner);
     return actualRepoModule;
   }
 
@@ -341,6 +341,9 @@ public final class ModuleRepositoryFacade implements CoreComponent {
       // XXX for the time being, we register generator modules only *after* respective source language module, although
       //     generally we shall not insist on the ordering (generator could obtain source language lazily, not at construction time,
       //     or we can make up a proxy Language instance, and replace it with real once proper module comes to the repository).
+      // XXX FWIW, MPSModuleRepository.unregisterModule and unregisterModules keep symmetric knowledge what generator modules to remove along with the language
+      //     i.e. here we assume there could be no generator module w/o source language, there we remove all generators with the given source language (not
+      //     'directly owned' only).
       String msg =
           String.format("Can't register generator %s for not yet known language module %s", descriptor.getNamespace(), descriptor.getSourceLanguage());
       throw new IllegalStateException(msg);

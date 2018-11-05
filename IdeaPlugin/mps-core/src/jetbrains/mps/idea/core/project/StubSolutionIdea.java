@@ -106,13 +106,10 @@ public abstract class StubSolutionIdea extends StubSolution {
     ModuleId jdkId = ModuleId.regular(UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
     SModule jdkModule = repository.getModule(jdkId);
     if (jdkModule != null) {
-      Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(new ModuleRepositoryFacade(repository).getModuleOwners(jdkModule));
-      for (MPSModuleOwner owner : owners) {
-        // FIXME unregister leads to warnings in ModuleUpdater.updateAllEdges()
-        // we register it back in the same write action but listener has the time to see the bad state:
-        // JDK module is missing and a lot depends on it
-        repository.unregisterModule(jdkModule, owner);
-      }
+      // FIXME unregister leads to warnings in ModuleUpdater.updateAllEdges()
+      // we register it back in the same write action but listener has the time to see the bad state:
+      // JDK module is missing and a lot depends on it
+      new ModuleRepositoryFacade(repository).unregisterModule(jdkModule);
     }
 
     descriptor.setId(jdkId);

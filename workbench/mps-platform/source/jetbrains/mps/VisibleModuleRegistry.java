@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,12 +45,10 @@ public class VisibleModuleRegistry implements ApplicationComponent {
     //project modules
     //contributed by plugin
     if (module.getRepository() != null) {
+      // FWIW, getModuleOwners checks read access
       Set<MPSModuleOwner> moduleOwners = new ModelAccessHelper(module.getRepository()).runReadAction(
           () -> new ModuleRepositoryFacade(module.getRepository()).getModuleOwners(module));
       for (MPSModuleOwner owner : moduleOwners) {
-        if (owner instanceof Language) {
-          return isVisible((Language) owner);
-        }
         if (!owner.isHidden()) {
           return true;
         }

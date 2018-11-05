@@ -17,7 +17,6 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.library.SLibrary;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -47,11 +46,8 @@ public final class RootClassloaderLookup implements Supplier<ClassLoader> {
       return ReloadableModule.class.getClassLoader();
     }
     repository.getModelAccess().checkReadAccess();
-    // FIXME this comes from Generator.getRootClassLoader(), we imply generator modules are owned by their languages (which is true now,
-    //       see MRF#instantiateModule()), and that they come from the same SLibrary as their languages (not necessarily true, though it's
-    //       quite hard to craft standalone generator module at the moment)
-    SModule m = myModule instanceof Generator ? ((Generator) myModule).getSourceLanguage() : myModule;
-    Set<MPSModuleOwner> moduleOwners = ((MPSModuleRepository) repository).getOwners(m);
+    // XXX may want to refactor this to ModuleRepositoryFacade() to hide getOwners internals of an SRepository
+    Set<MPSModuleOwner> moduleOwners = ((MPSModuleRepository) repository).getOwners(myModule);
     for (MPSModuleOwner owner : moduleOwners) {
       if (owner instanceof SLibrary) {
         ClassLoader classLoader = ((SLibrary) owner).getPluginClassLoader();

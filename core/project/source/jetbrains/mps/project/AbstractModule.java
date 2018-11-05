@@ -264,6 +264,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   //todo should be replaced with events
+  // FIXME check if we always supply same MD instance module already has (it seems that the method is merely a means to tell 'reload state from memory/MD' after
+  //       MD has been changed.
+  // FIXME descive what happens module identity/reference is changed in the new MD
   public final void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
     setModuleDescriptor(moduleDescriptor, true);
   }

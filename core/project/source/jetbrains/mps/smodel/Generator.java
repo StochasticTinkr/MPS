@@ -88,7 +88,20 @@ public class Generator extends ReloadableModuleBase {
   }
 
   @Override
+  public void attach(@NotNull SRepository repository) {
+    super.attach(repository);
+    mySourceLanguage.register(this);
+  }
+
+  @Override
+  public void dispose() {
+    mySourceLanguage.unregister(this);
+    super.dispose();
+  }
+
+  @Override
   public boolean isPackaged() {
+    // XXX valid only for generators that are part of language module
     return getSourceLanguage().isPackaged();
   }
 

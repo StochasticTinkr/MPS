@@ -210,6 +210,21 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       throw new IllegalArgumentException("Trying to unregister non-registered module: " + module);
     }
 
+    if (!myModuleToOwners.containsSecond(owner)) {
+      LOG.warn(String.format("Attempt to unlink module %s from unexpected owner %s", module, owner), new Throwable());
+      return false;
+    }
+
+    // XXX Here comes code complimentary to ModuleRepositoryFacade.newGeneratorInstance. Perhaps, shall get resided there?
+    //     I.e. we unregister not directly owned generators only (getOwnedGenerators()), but all generators associated with the language
+    //     Note, for external generator modules with a different owner (e.g. another SLibrary), we may face a warning, above. However,
+    //     once we have FCC generator modules, we would switch to getOwnedGenerators here
+    if (module instanceof Language) {
+      for (Generator g : ((Language) module).getGenerators()) {
+        unregisterModule(g, owner);
+      }
+    }
+
     myModuleToOwners.removeLink(module, owner);
     boolean remove = myModuleToOwners.getByFirst(module).isEmpty();
     if (remove) {

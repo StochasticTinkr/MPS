@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,7 @@ public final class TestLanguage extends Language {
       // FIXME ModuleRepositoryFacade shall deal with SRepository instance and keep the knowledge what to do with a registered module,
       // shall not duplicate it here. MRF shall instantiate module instance classes (won't need TestLanguage nor public Generator)
       for (GeneratorDescriptor gd : descriptor.getGenerators()) {
-        repo.registerModule(new Generator(language, gd), language);
+        repo.registerModule(new Generator(language, gd), moduleOwner);
       }
     }
     return language;

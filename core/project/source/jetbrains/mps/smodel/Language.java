@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
-import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -58,8 +57,7 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class Language extends ReloadableModuleBase implements MPSModuleOwner, ReloadableModule {
-  private static final Logger LOG = LogManager.getLogger(Language.class);
+public class Language extends ReloadableModuleBase implements ReloadableModule {
 
   /**
    * Default, although not mandatory location we save our models to.
@@ -74,6 +72,8 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   public static final String LEGACY_LANGUAGE_MODELS = "languageModels";
 
   @NotNull private LanguageDescriptor myLanguageDescriptor;
+  // modifications are guarded with model write lock, assertCanChange()
+  private final List<Generator> myAttachedGenerators = new ArrayList<>(2);
 
   protected Language(@NotNull LanguageDescriptor descriptor, @Nullable IFile file) {
     super(file);
@@ -190,11 +190,19 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   /*
    * Update repository generator modules associated with this language with descriptors known to the language (registers new generators, if necessary)
+   * This is another place in addition to ModulesMiner that knows about language-generator MD containment
    */
   private void revalidateGenerators() {
+    // Fair implementation shall deal with getOwnedGenerators() only, however, at the moment, Generator module needs its source Language module
+    // and it's tricky to write external code that would deal with standalone/external generators when language's MD changes (there's no proper notification
+    // mechanism or anything else to react to MD change). That's why we control all generators associated with the language here.
+    //
+    // Another important note here is that getOwnedGenerators() in its present state may not give proper answer (e.g. if a changed MD doesn't list a generator
+    // module that has been previously exposed
     LinkedList<Generator> existingGenerators = new LinkedList<>(getGenerators());
 
     SRepositoryExt moduleRepository = (SRepositoryExt) getRepository();
+    ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(moduleRepository);
     for (GeneratorDescriptor nextDescriptor : myLanguageDescriptor.getGenerators()) {
       Generator nextGenerator = null;
       for (Iterator<Generator> it = existingGenerators.iterator(); it.hasNext(); ) {
@@ -212,18 +220,32 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       if (nextGenerator != null) {
         nextGenerator.updateGeneratorDescriptor(nextDescriptor);
       } else {
+        // new generator is registered with the same owners as this language
         Generator generator = new Generator(this, nextDescriptor);
-        moduleRepository.registerModule(generator, this);
+        for (MPSModuleOwner moduleOwner : mrf.getModuleOwners(this)) {
+          moduleRepository.registerModule(generator, moduleOwner);
+        }
       }
     }
+    // stale generator modules are unregistered from all owners
+    // here we assume generator modules could not exist without their language (which is true now provided Generator cons takes Language instance)
+    // therefore we unregister even generator modules the language doesn't own (see existingGenerators initialization, above).
     for (Generator stale : existingGenerators) {
-      moduleRepository.unregisterModule(stale, this);
+      mrf.unregisterModule(stale);
     }
   }
 
   @Override
   public void dispose() {
-    new ModuleRepositoryFacade(getRepository()).unregisterModules(this);
+    // though MPSModuleRepository.doUnregisterModule() cares to unregister language's generators properly, seems it
+    // doesn't hurt to try to unregister them here as well. Either it would end up as no-op for an empty collection, or would keep
+    // repository consistent (in case dispose() has been reached not through MPSModuleRepository)
+    final SRepository repo = getRepository();
+    if (repo != null) {
+      final ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(repo);
+      // see revalidateGenerators(), above, for reasons why we unregister all associated generators, not only directly owned.
+      getGenerators().forEach(mrf::unregisterModule);
+    }
     super.dispose();
   }
 
@@ -264,21 +286,17 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
    * @return all generators that treat this language as their source one.
    */
   public Collection<Generator> getGenerators() {
-    SRepository repo = getRepository();
-    if (repo == null) {
-      return Collections.emptyList();
-    }
-    // Language module doesn't track Generator modules it is owner to. Instead, it relies on a repository
-    // to know actual set of generators. I expect Language to cease being module owner once Generators are full-fledged stand-alone
-    // modules and get into repository without help of a language module.
-    // OTOH, I don't have strong objection against a pattern when a subordinate registers with its master, and master keeps track of
-    // subordinates (e.g. new Generator(Language source) might tell source.iAmYourServant(this), which would keep collection of Generators
-    // so that we don't need to go into repository). It just feels more flexible when the two are not bound too tightly (with expense of repository access).
-    return new ModuleRepositoryFacade(repo).getModules(this, Generator.class);
+    assertCanRead();
+    // Language module now tracks Generator modules it is owner to. Generator modules, once attached to a repo, tell their source language they are here
+    // with #register(Generator), and tell they are gone with #unregister(Generator).
+    return new ArrayList<>(myAttachedGenerators);
   }
 
   /**
    * PROVISIONAL API, DON'T USE UNLESS YOU'RE 100% SURE WHAT IS THE REASON FOR THAT, AND WHAT'S THE (UPCOMING) DIFFERENCE WITH {@link #getGenerators()}
+   * NOTE: BE CAREFUL WHEN INVOKED FROM A CODE THAT REACTS TO MODULE DESCRIPTOR CHANGES
+   *       if invoked with a changed MD, gives state according to MD contents, and not the one exposed in the repository (think about scenario when
+   *       a repo-registered, language-owned generator has been removed from MD. This method would give empty set despite the fact generator module is there)
    * @return generators declared and controlled by this language module.
    */
   public Collection<Generator> getOwnedGenerators() {
@@ -288,7 +306,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   @Override
   public void rename(@NotNull String newModuleName) throws DescriptorTargetFileAlreadyExistsException {
-    for (Generator g : getGenerators()) {
+    for (Generator g : getOwnedGenerators()) {
       g.rename(newModuleName);
     }
     super.rename(newModuleName);
@@ -463,11 +481,17 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 //    return targetLanguage;
 //  }
 
-  @Override
-  public boolean isHidden() {
-    return false;
-  }
 
+  /*package*/ void register(@NotNull Generator generator) {
+    assertCanChange();
+    myAttachedGenerators.add(generator);
+  }
+  /*package*/ void unregister(@NotNull Generator generator) {
+    assertCanChange();
+    if (!myAttachedGenerators.remove(generator)) {
+      throw new IllegalStateException(String.format("Generator %s has not been previously registered with the language %s", generator.getModuleName(), getModuleName()));
+    }
+  }
 
   public static class LanguageModelsAutoImports extends jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor {
     @Override
