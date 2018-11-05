@@ -120,7 +120,6 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     SNodeAccessUtil.setInstance(new SNodeAccessUtilImpl());
     // in fact, could be part of PersistenceRegistry to minimize number of components. OTOH, complicates access
     // to the instance, findComponent(PersistenceRegistry.class).getDataSourceService() is longer than just findComponent(DataSourceFactoryRuleService.class)
-    init(new VFSManager());
     myDataSourceService = init(new DataSourceFactoryRuleService());
     myModelFactoryService = init(new ModelFactoryService());
     myPersistenceFacade = init(new PersistenceRegistry(myModelFactoryService, myDataSourceService));

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vfs;
 
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -24,31 +23,18 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 
-public class VFSManager implements CoreComponent {
+public class VFSManager {
   public static final String FILE_FS = "file";
   public static final String JAR_FS = "jar";
   public static final String JRT_FS = "jrt";
 
   private static final Logger LOG = LogManager.getLogger(VFSManager.class);
 
-  private static VFSManager INSTANCE;
+  private static VFSManager INSTANCE = new VFSManager();
   final private Map<String, FileSystem> myFileSystems = new HashMap<>();
 
   public static VFSManager getInstance() {
     return INSTANCE;
-  }
-
-  @Override
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("VFSManager is already initialized");
-    }
-    INSTANCE = this;
-  }
-
-  @Override
-  public void dispose() {
-    INSTANCE = null;
   }
 
   public void registerFS(@NotNull String fsId, @NotNull FileSystem fs) {
