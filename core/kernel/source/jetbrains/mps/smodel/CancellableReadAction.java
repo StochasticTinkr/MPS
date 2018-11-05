@@ -97,10 +97,11 @@ public abstract class CancellableReadAction implements Runnable {
         //   the only async call is cancel(), which deals with Clear state only (doesn't touch CancelRequested), hence ISE
         throw new IllegalStateException();
       }
+      return;
     }
     if (myCancelState.get() != CancelState.Clear) {
       // just curious if it's possible by any chance
-      throw new IllegalStateException();
+      throw new IllegalStateException(String.valueOf(myCancelState.get()));
     }
   }
 
