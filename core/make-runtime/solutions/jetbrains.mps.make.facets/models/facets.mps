@@ -35,6 +35,7 @@
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
+    <import index="7nyy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.refresh(MPS.Core/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -2009,13 +2010,13 @@
                                       <node concept="37vLTw" id="1p6u8bgqzIK" role="10QFUP">
                                         <ref role="3cqZAo" node="1p6u8bgqzII" resolve="fs" />
                                       </node>
-                                      <node concept="3uibUv" id="FjsiYEGaZC" role="10QFUM">
-                                        <ref role="3uigEE" to="4hrd:~IdeaFileSystem" resolve="IdeaFileSystem" />
+                                      <node concept="3uibUv" id="1p6u8bgvfkf" role="10QFUM">
+                                        <ref role="3uigEE" to="7nyy:~CachingFileSystem" resolve="CachingFileSystem" />
                                       </node>
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="taepSZ9rBg" role="2OqNvi">
-                                    <ref role="37wK5l" to="4hrd:~IdeaFileSystem.scheduleUpdateForWrittenFiles(java.lang.Iterable):void" resolve="scheduleUpdateForWrittenFiles" />
+                                    <ref role="37wK5l" to="7nyy:~CachingFileSystem.scheduleUpdateForWrittenFiles(java.lang.Iterable):void" resolve="scheduleUpdateForWrittenFiles" />
                                     <node concept="37vLTw" id="3GM_nagTrhj" role="37wK5m">
                                       <ref role="3cqZAo" node="taepSZ9r_u" resolve="writtenFiles" />
                                     </node>
@@ -2024,8 +2025,8 @@
                               </node>
                             </node>
                             <node concept="2ZW3vV" id="1p6u8bgq_WQ" role="3clFbw">
-                              <node concept="3uibUv" id="1p6u8bgqAox" role="2ZW6by">
-                                <ref role="3uigEE" to="4hrd:~IdeaFileSystem" resolve="IdeaFileSystem" />
+                              <node concept="3uibUv" id="1p6u8bgveVr" role="2ZW6by">
+                                <ref role="3uigEE" to="7nyy:~CachingFileSystem" resolve="CachingFileSystem" />
                               </node>
                               <node concept="37vLTw" id="1p6u8bgq_ov" role="2ZW6bz">
                                 <ref role="3cqZAo" node="1p6u8bgqzII" resolve="fs" />

@@ -26,7 +26,7 @@ import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -120,8 +120,8 @@ public class Make_Facet extends IFacet.Stub {
                       }
                     });
                     FileSystem fs = FileSystem.getInstance();
-                    if (fs instanceof IdeaFileSystem) {
-                      ((IdeaFileSystem) fs).scheduleUpdateForWrittenFiles(writtenFiles);
+                    if (fs instanceof CachingFileSystem) {
+                      ((CachingFileSystem) fs).scheduleUpdateForWrittenFiles(writtenFiles);
                     }
                   }
                 });

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs.refresh;
 
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -35,4 +36,6 @@ public interface CachingFileSystem extends jetbrains.mps.vfs.FileSystem {
   void addListener(@NotNull FileSystemListener listener);
 
   void removeListener(@NotNull FileSystemListener listener);
+
+  void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
 }
