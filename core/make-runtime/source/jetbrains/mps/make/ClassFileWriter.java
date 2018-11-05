@@ -91,7 +91,7 @@ public class ClassFileWriter {
         if (!cp.endsWith(".jar") && !cp.endsWith("/") && !cp.endsWith("\\")) {
           cp = cp + "/";
         }
-        urls.add(new URL("file://" + cp));
+        urls.add(new File(cp).toURI().toURL());
         //urls.add(new URL(cp)); - enable this after migrating to URLs
       } catch (MalformedURLException e) {
         e.printStackTrace();
