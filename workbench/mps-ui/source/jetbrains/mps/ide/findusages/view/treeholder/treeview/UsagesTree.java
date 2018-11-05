@@ -34,7 +34,6 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelReadRunnable;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -46,7 +45,6 @@ import javax.swing.KeyStroke;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
 import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreePath;
 import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
@@ -323,8 +321,10 @@ public class UsagesTree extends MPSTree {
 
       @Override
       public int compare(UsagesTreeNode o1, UsagesTreeNode o2) {
-        if (isIgnored(o1) || isIgnored(o2)) {
-          return 0;
+        boolean i1 = isIgnored(o1);
+        boolean i2 = isIgnored(o2);
+        if (i1 || i2) {
+          return i1 ? (i2 ? 0 : -1) : 1;
         }
         String s1 = o1.getUserObject().getData().getPlainText();
         String s2 = o2.getUserObject().getData().getPlainText();
