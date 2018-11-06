@@ -4568,6 +4568,9 @@
           <node concept="Xl_RD" id="7CnofvVUzWi" role="3g7hyw">
             <property role="Xl_RC" value="mps-core.jar" />
           </node>
+          <node concept="Xl_RD" id="6_pApG61kWg" role="3g7hyw">
+            <property role="Xl_RC" value="mps-references.jar" />
+          </node>
           <node concept="Xl_RD" id="7CnofvVUzWm" role="3g7hyw">
             <property role="Xl_RC" value="mps-tool.jar" />
           </node>

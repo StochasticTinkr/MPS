@@ -36,7 +36,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public abstract class MergeDriverPacker {
   private static final Logger LOG = LogManager.getLogger(MergeDriverPacker.class);
   private static MergeDriverPacker ourInstance;
-  private static final Iterable<String> mpsLibJars = Arrays.asList("mps-closures.jar", "mps-collections.jar", "mps-tuples.jar", "mps-core.jar", "mps-openapi.jar", "mps-behavior-api.jar", "mps-behavior-runtime.jar", "mps-logging.jar", "mps-annotations.jar", "mps-boot-util.jar");
+  private static final Iterable<String> mpsLibJars = Arrays.asList("mps-closures.jar", "mps-collections.jar", "mps-tuples.jar", "mps-core.jar", "mps-openapi.jar", "mps-references.jar", "mps-behavior-api.jar", "mps-behavior-runtime.jar", "mps-logging.jar", "mps-annotations.jar", "mps-boot-util.jar");
   protected static Iterable<String> mpsAddJars = Arrays.asList("ext" + File.separator + "diffutils-1.2.1.jar");
   private static final Iterable<String> ideaLibJars = Arrays.asList("asm-all-7.0-beta.jar", "xstream-1.4.10.jar", "guava-25.1-jre.jar", "jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar");
   private static final String MERGEDRIVER_PATH = "mergedriver";

@@ -11846,6 +11846,27 @@
                 </node>
               </node>
             </node>
+            <node concept="2Vbh7Z" id="6_pApG5ZLeY" role="2VaTZU">
+              <node concept="2pNNFK" id="6_pApG5ZLha" role="2Vbh7K">
+                <property role="2pNNFO" value="jar" />
+                <node concept="2pNNFK" id="6_pApG5ZLhb" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNUuL" id="6_pApG5ZLhc" role="2pNNFR">
+                    <property role="2pNUuO" value="dir" />
+                    <node concept="2pMdtt" id="6_pApG5ZLhd" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/mps-references" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNUuL" id="6_pApG5ZLhe" role="2pNNFR">
+                  <property role="2pNUuO" value="destfile" />
+                  <node concept="2pMdtt" id="6_pApG5ZLhf" role="2pMdts">
+                    <property role="2pMdty" value="${build.tmp}/antTasks/mps-references.jar" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="2Vbh7Z" id="5mxyaMf$tqg" role="2VaTZU">
               <node concept="2pNNFK" id="5mxyaMf$tqh" role="2Vbh7K">
                 <property role="2pNNFO" value="jar" />
