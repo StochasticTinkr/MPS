@@ -14,6 +14,7 @@ import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.language.SDataType;
 import jetbrains.mps.smodel.adapter.structure.types.SEnumerationAdapter;
 import jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes;
+import jetbrains.mps.references.Reference;
 
 public class SPropertyOperations {
   public static String assign(SNode node, SProperty property, String propertyValue) {
@@ -211,5 +212,51 @@ public class SPropertyOperations {
       return type.fromString(string);
     }
     return string;
+  }
+
+  public static Reference<String> stringPropRef(final SNode node, final SProperty property) {
+    return new Reference<String>() {
+      @Override
+      public String get() {
+        return SPropertyOperations.getString(node, property);
+      }
+      @Override
+      public void set(String propertyValue) {
+        SPropertyOperations.set(node, property, propertyValue);
+      }
+    };
+  }
+  public static Reference<Integer> intPropRef(final SNode node, final SProperty property) {
+    return new Reference<Integer>() {
+      @Override
+      public Integer get() {
+        return SPropertyOperations.getInteger(node, property);
+      }
+      @Override
+      public void set(Integer propertyValue) {
+        SPropertyOperations.set(node, property, propertyValue);
+      }
+    };
+  }
+  public static Reference<Boolean> booleanPropRef(final SNode node, final SProperty property) {
+    return new Reference<Boolean>() {
+      @Override
+      public Boolean get() {
+        return SPropertyOperations.getBoolean(node, property);
+      }
+      @Override
+      public void set(Boolean propertyValue) {
+        SPropertyOperations.set(node, property, propertyValue);
+      }
+    };
+  }
+  public static String plusAssignStringProp(final SNode node, final SProperty property, Object value) {
+    String propertyValue = getString(node, property);
+    if (propertyValue == null) {
+      propertyValue = "";
+    }
+    propertyValue += value;
+    set(node, property, propertyValue);
+    return propertyValue;
   }
 }

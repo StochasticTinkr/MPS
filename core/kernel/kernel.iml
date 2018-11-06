@@ -33,5 +33,6 @@
     <orderEntry type="module" module-name="mps-messaging" exported="" />
     <orderEntry type="module" module-name="startup-util" exported="" />
     <orderEntry type="module" module-name="environment" scope="TEST" />
+    <orderEntry type="module" module-name="baseLanguage-runtime" exported="" />
   </component>
 </module>

@@ -4,7 +4,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.DismissTopMappingRuleException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
@@ -14,7 +13,6 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
-    <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReductionRuleQueryContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.QueriesGenerated" />
@@ -521,7 +519,6 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.DataTypeDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.PropertyDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />

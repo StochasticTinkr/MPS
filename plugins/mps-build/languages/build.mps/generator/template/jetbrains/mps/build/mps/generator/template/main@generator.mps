@@ -2,14 +2,14 @@
 <model ref="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
     <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="7" />
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="2" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -865,6 +865,27 @@
                 </node>
               </node>
               <node concept="3GX2aA" id="25Zyg0OdzOD" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30QchW" id="4FAOcOiQ1$v" role="30SoJX">
+      <ref role="30HIoZ" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
+      <node concept="j$656" id="4FAOcOiQ2yL" role="1fOSGc">
+        <ref role="v9R2y" node="4FAOcOiOU4W" resolve="weave_MpsTips" />
+      </node>
+      <node concept="3gB$ML" id="4FAOcOiQ1$x" role="3gCiVm">
+        <node concept="3clFbS" id="4FAOcOiQ1$y" role="2VODD2">
+          <node concept="3clFbF" id="4FAOcOiQ2yR" role="3cqZAp">
+            <node concept="2OqwBi" id="4FAOcOiQ2Jt" role="3clFbG">
+              <node concept="1iwH7S" id="4FAOcOiQ2yQ" role="2Oq$k0" />
+              <node concept="2f_y7m" id="4FAOcOiQ2Vf" role="2OqNvi">
+                <node concept="2OqwBi" id="4FAOcOiQ38v" role="2f_y78">
+                  <node concept="30H73N" id="4FAOcOiQ2YL" role="2Oq$k0" />
+                  <node concept="2Rxl7S" id="4FAOcOiQ3q$" role="2OqNvi" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -3364,27 +3385,6 @@
                 </node>
                 <node concept="3Tqbb2" id="3LQl9buGSO6" role="1Lm7xW">
                   <ref role="ehGHo" to="kdzh:6CY5wCYZA9O" resolve="BuildMpsLayout_ModuleXml" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="30QchW" id="4FAOcOiQ1$v" role="30SoJX">
-      <ref role="30HIoZ" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
-      <node concept="j$656" id="4FAOcOiQ2yL" role="1fOSGc">
-        <ref role="v9R2y" node="4FAOcOiOU4W" resolve="weave_MpsTips" />
-      </node>
-      <node concept="3gB$ML" id="4FAOcOiQ1$x" role="3gCiVm">
-        <node concept="3clFbS" id="4FAOcOiQ1$y" role="2VODD2">
-          <node concept="3clFbF" id="4FAOcOiQ2yR" role="3cqZAp">
-            <node concept="2OqwBi" id="4FAOcOiQ2Jt" role="3clFbG">
-              <node concept="1iwH7S" id="4FAOcOiQ2yQ" role="2Oq$k0" />
-              <node concept="2f_y7m" id="4FAOcOiQ2Vf" role="2OqNvi">
-                <node concept="2OqwBi" id="4FAOcOiQ38v" role="2f_y78">
-                  <node concept="30H73N" id="4FAOcOiQ2YL" role="2Oq$k0" />
-                  <node concept="2Rxl7S" id="4FAOcOiQ3q$" role="2OqNvi" />
                 </node>
               </node>
             </node>
@@ -6757,11 +6757,6 @@
             </node>
           </node>
           <node concept="398223" id="2Wb4ucKra9d" role="39821P">
-            <node concept="3_J27D" id="2Wb4ucKra9f" role="Nbhlr">
-              <node concept="3Mxwew" id="2Wb4ucKraNb" role="3MwsjC">
-                <property role="3MwjfP" value="languages" />
-              </node>
-            </node>
             <node concept="1W57fq" id="7omqYZ_MRou" role="lGtFl">
               <node concept="3IZrLx" id="7omqYZ_MRov" role="3IZSJc">
                 <node concept="3clFbS" id="7omqYZ_MRow" role="2VODD2">
@@ -6796,19 +6791,24 @@
                 <ref role="ehGHo" to="kdzh:5HVSRHdUrHI" resolve="BuildMpsLayout_Plugin" />
               </node>
             </node>
+            <node concept="3_J27D" id="2Wb4ucKra9f" role="Nbhlr">
+              <node concept="3Mxwew" id="2Wb4ucKraNb" role="3MwsjC">
+                <property role="3MwjfP" value="languages" />
+              </node>
+            </node>
             <node concept="1WS0z7" id="2Wb4ucKrIVm" role="lGtFl">
               <node concept="3JmXsc" id="2Wb4ucKrIVp" role="3Jn$fo">
                 <node concept="3clFbS" id="2Wb4ucKrIVs" role="2VODD2">
                   <node concept="3clFbF" id="2Wb4ucKrJbb" role="3cqZAp">
                     <node concept="2OqwBi" id="2Wb4ucKrJbd" role="3clFbG">
-                      <node concept="3Tsc0h" id="2Wb4ucKrJbh" role="2OqNvi">
-                        <ref role="3TtcxE" to="kdzh:5HVSRHdUrJE" resolve="content" />
-                      </node>
                       <node concept="2OqwBi" id="7omqYZA9gAK" role="2Oq$k0">
                         <node concept="30H73N" id="7omqYZA9go_" role="2Oq$k0" />
                         <node concept="3TrEf2" id="7omqYZA9i5m" role="2OqNvi">
                           <ref role="3Tt5mk" to="kdzh:5HVSRHdV_$p" resolve="plugin" />
                         </node>
+                      </node>
+                      <node concept="3Tsc0h" id="2Wb4ucKrJbh" role="2OqNvi">
+                        <ref role="3TtcxE" to="kdzh:5HVSRHdUrJE" resolve="content" />
                       </node>
                     </node>
                   </node>
@@ -11964,6 +11964,27 @@
                   <property role="2pNUuO" value="destfile" />
                   <node concept="2pMdtt" id="5mxyaMfDLX_" role="2pMdts">
                     <property role="2pMdty" value="${build.tmp}/antTasks/mps-tuples.jar" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2Vbh7Z" id="6_pApG5ZLeY" role="2VaTZU">
+              <node concept="2pNNFK" id="6_pApG5ZLha" role="2Vbh7K">
+                <property role="2pNNFO" value="jar" />
+                <node concept="2pNNFK" id="6_pApG5ZLhb" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNUuL" id="6_pApG5ZLhc" role="2pNNFR">
+                    <property role="2pNUuO" value="dir" />
+                    <node concept="2pMdtt" id="6_pApG5ZLhd" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/mps-references" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNUuL" id="6_pApG5ZLhe" role="2pNNFR">
+                  <property role="2pNUuO" value="destfile" />
+                  <node concept="2pMdtt" id="6_pApG5ZLhf" role="2pMdts">
+                    <property role="2pMdty" value="${build.tmp}/antTasks/mps-references.jar" />
                   </node>
                 </node>
               </node>
