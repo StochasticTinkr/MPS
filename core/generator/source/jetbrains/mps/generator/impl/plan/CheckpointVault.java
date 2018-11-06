@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,6 +107,15 @@ public class CheckpointVault {
     }
     return myCheckpoints;
   }
+
+  @Nullable
+  /*package*/ ModelCheckpoints getCheckpointsIfOwns(SModel model) {
+    if (myCheckpoints != null && myCheckpoints.findStateWith(model) != null) {
+      return myCheckpoints;
+    }
+    return null;
+  }
+
 
   /**
    * Replace matching, add new checkpoints, do not touch persisted for non-matching cp identities.

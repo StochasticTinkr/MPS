@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,6 +88,27 @@ public class CrossModelEnvironment {
    */
   @Nullable
   public ModelCheckpoints getState(@NotNull SModel model) {
+    if (isCheckpointModel(model)) {
+      // FIXME provisional fix.
+      // Assume if input comes from a checkpoint, it's the one already loaded, look at
+      // transients first, then among persisted. Perhaps, shall extract CP identity from the model and use it to find proper MCp.
+      // Alternatively, shall keep model reference of the origin along with CP model, so that can navigate to an appropriate MCp/CpV
+      // using model reference as for the general scenario. However, don't want to persist origin model ref in a CP model, and didn't
+      // come up with a nice way to satisfy that (filtering model attributes are not to my liking).
+      for (ModelCheckpoints mcp : myTransientCheckpoints.values()) {
+        CheckpointState cps = mcp.findStateWith(model);
+        if (cps != null) {
+          return mcp;
+        }
+      }
+      for (CheckpointVault cpv : myPersistedCheckpoints.values()) {
+        ModelCheckpoints mcp = cpv.getCheckpointsIfOwns(model);
+        if (mcp != null) {
+          return mcp;
+        }
+      }
+      return null;
+    }
     ModelCheckpoints mcp = getTransientCheckpoints(model.getReference());
     if (mcp != null) {
       return mcp;

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -80,6 +81,17 @@ public class ModelCheckpoints {
     }
     return null;
   }
+
+  @Nullable
+  /*package*/ CheckpointState findStateWith(SModel model) {
+    for (CheckpointState cps : myStates) {
+      if (cps.getCheckpointModel().equals(model)) {
+        return cps;
+      }
+    }
+    return null;
+  }
+
 
   /**
    * Two models are transformed independently and their generation plans not necessarily identical. The moment we'd like to get output
