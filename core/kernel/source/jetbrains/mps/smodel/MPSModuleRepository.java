@@ -163,6 +163,16 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     }
   }
 
+  /**
+   * @deprecated use of this method is discouraged as it's specific to this {@code SRepository} implementation.
+   *             It shall not get exposed in {@code SRepositoryExt} unless there's thorough justification.
+   *             The only rationale behind this method was slow 'invalidateCaches()' when multiple modules were
+   *             un-registered during project close/MPS shutdown. Now, with no-op invalidateCaches(), there's
+   *             no performance gain in using this method.
+   *             However, might be reasonable to update {@code SRepositoryExt} API to accommodate collection instead of a single object
+   *             for register/unregister operations. The method left as a reminder.
+   */
+  @Deprecated
   public void unregisterModules(Collection<SModule> modules, MPSModuleOwner owner) {
     Collection<SModule> modulesToDispose = new ArrayList<>();
     for (SModule module : modules) {
@@ -235,7 +245,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   }
 
   public Set<SModule> getModules(MPSModuleOwner moduleOwner) {
-    //todo assertCanRead();
+    getModelAccess().checkReadAccess();
 
     return Collections.unmodifiableSet(myModuleToOwners.getBySecond(moduleOwner));
   }
