@@ -119,6 +119,7 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
   @Override
   public void moduleLoaded(ModulePath modulePath, @NotNull SModule module) {
     if (module instanceof AbstractModule) {
+      // FIXME use FS from Project/FileBasedProject, rather than that of the module
       FileSystem fileSystem = ((AbstractModule) module).getFileSystem();
       myDescriptorChangeListener.track(fileSystem.getFile(modulePath.getPath()), module);
     }

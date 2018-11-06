@@ -149,7 +149,7 @@ public final class ModulesMiner {
 
   private boolean trySourceModuleDescriptorsFromFile(IFile file) {
     assert !file.isDirectory();
-    if (isSourceModuleFile(file)) {
+    if (isSourceModule(file)) {
       ModuleDescriptor moduleDescriptor = loadSourceModuleDescriptor(file);
       if (moduleDescriptor != null) {
         processExcludes(file, moduleDescriptor);
@@ -551,6 +551,15 @@ public final class ModulesMiner {
     }
   }
 
+  /*package*/ boolean isSourceModule(IFile file) {
+    return !file.isDirectory() && myDescriptorIOFacade.fromFileType(file) != null;
+  }
+
+  /**
+   * @deprecated no static instance access!
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   static boolean isSourceModuleFile(IFile file) {
     return !file.isDirectory() && DescriptorIOFacade.getInstance().fromFileType(file) != null;
   }

@@ -20,6 +20,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileListener;
 import jetbrains.mps.vfs.FileListeningPreferences;
 import jetbrains.mps.vfs.FileSystemEvent;
@@ -30,6 +31,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
@@ -79,6 +81,7 @@ public class ModuleFileTracker implements FileListener {
     Set<SModuleReference> modules = myFile2Module.computeIfAbsent(file, k -> new THashSet<>());
     boolean added = modules.add(module.getModuleReference());
     if (added && myListenToTrackedFiles) {
+      // FIXME we shall listen to file only once, not for each module recorded!
       file.addListener(this);
     }
   }
@@ -92,7 +95,7 @@ public class ModuleFileTracker implements FileListener {
     final Set<IFile> files2Remove = new THashSet<>();
 
     for (IFile moduleFile : myFile2Module.keySet()) {
-      if (moduleFile.toPath().startsWith(file.toPath())) {
+      if (isAncestor(file, moduleFile)) {
         files2Remove.add(moduleFile);
       }
     }
@@ -113,11 +116,15 @@ public class ModuleFileTracker implements FileListener {
    * @param module module read from the file
    */
   public void forget(@NotNull IFile file, @NotNull SModule module) {
+    forget(file, module.getModuleReference());
+  }
+
+  public void forget(@NotNull IFile file, @NotNull SModuleReference module) {
     Set<SModuleReference> modules = myFile2Module.get(file);
     if (modules == null) {
       return;
     }
-    if (modules.remove(module.getModuleReference())) {
+    if (modules.remove(module)) {
       if (modules.isEmpty()) {
         myFile2Module.remove(file);
         if (myListenToTrackedFiles) {
@@ -127,14 +134,63 @@ public class ModuleFileTracker implements FileListener {
     }
   }
 
+  // unlike getTrackedFor, doesn't look at exact file matches, rather at paths with supplied files as ancestors
+  // return pairs represent module and its originating file, note that the file may contain more than one module
+  // i.e. that there might be few map entries with different keys but same value.
+  // note, values of the returned map are not necessarily files of supplied collection, but exact module descriptor files recorded earlier with #track()
+  // use Map here just not to use Pair<SModuleReference,IFile> or custom struct-like class, and to benefit from keySet().remove() that clears entries as well.
+  public Map<SModuleReference, IFile> getAffectedBy(Collection<IFile> files) {
+    // though we expect more than 1 module per file, we don't expect module to be in more than 1 file
+    THashMap<SModuleReference, IFile> rv = new THashMap<>();
+    for (IFile moduleFile : myFile2Module.keySet()) {
+      // if this myFile2Module x files iteration turns out to be slow, consider isAncestor unwrap and pre-calculate Path objects for supplied files
+      for (IFile f : files) {
+        if (isAncestor(f, moduleFile)) {
+          // assume each module is tracked only once in this MFT (i.e. no overwrite for rv keys)
+          myFile2Module.get(moduleFile).forEach(mr -> rv.put(mr, moduleFile));
+          // we don't care if the given moduleFile is affected by more than 1 file from supplied collection
+          break;
+        }
+      }
+    }
+    return rv;
+  }
+
+  // tells if f2 resides under f1, i.e. if f1 is ancestor of f2
+  // FIXME the method has to be part of IFile API. However, not clear whether we shall check for existence, how to approach canonical paths,
+  //       and how to make sure we didn't error on 'file/pathLong'.startsWith('file/path'). Perhaps, would be better to have isAncestor
+  //       for Path objects then (so that one knows it's not about existence or canonical)
+  private static boolean isAncestor(IFile f1, IFile f2) {
+    return f1.toPath().startsWith(f2.toPath());
+  }
+
+
+  // looks up tracked md files from supplied collection, and tells pairs <module, md file>
+  public Map<SModuleReference, IFile> getTrackedFor(Collection<IFile> files) {
+//    files.stream().flatMap(f -> myFile2Module.getOrDefault(f, Collections.emptySet()).stream()).collect(Collectors.toSet());
+    final THashMap<SModuleReference, IFile> rv = new THashMap<>();
+    for (IFile f : files) {
+      final Set<SModuleReference> modules = myFile2Module.get(f);
+      if (modules != null) {
+        modules.forEach(mr -> rv.put(mr, f));
+      }
+    }
+    return rv;
+  }
+
+  /**
+   * @deprecated MFT shall not be file listener, shall refactor single subclass (can still delegate here, if found suitable, just cease to be file listener)
+   */
   @Override
+  @Deprecated
+  @ToRemove(version = 0)
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     myRepository.getModelAccess().runWriteAction(() -> {
       final Set<SModuleReference> modules2Remove = new THashSet<>();
       final Set<SModuleReference> modules2Reload = new THashSet<>();
       for (IFile file : event.getRemoved()) {
         for (IFile moduleFile : myFile2Module.keySet()) {
-          if (moduleFile.toPath().startsWith(file.toPath())) {
+          if (isAncestor(file, moduleFile)) {
             modules2Remove.addAll(myFile2Module.get(moduleFile));
           }
         }
