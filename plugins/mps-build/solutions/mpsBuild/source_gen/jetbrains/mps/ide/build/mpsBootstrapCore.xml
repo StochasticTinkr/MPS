@@ -6324,6 +6324,9 @@
     <jar destfile="${build.tmp}/antTasks/mps-tuples.jar">
       <fileset dir="${build.tmp}/java/out/mps-tuples" />
     </jar>
+    <jar destfile="${build.tmp}/antTasks/mps-references.jar">
+      <fileset dir="${build.tmp}/java/out/mps-references" />
+    </jar>
     <jar destfile="${build.tmp}/antTasks/mps-closures.jar">
       <fileset dir="${build.tmp}/java/out/mps-closures" />
     </jar>
