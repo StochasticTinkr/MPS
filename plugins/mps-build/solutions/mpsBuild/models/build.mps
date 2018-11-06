@@ -1119,6 +1119,10 @@
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="6S1jmf0xDGC" resolve="mps-tuples" />
       </node>
+      <node concept="nCB5N" id="6_pApG5U3WZ" role="nCB5Z">
+        <property role="1Sh$E4" value="true" />
+        <ref role="nCB5Y" node="1dsbP8r1mZ9" resolve="mps-references" />
+      </node>
       <node concept="nCB5N" id="3A27KL0TWjW" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="3A27KL0TKsc" resolve="mps-project" />
