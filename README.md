@@ -22,10 +22,10 @@ Building MPS from sources
 1. Clone MPS
 2. Open the project in [IntelliJ IDEA](http://www.jetbrains.com/idea) (either Community or Ultimate Edition)
 3. Attach JDK 8 to the project
-  * Main menu item "File -> Project Structure" opens the Project Structure dialog
-  * Under "Platform Settings -> SDK", make sure the JDK 8 or later is available
-  * In the Classpath tab of the JDK, make sure that the %JDK_HOME%/lib/tools.jar is available, it is required to build MPS
-4. Rebuild the project from the _Build_ menu (will take quite a while the first time)
+    1. Main menu item *File -> Project Structure* opens the Project Structure dialog
+    1. Under *Platform Settings -> SDK*, make sure the JDK 8 or later is available
+    1. In the Classpath tab of the JDK, make sure that the _%JDK_HOME%/lib/tools.jar_ is available, it is required to build MPS
+4. Rebuild the project from the _Build_ menu (it will take quite a while the first time)
 5. Run the _MPSLauncher_ run configuration in the _Run_ menu
 6. Once MPS starts, open the _MPS_ project (point MPS to the root folder of what you've cloned)
 
