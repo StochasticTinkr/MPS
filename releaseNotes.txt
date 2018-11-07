@@ -1,3 +1,0 @@
-New Features in MPS 2018.3
-
-See more on MPS web site: http://www.jetbrains.com/mps/whatsnew/index.html
