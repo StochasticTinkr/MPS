@@ -36,43 +36,20 @@ import java.net.URL;
 import java.util.List;
 
 /**
- * AP:
- * An abstraction of path names similar to the {@link java.io.File}.
- * Represents an abstract absolute path (or location) on disk (might be non-existent).
- * Moreover might represents a path to some archive + path within the archive (unlike the {@link java.io.File}).
- *
- * FIXME
-// * Another difference from the {@link java.io.File} is the one that this abstraction is supposed to be
-// * platform-independent (sic!) meaning that the path
- * @see #getPath() for an example
- * FIXME
+ * An abstraction of path names similar to the {@link java.nio.file.Path}.
+ * File may be obtained from a concrete file system or from VFSManager
+ * File.getPath() is os-independent.
+ * File.getPath() is absolute, do not store absolute paths in files. Instead, use MacroProcessor/QualifiedPath
+ * Path is not a global file identifier, see {@link jetbrains.mps.vfs.QualifiedPath}
  *
  * Also it is an MPS abstraction around the IDEA platform file system {@code com.intellij.openapi.vfs.VirtualFile}.
  * IDEA provides an intelligent caching mechanism which might boost up the file system traversal (comparing to the {@link java.io.File}).
- * @see CachingFile
- *
- * It has no fallback implementation base on {@link java.io.File},
- * however there is a special singleton class {@link jetbrains.mps.vfs.FileSystem} with
- * method #getFileByPath which creates a suitable instance of IFile.
- *
- * These mechanism nevertheless is deprecated and must not be used.
- *
- * From 3.4 you are supposed to use the direct implementing classes of IFile.
- *
- * //TODO continue
- *
- * AP: I suggest to continue using this interface because dropping it might cause too much pain.
- * As long as it is (technically speaking) our internal api, we are more or less free to change it.
- *
- * This class mixes two different issues (as well as the {@link java.io.File}): it works with paths (which are strings) and
- * also it accesses the physical fs from time to time. I'd rather split it up.
+ * See also {@link CachingFile}
  *
  * IFile must be immutable
  * we define it as a pathname abstraction. That means that we cannot rename the IFile, we can only rename something
  * that lies at this pathname on disk. The IFile itself must not be touched in any way. Otherwise it is cumbersome.
  * The alternative is to reconsider the IFile contract.
- *
- * AP
  */
 @Immutable
 public interface IFile {
