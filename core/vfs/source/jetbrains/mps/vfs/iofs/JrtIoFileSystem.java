@@ -15,17 +15,12 @@
  */
 package jetbrains.mps.vfs.iofs;
 
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-
-import java.io.File;
-import java.net.URI;
-import java.nio.file.FileSystems;
 
 /**
  * Path is [java_home]!/[module]/[file]
@@ -53,16 +48,8 @@ public class JrtIoFileSystem implements IFileSystem {
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
-    int jdkEndIndex = path.indexOf(JDK_PATH_SEPARATOR);
-    assert jdkEndIndex > 0;
-    String jdkPath = path.substring(0, jdkEndIndex);
-    String moduleAndFile = path.substring(jdkEndIndex + JDK_PATH_SEPARATOR.length() + 1);
-    int moduleEndIndex = moduleAndFile.indexOf(MODULE_PATH_SEPARATOR);
-    assert moduleEndIndex > 0;
-    String module = moduleAndFile.substring(0, moduleEndIndex);
-    String file = moduleAndFile.substring(moduleEndIndex + MODULE_PATH_SEPARATOR.length() + 1);
-
-    return new JrtIoFile(jdkPath, module, file, this);
+    JrtPath jrtPath = new JrtPath(path);
+    return new JrtIoFile(jrtPath.getJdkPath(), jrtPath.getModule(), jrtPath.getFile(), this);
   }
 
   @Override
@@ -80,4 +67,5 @@ public class JrtIoFileSystem implements IFileSystem {
     }
     return true;
   }
+
 }

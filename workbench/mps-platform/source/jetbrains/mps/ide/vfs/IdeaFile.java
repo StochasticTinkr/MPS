@@ -60,7 +60,7 @@ import java.util.Map;
  * That means that some IdeaFiles which point to the essentially the same place on fs, might not be equal in the sense
  * of the current #equals relation
  *
- * TODO rewrite using {@link Path}; rewrite {@link #getChildren(),#getDescendant(String)} behavior in the case of jar system
+ * TODO rewrite {@link #getChildren(),#getDescendant(String)} behavior in the case of jar system
  */
 @Immutable
 public class IdeaFile implements IFile, CachingFile {

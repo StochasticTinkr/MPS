@@ -22,6 +22,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.iofs.JrtIoFileSystem;
+import jetbrains.mps.vfs.iofs.JrtPath;
 import org.jetbrains.annotations.NotNull;
 
 public class JrtIdeaFileSystem implements ApplicationComponent, IFileSystem {
@@ -38,7 +39,8 @@ public class JrtIdeaFileSystem implements ApplicationComponent, IFileSystem {
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
-    return null;
+    JrtPath jrtPath = new JrtPath(path);
+    return new JrtIdeaFile(jrtPath.getJdkPath(), jrtPath.getModule(), jrtPath.getFile(), this);
   }
 
   @Override
