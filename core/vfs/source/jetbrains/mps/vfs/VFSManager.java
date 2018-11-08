@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs;
 
 import jetbrains.mps.vfs.iofs.JarIoFileSystem;
+import jetbrains.mps.vfs.iofs.JrtIoFileSystem;
 import jetbrains.mps.vfs.iofs.LocalIoFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -70,7 +71,7 @@ public class VFSManager {
         case JAR_FS:
           return JarIoFileSystem.getInstance();
         case JRT_FS:
-          throw new IllegalArgumentException("not supported yet");
+          return JrtIoFileSystem.getInstance();
         default:
           LOG.error("File system not found for protocol " + fsId);
           return null;
