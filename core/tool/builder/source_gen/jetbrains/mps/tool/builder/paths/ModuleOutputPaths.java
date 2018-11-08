@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.impl.JarEntryFile;
 
 public class ModuleOutputPaths {
   private String[] sortedOutDirs;
@@ -110,7 +109,7 @@ public class ModuleOutputPaths {
       }
     }).where(new IWhereFilter<IFile>() {
       public boolean accept(IFile f) {
-        return f.isDirectory() && !(f instanceof JarEntryFile);
+        return f.isDirectory() && !(f.isInArchive());
       }
     }).select(new ISelector<IFile, String>() {
       public String select(IFile dir) {

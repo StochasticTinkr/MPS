@@ -77,9 +77,14 @@ import java.util.List;
 @Immutable
 public interface IFile {
   /**
-   * @return the file system which this file belongs to
+   * Use getFS() instead
+   * Note the IFileSystem is per-protocol, in which it differs from FileSystem.
    */
+  @Deprecated
+  @ToRemove(version = 2019.1)
   @NotNull FileSystem getFileSystem();
+
+  @NotNull IFileSystem getFS();
 
   /**
    * @return simply the last name of the file (the furthest one)

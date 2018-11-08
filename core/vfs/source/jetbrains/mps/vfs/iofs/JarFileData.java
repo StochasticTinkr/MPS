@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.impl;
+package jetbrains.mps.vfs.iofs;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

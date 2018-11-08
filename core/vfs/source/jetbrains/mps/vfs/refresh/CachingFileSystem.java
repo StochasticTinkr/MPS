@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs.refresh;
 
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -25,7 +26,7 @@ import java.util.Collection;
  *
  * Created by apyshkin on 6/20/16.
  */
-public interface CachingFileSystem extends jetbrains.mps.vfs.FileSystem {
+public interface CachingFileSystem extends jetbrains.mps.vfs.FileSystem, IFileSystem {
   /**
    * group refresh
    */

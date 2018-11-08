@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,26 +15,19 @@
  */
 package jetbrains.mps.vfs;
 
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.refresh.FileSystemListener;
 import org.jetbrains.annotations.NotNull;
 
-public interface FileSystem {
-  @NotNull IFile getFile(@NotNull String path);
+public interface IFileSystem {
+  String SEPARATOR = "/";
 
-  /**
-   * Use VFSManager
-   */
-  @Deprecated
-  @ToRemove(version = 2019.1)
-  static FileSystem getInstance() {
-    return FileSystemExtPoint.getFS();
-  }
+  @NotNull
+  IFile getFile(@NotNull String path);
 
   boolean isFileIgnored(@NotNull String name);
 
   /**
    * Write files from appropriate thread and with appropriate locks
+   *
    * @param r code to execute within platform write lock
    * @return <code>false</code> if an exception was encountered
    */

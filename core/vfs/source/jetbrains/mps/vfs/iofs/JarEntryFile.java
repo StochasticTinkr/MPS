@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.impl;
+package jetbrains.mps.vfs.iofs;
 
+import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
-import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
@@ -37,14 +38,14 @@ import java.util.List;
 
 @Immutable
 public class JarEntryFile implements IFile {
-  private static final IoFileSystem FS = IoFileSystem.INSTANCE;
+  private static final IoFileSystem FS_OLD = IoFileSystem.INSTANCE;
 
   private final AbstractJarFileData myJarFileData;
   private final File myJarFile;
   private final String myEntryPath;
-  private final IoFileSystem myFileSystem;
+  private final IFileSystem myFileSystem;
 
-  JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String path, IoFileSystem fileSystem) {
+  JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String path, IFileSystem fileSystem) {
     myJarFileData = jarFileData;
     myJarFile = jarFile;
     myEntryPath = FileUtil.normalize(path);
@@ -53,8 +54,14 @@ public class JarEntryFile implements IFile {
 
   @NotNull
   @Override
+  public IFileSystem getFS() {
+    return myFileSystem;
+  }
+
+  @NotNull
+  @Override
   public FileSystem getFileSystem() {
-    return FS;
+    return FS_OLD;
   }
 
   @NotNull

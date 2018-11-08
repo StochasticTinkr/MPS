@@ -23,6 +23,7 @@
     <import index="gn4j" ref="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" />
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
+    <import index="anx0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.iofs(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3821,14 +3822,18 @@
           <node concept="2YIFZM" id="3RkWhWCOXrR" role="3cqZAk">
             <ref role="37wK5l" to="18ew:~MacrosFactory.forProjectFile(jetbrains.mps.vfs.IFile):jetbrains.mps.util.MacroHelper" resolve="forProjectFile" />
             <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-            <node concept="2ShNRf" id="3RkWhWCOXsP" role="37wK5m">
-              <node concept="1pGfFk" id="3RkWhWCOZ7Q" role="2ShVmc">
-                <ref role="37wK5l" to="amo1:~IoFile.&lt;init&gt;(java.lang.String)" resolve="IoFile" />
-                <node concept="2OqwBi" id="3RkWhWCOZGm" role="37wK5m">
-                  <node concept="1rXfSq" id="3RkWhWCOZ9D" role="2Oq$k0">
+            <node concept="2OqwBi" id="7LMB4CaTKl4" role="37wK5m">
+              <node concept="2YIFZM" id="7LMB4CaTLJM" role="2Oq$k0">
+                <ref role="37wK5l" to="anx0:~LocalIoFileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
+                <ref role="1Pybhc" to="anx0:~LocalIoFileSystem" resolve="LocalIoFileSystem" />
+              </node>
+              <node concept="liA8E" id="7LMB4CaTMcz" role="2OqNvi">
+                <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                <node concept="2OqwBi" id="7LMB4CaTNuT" role="37wK5m">
+                  <node concept="1rXfSq" id="7LMB4CaTN0$" role="2Oq$k0">
                     <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
                   </node>
-                  <node concept="liA8E" id="3RkWhWCOZO$" role="2OqNvi">
+                  <node concept="liA8E" id="7LMB4CaTO9W" role="2OqNvi">
                     <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
                   </node>
                 </node>

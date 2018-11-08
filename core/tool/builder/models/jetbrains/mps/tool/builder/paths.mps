@@ -47,10 +47,6 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
-      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
-        <child id="1081256993305" name="classType" index="2ZW6by" />
-        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
-      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -871,12 +867,12 @@
                         <node concept="3clFbF" id="1a_CTtY7Ssr" role="3cqZAp">
                           <node concept="1Wc70l" id="1a_CTtY7Sss" role="3clFbG">
                             <node concept="3fqX7Q" id="1a_CTtY7Sst" role="3uHU7w">
-                              <node concept="2ZW3vV" id="1a_CTtY7Ssu" role="3fr31v">
-                                <node concept="3uibUv" id="1a_CTtY7Ssv" role="2ZW6by">
-                                  <ref role="3uigEE" to="amo1:~JarEntryFile" resolve="JarEntryFile" />
-                                </node>
-                                <node concept="37vLTw" id="2BHiRxgmaxp" role="2ZW6bz">
+                              <node concept="2OqwBi" id="7LMB4CaTYFa" role="3fr31v">
+                                <node concept="37vLTw" id="2BHiRxgmaxp" role="2Oq$k0">
                                   <ref role="3cqZAo" node="1a_CTtY7Ss$" resolve="f" />
+                                </node>
+                                <node concept="liA8E" id="7LMB4CaU6bJ" role="2OqNvi">
+                                  <ref role="37wK5l" to="3ju5:~IFile.isInArchive():boolean" resolve="isInArchive" />
                                 </node>
                               </node>
                             </node>

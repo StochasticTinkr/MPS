@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.impl;
+package jetbrains.mps.vfs.iofs;
 
+import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -37,23 +39,26 @@ import java.util.List;
 
 /**
  * IFile implementation via {@link java.io.File}
- * TODO rewrite using {@link Path}.
  */
 @Immutable
-public class IoFile implements IFile {
-  @NotNull private final File myFile; // always absolute
+class IoFile implements IFile {
   private final static IoFileSystem ourFS = IoFileSystem.INSTANCE;
+  @NotNull private final File myFile; // always absolute
+  private IFileSystem myFileSystem;
 
-  public IoFile(@NotNull String path) {
-    this(path, ourFS);
-  }
-
-  IoFile(@NotNull String path, IoFileSystem fileSystem) {
+  IoFile(@NotNull String path, IFileSystem fileSystem) {
     this(new File(path), fileSystem);
   }
 
-  IoFile(@NotNull File file, IoFileSystem fileSystem) {
+  IoFile(@NotNull File file, IFileSystem fileSystem) {
     myFile = file.getAbsoluteFile();
+    myFileSystem = fileSystem;
+  }
+
+  @NotNull
+  @Override
+  public IFileSystem getFS() {
+    return myFileSystem;
   }
 
   @NotNull
@@ -74,7 +79,7 @@ public class IoFile implements IFile {
     if (parentFile == null) {
       return null;
     }
-    return new IoFile(parentFile, ourFS);
+    return new IoFile(parentFile, myFileSystem);
   }
 
   @Override
@@ -172,7 +177,7 @@ public class IoFile implements IFile {
 
     List<IFile> result = new ArrayList<>(files.length);
     for (File f : files) {
-      result.add(new IoFile(f, ourFS));
+      result.add(new IoFile(f, myFileSystem));
     }
     return result;
   }
@@ -180,7 +185,7 @@ public class IoFile implements IFile {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
-    return new IoFile(new File(myFile, suffix), ourFS);
+    return new IoFile(new File(myFile, suffix), myFileSystem);
   }
 
   @Override

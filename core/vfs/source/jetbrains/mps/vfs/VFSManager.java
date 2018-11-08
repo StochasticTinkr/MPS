@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.vfs;
 
-import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.vfs.iofs.JarIoFileSystem;
+import jetbrains.mps.vfs.iofs.LocalIoFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -31,13 +32,13 @@ public class VFSManager {
   private static final Logger LOG = LogManager.getLogger(VFSManager.class);
 
   private static VFSManager INSTANCE = new VFSManager();
-  final private Map<String, FileSystem> myFileSystems = new HashMap<>();
+  final private Map<String, IFileSystem> myFileSystems = new HashMap<>();
 
   public static VFSManager getInstance() {
     return INSTANCE;
   }
 
-  public void registerFS(@NotNull String fsId, @NotNull FileSystem fs) {
+  public void registerFS(@NotNull String fsId, @NotNull IFileSystem fs) {
     if (myFileSystems.containsKey(fsId)) {
       LOG.error("File system is already registered for protocol " + fsId);
       return;
@@ -46,13 +47,13 @@ public class VFSManager {
     myFileSystems.put(fsId, fs);
   }
 
-  public void unregisterFS(@NotNull String fsId, @NotNull FileSystem fs) {
+  public void unregisterFS(@NotNull String fsId, @NotNull IFileSystem fs) {
     if (!myFileSystems.containsKey(fsId)) {
       LOG.error("File system is not registered for protocol " + fsId);
       return;
     }
 
-    FileSystem current = myFileSystems.get(fsId);
+    IFileSystem current = myFileSystems.get(fsId);
     if (current != fs) {
       LOG.error("File system unregister problem: asked to remove FS " + fs + " with id  " + fsId + " while the registered FS for this id is " + current);
       return;
@@ -61,13 +62,13 @@ public class VFSManager {
     myFileSystems.remove(fsId);
   }
 
-  public FileSystem getFileSystem(@NotNull String fsId) {
+  public IFileSystem getFileSystem(@NotNull String fsId) {
     if (!myFileSystems.containsKey(fsId)) {
       switch (fsId) {
         case FILE_FS:
-          return IoFileSystem.INSTANCE;
+          return LocalIoFileSystem.getInstance();
         case JAR_FS:
-          return IoFileSystem.INSTANCE;
+          return JarIoFileSystem.getInstance();
         case JRT_FS:
           throw new IllegalArgumentException("not supported yet");
         default:
@@ -80,7 +81,7 @@ public class VFSManager {
   }
 
   public IFile getFile(QualifiedPath path) {
-    FileSystem fs = getFileSystem(path.getFsId());
+    IFileSystem fs = getFileSystem(path.getFsId());
     if (fs == null) {
       return null;
     }

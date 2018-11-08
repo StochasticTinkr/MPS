@@ -25,17 +25,16 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.newvfs.ArchiveFileSystem;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
-import jetbrains.mps.vfs.impl.IoFile;
-import jetbrains.mps.vfs.impl.JarEntryFile;
+import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.refresh.CachingContext;
 import jetbrains.mps.vfs.refresh.CachingFile;
 import jetbrains.mps.vfs.refresh.CachingFileSystem;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.refresh.FileListener;
 import jetbrains.mps.vfs.refresh.FileListenerAdapter;
-import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -55,7 +54,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.jar.JarFile;
 
 /**
  * NOTE the IdeaFiles' equality now totally depends on the starting string.
@@ -67,8 +65,7 @@ import java.util.jar.JarFile;
 @Immutable
 public class IdeaFile implements IFile, CachingFile {
   private final static Logger LOG = LogManager.getLogger(IdeaFile.class);
-
-  private final IdeaFileSystem myFileSystem;
+  private final IFileSystem myFS;
 
   private final Map<FileListener, FileListenerAdapter> myListenerLegacy2New = new HashMap<>();
 
@@ -83,14 +80,14 @@ public class IdeaFile implements IFile, CachingFile {
   private VirtualFile myVirtualFilePtr = null;
 
   @Internal
-  public IdeaFile(IdeaFileSystem fileSystem, @NotNull String path) {
-    myFileSystem = fileSystem;
+  public IdeaFile(IFileSystem fileSystem, @NotNull String path) {
+    myFS = fileSystem;
     myPath = jetbrains.mps.util.FileUtil.normalize(path);
   }
 
   @Internal
-  public IdeaFile(IdeaFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
-    myFileSystem = fileSystem;
+  public IdeaFile(IFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
+    myFS = fileSystem;
     myVirtualFilePtr = virtualFile;
     myPath = jetbrains.mps.util.FileUtil.normalize(virtualFile.getPath());
   }
@@ -123,7 +120,14 @@ public class IdeaFile implements IFile, CachingFile {
   @NotNull
   @Override
   public CachingFileSystem getFileSystem() {
-    return myFileSystem;
+    //this should go after 2019.1, when we remove FileSystem and ony use IFileSystem
+    return (CachingFileSystem) myFS;
+  }
+
+  @NotNull
+  @Override
+  public IFileSystem getFS() {
+    return myFS;
   }
 
   @NotNull
@@ -142,11 +146,11 @@ public class IdeaFile implements IFile, CachingFile {
     if (findVirtualFile()) {
       VirtualFile parentVirtualFile = myVirtualFilePtr.getParent();
       if (parentVirtualFile != null) {
-        return new IdeaFile(myFileSystem, parentVirtualFile);
+        return new IdeaFile(myFS, parentVirtualFile);
       }
       return null;
     } else {
-      return new IdeaFile(myFileSystem, truncateDirPath(myPath));
+      return new IdeaFile(myFS, truncateDirPath(myPath));
     }
   }
 
@@ -159,7 +163,7 @@ public class IdeaFile implements IFile, CachingFile {
       }
       ArrayList<IdeaFile> result = new ArrayList<>();
       for (VirtualFile child : children) {
-        result.add(new IdeaFile(myFileSystem, child));
+        result.add(new IdeaFile(myFS, child));
       }
       return Collections.unmodifiableList(result);
     } else {
@@ -172,7 +176,7 @@ public class IdeaFile implements IFile, CachingFile {
   public IdeaFile getDescendant(@NotNull String suffix) {
     String path = getPath();
     String separator = Path.UNIX_SEPARATOR; // we are system-independent underneath
-    return new IdeaFile(myFileSystem, path + (path.endsWith(separator) ? "" : separator) + suffix);
+    return new IdeaFile(myFS, path + (path.endsWith(separator) ? "" : separator) + suffix);
   }
 
   @Override
@@ -217,7 +221,7 @@ public class IdeaFile implements IFile, CachingFile {
         }
         String fileName = truncateFileName(myPath);
         directory.findChild(fileName); // This is a workaround for IDEA-67279
-        myVirtualFilePtr = directory.createChildData(myFileSystem, fileName);
+        myVirtualFilePtr = directory.createChildData(myFS, fileName);
         return true;
       } catch (IOException e) {
         LOG.error("Got a problem while creating a new file", e);
@@ -245,7 +249,7 @@ public class IdeaFile implements IFile, CachingFile {
       final String dirName = path.substring(pos + 1);
       VirtualFile child = parent.findChild(dirName);
       if (child != null && child.isDirectory()) return child;
-      return parent.createChildDirectory(myFileSystem, dirName);
+      return parent.createChildDirectory(myFS, dirName);
     }
     return file;
   }
@@ -276,7 +280,7 @@ public class IdeaFile implements IFile, CachingFile {
     if (findVirtualFile()) {
       try {
         assert myVirtualFilePtr != null;
-        myVirtualFilePtr.delete(myFileSystem);
+        myVirtualFilePtr.delete(myFS);
         return true;
       } catch (IOException e) {
         LOG.warn("Could not delete file: ", e);
@@ -294,7 +298,7 @@ public class IdeaFile implements IFile, CachingFile {
     try {
       if (findVirtualFile()) {
         assert myVirtualFilePtr != null;
-        myVirtualFilePtr.rename(myFileSystem, newName);
+        myVirtualFilePtr.rename(myFS, newName);
         myVirtualFilePtr = findIdeaFile(myPath, false);
         return true;
       } else {
@@ -318,7 +322,7 @@ public class IdeaFile implements IFile, CachingFile {
             LOG.error("Could not find the parent file: " + newParent + ". The file was not moved", new Throwable());
             return false;
           }
-          myVirtualFilePtr.move(myFileSystem, parentFile);
+          myVirtualFilePtr.move(myFS, parentFile);
           myVirtualFilePtr = findIdeaFile(myPath, false);
           return true;
         } else {
@@ -358,11 +362,11 @@ public class IdeaFile implements IFile, CachingFile {
           // try to bring the name up to the desired one.
           final String desiredFileName = truncateFileName(myPath);
           if (!filePtr.getName().equals(desiredFileName)) {
-            filePtr.rename(myFileSystem, desiredFileName);
+            filePtr.rename(myFS, desiredFileName);
           }
           myVirtualFilePtr = findIdeaFile(myPath, false);
         }
-        return filePtr.getOutputStream(myFileSystem);
+        return filePtr.getOutputStream(myFS);
       }
     } else {
       throw new IOException("Could not create file: " + myPath);
@@ -421,13 +425,13 @@ public class IdeaFile implements IFile, CachingFile {
         if (fileForJar == null) {
           return null;
         }
-        return new IdeaFile(myFileSystem, fileForJar);
+        return new IdeaFile(myFS, fileForJar);
       } else {
         return getParent();
       }
     } else {
       if (myPath.contains(Path.ARCHIVE_SEPARATOR)) {
-        return new IdeaFile(myFileSystem, myPath.substring(0, myPath.indexOf(Path.ARCHIVE_SEPARATOR)));
+        return new IdeaFile(myFS, myPath.substring(0, myPath.indexOf(Path.ARCHIVE_SEPARATOR)));
       } else {
         return getParent();
       }

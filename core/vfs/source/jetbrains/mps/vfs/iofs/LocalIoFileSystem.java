@@ -13,58 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.impl;
+package jetbrains.mps.vfs.iofs;
 
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.refresh.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.annotations.Singleton;
 
-import java.io.File;
+public class LocalIoFileSystem implements IFileSystem {
+  private static final Logger LOG = LogManager.getLogger(LocalIoFileSystem.class);
+  private static final LocalIoFileSystem INSTANCE = new LocalIoFileSystem();
 
-/**
- * @author Evgeny Gerashchenko
- */
-@Singleton
-public class IoFileSystem implements FileSystem {
-  private static final Logger LOG = LogManager.getLogger(IoFileSystem.class);
+  private LocalIoFileSystem() {
+  }
 
-  public static final IoFileSystem INSTANCE = new IoFileSystem();
-
-  private IoFileSystem() {
+  public static IFileSystem getInstance() {
+    return INSTANCE;
   }
 
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
-    // fix for MPS-10350; todo move
     path = FileUtil.getCanonicalPath(path);
-    if (path.contains("!")) {
-      int index = path.indexOf('!');
-      String jarPath = path.substring(0, index);
-      String entryPath = FileUtil.getUnixPath(path.substring(index + 1));
-
-      if (entryPath.startsWith("/")) {
-        entryPath = entryPath.substring(1);
-      }
-
-      File jarFile = new File(jarPath);
-
-      AbstractJarFileData jarFileData;
-      if (jarFile.exists()) {
-        jarFileData = JarFileDataCache.instance().getDataFor(jarFile);
-      } else {
-        LOG.warn("Requested jar file does not exist " + jarFile);
-        jarFileData = new AbstractJarFileData(jarFile);
-      }
-      return new JarEntryFile(jarFileData, jarFile, entryPath, this);
-    } else {
-      return new IoFile(path, this);
-    }
+    return new IoFile(path, this);
   }
 
   @Override
