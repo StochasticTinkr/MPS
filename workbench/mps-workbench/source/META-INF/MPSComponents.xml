@@ -15,6 +15,9 @@
       <implementation-class>jetbrains.mps.ide.vfs.WatchingIdeaFileSystem</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.ide.vfs.JrtIdeaFileSystem</implementation-class>
+    </component>
+    <component>
       <interface-class>jetbrains.mps.smodel.ModelAccess</interface-class>
       <implementation-class>jetbrains.mps.smodel.WorkbenchModelAccess</implementation-class>
     </component>

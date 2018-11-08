@@ -43,9 +43,6 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-/**
- * @author Evgeny Gerashchenko
- */
 public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequestor {
   private static final Logger LOG = LogManager.getLogger(IdeaFileSystem.class);
 
@@ -137,29 +134,6 @@ public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequesto
   @NotNull
   public IFile fromVirtualFile(@NotNull VirtualFile virtualFile) {
     return new IdeaFile(this, virtualFile);
-  }
-
-  private static class IdeaWriteAction implements Runnable {
-    private final Runnable myDelegate;
-    private Exception myException;
-
-    public IdeaWriteAction(@NotNull Runnable delegate) {
-      myDelegate = delegate;
-    }
-
-    @Override
-    public void run() {
-      try {
-        ApplicationManager.getApplication().runWriteAction(myDelegate);
-      } catch (Exception ex) {
-        LOG.error(ex.getMessage(), ex);
-        myException = ex;
-      }
-    }
-
-    public Exception getFailure() {
-      return myException;
-    }
   }
 
   @NotNull
