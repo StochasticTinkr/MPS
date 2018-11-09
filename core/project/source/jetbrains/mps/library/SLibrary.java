@@ -207,7 +207,7 @@ public class SLibrary implements MPSModuleOwner, Comparable<SLibrary> {
         if (false == module instanceof AbstractModule) {
           continue;
         }
-        ((AbstractModule) module).setModuleDescriptor(newlyDiscovered.get(mr).getDescriptor());
+        ((AbstractModule) module).setModuleDescriptor(newlyDiscovered.get(mr).getDescriptor(), false);
       }
     });
   }

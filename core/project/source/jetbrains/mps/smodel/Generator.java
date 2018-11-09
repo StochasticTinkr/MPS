@@ -131,18 +131,25 @@ public class Generator extends ReloadableModuleBase {
     assert moduleDescriptor instanceof GeneratorDescriptor;
     LanguageDescriptor languageDescriptor = getSourceLanguage().getModuleDescriptor();
     int index = languageDescriptor.getGenerators().indexOf(getModuleDescriptor());
-    languageDescriptor.getGenerators().remove(index);
-    languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
-    getSourceLanguage().setModuleDescriptor(languageDescriptor);
+    if (index != -1) {
+      languageDescriptor.getGenerators().remove(index);
+      languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
+    }
+    // Beware, we don't need to do setModuleDescriptor() for source language, its MD has not been changed (doing otherwise would be a hack).
+    // We still need language to reload its generators (Language.revalidateGenerators()), and as long as revalidateGenerators does this for ALL
+    // generators, not only directly owned, I keep this call outside of index != -1 check.
+    // In any case, it's odd to do anything about source language in doSetModuleDescriptor() operation this one has to be focused on MD change, rather than
+    // to care about source language reload, shall fix this as standalone generator story evolves.
+    getSourceLanguage().reloadAfterDescriptorChange();
   }
 
   public String getAlias() {
     String name = myGeneratorDescriptor.getAlias();
-    return getSourceLanguage().getModuleName() + "/" + (name == null ? "<no name>" : name);
+    return getSourceLanguage().getModuleName() + '/' + (name == null ? "<no name>" : name);
   }
 
   public static String generateGeneratorUID(Language sourceLanguage) {
-    return sourceLanguage.getModuleName() + "#" + jetbrains.mps.smodel.SModel.generateUniqueId();
+    return sourceLanguage.getModuleName() + '#' + jetbrains.mps.smodel.SModel.generateUniqueId();
   }
 
   public Language getSourceLanguage() {

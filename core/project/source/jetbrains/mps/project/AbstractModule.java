@@ -272,9 +272,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   /**
+   * PROVISIONAL INTERNAL API, DON'T USE OUTSIDE OF MPS, TO BE CHANGED WITHOUT NOTICE
+   *
    * sometimes we do not need to mark the reloaded module as changed (e.g. in the cases when we reload from the disk)
    */
-  /*package*/ final void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor, boolean setAsChanged) {
+  public final void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor, boolean setAsChanged) {
     assertCanChange();
     doSetModuleDescriptor(moduleDescriptor);
     if (setAsChanged) {
