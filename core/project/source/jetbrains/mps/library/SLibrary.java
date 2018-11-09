@@ -28,8 +28,8 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileListener;
 import jetbrains.mps.vfs.FileListeningPreferences;
 import jetbrains.mps.vfs.FileSystemEvent;
-import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.RedispatchListener;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -71,25 +71,13 @@ public class SLibrary implements MPSModuleOwner, Comparable<SLibrary> {
     myPluginClassLoader = pathDescriptor.getPluginClassLoader();
     myFile = pathDescriptor.getPath();
     myHidden = hidden;
-    // SLibrary listens to file changes as it needs to react to create events anyway. ModuleFileTracker is a storage + change/delete handler.
-    myFileTracker = new ModuleFileTracker(myRepository, false);
+    // SLibrary listens to all file changes as it needs to react to create events as well as change/delete for existing modules.
+    // ModuleFileTracker helps to keep record which module originates from what file
+    myFileTracker = new ModuleFileTracker();
     // XXX provisional, copied from ModuleFileTracker, have to review
     final FileListeningPreferences prefs = FileListeningPreferences.construct().notifyOnDescendantCreation().notifyOnParentRemoval().build();
-    myPostNotifyDispatch = new RedispatchListener(new FileSystemListener() {
-      @Nullable
-      @Override
-      public IFile getFileToListen() {
-        // FSL is just for the sake of FSE.update, see RedispatchListener impl
-        throw new UnsupportedOperationException();
-      }
-
-      @Override
-      public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-        SLibrary.this.update(monitor, event);
-      }
-    }, prefs);
+    myPostNotifyDispatch = new RedispatchListener(SLibrary.this::update, prefs);
   }
-
 
   @NotNull
   public IFile getFile() {
@@ -135,7 +123,7 @@ public class SLibrary implements MPSModuleOwner, Comparable<SLibrary> {
       // for removed files, take modules associated with these files
       // Note, there could be a new file among added with a MD for existing toBeRemoved module (e.g. file rename/move).
       final Map<SModuleReference, IFile> toRemoveCandidates = myFileTracker.getAffectedBy(event.getRemoved());
-      // We shall remove our listener for files we no longer care about.
+      // We shall remove our listener for files we no longer care about. XXX what of myFile is among removed, is it fine to remove the listener?
       toRemoveCandidates.values().forEach(f -> f.removeListener(myPostNotifyDispatch));
 
       // for changed files, take associated modules, these are going to be either changed or removed (in case respective
@@ -201,7 +189,8 @@ public class SLibrary implements MPSModuleOwner, Comparable<SLibrary> {
         toLoad.add(moduleHandle);
       }
       // XXX I don't like the fact we remove myPostNotifyDispatch in this method, but add it in another, perhaps, shall add listener here?
-      // shall sort toLoad so that Languages come first, use approach of ModulesMiner.getCollectedModules()
+      // shall sort toLoad so that Languages come first, use approach of ModulesMiner.getCollectedModules(). Alternatively, could keep brandNew
+      // and newlyDiscovered with the order from MM (use some ordered Map implementation)
       // FIXME need a better mechanism to find out MD kind than instanceof. E.g. DeployedDescriptor is the same for any module, once we
       //       drop source modules, we are likely to fail here
       toLoad.sort(Comparator.comparingInt(v -> v.getDescriptor() instanceof LanguageDescriptor ? 0 : 1));
@@ -270,15 +259,20 @@ public class SLibrary implements MPSModuleOwner, Comparable<SLibrary> {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
 
     SLibrary library = (SLibrary) o;
 
-    if (myHidden != library.myHidden) return false;
+    if (myHidden != library.myHidden) {
+      return false;
+    }
 
     return Objects.equals(myPluginClassLoader, library.myPluginClassLoader) && myFile.equals(library.myFile);
-
   }
 
   @Override
@@ -300,34 +294,5 @@ public class SLibrary implements MPSModuleOwner, Comparable<SLibrary> {
       return n1.endsWith("-generator.jar") ? 1 : -1;
     }
     return n1.compareTo(n2);
-  }
-
-  private static class RedispatchListener implements FileListener {
-
-    private final FileSystemListener myDelegate;
-    private final FileListeningPreferences myPreferences;
-
-    /**
-     *
-     * @param postNotify delegate for event re-dispatch; Has to be FileListener, FSL just to satisfy legacy FSE.notify() contract
-     *                   FileProcessor uses listener instance as key, make sure you pass same FSL instance here if you add multiple
-     *                   instances of RedispatchListener to different files but intend to process their changes in a single listener.
-     * @param prefs preferences of this listener
-     */
-    public RedispatchListener(@NotNull FileSystemListener postNotify, @NotNull FileListeningPreferences prefs) {
-      myDelegate = postNotify;
-      myPreferences = prefs;
-    }
-
-    @Override
-    public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-      event.notify(myDelegate);
-    }
-
-    @NotNull
-    @Override
-    public FileListeningPreferences listeningPreferences() {
-      return myPreferences;
-    }
   }
 }

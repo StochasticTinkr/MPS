@@ -205,8 +205,13 @@ public class SModuleOperations {
   }
 
   /**
+   * @deprecated module provider (library, project, whatever) has to deal with module reload, this helper complicates matters more than resolves any.
+   *             Once it's gone, AM.loadDescriptor is no longer needed, as well as MM.loadModuleHandle()
+   *
    * Reads module from file and eventually redeploys it (when CLManager triggers refresh)
    */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public static void reloadFromDisk(@NotNull AbstractModule module) {
     if (module.getRepository() == null) {
       throw new IllegalArgumentException("Module " + module + " is disposed");

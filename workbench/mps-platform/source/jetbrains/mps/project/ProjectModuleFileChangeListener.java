@@ -22,6 +22,7 @@ import jetbrains.mps.vfs.FileListeningPreferences;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystems;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.RedispatchListener;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -29,13 +30,14 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.Map;
 
 /**
  * Listens for module descriptor paths in a project descriptor.
  * Files created with a path that did not exist at the moment project was last initialized, trigger project update.
  * Changes to descriptor files drop or reload respective project modules.
+ *
+ * XXX In fact, quite similar to {@link jetbrains.mps.library.SLibrary}, just an own source for module paths, worth a refactoring.
  *
  * @author Alexey Pyshkin
  * @author Artem Tikhomirov
@@ -46,48 +48,42 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
   /*
    * tracks changes and removals of files with descriptors of project modules
    */
-  private final ModuleFileTracker myDescriptorChangeListener;
+  private final ModuleFileTracker myProjectModulesAndFiles;
 
-  private final class ProjectModuleFileTracker extends ModuleFileTracker {
-    public ProjectModuleFileTracker(@NotNull SRepository repository) {
-      super(repository, true);
-    }
+  private final RedispatchListener myRedispatchListener;
 
-    /**
-     * This overriding is awful especially considering the similarity of the bodies (!)
-     * fixme rather use composite here
-     *
-     * All these checks whether the module is not disposed are due to the problem of idea plugin
-     * project being a MPSProject which is absolutely incorrect (since the project file does not contain a descriptor, there are no virtual folders
-     * and there is no need in ProjectDescriptor filling the project with modules, since idea modules contribute mps modules via MPSFacet.
-     * The MPSFacet is also responsible for disposing the corresponding SModule there thus we might get disposed modules in the plugin environment
-     */
-    @Override
-    public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-      // removeModule0, below, grabs model write anyway, hence runWriteAction
-      myRepository.getModelAccess().runWriteAction(() -> {
-        Set<SModuleReference> mRefs2Remove = new LinkedHashSet<>();
-        for (IFile file : event.getRemoved()) {
-          for (IFile moduleFile : myFile2Module.keySet()) {
-            if (moduleFile.toPath().startsWith(file.toPath())) {
-              mRefs2Remove.addAll(myFile2Module.get(moduleFile));
-            }
-          }
+  /**
+   * All these checks whether the module is not disposed are due to the problem of idea plugin
+   * project being a MPSProject which is absolutely incorrect (since the project file does not contain a descriptor, there are no virtual folders
+   * and there is no need in ProjectDescriptor filling the project with modules, since idea modules contribute mps modules via MPSFacet.
+   * The MPSFacet is also responsible for disposing the corresponding SModule there thus we might get disposed modules in the plugin environment
+   */
+  /*package*/ void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
+    // removeModule0, below, grabs model write anyway, hence runWriteAction
+    final SRepository repo = myMpsProject.getRepository();
+    repo.getModelAccess().runWriteAction(() -> {
+      final Map<SModuleReference, IFile> mRefs2Remove = myProjectModulesAndFiles.getAffectedBy(event.getRemoved());
+
+      mRefs2Remove.keySet().forEach(mRef -> {
+        ModulePath path = myMpsProject.getPath(mRef);
+        if (path != null) {
+          moduleNotFound(path);
         }
-
-        mRefs2Remove.forEach(mRef -> {
-          ModulePath path = myMpsProject.getPath(mRef);
-          if (path != null) {
-            moduleNotFound(path);
-          }
-          SModule resolved = mRef.resolve(myRepository);
-          if (resolved != null) {
-            myMpsProject.removeModule0(resolved);
-          }
-        });
-        super.update(monitor, event);
+        SModule resolved = mRef.resolve(repo);
+        if (resolved != null) {
+          myMpsProject.removeModule0(resolved);
+        }
       });
-    }
+      mRefs2Remove.values().forEach(f -> f.removeListener(myRedispatchListener));
+
+      final Map<SModuleReference, IFile> toReload = myProjectModulesAndFiles.getTrackedFor(event.getChanged());
+      toReload.keySet().forEach(mRef -> {
+        SModule module = mRef.resolve(repo);
+        if (module instanceof AbstractModule) {
+          SModuleOperations.reloadFromDisk((AbstractModule) module);
+        }
+      });
+    });
   }
 
   /*
@@ -113,7 +109,10 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
 
   ProjectModuleFileChangeListener(@NotNull MPSProject mpsProject) {
     myMpsProject = mpsProject;
-    myDescriptorChangeListener = new ProjectModuleFileTracker(mpsProject.getRepository());
+    myProjectModulesAndFiles = new ModuleFileTracker();
+    // prefs copied from ModuleFileTracker;
+    final FileListeningPreferences prefs = FileListeningPreferences.construct().notifyOnDescendantCreation().notifyOnParentRemoval().build();
+    myRedispatchListener = new RedispatchListener(this::update, prefs);
   }
 
   @Override
@@ -121,7 +120,9 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
     if (module instanceof AbstractModule) {
       // FIXME use FS from Project/FileBasedProject, rather than that of the module
       FileSystem fileSystem = ((AbstractModule) module).getFileSystem();
-      myDescriptorChangeListener.track(fileSystem.getFile(modulePath.getPath()), module);
+      final IFile file = fileSystem.getFile(modulePath.getPath());
+      file.addListener(myRedispatchListener);
+      myProjectModulesAndFiles.track(file, module);
     }
   }
 
@@ -129,7 +130,9 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
   public void moduleRemoved(ModulePath modulePath, @NotNull SModule module) {
     if (module instanceof AbstractModule) {
       FileSystem fileSystem = ((AbstractModule) module).getFileSystem();
-      myDescriptorChangeListener.forget(fileSystem.getFile(modulePath.getPath()), module);
+      final IFile file = fileSystem.getFile(modulePath.getPath());
+      file.removeListener(myRedispatchListener);
+      myProjectModulesAndFiles.forget(file, module);
     }
   }
 
