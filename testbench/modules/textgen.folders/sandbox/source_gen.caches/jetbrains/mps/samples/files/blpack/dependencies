@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.samples.files.blpack.Instance" />
   <dependency className="jetbrains.mps.samples.files.blpack.OtherPackageIface" />
   <dependency className="jetbrains.mps.samples.files.blpack.SampleClassInControlledPackage">
+    <classNode dependClassName="nowhere.another.Instance" />
     <classNode dependClassName="toplevel.pkg.differs.Values" />
     <classNode extendsClassName="nowhere.location.OtherPackageIface" />
   </dependency>

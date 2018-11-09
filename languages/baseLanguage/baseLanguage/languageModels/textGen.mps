@@ -632,6 +632,7 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbH" id="6OZl1yWCA$l" role="3cqZAp" />
               <node concept="3clFbJ" id="2qY3fqbZcNA" role="3cqZAp">
                 <node concept="3clFbS" id="2qY3fqbZcNC" role="3clFbx">
                   <node concept="3clFbF" id="2qY3fqbZkP5" role="3cqZAp">
@@ -714,6 +715,73 @@
                             <node concept="37vLTw" id="3GM_nagTzah" role="2JrQYb">
                               <ref role="3cqZAo" node="6fUw26UhzZf" resolve="targetNode" />
                             </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3eNFk2" id="6OZl1yWCBy5" role="3eNLev">
+                  <node concept="2OqwBi" id="6OZl1yWCCFz" role="3eO9$A">
+                    <node concept="37vLTw" id="6OZl1yWCCxK" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6fUw26UhzZf" resolve="targetNode" />
+                    </node>
+                    <node concept="1mIQ4w" id="6OZl1yWCF5H" role="2OqNvi">
+                      <node concept="chp4Y" id="6OZl1yWCF9o" role="cj9EA">
+                        <ref role="cht4Q" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbS" id="6OZl1yWCBy7" role="3eOfB_">
+                    <node concept="3SKdUt" id="6OZl1yWCFh5" role="3cqZAp">
+                      <node concept="3SKdUq" id="6OZl1yWCFh7" role="3SKWNk">
+                        <property role="3SKdUp" value=" don't ask me why classifierRef ever points to ConstructorDeclaration. Check ClassCreator_TextGen." />
+                      </node>
+                    </node>
+                    <node concept="3cpWs8" id="6OZl1yWCKMc" role="3cqZAp">
+                      <node concept="3cpWsn" id="6OZl1yWCKMd" role="3cpWs9">
+                        <property role="TrG5h" value="classifier" />
+                        <node concept="3Tqbb2" id="6OZl1yWCKMa" role="1tU5fm">
+                          <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+                        </node>
+                        <node concept="2OqwBi" id="6OZl1yWCKMe" role="33vP2m">
+                          <node concept="37vLTw" id="6OZl1yWCKMf" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6fUw26UhzZf" resolve="targetNode" />
+                          </node>
+                          <node concept="2Xjw5R" id="6OZl1yWCKMg" role="2OqNvi">
+                            <node concept="1xMEDy" id="6OZl1yWCKMh" role="1xVPHs">
+                              <node concept="chp4Y" id="6OZl1yWCKMi" role="ri$Ld">
+                                <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="6OZl1yWCHJt" role="3cqZAp">
+                      <node concept="37vLTI" id="6OZl1yWCHJu" role="3clFbG">
+                        <node concept="1JECQ7" id="6OZl1yWCHJv" role="37vLTx">
+                          <ref role="1JF1rN" node="hXZAS9u" resolve="getPackageName" />
+                          <node concept="37vLTw" id="6OZl1yWCKMj" role="1JF4iq">
+                            <ref role="3cqZAo" node="6OZl1yWCKMd" resolve="classifier" />
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="6OZl1yWCHJz" role="37vLTJ">
+                          <ref role="3cqZAo" node="6fUw26UhzZ5" resolve="packageName" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="6OZl1yWCHJ$" role="3cqZAp">
+                      <node concept="37vLTI" id="6OZl1yWCHJ_" role="3clFbG">
+                        <node concept="37vLTw" id="6OZl1yWCHJA" role="37vLTJ">
+                          <ref role="3cqZAo" node="6fUw26UhzZ2" resolve="shortName" />
+                        </node>
+                        <node concept="2OqwBi" id="6OZl1yWCHJB" role="37vLTx">
+                          <node concept="37vLTw" id="6OZl1yWCKXM" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6OZl1yWCKMd" resolve="classifier" />
+                          </node>
+                          <node concept="3TrcHB" id="6OZl1yWCHJF" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpee:hCjj90d" resolve="nestedName" />
                           </node>
                         </node>
                       </node>
