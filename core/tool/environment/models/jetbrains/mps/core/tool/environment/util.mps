@@ -3824,11 +3824,11 @@
             <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
             <node concept="2OqwBi" id="7LMB4CaTKl4" role="37wK5m">
               <node concept="2YIFZM" id="7LMB4CaTLJM" role="2Oq$k0">
-                <ref role="37wK5l" to="anx0:~LocalIoFileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
                 <ref role="1Pybhc" to="anx0:~LocalIoFileSystem" resolve="LocalIoFileSystem" />
+                <ref role="37wK5l" to="anx0:~LocalIoFileSystem.getInstance():jetbrains.mps.vfs.IFileSystem" resolve="getInstance" />
               </node>
               <node concept="liA8E" id="7LMB4CaTMcz" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                <ref role="37wK5l" to="3ju5:~IFileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                 <node concept="2OqwBi" id="7LMB4CaTNuT" role="37wK5m">
                   <node concept="1rXfSq" id="7LMB4CaTN0$" role="2Oq$k0">
                     <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
