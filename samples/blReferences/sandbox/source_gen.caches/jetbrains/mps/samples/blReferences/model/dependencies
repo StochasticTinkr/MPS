@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.samples.blReferences.model.BlReferencesSandbox">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.time.LocalDate" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.box.runtime.Box" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.box.runtime.BoxImpl" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.date.runtime.operations.DateOperations" />
+    <classNode dependClassName="jetbrains.mps.references.BLOperations" />
+    <classNode dependClassName="jetbrains.mps.references.LocalReference" />
+  </dependency>
+</dependenciesRoot>
+

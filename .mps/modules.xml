@@ -319,6 +319,11 @@
       <modulePath path="$PROJECT_DIR$/samples/agreement/sandbox/jetbrains.mps.samples.agreementLanguage.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/attributes/languages/attr/jetbrains.mps.samples.attribute.mpl" folder="samples.attribute" />
       <modulePath path="$PROJECT_DIR$/samples/attributes/solutions/sandbox/jetbrains.mps.samples.attribute.sandbox.msd" folder="samples.attribute" />
+      <modulePath path="$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.box/jetbrains.mps.baseLanguage.box.mpl" folder="samples.blReferences" />
+      <modulePath path="$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.box/runtime/jetbrains.mps.baseLanguage.box.runtime.msd" folder="samples.blReferences" />
+      <modulePath path="$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.date/jetbrains.mps.baseLanguage.date.mpl" folder="samples.blReferences" />
+      <modulePath path="$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.date/runtime/jetbrains.mps.baseLanguage.date.runtime.msd" folder="samples.blReferences" />
+      <modulePath path="$PROJECT_DIR$/samples/blReferences/sandbox/jetbrains.mps.samples.blReferences.msd" folder="samples.blReferences" />
       <modulePath path="$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/jetbrains.mps.calculator.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/jetbrains.mps.calculator.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/complexLanguage/languages/complex/jetbrains.mps.samples.complex.mpl" folder="samples" />

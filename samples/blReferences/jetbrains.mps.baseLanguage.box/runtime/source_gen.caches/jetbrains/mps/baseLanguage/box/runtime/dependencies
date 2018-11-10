@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.box.runtime.Box">
+    <classNode dependClassName="jetbrains.mps.references.Reference" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.box.runtime.BoxImpl">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.box.runtime.Box" />
+  </dependency>
+</dependenciesRoot>
+
