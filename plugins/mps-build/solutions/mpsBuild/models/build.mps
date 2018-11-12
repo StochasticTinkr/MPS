@@ -6908,6 +6908,16 @@
               <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
             </node>
           </node>
+          <node concept="1SiIV0" id="6HZyafx08y5" role="3bR37C">
+            <node concept="3bR9La" id="6HZyafx08y6" role="1SiIV1">
+              <ref role="3bR37D" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="6HZyafx08y7" role="3bR37C">
+            <node concept="3bR9La" id="6HZyafx08y8" role="1SiIV1">
+              <ref role="3bR37D" node="1dsbP8r1gfD" resolve="jetbrains.mps.baseLanguage.references.runtime" />
+            </node>
+          </node>
         </node>
         <node concept="1E0d5M" id="2a9bszgrv2m" role="1E1XAP">
           <ref role="1E0d5P" node="mXGwHwhVPj" resolve="JDK" />

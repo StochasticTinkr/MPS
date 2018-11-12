@@ -50,6 +50,7 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<String> getBackingVarName_id1tRxQXfvLw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getBackingVarName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1tRxQXfvLw").registry(REGISTRY).build();
   public static final SMethod<String> getGetterMethodName_idhEwIJ02 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGetterMethodName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIJ02").registry(REGISTRY).build();
   public static final SMethod<String> getSetterMethodName_idhEwIJ0b = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getSetterMethodName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIJ0b").registry(REGISTRY).build();
+  public static final SMethod<String> getReferenceMethodName_id4qcYKcpgzJ$ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getReferenceMethodName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4qcYKcpgzJ$").registry(REGISTRY).build();
   public static final SMethod<SNode> getSetterVisibility_idhEwIJ0k = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getSetterVisibility").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIJ0k").registry(REGISTRY).build();
   public static final SMethod<Boolean> isSetterVisible_id5WTl5xSBxvj = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSetterVisible").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5WTl5xSBxvj").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> hasSetter_idhEwIJ0S = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasSetter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIJ0S").registry(REGISTRY).build();
@@ -57,7 +58,7 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Void> populateMember_id6r77ob2UW9O = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("populateMember").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2UW9O").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MembersPopulatingContext.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<String> getFqName_idhEwIO9y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFqName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIO9y").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isDefaultImplementation_idhEwIIZu, isCustomImplementation_idhEwIIZC, isCustomSetterOnlyImplementation_id2hzApTi_Lsg, getCustomPropertyImplementation_idhEwIIZM, getCustomSetterStatements_id2hzApTjcJcI, getPropertyNameWithId_idhEwIIZU, getBackingVarName_id1tRxQXfvLw, getGetterMethodName_idhEwIJ02, getSetterMethodName_idhEwIJ0b, getSetterVisibility_idhEwIJ0k, isSetterVisible_id5WTl5xSBxvj, hasSetter_idhEwIJ0S, getSideIcon_id6TtJ6IUjtJX, populateMember_id6r77ob2UW9O, getFqName_idhEwIO9y);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isDefaultImplementation_idhEwIIZu, isCustomImplementation_idhEwIIZC, isCustomSetterOnlyImplementation_id2hzApTi_Lsg, getCustomPropertyImplementation_idhEwIIZM, getCustomSetterStatements_id2hzApTjcJcI, getPropertyNameWithId_idhEwIIZU, getBackingVarName_id1tRxQXfvLw, getGetterMethodName_idhEwIJ02, getSetterMethodName_idhEwIJ0b, getReferenceMethodName_id4qcYKcpgzJ$, getSetterVisibility_idhEwIJ0k, isSetterVisible_id5WTl5xSBxvj, hasSetter_idhEwIJ0S, getSideIcon_id6TtJ6IUjtJX, populateMember_id6r77ob2UW9O, getFqName_idhEwIO9y);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SLinkOperations.setNewChild(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
@@ -94,6 +95,9 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static String getSetterMethodName_idhEwIJ0b(@NotNull SNode __thisNode__) {
     return "set" + Property__BehaviorDescriptor.getPropertyNameWithId_idhEwIIZU.invoke(__thisNode__);
+  }
+  /*package*/ static String getReferenceMethodName_id4qcYKcpgzJ$(@NotNull SNode __thisNode__) {
+    return "refTo" + Property__BehaviorDescriptor.getPropertyNameWithId_idhEwIIZU.invoke(__thisNode__);
   }
   /*package*/ static SNode getSetterVisibility_idhEwIJ0k(@NotNull SNode __thisNode__) {
     SNode visibility = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"));
@@ -204,17 +208,19 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
       case 8:
         return (T) ((String) getSetterMethodName_idhEwIJ0b(node));
       case 9:
-        return (T) ((SNode) getSetterVisibility_idhEwIJ0k(node));
+        return (T) ((String) getReferenceMethodName_id4qcYKcpgzJ$(node));
       case 10:
-        return (T) ((Boolean) isSetterVisible_id5WTl5xSBxvj(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((SNode) getSetterVisibility_idhEwIJ0k(node));
       case 11:
-        return (T) ((Boolean) hasSetter_idhEwIJ0S(node));
+        return (T) ((Boolean) isSetterVisible_id5WTl5xSBxvj(node, (SNode) parameters[0], (SNode) parameters[1]));
       case 12:
-        return (T) ((IconResource) getSideIcon_id6TtJ6IUjtJX(node));
+        return (T) ((Boolean) hasSetter_idhEwIJ0S(node));
       case 13:
+        return (T) ((IconResource) getSideIcon_id6TtJ6IUjtJX(node));
+      case 14:
         populateMember_id6r77ob2UW9O(node, (MembersPopulatingContext) parameters[0], (SNode) parameters[1]);
         return null;
-      case 14:
+      case 15:
         return (T) ((String) getFqName_idhEwIO9y(node));
       default:
         throw new BHMethodNotFoundException(this, method);

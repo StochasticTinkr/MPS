@@ -7,6 +7,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.generator.java.closures.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.generator.java.main.QueriesGenerated" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.generator.java.properties.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.generator.java.references.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingPriorityRule" />
