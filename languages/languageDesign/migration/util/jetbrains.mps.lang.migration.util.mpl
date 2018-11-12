@@ -2,7 +2,7 @@
 <language namespace="jetbrains.mps.lang.migration.util" uuid="9882f4ad-1955-46fe-8269-94189e5dbbf2" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot path="${module}/languageModels" />
+      <sourceRoot location="languageModels" />
     </modelRoot>
   </models>
   <accessoryModels />

@@ -2,7 +2,7 @@
 <language namespace="jetbrains.mps.ide.httpsupport" uuid="817e4e70-961e-4a95-98a1-15e9f32231f1" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot path="${module}/models" />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <accessoryModels />
@@ -10,7 +10,7 @@
     <generator alias="" namespace="jetbrains.mps.ide.httpsupport#4517832885627178591" uuid="69433612-0c08-4d65-8f7c-839ae8b13b0d">
       <models>
         <modelRoot contentPath="${module}" type="default">
-          <sourceRoot path="${module}/generator/template" />
+          <sourceRoot location="generator/template" />
         </modelRoot>
       </models>
       <external-templates />

@@ -2,7 +2,7 @@
 <language namespace="jetbrains.mps.lang.editor.forms" uuid="602c36ad-cc55-47ff-8c40-73d7f12f035c" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot path="${module}/models" />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <accessoryModels />

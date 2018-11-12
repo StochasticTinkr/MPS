@@ -2,7 +2,7 @@
 <language namespace="testMoveElements" uuid="e228eea1-07ef-499c-8826-9c47a7e369db" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot path="${module}/languageModels" />
+      <sourceRoot location="languageModels" />
     </modelRoot>
   </models>
   <accessoryModels />

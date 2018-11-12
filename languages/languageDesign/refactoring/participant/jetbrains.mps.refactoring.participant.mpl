@@ -2,7 +2,7 @@
 <language namespace="jetbrains.mps.refactoring.participant" uuid="d81a5f75-df55-4511-9df4-4dbac0cdcf06" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot path="${module}/models" />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <accessoryModels />

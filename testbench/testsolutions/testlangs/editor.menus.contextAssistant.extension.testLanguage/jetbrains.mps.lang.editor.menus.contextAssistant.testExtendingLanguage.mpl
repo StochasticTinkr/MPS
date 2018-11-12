@@ -2,7 +2,7 @@
 <language namespace="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage" uuid="d1fa0116-fbd7-44fe-bcc8-e093dfdf9f3c" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot path="${module}/models" />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <accessoryModels />

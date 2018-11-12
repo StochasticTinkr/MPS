@@ -2,7 +2,7 @@
 <language namespace="testDefaultEditor" uuid="b5734616-c4b0-4639-9c6a-f3a1cf5dc4db" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot path="${module}/languageModels" />
+      <sourceRoot location="languageModels" />
     </modelRoot>
   </models>
   <accessoryModels />
