@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.components.ComponentHost;
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -31,7 +28,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiFunction;
+import java.util.function.Function;
 
 /**
  * MPS Project abstraction. Project may rely on the idea Project or it may not.
@@ -44,22 +41,21 @@ public abstract class Project implements MPSModuleOwner, IProject {
 
   private boolean myDisposed;
 
-  // IMPORTANT. Subclasses shall invoke either #initRepositoryDefault() or #initRepository(ProjectRepository) right after construction.
+  // IMPORTANT. Subclasses shall invoke either use other cons or #initRepository(ProjectRepository) right after construction.
   //            I know it's ugly, just can't make final fields in two classes that demand each other, and got other important tasks at hand
   //            than to refactor this.
   protected Project(String name) {
     myName = name;
   }
 
-  protected Project(String name, @NotNull ComponentHost mpsPlatform, @NotNull BiFunction<Project, ComponentHost, ProjectRepository> repoFactory) {
+  /**
+   * @deprecated this is an ugly way to pass Project instance into ProjectRepository cons
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
+  protected Project(String name, @NotNull Function<Project, ProjectRepository> repoFactory) {
     myName = name;
-    myRepository = repoFactory.apply(this, mpsPlatform);
-  }
-
-  //
-  protected final void initRepositoryDefault(@NotNull ComponentHost mpsPlatform) {
-    myRepository = new ProjectRepository(this, mpsPlatform.findComponent(MPSModuleRepository.class), mpsPlatform.findComponent(SRepositoryRegistry.class));
-    myRepository.init();
+    myRepository = repoFactory.apply(this);
   }
 
   // not sure I need exactly ProjectRepository, not e.g SRepositoryExt or plain SRepository

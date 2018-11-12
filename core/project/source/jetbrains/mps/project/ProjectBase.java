@@ -18,10 +18,12 @@ package jetbrains.mps.project;
 import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.SRepositoryExt;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -52,6 +54,7 @@ import java.util.Map;
  * Check {@code ModuleFileChangeListener} of [mps-platform] for change tracking.
  * However, tracks module renames (albeit in a bit weird way) to keep inner structures fit.
  *
+ * This project is tied to MPS platform and gives access to MPS core platform and components it comprises.
  *
  * FIXME
  * poor architecture results in the intertwined control flow between ProjectBase, ModuleLoader and ProjectDescriptor
@@ -64,7 +67,7 @@ public abstract class ProjectBase extends Project {
   private final ProjectManager myProjectManager = ProjectManager.getInstance();
 
   private final Map<SModuleReference, SModuleListenerBase> myModulesListeners = new HashMap<>();
-  protected final ComponentHost myPlatform; // XXX perhaps, worth moving into superclass?
+  protected final ComponentHost myPlatform;
 
   // AP fixme must be final, however StandaloneMpsProject exposes it (a client can publicly reset the project descriptor)
   protected ProjectDescriptor myProjectDescriptor;
@@ -74,7 +77,9 @@ public abstract class ProjectBase extends Project {
 
   protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull ComponentHost mpsPlatform) {
     this(projectDescriptor, mpsPlatform, false);
-    initRepositoryDefault(mpsPlatform);
+    ProjectRepository r = new ProjectRepository(this, mpsPlatform.findComponent(MPSModuleRepository.class), mpsPlatform.findComponent(SRepositoryRegistry.class));
+    r.init();
+    initRepository(r);
   }
 
   // FIXME refactor other subclasses and pass boolean initDefaultRepo == true|false
@@ -274,6 +279,13 @@ public abstract class ProjectBase extends Project {
   @NotNull
   public String toString() {
     return "MPS Project [" + getName() + (isDisposed() ? ", disposed]" : "]");
+  }
+
+  /**
+   * Access components that constitute core of MPS platform.
+   */
+  public final ComponentHost getPlatform() {
+    return myPlatform;
   }
 
   @Override
