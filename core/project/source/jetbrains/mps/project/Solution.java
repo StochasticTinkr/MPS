@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.classloading.CustomClassLoadingFacet;
 import jetbrains.mps.java.stub.PackageScopeControl;
-import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.io.DescriptorIO;
@@ -225,13 +224,6 @@ public class Solution extends ReloadableModuleBase {
   protected void collectMandatoryFacetTypes(Set<String> types) {
     super.collectMandatoryFacetTypes(types);
     types.add(TestsFacet.FACET_TYPE);
-  }
-
-  @Override
-  protected SolutionDescriptor loadDescriptor() {
-    IFile file = getDescriptorFile();
-    assert file != null;
-    return (SolutionDescriptor) new ModulesMiner().loadModuleHandle(file).getDescriptor();
   }
 
   @Override

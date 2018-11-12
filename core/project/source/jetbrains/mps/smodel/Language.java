@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.module.SRepositoryExt;
-import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
@@ -161,11 +160,6 @@ public class Language extends ReloadableModuleBase implements ReloadableModule {
 
   public Collection<SModuleReference> getRuntimeModulesReferences() {
     return Collections.unmodifiableSet(myLanguageDescriptor.getRuntimeModules());
-  }
-
-  @Override
-  protected ModuleDescriptor loadDescriptor() {
-    return new ModulesMiner().loadModuleHandle(getDescriptorFile()).getDescriptor();
   }
 
   public void validateExtends() {

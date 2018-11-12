@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -166,11 +166,6 @@ public class SolutionIdea extends Solution {
     ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).releaseSdk(myModule);
     super.dispose();
     myConnection.disconnect();
-  }
-
-  @Override
-  protected SolutionDescriptor loadDescriptor() {
-    return getModuleDescriptor();
   }
 
   @Override

@@ -16,13 +16,14 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.facets.GenerationTargetFacet;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
-import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -225,9 +226,29 @@ public class SModuleOperations {
         // FIXME shall support reload for generator modules (not necessarily with module.loadDescriptor() thought)
         return;
       }
-      ModuleDescriptor descriptor = module.loadDescriptor();
-      module.setModuleDescriptor(descriptor, false);
-    } catch (ModuleReadException e) {
+      final IFile descriptorFile = module.getDescriptorFile();
+      final ModuleDescriptor moduleDescriptor;
+      if (descriptorFile != null) {
+        // here lies hidden knowledge about what file is reported as 'descriptor file' of a module, whether it's DD or source MD
+        // when I get to fixing MM.loadModuleHandle(), shall make it clear. If I fail to remove this reloadFromDisk altogether,
+        // shall at least keep the knowledge about deployment/source MD file in a single place, perhaps by passing AM into MM instead of file.
+        final ModuleHandle mh = new ModulesMiner().loadModuleHandle(descriptorFile);
+        // FIXME in fact, first shall assert reference of a newly loaded module matches that of the one being reloaded.
+        moduleDescriptor = mh.getDescriptor();
+      } else {
+        // StubSolution and SolutionIdea didn't implement loadDescriptor() with re-read of MD file, instead, they've simply returned the actual one.
+        // StubSolution doesn't have file, therefore I surely get here. For SolutionIdea, there's IdeaDescriptorIOProvider that claims capability to parse
+        // .iml files, and there's descriptor file for SolutionIdea module, so we are unlikely to get here. However, it looks like IDEA-related part of
+        // DescriptorIOFacade part is in no use now and shall be abandoned anyway. With that, we could get here by MM failure to load module from the
+        // descriptor file. Meanwhile, just rely on MM.loadModuleHandle(), above, to deal with IDEA's .iml
+        moduleDescriptor = module.getModuleDescriptor();
+        // pass exactly same MD just fire reload/changed events (that's what used to happen when loadDescriptor() returned existing MD).
+      }
+      if (moduleDescriptor != null) {
+        module.setModuleDescriptor(moduleDescriptor, false);
+      }
+    } catch (Exception e) {
+      // ModuleReadException doesn't seem to get out from MM, therefore, handle any generic exception here
       AbstractModule.handleReadProblem(module, e, false);
     }
   }

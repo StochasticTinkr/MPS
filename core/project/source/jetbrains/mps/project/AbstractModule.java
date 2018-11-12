@@ -916,10 +916,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     // todo: as we haven't dependencies listeners...
   }
 
-  protected ModuleDescriptor loadDescriptor() {
-    return null;
-  }
-
   @Override
   public boolean isChanged() {
     return myChanged;
