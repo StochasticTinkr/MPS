@@ -429,6 +429,16 @@
       <directory url="file://$PROJECT_DIR$/samples/attributes/languages/attr/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/attributes/solutions/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/attributes/solutions/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.box/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.box/runtime/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.box/runtime/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.box/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.date/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.date/runtime/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.date/runtime/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/blReferences/jetbrains.mps.baseLanguage.date/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/blReferences/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/blReferences/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/source_gen" includeSubdirectories="true" />
