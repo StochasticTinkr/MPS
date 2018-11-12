@@ -126,6 +126,7 @@
     <classNode dependClassName="jetbrains.mps.internalCollections.test.basicOperations.Bar" />
     <classNode dependClassName="jetbrains.mps.internalCollections.test.basicOperations.Foo" />
     <classNode dependClassName="jetbrains.mps.internalCollections.test.basicOperations.MPS_17338" />
+    <classNode dependClassName="jetbrains.mps.references.BLOperations" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
@@ -164,6 +165,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SortedMapSequence" />
+    <classNode dependClassName="jetbrains.mps.references.BLOperations" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>

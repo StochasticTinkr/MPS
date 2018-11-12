@@ -27,6 +27,7 @@ import java.util.Deque;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.references.BLOperations;
 
 public class List_Test extends Util_Test {
   public void test_listCreator() throws Exception {
@@ -387,11 +388,11 @@ __switch__:
   }
   public void test_opAssign() throws Exception {
     List<Integer> listi = ListSequence.fromListAndArray(new ArrayList<Integer>(), 345, 543, 1111);
-    Assert.assertTrue(645 == (int) ListSequence.fromList(listi).setElement(0, ListSequence.fromList(listi).getElement(0) + (300)));
+    Assert.assertTrue(645 == (int) BLOperations.plusAssign(ListSequence.fromList(listi).getElementRef(0), 300));
     Assert.assertTrue(645 == (int) ListSequence.fromList(listi).getElement(0));
-    Assert.assertTrue((int) ListSequence.fromList(listi).setElement(1, ListSequence.fromList(listi).getElement(1) - (40)) == 503);
+    Assert.assertTrue((int) BLOperations.minusAssign(ListSequence.fromList(listi).getElementRef(1), 40) == 503);
     Assert.assertTrue((int) ListSequence.fromList(listi).getElement(1) == 503);
-    Assert.assertTrue(9999 == (int) ListSequence.fromList(listi).setElement(2, ListSequence.fromList(listi).getElement(2) * (9)));
+    Assert.assertTrue(9999 == (int) BLOperations.multAssign(ListSequence.fromList(listi).getElementRef(2), 9));
     Assert.assertTrue(9999 == (int) ListSequence.fromList(listi).getElement(2));
   }
   public void test_mps15234() throws Exception {

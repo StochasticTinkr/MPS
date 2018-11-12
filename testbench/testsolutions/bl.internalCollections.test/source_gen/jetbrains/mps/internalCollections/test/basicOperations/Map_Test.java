@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.WeakHashMap;
+import jetbrains.mps.references.BLOperations;
 
 public class Map_Test extends Util_Test {
   public void test_initSize() throws Exception {
@@ -197,11 +198,11 @@ public class Map_Test extends Util_Test {
   }
   public void test_opAssign() throws Exception {
     Map<String, Integer> mapsi = MapSequence.<String, Integer>fromMapAndKeysArray(new HashMap<String, Integer>(), "A", "B", "C").withValues(345, 543, 1111);
-    Assert.assertTrue(645 == (int) MapSequence.fromMap(mapsi).putValue("A", MapSequence.fromMap(mapsi).get("A") + (300)));
+    Assert.assertTrue(645 == (int) BLOperations.plusAssign(MapSequence.fromMap(mapsi).getValueRef("A"), 300));
     Assert.assertTrue(645 == (int) MapSequence.fromMap(mapsi).get("A"));
-    Assert.assertTrue((int) MapSequence.fromMap(mapsi).putValue("B", MapSequence.fromMap(mapsi).get("B") - (40)) == 503);
+    Assert.assertTrue((int) BLOperations.minusAssign(MapSequence.fromMap(mapsi).getValueRef("B"), 40) == 503);
     Assert.assertTrue((int) MapSequence.fromMap(mapsi).get("B") == 503);
-    Assert.assertTrue(9999 == (int) MapSequence.fromMap(mapsi).putValue("C", MapSequence.fromMap(mapsi).get("C") * (9)));
+    Assert.assertTrue(9999 == (int) BLOperations.multAssign(MapSequence.fromMap(mapsi).getValueRef("C"), 9));
     Assert.assertTrue(9999 == (int) MapSequence.fromMap(mapsi).get("C"));
   }
 }
