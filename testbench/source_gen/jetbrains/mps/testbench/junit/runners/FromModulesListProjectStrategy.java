@@ -31,6 +31,7 @@ public class FromModulesListProjectStrategy extends ProjectStrategyBase {
   public Project construct(@NotNull Project emptyProject) {
     final String[] modules = myModulesPath.split(File.pathSeparator);
     TestRootAccessInsight.allowTestRootAccessForModuleFolders(modules);
+    // FIXME either pass ComponentHost as cons argument or take one from emptyProject (though would need to cast to ProjectBase) 
     ModulesMiner mm = new ModulesMiner();
     for (String modulePath : modules) {
       IFile fileByPath = IoFileSystem.INSTANCE.getFile(modulePath);

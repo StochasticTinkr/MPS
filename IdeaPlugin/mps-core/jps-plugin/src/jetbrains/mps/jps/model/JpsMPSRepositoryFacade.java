@@ -196,7 +196,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         filesToLoad.add(ipath);
       }
       new FileRefresh(filesToLoad).run();
-      ModulesMiner modulesMiner = new ModulesMiner();
+      ModulesMiner modulesMiner = new ModulesMiner(myPlatform);
       for (IFile ipath : filesToLoad) {
         modulesMiner.collectModules(ipath);
       }

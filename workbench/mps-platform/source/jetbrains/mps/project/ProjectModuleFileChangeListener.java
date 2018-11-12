@@ -38,6 +38,7 @@ import java.util.Map;
  * Changes to descriptor files drop or reload respective project modules.
  *
  * XXX In fact, quite similar to {@link jetbrains.mps.library.SLibrary}, just an own source for module paths, worth a refactoring.
+ *     Besides, there's {@code ProjectModuleLoader} which is responsible for another SLibrary-similar part of functionality.
  *
  * @author Alexey Pyshkin
  * @author Artem Tikhomirov

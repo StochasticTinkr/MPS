@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
    * @return the number of successfully loaded modules
    */
   private int loadNewPaths(final List<ModulePath> pathsToLoad) {
-    final ModulesMiner modulesMiner = new ModulesMiner();
+    final ModulesMiner modulesMiner = new ModulesMiner(myProject.getPlatform());
     final Map<ModuleHandle, ModulePath> handleToPath = new HashMap<>();
     for (ModulePath modulePath : pathsToLoad) {
       String descriptorPath = modulePath.getPath();

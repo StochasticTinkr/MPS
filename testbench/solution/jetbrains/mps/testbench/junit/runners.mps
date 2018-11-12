@@ -1491,6 +1491,11 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="7e0YLSJ51i0" role="3cqZAp">
+          <node concept="3SKdUq" id="7e0YLSJ51i2" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME either pass ComponentHost as cons argument or take one from emptyProject (though would need to cast to ProjectBase)" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="7LkutxgThrq" role="3cqZAp">
           <node concept="3cpWsn" id="7LkutxgThrr" role="3cpWs9">
             <property role="TrG5h" value="mm" />

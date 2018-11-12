@@ -912,7 +912,18 @@
                         <node concept="2OqwBi" id="7o2AF0ojfcn" role="2Oq$k0">
                           <node concept="2ShNRf" id="7LkutxgSDQ5" role="2Oq$k0">
                             <node concept="1pGfFk" id="7LkutxgSJZj" role="2ShVmc">
-                              <ref role="37wK5l" to="32g5:~ModulesMiner.&lt;init&gt;()" resolve="ModulesMiner" />
+                              <ref role="37wK5l" to="32g5:~ModulesMiner.&lt;init&gt;(jetbrains.mps.components.ComponentHost)" resolve="ModulesMiner" />
+                              <node concept="2OqwBi" id="7e0YLSJ4f5L" role="37wK5m">
+                                <node concept="2OqwBi" id="7e0YLSJ4dSY" role="2Oq$k0">
+                                  <node concept="2WthIp" id="7e0YLSJ4dT1" role="2Oq$k0" />
+                                  <node concept="1DTwFV" id="7e0YLSJ4dT3" role="2OqNvi">
+                                    <ref role="2WH_rO" node="59D800tX0PI" resolve="project" />
+                                  </node>
+                                </node>
+                                <node concept="liA8E" id="7e0YLSJ4glN" role="2OqNvi">
+                                  <ref role="37wK5l" to="z1c3:~ProjectBase.getPlatform():jetbrains.mps.components.ComponentHost" resolve="getPlatform" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                           <node concept="liA8E" id="7o2AF0ojfcp" role="2OqNvi">

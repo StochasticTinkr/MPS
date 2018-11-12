@@ -254,7 +254,7 @@ public abstract class MpsWorker {
       return;
     }
     ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(repo);
-    for (ModulesMiner.ModuleHandle moduleHandle : new ModulesMiner().collectModules(descriptorFile).getCollectedModules()) {
+    for (ModulesMiner.ModuleHandle moduleHandle : new ModulesMiner(myEnvironment.getPlatform()).collectModules(descriptorFile).getCollectedModules()) {
       //  seems reasonable just to instantiate a module here and leave its registration to caller 
       SModule module = mrf.instantiateModule(moduleHandle, myOwner);
       info("Loaded module " + module);

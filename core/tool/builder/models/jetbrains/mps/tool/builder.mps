@@ -2166,7 +2166,15 @@
             <node concept="2OqwBi" id="KL8Aqlj5ve" role="2Oq$k0">
               <node concept="2ShNRf" id="7LkutxgTe3r" role="2Oq$k0">
                 <node concept="1pGfFk" id="7LkutxgTeVD" role="2ShVmc">
-                  <ref role="37wK5l" to="32g5:~ModulesMiner.&lt;init&gt;()" resolve="ModulesMiner" />
+                  <ref role="37wK5l" to="32g5:~ModulesMiner.&lt;init&gt;(jetbrains.mps.components.ComponentHost)" resolve="ModulesMiner" />
+                  <node concept="2OqwBi" id="7e0YLSJ4Trw" role="37wK5m">
+                    <node concept="37vLTw" id="7e0YLSJ4SXQ" role="2Oq$k0">
+                      <ref role="3cqZAo" node="KL8Aqlj5lM" resolve="myEnvironment" />
+                    </node>
+                    <node concept="liA8E" id="7e0YLSJ4UU4" role="2OqNvi">
+                      <ref role="37wK5l" to="79ha:8Pnvxgloc_" resolve="getPlatform" />
+                    </node>
+                  </node>
                 </node>
               </node>
               <node concept="liA8E" id="KL8Aqlj5vg" role="2OqNvi">

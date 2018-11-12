@@ -80,7 +80,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
     ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
     modelAccess.executeCommandInEDT(new Runnable() {
       public void run() {
-        Collection<ModulesMiner.ModuleHandle> modules = new ModulesMiner().collectModules(dir).getCollectedModules();
+        Collection<ModulesMiner.ModuleHandle> modules = new ModulesMiner(((MPSProject) MapSequence.fromMap(_params).get("project")).getPlatform()).collectModules(dir).getCollectedModules();
         VisibleModules visible = new VisibleModules(((SNode) MapSequence.fromMap(_params).get("node")));
         visible.collect();
 
