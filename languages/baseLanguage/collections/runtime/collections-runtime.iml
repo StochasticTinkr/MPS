@@ -10,5 +10,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="closures-runtime" />
+    <orderEntry type="module" module-name="baseLanguage-runtime" />
   </component>
 </module>

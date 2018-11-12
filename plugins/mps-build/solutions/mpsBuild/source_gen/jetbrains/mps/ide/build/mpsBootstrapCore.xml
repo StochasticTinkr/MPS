@@ -6503,7 +6503,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-collections" depends="java.compile.mps-closures">
+  <target name="java.compile.mps-collections" depends="java.compile.mps-closures, java.compile.mps-references">
     <mkdir dir="${mps_home}/languages/baseLanguage/collections/runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-collections" />
     <javac2 destdir="${build.tmp}/java/out/mps-collections" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -6513,6 +6513,7 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-references" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>

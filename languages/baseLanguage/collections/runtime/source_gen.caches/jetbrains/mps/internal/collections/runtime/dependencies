@@ -243,6 +243,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.references.Reference" />
     <classNode extendsClassName="java.util.List" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ICollectionSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
@@ -250,6 +251,7 @@
   <dependency className="jetbrains.mps.internal.collections.runtime.IMapSequence">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISetSequence" />
+    <classNode dependClassName="jetbrains.mps.references.Reference" />
     <classNode extendsClassName="java.util.Map" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
   </dependency>
