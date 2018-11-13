@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.EditorComponent.EditorDisposeListener;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.extensions.EditorExtension;
 import jetbrains.mps.openapi.editor.extensions.EditorExtensionRegistry;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -31,6 +33,8 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public class EditorExtensionRegistryImpl implements EditorExtensionRegistry, ProjectComponent {
+  private static final Logger LOG = LogManager.getLogger(EditorExtensionRegistryImpl.class);
+
   private final Set<EditorExtension> myExtensions = new HashSet<>();
   private final MultiMap<EditorComponent, EditorExtension> myEditorExtensions = MultiMap.create();
   private final EditorDisposeListener myUnextendOnEditorDisposeListener = new UnextendOnEditorDisposeListener();
@@ -49,8 +53,9 @@ public class EditorExtensionRegistryImpl implements EditorExtensionRegistry, Pro
 
   @Override
   public void disposeComponent() {
-    assert myExtensions.isEmpty();
-    assert myEditorExtensions.isEmpty();
+    for (EditorExtension extensionLeft : myExtensions) {
+      LOG.error("The editor extension left unregistered: " + extensionLeft);
+    }
   }
 
   @NotNull
