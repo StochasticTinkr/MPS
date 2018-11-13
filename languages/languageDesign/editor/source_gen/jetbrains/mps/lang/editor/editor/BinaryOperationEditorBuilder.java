@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.references.Reference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.Language;
@@ -103,6 +104,48 @@ public class BinaryOperationEditorBuilder {
     private List<SNode> myActionMaps = ListSequence.fromList(new ArrayList<SNode>());
     private SNode myNodeFactories;
 
+    private SNode myMainCell;
+    public SNode getMainCell() {
+      return this.myMainCell;
+    }
+    private void _setMainCell(SNode value) {
+      this.myMainCell = value;
+    }
+    private SNode setMainCell(SNode value) {
+      _setMainCell(value);
+      return value;
+    }
+    private void refToMainCell() {
+      new Reference<SNode>() {
+        public SNode get() {
+          return getMainCell();
+        }
+        public void set(SNode value) {
+          _setMainCell(value);
+        }
+      };
+    }
+    private SNode myAliasCell;
+    public SNode getAliasCell() {
+      return this.myAliasCell;
+    }
+    private void _setAliasCell(SNode value) {
+      this.myAliasCell = value;
+    }
+    private SNode setAliasCell(SNode value) {
+      _setAliasCell(value);
+      return value;
+    }
+    private void refToAliasCell() {
+      new Reference<SNode>() {
+        public SNode get() {
+          return getAliasCell();
+        }
+        public void set(SNode value) {
+          _setAliasCell(value);
+        }
+      };
+    }
 
     public void commit() {
       ListSequence.fromList(myActionMaps).visitAll(new IVisitor<SNode>() {
@@ -118,20 +161,6 @@ public class BinaryOperationEditorBuilder {
         actionsModel = LanguageAspect.ACTIONS.createNew(declaringLanguage);
       }
       SModelOperations.addRootNode(actionsModel, myNodeFactories);
-    }
-    private SNode myMainCell;
-    public SNode getMainCell() {
-      return this.myMainCell;
-    }
-    private void setMainCell(SNode value) {
-      this.myMainCell = value;
-    }
-    private SNode myAliasCell;
-    public SNode getAliasCell() {
-      return this.myAliasCell;
-    }
-    private void setAliasCell(SNode value) {
-      this.myAliasCell = value;
     }
   }
   private static SNode _quotation_createNode_d1zfxg_a0a0n(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {

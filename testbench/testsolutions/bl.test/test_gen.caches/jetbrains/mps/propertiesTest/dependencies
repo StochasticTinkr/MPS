@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.propertiesTest.BaseTestClass" />
+  <dependency className="jetbrains.mps.propertiesTest.BaseTestClass">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.references.Reference" />
+  </dependency>
   <dependency className="jetbrains.mps.propertiesTest.CustomPropertyAccess_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -61,6 +64,8 @@
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.propertiesTest.TestClass">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.references.Reference" />
     <classNode extendsClassName="jetbrains.mps.propertiesTest.BaseTestClass" />
   </dependency>
 </dependenciesRoot>

@@ -69,6 +69,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.references.Reference;
 
 public abstract class DiagramCell extends AbstractJetpadCell implements EditorCell_WithComponent, MapperFactory<SNode, DiagramView> {
   private final FocusListener mySelectCellOnFocusGained = new SelectCellOnFocusGainedFocusListener(this);
@@ -513,6 +514,90 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
 
   public class ConnectionInfo {
+    private SNode myFromNode;
+    public SNode getFromNode() {
+      return this.myFromNode;
+    }
+    private void _setFromNode(SNode value) {
+      this.myFromNode = value;
+    }
+    private SNode setFromNode(SNode value) {
+      _setFromNode(value);
+      return value;
+    }
+    private void refToFromNode() {
+      new Reference<SNode>() {
+        public SNode get() {
+          return getFromNode();
+        }
+        public void set(SNode value) {
+          _setFromNode(value);
+        }
+      };
+    }
+    private Object myFromId;
+    public Object getFromId() {
+      return this.myFromId;
+    }
+    private void _setFromId(Object value) {
+      this.myFromId = value;
+    }
+    private Object setFromId(Object value) {
+      _setFromId(value);
+      return value;
+    }
+    private void refToFromId() {
+      new Reference<Object>() {
+        public Object get() {
+          return getFromId();
+        }
+        public void set(Object value) {
+          _setFromId(value);
+        }
+      };
+    }
+    private SNode myToNode;
+    public SNode getToNode() {
+      return this.myToNode;
+    }
+    private void _setToNode(SNode value) {
+      this.myToNode = value;
+    }
+    private SNode setToNode(SNode value) {
+      _setToNode(value);
+      return value;
+    }
+    private void refToToNode() {
+      new Reference<SNode>() {
+        public SNode get() {
+          return getToNode();
+        }
+        public void set(SNode value) {
+          _setToNode(value);
+        }
+      };
+    }
+    private Object myToId;
+    public Object getToId() {
+      return this.myToId;
+    }
+    private void _setToId(Object value) {
+      this.myToId = value;
+    }
+    private Object setToId(Object value) {
+      _setToId(value);
+      return value;
+    }
+    private void refToToId() {
+      new Reference<Object>() {
+        public Object get() {
+          return getToId();
+        }
+        public void set(Object value) {
+          _setToId(value);
+        }
+      };
+    }
 
     public ConnectionInfo() {
       if (myDragConnection == null) {
@@ -532,34 +617,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
     public boolean isValid() {
       return getFromNode() != null && getToNode() != null;
-    }
-    private SNode myFromNode;
-    public SNode getFromNode() {
-      return this.myFromNode;
-    }
-    private void setFromNode(SNode value) {
-      this.myFromNode = value;
-    }
-    private Object myFromId;
-    public Object getFromId() {
-      return this.myFromId;
-    }
-    private void setFromId(Object value) {
-      this.myFromId = value;
-    }
-    private SNode myToNode;
-    public SNode getToNode() {
-      return this.myToNode;
-    }
-    private void setToNode(SNode value) {
-      this.myToNode = value;
-    }
-    private Object myToId;
-    public Object getToId() {
-      return this.myToId;
-    }
-    private void setToId(Object value) {
-      this.myToId = value;
     }
   }
 

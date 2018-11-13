@@ -14,7 +14,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />
   <dependency className="jetbrains.mps.lang.extension.tests.plugin.TestObject">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.references.Reference" />
   </dependency>
   <dependency className="jetbrains.mps.lang.extension.tests.plugin.lazyTestExtensionPoint_extension">
     <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />

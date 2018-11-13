@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.baseLanguage.util.CodeStyleSettings">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.references.Reference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry">

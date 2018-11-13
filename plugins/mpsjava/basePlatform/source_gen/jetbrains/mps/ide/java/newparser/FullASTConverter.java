@@ -55,6 +55,7 @@ import org.eclipse.jdt.internal.compiler.ast.SingleNameReference;
 import org.eclipse.jdt.internal.compiler.ast.SingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedNameReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference;
+import jetbrains.mps.references.Reference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -598,33 +599,75 @@ public class FullASTConverter extends ASTConverterWithExpressions {
     return stmt;
   }
   public class CodeBlock {
+    private SNode myStatementList;
+    public SNode getStatementList() {
+      return this.myStatementList;
+    }
+    private void _setStatementList(SNode value) {
+      this.myStatementList = value;
+    }
+    private SNode setStatementList(SNode value) {
+      _setStatementList(value);
+      return value;
+    }
+    private void refToStatementList() {
+      new Reference<SNode>() {
+        public SNode get() {
+          return getStatementList();
+        }
+        public void set(SNode value) {
+          _setStatementList(value);
+        }
+      };
+    }
+    private int myStartPos;
+    public int getStartPos() {
+      return this.myStartPos;
+    }
+    private void _setStartPos(int value) {
+      this.myStartPos = value;
+    }
+    private int setStartPos(int value) {
+      _setStartPos(value);
+      return value;
+    }
+    private void refToStartPos() {
+      new Reference<Integer>() {
+        public Integer get() {
+          return getStartPos();
+        }
+        public void set(Integer value) {
+          _setStartPos(value);
+        }
+      };
+    }
+    private int myEndPos;
+    public int getEndPos() {
+      return this.myEndPos;
+    }
+    private void _setEndPos(int value) {
+      this.myEndPos = value;
+    }
+    private int setEndPos(int value) {
+      _setEndPos(value);
+      return value;
+    }
+    private void refToEndPos() {
+      new Reference<Integer>() {
+        public Integer get() {
+          return getEndPos();
+        }
+        public void set(Integer value) {
+          _setEndPos(value);
+        }
+      };
+    }
     private CompilationUnitDeclaration cud;
     public CodeBlock(SNode n, CompilationUnitDeclaration d, int s, int e) {
       setStatementList(n);
       cud = d;
       setStartPos(s);
       setEndPos(e);
-    }
-    private SNode myStatementList;
-    public SNode getStatementList() {
-      return this.myStatementList;
-    }
-    private void setStatementList(SNode value) {
-      this.myStatementList = value;
-    }
-    private int myStartPos;
-    public int getStartPos() {
-      return this.myStartPos;
-    }
-    private void setStartPos(int value) {
-      this.myStartPos = value;
-    }
-    private int myEndPos;
-    public int getEndPos() {
-      return this.myEndPos;
-    }
-    private void setEndPos(int value) {
-      this.myEndPos = value;
     }
   }
   @Override

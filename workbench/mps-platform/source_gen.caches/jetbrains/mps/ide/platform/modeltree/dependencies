@@ -33,10 +33,12 @@
     <classNode extendsClassName="javax.swing.tree.TreeCellRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.modeltree.ModelTreeNode">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.references.Reference" />
     <classNode extendsClassName="javax.swing.tree.DefaultMutableTreeNode" />
   </dependency>
 </dependenciesRoot>
