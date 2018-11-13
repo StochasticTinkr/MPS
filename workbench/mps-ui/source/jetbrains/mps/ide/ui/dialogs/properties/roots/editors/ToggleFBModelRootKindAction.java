@@ -92,19 +92,18 @@ public abstract class ToggleFBModelRootKindAction extends ToggleAction implement
 
     final FileBasedModelRoot modelRoot = myModelRootEditor.getFileBasedModelRootEntry().getModelRoot();
 
-    modelRoot.getModule().getRepository().getModelAccess().runWriteAction(() -> {
-      for (IFile selectedFile : selectedFiles) {
-        SourceRoot sourceRootByPath = getSourceRootByPath(selectedFile);
-        if (enabled) {
-          assert sourceRootByPath == null;
-          assert modelRoot.getContentDirectory() != null;
-          modelRoot.addSourceRoot(getKind(), new DefaultSourceRoot(selectedFile.getPath(), modelRoot.getContentDirectory()));
-        } else {
-          assert sourceRootByPath != null;
-          modelRoot.removeSourceRoot(sourceRootByPath);
-        }
+    assert !modelRoot.isRegistered();
+    for (IFile selectedFile : selectedFiles) {
+      SourceRoot sourceRootByPath = getSourceRootByPath(selectedFile);
+      if (enabled) {
+        assert sourceRootByPath == null;
+        assert modelRoot.getContentDirectory() != null;
+        modelRoot.addSourceRoot(getKind(), new DefaultSourceRoot(selectedFile.getPath(), modelRoot.getContentDirectory()));
+      } else {
+        assert sourceRootByPath != null;
+        modelRoot.removeSourceRoot(sourceRootByPath);
       }
-    });
+    }
 
 
     myTree.updateUI();
