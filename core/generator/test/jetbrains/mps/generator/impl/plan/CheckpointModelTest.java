@@ -349,7 +349,7 @@ public class CheckpointModelTest implements EnvironmentAware {
     Transform t3 = (Transform) plan.getSteps().get(4); // bl + extensions
     myErrors.checkThat(t1.getTransformations().size(), CoreMatchers.equalTo(7)); // 2 from closures + 5 from collections
     myErrors.checkThat(t2.getTransformations().size(), CoreMatchers.equalTo(1)); // 1 MC in blInternal.
-    myErrors.checkThat(t3.getTransformations().size(), CoreMatchers.equalTo(10)); // 5 from BL + 5 from collections
+    myErrors.checkThat(t3.getTransformations().size(), CoreMatchers.equalTo(11)); // 5 from BL + 5 from collections
   }
 
   @Test
