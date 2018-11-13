@@ -1722,11 +1722,6 @@
             <property role="1dT_AB" value="a straight-forward version of the search process: we ask, we wait, we get the results" />
           </node>
         </node>
-        <node concept="TZ5HA" id="6hZLf2YnMO1" role="TZ5H$">
-          <node concept="1dT_AC" id="6hZLf2YnMO2" role="1dT_Ay">
-            <property role="1dT_AB" value="// @deprecated" />
-          </node>
-        </node>
       </node>
       <node concept="2AHcQZ" id="6hZLf2YnMSb" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
@@ -1734,6 +1729,13 @@
       <node concept="2JFqV2" id="4riYepdjx0M" role="2frcjj" />
     </node>
     <node concept="2tJIrI" id="4riYepdjTiv" role="jymVt" />
+    <node concept="3clFb_" id="7DlNb6XapOW" role="jymVt">
+      <property role="TrG5h" value="foo" />
+      <node concept="3clFbS" id="7DlNb6XapOZ" role="3clF47" />
+      <node concept="3Tm1VV" id="7DlNb6XapP0" role="1B3o_S" />
+      <node concept="3cqZAl" id="7DlNb6XapNo" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="7DlNb6XamyI" role="jymVt" />
     <node concept="3clFb_" id="4riYepdjGcW" role="jymVt">
       <property role="TrG5h" value="find" />
       <property role="DiZV1" value="false" />

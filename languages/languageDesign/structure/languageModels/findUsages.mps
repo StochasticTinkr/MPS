@@ -2497,6 +2497,20 @@
     <ref role="3gKJdq" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
     <node concept="2PqlIu" id="5Xky2$hnZgt" role="3gKxsI">
       <node concept="3clFbS" id="5Xky2$hnZgu" role="2VODD2">
+        <node concept="3clFbF" id="7DlNb6Xa7no" role="3cqZAp">
+          <node concept="2OqwBi" id="7DlNb6Xa7AC" role="3clFbG">
+            <node concept="24CIHX" id="7DlNb6Xa7nm" role="2Oq$k0" />
+            <node concept="liA8E" id="7DlNb6Xa7M$" role="2OqNvi">
+              <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
+              <node concept="Xl_RD" id="7DlNb6Xa8xw" role="37wK5m">
+                <property role="Xl_RC" value="Derived Concepts" />
+              </node>
+              <node concept="3cmrfG" id="7DlNb6Xa7Ne" role="37wK5m">
+                <property role="3cmrfH" value="1000" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="htSpuxB" role="3cqZAp">
           <node concept="3cpWsn" id="htSpuxC" role="3cpWs9">
             <property role="TrG5h" value="currentConcepts" />
