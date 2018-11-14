@@ -43,10 +43,8 @@ import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -200,7 +198,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   // Purpose of this implementation is to resolve references to yet not public transient models
   private SModel findInVault(SModelId reference) {
-    for (SModel m : myModelVault.allModels()) {
+    for (SModel m : myModelVault.allModelsExceptScheduled2Drop()) {
       if (reference.equals(m.getModelId())) {
         return m;
       }
@@ -211,7 +209,8 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   @Override
   public SModel getModel(SModelId id) {
     SModel rv = super.getModel(id);
-    if (rv != null) {
+    // we may find CP model published during previous generator run but already re-generated (and scheduled to drop) during actual run.
+    if (rv != null && !myModelVault.isScheduled2Drop(rv)) {
       return rv;
     }
     return findInVault(id);
@@ -404,7 +403,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     }
 
     @Override
-    protected boolean saveModel() throws IOException, ModelSaveException {
+    protected boolean saveModel() {
       throw new UnsupportedOperationException();
     }
 
