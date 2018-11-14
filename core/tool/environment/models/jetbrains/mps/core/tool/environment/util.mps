@@ -24,6 +24,8 @@
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
     <import index="anx0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.iofs(MPS.Core/)" />
+    <import index="6vti" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.iofs.file(MPS.Core/)" />
+    <import index="ifj7" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.util(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1004,8 +1006,8 @@
             <node concept="3clFbF" id="4937uxYQnaW" role="3cqZAp">
               <node concept="37vLTI" id="4937uxYQnaX" role="3clFbG">
                 <node concept="2YIFZM" id="6eoPAc_Vgns" role="37vLTx">
-                  <ref role="1Pybhc" to="18ew:~PathUtil" resolve="PathUtil" />
                   <ref role="37wK5l" to="18ew:~PathUtil.getAbsolutePath(java.lang.String):java.lang.String" resolve="getAbsolutePath" />
+                  <ref role="1Pybhc" to="18ew:~PathUtil" resolve="PathUtil" />
                   <node concept="2YIFZM" id="4937uxYQnb0" role="37wK5m">
                     <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
                     <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
@@ -3824,17 +3826,21 @@
             <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
             <node concept="2OqwBi" id="7LMB4CaTKl4" role="37wK5m">
               <node concept="2YIFZM" id="7LMB4CaTLJM" role="2Oq$k0">
-                <ref role="1Pybhc" to="anx0:~LocalIoFileSystem" resolve="LocalIoFileSystem" />
-                <ref role="37wK5l" to="anx0:~LocalIoFileSystem.getInstance():jetbrains.mps.vfs.IFileSystem" resolve="getInstance" />
+                <ref role="1Pybhc" to="6vti:~LocalIoFileSystem" resolve="LocalIoFileSystem" />
+                <ref role="37wK5l" to="6vti:~LocalIoFileSystem.getInstance():jetbrains.mps.vfs.IFileSystem" resolve="getInstance" />
               </node>
               <node concept="liA8E" id="7LMB4CaTMcz" role="2OqNvi">
                 <ref role="37wK5l" to="3ju5:~IFileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
-                <node concept="2OqwBi" id="7LMB4CaTNuT" role="37wK5m">
-                  <node concept="1rXfSq" id="7LMB4CaTN0$" role="2Oq$k0">
-                    <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
-                  </node>
-                  <node concept="liA8E" id="7LMB4CaTO9W" role="2OqNvi">
-                    <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                <node concept="2YIFZM" id="65VDEp95cGD" role="37wK5m">
+                  <ref role="1Pybhc" to="ifj7:~PathUtil" resolve="PathUtil" />
+                  <ref role="37wK5l" to="ifj7:~PathUtil.toSystemIndependent(java.lang.String):java.lang.String" resolve="toSystemIndependent" />
+                  <node concept="2OqwBi" id="7LMB4CaTNuT" role="37wK5m">
+                    <node concept="1rXfSq" id="7LMB4CaTN0$" role="2Oq$k0">
+                      <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
+                    </node>
+                    <node concept="liA8E" id="7LMB4CaTO9W" role="2OqNvi">
+                      <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                    </node>
                   </node>
                 </node>
               </node>

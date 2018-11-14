@@ -39,18 +39,18 @@ public final class IoPathAssert {
   }
 
   public IoPathAssert noEndSlash() {
-    assert !myPath.endsWith(IFileSystem.SEPARATOR);
+    assert !myPath.endsWith(IFileSystem.SEPARATOR) : "This path must not end with slash: " + myPath;
     return this;
   }
 
   public IoPathAssert absolute() {
-    assert myPath.startsWith(IFileSystem.SEPARATOR) || myPath.contains(":/");
+    assert myPath.startsWith(IFileSystem.SEPARATOR) || myPath.contains(":/") : "Path should be absolute: " + myPath;
     return this;
   }
 
   public IoPathAssert noDots() {
     for (String part : myPath.split(IFileSystem.SEPARATOR)) {
-      assert !part.equals(".") && !part.equals("..");
+      assert !part.equals(".") && !part.equals("..") : "Path should not contain \".\" and \"..\"";
     }
     return this;
   }

@@ -18,7 +18,6 @@ package jetbrains.mps.vfs.iofs.jar;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.iofs.IoPathAssert;
-import jetbrains.mps.vfs.iofs.IoPathUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;

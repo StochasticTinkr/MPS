@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.vfs.iofs.jar;
 
+import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.impl.IoFileSystem;
-import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.iofs.IoPathUtil;
-import jetbrains.mps.vfs.iofs.file.IoFile;
+import jetbrains.mps.vfs.util.PathUtil;
+import jetbrains.mps.vfs.iofs.file.LocalIoFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
@@ -49,7 +49,6 @@ public class JarEntryFile implements IFile {
   JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String entryPath, IFileSystem fileSystem) {
     myJarFileData = jarFileData;
     myJarFile = jarFile;
-    IoPathUtil.assertOsIndependentPath(entryPath);
     myEntryPath = entryPath;
     myFileSystem = fileSystem;
   }
@@ -120,7 +119,6 @@ public class JarEntryFile implements IFile {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
-    IoPathUtil.assertOsIndependentPath(suffix);
     String path = myEntryPath.length() > 0 ? myEntryPath + IFileSystem.SEPARATOR + suffix : suffix;
     return new JarEntryFile(myJarFileData, myJarFile, path, myFileSystem);
   }
@@ -133,7 +131,7 @@ public class JarEntryFile implements IFile {
   @NotNull
   @Override
   public String getPath() {
-    return IoPathUtil.toSystemIndependent(myJarFile.getAbsolutePath()) + "!/" + myEntryPath;
+    return PathUtil.toSystemIndependent(myJarFile.getAbsolutePath()) + "!/" + myEntryPath;
   }
 
   @Override
@@ -210,7 +208,7 @@ public class JarEntryFile implements IFile {
 
   @Override
   public IFile getBundleHome() {
-    return new IoFile(myJarFile, myFileSystem);
+    return LocalIoFileSystem.getInstance().getFile(PathUtil.toSystemIndependent(myJarFile.getPath()));
   }
 
   @Override

@@ -21,7 +21,7 @@ import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.iofs.IoPathUtil;
+import jetbrains.mps.vfs.util.PathUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
@@ -50,7 +50,7 @@ class IoFile implements IFile {
   IoFile(@NotNull String path, IFileSystem fileSystem) {
     myPath = path;
     myFileSystem = fileSystem;
-    myFile = new File(IoPathUtil.toSystemDependentName(path));
+    myFile = new File(PathUtil.toSystemDependentName(path));
   }
 
   @NotNull
@@ -77,7 +77,7 @@ class IoFile implements IFile {
     if (parentFile == null) {
       return null;
     }
-    return new IoFile(IoPathUtil.toSystemIndependent(parentFile.getPath()), myFileSystem);
+    return new IoFile(PathUtil.toSystemIndependent(parentFile.getPath()), myFileSystem);
   }
 
   @Override
@@ -170,7 +170,7 @@ class IoFile implements IFile {
 
     List<IFile> result = new ArrayList<>(files.length);
     for (File f : files) {
-      result.add(new IoFile(IoPathUtil.toSystemIndependent(f.getPath()), myFileSystem));
+      result.add(new IoFile(PathUtil.toSystemIndependent(f.getPath()), myFileSystem));
     }
     return result;
   }

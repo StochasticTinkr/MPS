@@ -13,6 +13,7 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.iofs.file.LocalIoFileSystem;
+import jetbrains.mps.vfs.util.PathUtil;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
@@ -32,7 +33,7 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
 
   @NotNull
   private MacroHelper createMacroHelper() {
-    return MacrosFactory.forProjectFile(LocalIoFileSystem.getInstance().getFile(getProjectFile().getPath()));
+    return MacrosFactory.forProjectFile(LocalIoFileSystem.getInstance().getFile(PathUtil.toSystemIndependent(getProjectFile().getPath())));
   }
 
   @Override

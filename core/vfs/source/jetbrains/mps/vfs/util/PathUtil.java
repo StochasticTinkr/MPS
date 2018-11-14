@@ -13,14 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.iofs;
+package jetbrains.mps.vfs.util;
 
 import jetbrains.mps.vfs.IFileSystem;
+import jetbrains.mps.vfs.iofs.IoPathAssert;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
-public class IoPathUtil {
+public class PathUtil {
   @NotNull
   public static String toSystemIndependent(@NotNull String path) {
     String result = path.replace(File.separator, IFileSystem.SEPARATOR);

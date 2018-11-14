@@ -27,7 +27,7 @@
  *
  * VFS PATHS
  *    - File FS
- *        Path is a regular path, with straight slashes.
+ *        Path is a regular path, with straight slashes, "." and ".." are not allowed
  *        E.g. /Users/user/project/file.ext
  *        Note: path should not end with slash.
  *
@@ -35,6 +35,7 @@
  *        Path is [path_to_jar]![path_inside_jar]
  *        path_to_jar is a regular path, with straight slashes.
  *        path_inside_jar is always /x/.../z/file.ext, where x...z are directories in jar file. Also use straight slashes
+ *        "." and ".." are not allowed in both path_to_jar and path_inside_jar
  *        E.g. /Users/user/project/file.jar!/org/company/file.ext
  *        Note: the root file of a jar is [path]/file.jar!/, not [path]/file.jar!. This is the only path allowed and required to be ending with "/".
  *        Note: path should not end with slash.
@@ -43,6 +44,7 @@
  *        Path is [java_home]![path_in_jdk]
  *        path_in_jdk is always /x/a/.../b/file.ext, where X is a name of module, a...b are names of packages in this module
  *        Straight slashes everywhere.
+ *        "." and ".." are not allowed both in java_home and path_in_jdk
  *        Note this differs a lot from NIO Jrt filesystem path.
  *        This is because of the same reasons as in Idea
  *        - we want to be able to use JDK that differs from startup JDK in future

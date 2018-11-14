@@ -69,7 +69,7 @@ public class JrtIdeaFile implements IFile {
   @NotNull
   @Override
   public String getPath() {
-    return myJdkPath + JrtIoFileSystem.MODULE_PATH_SEPARATOR + myModule + IFileSystem.SEPARATOR + myFile;
+    return myJdkPath + IFileSystem.SEPARATOR + myModule + IFileSystem.SEPARATOR + myFile;
   }
 
   @Nullable
