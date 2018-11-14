@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,6 +94,24 @@ public class ModelVault<T extends SModel> {
   public Iterable<T> allModels() {
     return new ArrayList<>(myModels);
   }
+
+  // XXX not sure there's need for distinct method or it shall be part of allModels() impl,
+  //     nor am I sure we shall not resolve references into models to drop (I'd rather do).
+  //     However, imagine there's already model m1@cp in a checkpoint module, and we generate m1 and m2 (latter needs to use m1@cp)
+  //     When we see m1's new checkpoint, CME.createBlankCheckpointModel recognizes there's already m1@cp and commands to forget it (vault.forgetModel())
+  //     Then, m2 restores a reference to m1@cp with a node from new CP model (m1'@cp), but the reference is kept as 'mature', and the moment we resolve it,
+  //     the code in TransientModelsModule.findInVault() just took the first model from allModels() with matching id, which could be the m1@cp one, not m1'@cp
+  //     (they share same module reference, after all).
+  public Iterable<T> allModelsExceptScheduled2Drop() {
+    final ArrayList<T> rv = new ArrayList<>(myModels);
+    rv.removeAll(myExactModelsToDrop.keySet());
+    return rv;
+  }
+
+  public boolean isScheduled2Drop(SModel model) {
+    return myExactModelsToDrop.containsKey(model);
+  }
+
 
   public boolean known(@NotNull SModelReference mr) {
     for (SModel m : myModels) {
