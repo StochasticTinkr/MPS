@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs.impl;
 
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -40,6 +41,8 @@ public class IoFileSystem implements FileSystem {
   @ToRemove(version = 2019.1)
   //use either JarIoFS or LocalIoFS
   public IFile getFile(@NotNull String path) {
+    path = FileUtil.getCanonicalPath(path);
+    path = FileUtil.normalize(path);
     if (path.contains("!")) {
       return JarIoFileSystem.getInstance().getFile(path);
     } else {

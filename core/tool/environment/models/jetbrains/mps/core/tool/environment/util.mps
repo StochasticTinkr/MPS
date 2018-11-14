@@ -3820,6 +3820,11 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="3RkWhWCOXme" role="3clF47">
+        <node concept="3SKdUt" id="706SzJ5Z24v" role="3cqZAp">
+          <node concept="3SKdUq" id="706SzJ5Z24x" role="3SKWNk">
+            <property role="3SKdUp" value="todo [MM] investigate why it fails when using just path (where those . and .. come from)" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="3RkWhWCOXp5" role="3cqZAp">
           <node concept="2YIFZM" id="3RkWhWCOXrR" role="3cqZAk">
             <ref role="37wK5l" to="18ew:~MacrosFactory.forProjectFile(jetbrains.mps.vfs.IFile):jetbrains.mps.util.MacroHelper" resolve="forProjectFile" />
@@ -3834,12 +3839,16 @@
                 <node concept="2YIFZM" id="65VDEp95cGD" role="37wK5m">
                   <ref role="1Pybhc" to="ifj7:~PathUtil" resolve="PathUtil" />
                   <ref role="37wK5l" to="ifj7:~PathUtil.toSystemIndependent(java.lang.String):java.lang.String" resolve="toSystemIndependent" />
-                  <node concept="2OqwBi" id="7LMB4CaTNuT" role="37wK5m">
-                    <node concept="1rXfSq" id="7LMB4CaTN0$" role="2Oq$k0">
-                      <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
-                    </node>
-                    <node concept="liA8E" id="7LMB4CaTO9W" role="2OqNvi">
-                      <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                  <node concept="2YIFZM" id="706SzJ5YZqy" role="37wK5m">
+                    <ref role="37wK5l" to="18ew:~FileUtil.getCanonicalPath(java.lang.String):java.lang.String" resolve="getCanonicalPath" />
+                    <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
+                    <node concept="2OqwBi" id="7LMB4CaTNuT" role="37wK5m">
+                      <node concept="1rXfSq" id="7LMB4CaTN0$" role="2Oq$k0">
+                        <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
+                      </node>
+                      <node concept="liA8E" id="7LMB4CaTO9W" role="2OqNvi">
+                        <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                      </node>
                     </node>
                   </node>
                 </node>

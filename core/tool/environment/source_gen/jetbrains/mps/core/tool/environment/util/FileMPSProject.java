@@ -14,6 +14,7 @@ import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.iofs.file.LocalIoFileSystem;
 import jetbrains.mps.vfs.util.PathUtil;
+import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
@@ -33,7 +34,8 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
 
   @NotNull
   private MacroHelper createMacroHelper() {
-    return MacrosFactory.forProjectFile(LocalIoFileSystem.getInstance().getFile(PathUtil.toSystemIndependent(getProjectFile().getPath())));
+    // todo [MM] investigate why it fails when using just path (where those . and .. come from) 
+    return MacrosFactory.forProjectFile(LocalIoFileSystem.getInstance().getFile(PathUtil.toSystemIndependent(FileUtil.getCanonicalPath(getProjectFile().getPath()))));
   }
 
   @Override

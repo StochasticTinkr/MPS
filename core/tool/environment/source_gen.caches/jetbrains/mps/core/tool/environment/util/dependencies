@@ -16,6 +16,7 @@
     <classNode dependClassName="jetbrains.mps.project.ElementProjectDataSource" />
     <classNode dependClassName="jetbrains.mps.project.persistence.ProjectDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.iofs.file.LocalIoFileSystem" />
