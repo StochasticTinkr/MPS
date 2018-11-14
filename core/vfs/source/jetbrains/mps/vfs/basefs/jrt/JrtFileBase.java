@@ -33,10 +33,10 @@ public abstract class JrtFileBase implements IFile {
   protected final String myJdkPath;
   protected final String myModule;
   protected final String myPathInModule;
-  protected final IFileSystem myFS;
+  protected final JrtFileSystemBase myFS;
 
   public JrtFileBase(
-      @NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK, @NotNull IFileSystem fs) {
+      @NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK, @NotNull JrtFileSystemBase fs) {
     myJdkPath = jdkPath;
     myModule = module;
     myPathInModule = pathInJDK;
@@ -159,5 +159,22 @@ public abstract class JrtFileBase implements IFile {
     //the following is because there's one file that path ends with slash: JDK_MODE!/
     String fullPath = path.endsWith(IFileSystem.SEPARATOR) ? path + suffix : path + IFileSystem.SEPARATOR + suffix;
     return myFS.getFile(fullPath);
+  }
+
+  @Nullable
+  @Override
+  public IFile getParent() {
+    if (myPathInModule == null) {
+      if (myModule == null) {
+        return null;
+      }
+      return myFS.getFile(myJdkPath, null, null);
+    }
+    int index = myPathInModule.lastIndexOf(IFileSystem.SEPARATOR);
+    if (index < 0) {
+      return myFS.getFile(myJdkPath, myModule, null);
+    }
+
+    return myFS.getFile(myJdkPath, myModule, myPathInModule.substring(index));
   }
 }

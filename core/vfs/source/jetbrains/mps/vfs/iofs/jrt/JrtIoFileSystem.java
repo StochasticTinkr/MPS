@@ -17,15 +17,17 @@ package jetbrains.mps.vfs.iofs.jrt;
 
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
+import jetbrains.mps.vfs.basefs.jrt.JrtFileSystemBase;
 import jetbrains.mps.vfs.iofs.IoPathAssert;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * See jetbrains.mps.vfs package info to get familiar with file format requirements
  */
-public class JrtIoFileSystem implements IFileSystem {
+public class JrtIoFileSystem extends JrtFileSystemBase {
   private static final Logger LOG = LogManager.getLogger(JrtIoFileSystem.class);
   private static final JrtIoFileSystem INSTANCE = new JrtIoFileSystem();
   public static final String JDK_PATH_SEPARATOR = "!";
@@ -42,7 +44,7 @@ public class JrtIoFileSystem implements IFileSystem {
   public IFile getFile(@NotNull String path) {
     new IoPathAssert(path).absolute().noDots().osIndependentPath();
     JrtPathSplitter jrtPathSplitter = new JrtPathSplitter(path);
-    return new JrtIoFile(jrtPathSplitter.getJdkPath(), jrtPathSplitter.getModule(), jrtPathSplitter.getPathInModule(), this);
+    return getFile(jrtPathSplitter.getJdkPath(), jrtPathSplitter.getModule(), jrtPathSplitter.getPathInModule());
   }
 
   @Override
@@ -61,4 +63,8 @@ public class JrtIoFileSystem implements IFileSystem {
     return true;
   }
 
+  @Override
+  public JrtIoFile getFile(@NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK) {
+    return new JrtIoFile(jdkPath, module, pathInJDK, this);
+  }
 }

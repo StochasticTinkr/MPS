@@ -21,11 +21,14 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.VFSManager;
+import jetbrains.mps.vfs.basefs.jrt.JrtFileSystemBase;
+import jetbrains.mps.vfs.iofs.jrt.JrtIoFile;
 import jetbrains.mps.vfs.iofs.jrt.JrtIoFileSystem;
 import jetbrains.mps.vfs.iofs.jrt.JrtPathSplitter;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class JrtIdeaFileSystem implements ApplicationComponent, IFileSystem {
+public class JrtIdeaFileSystem extends JrtFileSystemBase implements ApplicationComponent {
   @Override
   public void initComponent() {
     VFSManager.getInstance().registerFS(VFSManager.JRT_FS, this);
@@ -40,7 +43,7 @@ public class JrtIdeaFileSystem implements ApplicationComponent, IFileSystem {
   @Override
   public IFile getFile(@NotNull String path) {
     JrtPathSplitter jrtPathSplitter = new JrtPathSplitter(path);
-    return new JrtIdeaFile(jrtPathSplitter.getJdkPath(), jrtPathSplitter.getModule(), jrtPathSplitter.getPathInModule(), this);
+    return getFile(jrtPathSplitter.getJdkPath(), jrtPathSplitter.getModule(), jrtPathSplitter.getPathInModule());
   }
 
   @Override
@@ -59,5 +62,10 @@ public class JrtIdeaFileSystem implements ApplicationComponent, IFileSystem {
   @Override
   public String getComponentName() {
     return JrtIoFileSystem.class.getSimpleName();
+  }
+
+  @Override
+  public JrtIdeaFile getFile(@NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK) {
+    return new JrtIdeaFile(jdkPath, module, pathInJDK, this);
   }
 }

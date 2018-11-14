@@ -18,6 +18,7 @@ package jetbrains.mps.vfs.iofs.jrt;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.basefs.jrt.JrtFileBase;
+import jetbrains.mps.vfs.basefs.jrt.JrtFileSystemBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -36,26 +37,8 @@ import java.util.List;
 public class JrtIoFile extends JrtFileBase {
   private static final Logger LOG = LogManager.getLogger(JrtIoFile.class);
 
-  public JrtIoFile(@NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK, @NotNull IFileSystem fs) {
+  public JrtIoFile(@NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK, @NotNull JrtFileSystemBase fs) {
     super(jdkPath, module, pathInJDK, fs);
-  }
-
-  @Nullable
-  @Override
-  //todo extract baseJrtFS, move this method toJrtFileBase
-  public IFile getParent() {
-    if (myPathInModule == null) {
-      if (myModule == null) {
-        return null;
-      }
-      return new JrtIoFile(myJdkPath, null, null, myFS);
-    }
-    int index = myPathInModule.lastIndexOf(IFileSystem.SEPARATOR);
-    if (index < 0) {
-      return new JrtIoFile(myJdkPath, myModule, null, myFS);
-    }
-
-    return new JrtIoFile(myJdkPath, myModule, myPathInModule.substring(index), myFS);
   }
 
   @Override

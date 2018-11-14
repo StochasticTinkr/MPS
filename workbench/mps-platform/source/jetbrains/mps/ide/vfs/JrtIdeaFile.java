@@ -20,6 +20,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.basefs.jrt.JrtFileBase;
+import jetbrains.mps.vfs.basefs.jrt.JrtFileSystemBase;
 import jetbrains.mps.vfs.iofs.jrt.JrtIoFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -31,26 +32,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JrtIdeaFile extends JrtFileBase {
-  public JrtIdeaFile(String jdkPath, String module, String file, IFileSystem fs) {
+  public JrtIdeaFile(String jdkPath, String module, String file, JrtFileSystemBase fs) {
     super(jdkPath, module, file, fs);
-  }
-
-  @Nullable
-  @Override
-  //todo extract baseJrtFS, move this method toJrtFileBase
-  public IFile getParent() {
-    if (myPathInModule == null) {
-      if (myModule == null) {
-        return null;
-      }
-      return new JrtIdeaFile(myJdkPath, null, null, myFS);
-    }
-    int index = myPathInModule.lastIndexOf(IFileSystem.SEPARATOR);
-    if (index < 0) {
-      return new JrtIdeaFile(myJdkPath, myModule, null, myFS);
-    }
-
-    return new JrtIdeaFile(myJdkPath, myModule, myPathInModule.substring(index), myFS);
   }
 
   @Override
