@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.basefs.jrt;
+package jetbrains.mps.vfs.basefs;
 
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
@@ -21,21 +21,25 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
-import jetbrains.mps.vfs.iofs.jrt.JrtIoFileSystem;
+import jetbrains.mps.vfs.basefs.JrtFileSystemBase;
+import jetbrains.mps.vfs.iofs.JrtIoFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
+import java.util.List;
 
-public abstract class JrtFileBase implements IFile {
+public class JrtFile implements IFile {
   //todo: not yet supported to be different from startup JDK, however, introducing support is a simple task since we have it here already
   protected final String myJdkPath;
   protected final String myModule;
   protected final String myPathInModule;
   protected final JrtFileSystemBase myFS;
 
-  public JrtFileBase(
+  public JrtFile(
       @NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK, @NotNull JrtFileSystemBase fs) {
     myJdkPath = jdkPath;
     myModule = module;
@@ -129,7 +133,7 @@ public abstract class JrtFileBase implements IFile {
   }
 
   @NotNull
-  protected String getPathInJDK() {
+  public String getPathInJDK() {
     //we may cache the result in case of performance issues
     StringBuilder sb = new StringBuilder(IFileSystem.SEPARATOR);
     if (myModule != null) {
@@ -176,5 +180,38 @@ public abstract class JrtFileBase implements IFile {
     }
 
     return myFS.getFile(myJdkPath, myModule, myPathInModule.substring(index));
+  }
+
+  //----------------- pure fs-delegating methods ----------------------
+
+  @Override
+  public boolean isDirectory() {
+    return myFS.isDirectory(this);
+  }
+
+  @Nullable
+  @Override
+  public List<IFile> getChildren() {
+    return myFS.getChildren(this);
+  }
+
+  @Override
+  public long lastModified() {
+    return myFS.lastModified(this);
+  }
+
+  @Override
+  public long length() {
+    return myFS.length(this);
+  }
+
+  @Override
+  public boolean exists() {
+    return myFS.exists(this);
+  }
+
+  @Override
+  public InputStream openInputStream() throws IOException {
+    return myFS.openInputStream(this);
   }
 }

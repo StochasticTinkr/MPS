@@ -13,14 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.basefs.jrt;
+package jetbrains.mps.vfs.basefs;
 
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Internal;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
 public abstract class JrtFileSystemBase implements IFileSystem {
   @Internal
-  public abstract JrtFileBase getFile(@NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK);
+  public abstract JrtFile getFile(@NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK);
+
+  public abstract boolean isDirectory(JrtFile file);
+
+  @Nullable
+  public abstract List<IFile> getChildren(JrtFile file);
+
+  public abstract long lastModified(JrtFile file);
+
+  public abstract long length(JrtFile file);
+
+  public abstract boolean exists(JrtFile file);
+
+  public abstract InputStream openInputStream(JrtFile file) throws IOException;
 }

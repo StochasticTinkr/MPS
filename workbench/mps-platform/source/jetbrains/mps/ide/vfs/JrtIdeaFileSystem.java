@@ -18,15 +18,21 @@ package jetbrains.mps.ide.vfs;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.VFSManager;
-import jetbrains.mps.vfs.basefs.jrt.JrtFileSystemBase;
-import jetbrains.mps.vfs.iofs.jrt.JrtIoFile;
-import jetbrains.mps.vfs.iofs.jrt.JrtIoFileSystem;
-import jetbrains.mps.vfs.iofs.jrt.JrtPathSplitter;
+import jetbrains.mps.vfs.basefs.JrtFileSystemBase;
+import jetbrains.mps.vfs.basefs.JrtFile;
+import jetbrains.mps.vfs.iofs.JrtIoFileSystem;
+import jetbrains.mps.vfs.basefs.JrtPathSplitter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JrtIdeaFileSystem extends JrtFileSystemBase implements ApplicationComponent {
   @Override
@@ -65,7 +71,46 @@ public class JrtIdeaFileSystem extends JrtFileSystemBase implements ApplicationC
   }
 
   @Override
-  public JrtIdeaFile getFile(@NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK) {
-    return new JrtIdeaFile(jdkPath, module, pathInJDK, this);
+  public JrtFile getFile(@NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK) {
+    return new JrtFile(jdkPath, module, pathInJDK, this);
+  }
+
+  @Override
+  public boolean isDirectory(JrtFile file) {
+    return getRealFile(file).isDirectory();
+  }
+
+  @Nullable
+  @Override
+  public List<IFile> getChildren(JrtFile file) {
+    ArrayList<IFile> result = new ArrayList<>();
+    for (VirtualFile child : getRealFile(file).getChildren()) {
+      result.add(file.getDescendant(child.getName()));
+    }
+    return result;
+  }
+
+  @Override
+  public long lastModified(JrtFile file) {
+    return getRealFile(file).getModificationStamp();
+  }
+
+  @Override
+  public long length(JrtFile file) {
+    return getRealFile(file).getLength();
+  }
+
+  @Override
+  public boolean exists(JrtFile file) {
+    return getRealFile(file).exists();
+  }
+
+  @Override
+  public InputStream openInputStream(JrtFile file) throws IOException {
+    return getRealFile(file).getInputStream();
+  }
+
+  protected VirtualFile getRealFile(JrtFile file) {
+    return VirtualFileManager.getInstance().findFileByUrl("jrt://" + file.getPath());
   }
 }
