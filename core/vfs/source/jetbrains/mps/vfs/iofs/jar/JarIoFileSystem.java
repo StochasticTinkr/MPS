@@ -17,7 +17,7 @@ package jetbrains.mps.vfs.iofs.jar;
 
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
-import jetbrains.mps.vfs.iofs.IoPathAssert;
+import jetbrains.mps.vfs.util.PathAssert;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -39,7 +39,7 @@ public class JarIoFileSystem implements IFileSystem {
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
-    new IoPathAssert(path).absolute().noDots().osDependentPath();
+    new PathAssert(path).absolute().noDots().osDependentPath();
     int index = path.indexOf('!');
     assert index > 0;
     String jarPath = path.substring(0, index);

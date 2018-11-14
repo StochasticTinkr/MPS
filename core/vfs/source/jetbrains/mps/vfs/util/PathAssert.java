@@ -13,42 +13,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.iofs;
+package jetbrains.mps.vfs.util;
 
 import jetbrains.mps.vfs.IFileSystem;
 
 import java.io.File;
 
 //this is an internal class with assertions usable for checking formats of file paths in File/Jar/Jrt FSes
-public final class IoPathAssert {
+public final class PathAssert {
   private String myPath;
 
-  public IoPathAssert(String path) {
+  public PathAssert(String path) {
     myPath = path;
   }
 
-  public IoPathAssert osIndependentPath() {
+  public PathAssert osIndependentPath() {
     assert !myPath.contains("\\") : "Not os-independent path: " + myPath;
     return this;
   }
 
-  public IoPathAssert osDependentPath() {
+  public PathAssert osDependentPath() {
     String badSeparator = File.separator.equals("/") ? "\\" : "/";
     assert !myPath.contains(badSeparator) : "Not os-dependent path: " + myPath;
     return this;
   }
 
-  public IoPathAssert noEndSlash() {
+  public PathAssert noEndSlash() {
     assert !myPath.endsWith(IFileSystem.SEPARATOR) : "This path must not end with slash: " + myPath;
     return this;
   }
 
-  public IoPathAssert absolute() {
+  public PathAssert absolute() {
     assert myPath.startsWith(IFileSystem.SEPARATOR) || myPath.contains(":/") : "Path should be absolute: " + myPath;
     return this;
   }
 
-  public IoPathAssert noDots() {
+  public PathAssert noDots() {
     for (String part : myPath.split(IFileSystem.SEPARATOR)) {
       assert !part.equals(".") && !part.equals("..") : "Path should not contain \".\" and \"..\"";
     }

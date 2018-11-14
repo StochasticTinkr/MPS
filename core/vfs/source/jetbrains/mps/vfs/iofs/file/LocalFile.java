@@ -41,13 +41,13 @@ import java.util.List;
  * IFile implementation via {@link java.io.File}
  */
 @Immutable
-class IoFile implements IFile {
+class LocalFile implements IFile {
   private final static IoFileSystem ourFS = IoFileSystem.INSTANCE;
   private IFileSystem myFileSystem;
   private String myPath;
   private File myFile;
 
-  IoFile(@NotNull String path, IFileSystem fileSystem) {
+  LocalFile(@NotNull String path, IFileSystem fileSystem) {
     myPath = path;
     myFileSystem = fileSystem;
     myFile = new File(PathUtil.toSystemDependentName(path));
@@ -77,7 +77,7 @@ class IoFile implements IFile {
     if (parentFile == null) {
       return null;
     }
-    return new IoFile(PathUtil.toSystemIndependent(parentFile.getPath()), myFileSystem);
+    return new LocalFile(PathUtil.toSystemIndependent(parentFile.getPath()), myFileSystem);
   }
 
   @Override
@@ -170,7 +170,7 @@ class IoFile implements IFile {
 
     List<IFile> result = new ArrayList<>(files.length);
     for (File f : files) {
-      result.add(new IoFile(PathUtil.toSystemIndependent(f.getPath()), myFileSystem));
+      result.add(new LocalFile(PathUtil.toSystemIndependent(f.getPath()), myFileSystem));
     }
     return result;
   }
@@ -178,7 +178,7 @@ class IoFile implements IFile {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
-    return new IoFile(myPath + IFileSystem.SEPARATOR + suffix, myFileSystem);
+    return new LocalFile(myPath + IFileSystem.SEPARATOR + suffix, myFileSystem);
   }
 
   @Override
@@ -223,16 +223,16 @@ class IoFile implements IFile {
   }
 
   public boolean equals(Object obj) {
-    if (!(obj instanceof IoFile)) {
+    if (!(obj instanceof LocalFile)) {
       return false;
     }
 
-    IoFile ioFile = (IoFile) obj;
-    return ioFile.myFile.equals(myFile);
+    LocalFile localFile = (LocalFile) obj;
+    return localFile.myFile.equals(myFile);
   }
 
   public String toString() {
-    return "IoFile(" + myPath + ")";
+    return "LocalFile(" + myPath + ")";
   }
 
   @Override

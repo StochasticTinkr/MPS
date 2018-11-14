@@ -16,7 +16,6 @@
 package jetbrains.mps.vfs.util;
 
 import jetbrains.mps.vfs.IFileSystem;
-import jetbrains.mps.vfs.iofs.IoPathAssert;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -25,14 +24,14 @@ public class PathUtil {
   @NotNull
   public static String toSystemIndependent(@NotNull String path) {
     String result = path.replace(File.separator, IFileSystem.SEPARATOR);
-    new IoPathAssert(result).osIndependentPath();
+    new PathAssert(result).osIndependentPath();
     return result;
   }
 
   @NotNull
   public static String toSystemDependentName(@NotNull String path) {
     String result = path.replace(IFileSystem.SEPARATOR, File.separator);
-    new IoPathAssert(result).osDependentPath();
+    new PathAssert(result).osDependentPath();
     return result;
   }
 }

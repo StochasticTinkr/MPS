@@ -20,6 +20,7 @@ import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.basefs.JrtFileSystemBase;
 import jetbrains.mps.vfs.basefs.JrtFile;
 import jetbrains.mps.vfs.basefs.JrtPathSplitter;
+import jetbrains.mps.vfs.util.PathAssert;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -53,7 +54,7 @@ public class JrtIoFileSystem extends JrtFileSystemBase {
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
-    new IoPathAssert(path).absolute().noDots().osIndependentPath();
+    new PathAssert(path).absolute().noDots().osIndependentPath();
     JrtPathSplitter jrtPathSplitter = new JrtPathSplitter(path);
     return getFile(jrtPathSplitter.getJdkPath(), jrtPathSplitter.getModule(), jrtPathSplitter.getPathInModule());
   }
