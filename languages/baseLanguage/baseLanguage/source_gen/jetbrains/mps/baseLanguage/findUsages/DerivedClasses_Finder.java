@@ -39,8 +39,8 @@ public class DerivedClasses_Finder extends GeneratedFinder {
 
   @Override
   protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 1);
     try {
+      monitor.start("Derived Classes", 1000);
       final Queue<SNode> currentClasses = QueueSequence.fromQueue(new LinkedList<SNode>());
       QueueSequence.fromQueue(currentClasses).addLastElement(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
       while (QueueSequence.fromQueue(currentClasses).isNotEmpty()) {

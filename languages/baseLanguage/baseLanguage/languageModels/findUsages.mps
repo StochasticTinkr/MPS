@@ -250,6 +250,7 @@
       <concept id="6869265041613827495" name="jetbrains.mps.lang.findUsages.structure.OnEachNodeFoundByExpression" flags="nn" index="1ecyme">
         <child id="1237139122105344154" name="callback" index="7Ydfw" />
         <child id="6869265041613827496" name="queryNode" index="1ecym1" />
+        <child id="6869265041613827498" name="monitor" index="1ecym3" />
         <child id="6869265041613949328" name="finders" index="1ef06T" />
       </concept>
       <concept id="1218978086674" name="jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration" flags="ng" index="3gKnS9">
@@ -678,6 +679,20 @@
     <ref role="3gKJdq" to="tpee:g7HP654" resolve="Interface" />
     <node concept="2PqlIu" id="htS4nKy" role="3gKxsI">
       <node concept="3clFbS" id="htS4nKz" role="2VODD2">
+        <node concept="3clFbF" id="5uADbBkfd9u" role="3cqZAp">
+          <node concept="2OqwBi" id="5uADbBkfdvF" role="3clFbG">
+            <node concept="24CIHX" id="5uADbBkfd9s" role="2Oq$k0" />
+            <node concept="liA8E" id="5uADbBkfdFB" role="2OqNvi">
+              <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
+              <node concept="Xl_RD" id="5uADbBkfdGh" role="37wK5m">
+                <property role="Xl_RC" value="Derived Interfaces" />
+              </node>
+              <node concept="3cmrfG" id="5uADbBkfdJl" role="37wK5m">
+                <property role="3cmrfH" value="1000" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="htSaoBK" role="3cqZAp">
           <node concept="3cpWsn" id="htSaoBL" role="3cpWs9">
             <property role="TrG5h" value="queue" />
@@ -791,6 +806,15 @@
               <node concept="zAVLb" id="1ofoPOHMjw$" role="1ef06T">
                 <ref role="2$JaeB" to="tpci:hroFk9u" resolve="NodeUsages" />
               </node>
+              <node concept="2OqwBi" id="5uADbBkfWsi" role="1ecym3">
+                <node concept="24CIHX" id="5uADbBkfWm3" role="2Oq$k0" />
+                <node concept="liA8E" id="5uADbBkfWJF" role="2OqNvi">
+                  <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                  <node concept="3cmrfG" id="5uADbBkfWLx" role="37wK5m">
+                    <property role="3cmrfH" value="1" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -813,6 +837,20 @@
     <ref role="3gKJdq" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="2PqlIu" id="htS555S" role="3gKxsI">
       <node concept="3clFbS" id="htS555T" role="2VODD2">
+        <node concept="3clFbF" id="5uADbBkf9x8" role="3cqZAp">
+          <node concept="2OqwBi" id="5uADbBkf9SI" role="3clFbG">
+            <node concept="24CIHX" id="5uADbBkf9x6" role="2Oq$k0" />
+            <node concept="liA8E" id="5uADbBkfa57" role="2OqNvi">
+              <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
+              <node concept="Xl_RD" id="5uADbBkfa5L" role="37wK5m">
+                <property role="Xl_RC" value="Derived Classes" />
+              </node>
+              <node concept="3cmrfG" id="5uADbBkfa8a" role="37wK5m">
+                <property role="3cmrfH" value="1000" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="htSpuxB" role="3cqZAp">
           <node concept="3cpWsn" id="htSpuxC" role="3cpWs9">
             <property role="TrG5h" value="currentClasses" />
@@ -930,6 +968,15 @@
               </node>
               <node concept="zAVLb" id="1ofoPOHM9N1" role="1ef06T">
                 <ref role="2$JaeB" node="hxrkbzb" resolve="StraightDerivedClasses" />
+              </node>
+              <node concept="2OqwBi" id="5uADbBkfUnv" role="1ecym3">
+                <node concept="24CIHX" id="5uADbBkfU9r" role="2Oq$k0" />
+                <node concept="liA8E" id="5uADbBkfUTT" role="2OqNvi">
+                  <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                  <node concept="3cmrfG" id="5uADbBkfUVR" role="37wK5m">
+                    <property role="3cmrfH" value="1" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
