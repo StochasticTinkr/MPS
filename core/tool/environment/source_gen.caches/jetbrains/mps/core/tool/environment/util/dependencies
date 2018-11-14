@@ -18,7 +18,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
-    <classNode dependClassName="jetbrains.mps.vfs.iofs.LocalIoFileSystem" />
+    <classNode dependClassName="jetbrains.mps.vfs.iofs.file.LocalIoFileSystem" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />

@@ -13,24 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.iofs;
+package jetbrains.mps.vfs.iofs.jrt;
 
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
+import jetbrains.mps.vfs.iofs.IoPathAssert;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
+/**
+ * See jetbrains.mps.vfs package info to get familiar with file format requirements
+ */
+public class JrtIoFileSystem implements IFileSystem {
+  private static final Logger LOG = LogManager.getLogger(JrtIoFileSystem.class);
+  private static final JrtIoFileSystem INSTANCE = new JrtIoFileSystem();
+  public static final String JDK_PATH_SEPARATOR = "!";
 
-public class JarIoFileSystem implements IFileSystem {
-  private static final Logger LOG = LogManager.getLogger(JarIoFileSystem.class);
-
-  private static final JarIoFileSystem INSTANCE = new JarIoFileSystem();
-
-  private JarIoFileSystem() {
+  private JrtIoFileSystem() {
   }
 
   public static IFileSystem getInstance() {
@@ -40,26 +40,9 @@ public class JarIoFileSystem implements IFileSystem {
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
-    path = FileUtil.getCanonicalPath(path);
-    int index = path.indexOf('!');
-    assert index > 0;
-    String jarPath = path.substring(0, index);
-    String entryPath = FileUtil.getUnixPath(path.substring(index + 1));
-
-    if (entryPath.startsWith("/")) {
-      entryPath = entryPath.substring(1);
-    }
-
-    File jarFile = new File(jarPath);
-
-    AbstractJarFileData jarFileData;
-    if (jarFile.exists()) {
-      jarFileData = JarFileDataCache.instance().getDataFor(jarFile);
-    } else {
-      LOG.warn("Requested jar file does not exist " + jarFile);
-      jarFileData = new AbstractJarFileData(jarFile);
-    }
-    return new JarEntryFile(jarFileData, jarFile, entryPath, this);
+    new IoPathAssert(path).absolute().noDots().osIndependentPath();
+    JrtPathSplitter jrtPathSplitter = new JrtPathSplitter(path);
+    return new JrtIoFile(jrtPathSplitter.getJdkPath(), jrtPathSplitter.getModule(), jrtPathSplitter.getPathInModule(), this);
   }
 
   @Override
@@ -77,4 +60,5 @@ public class JarIoFileSystem implements IFileSystem {
     }
     return true;
   }
+
 }

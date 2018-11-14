@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.iofs;
+package jetbrains.mps.vfs.iofs.jar;
+
+import jetbrains.mps.vfs.IFileSystem;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,7 +54,7 @@ class AbstractJarFileData {
   }
 
   String getParentDirectory(String dir) {
-    int lastSlash = dir.lastIndexOf('/');
+    int lastSlash = dir.lastIndexOf(IFileSystem.SEPARATOR);
     if (lastSlash == -1) return "";
     return dir.substring(0, lastSlash);
   }

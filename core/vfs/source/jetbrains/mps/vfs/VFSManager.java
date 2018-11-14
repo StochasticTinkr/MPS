@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.vfs;
 
-import jetbrains.mps.vfs.iofs.JarIoFileSystem;
-import jetbrains.mps.vfs.iofs.JrtIoFileSystem;
-import jetbrains.mps.vfs.iofs.LocalIoFileSystem;
+import jetbrains.mps.vfs.iofs.jar.JarIoFileSystem;
+import jetbrains.mps.vfs.iofs.jrt.JrtIoFileSystem;
+import jetbrains.mps.vfs.iofs.file.LocalIoFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;

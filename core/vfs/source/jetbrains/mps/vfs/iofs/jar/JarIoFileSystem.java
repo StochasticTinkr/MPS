@@ -13,32 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.iofs;
+package jetbrains.mps.vfs.iofs.jar;
 
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
+import jetbrains.mps.vfs.iofs.IoPathAssert;
+import jetbrains.mps.vfs.iofs.IoPathUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Path is [java_home]!/[module]/[file]
- * Straight slashes everywhere.
- * Note this differs a lot from NIO Jrt filesystem path.
- * This is because of the same reasons as in Idea
- * - we want to be able to use JDK that differs from startup JDK in future
- * - /modules/ part is pointless in NIO Jrt FS
- * <p>
- * E.g. /Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home!/java.base/java/lang/Class.class
- */
-public class JrtIoFileSystem implements IFileSystem {
-  private static final Logger LOG = LogManager.getLogger(JrtIoFileSystem.class);
-  private static final JrtIoFileSystem INSTANCE = new JrtIoFileSystem();
-  public static final String JDK_PATH_SEPARATOR = "!/";
-  public static final String MODULE_PATH_SEPARATOR = "/";
+import java.io.File;
 
-  private JrtIoFileSystem() {
+public class JarIoFileSystem implements IFileSystem {
+  private static final Logger LOG = LogManager.getLogger(JarIoFileSystem.class);
+
+  private static final JarIoFileSystem INSTANCE = new JarIoFileSystem();
+
+  private JarIoFileSystem() {
   }
 
   public static IFileSystem getInstance() {
@@ -48,8 +40,26 @@ public class JrtIoFileSystem implements IFileSystem {
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
-    JrtPath jrtPath = new JrtPath(path);
-    return new JrtIoFile(jrtPath.getJdkPath(), jrtPath.getModule(), jrtPath.getFile(), this);
+    new IoPathAssert(path).absolute().noDots().osDependentPath();
+    int index = path.indexOf('!');
+    assert index > 0;
+    String jarPath = path.substring(0, index);
+    String entryPath = path.substring(index + 1);
+
+    if (entryPath.startsWith(IFileSystem.SEPARATOR)) {
+      entryPath = entryPath.substring(1);
+    }
+
+    File jarFile = new File(jarPath);
+
+    AbstractJarFileData jarFileData;
+    if (jarFile.exists()) {
+      jarFileData = JarFileDataCache.instance().getDataFor(jarFile);
+    } else {
+      LOG.warn("Requested jar file does not exist " + jarFile);
+      jarFileData = new AbstractJarFileData(jarFile);
+    }
+    return new JarEntryFile(jarFileData, jarFile, entryPath, this);
   }
 
   @Override
@@ -67,5 +77,4 @@ public class JrtIoFileSystem implements IFileSystem {
     }
     return true;
   }
-
 }

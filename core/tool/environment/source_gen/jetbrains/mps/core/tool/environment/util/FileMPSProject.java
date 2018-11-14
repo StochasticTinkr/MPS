@@ -12,7 +12,7 @@ import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.vfs.iofs.LocalIoFileSystem;
+import jetbrains.mps.vfs.iofs.file.LocalIoFileSystem;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;

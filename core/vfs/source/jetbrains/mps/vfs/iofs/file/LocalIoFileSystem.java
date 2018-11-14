@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.iofs;
+package jetbrains.mps.vfs.iofs.file;
 
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
+import jetbrains.mps.vfs.iofs.IoPathAssert;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -37,7 +36,7 @@ public class LocalIoFileSystem implements IFileSystem {
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
-    path = FileUtil.getCanonicalPath(path);
+    new IoPathAssert(path).absolute().noEndSlash().noDots().osIndependentPath();
     return new IoFile(path, this);
   }
 

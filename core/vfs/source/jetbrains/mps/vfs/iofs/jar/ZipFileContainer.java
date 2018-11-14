@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.iofs;
+package jetbrains.mps.vfs.iofs.jar;
 
 import java.util.zip.ZipFile;
 

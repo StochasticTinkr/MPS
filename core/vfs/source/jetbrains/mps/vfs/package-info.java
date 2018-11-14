@@ -23,6 +23,35 @@
  *   with MPS project file, which MUST be in a file-FS. This is not typical for MPS, in the majority of cases QualifiedPath should be used
  * - VFS paths MUST be system-independent. Every VFS is responsible for that. E.g. File-FS and jar-FS use same separator chars on any OS (currently, unix-style,
  *   but this can be changed).
- * - TODO: VFS and persistable paths. Should use macroses to be persisted
+ * - Paths are always absolute
+ *
+ * VFS PATHS
+ *    - File FS
+ *        Path is a regular path, with straight slashes.
+ *        E.g. /Users/user/project/file.ext
+ *        Note: path should not end with slash.
+ *
+ *    - Jar FS
+ *        Path is [path_to_jar]![path_inside_jar]
+ *        path_to_jar is a regular path, with straight slashes.
+ *        path_inside_jar is always /x/.../z/file.ext, where x...z are directories in jar file. Also use straight slashes
+ *        E.g. /Users/user/project/file.jar!/org/company/file.ext
+ *        Note: the root file of a jar is [path]/file.jar!/, not [path]/file.jar!. This is the only path allowed and required to be ending with "/".
+ *        Note: path should not end with slash.
+ *
+ *    - JRT FS
+ *        Path is [java_home]![path_in_jdk]
+ *        path_in_jdk is always /x/a/.../b/file.ext, where X is a name of module, a...b are names of packages in this module
+ *        Straight slashes everywhere.
+ *        Note this differs a lot from NIO Jrt filesystem path.
+ *        This is because of the same reasons as in Idea
+ *        - we want to be able to use JDK that differs from startup JDK in future
+ *        - /modules/ part is pointless in NIO Jrt FS
+ *        E.g. /Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home!/java.base/java/lang/Class.class
+ *        Note: the root file of this fs is [jdk_path]!/, not [jdk_path]!. This is the only path allowed and required to be ending with "/".
+ *        Note: path should not end with slash.
+ *
+ * Note: it's recommended to use IFileSystem.SEPARATOR as path separator on future FSes if possible
+ * TODO: VFS and persistable paths. Should use macroses to be persisted
  */
 package jetbrains.mps.vfs;

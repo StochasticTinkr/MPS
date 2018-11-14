@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.iofs;
+package jetbrains.mps.vfs.iofs.file;
 
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.impl.IoFileSystem;
-import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.iofs.IoPathUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
@@ -43,16 +43,14 @@ import java.util.List;
 @Immutable
 class IoFile implements IFile {
   private final static IoFileSystem ourFS = IoFileSystem.INSTANCE;
-  @NotNull private final File myFile; // always absolute
   private IFileSystem myFileSystem;
+  private String myPath;
+  private File myFile;
 
   IoFile(@NotNull String path, IFileSystem fileSystem) {
-    this(new File(path), fileSystem);
-  }
-
-  IoFile(@NotNull File file, IFileSystem fileSystem) {
-    myFile = file.getAbsoluteFile();
+    myPath = path;
     myFileSystem = fileSystem;
+    myFile = new File(IoPathUtil.toSystemDependentName(path));
   }
 
   @NotNull
@@ -79,7 +77,7 @@ class IoFile implements IFile {
     if (parentFile == null) {
       return null;
     }
-    return new IoFile(parentFile, myFileSystem);
+    return new IoFile(IoPathUtil.toSystemIndependent(parentFile.getPath()), myFileSystem);
   }
 
   @Override
@@ -90,17 +88,12 @@ class IoFile implements IFile {
   @NotNull
   @Override
   public String getPath() {
-    return toSystemIndependentName(myFile.getAbsolutePath());
+    return myPath;
   }
 
   @Override
   public QualifiedPath getQualifiedPath() {
     return new QualifiedPath(VFSManager.FILE_FS, getPath());
-  }
-
-  @NotNull
-  private static String toSystemIndependentName(@NotNull String aFileName) {
-    return aFileName.replace(File.separatorChar, Path.UNIX_SEPARATOR_CHAR).replace('\\', Path.UNIX_SEPARATOR_CHAR);
   }
 
   @Override
@@ -177,7 +170,7 @@ class IoFile implements IFile {
 
     List<IFile> result = new ArrayList<>(files.length);
     for (File f : files) {
-      result.add(new IoFile(f, myFileSystem));
+      result.add(new IoFile(IoPathUtil.toSystemIndependent(f.getPath()), myFileSystem));
     }
     return result;
   }
@@ -185,12 +178,12 @@ class IoFile implements IFile {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
-    return new IoFile(new File(myFile, suffix), myFileSystem);
+    return new IoFile(myPath + IFileSystem.SEPARATOR + suffix, myFileSystem);
   }
 
   @Override
   public boolean isArchive() {
-    return myFile.getAbsolutePath().endsWith(".jar");
+    return myPath.endsWith(".jar");
   }
 
   @Override
@@ -239,7 +232,7 @@ class IoFile implements IFile {
   }
 
   public String toString() {
-    return myFile.toString();
+    return "IoFile(" + myPath + ")";
   }
 
   @Override

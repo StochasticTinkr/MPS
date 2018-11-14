@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
@@ -179,6 +180,8 @@ public class FileUtil {
   /**
    * @return unix-style path without last slashes with some version of normalization
    */
+  @Deprecated
+  @ToRemove(version = 2019.1)
   @NotNull
   public static String normalize(@NotNull String path) {
     return stripLastSlashes(normalize0(getUnixPath(path), Path.UNIX_SEPARATOR));
@@ -402,6 +405,8 @@ public class FileUtil {
     return false;
   }
 
+  @Deprecated
+  @ToRemove(version = 2019.1)
   @NotNull
   public static String getUnixPath(@NotNull String path) {
     return path.replace(Path.WIN_SEPARATOR, Path.UNIX_SEPARATOR);

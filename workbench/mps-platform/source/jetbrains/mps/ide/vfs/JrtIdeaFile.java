@@ -23,7 +23,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
-import jetbrains.mps.vfs.iofs.JrtIoFileSystem;
+import jetbrains.mps.vfs.iofs.jrt.JrtIoFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

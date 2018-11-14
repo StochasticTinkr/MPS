@@ -21,8 +21,8 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.VFSManager;
-import jetbrains.mps.vfs.iofs.JrtIoFileSystem;
-import jetbrains.mps.vfs.iofs.JrtPath;
+import jetbrains.mps.vfs.iofs.jrt.JrtIoFileSystem;
+import jetbrains.mps.vfs.iofs.jrt.JrtPathSplitter;
 import org.jetbrains.annotations.NotNull;
 
 public class JrtIdeaFileSystem implements ApplicationComponent, IFileSystem {
@@ -39,8 +39,8 @@ public class JrtIdeaFileSystem implements ApplicationComponent, IFileSystem {
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
-    JrtPath jrtPath = new JrtPath(path);
-    return new JrtIdeaFile(jrtPath.getJdkPath(), jrtPath.getModule(), jrtPath.getFile(), this);
+    JrtPathSplitter jrtPathSplitter = new JrtPathSplitter(path);
+    return new JrtIdeaFile(jrtPathSplitter.getJdkPath(), jrtPathSplitter.getModule(), jrtPathSplitter.getPathInModule(), this);
   }
 
   @Override

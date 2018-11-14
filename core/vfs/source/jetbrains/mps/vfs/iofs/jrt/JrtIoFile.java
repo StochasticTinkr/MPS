@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.iofs;
+package jetbrains.mps.vfs.iofs.jrt;
 
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
@@ -21,7 +21,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
-import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -39,19 +38,20 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+//no need
 public class JrtIoFile implements IFile {
   private static final Logger LOG = LogManager.getLogger(JrtIoFile.class);
 
   //todo: not yet supported to be different from startup JDK, however, introducing support is a simple task since we have it here already
   private final String myJdkPath;
   private final String myModule;
-  private final String myFile;
+  private final String myPathInModule;
   private final IFileSystem myFS;
 
-  public JrtIoFile(String jdkPath, String module, String file, IFileSystem fs) {
+  public JrtIoFile(@NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK, @NotNull IFileSystem fs) {
     myJdkPath = jdkPath;
     myModule = module;
-    myFile = file;
+    myPathInModule = pathInJDK;
     myFS = fs;
   }
 
@@ -70,21 +70,22 @@ public class JrtIoFile implements IFile {
   @NotNull
   @Override
   public String getName() {
-    int index = myFile.lastIndexOf(IFileSystem.SEPARATOR);
-    return index >= 0 ? myFile.substring(index + 1) : myFile;
+    String pathinJDK = getPathInJDK();
+    int index = pathinJDK.lastIndexOf(IFileSystem.SEPARATOR);
+    return index >= 0 ? pathinJDK.substring(index + 1) : pathinJDK;
   }
 
   @NotNull
   @Override
   public String getPath() {
-    return myJdkPath + JrtIoFileSystem.MODULE_PATH_SEPARATOR + myModule + IFileSystem.SEPARATOR + myFile;
+    return myJdkPath + JrtIoFileSystem.JDK_PATH_SEPARATOR + getPathInJDK();
   }
 
   @Nullable
   @Override
   @Deprecated
   @ToRemove(version = 2019.1)
-  public URL getUrl(){
+  public URL getUrl() {
     return null;
   }
 
@@ -96,11 +97,18 @@ public class JrtIoFile implements IFile {
   @Nullable
   @Override
   public IFile getParent() {
-    int index = myFile.lastIndexOf(IFileSystem.SEPARATOR);
-    if (index == -1) {
-      return null;
+    if (myPathInModule == null) {
+      if (myModule == null) {
+        return null;
+      }
+      return new JrtIoFile(myJdkPath, null, null, myFS);
     }
-    return new JrtIoFile(myJdkPath, myModule, myFile.substring(index), myFS);
+    int index = myPathInModule.lastIndexOf(IFileSystem.SEPARATOR);
+    if (index < 0) {
+      return new JrtIoFile(myJdkPath, myModule, null, myFS);
+    }
+
+    return new JrtIoFile(myJdkPath, myModule, myPathInModule.substring(index), myFS);
   }
 
   @Override
@@ -132,7 +140,10 @@ public class JrtIoFile implements IFile {
   @NotNull
   @Override
   public IFile getDescendant(@NotNull String suffix) {
-    return new JrtIoFile(myJdkPath, myModule, myFile + IFileSystem.SEPARATOR + suffix, myFS);
+    String path = getPath();
+    //the following is because there's one file that path ends with slash: JDK_MODE!/
+    String fullPath = path.endsWith(IFileSystem.SEPARATOR) ? path + suffix : path + IFileSystem.SEPARATOR + suffix;
+    return myFS.getFile(fullPath);
   }
 
   @Nullable
@@ -220,6 +231,20 @@ public class JrtIoFile implements IFile {
 
   private Path getRealFile() {
     java.nio.file.FileSystem jrtfs = FileSystems.getFileSystem(URI.create("jrt:/"));
-    return jrtfs.getPath("modules", myModule, myFile);
+    return jrtfs.getPath("modules", getPathInJDK().split(IFileSystem.SEPARATOR));
+  }
+
+  @NotNull
+  private String getPathInJDK() {
+    //we may cache the result in case of performance issues
+    StringBuilder sb = new StringBuilder(IFileSystem.SEPARATOR);
+    if (myModule != null) {
+      sb.append(myModule);
+      if (myPathInModule != null) {
+        sb.append(IFileSystem.SEPARATOR);
+        sb.append(myPathInModule);
+      }
+    }
+    return sb.toString();
   }
 }

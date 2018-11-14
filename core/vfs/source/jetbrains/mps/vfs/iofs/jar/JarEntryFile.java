@@ -13,16 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.iofs;
+package jetbrains.mps.vfs.iofs.jar;
 
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.impl.IoFileSystem;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.iofs.IoPathUtil;
+import jetbrains.mps.vfs.iofs.file.IoFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
@@ -45,10 +46,11 @@ public class JarEntryFile implements IFile {
   private final String myEntryPath;
   private final IFileSystem myFileSystem;
 
-  JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String path, IFileSystem fileSystem) {
+  JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String entryPath, IFileSystem fileSystem) {
     myJarFileData = jarFileData;
     myJarFile = jarFile;
-    myEntryPath = FileUtil.normalize(path);
+    IoPathUtil.assertOsIndependentPath(entryPath);
+    myEntryPath = entryPath;
     myFileSystem = fileSystem;
   }
 
@@ -68,8 +70,7 @@ public class JarEntryFile implements IFile {
   @Override
   public String getName() {
     String result = myEntryPath;
-
-    int index = result.lastIndexOf('/');
+    int index = result.lastIndexOf(IFileSystem.SEPARATOR);
     if (index != -1) {
       result = result.substring(index + 1);
     }
@@ -119,7 +120,8 @@ public class JarEntryFile implements IFile {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
-    String path = myEntryPath.length() > 0 ? myEntryPath + '/' + suffix : suffix;
+    IoPathUtil.assertOsIndependentPath(suffix);
+    String path = myEntryPath.length() > 0 ? myEntryPath + IFileSystem.SEPARATOR + suffix : suffix;
     return new JarEntryFile(myJarFileData, myJarFile, path, myFileSystem);
   }
 
@@ -131,7 +133,7 @@ public class JarEntryFile implements IFile {
   @NotNull
   @Override
   public String getPath() {
-    return myJarFile.getAbsolutePath() + "!/" + myEntryPath;
+    return IoPathUtil.toSystemIndependent(myJarFile.getAbsolutePath()) + "!/" + myEntryPath;
   }
 
   @Override
@@ -222,15 +224,15 @@ public class JarEntryFile implements IFile {
    * JDK does not allow us to work efficiently with jar files via URI.
    * 0. I want to create URL which can be converted to URI.
    * 1. Unfortunately that means that we need to escape space characters.
-   *    (unescaped URL cannot be converted to the URI due to the #toURI method contract)
+   * (unescaped URL cannot be converted to the URI due to the #toURI method contract)
    * 2. We are urged to use multi-argument <code>URI</code> constructor in order to properly escape all characters (spaces for instance).
-   *    Moreover it is a recommended way to comply to all URI protocol conventions.
+   * Moreover it is a recommended way to comply to all URI protocol conventions.
    * 3. URI multi-arg constructor also asks for its path to be absolute (which -- in his understanding -- means a path starting with '/')
    * 4. In jdk a default URL for a jar-file looks like 'jar:file://a.jar!/b.txt' and calling URL#getPath returns
-   *    'file://a.jar!/b.txt' which does not start with the slash and hence is not absolute and therefore cannot be simply passed to the URI constructor.
+   * 'file://a.jar!/b.txt' which does not start with the slash and hence is not absolute and therefore cannot be simply passed to the URI constructor.
    * 5. That is why we are compelled to use such a hack in constructor arguments which namely passes
-   *    a jar:file scheme and passes an honest absolute path '/a.jar!/b.txt'.
-   *
+   * a jar:file scheme and passes an honest absolute path '/a.jar!/b.txt'.
+   * <p>
    * [AP: I would rather return URLs which can be converted to URIs than the ones which can not]
    * Hopefully this hell will be replaced by the upcoming <code>vfs.Path</code> features.
    */
@@ -247,12 +249,18 @@ public class JarEntryFile implements IFile {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
 
     JarEntryFile that = (JarEntryFile) o;
 
-    if (myEntryPath != null ? !myEntryPath.equals(that.myEntryPath) : that.myEntryPath != null) return false;
+    if (myEntryPath != null ? !myEntryPath.equals(that.myEntryPath) : that.myEntryPath != null) {
+      return false;
+    }
     return myJarFile != null ? myJarFile.equals(that.myJarFile) : that.myJarFile == null;
   }
 
