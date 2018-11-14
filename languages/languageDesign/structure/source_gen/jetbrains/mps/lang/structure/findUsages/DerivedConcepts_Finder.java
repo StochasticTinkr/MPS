@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -40,13 +39,13 @@ public class DerivedConcepts_Finder extends GeneratedFinder {
 
   @Override
   protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, ProgressMonitor monitor) {
+    monitor.start(getDescription(), 1);
     try {
-      monitor.start("Derived Concepts", 1000);
       final Queue<SNode> currentConcepts = QueueSequence.fromQueue(new LinkedList<SNode>());
       QueueSequence.fromQueue(currentConcepts).addLastElement(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")));
       while (QueueSequence.fromQueue(currentConcepts).isNotEmpty()) {
         SNode nextNode = QueueSequence.fromQueue(currentConcepts).removeFirstElement();
-        FindUtils.searchForResults(new EmptyProgressMonitor(), new IFinder.FindCallback() {
+        FindUtils.searchForResults(monitor.subTask(1), new IFinder.FindCallback() {
           public void onUsageFound(@NotNull SearchResult<?> searchResult) {
             SNode nodeParam = (SNode) searchResult.getObject();
             new _FunctionTypes._void_P1_E0<SNode>() {
