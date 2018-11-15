@@ -2217,23 +2217,12 @@
       </node>
       <node concept="3SKdUt" id="7bnM4mNASmL" role="3cqZAp">
         <node concept="3SKdUq" id="7bnM4mNASmN" role="3SKWNk">
-          <property role="3SKdUp" value="FIXME flushEventQueue seems useless here, press mouse would post its own events to EDT, so that by the time events are processed, the command " />
+          <property role="3SKdUp" value="Here used to be MA.flushEventQueue, which seems useless here, press mouse would post its own events to EDT, so that " />
         </node>
       </node>
-      <node concept="3SKdUt" id="7bnM4mNASuH" role="3cqZAp">
-        <node concept="3SKdUq" id="7bnM4mNASuJ" role="3SKWNk">
-          <property role="3SKdUp" value="      to add a new node is over for sure." />
-        </node>
-      </node>
-      <node concept="3clFbF" id="6G8AH$1U7WF" role="3cqZAp">
-        <node concept="2OqwBi" id="6G8AH$1U83N" role="3clFbG">
-          <node concept="2YIFZM" id="6G8AH$1U82Q" role="2Oq$k0">
-            <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-            <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-          </node>
-          <node concept="liA8E" id="6G8AH$1U8yT" role="2OqNvi">
-            <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.flushEventQueue():void" resolve="flushEventQueue" />
-          </node>
+      <node concept="3SKdUt" id="4xhvNh4vwDR" role="3cqZAp">
+        <node concept="3SKdUq" id="4xhvNh4vwDS" role="3SKWNk">
+          <property role="3SKdUp" value="by the time events are processed, the command to add a new node is over for sure." />
         </node>
       </node>
       <node concept="37Q87h" id="1YuI9hFuZw8" role="3cqZAp">

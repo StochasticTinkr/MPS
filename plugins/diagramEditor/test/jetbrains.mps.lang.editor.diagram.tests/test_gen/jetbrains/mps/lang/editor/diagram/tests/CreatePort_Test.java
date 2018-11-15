@@ -12,7 +12,6 @@ import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.ModelAccess;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 
@@ -44,15 +43,14 @@ public class CreatePort_Test extends BaseTransformationTest {
           SNodeFactoryOperations.addNewChild(SNodeOperations.cast(getNodeById("2278461409093572746"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0x4ce40ecaf41f71d1L, "NodeWithPorts"))), MetaAdapterFactory.getContainmentLink(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L, 0x4ce40ecaf41f7252L, "outputs"), null);
         }
       });
-      // FIXME flushEventQueue seems useless here, press mouse would post its own events to EDT, so that by the time events are processed, the command  
-      //       to add a new node is over for sure. 
-      ModelAccess.instance().flushEventQueue();
+      // Here used to be MA.flushEventQueue, which seems useless here, press mouse would post its own events to EDT, so that  
+      // by the time events are processed, the command to add a new node is over for sure. 
       {
-        int x_rszpwe_e0 = 87;
-        int y_rszpwe_e0 = 42;
-        Component eventTargetComponent_rszpwe_e0 = processMouseEvent(x_rszpwe_e0, y_rszpwe_e0, MouseEvent.MOUSE_PRESSED);
-        processSecondaryMouseEvent(eventTargetComponent_rszpwe_e0, x_rszpwe_e0, y_rszpwe_e0, MouseEvent.MOUSE_RELEASED);
-        processSecondaryMouseEvent(eventTargetComponent_rszpwe_e0, x_rszpwe_e0, y_rszpwe_e0, MouseEvent.MOUSE_CLICKED);
+        int x_rszpwe_d0 = 87;
+        int y_rszpwe_d0 = 42;
+        Component eventTargetComponent_rszpwe_d0 = processMouseEvent(x_rszpwe_d0, y_rszpwe_d0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_rszpwe_d0, x_rszpwe_d0, y_rszpwe_d0, MouseEvent.MOUSE_RELEASED);
+        processSecondaryMouseEvent(eventTargetComponent_rszpwe_d0, x_rszpwe_d0, y_rszpwe_d0, MouseEvent.MOUSE_CLICKED);
       }
 
     }

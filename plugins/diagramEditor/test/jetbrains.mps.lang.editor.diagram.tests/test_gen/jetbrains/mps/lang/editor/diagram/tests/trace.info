@@ -657,48 +657,47 @@
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409093519741">
     <file name="CreatePort_Test.java">
-      <node id="2278461409093519741" at="24,28,25,25" concept="12" />
-      <node id="2278461409093519741" at="29,50,30,52" concept="2" />
-      <node id="2278461409093519741" at="35,52,36,19" concept="12" />
-      <node id="2278461409093519741" at="40,51,41,72" concept="2" />
-      <node id="2278461409093724423" at="43,27,44,462" concept="2" />
-      <node id="8275303042008188337" at="46,9,47,152" concept="8" />
-      <node id="8275303042008188845" at="47,152,48,51" concept="8" />
-      <node id="7712584618702569259" at="48,51,49,47" concept="2" />
-      <node id="2278461409094006792" at="50,7,51,29" concept="6" />
-      <node id="2278461409094006792" at="51,29,52,29" concept="6" />
-      <node id="2278461409094006792" at="52,29,53,121" concept="6" />
-      <node id="2278461409094006792" at="53,121,54,120" concept="2" />
-      <node id="2278461409094006792" at="54,120,55,119" concept="2" />
-      <node id="2278461409094006778" at="56,7,57,0" concept="9" />
-      <node id="2278461409093519741" at="21,0,23,0" concept="10" trace="ourParamCache" />
-      <node id="2278461409093519741" at="24,0,27,0" concept="1" trace="CreatePort_Test#()V" />
-      <node id="2278461409093519741" at="35,0,38,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
-      <node id="2278461409094182556" at="43,0,46,0" concept="5" trace="run#()V" />
-      <node id="2278461409093519741" at="28,0,32,0" concept="5" trace="test_CreatePort#()V" />
-      <node id="2278461409094180954" at="41,72,46,9" concept="2" />
-      <node id="2278461409094006792" at="49,47,56,7" concept="0" />
-      <node id="2278461409093519741" at="39,0,59,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="2278461409093519741" at="24,28,25,25" />
-      <scope id="2278461409093519741" at="29,50,30,52" />
-      <scope id="2278461409093519741" at="35,52,36,19" />
-      <scope id="2278461409094182557" at="43,27,44,462" />
-      <scope id="2278461409093519741" at="24,0,27,0" />
-      <scope id="2278461409093519741" at="35,0,38,0">
+      <node id="2278461409093519741" at="23,28,24,25" concept="12" />
+      <node id="2278461409093519741" at="28,50,29,52" concept="2" />
+      <node id="2278461409093519741" at="34,52,35,19" concept="12" />
+      <node id="2278461409093519741" at="39,51,40,72" concept="2" />
+      <node id="2278461409093724423" at="42,27,43,462" concept="2" />
+      <node id="8275303042008188337" at="45,9,46,126" concept="8" />
+      <node id="5211086106308512375" at="46,126,47,91" concept="8" />
+      <node id="2278461409094006792" at="48,7,49,29" concept="6" />
+      <node id="2278461409094006792" at="49,29,50,29" concept="6" />
+      <node id="2278461409094006792" at="50,29,51,121" concept="6" />
+      <node id="2278461409094006792" at="51,121,52,120" concept="2" />
+      <node id="2278461409094006792" at="52,120,53,119" concept="2" />
+      <node id="2278461409094006778" at="54,7,55,0" concept="9" />
+      <node id="2278461409093519741" at="20,0,22,0" concept="10" trace="ourParamCache" />
+      <node id="2278461409093519741" at="23,0,26,0" concept="1" trace="CreatePort_Test#()V" />
+      <node id="2278461409093519741" at="34,0,37,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="2278461409094182556" at="42,0,45,0" concept="5" trace="run#()V" />
+      <node id="2278461409093519741" at="27,0,31,0" concept="5" trace="test_CreatePort#()V" />
+      <node id="2278461409094180954" at="40,72,45,9" concept="2" />
+      <node id="2278461409094006792" at="47,91,54,7" concept="0" />
+      <node id="2278461409093519741" at="38,0,57,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2278461409093519741" at="23,28,24,25" />
+      <scope id="2278461409093519741" at="28,50,29,52" />
+      <scope id="2278461409093519741" at="34,52,35,19" />
+      <scope id="2278461409094182557" at="42,27,43,462" />
+      <scope id="2278461409093519741" at="23,0,26,0" />
+      <scope id="2278461409093519741" at="34,0,37,0">
         <var name="owner" id="2278461409093519741" />
       </scope>
-      <scope id="2278461409094182556" at="43,0,46,0" />
-      <scope id="2278461409093519741" at="28,0,32,0" />
-      <scope id="2278461409094006792" at="50,7,55,119">
-        <var name="eventTargetComponent_rszpwe_e0" id="2278461409094006792" />
-        <var name="x_rszpwe_e0" id="2278461409094006792" />
-        <var name="y_rszpwe_e0" id="2278461409094006792" />
+      <scope id="2278461409094182556" at="42,0,45,0" />
+      <scope id="2278461409093519741" at="27,0,31,0" />
+      <scope id="2278461409094006792" at="48,7,53,119">
+        <var name="eventTargetComponent_rszpwe_d0" id="2278461409094006792" />
+        <var name="x_rszpwe_d0" id="2278461409094006792" />
+        <var name="y_rszpwe_d0" id="2278461409094006792" />
       </scope>
-      <scope id="2278461409093519741" at="40,51,57,0" />
-      <scope id="2278461409093519741" at="39,0,59,0" />
-      <unit id="2278461409094182556" at="42,103,46,7" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody$1" />
-      <unit id="2278461409093519741" at="33,0,60,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody" />
-      <unit id="2278461409093519741" at="19,0,61,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test" />
+      <scope id="2278461409093519741" at="39,51,55,0" />
+      <scope id="2278461409093519741" at="38,0,57,0" />
+      <unit id="2278461409094182556" at="41,103,45,7" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody$1" />
+      <unit id="2278461409093519741" at="32,0,58,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody" />
+      <unit id="2278461409093519741" at="18,0,59,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test" />
     </file>
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409094282963">
