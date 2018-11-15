@@ -5,46 +5,56 @@ package jetbrains.mps.lang.editor.diagram.tests;
 import jetbrains.jetpad.mapper.Mapper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.ide.editor.checkers.ModelProblemMessage;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import java.awt.image.BufferedImage;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 
 public class DecoratorTestRunner {
-  public static Mapper prepareAndGetMapper(SNode node, EditorComponent editorComponent, Class cellClass) throws InterruptedException, InvocationTargetException {
+  public static Mapper prepareAndGetMapper(final SNode node, final EditorComponent editorComponent, Class cellClass) {
     editorComponent.getHighlightManager().mark(ListSequence.fromListAndArray(new ArrayList<SimpleEditorMessage>(), new ModelProblemMessage(node, MessageStatus.ERROR, null, "error", new EditorMessageOwner() {})));
-    ModelAccess.instance().flushEventQueue();
+    final SRepository editorRepo = editorComponent.getEditorContext().getRepository();
+    // next code is to make sure EDT model read to update editor, postponed from mark(), above, has been completed 
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        editorRepo.getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            // intentionally left empty 
+          }
+        });
+      }
+    });
     EditorCell cell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), cellClass, true);
     if (cell instanceof AbstractJetpadCell) {
       ((AbstractJetpadCell) cell).paint(new BufferedImage(cell.getWidth(), cell.getHeight(), BufferedImage.TYPE_INT_RGB).getGraphics());
     }
-    return getMapper(node, editorComponent);
+    // see getMapper(), below, for reasons to have model read here 
+    return new ModelAccessHelper(editorRepo).runReadAction(new Computable<Mapper>() {
+      public Mapper compute() {
+        return getMapper(node, editorComponent);
+      }
+    });
   }
-  public static Mapper getMapper(final SNode node, EditorComponent editorComponent) {
-    final Wrappers._T<Mapper<? super SNode, ?>> descendantMapper = new Wrappers._T<Mapper<? super SNode, ?>>();
+  public static Mapper getMapper(SNode node, EditorComponent editorComponent) {
 
-    final DiagramCell diagramCell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), DiagramCell.class, true);
+    DiagramCell diagramCell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), DiagramCell.class, true);
     if (diagramCell == null) {
       return null;
     }
-    // FIXME There are 3 invocations of the method from within a model read, and 1 from prepareAndGetMapper, above, which is invoked 3 times outside of model read. 
-    //       Please explain what's expected thread for the calling code, whether there's any need to have model read around getMapper, and if yes, what's the reason 
+    // There are 3 invocations of the method from within a model read, and 1 from prepareAndGetMapper, above, which is invoked 3 times outside of model read. 
+    // XXX   Please explain what's expected thread for the calling code, whether there's any need to have model read around getMapper, and if yes, what's the reason 
     //       for prepareAndGetMapper to live outside of model read. I'd rather keep all model read access control external to this utility class 
-    editorComponent.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        descendantMapper.value = diagramCell.getDecorationRootMapper().getDescendantMapper(node);
-      }
-    });
-    return descendantMapper.value;
+    return diagramCell.getDecorationRootMapper().getDescendantMapper(node);
   }
 }
