@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.repository.CommandListener;
@@ -62,16 +61,6 @@ public abstract class ModelsEventsCollector {
   private volatile boolean myDisposed;
 
   private boolean myIsInCommand;
-
-  /**
-   * @deprecated relies on global model access. it's our utility class, shall not be in use from outside, therefore may want to drop as soon as there are no
-   *             uses in MPS itself
-   */
-  @Deprecated
-  @ToRemove(version = 0)
-  public ModelsEventsCollector() {
-    this(ModelAccess.instance());
-  }
 
   /**
    * Support transition from legacy listeners to contemporary.

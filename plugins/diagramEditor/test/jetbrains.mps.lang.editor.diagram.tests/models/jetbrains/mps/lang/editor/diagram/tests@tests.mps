@@ -31,10 +31,10 @@
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="kpve" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.message(MPS.Editor/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
-    <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
     <import index="jan3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.image(JDK/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="6lvu" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -151,7 +151,6 @@
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
-        <child id="1164879685961" name="throwsItem" index="Sfmx6" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
@@ -2217,23 +2216,12 @@
       </node>
       <node concept="3SKdUt" id="7bnM4mNASmL" role="3cqZAp">
         <node concept="3SKdUq" id="7bnM4mNASmN" role="3SKWNk">
-          <property role="3SKdUp" value="FIXME flushEventQueue seems useless here, press mouse would post its own events to EDT, so that by the time events are processed, the command " />
+          <property role="3SKdUp" value="Here used to be MA.flushEventQueue, which seems useless here, press mouse would post its own events to EDT, so that " />
         </node>
       </node>
-      <node concept="3SKdUt" id="7bnM4mNASuH" role="3cqZAp">
-        <node concept="3SKdUq" id="7bnM4mNASuJ" role="3SKWNk">
-          <property role="3SKdUp" value="      to add a new node is over for sure." />
-        </node>
-      </node>
-      <node concept="3clFbF" id="6G8AH$1U7WF" role="3cqZAp">
-        <node concept="2OqwBi" id="6G8AH$1U83N" role="3clFbG">
-          <node concept="2YIFZM" id="6G8AH$1U82Q" role="2Oq$k0">
-            <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-            <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-          </node>
-          <node concept="liA8E" id="6G8AH$1U8yT" role="2OqNvi">
-            <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.flushEventQueue():void" resolve="flushEventQueue" />
-          </node>
+      <node concept="3SKdUt" id="4xhvNh4vwDR" role="3cqZAp">
+        <node concept="3SKdUq" id="4xhvNh4vwDS" role="3SKWNk">
+          <property role="3SKdUp" value="by the time events are processed, the command to add a new node is over for sure." />
         </node>
       </node>
       <node concept="37Q87h" id="1YuI9hFuZw8" role="3cqZAp">
@@ -2850,14 +2838,64 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="21G88dsr3Ec" role="3cqZAp">
-          <node concept="2OqwBi" id="21G88dsr4HW" role="3clFbG">
-            <node concept="2YIFZM" id="21G88dsr4vJ" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+        <node concept="3cpWs8" id="4VjHdLZGybA" role="3cqZAp">
+          <node concept="3cpWsn" id="4VjHdLZGyb$" role="3cpWs9">
+            <property role="3TUv4t" value="true" />
+            <property role="TrG5h" value="editorRepo" />
+            <node concept="3uibUv" id="4VjHdLZGyDE" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
             </node>
-            <node concept="liA8E" id="21G88dsr7H2" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.flushEventQueue():void" resolve="flushEventQueue" />
+            <node concept="2OqwBi" id="4VjHdLZGyWL" role="33vP2m">
+              <node concept="2OqwBi" id="4VjHdLZGyWM" role="2Oq$k0">
+                <node concept="37vLTw" id="4VjHdLZGyWN" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1mC2_8Q2whk" resolve="editorComponent" />
+                </node>
+                <node concept="liA8E" id="4VjHdLZGyWO" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4VjHdLZGyWP" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4VjHdLZGIKK" role="3cqZAp">
+          <node concept="3SKdUq" id="4VjHdLZGIKM" role="3SKWNk">
+            <property role="3SKdUp" value="next code is to make sure EDT model read to update editor, postponed from mark(), above, has been completed" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4VjHdLZGlSh" role="3cqZAp">
+          <node concept="2YIFZM" id="4VjHdLZGsX_" role="3clFbG">
+            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
+            <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
+            <node concept="1bVj0M" id="4VjHdLZGvrq" role="37wK5m">
+              <node concept="3clFbS" id="4VjHdLZGvrt" role="1bW5cS">
+                <node concept="3clFbF" id="4VjHdLZG_NG" role="3cqZAp">
+                  <node concept="2OqwBi" id="4VjHdLZGEs1" role="3clFbG">
+                    <node concept="2OqwBi" id="4VjHdLZGA0B" role="2Oq$k0">
+                      <node concept="37vLTw" id="4VjHdLZG_NF" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4VjHdLZGyb$" resolve="editorRepo" />
+                      </node>
+                      <node concept="liA8E" id="4VjHdLZGEn4" role="2OqNvi">
+                        <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="4VjHdLZGGUy" role="2OqNvi">
+                      <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                      <node concept="1bVj0M" id="4VjHdLZGH3x" role="37wK5m">
+                        <node concept="3clFbS" id="4VjHdLZGH3y" role="1bW5cS">
+                          <node concept="3SKdUt" id="4VjHdLZGHeu" role="3cqZAp">
+                            <node concept="3SKdUq" id="4VjHdLZGHev" role="3SKWNk">
+                              <property role="3SKdUp" value="intentionally left empty" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -2946,14 +2984,38 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="1mC2_8Q3HWg" role="3cqZAp">
-          <node concept="1rXfSq" id="1mC2_8Q3ILQ" role="3cqZAk">
-            <ref role="37wK5l" node="1mC2_8Q3B$f" resolve="getMapper" />
-            <node concept="37vLTw" id="1mC2_8Q3Jam" role="37wK5m">
-              <ref role="3cqZAo" node="1mC2_8Q2v$e" resolve="node" />
+        <node concept="3SKdUt" id="4VjHdLZGcPP" role="3cqZAp">
+          <node concept="3SKdUq" id="4VjHdLZGcPR" role="3SKWNk">
+            <property role="3SKdUp" value="see getMapper(), below, for reasons to have model read here" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4VjHdLZG3J7" role="3cqZAp">
+          <node concept="2OqwBi" id="4VjHdLZFVJK" role="3cqZAk">
+            <node concept="2ShNRf" id="4VjHdLZF_IG" role="2Oq$k0">
+              <node concept="1pGfFk" id="4VjHdLZFUOI" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
+                <node concept="37vLTw" id="4VjHdLZG$gZ" role="37wK5m">
+                  <ref role="3cqZAo" node="4VjHdLZGyb$" resolve="editorRepo" />
+                </node>
+              </node>
             </node>
-            <node concept="37vLTw" id="1mC2_8Q3JLK" role="37wK5m">
-              <ref role="3cqZAo" node="1mC2_8Q2whk" resolve="editorComponent" />
+            <node concept="liA8E" id="4VjHdLZFWNd" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+              <node concept="1bVj0M" id="4VjHdLZFYgC" role="37wK5m">
+                <node concept="3clFbS" id="4VjHdLZFYgD" role="1bW5cS">
+                  <node concept="3cpWs6" id="1mC2_8Q3HWg" role="3cqZAp">
+                    <node concept="1rXfSq" id="1mC2_8Q3ILQ" role="3cqZAk">
+                      <ref role="37wK5l" node="1mC2_8Q3B$f" resolve="getMapper" />
+                      <node concept="37vLTw" id="1mC2_8Q3Jam" role="37wK5m">
+                        <ref role="3cqZAo" node="1mC2_8Q2v$e" resolve="node" />
+                      </node>
+                      <node concept="37vLTw" id="1mC2_8Q3JLK" role="37wK5m">
+                        <ref role="3cqZAo" node="1mC2_8Q2whk" resolve="editorComponent" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -2964,10 +3026,12 @@
       </node>
       <node concept="37vLTG" id="1mC2_8Q2v$e" role="3clF46">
         <property role="TrG5h" value="node" />
+        <property role="3TUv4t" value="true" />
         <node concept="3Tqbb2" id="1mC2_8Q2v$d" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1mC2_8Q2whk" role="3clF46">
         <property role="TrG5h" value="editorComponent" />
+        <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="1mC2_8Q2xrg" role="1tU5fm">
           <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />
         </node>
@@ -2977,12 +3041,6 @@
         <node concept="3uibUv" id="1mC2_8Q2KBp" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
         </node>
-      </node>
-      <node concept="3uibUv" id="1mC2_8Q2z9n" role="Sfmx6">
-        <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
-      </node>
-      <node concept="3uibUv" id="1mC2_8Q2$Hv" role="Sfmx6">
-        <ref role="3uigEE" to="t6h5:~InvocationTargetException" resolve="InvocationTargetException" />
       </node>
     </node>
     <node concept="2YIFZL" id="1mC2_8Q3B$f" role="jymVt">
@@ -3000,21 +3058,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="1mC2_8Q3B$i" role="3clF47">
-        <node concept="3cpWs8" id="1mC2_8Q3BW1" role="3cqZAp">
-          <node concept="3cpWsn" id="1mC2_8Q3BW2" role="3cpWs9">
-            <property role="TrG5h" value="descendantMapper" />
-            <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="1mC2_8Q3BW3" role="1tU5fm">
-              <ref role="3uigEE" to="sm7x:~Mapper" resolve="Mapper" />
-              <node concept="3qUtgH" id="1mC2_8Q3BW4" role="11_B2D">
-                <node concept="3uibUv" id="1mC2_8Q3BW5" role="3qUvdb">
-                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-                </node>
-              </node>
-              <node concept="3qTvmN" id="1mC2_8Q3BW6" role="11_B2D" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="1mC2_8Q3BW7" role="3cqZAp" />
         <node concept="3cpWs8" id="1mC2_8Q3BW8" role="3cqZAp">
           <node concept="3cpWsn" id="1mC2_8Q3BW9" role="3cpWs9">
@@ -3057,12 +3100,12 @@
         </node>
         <node concept="3SKdUt" id="7bnM4mNAqn$" role="3cqZAp">
           <node concept="3SKdUq" id="7bnM4mNAqnA" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME There are 3 invocations of the method from within a model read, and 1 from prepareAndGetMapper, above, which is invoked 3 times outside of model read." />
+            <property role="3SKdUp" value="There are 3 invocations of the method from within a model read, and 1 from prepareAndGetMapper, above, which is invoked 3 times outside of model read." />
           </node>
         </node>
         <node concept="3SKdUt" id="7bnM4mNAvdG" role="3cqZAp">
           <node concept="3SKdUq" id="7bnM4mNAvdH" role="3SKWNk">
-            <property role="3SKdUp" value="      Please explain what's expected thread for the calling code, whether there's any need to have model read around getMapper, and if yes, what's the reason" />
+            <property role="3SKdUp" value="XXX   Please explain what's expected thread for the calling code, whether there's any need to have model read around getMapper, and if yes, what's the reason" />
           </node>
         </node>
         <node concept="3SKdUt" id="7bnM4mNACDA" role="3cqZAp">
@@ -3070,51 +3113,22 @@
             <property role="3SKdUp" value="      for prepareAndGetMapper to live outside of model read. I'd rather keep all model read access control external to this utility class" />
           </node>
         </node>
-        <node concept="1QHqEK" id="1mC2_8Q3BWh" role="3cqZAp">
-          <node concept="1QHqEC" id="1mC2_8Q3BWi" role="1QHqEI">
-            <node concept="3clFbS" id="1mC2_8Q3BWj" role="1bW5cS">
-              <node concept="3clFbF" id="1mC2_8Q3BWk" role="3cqZAp">
-                <node concept="37vLTI" id="1mC2_8Q3BWl" role="3clFbG">
-                  <node concept="2OqwBi" id="1mC2_8Q3BWm" role="37vLTx">
-                    <node concept="2OqwBi" id="1mC2_8Q3BWn" role="2Oq$k0">
-                      <node concept="37vLTw" id="1mC2_8Q3BWo" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1mC2_8Q3BW9" resolve="diagramCell" />
-                      </node>
-                      <node concept="liA8E" id="1mC2_8Q3BWp" role="2OqNvi">
-                        <ref role="37wK5l" to="8jsd:4f6Z7yOiy$H" resolve="getDecorationRootMapper" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="1mC2_8Q3BWq" role="2OqNvi">
-                      <ref role="37wK5l" to="sm7x:~Mapper.getDescendantMapper(java.lang.Object):jetbrains.jetpad.mapper.Mapper" resolve="getDescendantMapper" />
-                      <node concept="37vLTw" id="1mC2_8Q3FH6" role="37wK5m">
-                        <ref role="3cqZAo" node="1mC2_8Q3CEl" resolve="node" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="1mC2_8Q3BWv" role="37vLTJ">
-                    <ref role="3cqZAo" node="1mC2_8Q3BW2" resolve="descendantMapper" />
-                  </node>
-                </node>
+        <node concept="3cpWs6" id="4VjHdLZG72g" role="3cqZAp">
+          <node concept="2OqwBi" id="1mC2_8Q3BWm" role="3cqZAk">
+            <node concept="2OqwBi" id="1mC2_8Q3BWn" role="2Oq$k0">
+              <node concept="37vLTw" id="1mC2_8Q3BWo" role="2Oq$k0">
+                <ref role="3cqZAo" node="1mC2_8Q3BW9" resolve="diagramCell" />
+              </node>
+              <node concept="liA8E" id="1mC2_8Q3BWp" role="2OqNvi">
+                <ref role="37wK5l" to="8jsd:4f6Z7yOiy$H" resolve="getDecorationRootMapper" />
               </node>
             </node>
-          </node>
-          <node concept="2OqwBi" id="7bnM4mNA$Z_" role="ukAjM">
-            <node concept="2OqwBi" id="7bnM4mNAz31" role="2Oq$k0">
-              <node concept="37vLTw" id="7bnM4mNAyoz" role="2Oq$k0">
-                <ref role="3cqZAo" node="1mC2_8Q3CEn" resolve="editorComponent" />
-              </node>
-              <node concept="liA8E" id="7bnM4mNA$R2" role="2OqNvi">
-                <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+            <node concept="liA8E" id="1mC2_8Q3BWq" role="2OqNvi">
+              <ref role="37wK5l" to="sm7x:~Mapper.getDescendantMapper(java.lang.Object):jetbrains.jetpad.mapper.Mapper" resolve="getDescendantMapper" />
+              <node concept="37vLTw" id="1mC2_8Q3FH6" role="37wK5m">
+                <ref role="3cqZAo" node="1mC2_8Q3CEl" resolve="node" />
               </node>
             </node>
-            <node concept="liA8E" id="7bnM4mNA_LI" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1mC2_8Q3GQB" role="3cqZAp">
-          <node concept="37vLTw" id="1mC2_8Q3GQA" role="3clFbG">
-            <ref role="3cqZAo" node="1mC2_8Q3BW2" resolve="descendantMapper" />
           </node>
         </node>
       </node>

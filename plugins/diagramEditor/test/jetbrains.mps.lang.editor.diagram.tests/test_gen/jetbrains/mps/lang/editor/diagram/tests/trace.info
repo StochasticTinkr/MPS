@@ -318,49 +318,60 @@
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1560508619094084433">
     <file name="DecoratorTestRunner.java">
-      <node id="1560508619094091321" at="24,161,25,212" concept="2" />
-      <node id="2336278055261846156" at="25,212,26,45" concept="2" />
-      <node id="1560508619094091347" at="26,45,27,102" concept="6" />
-      <node id="1560508619094091356" at="28,45,29,136" concept="2" />
-      <node id="1560508619094417168" at="30,5,31,44" concept="7" />
-      <node id="1560508619094392577" at="33,85,34,111" concept="6" />
-      <node id="1560508619094392583" at="34,111,35,0" concept="9" />
-      <node id="1560508619094392584" at="35,0,36,124" concept="6" />
-      <node id="1560508619094405450" at="37,30,38,18" concept="7" />
-      <node id="8275303042008065508" at="39,5,40,164" concept="8" />
-      <node id="8275303042008085356" at="40,164,41,165" concept="8" />
-      <node id="8275303042008124006" at="41,165,42,145" concept="8" />
-      <node id="1560508619094392596" at="44,25,45,97" concept="2" />
-      <node id="1560508619094412711" at="47,7,48,34" concept="7" />
-      <node id="1560508619094171781" at="27,102,30,5" concept="4" />
-      <node id="1560508619094405448" at="36,124,39,5" concept="4" />
-      <node id="1560508619094392594" at="44,0,47,0" concept="5" trace="run#()V" />
-      <node id="1560508619094392593" at="42,145,47,7" concept="2" />
-      <node id="1560508619094087236" at="24,0,33,0" concept="11" trace="prepareAndGetMapper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;Ljava/lang/Class;)Ljetbrains/jetpad/mapper/Mapper;" />
-      <node id="1560508619094391055" at="33,0,50,0" concept="11" trace="getMapper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/jetpad/mapper/Mapper;" />
-      <scope id="1560508619094171784" at="28,45,29,136" />
-      <scope id="1560508619094405449" at="37,30,38,18" />
-      <scope id="1560508619094392595" at="44,25,45,97" />
-      <scope id="1560508619094392594" at="44,0,47,0" />
-      <scope id="1560508619094087239" at="24,161,31,44">
-        <var name="cell" id="1560508619094091348" />
+      <node id="1560508619094091321" at="25,118,26,212" concept="2" />
+      <node id="5680082414172512998" at="26,212,27,86" concept="6" />
+      <node id="5680082414172564528" at="27,86,28,115" concept="8" />
+      <node id="5680082414172558238" at="32,29,33,40" concept="8" />
+      <node id="1560508619094091347" at="37,7,38,102" concept="6" />
+      <node id="1560508619094091356" at="39,45,40,136" concept="2" />
+      <node id="5680082414172425589" at="41,5,42,67" concept="8" />
+      <node id="1560508619094417168" at="44,31,45,48" concept="7" />
+      <node id="1560508619094392583" at="49,79,50,0" concept="9" />
+      <node id="1560508619094392584" at="50,0,51,118" concept="6" />
+      <node id="1560508619094405450" at="52,30,53,18" concept="7" />
+      <node id="8275303042008065508" at="54,5,55,158" concept="8" />
+      <node id="8275303042008085356" at="55,158,56,165" concept="8" />
+      <node id="8275303042008124006" at="56,165,57,145" concept="8" />
+      <node id="5680082414172401808" at="57,145,58,75" concept="7" />
+      <node id="5680082414172557537" at="32,0,35,0" concept="5" trace="run#()V" />
+      <node id="1560508619094171781" at="38,102,41,5" concept="4" />
+      <node id="5680082414172365864" at="44,0,47,0" concept="5" trace="compute#()Ljetbrains/jetpad/mapper/Mapper;" />
+      <node id="1560508619094405448" at="51,118,54,5" concept="4" />
+      <node id="5680082414172527852" at="30,25,35,11" concept="2" />
+      <node id="5680082414172388295" at="42,67,47,7" concept="7" />
+      <node id="5680082414172501722" at="30,0,37,0" concept="5" trace="run#()V" />
+      <node id="5680082414172462609" at="28,115,37,7" concept="2" />
+      <node id="1560508619094391055" at="49,0,60,0" concept="11" trace="getMapper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/jetpad/mapper/Mapper;" />
+      <node id="1560508619094087236" at="25,0,49,0" concept="11" trace="prepareAndGetMapper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;Ljava/lang/Class;)Ljetbrains/jetpad/mapper/Mapper;" />
+      <scope id="5680082414172557538" at="32,29,33,40" />
+      <scope id="1560508619094171784" at="39,45,40,136" />
+      <scope id="5680082414172365865" at="44,31,45,48" />
+      <scope id="1560508619094405449" at="52,30,53,18" />
+      <scope id="5680082414172557537" at="32,0,35,0" />
+      <scope id="5680082414172365864" at="44,0,47,0" />
+      <scope id="5680082414172501725" at="30,25,35,11" />
+      <scope id="5680082414172501722" at="30,0,37,0" />
+      <scope id="1560508619094391058" at="49,79,58,75">
+        <var name="diagramCell" id="1560508619094392585" />
       </scope>
-      <scope id="1560508619094087236" at="24,0,33,0">
+      <scope id="1560508619094391055" at="49,0,60,0">
+        <var name="editorComponent" id="1560508619094395543" />
+        <var name="node" id="1560508619094395541" />
+      </scope>
+      <scope id="1560508619094087239" at="25,118,47,7">
+        <var name="cell" id="1560508619094091348" />
+        <var name="editorRepo" id="5680082414172512996" />
+      </scope>
+      <scope id="1560508619094087236" at="25,0,49,0">
         <var name="cellClass" id="1560508619094163422" />
         <var name="editorComponent" id="1560508619094099028" />
         <var name="node" id="1560508619094096142" />
       </scope>
-      <scope id="1560508619094391058" at="33,85,48,34">
-        <var name="descendantMapper" id="1560508619094392578" />
-        <var name="diagramCell" id="1560508619094392585" />
-      </scope>
-      <scope id="1560508619094391055" at="33,0,50,0">
-        <var name="editorComponent" id="1560508619094395543" />
-        <var name="node" id="1560508619094395541" />
-      </scope>
-      <unit id="1560508619094091335" at="25,185,25,208" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$1" />
-      <unit id="1560508619094392594" at="43,90,47,5" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$2" />
-      <unit id="1560508619094084433" at="23,0,51,0" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner" />
+      <unit id="1560508619094091335" at="26,185,26,208" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$1" />
+      <unit id="5680082414172557537" at="31,54,35,9" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$2$1" />
+      <unit id="5680082414172365864" at="43,63,47,5" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$3" />
+      <unit id="5680082414172501722" at="29,41,37,5" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$2" />
+      <unit id="1560508619094084433" at="24,0,61,0" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner" />
     </file>
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1560508619094462934">
@@ -657,48 +668,47 @@
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409093519741">
     <file name="CreatePort_Test.java">
-      <node id="2278461409093519741" at="24,28,25,25" concept="12" />
-      <node id="2278461409093519741" at="29,50,30,52" concept="2" />
-      <node id="2278461409093519741" at="35,52,36,19" concept="12" />
-      <node id="2278461409093519741" at="40,51,41,72" concept="2" />
-      <node id="2278461409093724423" at="43,27,44,462" concept="2" />
-      <node id="8275303042008188337" at="46,9,47,152" concept="8" />
-      <node id="8275303042008188845" at="47,152,48,51" concept="8" />
-      <node id="7712584618702569259" at="48,51,49,47" concept="2" />
-      <node id="2278461409094006792" at="50,7,51,29" concept="6" />
-      <node id="2278461409094006792" at="51,29,52,29" concept="6" />
-      <node id="2278461409094006792" at="52,29,53,121" concept="6" />
-      <node id="2278461409094006792" at="53,121,54,120" concept="2" />
-      <node id="2278461409094006792" at="54,120,55,119" concept="2" />
-      <node id="2278461409094006778" at="56,7,57,0" concept="9" />
-      <node id="2278461409093519741" at="21,0,23,0" concept="10" trace="ourParamCache" />
-      <node id="2278461409093519741" at="24,0,27,0" concept="1" trace="CreatePort_Test#()V" />
-      <node id="2278461409093519741" at="35,0,38,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
-      <node id="2278461409094182556" at="43,0,46,0" concept="5" trace="run#()V" />
-      <node id="2278461409093519741" at="28,0,32,0" concept="5" trace="test_CreatePort#()V" />
-      <node id="2278461409094180954" at="41,72,46,9" concept="2" />
-      <node id="2278461409094006792" at="49,47,56,7" concept="0" />
-      <node id="2278461409093519741" at="39,0,59,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="2278461409093519741" at="24,28,25,25" />
-      <scope id="2278461409093519741" at="29,50,30,52" />
-      <scope id="2278461409093519741" at="35,52,36,19" />
-      <scope id="2278461409094182557" at="43,27,44,462" />
-      <scope id="2278461409093519741" at="24,0,27,0" />
-      <scope id="2278461409093519741" at="35,0,38,0">
+      <node id="2278461409093519741" at="23,28,24,25" concept="12" />
+      <node id="2278461409093519741" at="28,50,29,52" concept="2" />
+      <node id="2278461409093519741" at="34,52,35,19" concept="12" />
+      <node id="2278461409093519741" at="39,51,40,72" concept="2" />
+      <node id="2278461409093724423" at="42,27,43,462" concept="2" />
+      <node id="8275303042008188337" at="45,9,46,126" concept="8" />
+      <node id="5211086106308512375" at="46,126,47,91" concept="8" />
+      <node id="2278461409094006792" at="48,7,49,29" concept="6" />
+      <node id="2278461409094006792" at="49,29,50,29" concept="6" />
+      <node id="2278461409094006792" at="50,29,51,121" concept="6" />
+      <node id="2278461409094006792" at="51,121,52,120" concept="2" />
+      <node id="2278461409094006792" at="52,120,53,119" concept="2" />
+      <node id="2278461409094006778" at="54,7,55,0" concept="9" />
+      <node id="2278461409093519741" at="20,0,22,0" concept="10" trace="ourParamCache" />
+      <node id="2278461409093519741" at="23,0,26,0" concept="1" trace="CreatePort_Test#()V" />
+      <node id="2278461409093519741" at="34,0,37,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="2278461409094182556" at="42,0,45,0" concept="5" trace="run#()V" />
+      <node id="2278461409093519741" at="27,0,31,0" concept="5" trace="test_CreatePort#()V" />
+      <node id="2278461409094180954" at="40,72,45,9" concept="2" />
+      <node id="2278461409094006792" at="47,91,54,7" concept="0" />
+      <node id="2278461409093519741" at="38,0,57,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2278461409093519741" at="23,28,24,25" />
+      <scope id="2278461409093519741" at="28,50,29,52" />
+      <scope id="2278461409093519741" at="34,52,35,19" />
+      <scope id="2278461409094182557" at="42,27,43,462" />
+      <scope id="2278461409093519741" at="23,0,26,0" />
+      <scope id="2278461409093519741" at="34,0,37,0">
         <var name="owner" id="2278461409093519741" />
       </scope>
-      <scope id="2278461409094182556" at="43,0,46,0" />
-      <scope id="2278461409093519741" at="28,0,32,0" />
-      <scope id="2278461409094006792" at="50,7,55,119">
-        <var name="eventTargetComponent_rszpwe_e0" id="2278461409094006792" />
-        <var name="x_rszpwe_e0" id="2278461409094006792" />
-        <var name="y_rszpwe_e0" id="2278461409094006792" />
+      <scope id="2278461409094182556" at="42,0,45,0" />
+      <scope id="2278461409093519741" at="27,0,31,0" />
+      <scope id="2278461409094006792" at="48,7,53,119">
+        <var name="eventTargetComponent_rszpwe_d0" id="2278461409094006792" />
+        <var name="x_rszpwe_d0" id="2278461409094006792" />
+        <var name="y_rszpwe_d0" id="2278461409094006792" />
       </scope>
-      <scope id="2278461409093519741" at="40,51,57,0" />
-      <scope id="2278461409093519741" at="39,0,59,0" />
-      <unit id="2278461409094182556" at="42,103,46,7" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody$1" />
-      <unit id="2278461409093519741" at="33,0,60,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody" />
-      <unit id="2278461409093519741" at="19,0,61,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test" />
+      <scope id="2278461409093519741" at="39,51,55,0" />
+      <scope id="2278461409093519741" at="38,0,57,0" />
+      <unit id="2278461409094182556" at="41,103,45,7" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody$1" />
+      <unit id="2278461409093519741" at="32,0,58,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody" />
+      <unit id="2278461409093519741" at="18,0,59,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test" />
     </file>
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409094282963">
