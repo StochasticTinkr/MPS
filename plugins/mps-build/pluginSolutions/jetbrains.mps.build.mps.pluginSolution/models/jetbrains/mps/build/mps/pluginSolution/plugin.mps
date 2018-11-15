@@ -12493,19 +12493,35 @@
           </node>
         </node>
         <node concept="3clFbH" id="66jotwz2RQH" role="3cqZAp" />
-        <node concept="3clFbF" id="66jotwz0xdF" role="3cqZAp">
-          <node concept="2OqwBi" id="66jotwz0Alf" role="3clFbG">
-            <node concept="2OqwBi" id="66jotwz0zDo" role="2Oq$k0">
-              <node concept="37vLTw" id="66jotwz0xdD" role="2Oq$k0">
-                <ref role="3cqZAo" node="7$e6lgA3BvE" resolve="buildProject" />
-              </node>
-              <node concept="3Tsc0h" id="66jotwz0_0H" role="2OqNvi">
-                <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" resolve="parts" />
+        <node concept="3clFbJ" id="aIKQscNK5O" role="3cqZAp">
+          <node concept="3clFbS" id="aIKQscNK5Q" role="3clFbx">
+            <node concept="3clFbF" id="66jotwz0xdF" role="3cqZAp">
+              <node concept="2OqwBi" id="66jotwz0Alf" role="3clFbG">
+                <node concept="2OqwBi" id="66jotwz0zDo" role="2Oq$k0">
+                  <node concept="37vLTw" id="66jotwz0xdD" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7$e6lgA3BvE" resolve="buildProject" />
+                  </node>
+                  <node concept="3Tsc0h" id="66jotwz0_0H" role="2OqNvi">
+                    <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" resolve="parts" />
+                  </node>
+                </node>
+                <node concept="TSZUe" id="66jotwz0ELQ" role="2OqNvi">
+                  <node concept="37vLTw" id="66jotwz2ZQi" role="25WWJ7">
+                    <ref role="3cqZAo" node="66jotwz2Uq7" resolve="tips" />
+                  </node>
+                </node>
               </node>
             </node>
-            <node concept="TSZUe" id="66jotwz0ELQ" role="2OqNvi">
-              <node concept="37vLTw" id="66jotwz2ZQi" role="25WWJ7">
-                <ref role="3cqZAo" node="66jotwz2Uq7" resolve="tips" />
+          </node>
+          <node concept="3clFbC" id="aIKQscO4z3" role="3clFbw">
+            <node concept="Rm8GO" id="aIKQscOljv" role="3uHU7w">
+              <ref role="Rm8GQ" node="2OJWaFGOFYB" resolve="STANDALONE" />
+              <ref role="1Px2BO" node="SGWM9zOjih" resolve="DependencyStep.DependencyKind" />
+            </node>
+            <node concept="2OqwBi" id="aIKQscNSSp" role="3uHU7B">
+              <node concept="Xjq3P" id="aIKQscNRAQ" role="2Oq$k0" />
+              <node concept="liA8E" id="aIKQscO0yh" role="2OqNvi">
+                <ref role="37wK5l" node="SGWM9zOPyI" resolve="getDependencyKind" />
               </node>
             </node>
           </node>
