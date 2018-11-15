@@ -16,16 +16,13 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SNodeLegacy;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -70,6 +67,16 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   public abstract SContainmentLink getSLink();
 
   public abstract SAbstractConcept getChildSConcept();
+
+  @Override
+  public SNode createNodeToInsert(EditorContext editorContext) {
+    SAbstractConcept childConcept = getChildSConcept();
+    SAbstractConcept defaultConcreteConcept = ConceptRegistry.getInstance().getConstraintsDescriptor(childConcept).getDefaultConcreteConcept();
+    if (defaultConcreteConcept != null) {
+      childConcept = defaultConcreteConcept;
+    }
+    return NodeFactoryManager.createNode(childConcept, null, getNode(), getNode().getModel());
+  }
 
   @Override
   protected EditorCell createEmptyCell() {

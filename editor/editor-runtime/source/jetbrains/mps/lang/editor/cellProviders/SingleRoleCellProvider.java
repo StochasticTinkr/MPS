@@ -30,8 +30,10 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -124,7 +126,16 @@ public abstract class SingleRoleCellProvider extends AbstractEditorBuilder imple
   }
 
   protected SNode createNodeToInsert() {
-    return NodeFactoryManager.createNode(myContainmentLink.getTargetConcept(), null, getNode(), getNode().getModel());
+    SAbstractConcept targetConcept = getTargetConcept();
+    SAbstractConcept defaultConcreteConcept = ConceptRegistry.getInstance().getConstraintsDescriptor(targetConcept).getDefaultConcreteConcept();
+    if (defaultConcreteConcept != null) {
+      targetConcept = defaultConcreteConcept;
+    }
+    return NodeFactoryManager.createNode(targetConcept, null, getNode(), getNode().getModel());
+  }
+
+  protected SAbstractConcept getTargetConcept(){
+    return myContainmentLink.getTargetConcept();
   }
 
   protected EditorCell createEmptyCell() {
