@@ -584,7 +584,7 @@
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="Make" />
     <property role="9BnSO" value="183.1" />
-    <property role="9BnSK" value="2018.3" />
+    <property role="9BnSK" value="2019.1" />
     <property role="2PJ1tZ" value="true" />
     <node concept="2Tc6Op" id="7_yYGx27If5" role="2Tc6Ou">
       <property role="2Tc6Oq" value="com.intellij.modules.mps" />
@@ -9800,7 +9800,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="3l7XKooDoev" role="1B3o_S" />
       <node concept="3uibUv" id="3LTvNgPOPyR" role="1tU5fm">
-        <ref role="3uigEE" node="C3dcc38Te3" />
+        <ref role="3uigEE" node="C3dcc38Te3" resolve="TransientModelBallonDisplayer" />
       </node>
     </node>
     <node concept="312cEg" id="3l7XKooC7wD" role="jymVt">

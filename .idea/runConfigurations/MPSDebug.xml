@@ -2,7 +2,7 @@
   <configuration default="false" name="MPSDebug" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
     <module name="startup" />
-    <option name="VM_PARAMETERS" value="-ea -Xmx4096m -XX:NewSize=384m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;JetBrains MPS&quot; -Dapple.awt.graphics.UseQuartz=true -Dide.mac.message.dialogs.as.sheets=false -Didea.paths.selector=MPSSRC2018.3 -Dintellij.config.imported.in.current.session=true -Dawt.useSystemAAFontSettings=lcd -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5083 -Didea.debug.mode=true -XX:MaxJavaStackTraceDepth=10000 -XX:-OmitStackTraceInFastThrow -Djava.net.preferIPv4Stack=true -Dsun.io.useCanonCaches=false -XX:SoftRefLRUPolicyMSPerMB=50 -XX:+UseConcMarkSweepGC" />
+    <option name="VM_PARAMETERS" value="-ea -Xmx4096m -XX:NewSize=384m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;JetBrains MPS&quot; -Dapple.awt.graphics.UseQuartz=true -Dide.mac.message.dialogs.as.sheets=false -Didea.paths.selector=MPSSRC2019.1 -Dintellij.config.imported.in.current.session=true -Dawt.useSystemAAFontSettings=lcd -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5091 -Didea.debug.mode=true -XX:MaxJavaStackTraceDepth=10000 -XX:-OmitStackTraceInFastThrow -Djava.net.preferIPv4Stack=true -Dsun.io.useCanonCaches=false -XX:SoftRefLRUPolicyMSPerMB=50 -XX:+UseConcMarkSweepGC" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin" />
     <RunnerSettings RunnerId="Debug">
       <option name="DEBUG_PORT" value="1857" />

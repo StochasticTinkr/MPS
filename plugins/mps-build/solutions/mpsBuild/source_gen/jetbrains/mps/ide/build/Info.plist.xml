@@ -101,7 +101,7 @@
         <string>false</string>
         
         <key>idea.paths.selector</key>
-        <string>MPS2018.3</string>
+        <string>MPS2019.1</string>
         
         <key>idea.executable</key>
         <string>mps</string>
@@ -111,7 +111,7 @@
         <key>idea.home.path</key>
         <string>$APP_PACKAGE/Contents</string>
       </dict>
-      <!--Use Contents/bin/mps.vmoptions or ~/Library/Preferences/MPS2018.3/mps.vmoptions file to modify VMOptions-->
+      <!--Use Contents/bin/mps.vmoptions or ~/Library/Preferences/MPS2019.1/mps.vmoptions file to modify VMOptions-->
       <key>VMOptions</key>
       <string>-XX:+UseCompressedOops</string>
       <key>WorkingDirectory</key>

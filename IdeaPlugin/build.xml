@@ -20,7 +20,7 @@
         ant -Dhome.idea_ce={IDEA_HOME_DIR} -Dhome.idea_ce.plugins={IDEA_PLUGINS_FOLDER} <task>
 
         e.g. for MacOs it will be:
-        ant -Dhome.idea_ce=/Applications/IntelliJ\ IDEA\ CE\ 2018.3.app/Contents/ -Dhome.idea_ce.plugins=~/Library/Application Support/IdeaIC2018.3 <task>
+        ant -Dhome.idea_ce=/Applications/IntelliJ\ IDEA\ CE\ 2019.1.app/Contents/ -Dhome.idea_ce.plugins=~/Library/Application Support/IdeaIC2019.1 <task>
 
      2. To run tests locally, it's sufficient to set home.idea_ce and home.jdk:
         ant -Dhome.idea_ce=/IDEAXX/ -Dhome.jdk=/Library/Java/Home/ -f IdeaPlugin/build.xml clean zip runTests

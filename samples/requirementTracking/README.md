@@ -20,4 +20,4 @@ The ProjectCode solution simulates the actual code of a project that must confor
 The code, both Java and XML is annotated with requirement traces. The traces are only visible, when the ShowTraces editor hint is pushed.
 With intentions additional traces can be added or removed.
 
-More details can be found in the [Requirement tracking language cookbook](https://confluence.jetbrains.com/display/MPSD20183/Requirement+tracking+language).
+More details can be found in the [Requirement tracking language cookbook](https://confluence.jetbrains.com/display/MPSD20191/Requirement+tracking+language).
