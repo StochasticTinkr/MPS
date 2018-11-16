@@ -789,6 +789,25 @@
             <property role="VOm3f" value="true" />
           </node>
         </node>
+        <node concept="3F0ifn" id="7RnFTgqrIkm" role="3EZMnx">
+          <property role="3F0ifm" value="smart reference interface" />
+          <node concept="ljvvj" id="7RnFTgqrIkn" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="7RnFTgqrIkh" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:7RnFTgqrIjd" resolve="smartReferenceInterface" />
+          <node concept="l2Vlx" id="7RnFTgqrIki" role="2czzBx" />
+          <node concept="lj46D" id="7RnFTgqrIkj" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="7RnFTgqrIkk" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pj6Ft" id="7RnFTgqrIkl" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
         <node concept="3F0ifn" id="7Nx4mSUsh9z" role="3EZMnx">
           <property role="3F0ifm" value="children for empty cell" />
           <node concept="ljvvj" id="7Nx4mSUsh9$" role="3F10Kt">
@@ -8919,6 +8938,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6szUVE$_2TH">
+    <property role="3GE5qa" value="smartReference" />
     <ref role="1XX52x" to="wdez:6szUVE$$bRA" resolve="TestSubstituteSmartRef_WithoutExplicitMenu" />
     <node concept="3EZMnI" id="6szUVE$_2TI" role="2wV5jI">
       <node concept="l2Vlx" id="6szUVE$_2TJ" role="2iSdaV" />
@@ -9906,6 +9926,52 @@
           <property role="CtIbK" value="LEFT" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7RnFTgqrHOT">
+    <property role="3GE5qa" value="smartReference" />
+    <ref role="1XX52x" to="wdez:7RnFTgqrHOr" resolve="TestSubstituteSmartRef_Interface" />
+    <node concept="3EZMnI" id="7RnFTgqrHOV" role="2wV5jI">
+      <node concept="l2Vlx" id="7RnFTgqrHOW" role="2iSdaV" />
+      <node concept="3F0ifn" id="7RnFTgqrHOX" role="3EZMnx">
+        <property role="3F0ifm" value="test substitute smart reference interface" />
+      </node>
+      <node concept="1iCGBv" id="7RnFTgqrHOZ" role="3EZMnx">
+        <ref role="1NtTu8" to="wdez:7RnFTgqrHOu" resolve="childToReference" />
+        <node concept="1sVBvm" id="7RnFTgqrHP2" role="1sWHZn">
+          <node concept="3F0A7n" id="7RnFTgqrHP4" role="2wV5jI">
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="7RnFTgqrHP5" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <node concept="11L4FC" id="7RnFTgqrHP6" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3mYdg7" id="7RnFTgqrHP7" role="3F10Kt">
+          <property role="1413C4" value="body-paren" />
+        </node>
+        <node concept="11LMrY" id="7RnFTgqrHP8" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="7RnFTgqrHP9" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <node concept="11L4FC" id="7RnFTgqrHPa" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3mYdg7" id="7RnFTgqrHPb" role="3F10Kt">
+          <property role="1413C4" value="body-paren" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="7RnFTgqrIja">
+    <property role="3GE5qa" value="smartReference" />
+    <ref role="aqKnT" to="wdez:7RnFTgqrHOr" resolve="TestSubstituteSmartRef_Interface" />
+    <node concept="3XHNnq" id="7RnFTgqrIjb" role="3ft7WO">
+      <ref role="3XGfJA" to="wdez:7RnFTgqrHOu" resolve="childToReference" />
     </node>
   </node>
 </model>
