@@ -6,10 +6,16 @@ import org.jetbrains.annotations.NotNull;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
+/**
+ * 
+ * @deprecated see IMessageFormat for reasons
+ */
+@Deprecated
 public class TeamCityMessageFormat implements IMessageFormat {
   private static final String LINES_SEPARATOR = "|n";
   private static final String SERVER_PREFIX = "##teamcity[";
   private static final String SERVER_TEST_FAILED_PREFIX = "##teamcity[testFailed";
+  @Deprecated
   public TeamCityMessageFormat() {
   }
   @Override

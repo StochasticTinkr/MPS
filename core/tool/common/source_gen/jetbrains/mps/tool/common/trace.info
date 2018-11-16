@@ -70,39 +70,39 @@
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/2546981710035421490">
     <file name="IMessageFormat.java">
-      <node id="2546981710035421492" at="8,0,9,0" concept="8" trace="escapeBuildMessage#(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;" />
-      <node id="2546981710035421499" at="9,0,10,0" concept="8" trace="escapeBuildMessage#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="2546981710035421506" at="10,0,11,0" concept="8" trace="getLinesSeparator#()Ljava/lang/String;" />
-      <node id="2546981710035421510" at="11,0,12,0" concept="8" trace="formatTestStart#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="2546981710035421517" at="12,0,13,0" concept="8" trace="formatTestFinish#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="2546981710035421524" at="13,0,14,0" concept="8" trace="formatTestFailure#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;" />
-      <node id="2546981710035421537" at="14,0,15,0" concept="8" trace="isBuildServerMessage#(Ljava/lang/CharSequence;)Z" />
-      <node id="2546981710035421544" at="15,0,16,0" concept="8" trace="hasContinuation#(Ljava/lang/String;)I" />
-      <scope id="2546981710035421492" at="8,0,9,0">
+      <node id="2546981710035421492" at="16,0,17,0" concept="8" trace="escapeBuildMessage#(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;" />
+      <node id="2546981710035421499" at="17,0,18,0" concept="8" trace="escapeBuildMessage#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="2546981710035421506" at="18,0,19,0" concept="8" trace="getLinesSeparator#()Ljava/lang/String;" />
+      <node id="2546981710035421510" at="19,0,20,0" concept="8" trace="formatTestStart#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="2546981710035421517" at="20,0,21,0" concept="8" trace="formatTestFinish#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="2546981710035421524" at="21,0,22,0" concept="8" trace="formatTestFailure#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;" />
+      <node id="2546981710035421537" at="22,0,23,0" concept="8" trace="isBuildServerMessage#(Ljava/lang/CharSequence;)Z" />
+      <node id="2546981710035421544" at="23,0,24,0" concept="8" trace="hasContinuation#(Ljava/lang/String;)I" />
+      <scope id="2546981710035421492" at="16,0,17,0">
         <var name="message" id="2546981710035421495" />
       </scope>
-      <scope id="2546981710035421499" at="9,0,10,0">
+      <scope id="2546981710035421499" at="17,0,18,0">
         <var name="message" id="2546981710035421502" />
       </scope>
-      <scope id="2546981710035421506" at="10,0,11,0" />
-      <scope id="2546981710035421510" at="11,0,12,0">
+      <scope id="2546981710035421506" at="18,0,19,0" />
+      <scope id="2546981710035421510" at="19,0,20,0">
         <var name="testName" id="2546981710035421513" />
       </scope>
-      <scope id="2546981710035421517" at="12,0,13,0">
+      <scope id="2546981710035421517" at="20,0,21,0">
         <var name="testName" id="2546981710035421520" />
       </scope>
-      <scope id="2546981710035421524" at="13,0,14,0">
+      <scope id="2546981710035421524" at="21,0,22,0">
         <var name="details" id="2546981710035421533" />
         <var name="message" id="2546981710035421530" />
         <var name="testName" id="2546981710035421527" />
       </scope>
-      <scope id="2546981710035421537" at="14,0,15,0">
+      <scope id="2546981710035421537" at="22,0,23,0">
         <var name="message" id="2546981710035421540" />
       </scope>
-      <scope id="2546981710035421544" at="15,0,16,0">
+      <scope id="2546981710035421544" at="23,0,24,0">
         <var name="message" id="2546981710035421547" />
       </scope>
-      <unit id="2546981710035421490" at="7,0,17,0" name="jetbrains.mps.tool.common.IMessageFormat" />
+      <unit id="2546981710035421490" at="13,0,25,0" name="jetbrains.mps.tool.common.IMessageFormat" />
     </file>
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/3415722583340914388">
@@ -252,119 +252,115 @@
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/7910428321252775322">
     <file name="TeamCityMessageFormat.java">
-      <node id="7910428321252775325" at="10,0,11,0" concept="13" trace="LINES_SEPARATOR" />
-      <node id="7910428321252775329" at="11,0,12,0" concept="13" trace="SERVER_PREFIX" />
-      <node id="7910428321252775333" at="12,0,13,0" concept="13" trace="SERVER_TEST_FAILED_PREFIX" />
-      <node id="7910428321252775348" at="16,64,17,130" concept="10" />
-      <node id="7910428321252775377" at="20,73,21,111" concept="9" />
-      <node id="7910428321252775407" at="22,54,23,67" concept="9" />
-      <node id="7910428321252775415" at="23,67,24,51" concept="9" />
-      <node id="7910428321252775422" at="24,51,25,37" concept="9" />
-      <node id="7910428321252775429" at="25,37,26,28" concept="9" />
-      <node id="7910428321252775438" at="27,24,28,21" concept="3" />
-      <node id="7910428321252775442" at="28,21,29,61" concept="3" />
-      <node id="7910428321252775455" at="31,18,32,33" concept="3" />
-      <node id="7910428321252775460" at="32,33,33,29" concept="3" />
-      <node id="7910428321252775464" at="35,5,36,19" concept="10" />
-      <node id="7910428321252775470" at="39,37,40,27" concept="10" />
-      <node id="7910428321252775479" at="43,59,44,90" concept="10" />
-      <node id="7910428321252775492" at="47,60,48,62" concept="10" />
-      <node id="7910428321252775508" at="50,85,51,113" concept="10" />
-      <node id="7910428321252775535" at="54,123,55,41" concept="9" />
-      <node id="7910428321252775540" at="55,41,56,152" concept="3" />
-      <node id="7910428321252775563" at="56,152,57,14" concept="10" />
-      <node id="7910428321252775572" at="60,70,61,139" concept="10" />
-      <node id="7910428321252775601" at="64,55,65,44" concept="10" />
-      <node id="7910428321252775615" at="67,55,68,169" concept="10" />
-      <node id="7910428321252775337" at="13,0,15,0" concept="2" trace="TeamCityMessageFormat#()V" />
-      <node id="7910428321252775498" at="50,0,53,0" concept="8" trace="formatTestFailure#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="7910428321252775609" at="67,0,70,0" concept="8" trace="isTestFailMessage#(Ljava/lang/CharSequence;)Z" />
-      <node id="7910428321252775341" at="15,0,19,0" concept="8" trace="escapeBuildMessage#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="7910428321252775433" at="26,28,30,7" concept="19" />
-      <node id="7910428321252775452" at="30,7,34,7" concept="7" />
-      <node id="7910428321252775466" at="38,0,42,0" concept="8" trace="getLinesSeparator#()Ljava/lang/String;" />
-      <node id="7910428321252775472" at="42,0,46,0" concept="8" trace="formatTestStart#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="7910428321252775485" at="46,0,50,0" concept="8" trace="formatTestFinish#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="7910428321252775565" at="59,0,63,0" concept="8" trace="isBuildServerMessage#(Ljava/lang/CharSequence;)Z" />
-      <node id="7910428321252775594" at="63,0,67,0" concept="8" trace="hasContinuation#(Ljava/lang/String;)I" />
-      <node id="7910428321252775522" at="53,0,59,0" concept="8" trace="formatTestFailure#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;" />
-      <node id="7910428321252775394" at="21,111,35,5" concept="5" />
-      <node id="7910428321252775370" at="19,0,38,0" concept="8" trace="escapeBuildMessage#(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;" />
-      <scope id="7910428321252775340" at="13,34,13,34" />
-      <scope id="7910428321252775347" at="16,64,17,130" />
-      <scope id="7910428321252775469" at="39,37,40,27" />
-      <scope id="7910428321252775478" at="43,59,44,90" />
-      <scope id="7910428321252775491" at="47,60,48,62" />
-      <scope id="7910428321252775507" at="50,85,51,113" />
-      <scope id="7910428321252775571" at="60,70,61,139" />
-      <scope id="7910428321252775600" at="64,55,65,44" />
-      <scope id="7910428321252775614" at="67,55,68,169" />
-      <scope id="7910428321252775337" at="13,0,15,0" />
-      <scope id="7910428321252775437" at="27,24,29,61" />
-      <scope id="7910428321252775454" at="31,18,33,29" />
-      <scope id="7910428321252775498" at="50,0,53,0">
+      <node id="7910428321252775325" at="15,0,16,0" concept="13" trace="LINES_SEPARATOR" />
+      <node id="7910428321252775329" at="16,0,17,0" concept="13" trace="SERVER_PREFIX" />
+      <node id="7910428321252775333" at="17,0,18,0" concept="13" trace="SERVER_TEST_FAILED_PREFIX" />
+      <node id="7910428321252775348" at="22,64,23,130" concept="10" />
+      <node id="7910428321252775377" at="26,73,27,111" concept="9" />
+      <node id="7910428321252775407" at="28,54,29,67" concept="9" />
+      <node id="7910428321252775415" at="29,67,30,51" concept="9" />
+      <node id="7910428321252775422" at="30,51,31,37" concept="9" />
+      <node id="7910428321252775429" at="31,37,32,28" concept="9" />
+      <node id="7910428321252775438" at="33,24,34,21" concept="3" />
+      <node id="7910428321252775442" at="34,21,35,61" concept="3" />
+      <node id="7910428321252775455" at="37,18,38,33" concept="3" />
+      <node id="7910428321252775460" at="38,33,39,29" concept="3" />
+      <node id="7910428321252775464" at="41,5,42,19" concept="10" />
+      <node id="7910428321252775470" at="45,37,46,27" concept="10" />
+      <node id="7910428321252775479" at="49,59,50,90" concept="10" />
+      <node id="7910428321252775492" at="53,60,54,62" concept="10" />
+      <node id="7910428321252775508" at="56,85,57,113" concept="10" />
+      <node id="7910428321252775535" at="60,123,61,41" concept="9" />
+      <node id="7910428321252775540" at="61,41,62,152" concept="3" />
+      <node id="7910428321252775563" at="62,152,63,14" concept="10" />
+      <node id="7910428321252775572" at="66,70,67,139" concept="10" />
+      <node id="7910428321252775601" at="70,55,71,44" concept="10" />
+      <node id="7910428321252775615" at="73,55,74,169" concept="10" />
+      <node id="7910428321252775337" at="18,0,21,0" concept="2" trace="TeamCityMessageFormat#()V" />
+      <node id="7910428321252775498" at="56,0,59,0" concept="8" trace="formatTestFailure#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="7910428321252775609" at="73,0,76,0" concept="8" trace="isTestFailMessage#(Ljava/lang/CharSequence;)Z" />
+      <node id="7910428321252775341" at="21,0,25,0" concept="8" trace="escapeBuildMessage#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="7910428321252775433" at="32,28,36,7" concept="19" />
+      <node id="7910428321252775452" at="36,7,40,7" concept="7" />
+      <node id="7910428321252775466" at="44,0,48,0" concept="8" trace="getLinesSeparator#()Ljava/lang/String;" />
+      <node id="7910428321252775472" at="48,0,52,0" concept="8" trace="formatTestStart#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="7910428321252775485" at="52,0,56,0" concept="8" trace="formatTestFinish#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="7910428321252775565" at="65,0,69,0" concept="8" trace="isBuildServerMessage#(Ljava/lang/CharSequence;)Z" />
+      <node id="7910428321252775594" at="69,0,73,0" concept="8" trace="hasContinuation#(Ljava/lang/String;)I" />
+      <node id="7910428321252775522" at="59,0,65,0" concept="8" trace="formatTestFailure#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;" />
+      <node id="7910428321252775394" at="27,111,41,5" concept="5" />
+      <node id="7910428321252775370" at="25,0,44,0" concept="8" trace="escapeBuildMessage#(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;" />
+      <scope id="7910428321252775340" at="19,34,19,34" />
+      <scope id="7910428321252775347" at="22,64,23,130" />
+      <scope id="7910428321252775469" at="45,37,46,27" />
+      <scope id="7910428321252775478" at="49,59,50,90" />
+      <scope id="7910428321252775491" at="53,60,54,62" />
+      <scope id="7910428321252775507" at="56,85,57,113" />
+      <scope id="7910428321252775571" at="66,70,67,139" />
+      <scope id="7910428321252775600" at="70,55,71,44" />
+      <scope id="7910428321252775614" at="73,55,74,169" />
+      <scope id="7910428321252775437" at="33,24,35,61" />
+      <scope id="7910428321252775454" at="37,18,39,29" />
+      <scope id="7910428321252775337" at="18,0,21,0" />
+      <scope id="7910428321252775498" at="56,0,59,0">
         <var name="detailes" id="7910428321252775505" />
         <var name="message" id="7910428321252775503" />
         <var name="testName" id="7910428321252775501" />
       </scope>
-      <scope id="7910428321252775534" at="54,123,57,14">
+      <scope id="7910428321252775534" at="60,123,63,14">
         <var name="sb" id="7910428321252775536" />
       </scope>
-      <scope id="7910428321252775609" at="67,0,70,0">
+      <scope id="7910428321252775609" at="73,0,76,0">
         <var name="text" id="7910428321252775612" />
       </scope>
-      <scope id="7910428321252775341" at="15,0,19,0">
+      <scope id="7910428321252775341" at="21,0,25,0">
         <var name="rawMessage" id="7910428321252775344" />
       </scope>
-      <scope id="7910428321252775466" at="38,0,42,0" />
-      <scope id="7910428321252775472" at="42,0,46,0">
+      <scope id="7910428321252775466" at="44,0,48,0" />
+      <scope id="7910428321252775472" at="48,0,52,0">
         <var name="testName" id="7910428321252775475" />
       </scope>
-      <scope id="7910428321252775485" at="46,0,50,0">
+      <scope id="7910428321252775485" at="52,0,56,0">
         <var name="testName" id="7910428321252775488" />
       </scope>
-      <scope id="7910428321252775565" at="59,0,63,0">
+      <scope id="7910428321252775565" at="65,0,69,0">
         <var name="message" id="7910428321252775568" />
       </scope>
-      <scope id="7910428321252775594" at="63,0,67,0">
+      <scope id="7910428321252775594" at="69,0,73,0">
         <var name="message" id="7910428321252775597" />
       </scope>
-      <scope id="7910428321252775522" at="53,0,59,0">
+      <scope id="7910428321252775522" at="59,0,65,0">
         <var name="details" id="7910428321252775531" />
         <var name="message" id="7910428321252775528" />
         <var name="testName" id="7910428321252775525" />
       </scope>
-      <scope id="7910428321252775406" at="22,54,34,7">
+      <scope id="7910428321252775406" at="28,54,40,7">
         <var name="found" id="7910428321252775430" />
         <var name="m" id="7910428321252775423" />
         <var name="newMessage" id="7910428321252775408" />
         <var name="p" id="7910428321252775416" />
       </scope>
-      <scope id="7910428321252775394" at="21,111,35,5">
+      <scope id="7910428321252775394" at="27,111,41,5">
         <var name="i" id="7910428321252775395" />
       </scope>
-      <scope id="7910428321252775376" at="20,73,36,19">
+      <scope id="7910428321252775376" at="26,73,42,19">
         <var name="replacements" id="7910428321252775378" />
       </scope>
-      <scope id="7910428321252775370" at="19,0,38,0">
+      <scope id="7910428321252775370" at="25,0,44,0">
         <var name="message" id="7910428321252775373" />
       </scope>
-      <unit id="7910428321252775322" at="9,0,71,0" name="jetbrains.mps.tool.common.TeamCityMessageFormat" />
+      <unit id="7910428321252775322" at="13,0,77,0" name="jetbrains.mps.tool.common.TeamCityMessageFormat" />
     </file>
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/7910428321252780319">
     <file name="ScriptProperties.java">
-      <node id="7910428321252809155" at="8,0,9,0" concept="13" trace="COMPILE" />
-      <node id="978600701690013405" at="9,0,10,0" concept="13" trace="PLUGIN_PATHS" />
-      <node id="1365200781785207595" at="11,0,12,0" concept="13" trace="INVOKE_TESTS" />
-      <node id="1365200781785216423" at="12,0,13,0" concept="13" trace="SAVE_ON_DISK" />
-      <node id="1365200781785216925" at="13,0,14,0" concept="13" trace="SHOW_DIFF" />
-      <node id="1365200781785217431" at="14,0,15,0" concept="13" trace="WHOLE_PROJECT" />
-      <node id="1365200781785228053" at="16,0,17,0" concept="13" trace="GENERATE_PERFORMANCE_REPORT" />
-      <node id="7910428321252780321" at="18,0,20,0" concept="2" trace="ScriptProperties#()V" />
-      <scope id="7910428321252780324" at="18,30,18,30" />
-      <scope id="7910428321252780321" at="18,0,20,0" />
-      <unit id="7910428321252780319" at="6,0,21,0" name="jetbrains.mps.tool.common.ScriptProperties" />
+      <node id="978600701690013405" at="8,0,9,0" concept="13" trace="PLUGIN_PATHS" />
+      <node id="1365200781785216925" at="10,0,11,0" concept="13" trace="SHOW_DIFF" />
+      <node id="1365200781785228053" at="12,0,13,0" concept="13" trace="GENERATE_PERFORMANCE_REPORT" />
+      <node id="7910428321252780321" at="14,0,16,0" concept="2" trace="ScriptProperties#()V" />
+      <scope id="7910428321252780324" at="14,30,14,30" />
+      <scope id="7910428321252780321" at="14,0,16,0" />
+      <unit id="7910428321252780319" at="6,0,17,0" name="jetbrains.mps.tool.common.ScriptProperties" />
     </file>
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/878521226297927156">

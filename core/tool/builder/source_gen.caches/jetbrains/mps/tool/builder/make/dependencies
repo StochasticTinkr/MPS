@@ -68,6 +68,7 @@
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.make.ConsoleMessageFormat">
     <classNode dependClassName="java.lang.CharSequence" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
@@ -90,7 +91,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashMap" />
@@ -119,29 +119,22 @@
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorBase" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
     <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.tool.builder.make.BuildMakeService" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.make.ConsoleMessageFormat" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.ConsoleTestReporter" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.ITestReporter" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestAdapter" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestListener" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.XmlTestReporter" />
-    <classNode dependClassName="jetbrains.mps.tool.common.IMessageFormat" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
-    <classNode dependClassName="jetbrains.mps.tool.common.TeamCityMessageFormat" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.make.BaseGeneratorWorker" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.make.GeneratorWorker">
