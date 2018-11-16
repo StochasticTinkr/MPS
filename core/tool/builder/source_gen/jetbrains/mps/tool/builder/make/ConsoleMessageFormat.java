@@ -5,7 +5,13 @@ package jetbrains.mps.tool.builder.make;
 import jetbrains.mps.tool.common.IMessageFormat;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * 
+ * @deprecated see IMessageFormat for reasons
+ */
+@Deprecated
 public class ConsoleMessageFormat implements IMessageFormat {
+  @Deprecated
   public ConsoleMessageFormat() {
   }
   @Override

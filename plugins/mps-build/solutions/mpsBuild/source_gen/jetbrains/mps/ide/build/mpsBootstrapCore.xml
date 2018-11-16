@@ -7228,7 +7228,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.ant-mps" depends="java.compile.platform, java.compile.mps-environment">
+  <target name="java.compile.ant-mps" depends="java.compile.platform, java.compile.mps-environment, java.compile.mps-annotations">
     <mkdir dir="${mps_home}/core/tool/common/source_gen" />
     <mkdir dir="${mps_home}/core/tool/ant/source_gen" />
     <mkdir dir="${build.tmp}/java/out/ant-mps" />
@@ -7241,6 +7241,7 @@
       <classpath>
         <pathelement path="${build.tmp}/java/out/platform" />
         <pathelement path="${build.tmp}/java/out/mps-environment" />
+        <pathelement path="${build.tmp}/java/out/mps-annotations" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />

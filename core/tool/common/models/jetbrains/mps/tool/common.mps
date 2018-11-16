@@ -17,6 +17,7 @@
     <import index="kart" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax(JDK/)" />
     <import index="se19" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom.output(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -44,9 +45,14 @@
       </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
@@ -132,6 +138,9 @@
       <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
+      <concept id="1111509017652" name="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" flags="nn" index="3b6qkQ">
+        <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
@@ -293,6 +302,9 @@
       </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -5032,6 +5044,32 @@
       </node>
       <node concept="3clFbS" id="2doG_VG50_I" role="3clF47" />
     </node>
+    <node concept="3UR2Jj" id="O9MEKq$D5i" role="lGtFl">
+      <node concept="TZ5HA" id="O9MEKq$D5j" role="TZ5H$">
+        <node concept="1dT_AC" id="O9MEKq$D5k" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HI" id="O9MEKq$D8A" role="3nqlJM">
+        <node concept="TZ5HA" id="O9MEKq$D8B" role="3HnX3l">
+          <node concept="1dT_AC" id="O9MEKq$Eqr" role="1dT_Ay">
+            <property role="1dT_AB" value="in MPS, there are no more uses of this interface nor uses of subclasses. Unless anybody needs this one, shall cease to exist." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="O9MEKq$D8C" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
+    <node concept="2AHcQZ" id="O9MEKq$DbU" role="2AJF6D">
+      <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+      <node concept="2B6LJw" id="O9MEKq$Djf" role="2B76xF">
+        <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+        <node concept="3b6qkQ" id="O9MEKq$DrY" role="2B70Vg">
+          <property role="$nhwW" value="2018.3" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="6R7vamttxmq">
     <property role="TrG5h" value="TeamCityMessageFormat" />
@@ -5864,6 +5902,18 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3UR2Jj" id="O9MEKq$Fk4" role="lGtFl">
+      <node concept="TZ5HI" id="O9MEKq$Fk5" role="3nqlJM">
+        <node concept="TZ5HA" id="O9MEKq$Fk6" role="3HnX3l">
+          <node concept="1dT_AC" id="O9MEKq$FPc" role="1dT_Ay">
+            <property role="1dT_AB" value="see IMessageFormat for reasons" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="O9MEKq$Fk7" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
     </node>
   </node>
   <node concept="312cEu" id="6R7vamtty$v">

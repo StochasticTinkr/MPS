@@ -68,6 +68,7 @@
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.make.ConsoleMessageFormat">
     <classNode dependClassName="java.lang.CharSequence" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
@@ -125,15 +126,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
     <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.tool.builder.make.BuildMakeService" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.make.ConsoleMessageFormat" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.ConsoleTestReporter" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.ITestReporter" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestAdapter" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.XmlTestReporter" />
-    <classNode dependClassName="jetbrains.mps.tool.common.IMessageFormat" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
-    <classNode dependClassName="jetbrains.mps.tool.common.TeamCityMessageFormat" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
