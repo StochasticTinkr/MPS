@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer;
@@ -81,8 +82,13 @@ import org.jetbrains.annotations.NonNls;
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
-    final DefaultMutableTreeNode rootNode = createRootNode();
-    myTree = new SimpleTree(new DefaultTreeModel(rootNode));
+    final Wrappers._T<DefaultMutableTreeNode> rootNode = new Wrappers._T<DefaultMutableTreeNode>();
+    myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        rootNode.value = createRootNode();
+      }
+    });
+    myTree = new SimpleTree(new DefaultTreeModel(rootNode.value));
     myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
     myTree.setCellRenderer(new ModelTreeCellRenderer());
     myTree.setRootVisible(false);
