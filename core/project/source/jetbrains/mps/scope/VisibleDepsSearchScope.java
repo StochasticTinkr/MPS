@@ -129,6 +129,9 @@ public class VisibleDepsSearchScope extends BaseScope {
     }
 
     SModel resolved = reference.resolve(myRepository);
+    if (resolved == null) {
+      return null;
+    }
     return myModules.contains(resolved.getModule()) || myAccessoriesOfUsedLanguages.contains(resolved) ? resolved : null;
   }
 }
