@@ -10117,12 +10117,42 @@
         <node concept="3cpWs8" id="3UdhnxHuqR$" role="3cqZAp">
           <node concept="3cpWsn" id="3UdhnxHuqR_" role="3cpWs9">
             <property role="TrG5h" value="rootNode" />
-            <property role="3TUv4t" value="true" />
             <node concept="3uibUv" id="3UdhnxHuqRA" role="1tU5fm">
               <ref role="3uigEE" to="rgfa:~DefaultMutableTreeNode" resolve="DefaultMutableTreeNode" />
             </node>
-            <node concept="1rXfSq" id="4hiugqyz8wJ" role="33vP2m">
-              <ref role="37wK5l" node="3UdhnxHuqQE" resolve="createRootNode" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="3zP9g9dfUS6" role="3cqZAp">
+          <node concept="2OqwBi" id="3zP9g9dfYhX" role="3clFbG">
+            <node concept="2OqwBi" id="3zP9g9dfX_a" role="2Oq$k0">
+              <node concept="2OqwBi" id="3zP9g9dfWq9" role="2Oq$k0">
+                <node concept="37vLTw" id="3zP9g9dfUS4" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3UdhnxHuqOV" resolve="myProject" />
+                </node>
+                <node concept="liA8E" id="3zP9g9dfXsz" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3zP9g9dfY9a" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3zP9g9dfYQL" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+              <node concept="1bVj0M" id="3zP9g9dfYWr" role="37wK5m">
+                <node concept="3clFbS" id="3zP9g9dfYWs" role="1bW5cS">
+                  <node concept="3clFbF" id="3zP9g9dg0VC" role="3cqZAp">
+                    <node concept="37vLTI" id="3zP9g9dg0VE" role="3clFbG">
+                      <node concept="1rXfSq" id="4hiugqyz8wJ" role="37vLTx">
+                        <ref role="37wK5l" node="3UdhnxHuqQE" resolve="createRootNode" />
+                      </node>
+                      <node concept="37vLTw" id="3zP9g9dg0VI" role="37vLTJ">
+                        <ref role="3cqZAo" node="3UdhnxHuqR_" resolve="rootNode" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

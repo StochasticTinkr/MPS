@@ -31,6 +31,7 @@
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode dependClassName="javax.swing.tree.DefaultTreeModel" />
     <classNode dependClassName="javax.swing.tree.TreeSelectionModel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder" />
     <classNode dependClassName="jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer" />
     <classNode dependClassName="jetbrains.mps.ide.platform.modeltree.ModelTreeNode" />
