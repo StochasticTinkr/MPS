@@ -18,6 +18,7 @@ package jetbrains.mps.errors.item;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.item.QuickFixReportItem.EditorQuickfixReportItem;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -51,23 +52,20 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
     return NameUtil.capitalize(errorReporter.getMessageStatus().getPresentation()) + ": " + errorReporter.reportError();
   }
 
-  @NotNull
-  public IErrorReporter getErrorReporter() {
-    return myErrorReporter;
+  @Override
+  public MessageTarget getMessageTarget() {
+    return myErrorReporter.getErrorTarget();
   }
-
-  public static final ReportItemFlavour<TypesystemReportItemAdapter, IErrorReporter> FLAVOUR_ERROR_REPORTER =
-      new SimpleReportItemFlavour<>("FLAVOUR_ERROR_REPORTER", TypesystemReportItemAdapter.class, TypesystemReportItemAdapter::getErrorReporter);
 
   @Override
   public Collection<TypesystemRuleId> getRuleId() {
     ArrayList<TypesystemRuleId> result = new ArrayList<>();
-    SNodeReference ruleNode = this.getErrorReporter().getRuleNode();
+    SNodeReference ruleNode = myErrorReporter.getRuleNode();
     if (ruleNode == null) {
       return Collections.emptyList();
     }
     result.add(new TypesystemRuleId(ruleNode));
-    for (SNodeReference additional : this.getErrorReporter().getAdditionalRulesIds()) {
+    for (SNodeReference additional : myErrorReporter.getAdditionalRulesIds()) {
       result.add(new TypesystemRuleId(additional));
     }
     return result;
@@ -76,8 +74,8 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
   @Override
   public Collection<EditorQuickFix> getQuickFix() {
     List<EditorQuickFix> list = new ArrayList<>();
-    for (QuickFixProvider quickFixProvider : getErrorReporter().getIntentionProviders()) {
-      QuickFixRuntimeAdapter quickFixAdapter = new QuickFixRuntimeAdapter(myLanguageRegistry, getErrorReporter().getSNode().getReference(), quickFixProvider);
+    for (QuickFixProvider quickFixProvider : myErrorReporter.getIntentionProviders()) {
+      QuickFixRuntimeAdapter quickFixAdapter = new QuickFixRuntimeAdapter(myLanguageRegistry, myErrorReporter.getSNode().getReference(), quickFixProvider);
       list.add(quickFixAdapter);
     }
     return list;
