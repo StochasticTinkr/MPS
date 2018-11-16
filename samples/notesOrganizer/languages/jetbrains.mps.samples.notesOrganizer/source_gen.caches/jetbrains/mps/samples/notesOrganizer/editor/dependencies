@@ -522,6 +522,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Notes_EditorBuilder_a">
+    <classNode dependClassName="com.intellij.openapi.ui.ComboBox" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Iterable" />

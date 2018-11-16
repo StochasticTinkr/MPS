@@ -42,11 +42,12 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import javax.swing.JComboBox;
+import com.intellij.openapi.ui.ComboBox;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.List;
 import java.util.ArrayList;
+import javax.swing.JComboBox;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -233,7 +234,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 
     SNode config = ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(myNode), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1745L, "jetbrains.mps.samples.notesOrganizer.structure.NotesConfiguration"))).first();
     if (config == null) {
-      return new JComboBox();
+      return new ComboBox<String>();
     }
     Iterable<String> names = ListSequence.fromList(SLinkOperations.getChildren(config, MetaAdapterFactory.getContainmentLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1745L, 0x7ba12f0b163d1791L, "categories"))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -242,7 +243,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     });
     List<String> namesWithEmptyLine = ListSequence.fromListWithValues(new ArrayList<String>(), names);
     ListSequence.fromList(namesWithEmptyLine).insertElement(0, "");
-    final JComboBox categorySelector = new JComboBox(ListSequence.fromList(namesWithEmptyLine).toGenericArray(String.class));
+    final JComboBox categorySelector = new ComboBox<String>(ListSequence.fromList(namesWithEmptyLine).toGenericArray(String.class));
 
     categorySelector.setSelectedItem(selectedCategory[0]);
 

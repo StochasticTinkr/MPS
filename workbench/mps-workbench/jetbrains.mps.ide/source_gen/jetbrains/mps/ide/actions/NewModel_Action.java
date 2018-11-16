@@ -12,20 +12,20 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
-import java.awt.Frame;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.tree.TreeNode;
-import javax.swing.JOptionPane;
+import com.intellij.openapi.application.TransactionGuard;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.smodel.Generator;
@@ -71,13 +71,6 @@ public class NewModel_Action extends BaseAction {
       return false;
     }
     {
-      Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       Project p = event.getData(CommonDataKeys.PROJECT);
       MapSequence.fromMap(_params).put("ideaProject", p);
       if (p == null) {
@@ -109,36 +102,32 @@ public class NewModel_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    if (!(NewModel_Action.this.hasModelRoots(_params))) {
-      int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
-      if (code == JOptionPane.YES_OPTION) {
-        MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
-        final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
-        configurableEditor.show();
-      }
-      return;
-    }
-    if (!(NewModel_Action.this.hasModelRoots(_params))) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
-      return;
-    }
-    final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-    ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runReadAction(new Runnable() {
+    TransactionGuard.getInstance().submitTransactionAndWait(new Runnable() {
       public void run() {
+        if (!(NewModel_Action.this.hasModelRoots(_params))) {
+          if (Messages.showOkCancelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), String.format("There are no model roots in the module. It is required for model creation.%nDo you want to add one?"), "Model Root Not Found", Messages.getQuestionIcon()) == Messages.OK) {
+            MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
+            final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
+            configurableEditor.show();
+          }
+          return;
+        }
+
         String stereotype = NewModel_Action.this.getStereotype(_params);
-        dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), NewModel_Action.this.getNamespace(_params), stereotype, NewModel_Action.this.isStrict(_params));
+        NewModelDialog dialog = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), NewModel_Action.this.getNamespace(_params), stereotype, NewModel_Action.this.isStrict(_params));
+        dialog.show();
+        SModel result = dialog.getResult();
+        if (result != null) {
+          final SModel modelDescriptor = result;
+          ApplicationManager.getApplication().invokeLater(new Runnable() {
+            public void run() {
+              ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
+            }
+          }, ModalityState.defaultModalityState());
+        }
       }
     });
-    dialog.value.show();
-    SModel result = dialog.value.getResult();
-    if (result != null) {
-      final SModel modelDescriptor = result;
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
-        }
-      });
-    }
+
   }
   private StereotypeProvider getStereotypeProvider(final Map<String, Object> _params) {
     TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("treeNode")).getParent();

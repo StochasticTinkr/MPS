@@ -3,7 +3,6 @@
   <persistence version="9" />
   <languages>
     <use id="4b0f115a-8868-4d72-8d61-97071eaaa5f1" name="jetbrains.mps.samples.notesOrganizer" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
   </languages>
   <imports>
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" implicit="true" />
