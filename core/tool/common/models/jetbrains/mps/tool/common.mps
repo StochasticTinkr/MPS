@@ -9,7 +9,6 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
-    <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
     <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom(MPS.Core/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="ni5j" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.regex(JDK/)" />
@@ -5870,15 +5869,6 @@
   <node concept="312cEu" id="6R7vamtty$v">
     <property role="TrG5h" value="ScriptProperties" />
     <node concept="2tJIrI" id="1bMaI2XpeA8" role="jymVt" />
-    <node concept="Wx3nA" id="6R7vamttDB3" role="jymVt">
-      <property role="TrG5h" value="COMPILE" />
-      <property role="3TUv4t" value="true" />
-      <node concept="17QB3L" id="6R7vamttDB4" role="1tU5fm" />
-      <node concept="3Tm1VV" id="6R7vamttDB5" role="1B3o_S" />
-      <node concept="Xl_RD" id="6R7vamttDB6" role="33vP2m">
-        <property role="Xl_RC" value="COMPILE" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="QkG2t1bArt" role="jymVt">
       <property role="TrG5h" value="PLUGIN_PATHS" />
       <property role="3TUv4t" value="true" />
@@ -5889,24 +5879,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1bMaI2Xpe$j" role="jymVt" />
-    <node concept="Wx3nA" id="1bMaI2Xp9cF" role="jymVt">
-      <property role="TrG5h" value="INVOKE_TESTS" />
-      <property role="3TUv4t" value="true" />
-      <node concept="17QB3L" id="1bMaI2Xp9cG" role="1tU5fm" />
-      <node concept="3Tm1VV" id="1bMaI2Xp9cH" role="1B3o_S" />
-      <node concept="Xl_RD" id="1bMaI2Xp9cI" role="33vP2m">
-        <property role="Xl_RC" value="INVOKE_TESTS" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="1bMaI2XpbmB" role="jymVt">
-      <property role="TrG5h" value="SAVE_ON_DISK" />
-      <property role="3TUv4t" value="true" />
-      <node concept="17QB3L" id="1bMaI2XpbmC" role="1tU5fm" />
-      <node concept="3Tm1VV" id="1bMaI2XpbmD" role="1B3o_S" />
-      <node concept="Xl_RD" id="1bMaI2XpbmE" role="33vP2m">
-        <property role="Xl_RC" value="SAVE_ON_DISK" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="1bMaI2Xpbut" role="jymVt">
       <property role="TrG5h" value="SHOW_DIFF" />
       <property role="3TUv4t" value="true" />
@@ -5914,15 +5886,6 @@
       <node concept="3Tm1VV" id="1bMaI2Xpbuv" role="1B3o_S" />
       <node concept="Xl_RD" id="1bMaI2Xpbuw" role="33vP2m">
         <property role="Xl_RC" value="SHOW_DIFF" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="1bMaI2XpbAn" role="jymVt">
-      <property role="TrG5h" value="WHOLE_PROJECT" />
-      <property role="3TUv4t" value="true" />
-      <node concept="17QB3L" id="1bMaI2XpbAo" role="1tU5fm" />
-      <node concept="3Tm1VV" id="1bMaI2XpbAp" role="1B3o_S" />
-      <node concept="Xl_RD" id="1bMaI2XpbAq" role="33vP2m">
-        <property role="Xl_RC" value="WHOLE_PROJECT" />
       </node>
     </node>
     <node concept="2tJIrI" id="1bMaI2XpezH" role="jymVt" />

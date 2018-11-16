@@ -129,7 +129,6 @@
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.ConsoleTestReporter" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.ITestReporter" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestAdapter" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestListener" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.XmlTestReporter" />
     <classNode dependClassName="jetbrains.mps.tool.common.IMessageFormat" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />

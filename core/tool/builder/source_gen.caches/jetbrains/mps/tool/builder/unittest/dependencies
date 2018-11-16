@@ -10,32 +10,16 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestAdapter">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.unittest.UnitTestListener" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestListener">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestOutputReader">
-    <classNode dependClassName="java.io.BufferedWriter" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.InputStream" />
-    <classNode dependClassName="java.io.OutputStreamWriter" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.InterruptedException" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Process" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.StringBuffer" />
-    <classNode dependClassName="java.lang.Thread" />
-    <classNode dependClassName="java.util.Scanner" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestListener" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestRunner" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.unittest.UnitTestRunner">
     <classNode dependClassName="java.io.BufferedReader" />

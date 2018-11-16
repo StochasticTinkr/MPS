@@ -28,7 +28,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.tool.builder.unittest.UnitTestListener;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
 import jetbrains.mps.make.script.IScriptController;
 import java.util.concurrent.Future;
@@ -131,9 +130,6 @@ public class GenTestWorker extends BaseGeneratorWorker {
     final MakeSession ms = new MakeSession(project, myMessageHandler, true) {
       @Override
       public IScript toScript(ScriptBuilder scriptBuilder) {
-        if (isInvokeTestsSet()) {
-          scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.tool.gentest.Test"));
-        }
         if (isShowDiff()) {
           scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.tool.gentest.Diff"));
         }
@@ -161,17 +157,6 @@ public class GenTestWorker extends BaseGeneratorWorker {
         }
       };
       ppi.add(diffFacetInit);
-    }
-    if (isInvokeTestsSet()) {
-      PropertyPoolInitializer testFacetInit = new PropertyPoolInitializer() {
-        public void populate(IPropertiesPool ppool) {
-          Tuples._1<UnitTestListener> testParams = (Tuples._1<UnitTestListener>) ppool.properties(new ITarget.Name("jetbrains.mps.tool.gentest.Test.runTests"), Object.class);
-          if (testParams != null) {
-            testParams._0(new GenTestWorker.MyUnitTestAdapter());
-          }
-        }
-      };
-      ppi.add(testFacetInit);
     }
     ppi.add(new JavaCompileFacetInitializer().setJavaCompileOptions(myJavaCompilerOptions));
 
@@ -283,14 +268,6 @@ public class GenTestWorker extends BaseGeneratorWorker {
 
   private boolean isRunningOnTeamCity() {
     return myWhatToDo.getProperty("teamcity.version") != null;
-  }
-
-  private boolean isInvokeTestsSet() {
-    return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.INVOKE_TESTS)) && isCompileSet();
-  }
-
-  private boolean isCompileSet() {
-    return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.COMPILE));
   }
 
   private boolean isShowDiff() {

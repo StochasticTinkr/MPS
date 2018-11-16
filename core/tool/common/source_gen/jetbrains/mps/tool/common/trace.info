@@ -354,17 +354,13 @@
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/7910428321252780319">
     <file name="ScriptProperties.java">
-      <node id="7910428321252809155" at="8,0,9,0" concept="13" trace="COMPILE" />
-      <node id="978600701690013405" at="9,0,10,0" concept="13" trace="PLUGIN_PATHS" />
-      <node id="1365200781785207595" at="11,0,12,0" concept="13" trace="INVOKE_TESTS" />
-      <node id="1365200781785216423" at="12,0,13,0" concept="13" trace="SAVE_ON_DISK" />
-      <node id="1365200781785216925" at="13,0,14,0" concept="13" trace="SHOW_DIFF" />
-      <node id="1365200781785217431" at="14,0,15,0" concept="13" trace="WHOLE_PROJECT" />
-      <node id="1365200781785228053" at="16,0,17,0" concept="13" trace="GENERATE_PERFORMANCE_REPORT" />
-      <node id="7910428321252780321" at="18,0,20,0" concept="2" trace="ScriptProperties#()V" />
-      <scope id="7910428321252780324" at="18,30,18,30" />
-      <scope id="7910428321252780321" at="18,0,20,0" />
-      <unit id="7910428321252780319" at="6,0,21,0" name="jetbrains.mps.tool.common.ScriptProperties" />
+      <node id="978600701690013405" at="8,0,9,0" concept="13" trace="PLUGIN_PATHS" />
+      <node id="1365200781785216925" at="10,0,11,0" concept="13" trace="SHOW_DIFF" />
+      <node id="1365200781785228053" at="12,0,13,0" concept="13" trace="GENERATE_PERFORMANCE_REPORT" />
+      <node id="7910428321252780321" at="14,0,16,0" concept="2" trace="ScriptProperties#()V" />
+      <scope id="7910428321252780324" at="14,30,14,30" />
+      <scope id="7910428321252780321" at="14,0,16,0" />
+      <unit id="7910428321252780319" at="6,0,17,0" name="jetbrains.mps.tool.common.ScriptProperties" />
     </file>
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/878521226297927156">

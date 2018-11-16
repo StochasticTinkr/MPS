@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-5lei5009idgavjwm12zy9qbws603idh">
-  <files names="Diff_Facet.java:Differ.java:FacetAspectDescriptor.java:FacetManifest.java:ITestResource.java:TestCollector.java:Test_Facet.java:Tester.java" />
+<product version="3" modelHash="a3f9nfb3kwgoqqpfmbaxni6e3ym86er">
+  <files names="Diff_Facet.java:Differ.java:FacetAspectDescriptor.java:FacetManifest.java:ITestResource.java:Test_Facet.java" />
 </product>
 
