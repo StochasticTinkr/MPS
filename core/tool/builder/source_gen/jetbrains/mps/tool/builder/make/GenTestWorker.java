@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.Collection;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
@@ -23,6 +22,7 @@ import jetbrains.mps.make.facet.IFacet;
 import java.util.ArrayList;
 import jetbrains.mps.make.script.PropertyPoolInitializer;
 import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -49,8 +49,6 @@ import jetbrains.mps.tool.builder.unittest.XmlTestReporter;
 import jetbrains.mps.tool.builder.unittest.ConsoleTestReporter;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
-import jetbrains.mps.progress.ProgressMonitorBase;
-import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class GenTestWorker extends BaseGeneratorWorker {
   private final GenTestWorker.MyMessageHandler myMessageHandler = new GenTestWorker.MyMessageHandler();
@@ -111,17 +109,6 @@ public class GenTestWorker extends BaseGeneratorWorker {
     }
     info(s.toString());
 
-    final _FunctionTypes._void_P1_E0<? super String> startTestFormat = new _FunctionTypes._void_P1_E0<String>() {
-      public void invoke(String msg) {
-        myReporter.testStarted(((msg == null ? null : msg.trim())));
-      }
-    };
-    final _FunctionTypes._void_P1_E0<? super String> finishTestFormat = new _FunctionTypes._void_P1_E0<String>() {
-      public void invoke(String msg) {
-        myReporter.testFinished(((msg == null ? null : msg.trim())));
-      }
-    };
-
     final MakeSession ms = new MakeSession(project, myMessageHandler, true) {
       @Override
       public IScript toScript(ScriptBuilder scriptBuilder) {
@@ -158,9 +145,11 @@ public class GenTestWorker extends BaseGeneratorWorker {
     IScriptController ctl = new IScriptController.Stub2(ms, ppi.toArray(new PropertyPoolInitializer[ppi.size()]));
     try {
       BuildMakeService bms = new BuildMakeService();
+      // FIXME I've got a solid feeling that without Test make facet, myReporter makes no sense, as well as both ITestReporter implementations 
+      //       Though they do not bother me at the moment, hence left alive. 
       myReporter.finishRun();
       myReporter.startRun(myWhatToDo.getProperty("ant.project.name"));
-      Future<IResult> result = bms.make(ms, collectResources(project, modules), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat));
+      Future<IResult> result = bms.make(ms, collectResources(project, modules), null, ctl);
       if (!(result.get().isSucessful())) {
         myErrors.add("Make was not successful " + result.get().output());
       }
@@ -198,13 +187,6 @@ public class GenTestWorker extends BaseGeneratorWorker {
         }
       }
     });
-  }
-
-  private void reportIfStartsWith(String prefix, String work, _FunctionTypes._void_P1_E0<? super String> format) {
-    // This logic looks flawed (how come test name ends with ".Test.Generating"), but as long as GenTestWorker doesn't work, I can't figure out what's right 
-    if (work != null && work.startsWith(prefix)) {
-      format.invoke(work.substring(prefix.length()) + ".Test." + ((prefix == null ? null : prefix.trim())));
-    }
   }
 
   private void cleanUp() {
@@ -283,21 +265,6 @@ public class GenTestWorker extends BaseGeneratorWorker {
         case ERROR:
           GenTestWorker.this.error(msg.getText());
           myReporter.errorLine("[ERROR] " + msg.getText());
-          // next code used to be in JobMonitor.reportFeedback, but as long as all feedback is piped to MyMessageHandler,  
-          // the code relocated here, and is activated only when there's active test (although I doubt getCurrentTestName() ever gives 
-          // reasonable value - mechanism to find out current test looks quite odd, see reportIfStartsWith() 
-          String test = myReporter.getCurrentTestName();
-          if (test != null) {
-            Throwable thr = msg.getException();
-            String text = msg.getText();
-            String details = (thr == null ? "(no details)" : String.valueOf(MpsWorker.extractStackTrace(thr)));
-            int eol = text.indexOf("\n");
-            if (eol >= 0) {
-              details = text.substring(eol + 1) + "\n" + details;
-              text = text.substring(0, eol);
-            }
-            myReporter.testFailed(test, text, details);
-          }
           break;
         case WARNING:
           GenTestWorker.this.warning(msg.getText());
@@ -314,7 +281,6 @@ public class GenTestWorker extends BaseGeneratorWorker {
 
   private class MyReporter {
     private ITestReporter testReporter;
-    private String currentTestName;
     private File gentestdir;
     private MyReporter() {
     }
@@ -345,18 +311,12 @@ public class GenTestWorker extends BaseGeneratorWorker {
         }
       }
     }
-    private String getCurrentTestName() {
-      return currentTestName;
-    }
     private void startRun(String name) {
       this.testReporter = (isRunningOnTeamCity() ? new XmlTestReporter(name) : new ConsoleTestReporter());
     }
     private void finishRun() {
       if (testReporter == null) {
         return;
-      }
-      if (currentTestName != null) {
-        testReporter.testFinished(currentTestName);
       }
       testReporter.runFinished();
       if (isRunningOnTeamCity()) {
@@ -378,100 +338,20 @@ public class GenTestWorker extends BaseGeneratorWorker {
       }
       this.testReporter = null;
     }
-    private String normalizeTestName(String name) {
-      return name.replace("@", "_");
-    }
-    private void testStarted(String testname) {
-      testname = normalizeTestName(testname);
-      if (currentTestName != null) {
-        testReporter.testFinished(currentTestName);
-      }
-      this.currentTestName = testname;
-      testReporter.testStarted(testname);
-    }
-    private void testFinished(String testname) {
-      testname = normalizeTestName(testname);
-      testReporter.testFinished(testname);
-      this.currentTestName = null;
-    }
-    private void testFailed(String testname, String msg, String longmsg) {
-      testname = normalizeTestName(testname);
-      testReporter.testFailed(testname, msg, longmsg);
-    }
+
     private void outputLine(String out) {
-      if (currentTestName != null) {
-        testReporter.testOutputLine(currentTestName, out);
-      } else if (testReporter != null) {
+      if (testReporter != null) {
         testReporter.outputLine(out);
       } else {
         System.out.println(out);
       }
     }
     private void errorLine(String err) {
-      if (currentTestName != null) {
-        testReporter.testErrorLine(currentTestName, err);
-      } else if (testReporter != null) {
+      if (testReporter != null) {
         testReporter.errorLine(err);
       } else {
         System.err.println(err);
       }
-    }
-  }
-
-  private class MyProgressMonitorBase extends ProgressMonitorBase {
-    private String prevTitle;
-    private final _FunctionTypes._void_P1_E0<? super String> myStartTestFormat;
-    private final _FunctionTypes._void_P1_E0<? super String> myFinishTestFormat;
-    public MyProgressMonitorBase(_FunctionTypes._void_P1_E0<? super String> startTestFormat, _FunctionTypes._void_P1_E0<? super String> finishTestFormat) {
-      myStartTestFormat = startTestFormat;
-      myFinishTestFormat = finishTestFormat;
-    }
-    @Override
-    protected void update(double p0) {
-    }
-    @Override
-    protected void startInternal(String text) {
-    }
-    @Override
-    protected void doneInternal(String text) {
-    }
-    @Override
-    protected void setTitleInternal(String text) {
-      prevTitle = text;
-    }
-    @Override
-    protected void setStepInternal(String p0) {
-    }
-    @Override
-    public boolean isCanceled() {
-      return false;
-    }
-    @Override
-    public void cancel() {
-    }
-    private ProgressMonitorBase.SubProgressMonitor customSubProgress(ProgressMonitorBase parent, int work, SubProgressKind kind) {
-      if (prevTitle != null && prevTitle.startsWith("Generating :: ")) {
-        return new ProgressMonitorBase.SubProgressMonitor(parent, work, kind) {
-          @Override
-          protected void startInternal(String text) {
-            reportIfStartsWith("Generating ", "Generating " + text, MyProgressMonitorBase.this.myStartTestFormat);
-          }
-          @Override
-          protected void doneInternal(String text) {
-            reportIfStartsWith("Generating ", "Generating " + text, MyProgressMonitorBase.this.myFinishTestFormat);
-          }
-        };
-      }
-      return new ProgressMonitorBase.SubProgressMonitor(parent, work, kind) {
-        @Override
-        protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
-          return customSubProgress(this, work, kind);
-        }
-      };
-    }
-    @Override
-    protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
-      return customSubProgress(this, work, kind);
     }
   }
 }
