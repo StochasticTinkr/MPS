@@ -38,6 +38,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Immutable
+//todo: currently, myEntryPath can be empty or like "a/b/c". Force it to have "/a/b/c" format and be non-empty (like in JRT file)
 public class JarEntryFile implements IFile {
   private static final IoFileSystem FS_OLD = IoFileSystem.INSTANCE;
 
