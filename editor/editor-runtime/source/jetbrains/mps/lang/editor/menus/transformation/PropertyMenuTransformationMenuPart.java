@@ -20,8 +20,11 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -49,14 +52,11 @@ public abstract class PropertyMenuTransformationMenuPart implements Transformati
     List<TransformationMenuItem> result = new ArrayList<>();
 
     if (property != null) {
-      //todo generate menus for property types
-      SNode dataType = SNodeUtil.getPropertyDeclaration_DataType(property.getDeclarationNode());
-      if (dataType != null) {
-        if (Primitives.BOOLEAN_TYPE.equals(dataType.getName())) {
-          result.addAll(BooleanSPropertyTransformationItemFactory.createItems(context, property));
-        } else if (SNodeUtil.isInstanceOfEnumerationDataTypeDeclaration(dataType)) {
-          result.addAll(EnumSPropertyTransformationItemFactory.createItems(property, context));
-        }
+      SDataType type = property.getType();
+      if (type == SPrimitiveTypes.BOOLEAN) {
+        result.addAll(BooleanSPropertyTransformationItemFactory.createItems(context, property));
+      } else if (type instanceof SEnumeration) {
+        result.addAll(EnumSPropertyTransformationItemFactory.createItems(property, context));
       }
     }
 

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.SEnumAdapter;
 import jetbrains.mps.smodel.adapter.structure.types.InvalidDataType;
 import jetbrains.mps.smodel.adapter.structure.types.SInterpretedConstrainedStringDataTypeAdapter;
+import jetbrains.mps.smodel.adapter.structure.types.SInterpretedEnumerationAdapter;
 import jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes;
 import jetbrains.mps.smodel.adapter.structure.types.TypeRegistry;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
@@ -100,7 +101,7 @@ public abstract class SPropertyAdapter implements SProperty {
       }
     }
     if (SNodeUtil.isInstanceOfEnumerationDataTypeDeclaration(dataTypeNode)) {
-      return new SInterpretedConstrainedStringDataTypeAdapter(dataTypeNode);
+      return new SInterpretedEnumerationAdapter(dataTypeNode);
     }
     if (SNodeUtil.isInstanceOfConstrainedStringDataTypeDeclaration(dataTypeNode)) {
       return new SInterpretedConstrainedStringDataTypeAdapter(dataTypeNode);

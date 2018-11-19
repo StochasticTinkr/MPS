@@ -51132,12 +51132,8 @@
                         <node concept="37vLTw" id="6J9VvZhUtHN" role="37wK5m">
                           <ref role="3cqZAo" node="6J9VvZhUtHv" resolve="property" />
                         </node>
-                        <node concept="3clFbT" id="6J9VvZhPpM1" role="37wK5m">
-                          <property role="3clFbU" value="a" />
-                        </node>
-                        <node concept="3clFbT" id="6J9VvZhPs9z" role="37wK5m">
-                          <property role="3clFbU" value="a" />
-                        </node>
+                        <node concept="3clFbT" id="6J9VvZhPpM1" role="37wK5m" />
+                        <node concept="3clFbT" id="6J9VvZhPs9z" role="37wK5m" />
                       </node>
                     </node>
                     <node concept="37vLTw" id="6J9VvZhTIJe" role="37wK5m">
