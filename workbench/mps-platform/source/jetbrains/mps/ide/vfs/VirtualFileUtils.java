@@ -20,6 +20,7 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -110,7 +111,7 @@ public final class VirtualFileUtils {
       return null;
     }
     IdeaFileSystem ideaFS = (IdeaFileSystem) fs;
-    return ideaFS.fromVirtualFile(f);
+    return ideaFS.getFile(FileUtil.normalize(f.getPath()));
   }
 
   public static File toFile(VirtualFile f) {

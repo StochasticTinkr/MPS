@@ -87,7 +87,6 @@ public class IdeaFile implements IFile, CachingFile {
     myPath = jetbrains.mps.util.FileUtil.normalize(path);
   }
 
-  @Internal
   private IdeaFile(IdeaFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
     myFS = fileSystem;
     myVirtualFilePtr = virtualFile;

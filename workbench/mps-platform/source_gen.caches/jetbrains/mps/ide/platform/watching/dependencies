@@ -56,7 +56,6 @@
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypesManager" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" />
-    <classNode dependClassName="jetbrains.mps.ide.vfs.IdeaFile" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.IdeaFileSystem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />

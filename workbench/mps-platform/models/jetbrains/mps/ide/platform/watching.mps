@@ -2993,13 +2993,13 @@
         <node concept="3cpWs8" id="3Fdn9B$W_K1" role="3cqZAp">
           <node concept="3cpWsn" id="3Fdn9B$W_K2" role="3cpWs9">
             <property role="TrG5h" value="file" />
-            <node concept="2ShNRf" id="5bPhg88OBxD" role="33vP2m">
-              <node concept="1pGfFk" id="5bPhg88PmuT" role="2ShVmc">
-                <ref role="37wK5l" to="4hrd:~IdeaFile.&lt;init&gt;(jetbrains.mps.vfs.IFileSystem,java.lang.String)" resolve="IdeaFile" />
-                <node concept="37vLTw" id="5bPhg88Pmvl" role="37wK5m">
-                  <ref role="3cqZAo" node="2CbzOko76qO" resolve="FS" />
-                </node>
-                <node concept="37vLTw" id="5bPhg88PmM8" role="37wK5m">
+            <node concept="2OqwBi" id="7121Ns6wA3v" role="33vP2m">
+              <node concept="37vLTw" id="7121Ns6w_GZ" role="2Oq$k0">
+                <ref role="3cqZAo" node="2CbzOko76qO" resolve="FS" />
+              </node>
+              <node concept="liA8E" id="7121Ns6wC78" role="2OqNvi">
+                <ref role="37wK5l" to="4hrd:~IdeaFileSystem.getFile(java.lang.String):jetbrains.mps.ide.vfs.IdeaFile" resolve="getFile" />
+                <node concept="37vLTw" id="7121Ns6wC$3" role="37wK5m">
                   <ref role="3cqZAo" node="6KWQXOSpcQ2" resolve="path" />
                 </node>
               </node>

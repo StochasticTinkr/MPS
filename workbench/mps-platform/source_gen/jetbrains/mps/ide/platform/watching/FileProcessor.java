@@ -20,7 +20,6 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.List;
@@ -132,7 +131,7 @@ import java.util.Arrays;
   }
 
   /*package*/ void processDelete(String path) {
-    final IFile file = new IdeaFile(FS, path);
+    final IFile file = FS.getFile(path);
     ListSequence.fromList(getData(file.getPath(), FileProcessor.EventKind.REMOVED)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
         it.removed.add(file);

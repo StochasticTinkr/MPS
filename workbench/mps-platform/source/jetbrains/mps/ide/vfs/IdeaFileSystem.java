@@ -133,7 +133,7 @@ public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequesto
    */
   @NotNull
   public IFile fromVirtualFile(@NotNull VirtualFile virtualFile) {
-    return new IdeaFile(this, virtualFile);
+    return getFile(FileUtil.normalize(virtualFile.getPath()));
   }
 
   @NotNull
