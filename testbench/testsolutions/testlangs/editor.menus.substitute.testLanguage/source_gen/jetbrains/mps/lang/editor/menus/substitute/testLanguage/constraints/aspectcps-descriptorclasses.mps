@@ -5925,6 +5925,7 @@
     </node>
   </node>
   <node concept="312cEu" id="yA">
+    <property role="3GE5qa" value="smartReference" />
     <property role="TrG5h" value="TestSubstituteSmartRef_WithoutExplicitMenu_Constraints" />
     <node concept="3Tm1VV" id="yB" role="1B3o_S">
       <node concept="cd27G" id="yH" role="lGtFl">
@@ -6838,6 +6839,7 @@
     </node>
   </node>
   <node concept="312cEu" id="C7">
+    <property role="3GE5qa" value="smartReference" />
     <property role="TrG5h" value="TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept_Constraints" />
     <node concept="3Tm1VV" id="C8" role="1B3o_S">
       <node concept="cd27G" id="Ce" role="lGtFl">

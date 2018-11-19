@@ -1305,6 +1305,34 @@
       <unit id="5957872731948642291" at="17,0,51,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_TestWrappedItemMatchingAndDescriptionText_Test" />
     </file>
   </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/6533989161019123172">
+    <file name="TestSubstitute_SmartReferenceInterface_Test.java">
+      <node id="6533989161019123172" at="20,56,21,25" concept="6" />
+      <node id="6533989161019123172" at="25,78,26,80" concept="1" />
+      <node id="6533989161019123172" at="31,52,32,19" concept="6" />
+      <node id="6533989161019123172" at="36,51,37,72" concept="1" />
+      <node id="6533989161019123179" at="37,72,38,71" concept="1" />
+      <node id="6533989161019123181" at="38,71,39,37" concept="1" />
+      <node id="6533989161019123182" at="39,37,40,82" concept="1" />
+      <node id="6533989161019123172" at="17,0,19,0" concept="5" trace="ourParamCache" />
+      <node id="6533989161019123172" at="20,0,23,0" concept="0" trace="TestSubstitute_SmartReferenceInterface_Test#()V" />
+      <node id="6533989161019123172" at="31,0,34,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="6533989161019123172" at="24,0,28,0" concept="2" trace="test_TestSubstitute_SmartReferenceInterface#()V" />
+      <node id="6533989161019123172" at="35,0,42,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="6533989161019123172" at="20,56,21,25" />
+      <scope id="6533989161019123172" at="25,78,26,80" />
+      <scope id="6533989161019123172" at="31,52,32,19" />
+      <scope id="6533989161019123172" at="20,0,23,0" />
+      <scope id="6533989161019123172" at="31,0,34,0">
+        <var name="owner" id="6533989161019123172" />
+      </scope>
+      <scope id="6533989161019123172" at="24,0,28,0" />
+      <scope id="6533989161019123172" at="36,51,40,82" />
+      <scope id="6533989161019123172" at="35,0,42,0" />
+      <unit id="6533989161019123172" at="29,0,43,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_SmartReferenceInterface_Test$TestBody" />
+      <unit id="6533989161019123172" at="15,0,44,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_SmartReferenceInterface_Test" />
+    </file>
+  </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/6920313902515134747">
     <file name="TestSubstitute_Multiple_SpecializedLink_Enter_ExistingChild_Test.java">
       <node id="6920313902515134747" at="18,77,19,25" concept="6" />
