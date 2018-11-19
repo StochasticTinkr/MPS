@@ -24,10 +24,10 @@
       <unit at="23,0,343,0" name="jetbrains.mps.lang.editor.editorTest.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="NotEditableVaraileReference_SubstituteMenu.java">
-      <unit at="101,0,122,0" name="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_SubstituteMenu$SMP_Subconcepts_n4m6b3_b" />
-      <unit at="75,0,100,0" name="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_SubstituteMenu$SMP_ReferenceScope_n4m6b3_a$Item" />
-      <unit at="53,0,101,0" name="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_SubstituteMenu$SMP_ReferenceScope_n4m6b3_a" />
-      <unit at="30,0,123,0" name="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_SubstituteMenu" />
+      <unit at="100,0,121,0" name="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_SubstituteMenu$SMP_Subconcepts_n4m6b3_b" />
+      <unit at="74,0,99,0" name="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_SubstituteMenu$SMP_ReferenceScope_n4m6b3_a$Item" />
+      <unit at="52,0,100,0" name="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_SubstituteMenu$SMP_ReferenceScope_n4m6b3_a" />
+      <unit at="29,0,122,0" name="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_SubstituteMenu" />
     </file>
     <file name="VariableDeclarationReference_SubstituteMenu.java">
       <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationReference_SubstituteMenu$SMP_ReferenceScope_uxpf5x_a" />

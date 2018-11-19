@@ -20,10 +20,10 @@
       <unit at="24,0,87,0" name="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_SubstituteMenu" />
     </file>
     <file name="BwfPathReference_SubstituteMenu.java">
-      <unit at="101,0,122,0" name="jetbrains.mps.build.workflow.editor.BwfPathReference_SubstituteMenu$SMP_Subconcepts_51lqj5_b" />
-      <unit at="75,0,100,0" name="jetbrains.mps.build.workflow.editor.BwfPathReference_SubstituteMenu$SMP_ReferenceScope_51lqj5_a$Item" />
-      <unit at="53,0,101,0" name="jetbrains.mps.build.workflow.editor.BwfPathReference_SubstituteMenu$SMP_ReferenceScope_51lqj5_a" />
-      <unit at="30,0,123,0" name="jetbrains.mps.build.workflow.editor.BwfPathReference_SubstituteMenu" />
+      <unit at="100,0,121,0" name="jetbrains.mps.build.workflow.editor.BwfPathReference_SubstituteMenu$SMP_Subconcepts_51lqj5_b" />
+      <unit at="74,0,99,0" name="jetbrains.mps.build.workflow.editor.BwfPathReference_SubstituteMenu$SMP_ReferenceScope_51lqj5_a$Item" />
+      <unit at="52,0,100,0" name="jetbrains.mps.build.workflow.editor.BwfPathReference_SubstituteMenu$SMP_ReferenceScope_51lqj5_a" />
+      <unit at="29,0,122,0" name="jetbrains.mps.build.workflow.editor.BwfPathReference_SubstituteMenu" />
     </file>
     <file name="BwfSubTaskDependency_SubstituteMenu.java">
       <unit at="47,0,65,0" name="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_SubstituteMenu$SMP_ReferenceScope_oyyw70_a" />

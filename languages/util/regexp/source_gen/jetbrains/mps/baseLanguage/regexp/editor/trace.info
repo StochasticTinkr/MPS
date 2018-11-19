@@ -21,16 +21,16 @@
       <unit at="17,0,185,0" name="jetbrains.mps.baseLanguage.regexp.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="MatchVariableReferenceRegexp_SubstituteMenu.java">
-      <unit at="101,0,122,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_Subconcepts_8lasyq_b" />
-      <unit at="75,0,100,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_ReferenceScope_8lasyq_a$Item" />
-      <unit at="53,0,101,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_ReferenceScope_8lasyq_a" />
-      <unit at="30,0,123,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu" />
+      <unit at="100,0,121,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_Subconcepts_8lasyq_b" />
+      <unit at="74,0,99,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_ReferenceScope_8lasyq_a$Item" />
+      <unit at="52,0,100,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_ReferenceScope_8lasyq_a" />
+      <unit at="29,0,122,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu" />
     </file>
     <file name="MatchVariableReferenceReplacement_SubstituteMenu.java">
-      <unit at="101,0,122,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_Subconcepts_57bq3c_b" />
-      <unit at="75,0,100,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_ReferenceScope_57bq3c_a$Item" />
-      <unit at="53,0,101,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_ReferenceScope_57bq3c_a" />
-      <unit at="30,0,123,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu" />
+      <unit at="100,0,121,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_Subconcepts_57bq3c_b" />
+      <unit at="74,0,99,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_ReferenceScope_57bq3c_a$Item" />
+      <unit at="52,0,100,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_ReferenceScope_57bq3c_a" />
+      <unit at="29,0,122,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu" />
     </file>
     <file name="MatchVariableReference_SubstituteMenu.java">
       <unit at="47,0,65,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_SubstituteMenu$SMP_ReferenceScope_tdhr47_a" />
