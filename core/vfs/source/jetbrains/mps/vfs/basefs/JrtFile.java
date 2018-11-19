@@ -34,10 +34,10 @@ import java.util.List;
 
 public class JrtFile implements IFile {
   //todo: not yet supported to be different from startup JDK, however, introducing support is a simple task since we have it here already
-  protected final String myJdkPath;
-  protected final String myModule;
-  protected final String myPathInModule;
-  protected final JrtFileSystemBase myFS;
+  private final String myJdkPath;
+  private final String myModule;
+  private final String myPathInModule;
+  private final JrtFileSystemBase myFS;
 
   public JrtFile(
       @NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK, @NotNull JrtFileSystemBase fs) {
