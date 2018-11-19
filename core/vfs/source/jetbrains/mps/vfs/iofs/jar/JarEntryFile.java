@@ -22,6 +22,7 @@ import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.vfs.util.PathAssert;
 import jetbrains.mps.vfs.util.PathUtil;
 import jetbrains.mps.vfs.iofs.file.LocalIoFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -120,6 +121,7 @@ public class JarEntryFile implements IFile {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
+    if (suffix.isEmpty()) return this;
     String path = myEntryPath.length() > 0 ? myEntryPath + IFileSystem.SEPARATOR + suffix : suffix;
     return new JarEntryFile(myJarFileData, myJarFile, path, myFileSystem);
   }

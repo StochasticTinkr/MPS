@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.util.PathAssert;
 import jetbrains.mps.vfs.util.PathUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
@@ -178,6 +179,7 @@ class LocalFile implements IFile {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
+    if (suffix.isEmpty()) return this;
     return new LocalFile(myPath + IFileSystem.SEPARATOR + suffix, myFileSystem);
   }
 

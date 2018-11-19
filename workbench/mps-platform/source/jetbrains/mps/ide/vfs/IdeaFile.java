@@ -35,6 +35,7 @@ import jetbrains.mps.vfs.refresh.CachingFile;
 import jetbrains.mps.vfs.refresh.CachingFileSystem;
 import jetbrains.mps.vfs.refresh.FileListener;
 import jetbrains.mps.vfs.refresh.FileListenerAdapter;
+import jetbrains.mps.vfs.util.PathAssert;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -174,6 +175,7 @@ public class IdeaFile implements IFile, CachingFile {
   @Override
   @NotNull
   public IdeaFile getDescendant(@NotNull String suffix) {
+    if (suffix.isEmpty()) return this;
     String path = getPath();
     String separator = Path.UNIX_SEPARATOR; // we are system-independent underneath
     return new IdeaFile(myFS, path + (path.endsWith(separator) ? "" : separator) + suffix);

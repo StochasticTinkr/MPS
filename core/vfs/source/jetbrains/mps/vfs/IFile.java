@@ -134,15 +134,11 @@ public interface IFile {
 
 
   /**
-   * TODO will be like this in some implementations of these two methods after 3.4:
-   //   * the files in the archive root in the case when {@link #isArchive()} is true.
-   //   *
-   //   * Thus the client of this method need not to bother to expand the archives on his own: the implementing class
-   //   * must do it automatically. Probably cosy recursive processing also will be provided.
-   * TODO
-   * FIXME please document whether suffix may include path separators (i.e. if one could query folder.getDescendant("my/relative/path/to/file")
-   * @return the file which has this file's path + suffix
+   * @deprecated use findChild() instead.
+   * The problem of findDescendant is that it's unclear, can we pass an empty string, string with path separators, string with archive separators
    */
+  @Deprecated
+  @ToRemove(version = 2019.2)
   @NotNull IFile getDescendant(@NotNull String suffix);
 
   /**
