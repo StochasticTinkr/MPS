@@ -61,7 +61,7 @@ public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequesto
   @NotNull
   @Override
   public IdeaFile getFile(@NotNull String path) {
-    return new IdeaFile(this, path);
+    return new IdeaFile(this, jetbrains.mps.util.FileUtil.normalize(path));
   }
 
   @Override

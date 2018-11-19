@@ -84,13 +84,13 @@ public class IdeaFile implements IFile, CachingFile {
   @Internal
   public IdeaFile(IdeaFileSystem fileSystem, @NotNull String path) {
     myFS = fileSystem;
-    myPath = jetbrains.mps.util.FileUtil.normalize(path);
+    myPath = path;
   }
 
   private IdeaFile(IdeaFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
     myFS = fileSystem;
     myVirtualFilePtr = virtualFile;
-    myPath = jetbrains.mps.util.FileUtil.normalize(virtualFile.getPath());
+    myPath = virtualFile.getPath();
   }
 
   @NotNull
