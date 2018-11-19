@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.util.PathAssert;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Internal;
 
 import java.io.File;
 
@@ -58,6 +59,12 @@ public class JarIoFileSystem implements IFileSystem {
       LOG.warn("Requested jar file does not exist " + jarFile);
       jarFileData = new AbstractJarFileData(jarFile);
     }
+    return createFile(jarFile, entryPath, jarFileData);
+  }
+
+  @Internal
+  @NotNull
+  public JarEntryFile createFile(File jarFile, String entryPath, AbstractJarFileData jarFileData) {
     return new JarEntryFile(jarFileData, jarFile, entryPath, this);
   }
 

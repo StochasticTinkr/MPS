@@ -46,9 +46,9 @@ public class JarEntryFile implements IFile {
   private final AbstractJarFileData myJarFileData;
   private final File myJarFile;
   private final String myEntryPath;
-  private final IFileSystem myFileSystem;
+  private final JarIoFileSystem myFileSystem;
 
-  JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String entryPath, IFileSystem fileSystem) {
+  JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String entryPath, JarIoFileSystem fileSystem) {
     myJarFileData = jarFileData;
     myJarFile = jarFile;
     myEntryPath = entryPath;
@@ -86,7 +86,7 @@ public class JarEntryFile implements IFile {
     if (myEntryPath.isEmpty()) {
       return null;
     } else {
-      return new JarEntryFile(myJarFileData, myJarFile, myJarFileData.getParentDirectory(myEntryPath), myFileSystem);
+      return myFileSystem.createFile(myJarFile, myJarFileData.getParentDirectory(myEntryPath), myJarFileData);
     }
   }
 
@@ -98,11 +98,11 @@ public class JarEntryFile implements IFile {
 
     List<IFile> result = new ArrayList<>();
     for (String e : myJarFileData.getSubdirectories(myEntryPath)) {
-      result.add(new JarEntryFile(myJarFileData, myJarFile, e, myFileSystem));
+      result.add(myFileSystem.createFile(myJarFile, e, myJarFileData));
     }
     final String prefix = myEntryPath.length() > 0 ? myEntryPath + '/' : null;
     for (String e : myJarFileData.getFiles(myEntryPath)) {
-      result.add(new JarEntryFile(myJarFileData, myJarFile, prefix != null ? prefix + e : e, myFileSystem));
+      result.add(myFileSystem.createFile(myJarFile, prefix != null ? prefix + e : e, myJarFileData));
     }
 
     return result;
@@ -123,7 +123,7 @@ public class JarEntryFile implements IFile {
   public IFile getDescendant(@NotNull String suffix) {
     if (suffix.isEmpty()) return this;
     String path = myEntryPath.length() > 0 ? myEntryPath + IFileSystem.SEPARATOR + suffix : suffix;
-    return new JarEntryFile(myJarFileData, myJarFile, path, myFileSystem);
+    return myFileSystem.createFile(myJarFile, path, myJarFileData);
   }
 
   @Override
@@ -131,7 +131,7 @@ public class JarEntryFile implements IFile {
   public IFile findChild(@NotNull String name) {
     new PathAssert(name).nonEmpty().noSeparators();
     String path = myEntryPath.length() > 0 ? myEntryPath + IFileSystem.SEPARATOR + name : name;
-    return new JarEntryFile(myJarFileData, myJarFile, path, myFileSystem);
+    return myFileSystem.createFile(myJarFile, path, myJarFileData);
   }
 
   @Override
