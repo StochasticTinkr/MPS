@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.vfs.JarFileSystem;
+import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.ide.platform.watching.WatchedRoots;
 import jetbrains.mps.vfs.refresh.FileSystemListener;
 import org.apache.log4j.LogManager;
@@ -19,13 +20,13 @@ import java.util.Map;
  *
  * danilla 8/7/13
  */
-public class WatchingIdeaFileSystem extends IdeaFileSystem {
-  private static final Logger LOG = LogManager.getLogger(WatchingIdeaFileSystem.class);
+public class WatchingFileSystemListenersContainer extends FileSystemListenersContainer {
+  private static final Logger LOG = LogManager.getLogger(WatchingFileSystemListenersContainer.class);
   private final WatchedRoots myWatchedRoots;
 
   private final Map<FileSystemListener, String> myListenerToPathMap = new HashMap<>();
 
-  public WatchingIdeaFileSystem(@NotNull WatchedRoots watchedRoots) {
+  public WatchingFileSystemListenersContainer(@NotNull WatchedRoots watchedRoots) {
     myWatchedRoots = watchedRoots;
   }
 
@@ -56,11 +57,5 @@ public class WatchingIdeaFileSystem extends IdeaFileSystem {
   private String lfsPath(@NotNull String path) {
     int jarRootIdx = path.indexOf(JarFileSystem.JAR_SEPARATOR);
     return jarRootIdx < 0 ? path : path.substring(0, jarRootIdx);
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "IdeaFileSystemProvider with local fs watching";
   }
 }

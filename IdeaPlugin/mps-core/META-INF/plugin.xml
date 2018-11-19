@@ -28,7 +28,10 @@
 
   <application-components>
     <component>
-      <interface-class>jetbrains.mps.ide.vfs.IdeaFSComponent</interface-class>
+      <interface-class>jetbrains.mps.ide.platform.watching.FileSystemListenersContainer</interface-class>
+      <implementation-class>jetbrains.mps.ide.platform.watching.FileSystemListenersContainer</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.vfs.IdeaFileSystem</implementation-class>
     </component>
     <component>

@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.testFramework.PlatformTestUtil;
+import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.project.MPSProject;
@@ -84,7 +85,7 @@ public abstract class ModuleInProjectTest implements EnvironmentAware {
   }
 
   void refreshProjectRecursively() {
-    IdeaFile projectFile = new IdeaFileSystem().getFile(myProject.getProjectFile().toString());
+    IdeaFile projectFile = new IdeaFileSystem(new FileSystemListenersContainer()).getFile(myProject.getProjectFile().toString());
     projectFile.refresh(new DefaultCachingContext(true, true));
     ApplicationManager.getApplication().invokeAndWait(() -> {
       ((StoreAwareProjectManager) ProjectManager.getInstance()).flushChangedProjectFileAlarm(); // needed to trigger refresh on the project folder components in test environment

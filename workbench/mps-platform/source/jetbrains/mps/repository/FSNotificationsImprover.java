@@ -19,8 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.ide.platform.watching.WatchedRoots;
-import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NotNull;
@@ -41,7 +41,7 @@ public class FSNotificationsImprover implements ApplicationComponent {
   public FSNotificationsImprover(MPSCoreComponents coreComponents,
                                  IRegistryManager registryManager,
                                  IdeaPluginFacetComponent ideaPluginFacetComponent,
-                                 IdeaFSComponent fs,
+                                 IdeaFileSystem fs,
                                  PersistentFS filesystem, //see MPS-22970
                                  WatchedRoots watchedRoots
   ) {

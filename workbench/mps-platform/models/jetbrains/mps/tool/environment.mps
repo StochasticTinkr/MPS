@@ -1610,7 +1610,7 @@
                   <node concept="liA8E" id="1_ERPxYOnK0" role="2OqNvi">
                     <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                     <node concept="3VsKOn" id="1_ERPxYOo2K" role="37wK5m">
-                      <ref role="3VsUkX" to="4hrd:~IdeaFSComponent" resolve="IdeaFSComponent" />
+                      <ref role="3VsUkX" to="4hrd:~IdeaFileSystem" resolve="IdeaFileSystem" />
                     </node>
                   </node>
                 </node>

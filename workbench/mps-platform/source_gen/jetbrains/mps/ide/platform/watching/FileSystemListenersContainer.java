@@ -22,7 +22,7 @@ import java.util.Collections;
  * Stores a tree of listeners stored per file.
  * Supposed to be thread-safe
  */
-public final class FileSystemListenersContainer {
+public class FileSystemListenersContainer {
   private final ReadWriteLock myLock = new ReentrantReadWriteLock();
   private final FileSystemListenersContainer.Node myRootNode = new FileSystemListenersContainer.Node(null, null);
   private final ConcurrentMap<FileSystemListener, String> myListener2Path = new ConcurrentHashMap<FileSystemListener, String>();

@@ -17,6 +17,7 @@ package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.util.io.StreamUtil;
 import com.intellij.openapi.vfs.SafeWriteRequestor;
@@ -24,8 +25,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemExtPoint;
+import jetbrains.mps.vfs.IFileSystem;
+import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.refresh.CachingContext;
 import jetbrains.mps.vfs.refresh.CachingFile;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
 import jetbrains.mps.vfs.refresh.DefaultCachingContext;
 import jetbrains.mps.vfs.refresh.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -43,12 +49,14 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequestor {
+public final class IdeaFileSystem implements SafeWriteRequestor, ApplicationComponent, FileSystem, IFileSystem, CachingFileSystem {
   private static final Logger LOG = LogManager.getLogger(IdeaFileSystem.class);
 
-  private final FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
+  private FileSystemListenersContainer myListenersContainer;
+  private FileSystem myOldFileSystem;
 
-  public IdeaFileSystem() {
+  public IdeaFileSystem(FileSystemListenersContainer listenerContainer) {
+    myListenersContainer = listenerContainer;
   }
 
   @Override
@@ -66,16 +74,16 @@ public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequesto
 
   @Override
   public void addListener(@NotNull FileSystemListener listener) {
-    myListeners.addListener(listener);
+    myListenersContainer.addListener(listener);
   }
 
   @Override
   public void removeListener(@NotNull FileSystemListener listener) {
-    myListeners.removeListener(listener);
+    myListenersContainer.removeListener(listener);
   }
 
   public FileSystemListenersContainer getListenersContainer() {
-    return myListeners;
+    return myListenersContainer;
   }
 
   @Override
@@ -140,5 +148,23 @@ public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequesto
   @Override
   public String getComponentName() {
     return "IdeaFileSystemProvider";
+  }
+
+  @Override
+  public void initComponent() {
+    myOldFileSystem = FileSystemExtPoint.getFS();
+    FileSystemExtPoint.setFS(this);
+    VFSManager.getInstance().registerFS(VFSManager.FILE_FS, this);
+    VFSManager.getInstance().registerFS(VFSManager.JAR_FS, this);
+  }
+
+  @Override
+  public void disposeComponent() {
+    VFSManager.getInstance().unregisterFS(VFSManager.JAR_FS, this);
+    VFSManager.getInstance().unregisterFS(VFSManager.FILE_FS, this);
+    if (myOldFileSystem != null) {
+      FileSystemExtPoint.setFS(myOldFileSystem);
+      myOldFileSystem = null;
+    }
   }
 }
