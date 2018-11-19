@@ -88,9 +88,9 @@ public interface IFile {
    */
   @Nullable IFile getParent();
 
-  /**
-   * @return whether the underlying pathname points exactly to an archive file
-   */
+  @Deprecated
+  @ToRemove(version = 2019.1)
+  //Should not have been used. The single use in MPS was a mistake
   boolean isArchive();
 
   /**

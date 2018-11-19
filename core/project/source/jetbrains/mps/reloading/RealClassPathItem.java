@@ -54,7 +54,8 @@ public abstract class RealClassPathItem extends AbstractClassPathItem {
     if (!file.exists()) {
       notifyNonExistentCP(caller, file, fPath);
       return new NonExistingClassPathItem(fPath);
-    } else if (file.isArchive()) {
+    } else if (path.endsWith(".jar") || path.endsWith("!/")) {
+      //todo the condition is error-prone and left as-was; it relies heavily on the fact that classpath roots for packaged modules are exactly module.jar!/
       return new JarFileClassPathItem(FS, fPath);
     } else if (file.isDirectory()) {
       return new FileClassPathItem(fPath);

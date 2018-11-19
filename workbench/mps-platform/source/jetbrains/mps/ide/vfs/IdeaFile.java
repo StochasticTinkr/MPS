@@ -122,7 +122,7 @@ public class IdeaFile implements IFile, CachingFile {
   @Override
   public CachingFileSystem getFileSystem() {
     //this should go after 2019.1, when we remove FileSystem and ony use IFileSystem
-    return (CachingFileSystem) myFS;
+    return myFS;
   }
 
   @NotNull
