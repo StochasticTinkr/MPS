@@ -21,7 +21,9 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.vfs.util.PathUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -84,7 +86,6 @@ public final class MacrosFactory implements MacroHelper.Source {
 
   /**
    * @deprecated why would anyone care to cast openapi.SModule to AbstractModule? Use {@link #forModule(SModule)} instead.
-   *
    */
   @Deprecated
   @ToRemove(version = 2018.1)
@@ -122,7 +123,11 @@ public final class MacrosFactory implements MacroHelper.Source {
           anchorFolder = anchorFolder.getParent();
         }
         String modelRelativePath = removePrefix(path);
-        return IFileUtil.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
+        IFile descendant = IFileUtil.getDescendant(anchorFolder, modelRelativePath);
+        if (descendant == null) {
+          throw new IllegalStateException("Can't find descendant " + modelRelativePath + " of file " + anchorFolder.getPath());
+        }
+        return descendant.getPath();
       }
 
       return super.expand(path, anchorFile);

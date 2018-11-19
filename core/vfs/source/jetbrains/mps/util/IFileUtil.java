@@ -16,6 +16,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -82,6 +83,7 @@ public class IFileUtil {
   /**
    * Fixme: will be replaced with the simple call getDescendant.
    * Resulting file is already inside jar, i.e. file in JarFileSystem, because we added JAR_SEPARATOR
+   *
    * @param jarFile shall be {@link #isJarFile(IFile) java archive file}
    */
   @ToRemove(version = 3.4)
@@ -89,6 +91,28 @@ public class IFileUtil {
   public static IFile stepIntoJar(@NotNull IFile jarFile) {
     assert isJarFile(jarFile) : jarFile;
     return jarFile.getFileSystem().getFile(jarFile.getPath() + JAR_SEPARATOR); // the reason of this juggling is specifically our IoFileSystem
+  }
+
+  /**
+   * Allows getting descendant in the same FS by a relative path. The path may include "//",".",".."
+   */
+  public static IFile getDescendant(@NotNull IFile file, String relativePath) {
+    //that's because at least we don't know the type of the archive
+    assert !relativePath.contains("!") : "getDescendant() can't step into an archive";
+    for (String part : relativePath.split(IFileSystem.SEPARATOR)) {
+      if (part.isEmpty() || part.equals(".")) {
+        continue;
+      }
+      if (part.equals("..")) {
+        file = file.getParent();
+        if (file == null) {
+          return null;
+        }
+      } else {
+        file = file.findChild(part);
+      }
+    }
+    return file;
   }
 
   public static IFile createTmpDir() {
@@ -109,7 +133,9 @@ public class IFileUtil {
   }
 
   public static String getCanonicalPath(IFile file) {
-    if (file == null) return null;
+    if (file == null) {
+      return null;
+    }
     final String absolutePath = file.getPath();
     final int index = absolutePath.indexOf(Path.ARCHIVE_SEPARATOR);
     if (index == -1) {

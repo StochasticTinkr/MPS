@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs.iofs.file;
 
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
@@ -182,8 +183,11 @@ class LocalFile implements IFile {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
-    if (suffix.isEmpty()) return this;
-    return myFileSystem.getFile(myPath + IFileSystem.SEPARATOR + suffix);
+    IFile result = IFileUtil.getDescendant(this, suffix);
+    if (result == null) {
+      throw new IllegalStateException("Can't find descendant " + suffix + " of file " + getPath());
+    }
+    return result;
   }
 
   @Override

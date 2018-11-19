@@ -25,6 +25,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.newvfs.ArchiveFileSystem;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
@@ -175,12 +176,11 @@ public class IdeaFile implements IFile, CachingFile {
   @Override
   @NotNull
   public IdeaFile getDescendant(@NotNull String suffix) {
-    if (suffix.isEmpty()) {
-      return this;
+    IFile result = IFileUtil.getDescendant(this, suffix);
+    if (result == null) {
+      throw new IllegalStateException("Can't find descendant " + suffix + " of file " + getPath());
     }
-    String path = getPath();
-    String separator = Path.UNIX_SEPARATOR; // we are system-independent underneath
-    return new IdeaFile(myFS, path + (path.endsWith(separator) ? "" : separator) + suffix);
+    return ((IdeaFile) result);
   }
 
   @Override

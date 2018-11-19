@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs.basefs;
 
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -162,13 +163,11 @@ public class JrtFile implements IFile {
   @NotNull
   @Override
   public IFile getDescendant(@NotNull String suffix) {
-    if (suffix.isEmpty()) {
-      return this;
+    IFile result = IFileUtil.getDescendant(this, suffix);
+    if (result == null) {
+      throw new IllegalStateException("Can't find descendant " + suffix + " of file " + getPath());
     }
-    String path = getPath();
-    //the following is because there's one file that path ends with slash: JDK_MODE!/
-    String fullPath = path.endsWith("!" + IFileSystem.SEPARATOR) ? path + suffix : path + IFileSystem.SEPARATOR + suffix;
-    return myFS.getFile(fullPath);
+    return result;
   }
 
   @NotNull

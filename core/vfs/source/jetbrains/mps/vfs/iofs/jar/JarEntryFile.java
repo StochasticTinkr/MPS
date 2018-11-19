@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs.iofs.jar;
 
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -121,9 +122,11 @@ public class JarEntryFile implements IFile {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
-    if (suffix.isEmpty()) return this;
-    String path = myEntryPath.length() > 0 ? myEntryPath + IFileSystem.SEPARATOR + suffix : suffix;
-    return myFileSystem.createFile(myJarFile, path, myJarFileData);
+    IFile result = IFileUtil.getDescendant(this, suffix);
+    if (result == null) {
+      throw new IllegalStateException("Can't find descendant " + suffix + " of file " + getPath());
+    }
+    return result;
   }
 
   @Override
