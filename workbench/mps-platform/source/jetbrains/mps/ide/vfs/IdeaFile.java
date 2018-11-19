@@ -67,7 +67,7 @@ import java.util.Map;
 @Immutable
 public class IdeaFile implements IFile, CachingFile {
   private final static Logger LOG = LogManager.getLogger(IdeaFile.class);
-  private final IFileSystem myFS;
+  private final IdeaFileSystem myFS;
 
   private final Map<FileListener, FileListenerAdapter> myListenerLegacy2New = new HashMap<>();
 
@@ -82,13 +82,13 @@ public class IdeaFile implements IFile, CachingFile {
   private VirtualFile myVirtualFilePtr = null;
 
   @Internal
-  public IdeaFile(IFileSystem fileSystem, @NotNull String path) {
+  public IdeaFile(IdeaFileSystem fileSystem, @NotNull String path) {
     myFS = fileSystem;
     myPath = jetbrains.mps.util.FileUtil.normalize(path);
   }
 
   @Internal
-  public IdeaFile(IFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
+  private IdeaFile(IdeaFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
     myFS = fileSystem;
     myVirtualFilePtr = virtualFile;
     myPath = jetbrains.mps.util.FileUtil.normalize(virtualFile.getPath());
@@ -152,7 +152,7 @@ public class IdeaFile implements IFile, CachingFile {
       }
       return null;
     } else {
-      return new IdeaFile(myFS, truncateDirPath(myPath));
+      return myFS.getFile(truncateDirPath(myPath));
     }
   }
 
@@ -189,7 +189,7 @@ public class IdeaFile implements IFile, CachingFile {
     new PathAssert(name).nonEmpty().noSeparators();
     String path = getPath();
     //the following is because there's one file that path ends with slash: JDK_MODE!/
-    return new IdeaFile(myFS, path + (path.endsWith("!" + IFileSystem.SEPARATOR) ? "" : IFileSystem.SEPARATOR) + name);
+    return myFS.getFile(path + (path.endsWith("!" + IFileSystem.SEPARATOR) ? "" : IFileSystem.SEPARATOR) + name);
   }
 
   @Override
@@ -450,7 +450,7 @@ public class IdeaFile implements IFile, CachingFile {
       }
     } else {
       if (myPath.contains(Path.ARCHIVE_SEPARATOR)) {
-        return new IdeaFile(myFS, myPath.substring(0, myPath.indexOf(Path.ARCHIVE_SEPARATOR)));
+        return myFS.getFile(myPath.substring(0, myPath.indexOf(Path.ARCHIVE_SEPARATOR)));
       } else {
         return getParent();
       }
