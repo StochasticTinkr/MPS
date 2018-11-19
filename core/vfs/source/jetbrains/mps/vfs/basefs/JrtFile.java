@@ -21,7 +21,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
-import jetbrains.mps.vfs.basefs.JrtFileSystemBase;
 import jetbrains.mps.vfs.iofs.JrtIoFileSystem;
 import jetbrains.mps.vfs.util.PathAssert;
 import org.jetbrains.annotations.NotNull;
@@ -160,10 +159,22 @@ public class JrtFile implements IFile {
   @NotNull
   @Override
   public IFile getDescendant(@NotNull String suffix) {
-    if (suffix.isEmpty()) return this;
+    if (suffix.isEmpty()) {
+      return this;
+    }
     String path = getPath();
     //the following is because there's one file that path ends with slash: JDK_MODE!/
-    String fullPath = path.endsWith(IFileSystem.SEPARATOR) ? path + suffix : path + IFileSystem.SEPARATOR + suffix;
+    String fullPath = path.endsWith("!" + IFileSystem.SEPARATOR) ? path + suffix : path + IFileSystem.SEPARATOR + suffix;
+    return myFS.getFile(fullPath);
+  }
+
+  @NotNull
+  @Override
+  public IFile findChild(@NotNull String name) {
+    new PathAssert(name).nonEmpty().noSeparators();
+    String path = getPath();
+    //the following is because there's one file that path ends with slash: JDK_MODE!/
+    String fullPath = path.endsWith("!" + IFileSystem.SEPARATOR) ? path + name : path + IFileSystem.SEPARATOR + name;
     return myFS.getFile(fullPath);
   }
 

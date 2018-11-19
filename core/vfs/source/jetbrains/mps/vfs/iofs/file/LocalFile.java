@@ -184,6 +184,13 @@ class LocalFile implements IFile {
   }
 
   @Override
+  @NotNull
+  public IFile findChild(@NotNull String name) {
+    new PathAssert(name).nonEmpty().noSeparators();
+    return new LocalFile(myPath + IFileSystem.SEPARATOR + name, myFileSystem);
+  }
+
+  @Override
   public boolean isArchive() {
     return myPath.endsWith(".jar");
   }

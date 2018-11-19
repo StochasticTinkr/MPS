@@ -127,6 +127,14 @@ public class JarEntryFile implements IFile {
   }
 
   @Override
+  @NotNull
+  public IFile findChild(@NotNull String name) {
+    new PathAssert(name).nonEmpty().noSeparators();
+    String path = myEntryPath.length() > 0 ? myEntryPath + IFileSystem.SEPARATOR + name : name;
+    return new JarEntryFile(myJarFileData, myJarFile, path, myFileSystem);
+  }
+
+  @Override
   public boolean isDirectory() {
     return myJarFileData != null && myJarFileData.isDirectory(myEntryPath);
   }

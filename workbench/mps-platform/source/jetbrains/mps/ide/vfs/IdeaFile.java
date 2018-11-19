@@ -60,7 +60,7 @@ import java.util.Map;
  * NOTE the IdeaFiles' equality now totally depends on the starting string.
  * That means that some IdeaFiles which point to the essentially the same place on fs, might not be equal in the sense
  * of the current #equals relation
- *
+ * <p>
  * TODO rewrite {@link #getChildren(),#getDescendant(String)} behavior in the case of jar system
  */
 @Immutable
@@ -175,10 +175,21 @@ public class IdeaFile implements IFile, CachingFile {
   @Override
   @NotNull
   public IdeaFile getDescendant(@NotNull String suffix) {
-    if (suffix.isEmpty()) return this;
+    if (suffix.isEmpty()) {
+      return this;
+    }
     String path = getPath();
     String separator = Path.UNIX_SEPARATOR; // we are system-independent underneath
     return new IdeaFile(myFS, path + (path.endsWith(separator) ? "" : separator) + suffix);
+  }
+
+  @Override
+  @NotNull
+  public IdeaFile findChild(@NotNull String name) {
+    new PathAssert(name).nonEmpty().noSeparators();
+    String path = getPath();
+    //the following is because there's one file that path ends with slash: JDK_MODE!/
+    return new IdeaFile(myFS, path + (path.endsWith("!" + IFileSystem.SEPARATOR) ? "" : IFileSystem.SEPARATOR) + name);
   }
 
   @Override
@@ -245,12 +256,18 @@ public class IdeaFile implements IFile, CachingFile {
     final VirtualFile file = LocalFileSystem.getInstance().refreshAndFindFileByPath(path);
     if (file == null) {
       int pos = path.lastIndexOf('/');
-      if (pos < 0) return null;
+      if (pos < 0) {
+        return null;
+      }
       VirtualFile parent = createDirectoryIfMissing(path.substring(0, pos));
-      if (parent == null) return null;
+      if (parent == null) {
+        return null;
+      }
       final String dirName = path.substring(pos + 1);
       VirtualFile child = parent.findChild(dirName);
-      if (child != null && child.isDirectory()) return child;
+      if (child != null && child.isDirectory()) {
+        return child;
+      }
       return parent.createChildDirectory(myFS, dirName);
     }
     return file;
@@ -498,8 +515,12 @@ public class IdeaFile implements IFile, CachingFile {
    */
   @Override
   public boolean equals(Object another) {
-    if (this == another) return true;
-    if (another == null || getClass() != another.getClass()) return false;
+    if (this == another) {
+      return true;
+    }
+    if (another == null || getClass() != another.getClass()) {
+      return false;
+    }
 
     IdeaFile ideaFile = (IdeaFile) another;
     return myPath.equals(ideaFile.myPath);

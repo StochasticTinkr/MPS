@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs.util;
 
 import jetbrains.mps.vfs.IFileSystem;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
@@ -52,6 +53,16 @@ public final class PathAssert {
     for (String part : myPath.split(IFileSystem.SEPARATOR)) {
       assert !part.equals(".") && !part.equals("..") : "Path should not contain \".\" and \"..\"";
     }
+    return this;
+  }
+
+  public PathAssert nonEmpty() {
+    assert !myPath.trim().isEmpty() : "Empty suffix not allowed";
+    return this;
+  }
+
+  public PathAssert noSeparators() {
+    assert !myPath.contains(IFileSystem.SEPARATOR) : "Separators are not allowed";
     return this;
   }
 }

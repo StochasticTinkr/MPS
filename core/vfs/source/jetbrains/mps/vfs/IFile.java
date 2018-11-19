@@ -142,6 +142,11 @@ public interface IFile {
   @NotNull IFile getDescendant(@NotNull String suffix);
 
   /**
+   * Immediate child only. Empty name is forbidden. Neither path separators nor archive separators can't present in name
+   */
+  @NotNull IFile findChild(@NotNull String name);
+
+  /**
    * @return the children of this file in case when it is a folder,
    * null iff it is a file and therefore has no children
    */
