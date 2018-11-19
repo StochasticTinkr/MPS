@@ -28332,6 +28332,21 @@
         </node>
         <node concept="3clFb_" id="XrrhtvD5wG" role="jymVt">
           <property role="TrG5h" value="createNodeToInsert" />
+          <node concept="3clFbS" id="XrrhtvD5wH" role="3clF47">
+            <node concept="3clFbF" id="367vPD09E5q" role="3cqZAp">
+              <node concept="1rXfSq" id="367vPD09E5p" role="3clFbG">
+                <ref role="37wK5l" node="XrrhtvD5x9" resolve="nodeFactory" />
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTG" id="XrrhtvD5x4" role="3clF46">
+            <property role="TrG5h" value="editorContext" />
+            <node concept="3uibUv" id="XrrhtvD5x5" role="1tU5fm">
+              <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+            </node>
+          </node>
+          <node concept="3Tm1VV" id="XrrhtvD5x6" role="1B3o_S" />
+          <node concept="3Tqbb2" id="XrrhtvD5x7" role="3clF45" />
           <node concept="1W57fq" id="367vPD09ncB" role="lGtFl">
             <node concept="3IZrLx" id="367vPD09ncE" role="3IZSJc">
               <node concept="3clFbS" id="367vPD09ncF" role="2VODD2">
@@ -28349,21 +28364,6 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbS" id="XrrhtvD5wH" role="3clF47">
-            <node concept="3clFbF" id="367vPD09E5q" role="3cqZAp">
-              <node concept="1rXfSq" id="367vPD09E5p" role="3clFbG">
-                <ref role="37wK5l" node="XrrhtvD5x9" resolve="nodeFactory" />
-              </node>
-            </node>
-          </node>
-          <node concept="37vLTG" id="XrrhtvD5x4" role="3clF46">
-            <property role="TrG5h" value="editorContext" />
-            <node concept="3uibUv" id="XrrhtvD5x5" role="1tU5fm">
-              <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
-            </node>
-          </node>
-          <node concept="3Tm1VV" id="XrrhtvD5x6" role="1B3o_S" />
-          <node concept="3Tqbb2" id="XrrhtvD5x7" role="3clF45" />
         </node>
         <node concept="2tJIrI" id="367vPD08g0A" role="jymVt" />
         <node concept="3uibUv" id="XrrhtvD5x8" role="1zkMxy">
@@ -47551,7 +47551,7 @@
           <node concept="3Tm1VV" id="SDmlC7xpKG" role="1B3o_S" />
           <node concept="3clFbS" id="SDmlC7xpKI" role="3clF47">
             <node concept="XkiVB" id="SDmlC7xpKK" role="3cqZAp">
-              <ref role="37wK5l" to="qtqj:~ReferenceScopeSubstituteMenuPart.&lt;init&gt;(org.jetbrains.mps.openapi.language.SConcept,org.jetbrains.mps.openapi.language.SReferenceLink)" resolve="ReferenceScopeSubstituteMenuPart" />
+              <ref role="37wK5l" to="qtqj:~ReferenceScopeSubstituteMenuPart.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.language.SReferenceLink)" resolve="ReferenceScopeSubstituteMenuPart" />
               <node concept="35c_gC" id="SDmlC7xre_" role="37wK5m">
                 <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
                 <node concept="1ZhdrF" id="SDmlC7xrfC" role="lGtFl">
@@ -47751,7 +47751,7 @@
                     <ref role="3cqZAo" node="Cr174ugDPL" resolve="referencedNode" />
                   </node>
                   <node concept="1rXfSq" id="2jhpiNnTl5W" role="37wK5m">
-                    <ref role="37wK5l" to="qtqj:~ReferenceScopeSubstituteMenuPart.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+                    <ref role="37wK5l" to="qtqj:~ReferenceScopeSubstituteMenuPart.getSConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getSConcept" />
                   </node>
                   <node concept="1rXfSq" id="2jhpiNnTm3s" role="37wK5m">
                     <ref role="37wK5l" to="qtqj:~ReferenceScopeSubstituteMenuPart.getReferenceLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getReferenceLink" />
@@ -47859,7 +47859,7 @@
             <node concept="37vLTG" id="4Yr0I2qbdEq" role="3clF46">
               <property role="TrG5h" value="concept" />
               <node concept="3uibUv" id="4Yr0I2qbeew" role="1tU5fm">
-                <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+                <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
               </node>
             </node>
             <node concept="37vLTG" id="4Yr0I2qbehW" role="3clF46">

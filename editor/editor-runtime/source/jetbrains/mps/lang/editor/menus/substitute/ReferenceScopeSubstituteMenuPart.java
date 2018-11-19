@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -41,9 +42,9 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
   private final SReferenceLink myReferenceLink;
 
   @NotNull
-  private final SConcept myConcept;
+  private final SAbstractConcept myConcept;
 
-  public ReferenceScopeSubstituteMenuPart(@NotNull SConcept concept, @NotNull SReferenceLink referenceLink) {
+  public ReferenceScopeSubstituteMenuPart(@NotNull SAbstractConcept concept, @NotNull SReferenceLink referenceLink) {
     myConcept = concept;
     myReferenceLink = referenceLink;
   }
@@ -68,7 +69,7 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
     try {
       scope = ModelConstraints.getReferenceDescriptor(parentNode, link, position, myReferenceLink, myConcept).getScope();
     } catch (Throwable t) {
-      LOG.error("Exception while executing code of geting the scope " + this, t);
+      LOG.error("Exception while executing code of getting the scope " + this, t);
       return Collections.emptyList();
     }
     Iterable<SNode> referents = scope.getAvailableElements(null);
@@ -85,8 +86,18 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
     return result;
   }
 
+  /**
+   * @deprecated use {@link #getSConcept()}
+   * Left for backward source compatibility on 2018.3
+   */
   @NotNull
+  @Deprecated
   protected final SConcept getConcept() {
+    return myConcept instanceof SConcept ? ((SConcept) myConcept) : null;
+  }
+
+  @NotNull
+  protected final SAbstractConcept getSConcept() {
     return myConcept;
   }
 
