@@ -25,6 +25,7 @@ import jetbrains.mps.vfs.util.PathAssert;
 import jetbrains.mps.vfs.util.PathUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.annotations.Internal;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -48,6 +49,8 @@ class LocalFile implements IFile {
   private String myPath;
   private File myFile;
 
+  //must be used only by filesystems
+  @Internal
   LocalFile(@NotNull String path, IFileSystem fileSystem) {
     myPath = path;
     myFileSystem = fileSystem;
@@ -78,7 +81,7 @@ class LocalFile implements IFile {
     if (parentFile == null) {
       return null;
     }
-    return new LocalFile(PathUtil.toSystemIndependent(parentFile.getPath()), myFileSystem);
+    return myFileSystem.getFile(PathUtil.toSystemIndependent(parentFile.getPath()));
   }
 
   @Override
@@ -171,7 +174,7 @@ class LocalFile implements IFile {
 
     List<IFile> result = new ArrayList<>(files.length);
     for (File f : files) {
-      result.add(new LocalFile(PathUtil.toSystemIndependent(f.getPath()), myFileSystem));
+      result.add(myFileSystem.getFile(PathUtil.toSystemIndependent(f.getPath())));
     }
     return result;
   }
@@ -180,14 +183,14 @@ class LocalFile implements IFile {
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
     if (suffix.isEmpty()) return this;
-    return new LocalFile(myPath + IFileSystem.SEPARATOR + suffix, myFileSystem);
+    return myFileSystem.getFile(myPath + IFileSystem.SEPARATOR + suffix);
   }
 
   @Override
   @NotNull
   public IFile findChild(@NotNull String name) {
     new PathAssert(name).nonEmpty().noSeparators();
-    return new LocalFile(myPath + IFileSystem.SEPARATOR + name, myFileSystem);
+    return myFileSystem.getFile(myPath + IFileSystem.SEPARATOR + name);
   }
 
   @Override

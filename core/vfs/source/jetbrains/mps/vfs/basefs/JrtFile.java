@@ -25,6 +25,7 @@ import jetbrains.mps.vfs.iofs.JrtIoFileSystem;
 import jetbrains.mps.vfs.util.PathAssert;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Internal;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,6 +40,8 @@ public class JrtFile implements IFile {
   private final String myPathInModule;
   private final JrtFileSystemBase myFS;
 
+  //must be used only by filesystems
+  @Internal
   public JrtFile(
       @NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK, @NotNull JrtFileSystemBase fs) {
     myJdkPath = jdkPath;
