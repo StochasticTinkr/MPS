@@ -21860,7 +21860,7 @@
               <ref role="1YBMHb" node="39TUtcnDp1m" resolve="expr" />
             </node>
             <node concept="Xl_RD" id="39TUtcnG0Wm" role="Dpw9R">
-              <property role="Xl_RC" value="Typecast expression is superflous" />
+              <property role="Xl_RC" value="Typecast expression is superfluous" />
             </node>
             <node concept="3Cnw8n" id="39TUtcnG0Wp" role="2OEOjU">
               <ref role="QpYPw" node="39TUtcnD$Ij" resolve="RemoveExcessTypeCast" />
