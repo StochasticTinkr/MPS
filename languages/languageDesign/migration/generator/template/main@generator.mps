@@ -555,6 +555,7 @@
       </concept>
       <concept id="2822369470875160718" name="jetbrains.mps.lang.smodel.query.structure.NodesExpression" flags="ng" index="2Jgcaq" />
       <concept id="4234138103881610891" name="jetbrains.mps.lang.smodel.query.structure.WithStatement" flags="ng" index="L3pyB">
+        <property id="192970713427626335" name="includeNonEditable" index="1Fhty8" />
         <child id="4234138103881610935" name="scope" index="L3pyr" />
         <child id="4234138103881610892" name="stmts" index="L3pyw" />
       </concept>
@@ -5957,6 +5958,7 @@
       <node concept="3Tm1VV" id="5TUCQr2LNod" role="1B3o_S" />
       <node concept="3clFbS" id="5TUCQr2LNog" role="3clF47">
         <node concept="L3pyB" id="5TUCQr2LP_b" role="3cqZAp">
+          <property role="1Fhty8" value="true" />
           <node concept="3clFbS" id="5TUCQr2LP_d" role="L3pyw">
             <node concept="3cpWs6" id="5TUCQr2LWqb" role="3cqZAp">
               <node concept="2OqwBi" id="5TUCQr2LUp_" role="3cqZAk">

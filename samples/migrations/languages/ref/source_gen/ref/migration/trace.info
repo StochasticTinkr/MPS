@@ -63,7 +63,7 @@
       <node id="6807933448480545459" at="123,40,124,70" concept="6" />
       <node id="1986963296984229191" at="131,60,132,199" concept="6" />
       <node id="6807933448473136908" at="135,5,136,64" concept="5" />
-      <node id="6807933448473136908" at="136,64,137,90" concept="5" />
+      <node id="6807933448473136908" at="136,64,137,62" concept="5" />
       <node id="6807933448473136908" at="139,52,140,36" concept="6" />
       <node id="6807933448473136908" at="144,41,145,355" concept="6" />
       <node id="6807933448473136908" at="148,39,149,182" concept="6" />
@@ -86,7 +86,7 @@
       <node id="6807933448471977691" at="61,90,66,8" concept="5" />
       <node id="6807933448480517299" at="114,90,119,8" concept="5" />
       <node id="6807933448480523459" at="121,49,126,12" concept="6" />
-      <node id="6807933448473136908" at="137,90,142,8" concept="5" />
+      <node id="6807933448473136908" at="137,62,142,8" concept="5" />
       <node id="8703179436978125449" at="85,87,92,11" concept="3" />
       <node id="6807933448480523127" at="121,0,128,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/migration/runtime/base/NotMigratedNode;" />
       <node id="6807933448480530045" at="119,8,128,9" concept="6" />
