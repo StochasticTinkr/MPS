@@ -53,6 +53,8 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -88,6 +90,8 @@ import static com.intellij.openapi.vfs.VfsUtilCore.isAncestor;
  */
 public class ModelRootContentEntriesEditor implements Disposable {
 
+  private final static Logger LOG = LogManager.getLogger(ModelRootContentEntriesEditor.class);
+
   private final ModuleDescriptor myModuleDescriptor;
   private final SRepository myRepository;
   private final ModelRootEntryPersistence myRootEntryPersistence;
@@ -108,10 +112,14 @@ public class ModelRootContentEntriesEditor implements Disposable {
     myRootEntryPersistence = new ModelRootEntryPersistence(PersistenceFacade.getInstance());
     for (ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
       ModelRootEntry entry = myRootEntryPersistence.getModelRootEntry(descriptor);
-      Disposer.register(this, entry);
-      ModelRootEntryContainer container = new ModelRootEntryContainer(entry);
-      container.addContentEntryEditorListener(myEditorListener);
-      myModelRootEntries.add(container);
+      if (entry != null) {
+        Disposer.register(this, entry);
+        ModelRootEntryContainer container = new ModelRootEntryContainer(entry);
+        container.addContentEntryEditorListener(myEditorListener);
+        myModelRootEntries.add(container);
+      } else {
+        LOG.warn(String.format("Can't create editor for '%s' model root type in module %s. Check that plugin, where this model root type is registered, is enabled.", descriptor.getType(), moduleDescriptor.getModuleReference().getModuleName()));
+      }
     }
     initUI();
   }
