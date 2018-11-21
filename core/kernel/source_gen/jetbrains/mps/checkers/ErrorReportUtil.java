@@ -7,6 +7,7 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,7 +19,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import org.apache.log4j.Level;
 
 public class ErrorReportUtil {
   private static final Logger LOG = LogManager.getLogger(ErrorReportUtil.class);
@@ -27,6 +27,12 @@ public class ErrorReportUtil {
 
   public static boolean shouldReportError(final NodeReportItem reportItem, SRepository repository) {
     final SNode node = reportItem.getNode().resolve(repository);
+    if (node == null) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("node cannot be resolved in repository: " + reportItem.getNode(), new Throwable());
+      }
+      return true;
+    }
     SModel model = node.getModel();
     if (model == null) {
       return false;
