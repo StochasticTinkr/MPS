@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="8ne6v737odlv4ryuc6z59dktafy1zy6">
+<product version="3" modelHash="bscwzjrwe0ojpszq1p74hn3tiu1d07m">
   <files names="BaseGeneratorWorker.java:BuildMakeService.java:ConsoleMessageFormat.java:GenTestWorker.java:GeneratorWorker.java:ReducedMakeFacetConfiguration.java" />
 </product>
 
