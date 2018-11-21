@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Objects;
+import jetbrains.mps.tool.common.RepositoryDescriptor;
 import java.util.Set;
 import java.util.List;
 import java.util.LinkedHashSet;
@@ -36,6 +37,9 @@ public class MigrationTask extends MpsLoadTask {
 
   @Override
   public void execute() throws BuildException {
+    // this line is here until we generate migration task and the list of needed modules for it 
+    addMpsModules();
+
     super.execute();
     Properties p = new Properties();
     try {
@@ -53,6 +57,15 @@ public class MigrationTask extends MpsLoadTask {
     }
   }
 
+  private void addMpsModules() {
+    RepositoryDescriptor repoDesc = myWhatToDo.getRepoDescriptor();
+    if (repoDesc == null) {
+      repoDesc = new RepositoryDescriptor();
+      myWhatToDo.setRepoDescriptor(repoDesc);
+    }
+    repoDesc.folders.add(getMpsHomePath());
+  }
+
   @Override
   protected Set<File> calculateClassPath(boolean fork) {
     // todo try using super method 
@@ -64,9 +77,7 @@ public class MigrationTask extends MpsLoadTask {
       throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
     }
     Set<File> classPath = new LinkedHashSet<File>();
-    File mpsHome = getMpsHome();
-    assert mpsHome != null : "MPSLoadTask.getMpsHome() == null. MPS home folder was not specified.";
-    String mpsHomePath = mpsHome.getAbsolutePath();
+    String mpsHomePath = getMpsHomePath();
 
     addClassPath(classPath, mpsHomePath, "/plugins/mps-build/languages/build/jetbrains.mps.build.migration.jar");
     addClassPath(classPath, mpsHomePath, "/plugins/modelchecker/lib/modelchecker.jar");
@@ -78,6 +89,14 @@ public class MigrationTask extends MpsLoadTask {
     }
     return classPath;
   }
+
+  private String getMpsHomePath() {
+    checkMpsHome();
+    File mpsHome = getMpsHome();
+    assert mpsHome != null : "MPSLoadTask.getMpsHome() == null. MPS home folder was not specified.";
+    return mpsHome.getAbsolutePath();
+  }
+
   private void addClassPath(Set<File> classPath, String mpsHomePath, String relativePath) {
     File cp = new File(mpsHomePath + relativePath);
     assert cp.exists() : "requested file does not exist: " + cp.getAbsolutePath();
