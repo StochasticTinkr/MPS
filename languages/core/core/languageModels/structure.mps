@@ -249,11 +249,17 @@
     <property role="TrG5h" value="ICanSuppressErrors" />
     <property role="3GE5qa" value="types" />
     <property role="EcuMT" value="3393165121846091586" />
+    <node concept="t5JxF" id="3jFdd0h1V74" role="lGtFl">
+      <property role="t5JxN" value="concept implementing this interface can hold SuppressErrorsAnnotation attribute" />
+    </node>
   </node>
   <node concept="PlHQZ" id="2WmWrdnSpX3">
     <property role="TrG5h" value="ISuppressErrors" />
     <property role="3GE5qa" value="types" />
     <property role="EcuMT" value="3393165121846091587" />
+    <node concept="t5JxF" id="3jFdd0h1UPk" role="lGtFl">
+      <property role="t5JxN" value="concept implementing this interface can suppress any error that appear on instances of that concept, any descendants of that instances or nodes which hold such instances as attributes" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3EoG9lZUeni">
     <property role="TrG5h" value="SuppressErrorsAnnotation" />
@@ -276,6 +282,9 @@
       <node concept="tn0Fv" id="4oS1ku9jZH3" role="HhnKV">
         <property role="tnX3d" value="true" />
       </node>
+    </node>
+    <node concept="t5JxF" id="3jFdd0h1V76" role="lGtFl">
+      <property role="t5JxN" value="annotation that suppresses errors satisfying some predicate serialized in whichError property" />
     </node>
   </node>
   <node concept="PlHQZ" id="1_TrU5E6oyb">
