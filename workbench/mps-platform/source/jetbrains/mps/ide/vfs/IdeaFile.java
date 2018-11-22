@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.Result;
 import com.intellij.openapi.application.WriteAction;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.JarFileSystem;
@@ -226,14 +225,8 @@ public class IdeaFile implements IFile, CachingFile {
 
   //this was copied from Idea's VfsUtil. The point of copying is changing the requestor not to get back-events during saving models
   @Nullable
-  private VirtualFile createDirectories(final String directoryPath) {
-    return new WriteAction<VirtualFile>() {
-      @Override
-      protected void run(@NotNull Result<VirtualFile> result) throws Throwable {
-        VirtualFile res = createDirectoryIfMissing(directoryPath);
-        result.setResult(res);
-      }
-    }.execute().throwException().getResultObject();
+  private VirtualFile createDirectories(final String directoryPath) throws IOException {
+    return WriteAction.compute(() -> createDirectoryIfMissing(directoryPath));
   }
 
   //this was copied from Idea's VfsUtil. The point of copying is changing the requestor not to get back-events during saving models
@@ -261,8 +254,12 @@ public class IdeaFile implements IFile, CachingFile {
       assert myVirtualFilePtr != null;
       return myVirtualFilePtr.isDirectory();
     } else {
-      myVirtualFilePtr = createDirectories(myPath);
-      return true;
+      try {
+        myVirtualFilePtr = createDirectories(myPath);
+        return true;
+      } catch (IOException ex) {
+        return false;
+      }
     }
   }
 

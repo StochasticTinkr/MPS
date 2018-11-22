@@ -273,27 +273,27 @@ public final class ModuleRepositoryFacade implements CoreComponent {
     //     Once we have FCC generator modules, we would switch to getOwnedGenerators here
     final ArrayList<Generator> associatedGenerators = new ArrayList<>();
     for (SModule m : modules) {
-      if (m instanceof Language) {
-        for (Generator g : ((Language) m).getGenerators()) {
-          associatedGenerators.add(g);
-        }
+      if (m instanceof Language && myRepoExt.getOwners(m).size() == 1) {
+        // Language module with single owner that is about to be unregistered drags all available generators with it.
+        // As long as there's another owner for the language, generators may stay (Language object would persist, only owner association would get unlinked)
+        associatedGenerators.addAll(((Language) m).getGenerators());
       }
     }
     // Besides, we have to be careful not to unregister same module twice (i.e. if both language and its generator are owned by same owner, they
     // both are in 'modules' list and are disposed in the main loop.
     associatedGenerators.removeAll(modules);
-    // In addition, associatedGenerators might need to be filtered according to their owner, i.e. if they got 'owner' one among theirs.
-    // However, given no mechanism to have generators w/o a language, I'd rather try to dispose all of them (we do pass 'owner' to unregister call, below, though
-    // it's not clear what happens if a module doesn't belong to the owner (there's no clear contract, MPSModuleRepository logs a warning)
-    modules.addAll(associatedGenerators);
+    // Modules in associatedGenerators have owners different from the one supplied
+    // Given no mechanism to have generators w/o a language, we have to dispose all of them from any owner
+    for (Generator g : associatedGenerators) {
+      unregisterModule(g);
+    }
 
     for (SModule m : modules) {
       // XXX perhaps, shall check m is still registered just in case any module unregisters its related modules (e.g. Language may unregister its Generators)
-      //     though, not clear how to do it gracefully, m.getRepo == null?
+      //     though, not clear how to do it gracefully, m.getRepo == null? I wonder to see if we can obtain disposed modules through myRepoExt.getModules()
+      //     I assume earlier unregister have removed the module from the list and we don't need to care about unregistered modules here.
       myRepoExt.unregisterModule(m, owner);
     }
-
-
   }
 
   //intended to use only when module is removed physically
