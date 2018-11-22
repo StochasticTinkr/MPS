@@ -57,7 +57,7 @@ public final class BaseCommentAttribute__BehaviorDescriptor extends BaseBHDescri
         return true;
       }
     }
-    return ((boolean) ISuppressErrors__BehaviorDescriptor.suppress_id3612de_vrfV.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors"), reportItem));
+    return false;
   }
 
   /*package*/ BaseCommentAttribute__BehaviorDescriptor() {

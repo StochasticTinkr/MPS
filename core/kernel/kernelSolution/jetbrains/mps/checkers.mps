@@ -5071,6 +5071,42 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="3jFdd0h0Inc" role="3cqZAp">
+          <node concept="3clFbS" id="3jFdd0h0Ine" role="3clFbx">
+            <node concept="RRSsy" id="3jFdd0h0JhX" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="3cpWs3" id="3jFdd0h0LZ4" role="RRSoy">
+                <node concept="2OqwBi" id="3jFdd0h0Mmw" role="3uHU7w">
+                  <node concept="37vLTw" id="3jFdd0h0M0O" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2I7VK7MzXyC" resolve="reportItem" />
+                  </node>
+                  <node concept="liA8E" id="3jFdd0h0MCz" role="2OqNvi">
+                    <ref role="37wK5l" to="d6hs:~NodeFlavouredItem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="3jFdd0h0JhZ" role="3uHU7B">
+                  <property role="Xl_RC" value="node cannot be resolved in repository: " />
+                </node>
+              </node>
+              <node concept="2ShNRf" id="3jFdd0h0Jqa" role="RRSow">
+                <node concept="1pGfFk" id="3jFdd0h0Lot" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~Throwable.&lt;init&gt;()" resolve="Throwable" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="3jFdd0h0MP5" role="3cqZAp">
+              <node concept="3clFbT" id="3jFdd0h0NeI" role="3cqZAk">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="3jFdd0h0IYS" role="3clFbw">
+            <node concept="10Nm6u" id="3jFdd0h0IZg" role="3uHU7w" />
+            <node concept="37vLTw" id="3jFdd0h0IFM" role="3uHU7B">
+              <ref role="3cqZAo" node="2I7VK7MzXtP" resolve="node" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="2I7VK7MzSVj" role="3cqZAp">
           <node concept="3cpWsn" id="2I7VK7MzSVk" role="3cpWs9">
             <property role="TrG5h" value="model" />
