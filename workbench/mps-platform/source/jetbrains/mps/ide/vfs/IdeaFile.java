@@ -67,7 +67,7 @@ import java.util.Map;
 @Immutable
 public class IdeaFile implements IFile, CachingFile {
   private final static Logger LOG = LogManager.getLogger(IdeaFile.class);
-  private final IdeaFileSystem myFS;
+  private final BaseIdeaFileSystem myFS;
 
   private final Map<FileListener, FileListenerAdapter> myListenerLegacy2New = new HashMap<>();
 
@@ -82,15 +82,17 @@ public class IdeaFile implements IFile, CachingFile {
   private VirtualFile myVirtualFilePtr = null;
 
   @Internal
-  public IdeaFile(IdeaFileSystem fileSystem, @NotNull String path) {
+  public IdeaFile(BaseIdeaFileSystem fileSystem, @NotNull String path) {
     myFS = fileSystem;
     myPath = path;
   }
 
-  private IdeaFile(IdeaFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
+  private IdeaFile(BaseIdeaFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
     myFS = fileSystem;
     myVirtualFilePtr = virtualFile;
-    myPath = virtualFile.getPath();
+    String path = virtualFile.getPath();
+    new PathAssert(path).absolute().noDots().osIndependentPath().noEndSlash();
+    myPath = path;
   }
 
   @NotNull
@@ -477,11 +479,8 @@ public class IdeaFile implements IFile, CachingFile {
 
   // null <=> file was not found
   @Nullable
-  private static VirtualFile findIdeaFile(String path, boolean withRefresh) {
-    VirtualFileSystem fileSystem = path.contains(Path.ARCHIVE_SEPARATOR) ?
-                                   JarFileSystem.getInstance() :
-                                   LocalFileSystem.getInstance();
-
+  private VirtualFile findIdeaFile(@NotNull String path, boolean withRefresh) {
+    VirtualFileSystem fileSystem = myFS.getUnderlyingFS();
     if (withRefresh) {
       return fileSystem.refreshAndFindFileByPath(path);
     } else {

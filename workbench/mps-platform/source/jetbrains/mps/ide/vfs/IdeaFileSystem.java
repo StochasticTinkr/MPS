@@ -25,10 +25,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.VFSManager;
+import jetbrains.mps.vfs.iofs.file.LocalIoFileSystem;
+import jetbrains.mps.vfs.iofs.jar.JarIoFileSystem;
 import jetbrains.mps.vfs.refresh.CachingContext;
 import jetbrains.mps.vfs.refresh.CachingFile;
 import jetbrains.mps.vfs.refresh.CachingFileSystem;
@@ -38,6 +41,7 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -49,89 +53,23 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public final class IdeaFileSystem implements SafeWriteRequestor, ApplicationComponent, FileSystem, IFileSystem, CachingFileSystem {
-  private static final Logger LOG = LogManager.getLogger(IdeaFileSystem.class);
-
-  private FileSystemListenersContainer myListenersContainer;
+@Deprecated
+@ToRemove(version = 2019.1)
+public final class IdeaFileSystem extends BaseIdeaFileSystem implements SafeWriteRequestor, ApplicationComponent, FileSystem, IFileSystem, CachingFileSystem {
   private FileSystem myOldFileSystem;
 
   public IdeaFileSystem(FileSystemListenersContainer listenerContainer) {
-    myListenersContainer = listenerContainer;
-  }
-
-  @Override
-  public void refresh(@NotNull CachingContext context, Collection<CachingFile> files) {
-    Set<VirtualFile> virtualFiles = files.stream().map(file -> ((IdeaFile) file).getVirtualFile()).filter(Objects::nonNull).collect(Collectors.toSet());
-    virtualFiles.forEach(VirtualFile::getChildren); // to enforce refresh for this file
-    RefreshQueue.getInstance().refresh(!context.isSynchronous(), context.isRecursive(), null, virtualFiles);
+    super(listenerContainer);
   }
 
   @NotNull
   @Override
   public IdeaFile getFile(@NotNull String path) {
-    return new IdeaFile(this, jetbrains.mps.util.FileUtil.normalize(path));
-  }
-
-  @Override
-  public void addListener(@NotNull FileSystemListener listener) {
-    myListenersContainer.addListener(listener);
-  }
-
-  @Override
-  public void removeListener(@NotNull FileSystemListener listener) {
-    myListenersContainer.removeListener(listener);
-  }
-
-  public FileSystemListenersContainer getListenersContainer() {
-    return myListenersContainer;
-  }
-
-  @Override
-  public boolean isFileIgnored(@NotNull String name) {
-    return FileTypeManager.getInstance().isFileIgnored(name);
-  }
-
-  public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles) {
-    final List<IFile> newFiles = new ArrayList<>();
-    final List<IFile> updatedFiles = new ArrayList<>();
-    for (IFile file : writtenFiles) {
-      if (file.exists()) {
-        updatedFiles.add(file);
-      } else {
-        newFiles.add(file);
-      }
-    }
-    ApplicationManager.getApplication().invokeLater(new IdeaWriteAction(() -> {
-      // Recreate files using VFS
-      for (IFile file : newFiles) {
-        OutputStream out = null;
-        try {
-          // No need to close InputStream: it will be closed by loadFromStream()
-          byte[] content = StreamUtil.loadFromStream(new FileInputStream(file.getPath()));
-
-          out = file.openOutputStream();
-          out.write(content);
-        } catch (IOException e) {
-          LOG.error(String.format("Failed to re-create file '%s'", file), e);
-        } finally {
-          FileUtil.closeFileSafe(out);
-        }
-      }
-
-      // Refresh added files
-      Set<CachingFile> ideaFiles = updatedFiles.stream()
-          .filter(file -> file instanceof IdeaFile)
-          .map(file -> ((IdeaFile) file)).collect(Collectors.toSet());
-      refresh(new DefaultCachingContext(true, false), ideaFiles);
-    })
-    );
-  }
-
-  @Override
-  public boolean runWriteTransaction(@NotNull Runnable r) {
-    final IdeaWriteAction action = new IdeaWriteAction(r);
-    ApplicationManager.getApplication().invokeAndWait(action, ModalityState.defaultModalityState());
-    return action.getFailure() == null;
+    path = FileUtil.normalize(path);
+    String fsId = path.contains("!") ? VFSManager.JAR_FS : VFSManager.FILE_FS;
+    IFileSystem fileSystem = VFSManager.getInstance().getFileSystem(fsId);
+    assert fileSystem instanceof BaseIdeaFileSystem;
+    return ((BaseIdeaFileSystem) fileSystem).getFile(path);
   }
 
   /**
@@ -154,17 +92,19 @@ public final class IdeaFileSystem implements SafeWriteRequestor, ApplicationComp
   public void initComponent() {
     myOldFileSystem = FileSystemExtPoint.getFS();
     FileSystemExtPoint.setFS(this);
-    VFSManager.getInstance().registerFS(VFSManager.FILE_FS, this);
-    VFSManager.getInstance().registerFS(VFSManager.JAR_FS, this);
   }
 
   @Override
   public void disposeComponent() {
-    VFSManager.getInstance().unregisterFS(VFSManager.JAR_FS, this);
-    VFSManager.getInstance().unregisterFS(VFSManager.FILE_FS, this);
     if (myOldFileSystem != null) {
       FileSystemExtPoint.setFS(myOldFileSystem);
       myOldFileSystem = null;
     }
+  }
+
+  @Nullable
+  @Override
+  VirtualFile getUnderlyingFile(@NotNull String path) {
+    throw new UnsupportedOperationException("Should not be invoked on IdeaFileSystem");
   }
 }

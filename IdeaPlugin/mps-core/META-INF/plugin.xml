@@ -32,10 +32,16 @@
       <implementation-class>jetbrains.mps.ide.platform.watching.FileSystemListenersContainer</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.vfs.IdeaFileSystem</implementation-class>
+      <implementation-class>jetbrains.mps.ide.vfs.JrtIdeaFileSystem</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.vfs.JrtIdeaFileSystem</implementation-class>
+      <implementation-class>jetbrains.mps.ide.vfs.JarIdeaFileSystem</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.vfs.LocalIdeaFileSystem</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.vfs.IdeaFileSystem</implementation-class>
     </component>
     <component>
       <interface-class>jetbrains.mps.smodel.ModelAccess</interface-class>
