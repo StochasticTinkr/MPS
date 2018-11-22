@@ -48,6 +48,8 @@ import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
+import jetbrains.mps.ide.vfs.JarIdeaFileSystem;
+import jetbrains.mps.ide.vfs.LocalIdeaFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
@@ -280,7 +282,8 @@ public class ConvertPackageToModel extends AnAction {
 
     for (PsiFile file : psiFiles) {
       VirtualFile vfile = file.getVirtualFile();
-      IFile ifile = new IdeaFileSystem(new FileSystemListenersContainer()).getFile(vfile.getPath());
+      FileSystemListenersContainer lc = new FileSystemListenersContainer();
+      IFile ifile = new IdeaFileSystem(lc, new JarIdeaFileSystem(lc), new LocalIdeaFileSystem(lc)).getFile(vfile.getPath());
       result.add(ifile);
     }
 

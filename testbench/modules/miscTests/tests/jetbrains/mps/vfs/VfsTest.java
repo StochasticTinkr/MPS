@@ -19,6 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
+import jetbrains.mps.ide.vfs.JarIdeaFileSystem;
+import jetbrains.mps.ide.vfs.LocalIdeaFileSystem;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.IFileUtil;
@@ -63,7 +65,8 @@ public class VfsTest implements EnvironmentAware {
   private static void IDEA_FS_TEST(final Runnable testRunnable) {
     FileSystem oldFS = FileSystemExtPoint.getFS();
     try {
-      FileSystemExtPoint.setFS(new IdeaFileSystem(new FileSystemListenersContainer()));
+      FileSystemListenersContainer lc = new FileSystemListenersContainer();
+      FileSystemExtPoint.setFS(new IdeaFileSystem(lc, new JarIdeaFileSystem(lc), new LocalIdeaFileSystem(lc)));
       final Throwable[] ex = new Throwable[1];
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         @Override

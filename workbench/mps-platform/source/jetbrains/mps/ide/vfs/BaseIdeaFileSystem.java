@@ -59,7 +59,7 @@ public abstract class BaseIdeaFileSystem implements IFileSystem, CachingFileSyst
   @NotNull
   @Override
   public IdeaFile getFile(@NotNull String path) {
-    new PathAssert(path).absolute().noDots().osIndependentPath().noEndSlash();
+    new PathAssert(path).absolute().noDots().osIndependentPath().noEndSlashOrArchive();
     return new IdeaFile(this, path);
   }
 

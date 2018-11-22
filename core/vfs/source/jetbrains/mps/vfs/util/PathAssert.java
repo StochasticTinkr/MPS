@@ -19,6 +19,7 @@ import jetbrains.mps.vfs.IFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.nio.file.FileSystem;
 
 //this is an internal class with assertions usable for checking formats of file paths in File/Jar/Jrt FSes
 public final class PathAssert {
@@ -63,6 +64,11 @@ public final class PathAssert {
 
   public PathAssert noSeparators() {
     assert !myPath.contains(IFileSystem.SEPARATOR) : "Separators are not allowed";
+    return this;
+  }
+
+  public PathAssert noEndSlashOrArchive() {
+    assert !myPath.endsWith(IFileSystem.SEPARATOR) || myPath.endsWith("!" + IFileSystem.SEPARATOR) : "Only archive paths can end with " + IFileSystem.SEPARATOR;
     return this;
   }
 }

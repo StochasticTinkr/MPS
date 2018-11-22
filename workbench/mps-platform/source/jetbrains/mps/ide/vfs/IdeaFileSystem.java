@@ -22,6 +22,7 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.util.io.StreamUtil;
 import com.intellij.openapi.vfs.SafeWriteRequestor;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.util.FileUtil;
@@ -58,7 +59,7 @@ import java.util.stream.Collectors;
 public final class IdeaFileSystem extends BaseIdeaFileSystem implements SafeWriteRequestor, ApplicationComponent, FileSystem, IFileSystem, CachingFileSystem {
   private FileSystem myOldFileSystem;
 
-  public IdeaFileSystem(FileSystemListenersContainer listenerContainer) {
+  public IdeaFileSystem(FileSystemListenersContainer listenerContainer, JarIdeaFileSystem fs1, LocalIdeaFileSystem fs2) {
     super(listenerContainer);
   }
 
@@ -104,7 +105,13 @@ public final class IdeaFileSystem extends BaseIdeaFileSystem implements SafeWrit
 
   @Nullable
   @Override
-  VirtualFile getUnderlyingFile(@NotNull String path) {
+  VirtualFileSystem getUnderlyingFS() {
+    throw new UnsupportedOperationException("Should not be invoked on IdeaFileSystem");
+  }
+
+  @NotNull
+  @Override
+  String getProtocol() {
     throw new UnsupportedOperationException("Should not be invoked on IdeaFileSystem");
   }
 }
