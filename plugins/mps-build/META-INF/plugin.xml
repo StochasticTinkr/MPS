@@ -19,7 +19,7 @@
   <name>MPS Build languages</name>
   <description>Declarative build languages</description>
   <category>Custom Languages</category>
-  <version>2018.2.6</version>
+  <version>2018.2.7</version>
   <vendor url="http://www.jetbrains.com" email="support@jetbrains.com">JetBrains s.r.o.</vendor>
   <idea-version since-build="182.1" until-build="183.*"/>
   <depends>jetbrains.mps.core</depends>
