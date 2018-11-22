@@ -164,6 +164,7 @@
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
+    <mps.modelRootEntry rootType="default" title="&amp;Default" className="jetbrains.mps.ide.ui.dialogs.properties.roots.editors.FileBasedModelRootEntryFactory"/>
     <mps.modelRootContributor className="jetbrains.mps.idea.core.project.stubs.ModuleLibStubProvider"/>
     <editorOptionsProvider
             instance="jetbrains.mps.nodeEditor.EditorSettingsConfigurable$EditorSettingsConfigurableOptionsProvider"/>
