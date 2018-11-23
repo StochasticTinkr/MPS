@@ -37941,6 +37941,11 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="FTxloE3t7H" role="lGtFl">
+        <node concept="x79VA" id="FTxloE3t7K" role="3nqlJM">
+          <property role="x79VB" value="methods which this member container is able to override" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="4GM03FJm5q2" role="13h7CS">
       <property role="13i0iv" value="false" />
@@ -37959,6 +37964,11 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="FTxloE3t7f" role="lGtFl">
+        <node concept="x79VA" id="FTxloE3t7i" role="3nqlJM">
+          <property role="x79VB" value="methods which this member container is able to implement" />
         </node>
       </node>
     </node>
