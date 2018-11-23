@@ -14690,12 +14690,13 @@
       <node id="885275291024029562" at="9,29,10,22" concept="18" />
       <node id="885275291024029562" at="10,22,11,30" concept="6" />
       <node id="885275291024029562" at="11,30,12,25" concept="6" />
-      <node id="885275291024029566" at="12,25,13,87" concept="6" />
-      <node id="885275291024029567" at="13,87,14,85" concept="6" />
-      <node id="885275291024029562" at="9,0,16,0" concept="4" trace="View_ActionGroup#()V" />
-      <scope id="885275291024029562" at="9,29,14,85" />
-      <scope id="885275291024029562" at="9,0,16,0" />
-      <unit id="885275291024029562" at="7,0,17,0" name="jetbrains.mps.ide.actions.View_ActionGroup" />
+      <node id="6198639388914170" at="12,25,13,41" concept="6" />
+      <node id="885275291024029566" at="13,41,14,87" concept="6" />
+      <node id="885275291024029567" at="14,87,15,85" concept="6" />
+      <node id="885275291024029562" at="9,0,17,0" concept="4" trace="View_ActionGroup#()V" />
+      <scope id="885275291024029562" at="9,29,15,85" />
+      <scope id="885275291024029562" at="9,0,17,0" />
+      <unit id="885275291024029562" at="7,0,18,0" name="jetbrains.mps.ide.actions.View_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/8870103444913327725">
