@@ -10,6 +10,7 @@ public class View_ActionGroup extends GeneratedActionGroup {
     super("View", ID);
     this.setIsInternal(false);
     this.setPopup(false);
+    View_ActionGroup.this.addSeparator();
     View_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowParameters_Action");
     View_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowNodeInfo_Action");
   }
