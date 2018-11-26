@@ -84,9 +84,9 @@ public class ModuleLibrariesUtil {
       return Collections.emptySet();
     }
     final Set<SModuleReference> modules = new HashSet<SModuleReference>();
-    final Set<IFile> moduleXmls = new HashSet<IFile>();
+    final Set<String> moduleXmlPaths = new HashSet<String>();
     for (VirtualFile file : library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)) {
-      moduleXmls.add(VirtualFileUtils.toIFile(file));
+      moduleXmlPaths.add(file.getPath());
     }
 
     repository.getModelAccess().runReadAction(new Runnable() {
@@ -97,10 +97,10 @@ public class ModuleLibrariesUtil {
             continue;
           }
           // Indeed, we don't check for xml file of a source module descriptor (available through DeploymentDescriptor). The reason is
-          // we care about deployed modules only, therefore expect moduleXmls to be filled only with 'module.xml' files of deployed modules and
+          // we care about deployed modules only, therefore expect moduleXmlPaths to be filled only with 'module.xml' files of deployed modules and
           // straightforward IFile match against repository module's files shall suffice.
           final IFile moduleDescriptorFile = ((AbstractModule) m).getDescriptorFile();
-          if (moduleDescriptorFile != null && moduleXmls.contains(moduleDescriptorFile)) {
+          if (moduleDescriptorFile != null && moduleXmlPaths.contains(moduleDescriptorFile.getPath())) {
             modules.add(m.getModuleReference());
           }
         }
