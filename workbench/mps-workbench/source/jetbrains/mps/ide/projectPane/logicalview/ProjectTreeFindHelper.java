@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,15 @@ import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.TestsTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -64,6 +68,42 @@ public final class ProjectTreeFindHelper {
     }
 
     return findModuleTreeNodeAnywhere(module);
+  }
+
+  // looks up the first tree node associated with a module that claims to originate from the supplied file
+  // If this method turns out to be slow, consider caching of module descriptor files here in this object.
+  public ProjectModuleTreeNode findModuleTreeNode(final IFile moduleFile) {
+    Condition<MPSTreeNode> module4file = treeNode -> {
+      if (!(treeNode instanceof ProjectModuleTreeNode)) {
+        return false;
+      }
+      final SModule module = ((ProjectModuleTreeNode) treeNode).getModule();
+      if (false == module instanceof AbstractModule) {
+        return false;
+      }
+      final IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
+      if (descriptorFile == null) {
+        // for DD case, we need descriptorFile as well.
+        return false;
+      }
+      if (descriptorFile.equals(moduleFile)) {
+        return true;
+      }
+      final ModuleDescriptor md = ((AbstractModule) module).getModuleDescriptor();
+      if (md == null || md.getDeploymentDescriptor() == null) {
+        return false;
+      }
+      // next code had been stolen from ModuleFileTracker, #getSourceModuleDescriptor(AM)
+      final IFile srcDescriptorFile = ModulesMiner.getSourceDescriptorFile(descriptorFile, md.getDeploymentDescriptor());
+      return srcDescriptorFile != null && srcDescriptorFile.equals(moduleFile);
+    };
+    // first, look at project modules
+    MPSTreeNode rv = findTreeNode(getTree().getRootNode(), new ModuleInProjectCondition(), module4file);
+    if (rv == null) {
+      // if not among project, try pool of loaded then
+      rv = findTreeNode(getTree().getRootNode(), new ModuleEverywhereCondition(), module4file);
+    }
+    return (ProjectModuleTreeNode) rv;
   }
 
   protected ProjectModuleTreeNode findModuleTreeNodeInProject(final @NotNull SModule module) {
@@ -187,7 +227,9 @@ public final class ProjectTreeFindHelper {
   private static class ModuleInProjectCondition extends ModuleEverywhereCondition {
     @Override
     public boolean met(MPSTreeNode object) {
-      if (!super.met(object)) return false;
+      if (!super.met(object)) {
+        return false;
+      }
       return !(object instanceof ProjectModulesPoolTreeNode);
     }
   }
@@ -195,7 +237,11 @@ public final class ProjectTreeFindHelper {
   private static class ModuleEverywhereCondition implements Condition<MPSTreeNode> {
     @Override
     public boolean met(MPSTreeNode node) {
-      if (node instanceof ProjectModuleTreeNode && !(node instanceof ProjectLanguageTreeNode)) return false;
+      // language tree nodes host generator tree nodes, hence shall allow to get into them
+      if (node instanceof ProjectModuleTreeNode && !(node instanceof ProjectLanguageTreeNode)) {
+        return false;
+      }
+      // just don't go under a model node
       return !(node instanceof SModelTreeNode);
     }
   }
@@ -273,7 +319,9 @@ public final class ProjectTreeFindHelper {
 
     @Override
     public boolean met(MPSTreeNode treeNode) {
-      if (!(treeNode instanceof ProjectModuleTreeNode)) return false;
+      if (!(treeNode instanceof ProjectModuleTreeNode)) {
+        return false;
+      }
       return ((ProjectModuleTreeNode) treeNode).getModule() == myModule;
     }
   }

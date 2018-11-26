@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@ import java.util.concurrent.ConcurrentHashMap;
  *             to ProjectPaneSelectInTarget, which is initialized from MPSProject and (a) has access to project descriptor with module files; (b) may keep
  *             its own cache of project modules/files or build one on demand each time as needed (for specific project repository). Then, there'd be no need
  *             to have this general component. There's also 1 use in mbeddr (mpsutil.projectview.runtime), shall reuse SelectInTarget or just walk repository modules
+ *
+ *             There are no uses in MPS, one in mbeddr, though
  */
 @Deprecated
 public class ModuleFileTracker implements CoreComponent {

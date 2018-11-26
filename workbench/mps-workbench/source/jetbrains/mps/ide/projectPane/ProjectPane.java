@@ -219,7 +219,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   @Override
   public SelectInTarget createSelectInTarget() {
-    return new ProjectPaneSelectInTarget(getMPSProject(), true);
+    return new ProjectPaneSelectInTarget(this, getTitle(), true);
   }
 
   @Override
