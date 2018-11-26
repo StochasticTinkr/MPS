@@ -28,7 +28,7 @@ core/typesystemEngine/classes
 core/generator/classes
 core/make-runtime/classes
 core/make-runtime/solutions/jetbrains.mps.make.facets/classes
-core/migration-runtime/classes/
+core/migration-runtime/classes
 core/textgen/classes
 core/debuginfo/api/classes
 core/debuginfo/impl/classes
