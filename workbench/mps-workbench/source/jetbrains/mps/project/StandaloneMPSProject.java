@@ -23,6 +23,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ModulePath;
@@ -46,6 +47,7 @@ import java.util.List;
 
 /**
  * FIXME: AP what is the difference with the MPSProject? Both are based on the idea platform... Merge?
+ *        [artem] This class is for MPS as a standalone IDE, whild MPSProject is in use in MPS as IDEA plugin.
  *
  * It must save/load its state only via the platform methods #saveState, #loadState
  * The project may be changed externally via addModule/removeModule methods,
@@ -63,8 +65,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
   @SuppressWarnings("UnusedParameters")
   public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager, ProjectRootListenerComponent unused,
-                              MPSCoreComponents mpsCore, WorkbenchModelAccess modelAccess) {
-    super(project, unused, mpsCore, modelAccess);
+                              MPSCoreComponents mpsCore, IdeaFileSystem ideaFS, WorkbenchModelAccess modelAccess) {
+    super(project, unused, mpsCore, ideaFS, modelAccess);
   }
 
   @Override

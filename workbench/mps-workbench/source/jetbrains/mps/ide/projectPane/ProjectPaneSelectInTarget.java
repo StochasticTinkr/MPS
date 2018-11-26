@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,22 +21,18 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import jetbrains.mps.ide.vfs.IdeaFile;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget {
-  private static final IdeaFileSystem ourFileSystem = (IdeaFileSystem) FileSystem.getInstance();
-  private MPSProject myProject;
-  private boolean mySelectRoot;
+  private final MPSProject myProject;
+  private final boolean mySelectRoot;
 
   public ProjectPaneSelectInTarget(MPSProject p, boolean selectRoot) {
     super(p.getProject(), ProjectPane.ID, 0, selectRoot ? "Logical View" : "Project Tree");
@@ -73,7 +69,8 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
       return null;
     }
 
-    IFile modelFile = new IdeaFile(ourFileSystem, virtualFile);
+
+    IFile modelFile = myProject.getFileSystem().fromVirtualFile(virtualFile);
     return SModelFileTracker.getInstance(myProject.getRepository()).findModel(modelFile);
   }
 
@@ -83,7 +80,7 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
       return null;
     }
 
-    IFile moduleFile = new IdeaFile(ourFileSystem, virtualFile);
+    IFile moduleFile = myProject.getFileSystem().fromVirtualFile(virtualFile);
     // XXX why don't we obtain model read here? ModuleFileTracker might need to walk repository to find out actual modules and their files
     return ModuleFileTracker.getInstance(myProject.getRepository()).getModuleByFile(moduleFile);
   }

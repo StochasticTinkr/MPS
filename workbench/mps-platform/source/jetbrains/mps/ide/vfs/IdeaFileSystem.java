@@ -130,6 +130,16 @@ public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequesto
     return action.getFailure() == null;
   }
 
+  /**
+   * Proper alternative to {@link VirtualFileUtils#toIFile(VirtualFile)}, gives MPS file abstraction for an IDEA's one.
+   * @param virtualFile IDEA's file abstraction
+   * @return MPS file abstraction
+   */
+  @NotNull
+  public IFile fromVirtualFile(@NotNull VirtualFile virtualFile) {
+    return new IdeaFile(this, virtualFile);
+  }
+
   private static class IdeaWriteAction implements Runnable {
     private final Runnable myDelegate;
     private Exception myException;
