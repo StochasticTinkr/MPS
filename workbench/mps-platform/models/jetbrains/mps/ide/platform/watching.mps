@@ -2193,7 +2193,7 @@
                 <ref role="3cqZAo" node="2CbzOko73fc" resolve="fs" />
               </node>
               <node concept="liA8E" id="5p_KN$yYOHN" role="2OqNvi">
-                <ref role="37wK5l" to="4hrd:~IdeaFileSystem.getListenersContainer():jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" resolve="getListenersContainer" />
+                <ref role="37wK5l" to="4hrd:~BaseIdeaFileSystem.getListenersContainer():jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" resolve="getListenersContainer" />
               </node>
             </node>
             <node concept="37vLTw" id="5p_KN$yYVEm" role="37vLTJ">

@@ -91,7 +91,7 @@ public class IdeaFile implements IFile, CachingFile {
     myFS = fileSystem;
     myVirtualFilePtr = virtualFile;
     String path = virtualFile.getPath();
-    new PathAssert(path).absolute().noDots().osIndependentPath().noEndSlash();
+    new PathAssert(path).absolute().noDots().osIndependentPath().noEndSlashOrArchive();
     myPath = path;
   }
 
@@ -108,7 +108,7 @@ public class IdeaFile implements IFile, CachingFile {
   @Override
   public QualifiedPath getQualifiedPath() {
     String path = getPath();
-    return new QualifiedPath(path.contains(Path.ARCHIVE_SEPARATOR) ? VFSManager.FILE_FS : VFSManager.JAR_FS, path);
+    return new QualifiedPath(myFS.getProtocol(), path);
   }
 
   @Override
@@ -428,7 +428,7 @@ public class IdeaFile implements IFile, CachingFile {
     if (findVirtualFile()) {
       return myVirtualFilePtr.getFileSystem() instanceof ArchiveFileSystem;
     } else {
-      return myPath.contains(Path.ARCHIVE_SEPARATOR);
+      return myPath.contains("!");
     }
   }
 
@@ -450,7 +450,7 @@ public class IdeaFile implements IFile, CachingFile {
         return getParent();
       }
     } else {
-      if (myPath.contains(Path.ARCHIVE_SEPARATOR)) {
+      if (myPath.contains("!")) {
         return myFS.getFile(myPath.substring(0, myPath.indexOf(Path.ARCHIVE_SEPARATOR)));
       } else {
         return getParent();
@@ -490,7 +490,7 @@ public class IdeaFile implements IFile, CachingFile {
 
   @NotNull
   private static String truncateDirPath(String path) {
-    int index = path.lastIndexOf(Path.UNIX_SEPARATOR_CHAR); // unix-style by contract
+    int index = path.lastIndexOf(IFileSystem.SEPARATOR);
     if (index == -1) {
       return path;
     } else {
@@ -499,7 +499,7 @@ public class IdeaFile implements IFile, CachingFile {
   }
 
   private static String truncateFileName(String path) {
-    int index = path.lastIndexOf(Path.UNIX_SEPARATOR_CHAR); // unix-style always
+    int index = path.lastIndexOf(IFileSystem.SEPARATOR);
     if (index == -1) {
       return path;
     } else {

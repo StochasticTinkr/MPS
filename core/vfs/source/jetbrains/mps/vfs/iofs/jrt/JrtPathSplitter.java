@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.basefs;
+package jetbrains.mps.vfs.iofs.jrt;
 
 import jetbrains.mps.vfs.IFileSystem;
-import jetbrains.mps.vfs.iofs.JrtIoFileSystem;
+import jetbrains.mps.vfs.iofs.jrt.JrtIoFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

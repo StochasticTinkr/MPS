@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.basefs;
+package jetbrains.mps.vfs.iofs.jrt;
 
 import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -22,8 +22,9 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
-import jetbrains.mps.vfs.iofs.JrtIoFileSystem;
 import jetbrains.mps.vfs.util.PathAssert;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Internal;
@@ -31,20 +32,28 @@ import org.jetbrains.mps.annotations.Internal;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URI;
 import java.net.URL;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class JrtFile implements IFile {
+public class JrtIoFile implements IFile {
+  private static final Logger LOG = LogManager.getLogger(JrtIoFile.class);
+
   //todo: not yet supported to be different from startup JDK, however, introducing support is a simple task since we have it here already
   private final String myJdkPath;
   private final String myModule;
   private final String myPathInModule;
-  private final JrtFileSystemBase myFS;
+  private final JrtIoFileSystem myFS;
 
   //must be used only by filesystems
   @Internal
-  public JrtFile(
-      @NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK, @NotNull JrtFileSystemBase fs) {
+  public JrtIoFile(
+      @NotNull String jdkPath, @Nullable String module, @Nullable String pathInJDK, @NotNull JrtIoFileSystem fs) {
     myJdkPath = jdkPath;
     myModule = module;
     myPathInModule = pathInJDK;
@@ -201,32 +210,59 @@ public class JrtFile implements IFile {
 
   @Override
   public boolean isDirectory() {
-    return myFS.isDirectory(this);
+    return Files.isDirectory(getRealFile(this));
   }
 
   @Nullable
   @Override
   public List<IFile> getChildren() {
-    return myFS.getChildren(this);
+    if (!isDirectory()) {
+      return Collections.emptyList();
+    }
+
+    try {
+      ArrayList<IFile> result = new ArrayList<>();
+      Files.newDirectoryStream(getRealFile(this))
+           .forEach(it -> result.add(getDescendant(it.getFileName().toString())));
+      return result;
+    } catch (IOException e) {
+      LOG.error(e);
+      return Collections.emptyList();
+    }
   }
 
   @Override
   public long lastModified() {
-    return myFS.lastModified(this);
+    try {
+      return Files.getLastModifiedTime(getRealFile(this)).toMillis();
+    } catch (IOException e) {
+      LOG.error(e);
+      return 0;
+    }
   }
 
   @Override
   public long length() {
-    return myFS.length(this);
+    try {
+      return Files.size(getRealFile(this));
+    } catch (IOException e) {
+      LOG.error(e);
+      return 0;
+    }
   }
 
   @Override
   public boolean exists() {
-    return myFS.exists(this);
+    return Files.exists(getRealFile(this));
   }
 
   @Override
   public InputStream openInputStream() throws IOException {
-    return myFS.openInputStream(this);
+    return Files.newInputStream(getRealFile(this));
+  }
+
+  private Path getRealFile(JrtIoFile file) {
+    java.nio.file.FileSystem jrtfs = FileSystems.getFileSystem(URI.create("jrt:/"));
+    return jrtfs.getPath("modules", file.getPathInJDK().split(IFileSystem.SEPARATOR));
   }
 }

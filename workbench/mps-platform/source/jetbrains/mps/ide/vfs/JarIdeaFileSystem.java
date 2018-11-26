@@ -16,43 +16,17 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.vfs.JarFileSystem;
-import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.vfs.VFSManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class JarIdeaFileSystem extends BaseIdeaFileSystem implements ApplicationComponent {
   public JarIdeaFileSystem(FileSystemListenersContainer listenerContainer) {
     super(listenerContainer);
   }
-
-  @Nullable
-  @Override
-  VirtualFileSystem getUnderlyingFS() {
-    return JarFileSystem.getInstance();
-  }
-
   @NotNull
   @Override
   String getProtocol() {
     return VFSManager.JAR_FS;
-  }
-
-  @Override
-  public void initComponent() {
-    VFSManager.getInstance().registerFS(VFSManager.JAR_FS, this);
-  }
-
-  @Override
-  public void disposeComponent() {
-    VFSManager.getInstance().unregisterFS(VFSManager.JAR_FS, this);
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return JrtIdeaFileSystem.class.getSimpleName();
   }
 }

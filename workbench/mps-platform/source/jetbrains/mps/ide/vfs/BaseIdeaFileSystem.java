@@ -17,15 +17,18 @@ package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.util.io.StreamUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
+import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.refresh.CachingContext;
 import jetbrains.mps.vfs.refresh.CachingFile;
 import jetbrains.mps.vfs.refresh.CachingFileSystem;
@@ -47,7 +50,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public abstract class BaseIdeaFileSystem implements IFileSystem, CachingFileSystem {
+public abstract class BaseIdeaFileSystem implements IFileSystem, CachingFileSystem, ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(IdeaFileSystem.class);
 
   private FileSystemListenersContainer myListenersContainer;
@@ -133,8 +136,27 @@ public abstract class BaseIdeaFileSystem implements IFileSystem, CachingFileSyst
     RefreshQueue.getInstance().refresh(!context.isSynchronous(), context.isRecursive(), null, virtualFiles);
   }
 
+  @Override
+  public void initComponent() {
+    VFSManager.getInstance().registerFS(getProtocol(), this);
+  }
+
+  @Override
+  public void disposeComponent() {
+    VFSManager.getInstance().unregisterFS(getProtocol(), this);
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return this.getClass().getSimpleName();
+  }
+
   @Nullable
-  /*package*/ abstract VirtualFileSystem getUnderlyingFS();
+  VirtualFileSystem getUnderlyingFS() {
+    return VirtualFileManager.getInstance().getFileSystem(getProtocol());
+  }
+
   @NotNull
   /*package*/ abstract String getProtocol();
 }
