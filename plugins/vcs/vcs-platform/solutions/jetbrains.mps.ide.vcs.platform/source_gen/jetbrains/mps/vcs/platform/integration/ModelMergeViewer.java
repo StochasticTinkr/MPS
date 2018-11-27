@@ -24,13 +24,9 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.vcs.util.MergeConstants;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -89,7 +85,6 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
       if (baseModel != null && mineModel != null && newModel != null) {
         final ModelMergeViewer viewer = new ModelMergeViewer(context, textRequest, baseModel, mineModel, newModel);
 
-        final MPSProject mpsProject = ProjectHelper.fromIdeaProject(context.getProject());
         ISaveMergedModel saver = new ISaveMergedModel() {
           public boolean save(MergeModelsPanel parent, final SModel resultModel) {
             ApplicationManager.getApplication().assertIsDispatchThread();
@@ -98,15 +93,7 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
             final Wrappers._T<String> resultContent = new Wrappers._T<String>(null);
 
             try {
-              // FIXME the only reason we need model read here is that we need to discover stub concept id during serializations. 
-              //       There are few possible ways to address it: (1) don't serialize stub concept id at all (merged model might be re-saved later to write them down) 
-              //       (2) use StufferMetaInfoProvider based on base/loaded/new model meta info (and return null for unknown concept id) 
-              //       (3) finally get concept declaration fixed to avoid need to look into structure SModel completely. 
-              resultContent.value = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<String>() {
-                public String compute() {
-                  return ModelMergeViewer.saveModel(resultModel, file, ext);
-                }
-              });
+              resultContent.value = ModelMergeViewer.saveModel(resultModel, file, ext);
             } catch (Throwable error) {
               // this can be when saving in 9 persistence after merge with 8 persistence => trying to save in 8th 
               if (baseModel instanceof PersistenceVersionAware && resultModel instanceof PersistenceVersionAware && ((PersistenceVersionAware) baseModel).getPersistenceVersion() == 8 && ((PersistenceVersionAware) resultModel).getPersistenceVersion() == 9) {
