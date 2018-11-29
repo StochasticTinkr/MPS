@@ -286,6 +286,7 @@ public class NewModelDialog extends DialogWrapper {
           return null;
         }
         final EditableSModel rv = ((EditableSModel) result);
+        rv.setChanged(true);
         if (myClone == null) {
           return rv;
         }
@@ -303,7 +304,6 @@ public class NewModelDialog extends DialogWrapper {
           ((GeneratableSModel) result).setDoNotGenerate(((GeneratableSModel) myClone).isDoNotGenerate());
           ((GeneratableSModel) result).setGenerateIntoModelFolder(((GeneratableSModel) myClone).isGenerateIntoModelFolder());
         }
-        rv.setChanged(true);
         rv.save();
         return rv;
       }
