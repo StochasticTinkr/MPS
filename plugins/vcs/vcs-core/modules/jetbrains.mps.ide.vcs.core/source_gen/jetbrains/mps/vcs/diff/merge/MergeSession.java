@@ -149,11 +149,8 @@ public final class MergeSession {
     return myMetadataChanges;
   }
   public Iterable<ModelChange> getConflictedWith(ModelChange change) {
-    return ListSequence.fromList(MapSequence.fromMap(myConflictingChanges).get(change)).where(new IWhereFilter<ModelChange>() {
-      public boolean accept(ModelChange other) {
-        return !(SetSequence.fromSet(myResolvedChanges).contains(other));
-      }
-    });
+    // even after conlict resolving we still consider the change conflicted, so it should be applied manually 
+    return MapSequence.fromMap(myConflictingChanges).get(change);
   }
   public boolean isChangeResolved(ModelChange change) {
     return SetSequence.fromSet(myResolvedChanges).contains(change);
@@ -206,26 +203,35 @@ public final class MergeSession {
         }
       }
     }
+    List<ModelChange> conflictedChanges = Sequence.fromIterable(getConflictedWith(change)).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return !((SetSequence.fromSet(myResolvedChanges).contains(ch)));
+      }
+    }).toListSequence();
     if (change instanceof NodeGroupChange && ((NodeGroupChange) change).getRoleLink().isMultiple()) {
       // adjust conflicting changes: leave possibility to reject or insert them separately 
       final NodeGroupChange ngc = (NodeGroupChange) change;
-      List<NodeGroupChange> conflictedChanges = Sequence.fromIterable(getConflictedWith(ngc)).ofType(NodeGroupChange.class).where(new IWhereFilter<NodeGroupChange>() {
+      List<NodeGroupChange> ngcConflictedChanges = ListSequence.fromList(conflictedChanges).ofType(NodeGroupChange.class).where(new IWhereFilter<NodeGroupChange>() {
         public boolean accept(NodeGroupChange ch) {
           return ch.getParentNodeId().equals(ngc.getParentNodeId());
         }
       }).toListSequence();
       int anchorIndex = ngc.getEnd();
       ngc.apply(myResultModel, myNodeCopier);
-      for (NodeGroupChange ch : ListSequence.fromList(conflictedChanges)) {
+      for (NodeGroupChange ch : ListSequence.fromList(ngcConflictedChanges)) {
         // add new changes only for insertions, we need ChangeSetImpl to manually add one change there 
         // original conflicted changes will be resolved 
-        ChangeSetImpl changeSet = as_bow6nj_a0a2a5a4a13(ch.getChangeSet(), ChangeSetImpl.class);
+        ChangeSetImpl changeSet = as_bow6nj_a0a2a5a5a13(ch.getChangeSet(), ChangeSetImpl.class);
         assert changeSet != null;
         NodeGroupChange newChange = new NodeGroupChange(changeSet, ch.getParentNodeId(), ch.getRoleLink(), anchorIndex, anchorIndex, ch.getResultBegin(), ch.getResultEnd());
-        if (newChange.getBegin() < newChange.getEnd() || newChange.getResultBegin() < newChange.getResultEnd()) {
+        if (isNotEmptyChange(newChange)) {
           changeSet.add(newChange);
           ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(ch.getRootId())).addElement(newChange);
           ListSequence.fromList(MapSequence.fromMap(myNodeToChanges).get(ch.getParentNodeId())).addElement(newChange);
+          // hack: replace this change with the new insertion change 
+          // which is conflicted with the resolved change, so it will be red and will not autoapply 
+          MapSequence.fromMap(myConflictingChanges).put(newChange, ListSequence.fromList(new ArrayList<ModelChange>()));
+          ListSequence.fromList(MapSequence.fromMap(myConflictingChanges).get(newChange)).addElement(change);
         }
 
       }
@@ -234,7 +240,10 @@ public final class MergeSession {
     }
     SetSequence.fromSet(myResolvedChanges).addElement(change);
     SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)));
-    excludeChangesNoRestoreIds(getConflictedWith(change));
+    excludeChangesNoRestoreIds(conflictedChanges);
+  }
+  private boolean isNotEmptyChange(NodeGroupChange change) {
+    return change.getBegin() < change.getEnd() || change.getResultBegin() < change.getResultEnd();
   }
   private void excludeChange(ModelChange change) {
     if (SetSequence.fromSet(myResolvedChanges).contains(change)) {
@@ -287,7 +296,7 @@ public final class MergeSession {
     myChangesInvalidateHandler = changesInvalidateHandler;
   }
   private void invalidateChanges() {
-    check_bow6nj_a0a54(myChangesInvalidateHandler);
+    check_bow6nj_a0a64(myChangesInvalidateHandler);
   }
   private void resolveChanges(Iterable<? extends ModelChange> changes) {
     SetSequence.fromSet(myResolvedChanges).addSequence(Sequence.fromIterable(changes));
@@ -352,13 +361,13 @@ public final class MergeSession {
       invalidateDeletedRoot(event);
     }
   }
-  private static void check_bow6nj_a0a54(MergeSession.ChangesInvalidateHandler checkedDotOperand) {
+  private static void check_bow6nj_a0a64(MergeSession.ChangesInvalidateHandler checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.someChangesInvalidated();
     }
 
   }
-  private static <T> T as_bow6nj_a0a2a5a4a13(Object o, Class<T> type) {
+  private static <T> T as_bow6nj_a0a2a5a5a13(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
