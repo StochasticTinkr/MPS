@@ -356,5 +356,10 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="367vPD06d7p">
+    <property role="3GE5qa" value="substitute" />
+    <ref role="1M2myG" to="68nn:367vPD06cFP" resolve="SubstTestAbstractChild_WithDefaultConcreteConcept" />
+    <ref role="1MND4H" to="68nn:367vPD06d6u" resolve="SubstTestChild_DefaultConcreteConcept" />
+  </node>
 </model>
 

@@ -287,6 +287,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="6szUVE$BFX5">
+    <property role="3GE5qa" value="smartReference" />
     <ref role="1M2myG" to="wdez:6szUVE$$bRA" resolve="TestSubstituteSmartRef_WithoutExplicitMenu" />
     <node concept="1N5Pfh" id="6szUVE$BFXa" role="1Mr941">
       <ref role="1N5Vy1" to="wdez:6szUVE$$bRB" resolve="childToReference" />
@@ -356,6 +357,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="6szUVE$BIZt">
+    <property role="3GE5qa" value="smartReference" />
     <ref role="1M2myG" to="wdez:6szUVE$AZx7" resolve="TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept" />
     <node concept="1N5Pfh" id="6szUVE$BJ7t" role="1Mr941">
       <ref role="1N5Vy1" to="wdez:6szUVE$AZx8" resolve="childToReferenceSpecial" />

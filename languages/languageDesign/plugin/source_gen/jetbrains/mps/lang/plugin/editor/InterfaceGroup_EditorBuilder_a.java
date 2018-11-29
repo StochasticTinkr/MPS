@@ -41,7 +41,7 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /*package*/ class InterfaceGroup_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -216,8 +216,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       return editorCell;
     }
 
-    protected SNode createNodeToInsert() {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f756bc5L, "jetbrains.mps.lang.plugin.structure.ElementListContents"), null, getNode(), getNode().getModel());
+    protected SAbstractConcept getTargetConcept() {
+      return MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f756bc5L, "jetbrains.mps.lang.plugin.structure.ElementListContents");
     }
 
 

@@ -1815,6 +1815,84 @@
       <unit id="2972757353568126156" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Uncomment_NodeByDelete_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/3568961255313870695">
+    <file name="Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Empty_Test.java">
+      <node id="3568961255313870695" at="18,74,19,25" concept="8" />
+      <node id="3568961255313870695" at="23,96,24,98" concept="1" />
+      <node id="3568961255313870695" at="29,52,30,19" concept="8" />
+      <node id="3568961255313870695" at="34,51,35,72" concept="1" />
+      <node id="3568961255313870702" at="35,72,36,69" concept="1" />
+      <node id="3568961255313870695" at="15,0,17,0" concept="7" trace="ourParamCache" />
+      <node id="3568961255313870695" at="18,0,21,0" concept="0" trace="Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Empty_Test#()V" />
+      <node id="3568961255313870695" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="3568961255313870695" at="22,0,26,0" concept="3" trace="test_Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Empty#()V" />
+      <node id="3568961255313870695" at="33,0,38,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="3568961255313870695" at="18,74,19,25" />
+      <scope id="3568961255313870695" at="23,96,24,98" />
+      <scope id="3568961255313870695" at="29,52,30,19" />
+      <scope id="3568961255313870695" at="34,51,36,69" />
+      <scope id="3568961255313870695" at="18,0,21,0" />
+      <scope id="3568961255313870695" at="29,0,32,0">
+        <var name="owner" id="3568961255313870695" />
+      </scope>
+      <scope id="3568961255313870695" at="22,0,26,0" />
+      <scope id="3568961255313870695" at="33,0,38,0" />
+      <unit id="3568961255313870695" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Empty_Test$TestBody" />
+      <unit id="3568961255313870695" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Empty_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/3568961255313871182">
+    <file name="Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Existing_Test.java">
+      <node id="3568961255313871182" at="18,77,19,25" concept="8" />
+      <node id="3568961255313871182" at="23,99,24,101" concept="1" />
+      <node id="3568961255313871182" at="29,52,30,19" concept="8" />
+      <node id="3568961255313871182" at="34,51,35,72" concept="1" />
+      <node id="3568961255313871189" at="35,72,36,69" concept="1" />
+      <node id="3568961255313871182" at="15,0,17,0" concept="7" trace="ourParamCache" />
+      <node id="3568961255313871182" at="18,0,21,0" concept="0" trace="Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Existing_Test#()V" />
+      <node id="3568961255313871182" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="3568961255313871182" at="22,0,26,0" concept="3" trace="test_Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Existing#()V" />
+      <node id="3568961255313871182" at="33,0,38,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="3568961255313871182" at="18,77,19,25" />
+      <scope id="3568961255313871182" at="23,99,24,101" />
+      <scope id="3568961255313871182" at="29,52,30,19" />
+      <scope id="3568961255313871182" at="34,51,36,69" />
+      <scope id="3568961255313871182" at="18,0,21,0" />
+      <scope id="3568961255313871182" at="29,0,32,0">
+        <var name="owner" id="3568961255313871182" />
+      </scope>
+      <scope id="3568961255313871182" at="22,0,26,0" />
+      <scope id="3568961255313871182" at="33,0,38,0" />
+      <unit id="3568961255313871182" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Existing_Test$TestBody" />
+      <unit id="3568961255313871182" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Existing_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/3568961255314025241">
+    <file name="Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByEnter_Test.java">
+      <node id="3568961255314025241" at="18,78,19,25" concept="8" />
+      <node id="3568961255314025241" at="23,100,24,102" concept="1" />
+      <node id="3568961255314025241" at="29,52,30,19" concept="8" />
+      <node id="3568961255314025241" at="34,51,35,70" concept="1" />
+      <node id="3568961255314025248" at="35,70,36,69" concept="1" />
+      <node id="3568961255314025241" at="15,0,17,0" concept="7" trace="ourParamCache" />
+      <node id="3568961255314025241" at="18,0,21,0" concept="0" trace="Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByEnter_Test#()V" />
+      <node id="3568961255314025241" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="3568961255314025241" at="22,0,26,0" concept="3" trace="test_Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByEnter#()V" />
+      <node id="3568961255314025241" at="33,0,38,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="3568961255314025241" at="18,78,19,25" />
+      <scope id="3568961255314025241" at="23,100,24,102" />
+      <scope id="3568961255314025241" at="29,52,30,19" />
+      <scope id="3568961255314025241" at="34,51,36,69" />
+      <scope id="3568961255314025241" at="18,0,21,0" />
+      <scope id="3568961255314025241" at="29,0,32,0">
+        <var name="owner" id="3568961255314025241" />
+      </scope>
+      <scope id="3568961255314025241" at="22,0,26,0" />
+      <scope id="3568961255314025241" at="33,0,38,0" />
+      <unit id="3568961255314025241" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByEnter_Test$TestBody" />
+      <unit id="3568961255314025241" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByEnter_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/3597260497452978121">
     <file name="Comment_InsertBeforeComment_Test.java">
       <node id="3597260497452978121" at="18,45,19,25" concept="8" />
@@ -4059,6 +4137,192 @@
       <unit id="8820932044744413292" at="37,44,42,7" name="jetbrains.mps.lang.editor.actions.test.DelUsualValidReference_Test$TestBody$1" />
       <unit id="8820932044744413282" at="28,0,45,0" name="jetbrains.mps.lang.editor.actions.test.DelUsualValidReference_Test$TestBody" />
       <unit id="8820932044744413282" at="14,0,46,0" name="jetbrains.mps.lang.editor.actions.test.DelUsualValidReference_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/893030362424991019">
+    <file name="Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Empty_Test.java">
+      <node id="893030362424991019" at="18,83,19,25" concept="8" />
+      <node id="893030362424991019" at="23,105,24,107" concept="1" />
+      <node id="893030362424991019" at="29,52,30,19" concept="8" />
+      <node id="893030362424991019" at="34,51,35,70" concept="1" />
+      <node id="893030362424991026" at="35,70,36,69" concept="1" />
+      <node id="893030362424991019" at="15,0,17,0" concept="7" trace="ourParamCache" />
+      <node id="893030362424991019" at="18,0,21,0" concept="0" trace="Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Empty_Test#()V" />
+      <node id="893030362424991019" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="893030362424991019" at="22,0,26,0" concept="3" trace="test_Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Empty#()V" />
+      <node id="893030362424991019" at="33,0,38,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="893030362424991019" at="18,83,19,25" />
+      <scope id="893030362424991019" at="23,105,24,107" />
+      <scope id="893030362424991019" at="29,52,30,19" />
+      <scope id="893030362424991019" at="34,51,36,69" />
+      <scope id="893030362424991019" at="18,0,21,0" />
+      <scope id="893030362424991019" at="29,0,32,0">
+        <var name="owner" id="893030362424991019" />
+      </scope>
+      <scope id="893030362424991019" at="22,0,26,0" />
+      <scope id="893030362424991019" at="33,0,38,0" />
+      <unit id="893030362424991019" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Empty_Test$TestBody" />
+      <unit id="893030362424991019" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Empty_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/893030362424991039">
+    <file name="Subst_SingleChildDefaultConcrete_AddNewChildByEnter_Test.java">
+      <node id="893030362424991039" at="18,69,19,25" concept="8" />
+      <node id="893030362424991039" at="23,91,24,93" concept="1" />
+      <node id="893030362424991039" at="29,52,30,19" concept="8" />
+      <node id="893030362424991039" at="34,51,35,70" concept="1" />
+      <node id="893030362424991046" at="35,70,36,69" concept="1" />
+      <node id="893030362424991039" at="15,0,17,0" concept="7" trace="ourParamCache" />
+      <node id="893030362424991039" at="18,0,21,0" concept="0" trace="Subst_SingleChildDefaultConcrete_AddNewChildByEnter_Test#()V" />
+      <node id="893030362424991039" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="893030362424991039" at="22,0,26,0" concept="3" trace="test_Subst_SingleChildDefaultConcrete_AddNewChildByEnter#()V" />
+      <node id="893030362424991039" at="33,0,38,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="893030362424991039" at="18,69,19,25" />
+      <scope id="893030362424991039" at="23,91,24,93" />
+      <scope id="893030362424991039" at="29,52,30,19" />
+      <scope id="893030362424991039" at="34,51,36,69" />
+      <scope id="893030362424991039" at="18,0,21,0" />
+      <scope id="893030362424991039" at="29,0,32,0">
+        <var name="owner" id="893030362424991039" />
+      </scope>
+      <scope id="893030362424991039" at="22,0,26,0" />
+      <scope id="893030362424991039" at="33,0,38,0" />
+      <unit id="893030362424991039" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChildDefaultConcrete_AddNewChildByEnter_Test$TestBody" />
+      <unit id="893030362424991039" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChildDefaultConcrete_AddNewChildByEnter_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/893030362424991528">
+    <file name="Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Existing_Test.java">
+      <node id="893030362424991528" at="18,86,19,25" concept="8" />
+      <node id="893030362424991528" at="23,108,24,110" concept="1" />
+      <node id="893030362424991528" at="29,52,30,19" concept="8" />
+      <node id="893030362424991528" at="34,51,35,70" concept="1" />
+      <node id="893030362424991530" at="35,70,36,69" concept="1" />
+      <node id="893030362424991528" at="15,0,17,0" concept="7" trace="ourParamCache" />
+      <node id="893030362424991528" at="18,0,21,0" concept="0" trace="Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Existing_Test#()V" />
+      <node id="893030362424991528" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="893030362424991528" at="22,0,26,0" concept="3" trace="test_Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Existing#()V" />
+      <node id="893030362424991528" at="33,0,38,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="893030362424991528" at="18,86,19,25" />
+      <scope id="893030362424991528" at="23,108,24,110" />
+      <scope id="893030362424991528" at="29,52,30,19" />
+      <scope id="893030362424991528" at="34,51,36,69" />
+      <scope id="893030362424991528" at="18,0,21,0" />
+      <scope id="893030362424991528" at="29,0,32,0">
+        <var name="owner" id="893030362424991528" />
+      </scope>
+      <scope id="893030362424991528" at="22,0,26,0" />
+      <scope id="893030362424991528" at="33,0,38,0" />
+      <unit id="893030362424991528" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Existing_Test$TestBody" />
+      <unit id="893030362424991528" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Existing_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/893030362424992049">
+    <file name="Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByCompl_Empty_Test.java">
+      <node id="893030362424992049" at="20,83,21,25" concept="8" />
+      <node id="893030362424992049" at="25,105,26,107" concept="1" />
+      <node id="893030362424992049" at="31,52,32,19" concept="8" />
+      <node id="893030362424992049" at="36,51,37,70" concept="1" />
+      <node id="893030362424992051" at="37,70,38,71" concept="1" />
+      <node id="893030362424992680" at="38,71,39,82" concept="1" />
+      <node id="893030362424992049" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="893030362424992049" at="20,0,23,0" concept="0" trace="Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByCompl_Empty_Test#()V" />
+      <node id="893030362424992049" at="31,0,34,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="893030362424992049" at="24,0,28,0" concept="3" trace="test_Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByCompl_Empty#()V" />
+      <node id="893030362424992049" at="35,0,41,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="893030362424992049" at="20,83,21,25" />
+      <scope id="893030362424992049" at="25,105,26,107" />
+      <scope id="893030362424992049" at="31,52,32,19" />
+      <scope id="893030362424992049" at="20,0,23,0" />
+      <scope id="893030362424992049" at="31,0,34,0">
+        <var name="owner" id="893030362424992049" />
+      </scope>
+      <scope id="893030362424992049" at="36,51,39,82" />
+      <scope id="893030362424992049" at="24,0,28,0" />
+      <scope id="893030362424992049" at="35,0,41,0" />
+      <unit id="893030362424992049" at="29,0,42,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByCompl_Empty_Test$TestBody" />
+      <unit id="893030362424992049" at="15,0,43,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByCompl_Empty_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/893030362424992705">
+    <file name="Subst_MultiChildDefaultConcrete_AddNewChildByCompl_Empty_Test.java">
+      <node id="893030362424992705" at="20,74,21,25" concept="8" />
+      <node id="893030362424992705" at="25,96,26,98" concept="1" />
+      <node id="893030362424992705" at="31,52,32,19" concept="8" />
+      <node id="893030362424992705" at="36,51,37,70" concept="1" />
+      <node id="893030362424992712" at="37,70,38,71" concept="1" />
+      <node id="893030362424992776" at="38,71,39,82" concept="1" />
+      <node id="893030362424992705" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="893030362424992705" at="20,0,23,0" concept="0" trace="Subst_MultiChildDefaultConcrete_AddNewChildByCompl_Empty_Test#()V" />
+      <node id="893030362424992705" at="31,0,34,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="893030362424992705" at="24,0,28,0" concept="3" trace="test_Subst_MultiChildDefaultConcrete_AddNewChildByCompl_Empty#()V" />
+      <node id="893030362424992705" at="35,0,41,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="893030362424992705" at="20,74,21,25" />
+      <scope id="893030362424992705" at="25,96,26,98" />
+      <scope id="893030362424992705" at="31,52,32,19" />
+      <scope id="893030362424992705" at="20,0,23,0" />
+      <scope id="893030362424992705" at="31,0,34,0">
+        <var name="owner" id="893030362424992705" />
+      </scope>
+      <scope id="893030362424992705" at="36,51,39,82" />
+      <scope id="893030362424992705" at="24,0,28,0" />
+      <scope id="893030362424992705" at="35,0,41,0" />
+      <unit id="893030362424992705" at="29,0,42,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcrete_AddNewChildByCompl_Empty_Test$TestBody" />
+      <unit id="893030362424992705" at="15,0,43,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildDefaultConcrete_AddNewChildByCompl_Empty_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/893030362424992801">
+    <file name="Subst_SingleChildDefaultConcrete_AddNewChildByCompl_Test.java">
+      <node id="893030362424992801" at="20,69,21,25" concept="8" />
+      <node id="893030362424992801" at="25,91,26,93" concept="1" />
+      <node id="893030362424992801" at="31,52,32,19" concept="8" />
+      <node id="893030362424992801" at="36,51,37,70" concept="1" />
+      <node id="893030362424992808" at="37,70,38,71" concept="1" />
+      <node id="893030362424993408" at="38,71,39,82" concept="1" />
+      <node id="893030362424992801" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="893030362424992801" at="20,0,23,0" concept="0" trace="Subst_SingleChildDefaultConcrete_AddNewChildByCompl_Test#()V" />
+      <node id="893030362424992801" at="31,0,34,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="893030362424992801" at="24,0,28,0" concept="3" trace="test_Subst_SingleChildDefaultConcrete_AddNewChildByCompl#()V" />
+      <node id="893030362424992801" at="35,0,41,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="893030362424992801" at="20,69,21,25" />
+      <scope id="893030362424992801" at="25,91,26,93" />
+      <scope id="893030362424992801" at="31,52,32,19" />
+      <scope id="893030362424992801" at="20,0,23,0" />
+      <scope id="893030362424992801" at="31,0,34,0">
+        <var name="owner" id="893030362424992801" />
+      </scope>
+      <scope id="893030362424992801" at="36,51,39,82" />
+      <scope id="893030362424992801" at="24,0,28,0" />
+      <scope id="893030362424992801" at="35,0,41,0" />
+      <unit id="893030362424992801" at="29,0,42,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChildDefaultConcrete_AddNewChildByCompl_Test$TestBody" />
+      <unit id="893030362424992801" at="15,0,43,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChildDefaultConcrete_AddNewChildByCompl_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/893030362424993465">
+    <file name="Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByCompl_Test.java">
+      <node id="893030362424993465" at="20,78,21,25" concept="8" />
+      <node id="893030362424993465" at="25,100,26,102" concept="1" />
+      <node id="893030362424993465" at="31,52,32,19" concept="8" />
+      <node id="893030362424993465" at="36,51,37,70" concept="1" />
+      <node id="893030362424993467" at="37,70,38,71" concept="1" />
+      <node id="893030362424994076" at="38,71,39,82" concept="1" />
+      <node id="893030362424993465" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="893030362424993465" at="20,0,23,0" concept="0" trace="Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByCompl_Test#()V" />
+      <node id="893030362424993465" at="31,0,34,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="893030362424993465" at="24,0,28,0" concept="3" trace="test_Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByCompl#()V" />
+      <node id="893030362424993465" at="35,0,41,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="893030362424993465" at="20,78,21,25" />
+      <scope id="893030362424993465" at="25,100,26,102" />
+      <scope id="893030362424993465" at="31,52,32,19" />
+      <scope id="893030362424993465" at="20,0,23,0" />
+      <scope id="893030362424993465" at="31,0,34,0">
+        <var name="owner" id="893030362424993465" />
+      </scope>
+      <scope id="893030362424993465" at="36,51,39,82" />
+      <scope id="893030362424993465" at="24,0,28,0" />
+      <scope id="893030362424993465" at="35,0,41,0" />
+      <unit id="893030362424993465" at="29,0,42,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByCompl_Test$TestBody" />
+      <unit id="893030362424993465" at="15,0,43,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByCompl_Test" />
     </file>
   </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/9133079350911890332">

@@ -43,7 +43,6 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
@@ -306,9 +305,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       public SAbstractConcept getChildSConcept() {
         return MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration");
       }
-      public SNode createNodeToInsert(EditorContext editorContext) {
-        return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"), null, getNode(), getNode().getModel());
-      }
+
       public EditorCell createNodeCell(SNode elementNode) {
         EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
         installElementCellActions(elementNode, elementCell, false);

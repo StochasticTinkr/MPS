@@ -154,6 +154,13 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="6szUVE$$bRA" resolve="TestSubstituteSmartRef_WithoutExplicitMenu" />
     </node>
+    <node concept="1TJgyj" id="7RnFTgqrIjd" role="1TKVEi">
+      <property role="IQ2ns" value="9067909425367278797" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="smartReferenceInterface" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7RnFTgqrHOr" resolve="TestSubstituteSmartRef_Interface" />
+    </node>
     <node concept="1TJgyj" id="7Nx4mSUsh9l" role="1TKVEi">
       <property role="IQ2ns" value="8998492695587525205" />
       <property role="20lmBu" value="aggregation" />
@@ -1048,6 +1055,7 @@
   <node concept="1TIwiD" id="6szUVE$$bRA">
     <property role="EcuMT" value="7432042996948844006" />
     <property role="TrG5h" value="TestSubstituteSmartRef_WithoutExplicitMenu" />
+    <property role="3GE5qa" value="smartReference" />
     <node concept="1TJgyj" id="6szUVE$$bRB" role="1TKVEi">
       <property role="IQ2ns" value="7432042996948844007" />
       <property role="20lmBu" value="reference" />
@@ -1064,6 +1072,7 @@
   <node concept="1TIwiD" id="6szUVE$AZx7">
     <property role="EcuMT" value="7432042996949579847" />
     <property role="TrG5h" value="TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept" />
+    <property role="3GE5qa" value="smartReference" />
     <ref role="1TJDcQ" node="6szUVE$$bRA" resolve="TestSubstituteSmartRef_WithoutExplicitMenu" />
     <node concept="1TJgyj" id="6szUVE$AZx8" role="1TKVEi">
       <property role="IQ2ns" value="7432042996949579848" />
@@ -1272,6 +1281,18 @@
       <node concept="tn0Fv" id="4hFz9ek_nfI" role="HhnKV">
         <property role="tnX3d" value="false" />
       </node>
+    </node>
+  </node>
+  <node concept="PlHQZ" id="7RnFTgqrHOr">
+    <property role="EcuMT" value="9067909425367276827" />
+    <property role="TrG5h" value="TestSubstituteSmartRef_Interface" />
+    <property role="3GE5qa" value="smartReference" />
+    <node concept="1TJgyj" id="7RnFTgqrHOu" role="1TKVEi">
+      <property role="IQ2ns" value="9067909425367276830" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="childToReference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
     </node>
   </node>
 </model>

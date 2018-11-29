@@ -154,6 +154,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     public SNode createNodeToInsert(EditorContext editorContext) {
       return nodeFactory();
     }
+
     public SNode nodeFactory() {
       return SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa545621L, "jetbrains.mps.samples.SwingBuilder.structure.EmptyComponent"), null);
     }

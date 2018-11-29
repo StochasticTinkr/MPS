@@ -34,7 +34,6 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
@@ -145,9 +144,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0xffafcf63cbe64e5cL, 0x9717541f01743ac7L, 0x55da9f701c64f39cL, "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeave");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xffafcf63cbe64e5cL, 0x9717541f01743ac7L, 0x55da9f701c64f39cL, "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeave"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);
@@ -222,9 +219,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0xffafcf63cbe64e5cL, 0x9717541f01743ac7L, 0x55da9f701c64f39aL, "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveEach");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xffafcf63cbe64e5cL, 0x9717541f01743ac7L, 0x55da9f701c64f39aL, "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveEach"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);
@@ -299,9 +294,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0xffafcf63cbe64e5cL, 0x9717541f01743ac7L, 0x55da9f701c681159L, "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveMany");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xffafcf63cbe64e5cL, 0x9717541f01743ac7L, 0x55da9f701c681159L, "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveMany"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);
@@ -376,9 +369,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0xffafcf63cbe64e5cL, 0x9717541f01743ac7L, 0x55da9f701c681163L, "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveEachMany");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xffafcf63cbe64e5cL, 0x9717541f01743ac7L, 0x55da9f701c681163L, "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveEachMany"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);

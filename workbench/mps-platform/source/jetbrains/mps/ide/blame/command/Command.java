@@ -66,6 +66,8 @@ public class Command {
   private static final String SUMMARY_PARAM_NAME = "summary";
   private static final String DESCRIPTION_PARAM_NAME = "description";
   private static final String TYPE_PARAM_NAME = "type";
+  // Disable notifications parameter can be removed after fix will be available in Youtrack
+  private static final String DISABLE_NOTIFICATIONS_PARAM_NAME = "disableNotifications";
   private static final String PERMITTED_GROUP_PARAM_NAME = "permittedGroup";
   private static final String MPS_GROUP_NAME = "mps-developers";
   private static final String COMMAND_PARAM_NAME = "command";
@@ -116,7 +118,7 @@ public class Command {
     int statusCode = postMethod.getStatusCode();
     String responseString = postMethod.getResponseBodyAsString();
     if (statusCode != 200 || !responseString.contains("ok")) {
-      return new Response("Can't login into issue tracker", responseString, false, null);
+      return new Response(String.format("Can't login into issue tracker:%n%s",postMethod.getStatusLine().toString()), responseString, false, null);
     } else {
       return new Response("Logged in correctly", responseString, true, null);
     }
@@ -141,6 +143,7 @@ public class Command {
     postMethod.addParameter(SUMMARY_PARAM_NAME, summary);
     postMethod.addParameter(DESCRIPTION_PARAM_NAME, description);
     postMethod.addParameter(TYPE_PARAM_NAME, EXCEPTION);
+    postMethod.addParameter(DISABLE_NOTIFICATIONS_PARAM_NAME, String.valueOf(false));
     if (hidden) {
       postMethod.addParameter(PERMITTED_GROUP_PARAM_NAME, MPS_GROUP_NAME);
     }
@@ -161,7 +164,7 @@ public class Command {
     if (statusCode == 200) {
       return new Response("Issue posted", responseString, true, null);
     } else {
-      return new Response("Can't post issue", responseString, false, null);
+      return new Response(postMethod.getStatusLine().toString(), responseString, false, null);
     }
   }
 
