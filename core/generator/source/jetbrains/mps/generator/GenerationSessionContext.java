@@ -20,14 +20,10 @@ import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.trace.TraceFacility;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -124,18 +120,6 @@ public class GenerationSessionContext {
   @NotNull
   public TransientModelsModule getModule() {
     return myTransientModule;
-  }
-
-  @ToRemove(version = 3.3)
-  public Project getProject() {
-    Logger.getLogger(getClass()).error("Please stop using GenerationSessionContext.getProject aka IOperationContext.getProject from within a generator");
-    // XXX still in use in mbeddr (through IOperationContext)
-    SRepository repository = myOriginalInputModel.getModule().getRepository();
-    if (!(repository instanceof ProjectRepository)) {
-      repository = myEnvironment.getRepository();
-    }
-    assert repository instanceof ProjectRepository;
-    return ((ProjectRepository) repository).getProject();
   }
 
   /**
