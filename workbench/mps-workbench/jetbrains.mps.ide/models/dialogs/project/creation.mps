@@ -2845,6 +2845,11 @@
                               </node>
                             </node>
                           </node>
+                          <node concept="3SKdUt" id="1UjpkjWoPDs" role="3cqZAp">
+                            <node concept="3SKdUq" id="1UjpkjWoPDu" role="3SKWNk">
+                              <property role="3SKdUp" value="newly created model is not marked as changed, won't get saved unless we tell it is." />
+                            </node>
+                          </node>
                           <node concept="3clFbF" id="1l1jHO6h5LM" role="3cqZAp">
                             <node concept="2OqwBi" id="1l1jHO6h5LN" role="3clFbG">
                               <node concept="liA8E" id="1l1jHO6h5LO" role="2OqNvi">
@@ -2866,6 +2871,41 @@
                               </node>
                             </node>
                             <node concept="3clFbS" id="1l1jHO6h5L8" role="3clFbx">
+                              <node concept="3SKdUt" id="1UjpkjWosd4" role="3cqZAp">
+                                <node concept="3SKdUq" id="1UjpkjWosd6" role="3SKWNk">
+                                  <property role="3SKdUp" value="due to threading issues and invokeLater processing, we have to do save here, in this platform write action" />
+                                </node>
+                              </node>
+                              <node concept="3SKdUt" id="1UjpkjWp15A" role="3cqZAp">
+                                <node concept="3SKdUq" id="1UjpkjWp15C" role="3SKWNk">
+                                  <property role="3SKdUp" value="so that dumb mode triggered from ProjectRootManagerComponent (wicked processing of a new model file created event)" />
+                                </node>
+                              </node>
+                              <node concept="3SKdUt" id="1UjpkjWp9Cy" role="3cqZAp">
+                                <node concept="3SKdUq" id="1UjpkjWp9C$" role="3SKWNk">
+                                  <property role="3SKdUp" value="has a chance to get queued in EDT (see DumbServiceImpl.queueTaskOnEdt, invokeLater call) prior to our invokeLater in doOkAction(), above." />
+                                </node>
+                              </node>
+                              <node concept="3SKdUt" id="1UjpkjWpjr2" role="3cqZAp">
+                                <node concept="3SKdUq" id="1UjpkjWpjr4" role="3SKWNk">
+                                  <property role="3SKdUp" value="DumbServiceImpl then clears dumb flag prior to model configurable dialog show up and eventually model imports popup has chances to get populated." />
+                                </node>
+                              </node>
+                              <node concept="3SKdUt" id="1UjpkjWpvVI" role="3cqZAp">
+                                <node concept="3SKdUq" id="1UjpkjWpvVK" role="3SKWNk">
+                                  <property role="3SKdUp" value="see https://youtrack.jetbrains.com/issue/MPS-28999" />
+                                </node>
+                              </node>
+                              <node concept="3clFbF" id="1UjpkjWo2re" role="3cqZAp">
+                                <node concept="2OqwBi" id="1UjpkjWo2rf" role="3clFbG">
+                                  <node concept="37vLTw" id="1UjpkjWo2rg" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="1_HPBc6N1d9" resolve="rv" />
+                                  </node>
+                                  <node concept="liA8E" id="1UjpkjWo2rh" role="2OqNvi">
+                                    <ref role="37wK5l" to="mhbf:~EditableSModel.save():void" resolve="save" />
+                                  </node>
+                                </node>
+                              </node>
                               <node concept="3cpWs6" id="1l1jHO6h5L9" role="3cqZAp">
                                 <node concept="37vLTw" id="1_HPBc6ODh2" role="3cqZAk">
                                   <ref role="3cqZAo" node="1_HPBc6N1d9" resolve="rv" />
