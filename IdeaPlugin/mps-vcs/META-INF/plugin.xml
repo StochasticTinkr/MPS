@@ -21,7 +21,7 @@
   <description>MPS Version Control support</description>
   <version>2018.3</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
-  <idea-version since-build="183.1" until-build="191.*"/>
+  <idea-version since-build="183.1" until-build="191.1"/>
   <depends>jetbrains.mps.core</depends>
 
   <depends optional="true">Subversion</depends>

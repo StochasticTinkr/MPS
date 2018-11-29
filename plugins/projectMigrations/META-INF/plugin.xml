@@ -9,7 +9,7 @@
   <description>Provides actions to migrate models and languages developed using previous versions of MPS</description>
   <version>2018.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="183.1" until-build="191.*"/>
+  <idea-version since-build="183.1" until-build="191.1"/>
 
   <depends>jetbrains.mps.ide.modelchecker</depends>
   <depends>jetbrains.mps.ide.java</depends>
