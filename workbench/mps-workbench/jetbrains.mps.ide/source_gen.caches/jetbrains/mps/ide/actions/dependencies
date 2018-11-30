@@ -2902,7 +2902,9 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.SetNodePackageDialog">
     <classNode dependClassName="com.intellij.openapi.ui.ComboBox" />
+    <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
     <classNode dependClassName="com.intellij.util.ui.JBUI" />
+    <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
