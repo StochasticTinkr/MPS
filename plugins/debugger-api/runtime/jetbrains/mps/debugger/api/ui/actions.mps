@@ -2052,7 +2052,7 @@
     <property role="9BnSM" value="JetBrains" />
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="Debugger API for MPS" />
-    <property role="9BnSO" value="183.1" />
+    <property role="9BnSO" value="191.1" />
     <property role="9BnSK" value="2019.1" />
   </node>
   <node concept="312cEu" id="24OxoGwTqg6">
