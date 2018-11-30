@@ -2958,7 +2958,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/6900020712833426154");
     b.version(2);
     b.aggregate("expr", 0x5fc1cc47cb462337L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("6900020712833426231").done();
-    b.alias("byRef");
+    b.alias("@byRef[");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPlaceholderMember() {
