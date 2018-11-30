@@ -2705,17 +2705,12 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3clFbH" id="5cA04k$KByc" role="3cqZAp" />
                   <node concept="3clFbJ" id="hR$4ySp" role="3cqZAp">
                     <node concept="3clFbS" id="hR$4ySq" role="3clFbx">
-                      <node concept="3cpWs8" id="hR$4BZG" role="3cqZAp">
-                        <node concept="3cpWsn" id="hR$4BZH" role="3cpWs9">
-                          <property role="TrG5h" value="modelDescriptor" />
-                          <node concept="3uibUv" id="hR$4BZI" role="1tU5fm">
-                            <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-                          </node>
-                          <node concept="37vLTw" id="3GM_nagTtSi" role="33vP2m">
-                            <ref role="3cqZAo" node="hR$4mIA" resolve="result" />
-                          </node>
+                      <node concept="3SKdUt" id="5cA04k$NQ7O" role="3cqZAp">
+                        <node concept="3SKdUq" id="5cA04k$NQ7Q" role="3SKWNk">
+                          <property role="3SKdUp" value="Model creation will lead to indexes update, dialog and navigation should be perfomed after that" />
                         </node>
                       </node>
                       <node concept="3clFbF" id="45TH7vNGzoG" role="3cqZAp">
@@ -2725,9 +2720,68 @@
                             <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
                           </node>
                           <node concept="liA8E" id="45TH7vNG$dv" role="2OqNvi">
-                            <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
+                            <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
                             <node concept="1bVj0M" id="45TH7vNG$iB" role="37wK5m">
                               <node concept="3clFbS" id="45TH7vNG$iC" role="1bW5cS">
+                                <node concept="3cpWs8" id="5cA04k$KHF2" role="3cqZAp">
+                                  <node concept="3cpWsn" id="5cA04k$KHF3" role="3cpWs9">
+                                    <property role="TrG5h" value="configurable" />
+                                    <node concept="3uibUv" id="18UX1JGc0o8" role="1tU5fm">
+                                      <ref role="3uigEE" to="gsnq:~MPSPropertiesConfigurable" resolve="MPSPropertiesConfigurable" />
+                                    </node>
+                                    <node concept="2ShNRf" id="5cA04k$KHF4" role="33vP2m">
+                                      <node concept="1pGfFk" id="5cA04k$KHF5" role="2ShVmc">
+                                        <ref role="37wK5l" to="gsnq:~ModelPropertiesConfigurable.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.project.Project)" resolve="ModelPropertiesConfigurable" />
+                                        <node concept="37vLTw" id="5cA04k$Lky_" role="37wK5m">
+                                          <ref role="3cqZAo" node="hR$4mIA" resolve="result" />
+                                        </node>
+                                        <node concept="2OqwBi" id="5cA04k$LmTM" role="37wK5m">
+                                          <node concept="2WthIp" id="5cA04k$LmTP" role="2Oq$k0" />
+                                          <node concept="1DTwFV" id="5cA04k$LmTR" role="2OqNvi">
+                                            <ref role="2WH_rO" node="4oi2Bf2rHMM" resolve="project" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="3cpWs8" id="5cA04k$KHF6" role="3cqZAp">
+                                  <node concept="3cpWsn" id="5cA04k$KHF7" role="3cpWs9">
+                                    <property role="TrG5h" value="configurableEditor" />
+                                    <property role="3TUv4t" value="true" />
+                                    <node concept="3uibUv" id="5cA04k$KHF8" role="1tU5fm">
+                                      <ref role="3uigEE" to="qxsb:~SingleConfigurableEditor" resolve="SingleConfigurableEditor" />
+                                    </node>
+                                    <node concept="2ShNRf" id="5cA04k$KHF9" role="33vP2m">
+                                      <node concept="1pGfFk" id="5cA04k$KHFa" role="2ShVmc">
+                                        <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.options.Configurable,java.lang.String)" resolve="SingleConfigurableEditor" />
+                                        <node concept="2OqwBi" id="5cA04k$LpjX" role="37wK5m">
+                                          <node concept="2WthIp" id="5cA04k$Lpk0" role="2Oq$k0" />
+                                          <node concept="1DTwFV" id="5cA04k$Lpk2" role="2OqNvi">
+                                            <ref role="2WH_rO" node="6oBe0ilSkc8" resolve="ideaProject" />
+                                          </node>
+                                        </node>
+                                        <node concept="37vLTw" id="5cA04k$KHFb" role="37wK5m">
+                                          <ref role="3cqZAo" node="5cA04k$KHF3" resolve="configurable" />
+                                        </node>
+                                        <node concept="Xl_RD" id="5cA04k$KHFc" role="37wK5m">
+                                          <property role="Xl_RC" value="#MPSPropertiesConfigurable" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="3clFbF" id="5cA04k$KTq3" role="3cqZAp">
+                                  <node concept="2OqwBi" id="5cA04k$KTq5" role="3clFbG">
+                                    <node concept="37vLTw" id="5cA04k$KTq6" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="5cA04k$KHF7" resolve="configurableEditor" />
+                                    </node>
+                                    <node concept="liA8E" id="5cA04k$KTq7" role="2OqNvi">
+                                      <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="3clFbH" id="5cA04k$KFxu" role="3cqZAp" />
                                 <node concept="3clFbF" id="hR$4BZK" role="3cqZAp">
                                   <node concept="2OqwBi" id="hR$4BZL" role="3clFbG">
                                     <node concept="2YIFZM" id="6oBe0ilSkc6" role="2Oq$k0">
@@ -2742,8 +2796,8 @@
                                     </node>
                                     <node concept="liA8E" id="hR$4BZS" role="2OqNvi">
                                       <ref role="37wK5l" to="rvbb:~ProjectPane.selectModel(org.jetbrains.mps.openapi.model.SModel,boolean):void" resolve="selectModel" />
-                                      <node concept="37vLTw" id="3GM_nagTzrq" role="37wK5m">
-                                        <ref role="3cqZAo" node="hR$4BZH" resolve="modelDescriptor" />
+                                      <node concept="37vLTw" id="5cA04k$NNLo" role="37wK5m">
+                                        <ref role="3cqZAo" node="hR$4mIA" resolve="result" />
                                       </node>
                                       <node concept="3clFbT" id="1j$2RGej9pH" role="37wK5m">
                                         <property role="3clFbU" value="false" />
@@ -2752,10 +2806,6 @@
                                   </node>
                                 </node>
                               </node>
-                            </node>
-                            <node concept="2YIFZM" id="1MQPhCewPEB" role="37wK5m">
-                              <ref role="37wK5l" to="bd8o:~ModalityState.defaultModalityState():com.intellij.openapi.application.ModalityState" resolve="defaultModalityState" />
-                              <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
                             </node>
                           </node>
                         </node>
