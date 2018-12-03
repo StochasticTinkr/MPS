@@ -17,7 +17,6 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -88,24 +87,6 @@ public class GeneratorDescriptor extends ModuleDescriptor {
 
   public void setGenerateTemplates(boolean generateTemplates) {
     myGenerateTemplates = generateTemplates;
-  }
-
-  /**
-   * @deprecated reflective queries are no longer supported
-   * @return always <code>false</code>
-   */
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  public boolean isReflectiveQueries() {
-    return false;
-  }
-
-  /**
-   * @deprecated reflective queries are no longer supported
-   */
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  public void setReflectiveQueries(boolean ignored) {
   }
 
   /**

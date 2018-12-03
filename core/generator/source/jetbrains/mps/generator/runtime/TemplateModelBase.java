@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
-import jetbrains.mps.util.annotation.ToRemove;
 
 /**
  * Base implementation of {@link jetbrains.mps.generator.runtime.TemplateModel} to use as superclass in generated code
@@ -33,17 +32,6 @@ public abstract class TemplateModelBase implements TemplateModel {
   @Override
   public TemplateModule getModule() {
     return myModule;
-  }
-
-  /**
-   * Just don't want to expose ReflectiveQueryProvider in generated code
-   * @deprecated with generated method names not using node id, ReflectiveQueryProvider doesn't function any more,
-   *             besides, MPS shall never ask compiled generators for their GeneratorQueryProvider with {@link TemplateModel#getQueryProvider()} anyway.
-   */
-  @Deprecated
-  @ToRemove(version = 2018.3)
-  protected GeneratorQueryProvider reflectiveProvider(Class<?> queriesGenerated) {
-    return null;
   }
 
   @Override

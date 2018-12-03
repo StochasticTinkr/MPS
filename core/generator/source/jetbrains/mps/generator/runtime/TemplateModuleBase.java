@@ -46,17 +46,6 @@ public abstract class TemplateModuleBase implements TemplateModule {
   }
 
   /**
-   * @deprecated shall use {@link #TemplateModuleBase(LanguageRegistry, LanguageRuntime)} instead
-   *             It's our generated code, once templates are fixed, this cons shall stay for another release for compatibility with generated code.
-   */
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  protected TemplateModuleBase(LanguageRegistry languageRegistry) {
-    myLanguageRegistry = languageRegistry;
-    mySourceLanguage = null;
-  }
-
-  /**
    * @param languageRegistry not {@code null} (unless your subclass overrides all the methods of this base class that need that registry).
    * @param sourceLanguage not {@code null}.
    */
