@@ -193,39 +193,6 @@ public abstract class ModelAccess extends AbstractModelAccess implements ModelCo
     return Boolean.TRUE == myReadEnabledFlag.get();
   }
 
-  /**
-   * Stores a thread-safe map with user objects.
-   * @return userObject for a specific key
-   * @deprecated clients rely on the fact that their cache value needs to be cleared only at the start of write action.
-   * This is wrong almost always inside the write action.
-   * Use {@link org.jetbrains.mps.openapi.repository.WriteActionListener} if necessary. Although listening to specific events is still more preferable.
-   * This mechanism was designed as a hack.
-   */
-  @SuppressWarnings("unchecked")
-  @Override
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey) {
-    checkReadAccess();
-//    NOTE: this change below made the caches invalid within write action
-//    if (canWrite()) {
-//      return null;
-//    }
-    LOG.error(String.format("getRepositoryStateCache(%s) is no op, please don't use", repositoryKey));
-    return new ConcurrentHashMap<>();
-  }
-
-  /**
-   * called at the start of write action
-   * @deprecated
-   * @see #getRepositoryStateCache(String)
-   */
-  @Deprecated
-  public void clearRepositoryStateCaches() {
-    LOG.error("clearRepositoryStateCaches() is no op, please don't use");
-  }
-
   private static class ReentrantReadWriteLockEx extends ReentrantReadWriteLock {
 
     public ReentrantReadWriteLockEx() {
