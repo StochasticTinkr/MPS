@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.util.Computable;
@@ -24,7 +23,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -49,7 +47,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  *
  * @see org.jetbrains.mps.openapi.module.ModelAccess
  */
-public abstract class ModelAccess extends AbstractModelAccess implements ModelCommandProjectExecutor, org.jetbrains.mps.openapi.module.ModelAccess {
+public abstract class ModelAccess extends AbstractModelAccess implements ModelCommandExecutor, org.jetbrains.mps.openapi.module.ModelAccess {
   protected static final Logger LOG = LogManager.getLogger(ModelAccess.class);
 
   protected static ModelAccess ourInstance = new DefaultModelAccess();
@@ -148,13 +146,6 @@ public abstract class ModelAccess extends AbstractModelAccess implements ModelCo
   public final boolean isInsideCommand() {
     // to cease along with ModelCommandExecutor
     return canWrite() && myCommandActionDispatcher.isInsideAction();
-  }
-
-  @Override
-  public final void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
-    // re-dispatch to proper MA implementation
-    // this is compatibility code for legacy templates generating code that uses ModelCommandProjectExecutor#runCommandInEDT
-    p.getModelAccess().executeCommandInEDT(r);
   }
 
   // ExecuteCommandStatement with repo == null generates into executeCommand(Runnable)

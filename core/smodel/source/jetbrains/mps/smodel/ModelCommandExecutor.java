@@ -26,6 +26,7 @@ import java.util.concurrent.ConcurrentMap;
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public interface ModelCommandExecutor {
+  // Despite most of the methods come from openapi.ModelAccess, can not remove them as long as there are uses of these methods in mbeddr.
 
   boolean canRead(); // == openapi.ModelAccess
 
