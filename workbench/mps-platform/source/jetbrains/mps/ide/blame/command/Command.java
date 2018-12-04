@@ -21,6 +21,7 @@ import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpMethod;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
@@ -69,7 +70,7 @@ public class Command {
   // Disable notifications parameter can be removed after fix will be available in Youtrack
   private static final String DISABLE_NOTIFICATIONS_PARAM_NAME = "disableNotifications";
   private static final String PERMITTED_GROUP_PARAM_NAME = "permittedGroup";
-  private static final String MPS_GROUP_NAME = "mps-developers";
+  private static final String MPS_GROUP_NAME = "MPS Team";
   private static final String COMMAND_PARAM_NAME = "command";
   private static final String COMMAND_ADD_PARAM_NAME = COMMAND_PARAM_NAME + " add";
   private static final String SUBSYSTEM_FIELD = "Subsystem";
@@ -107,7 +108,7 @@ public class Command {
    *
    * @param query with user credentials
    * @return server response if authentication with provided credentials succeeded
-   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   * @throws IOException can be thrown by {@link HttpClient#executeMethod(HttpMethod)}
    */
   public Response login(Query query) throws IOException {
     PostMethod postMethod = getPostMethod(YOUTRACK_BASE_URL + LOGIN);
@@ -134,7 +135,7 @@ public class Command {
    * @param hidden      determine if issue will be visible only to creator and mps-developers group
    * @param files       list of files to be attached to the issue
    * @return response with created issue id if response succeeded
-   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   * @throws IOException can be thrown by {@link HttpClient#executeMethod(HttpMethod)}
    */
   @NotNull
   public Response postIssue(String summary, String description, boolean hidden, File... files) throws IOException {
@@ -178,7 +179,7 @@ public class Command {
    * @param issueId   YouTrack issue with this id will be updated
    * @param subsystem subsystem of the bug
    * @return server response to update query
-   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   * @throws IOException can be thrown by {@link HttpClient#executeMethod(HttpMethod)}
    */
   @NotNull
   public Response setIssueSubsystem(@NotNull String issueId, @NotNull String subsystem) throws IOException {
@@ -195,7 +196,7 @@ public class Command {
    * @param issueId         YouTrack issue with this id will be updated
    * @param affectedVersion current MPS version containing bug
    * @return server response to update query
-   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   * @throws IOException can be thrown by {@link HttpClient#executeMethod(HttpMethod)}
    */
   @NotNull
   public Response setIssueAffectedVersion(@NotNull String issueId, @NotNull String affectedVersion) throws IOException {
@@ -217,7 +218,7 @@ public class Command {
    * @param field   of issue to change (as shown in web)
    * @param value   value which will be set to issue field
    * @return server response to update query
-   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   * @throws IOException can be thrown by {@link HttpClient#executeMethod(HttpMethod)}
    */
   public Response setIssueField(@NotNull String issueId, @NotNull String field, @NotNull String value) throws IOException {
     return modifyIssueField(issueId, COMMAND_PARAM_NAME, field, value);
@@ -237,7 +238,7 @@ public class Command {
    * @param field   of issue to update (as shown in web)
    * @param value   value which will added to field
    * @return server response to update query
-   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   * @throws IOException can be thrown by {@link HttpClient#executeMethod(HttpMethod)}
    */
   public Response updateIssueField(@NotNull String issueId, @NotNull String field, @NotNull String value) throws IOException {
     return modifyIssueField(issueId, COMMAND_ADD_PARAM_NAME, field, value);
@@ -267,7 +268,7 @@ public class Command {
    * To retrieve list, user must be part of mps-developers group
    *
    * @return server response for list of versions request
-   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   * @throws IOException can be thrown by {@link HttpClient#executeMethod(HttpMethod)}
    */
   @TestOnly
   @NotNull
