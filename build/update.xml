@@ -247,3 +247,6 @@
         <button name="Download" url="https://www.jetbrains.com/mps/download" download="true"/>
       </build>
     </channel>
+
+  </product>
+</products>
