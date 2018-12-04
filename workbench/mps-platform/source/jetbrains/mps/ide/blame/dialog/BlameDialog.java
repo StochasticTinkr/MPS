@@ -202,9 +202,9 @@ public class BlameDialog extends DialogWrapper {
 
     myPanel.add(myExceptionContainer, getConstraints(myPanel.getComponentCount()));
 
-    myHiddenCheckBox = new JBCheckBox("Visible only to MPS developers");
+    myHiddenCheckBox = new JBCheckBox("Visible only to MPS Team");
     myPanel.add(myHiddenCheckBox, getConstraints(myPanel.getComponentCount()));
-    myHiddenCheckBox.setToolTipText("Select this if you want this bug report will be visible only to you and MPS developers");
+    myHiddenCheckBox.setToolTipText("Select this if you want this bug report will be visible only to you and MPS Team");
 
     myCredentialsLabel = new HyperlinkLabel();
     myCredentialsLabel.addHyperlinkListener(e -> {
