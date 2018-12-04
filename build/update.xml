@@ -238,7 +238,7 @@
       </build>
     </channel>
 
-    <channel id="MPS183EAP" name="MPS 2018.3" status="release"
+    <channel id="MPS183" name="MPS 2018.3" status="release"
              url="https://www.jetbrains.com/mps/download"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2018" minorVersoin="3">
