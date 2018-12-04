@@ -351,16 +351,6 @@
             <property role="3SKdUp" value="fetch required plugins" />
           </node>
         </node>
-        <node concept="3SKdUt" id="3X9rC2XzJev" role="3cqZAp">
-          <node concept="3SKdUq" id="3X9rC2XzJew" role="3SKWNk">
-            <property role="3SKdUp" value="we may want to have an option about that?" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="3X9rC2XzJex" role="3cqZAp">
-          <node concept="3SKdUq" id="3X9rC2XzJey" role="3SKWNk">
-            <property role="3SKdUp" value="like load plugins: = all (default) | none | &lt;list of plugins&gt;" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="3qWAZKIrl6p" role="3cqZAp">
           <node concept="3cpWsn" id="3qWAZKIrl6q" role="3cpWs9">
             <property role="TrG5h" value="plugins" />

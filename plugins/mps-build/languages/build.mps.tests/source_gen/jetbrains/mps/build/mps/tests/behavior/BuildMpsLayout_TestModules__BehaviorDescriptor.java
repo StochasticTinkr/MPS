@@ -60,8 +60,6 @@ public final class BuildMpsLayout_TestModules__BehaviorDescriptor extends BaseBH
     TemplateQueryContext genContext = builder.getGenContext();
 
     // fetch required plugins 
-    // we may want to have an option about that? 
-    // like load plugins: = all (default) | none | <list of plugins> 
     ModulePlugins plugins = new ModulePlugins(project, genContext);
     List<SNode> additionalPlugins = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x5b81705cdfb31570L, "options")), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x5b81705cdfb314e0L, 0x5b81705cdf7bc31bL, "requiredPlugins"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
