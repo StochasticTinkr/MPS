@@ -59,6 +59,9 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="8329266386016608055" name="jetbrains.mps.lang.editor.structure.ApproveDelete_Operation" flags="ng" index="2xy62i">
+        <child id="8329266386016685951" name="editorContext" index="2xHN3q" />
+      </concept>
       <concept id="1160493135005" name="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues" flags="in" index="MLZmj" />
       <concept id="4151393920374910634" name="jetbrains.mps.lang.editor.structure.StyleKey" flags="ng" index="2NdhxG" />
       <concept id="4151393920374910722" name="jetbrains.mps.lang.editor.structure.StyleKeyPack" flags="ng" index="2NdhB4">
@@ -179,6 +182,7 @@
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
       <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
+        <property id="1082639509531" name="nullText" index="ilYzB" />
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" stub="730538219796134133" index="3F0A7n" />
@@ -198,6 +202,7 @@
       <concept id="1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" flags="sg" stub="3708815482283559694" index="1HlG4h">
         <child id="1225900141900" name="modelAccessor" index="1HlULh" />
       </concept>
+      <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
       <concept id="1088612959204" name="jetbrains.mps.lang.editor.structure.CellModel_Alternation" flags="sg" stub="8104358048506729361" index="1QoScp">
         <property id="1088613081987" name="vertical" index="1QpmdY" />
         <child id="1145918517974" name="alternationCondition" index="3e4ffs" />
@@ -262,12 +267,14 @@
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
@@ -293,6 +300,9 @@
       </concept>
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -407,6 +417,14 @@
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
+      <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
+        <child id="1153944400369" name="variable" index="2Gsz3X" />
+        <child id="1153944424730" name="inputSequence" index="2GsD0m" />
+      </concept>
+      <concept id="1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" flags="nr" index="2GrKxI" />
+      <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
+        <reference id="1153944258490" name="variable" index="2Gs0qQ" />
+      </concept>
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
@@ -3550,6 +3568,7 @@
     <ref role="aqKnT" to="tp5g:7eBNsYVKb$0" resolve="NodeUnknownWarningCheckOperation" />
   </node>
   <node concept="24kQdi" id="4K12N3pJCcu">
+    <property role="3GE5qa" value="migration" />
     <ref role="1XX52x" to="tp5g:4K12N3pJ$JB" resolve="MigrationTestCase" />
     <node concept="3EZMnI" id="4K12N3pJCcw" role="2wV5jI">
       <node concept="3EZMnI" id="4K12N3pJCcx" role="3EZMnx">
@@ -3706,6 +3725,25 @@
         </node>
         <node concept="2iRfu4" id="5JRx$mlRVrt" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="5j9sOBrKrSB" role="3EZMnx">
+        <node concept="VPM3Z" id="5j9sOBrKrSC" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3XFhqQ" id="5j9sOBrKrSD" role="3EZMnx" />
+        <node concept="3F0ifn" id="5j9sOBrKrSE" role="3EZMnx">
+          <property role="3F0ifm" value="which is assumed to be deterministic" />
+        </node>
+        <node concept="3F2HdR" id="5j9sOBrLfVv" role="3EZMnx">
+          <ref role="1NtTu8" to="tp5g:5j9sOBrGAXZ" resolve="option" />
+          <node concept="2iRkQZ" id="5j9sOBrLfVz" role="2czzBx" />
+          <node concept="VPM3Z" id="5j9sOBrLfV$" role="3F10Kt" />
+          <node concept="3F0ifn" id="5j9sOBrLfVE" role="2czzBI">
+            <property role="ilYzB" value="&lt;without exceptions&gt;" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="5j9sOBrKrTg" role="2iSdaV" />
+      </node>
+      <node concept="3F0ifn" id="5j9sOBrKqVJ" role="3EZMnx" />
       <node concept="3F0ifn" id="4K12N3pJCcF" role="3EZMnx">
         <property role="3F0ifm" value="input" />
         <node concept="VQ3r3" id="4K12N3pJCcG" role="3F10Kt">
@@ -3830,6 +3868,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5JRx$mlRtYG">
+    <property role="3GE5qa" value="migration" />
     <ref role="1XX52x" to="tp5g:5JRx$mlRtY9" resolve="MigrationReference" />
     <node concept="1iCGBv" id="5JRx$mlRtYM" role="2wV5jI">
       <ref role="1NtTu8" to="tp5g:5JRx$mlRtYa" resolve="migration" />
@@ -3876,6 +3915,149 @@
         </node>
         <node concept="1sVBvm" id="1488IJS6wi6" role="1sWHZn">
           <node concept="3SHvHV" id="1488IJS6wi8" role="2wV5jI" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="5j9sOBrM2Aj">
+    <property role="3GE5qa" value="migration" />
+    <ref role="1XX52x" to="tp5g:5j9sOBrG_KN" resolve="IgnoreMigrationDataOption" />
+    <node concept="3EZMnI" id="5j9sOBrRvDE" role="2wV5jI">
+      <node concept="PMmxH" id="5j9sOBrMRvA" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1ERwB7" node="5j9sOBrXeoS" resolve="IgnoreMigrationDataOption_Actions" />
+        <node concept="VPxyj" id="5j9sOBrWFAs" role="3F10Kt" />
+        <node concept="Vb9p2" id="5j9sOBrNGo2" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="5j9sOBrRvDO" role="3EZMnx">
+        <property role="3F0ifm" value="by scripts" />
+      </node>
+      <node concept="1HlG4h" id="5j9sOBrRvFr" role="3EZMnx">
+        <ref role="1ERwB7" node="5j9sOBrXeoS" resolve="IgnoreMigrationDataOption_Actions" />
+        <node concept="1HfYo3" id="5j9sOBrRvFt" role="1HlULh">
+          <node concept="3TQlhw" id="5j9sOBrRvFv" role="1Hhtcw">
+            <node concept="3clFbS" id="5j9sOBrRvFx" role="2VODD2">
+              <node concept="3cpWs8" id="5j9sOBrRTL1" role="3cqZAp">
+                <node concept="3cpWsn" id="5j9sOBrRTL2" role="3cpWs9">
+                  <property role="TrG5h" value="sb" />
+                  <node concept="3uibUv" id="5j9sOBrRTL3" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~StringBuilder" resolve="StringBuilder" />
+                  </node>
+                  <node concept="2ShNRf" id="5j9sOBrRVrY" role="33vP2m">
+                    <node concept="1pGfFk" id="5j9sOBrRV1r" role="2ShVmc">
+                      <ref role="37wK5l" to="wyt6:~StringBuilder.&lt;init&gt;()" resolve="StringBuilder" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2Gpval" id="5j9sOBrRVRd" role="3cqZAp">
+                <node concept="2GrKxI" id="5j9sOBrRVRf" role="2Gsz3X">
+                  <property role="TrG5h" value="producingData" />
+                </node>
+                <node concept="3clFbS" id="5j9sOBrRVRj" role="2LFqv$">
+                  <node concept="3clFbJ" id="5j9sOBrSQxq" role="3cqZAp">
+                    <node concept="3clFbS" id="5j9sOBrSQxs" role="3clFbx">
+                      <node concept="3clFbF" id="5j9sOBrSXm2" role="3cqZAp">
+                        <node concept="2OqwBi" id="5j9sOBrS6oa" role="3clFbG">
+                          <node concept="37vLTw" id="5j9sOBrS5RN" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5j9sOBrRTL2" resolve="sb" />
+                          </node>
+                          <node concept="liA8E" id="5j9sOBrS7sE" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                            <node concept="Xl_RD" id="5j9sOBrS9IY" role="37wK5m">
+                              <property role="Xl_RC" value=", " />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbH" id="5j9sOBrSQxr" role="3cqZAp" />
+                    </node>
+                    <node concept="2OqwBi" id="5j9sOBrSTyh" role="3clFbw">
+                      <node concept="2OqwBi" id="5j9sOBrSRjg" role="2Oq$k0">
+                        <node concept="37vLTw" id="5j9sOBrSQRp" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5j9sOBrRTL2" resolve="sb" />
+                        </node>
+                        <node concept="liA8E" id="5j9sOBrSSUb" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~StringBuilder.toString():java.lang.String" resolve="toString" />
+                        </node>
+                      </node>
+                      <node concept="17RvpY" id="5j9sOBrSWJO" role="2OqNvi" />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="5j9sOBrS5RP" role="3cqZAp">
+                    <node concept="2OqwBi" id="5j9sOBrSbZA" role="3clFbG">
+                      <node concept="liA8E" id="5j9sOBrScD6" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                        <node concept="2OqwBi" id="5j9sOBrS3xS" role="37wK5m">
+                          <node concept="2OqwBi" id="5j9sOBrRYPd" role="2Oq$k0">
+                            <node concept="2GrUjf" id="5j9sOBrRYup" role="2Oq$k0">
+                              <ref role="2Gs0qQ" node="5j9sOBrRVRf" resolve="producingData" />
+                            </node>
+                            <node concept="3TrEf2" id="5j9sOBrRZHC" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tp5g:5JRx$mlRtYa" resolve="migration" />
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="5j9sOBrS4rw" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="5j9sOBrSXHQ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5j9sOBrRTL2" resolve="sb" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="5j9sOBrRXyd" role="2GsD0m">
+                  <node concept="pncrf" id="5j9sOBrRXye" role="2Oq$k0" />
+                  <node concept="2qgKlT" id="5j9sOBrRXyf" role="2OqNvi">
+                    <ref role="37wK5l" to="tp5o:5j9sOBrGDSz" resolve="getProducingData" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs6" id="5j9sOBrSew7" role="3cqZAp">
+                <node concept="2OqwBi" id="5j9sOBrSffN" role="3cqZAk">
+                  <node concept="37vLTw" id="5j9sOBrSeP2" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5j9sOBrRTL2" resolve="sb" />
+                  </node>
+                  <node concept="liA8E" id="5j9sOBrSgRP" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~StringBuilder.toString():java.lang.String" resolve="toString" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="l2Vlx" id="5j9sOBrRvDF" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="1h_SRR" id="5j9sOBrXeoS">
+    <property role="3GE5qa" value="migration" />
+    <property role="TrG5h" value="IgnoreMigrationDataOption_Actions" />
+    <ref role="1h_SK9" to="tp5g:5j9sOBrG_KN" resolve="IgnoreMigrationDataOption" />
+    <node concept="1hA7zw" id="5j9sOBrXeoT" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="5j9sOBrXeoU" role="1hA7z_">
+        <node concept="3clFbS" id="5j9sOBrXeoV" role="2VODD2">
+          <node concept="3clFbJ" id="5j9sOBrXepb" role="3cqZAp">
+            <node concept="3fqX7Q" id="5j9sOBrYPEl" role="3clFbw">
+              <node concept="2OqwBi" id="5j9sOBrYPEn" role="3fr31v">
+                <node concept="0IXxy" id="5j9sOBrYPEo" role="2Oq$k0" />
+                <node concept="2xy62i" id="5j9sOBrYPEp" role="2OqNvi">
+                  <node concept="1Q80Hx" id="5j9sOBrYPEq" role="2xHN3q" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="5j9sOBrXepd" role="3clFbx">
+              <node concept="3clFbF" id="5j9sOBrXeKX" role="3cqZAp">
+                <node concept="2OqwBi" id="5j9sOBrXeSF" role="3clFbG">
+                  <node concept="0IXxy" id="5j9sOBrXeKW" role="2Oq$k0" />
+                  <node concept="3YRAZt" id="5j9sOBrXf5h" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

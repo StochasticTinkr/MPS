@@ -392,6 +392,7 @@
       <modulePath path="$PROJECT_DIR$/samples/migrations/languages/ref/ref.mpl" folder="samples.migrations.example1" />
       <modulePath path="$PROJECT_DIR$/samples/migrations/languages/references/references.mpl" folder="samples.migrations.example2" />
       <modulePath path="$PROJECT_DIR$/samples/migrations/solutions/migartions.test/migrations.test.msd" folder="samples.migrations.example2" />
+      <modulePath path="$PROJECT_DIR$/samples/migrations/solutions/migr.test/migr.test.msd" folder="samples.migrations.example1" />
       <modulePath path="$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.sandbox/jetbrains.mps.samples.mindmaps.sandbox.msd" folder="samples.mindmaps" />
       <modulePath path="$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps/jetbrains.mps.samples.mindmaps.mpl" folder="samples.mindmaps" />
       <modulePath path="$PROJECT_DIR$/samples/money/jetbrains.mps.baseLanguage.money.mpl" folder="samples.money" />

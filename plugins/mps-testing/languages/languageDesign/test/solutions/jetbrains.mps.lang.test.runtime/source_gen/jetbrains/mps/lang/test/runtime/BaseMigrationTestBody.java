@@ -40,6 +40,8 @@ public abstract class BaseMigrationTestBody extends BaseTestBody {
     MigrationScript[] scripts = getMigrationScript();
     List<SNode> roots = runMigration(CollectionSequence.fromCollection(getInputNodes()).toListSequence(), model, scripts);
     List<SNode> outputNodes = CollectionSequence.fromCollection(getOutputNodes()).toListSequence();
+    postProcess(roots);
+    postProcess(outputNodes);
     Assert.assertEquals(ListSequence.fromList(roots).count(), ListSequence.fromList(outputNodes).count());
     List<NodeDifference> differences = new NodesMatcher(roots, outputNodes).diff();
     for (NodeDifference difference : ListSequence.fromList(differences)) {
@@ -58,4 +60,6 @@ public abstract class BaseMigrationTestBody extends BaseTestBody {
   public abstract Collection<SNode> getInputNodes();
   public abstract Collection<SNode> getOutputNodes();
   public abstract MigrationScript[] getMigrationScript();
+  public void postProcess(Collection<SNode> output) {
+  }
 }
