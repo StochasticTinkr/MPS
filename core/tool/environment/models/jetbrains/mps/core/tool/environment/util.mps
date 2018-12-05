@@ -22,7 +22,7 @@
     <import index="ddon" ref="r:58ba176b-8a52-400c-bf27-725996471cb9(jetbrains.mps.core.tool.environment.common)" />
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
-    <import index="zpxu" ref="r:fec7cb8c-607e-436a-96ec-1fdf4dc6732b(jetbrains.mps.project.persistence)" />
+    <import index="gn4j" ref="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3934,7 +3934,7 @@
           <node concept="2OqwBi" id="3RkWhWCP0xm" role="3clFbG">
             <node concept="2ShNRf" id="3RkWhWCOZSG" role="2Oq$k0">
               <node concept="1pGfFk" id="3RkWhWCP0pI" role="2ShVmc">
-                <ref role="37wK5l" to="zpxu:4F07P_yBO_t" resolve="ProjectDescriptorPersistence" />
+                <ref role="37wK5l" to="gn4j:4F07P_yBO_t" resolve="ProjectDescriptorPersistence" />
                 <node concept="1rXfSq" id="3RkWhWCP0rx" role="37wK5m">
                   <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
                 </node>
@@ -3944,7 +3944,7 @@
               </node>
             </node>
             <node concept="liA8E" id="3RkWhWCP0$l" role="2OqNvi">
-              <ref role="37wK5l" to="zpxu:3v_OXaS41F3" resolve="save" />
+              <ref role="37wK5l" to="gn4j:3v_OXaS41F3" resolve="save" />
               <node concept="37vLTw" id="3RkWhWCP0AH" role="37wK5m">
                 <ref role="3cqZAo" to="z1c3:~ProjectBase.myProjectDescriptor" resolve="myProjectDescriptor" />
               </node>
@@ -3970,7 +3970,7 @@
           <node concept="2OqwBi" id="15VbAzMFrbs" role="3cqZAk">
             <node concept="2ShNRf" id="15VbAzMFpN_" role="2Oq$k0">
               <node concept="1pGfFk" id="15VbAzMFqG1" role="2ShVmc">
-                <ref role="37wK5l" to="zpxu:4F07P_yBO_t" resolve="ProjectDescriptorPersistence" />
+                <ref role="37wK5l" to="gn4j:4F07P_yBO_t" resolve="ProjectDescriptorPersistence" />
                 <node concept="1rXfSq" id="15VbAzMFqWx" role="37wK5m">
                   <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
                 </node>
@@ -3980,7 +3980,7 @@
               </node>
             </node>
             <node concept="liA8E" id="15VbAzMFrtd" role="2OqNvi">
-              <ref role="37wK5l" to="zpxu:15VbAzME8vk" resolve="loadProjectElement" />
+              <ref role="37wK5l" to="gn4j:15VbAzME8vk" resolve="loadProjectElement" />
             </node>
           </node>
         </node>
