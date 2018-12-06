@@ -607,6 +607,7 @@
     <liveTemplateMacro implementation="com.intellij.codeInsight.template.macro.ConcatMacro"/>
     <liveTemplateMacro implementation="com.intellij.codeInsight.template.macro.GroovyScriptMacro"/>
     <liveTemplateMacro implementation="com.intellij.codeInsight.template.macro.CompleteMacro"/>
+    <liveTemplateMacro implementation="com.intellij.codeInsight.template.macro.ShowParameterInfoMacro"/>
     <liveTemplateMacro implementation="com.intellij.codeInsight.template.macro.CompleteSmartMacro"/>
     <liveTemplateMacro implementation="com.intellij.codeInsight.template.macro.ClassNameCompleteMacro"/>
     <liveTemplateMacro implementation="com.intellij.codeInsight.template.macro.SubstringBeforeMacro"/>
@@ -808,6 +809,7 @@
 
     <codeInsight.linkHandler prefix="#inspection/" handlerClass="com.intellij.codeInsight.hint.InspectionDescriptionLinkHandler"/>
     <codeInsight.linkHandler prefix="#navigation/" handlerClass="com.intellij.codeInsight.hint.NavigationLinkHandler"/>
+    <codeInsight.linkHandler prefix="#element/" handlerClass="com.intellij.codeInsight.hint.ElementLinkHandler"/>
     <codeInsight.lineMarkerProvider language="" implementationClass="com.intellij.ui.ColorLineMarkerProvider"/>
 
     <codeFoldingOptionsProvider instance="com.intellij.application.options.editor.BaseCodeFoldingOptionsProvider" order="first"/>
@@ -1070,6 +1072,7 @@
     <statistics.projectUsagesCollector implementation="com.intellij.internal.statistic.service.fus.collectors.KeymapUsageCollector" />
     <statistics.projectUsagesCollector implementation="com.intellij.execution.dashboard.RunDashboardUsagesCollector"/>
     <statistics.projectUsagesCollector implementation="com.intellij.ide.actions.runAnything.RunAnythingUsageCollector"/>
+    <statistics.projectUsagesCollector implementation="com.intellij.ide.actions.searcheverywhere.statistics.SearchEverywhereUsageTriggerCollector"/>
 
     <!--
     <renamePsiElementProcessor implementation="com.intellij.refactoring.rename.RenamePsiFileProcessor" order="last" id="renamePsiFile"/>
