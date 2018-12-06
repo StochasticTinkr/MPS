@@ -28,6 +28,9 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
@@ -42,10 +45,12 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Set;
 
 public class DeleteModelHelper {
@@ -112,7 +117,24 @@ public class DeleteModelHelper {
   }
 
   private static void deleteModelFromGenerator(Generator generator, SModel modelDescriptor) {
-    generator.deleteReferenceFromPriorities(modelDescriptor.getReference());
+    // XXX used to be a method in Generator, and, perhaps, should be there, if Generator module class with all its related stuff comes from [generator-engine],
+    // otherwise it's odd to keep a generator-specific classes in [kernel] (or to make [kernel] dependent from [generator-engine]
+    // XXX in fact, as long as Generator lives in [kernel], we shall keep MappingPriorityRule in [kernel] as well. Just would be odd to move
+    // generator.runtime.TemplateMappingPriorityRule there as well, hence those kept in [generator-engine], with code relevant to [generator], [kernel] and
+    // [project] being moved outside of these three.
+    final SModelReference ref = modelDescriptor.getReference();
+    final GeneratorDescriptor generatorDescriptor = generator.getModuleDescriptor();
+    boolean[] descriptorChanged = new boolean[]{false};
+    Iterator<MappingPriorityRule> it = generatorDescriptor.getPriorityRules().iterator();
+    while (it.hasNext()) {
+      MappingPriorityRule rule = it.next();
+      MappingConfig_AbstractRef right = rule.getRight();
+      MappingConfig_AbstractRef left = rule.getLeft();
+      // FIXME revisit boolean[] descriptorChanged, which seems to be of no use
+      if (right.removeModelReference(ref, descriptorChanged) || left.removeModelReference(ref, descriptorChanged)) {
+        it.remove();
+      }
+    }
   }
 
   private static class SafeDeleteModel_Target implements IRefactoringTarget {

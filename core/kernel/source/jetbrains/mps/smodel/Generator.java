@@ -23,8 +23,6 @@ import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -42,7 +40,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -201,20 +198,6 @@ public class Generator extends ReloadableModuleBase {
 
   public List<SModuleReference> getReferencedGeneratorUIDs() {
     return new ArrayList<>(myGeneratorDescriptor.getDepGenerators());
-  }
-
-  public boolean deleteReferenceFromPriorities(org.jetbrains.mps.openapi.model.SModelReference ref) {
-    boolean[] descriptorChanged = new boolean[]{false};
-    Iterator<MappingPriorityRule> it = myGeneratorDescriptor.getPriorityRules().iterator();
-    while (it.hasNext()) {
-      MappingPriorityRule rule = it.next();
-      MappingConfig_AbstractRef right = rule.getRight();
-      MappingConfig_AbstractRef left = rule.getLeft();
-      if (right.removeModelReference(ref, descriptorChanged) || left.removeModelReference(ref, descriptorChanged)) {
-        it.remove();
-      }
-    }
-    return descriptorChanged[0];
   }
 
   /**
