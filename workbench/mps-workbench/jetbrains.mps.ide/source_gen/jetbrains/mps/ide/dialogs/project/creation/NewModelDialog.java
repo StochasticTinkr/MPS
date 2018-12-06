@@ -43,11 +43,6 @@ import com.intellij.ui.ColoredListCellRenderer;
 import javax.swing.JList;
 import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
-import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
-import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -227,25 +222,13 @@ public class NewModelDialog extends DialogWrapper {
       return;
     }
 
-    super.doOKAction();
-
     try {
       myResult = createModel((ModelFactoryType) myModelStorageFormat.getSelectedItem(), (ModelRoot) myModelRoots.getSelectedItem());
     } catch (ModelCannotBeCreatedException ex) {
       Messages.showErrorDialog(myProject.getProject(), "Could not create a new model because '" + ex.getMessage() + "'", "Error");
     }
-    if (myResult != null) {
-      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myProject);
-      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myProject), configurable, "#MPSPropertiesConfigurable");
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          configurableEditor.show();
-        }
-      }, ModalityState.current());
-    }
 
-
-
+    super.doOKAction();
   }
 
   private EditableSModel createModel(final ModelFactoryType storageFormat, final ModelRoot selectedModelRoot) throws ModelCannotBeCreatedException {

@@ -21,9 +21,10 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import com.intellij.openapi.util.SystemInfo;
+import java.awt.Component;
 
 public class SetNodePackageDialog extends DialogWrapper {
-  private boolean myIsCancelled = true;
   private JPanel myMainPanel;
   private JComboBox<String> myCbPackage;
   private String myPackage;
@@ -64,6 +65,12 @@ public class SetNodePackageDialog extends DialogWrapper {
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
+    // TODO: remove this condition after JRE-1071 is fixed 
+    if (SystemInfo.isMac && SystemInfo.isJetBrainsJvm) {
+      // For some reason MacOS & JB JDK require direct point to editor of ComboBox to avoid problems like MPS-28806 
+      Component editorComponent = myCbPackage.getEditor().getEditorComponent();
+      return (editorComponent instanceof JComponent ? ((JComponent) editorComponent) : null);
+    }
     return myCbPackage;
   }
 
@@ -92,14 +99,9 @@ public class SetNodePackageDialog extends DialogWrapper {
     myCbPackage.setSelectedItem(pack);
   }
 
-  public boolean isCancelled() {
-    return myIsCancelled;
-  }
-
   @Override
   protected void doOKAction() {
     updatePackage();
-    myIsCancelled = false;
     super.doOKAction();
   }
 }

@@ -24,8 +24,8 @@ import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.smodel.Generator;
@@ -116,14 +116,19 @@ public class NewModel_Action extends BaseAction {
         String stereotype = NewModel_Action.this.getStereotype(_params);
         NewModelDialog dialog = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), NewModel_Action.this.getNamespace(_params), stereotype, NewModel_Action.this.isStrict(_params));
         dialog.show();
-        SModel result = dialog.getResult();
+        final SModel result = dialog.getResult();
+
         if (result != null) {
-          final SModel modelDescriptor = result;
+          // Model creation will lead to indexes update, dialog and navigation should be perfomed after that 
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
-              ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
+              MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(result, ((MPSProject) MapSequence.fromMap(_params).get("project")));
+              final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
+              configurableEditor.show();
+
+              ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(result, false);
             }
-          }, ModalityState.defaultModalityState());
+          });
         }
       }
     });
