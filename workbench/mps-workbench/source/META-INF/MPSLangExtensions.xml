@@ -419,10 +419,12 @@
                     serviceImplementation="com.intellij.slicer.SliceToolwindowSettings"/>
     <projectService serviceInterface="com.intellij.slicer.SliceManager"
                     serviceImplementation="com.intellij.slicer.SliceManager"/>
+    -->
 
     <projectService serviceInterface="com.intellij.codeInsight.highlighting.HighlightManager"
                     serviceImplementation="com.intellij.codeInsight.highlighting.HighlightManagerImpl"/>
 
+    <!--
     <applicationService serviceInterface="com.intellij.openapi.roots.ExternalProjectSystemRegistry"
                         serviceImplementation="com.intellij.openapi.roots.impl.ExternalProjectSystemRegistryImpl"/>
     <moduleService serviceInterface="com.intellij.openapi.components.impl.stores.IComponentStore"
@@ -453,19 +455,21 @@
     <usageTypeProvider implementation="com.intellij.ide.scratch.ScratchFileServiceImpl$UsageTypeExtension" order="last"/>
 
     <scratch.rootType implementation="com.intellij.ide.scratch.ScratchRootType" />
-    <!--
     <scratch.rootType implementation="com.intellij.execution.console.HistoryRootType"/>
     <scratch.rootType implementation="com.intellij.execution.console.IdeConsoleRootType"/>
 
+    <!--
     <applicationService serviceImplementation="com.intellij.codeInsight.daemon.impl.ParameterHintsPresentationManager"/>
 
     <projectService serviceImplementation="com.intellij.codeInsight.daemon.impl.ErrorStripeUpdateManager"/>
+    -->
 
-    &lt;!&ndash; Extension resources &ndash;&gt;
+    <!-- Extension resources -->
     <applicationService serviceInterface="com.intellij.ide.extensionResources.ResourceVersions"
                         serviceImplementation="com.intellij.ide.extensionResources.ResourceVersions"/>
     <scratch.rootType implementation="com.intellij.ide.extensionResources.ExtensionsRootType"/>
 
+    <!--
     <colorSettingsPage implementation="com.intellij.openapi.options.colors.pages.GeneralColorsPage" id="general"/>
     <colorSettingsPage implementation="com.intellij.openapi.options.colors.pages.DefaultLanguageColorsPage" id="defaultLanguage"/>
     <colorSettingsPage implementation="com.intellij.openapi.options.colors.pages.ANSIColoredConsoleColorsPage" id="ansi"/>
