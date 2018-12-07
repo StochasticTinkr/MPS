@@ -253,9 +253,8 @@
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
       <library file="${artifacts.mps}/lib/mps-references.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
-      <macro name="mps_home" path="${mps_home}" />
-      
       <library file="${build.layout}/jetbrains.mps.build.mps.runner.test.test3.jar" />
+      <macro name="mps_home" path="${mps_home}" />
       
       <jvmargs>
         <arg value="-Didea.config.path=${build.mps.config.path}" />
