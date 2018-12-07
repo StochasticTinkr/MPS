@@ -39,7 +39,11 @@ public final class PropertyAttribute__BehaviorDescriptor extends BaseBHDescripto
 
   /*package*/ static SProperty getProperty_id1avfQ4BBzOo(@NotNull SNode __thisNode__) {
     String nonEmptyName = (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "name_DebugInfo")) == null ? "" : SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "name_DebugInfo")));
-    return MetaAdapterFactory.getProperty(SPropertyId.deserialize(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"))), nonEmptyName);
+    try {
+      return MetaAdapterFactory.getProperty(SPropertyId.deserialize(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"))), nonEmptyName);
+    } catch (RuntimeException e) {
+      return null;
+    }
   }
   /*package*/ static void setProperty_id6Gg5Klvu8CV(@NotNull SNode __thisNode__, SProperty metaProperty) {
     SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "name_DebugInfo"), metaProperty.getName());
