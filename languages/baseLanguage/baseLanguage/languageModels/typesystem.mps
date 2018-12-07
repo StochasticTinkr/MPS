@@ -38571,6 +38571,7 @@
               <property role="Xl_RC" value="Non-default no-arg constructor is available" />
             </node>
             <node concept="3Cnw8n" id="4NFCXtg5MAA" role="2OEOjU">
+              <property role="ARO6o" value="true" />
               <ref role="QpYPw" node="7HZRMj73ysg" resolve="QuickFixForDefaultClassCreator" />
             </node>
           </node>
