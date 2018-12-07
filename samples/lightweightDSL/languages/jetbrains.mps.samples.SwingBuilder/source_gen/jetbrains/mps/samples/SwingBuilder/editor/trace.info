@@ -17,9 +17,9 @@
       <unit at="16,0,70,0" name="jetbrains.mps.samples.SwingBuilder.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="ElementReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_SubstituteMenu$SMP_ReferenceScope_inm3f8_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_SubstituteMenu$SMP_Subconcepts_inm3f8_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_SubstituteMenu$SMP_ReferenceScope_inm3f8_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_SubstituteMenu$SMP_Subconcepts_inm3f8_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:c606fb3a-353f-490a-814f-40f533d38c2c(jetbrains.mps.samples.SwingBuilder.editor)/1741258697587112639">

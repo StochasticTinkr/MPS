@@ -17,14 +17,14 @@
       <unit at="16,0,52,0" name="jetbrains.mps.lang.editor.figures.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="ExternalViewFigureParameter_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_SubstituteMenu$SMP_ReferenceScope_b4e0kx_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_SubstituteMenu$SMP_Subconcepts_b4e0kx_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_SubstituteMenu$SMP_ReferenceScope_b4e0kx_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_SubstituteMenu$SMP_Subconcepts_b4e0kx_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_SubstituteMenu" />
     </file>
     <file name="ExternalViewFigure_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_SubstituteMenu$SMP_ReferenceScope_ckewk2_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_SubstituteMenu$SMP_Subconcepts_ckewk2_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_SubstituteMenu$SMP_ReferenceScope_ckewk2_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_SubstituteMenu$SMP_Subconcepts_ckewk2_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:e4d83561-5cd9-4b01-bf95-b441a061d0de(jetbrains.mps.lang.editor.figures.editor)/2178507174411801757">

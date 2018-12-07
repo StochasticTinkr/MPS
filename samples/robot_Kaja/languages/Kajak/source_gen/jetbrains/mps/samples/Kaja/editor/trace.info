@@ -20,9 +20,9 @@
       <unit at="19,0,168,0" name="jetbrains.mps.samples.Kaja.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="RoutineCall_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_SubstituteMenu$SMP_ReferenceScope_4wzuuz_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_SubstituteMenu$SMP_Subconcepts_4wzuuz_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_SubstituteMenu$SMP_ReferenceScope_4wzuuz_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_SubstituteMenu$SMP_Subconcepts_4wzuuz_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)/1108339487640189080">

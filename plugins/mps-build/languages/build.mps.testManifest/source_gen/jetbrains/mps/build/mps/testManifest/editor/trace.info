@@ -15,9 +15,9 @@
       <unit at="16,0,50,0" name="jetbrains.mps.build.mps.testManifest.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="TestModuleManifestRef_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.build.mps.testManifest.editor.TestModuleManifestRef_SubstituteMenu$SMP_ReferenceScope_dh67c9_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.build.mps.testManifest.editor.TestModuleManifestRef_SubstituteMenu$SMP_Subconcepts_dh67c9_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.build.mps.testManifest.editor.TestModuleManifestRef_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.build.mps.testManifest.editor.TestModuleManifestRef_SubstituteMenu$SMP_ReferenceScope_dh67c9_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.build.mps.testManifest.editor.TestModuleManifestRef_SubstituteMenu$SMP_Subconcepts_dh67c9_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.build.mps.testManifest.editor.TestModuleManifestRef_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:62b685a8-caa0-436e-bd8f-043142e659b2(jetbrains.mps.build.mps.testManifest.editor)/3298469228705179789">

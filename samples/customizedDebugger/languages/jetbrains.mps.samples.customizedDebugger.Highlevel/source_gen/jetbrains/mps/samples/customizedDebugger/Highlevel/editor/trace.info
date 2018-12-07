@@ -15,9 +15,9 @@
       <unit at="16,0,48,0" name="jetbrains.mps.samples.customizedDebugger.Highlevel.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="Message_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.customizedDebugger.Highlevel.editor.Message_SubstituteMenu$SMP_ReferenceScope_r7tf0o_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.customizedDebugger.Highlevel.editor.Message_SubstituteMenu$SMP_Subconcepts_r7tf0o_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.customizedDebugger.Highlevel.editor.Message_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.customizedDebugger.Highlevel.editor.Message_SubstituteMenu$SMP_ReferenceScope_r7tf0o_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.customizedDebugger.Highlevel.editor.Message_SubstituteMenu$SMP_Subconcepts_r7tf0o_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.customizedDebugger.Highlevel.editor.Message_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:148d8860-62be-4d6a-8520-3fd48938aa97(jetbrains.mps.samples.customizedDebugger.Highlevel.editor)/8203012558887843647">

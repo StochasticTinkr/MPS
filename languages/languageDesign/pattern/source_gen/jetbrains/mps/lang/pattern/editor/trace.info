@@ -20,14 +20,14 @@
       <unit at="17,0,93,0" name="jetbrains.mps.lang.pattern.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="OrPatternVariableReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_SubstituteMenu$SMP_ReferenceScope_tmop8b_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_SubstituteMenu$SMP_Subconcepts_tmop8b_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_SubstituteMenu$SMP_ReferenceScope_tmop8b_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_SubstituteMenu$SMP_Subconcepts_tmop8b_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_SubstituteMenu" />
     </file>
     <file name="PatternVariableReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.pattern.editor.PatternVariableReference_SubstituteMenu$SMP_ReferenceScope_mv5tgs_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.pattern.editor.PatternVariableReference_SubstituteMenu$SMP_Subconcepts_mv5tgs_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.pattern.editor.PatternVariableReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.pattern.editor.PatternVariableReference_SubstituteMenu$SMP_ReferenceScope_mv5tgs_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.pattern.editor.PatternVariableReference_SubstituteMenu$SMP_Subconcepts_mv5tgs_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.pattern.editor.PatternVariableReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590342(jetbrains.mps.lang.pattern.editor)/1136720096744">

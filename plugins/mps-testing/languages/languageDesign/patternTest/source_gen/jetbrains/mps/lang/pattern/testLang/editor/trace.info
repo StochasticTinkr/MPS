@@ -15,19 +15,19 @@
       <unit at="16,0,60,0" name="jetbrains.mps.lang.pattern.testLang.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="TestListReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestListReference_SubstituteMenu$SMP_ReferenceScope_5gn4im_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestListReference_SubstituteMenu$SMP_Subconcepts_5gn4im_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestListReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestListReference_SubstituteMenu$SMP_ReferenceScope_5gn4im_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestListReference_SubstituteMenu$SMP_Subconcepts_5gn4im_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestListReference_SubstituteMenu" />
     </file>
     <file name="TestPropertyVariableReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_SubstituteMenu$SMP_ReferenceScope_bkrkeg_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_SubstituteMenu$SMP_Subconcepts_bkrkeg_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_SubstituteMenu$SMP_ReferenceScope_bkrkeg_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_SubstituteMenu$SMP_Subconcepts_bkrkeg_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_SubstituteMenu" />
     </file>
     <file name="TestVariableReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_SubstituteMenu$SMP_ReferenceScope_p17mdp_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_SubstituteMenu$SMP_Subconcepts_p17mdp_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_SubstituteMenu$SMP_ReferenceScope_p17mdp_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_SubstituteMenu$SMP_Subconcepts_p17mdp_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)/1563914226484898745">
