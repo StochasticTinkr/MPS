@@ -12,7 +12,6 @@
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.project.foreign.IdeaModuleConfiguration" />
     <classNode dependClassName="jetbrains.mps.project.foreign.MPSFacetConfiguration" />
-    <classNode dependClassName="jetbrains.mps.project.io.DescriptorIO" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOFacade" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />

@@ -18,29 +18,6 @@
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jdom.JDOMException" />
   </dependency>
-  <dependency className="jetbrains.mps.project.foreign.IdeaModuleSolutionDescriptorIO">
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Long" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.project.ModuleId" />
-    <classNode dependClassName="jetbrains.mps.project.foreign.FacetConfigurationFormatException" />
-    <classNode dependClassName="jetbrains.mps.project.foreign.IdeaModuleConfiguration" />
-    <classNode dependClassName="jetbrains.mps.project.foreign.MPSFacetConfiguration" />
-    <classNode dependClassName="jetbrains.mps.project.foreign.ModuleMacroExpander" />
-    <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOException" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.jdom.Element" />
-    <classNode dependClassName="org.jdom.JDOMException" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.project.io.DescriptorIO" />
-  </dependency>
   <dependency className="jetbrains.mps.project.foreign.MPSFacetConfiguration">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />

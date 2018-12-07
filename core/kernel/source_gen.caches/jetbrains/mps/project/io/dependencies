@@ -18,7 +18,6 @@
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIO" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOException" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOProvider" />
-    <classNode dependClassName="jetbrains.mps.project.io.IdeaDescriptorIOProvider" />
     <classNode dependClassName="jetbrains.mps.project.io.StandardDescriptorIOProvider" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
@@ -32,16 +31,6 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.project.io.IdeaDescriptorIOProvider">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.project.foreign.IdeaModuleSolutionDescriptorIO" />
-    <classNode dependClassName="jetbrains.mps.project.io.DescriptorIO" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.DevkitDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.project.io.DescriptorIOProvider" />
-  </dependency>
   <dependency className="jetbrains.mps.project.io.StandardDescriptorIOProvider">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />
@@ -49,11 +38,6 @@
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIO" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOException" />
-    <classNode dependClassName="jetbrains.mps.project.persistence.DevkitDescriptorPersistence" />
-    <classNode dependClassName="jetbrains.mps.project.persistence.LanguageDescriptorPersistence" />
-    <classNode dependClassName="jetbrains.mps.project.persistence.ModuleDescriptorPersistence" />
-    <classNode dependClassName="jetbrains.mps.project.persistence.ModuleReadException" />
-    <classNode dependClassName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.DevkitDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />

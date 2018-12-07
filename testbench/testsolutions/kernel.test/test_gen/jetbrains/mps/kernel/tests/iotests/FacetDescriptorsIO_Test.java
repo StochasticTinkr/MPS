@@ -13,13 +13,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import junit.framework.Assert;
 import jetbrains.mps.project.foreign.MPSFacetConfiguration;
 import jetbrains.mps.project.foreign.IdeaModuleConfiguration;
-import jetbrains.mps.project.io.DescriptorIO;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -53,20 +52,6 @@ public class FacetDescriptorsIO_Test extends EnvironmentAwareTestCase {
     IdeaModuleConfiguration imc = IdeaModuleConfiguration.readFile(moduleFile);
     MPSFacetConfiguration mpsCfg = imc.getMPSFacetConfiguration();
     assertMpsCfg(mpsCfg);
-  }
-  public void test_solutionDescriptorIO() throws Exception {
-    IFile moduleFile = TestUtils.dataFile("module.iml");
-    DescriptorIO<SolutionDescriptor> io = descriptorIOFacade.ideaProvider().solutionDescriptorIO();
-    Assert.assertSame(io, descriptorIOFacade.fromFileType(moduleFile));
-    SolutionDescriptor sd = io.readFromFile(moduleFile);
-    assertSolutionDescriptor(moduleFile, sd);
-  }
-  public void test_nofacetDescriptorIO() throws Exception {
-    IFile moduleFile = TestUtils.dataFile("nofacet.iml");
-    DescriptorIO<SolutionDescriptor> io = descriptorIOFacade.ideaProvider().solutionDescriptorIO();
-    Assert.assertSame(io, descriptorIOFacade.fromFileType(moduleFile));
-    SolutionDescriptor sd = io.readFromFile(moduleFile);
-    Assert.assertNull(sd);
   }
   public void setUp() {
     descriptorIOFacade = myEnvironment.getPlatform().findComponent(DescriptorIOFacade.class);

@@ -12,29 +12,23 @@ import jetbrains.mps.util.MacroHelper;
 public class DescriptorIOFacade implements CoreComponent {
   private static DescriptorIOFacade INSTANCE;
   private final StandardDescriptorIOProvider STANDARD_FACTORY;
-  private final IdeaDescriptorIOProvider IDEA = new IdeaDescriptorIOProvider();
 
   public DescriptorIOFacade() {
     this(new MacrosFactory());
   }
   public DescriptorIO<? extends ModuleDescriptor> fromFileType(IFile file) {
-    return fromExtension(standardProvider(), ideaProvider(), file.getPath());
+    return fromExtension(standardProvider(), file.getPath());
   }
   public DescriptorIOProvider standardProvider() {
     return STANDARD_FACTORY;
   }
-  public DescriptorIOProvider ideaProvider() {
-    return IDEA;
-  }
-  private static DescriptorIO<? extends ModuleDescriptor> fromExtension(DescriptorIOProvider standardProvider, DescriptorIOProvider ideaProvider, String path) {
+  private static DescriptorIO<? extends ModuleDescriptor> fromExtension(DescriptorIOProvider standardProvider, String path) {
     if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
       return standardProvider.languageDescriptorIO();
     } else if (path.endsWith(MPSExtentions.DOT_SOLUTION)) {
       return standardProvider.solutionDescriptorIO();
     } else if (path.endsWith(MPSExtentions.DOT_DEVKIT)) {
       return standardProvider.devkitDescriptorIO();
-    } else if (path.endsWith(MPSExtentions.DOT_IDEMODULE)) {
-      return ideaProvider.solutionDescriptorIO();
     }
     return null;
   }
@@ -61,7 +55,7 @@ public class DescriptorIOFacade implements CoreComponent {
    */
   public ModuleDescriptor readFromModuleFile(MacroHelper macroHelper, IFile moduleFile) throws DescriptorIOException {
     DescriptorIOProvider sp = new StandardDescriptorIOProvider(macroHelper);
-    DescriptorIO<? extends ModuleDescriptor> io = fromExtension(sp, ideaProvider(), moduleFile.getPath());
+    DescriptorIO<? extends ModuleDescriptor> io = fromExtension(sp, moduleFile.getPath());
     if (io == null) {
       throw new DescriptorIOException(String.format("File %s is not a recognized module descriptor", moduleFile));
     }
@@ -69,7 +63,7 @@ public class DescriptorIOFacade implements CoreComponent {
   }
 
   public boolean isModuleDescriptorFile(IFile file) {
-    return fromExtension(standardProvider(), ideaProvider(), file.getPath()) != null;
+    return fromExtension(standardProvider(), file.getPath()) != null;
   }
 
   @Override
