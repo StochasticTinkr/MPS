@@ -30,9 +30,6 @@
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
-      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
-        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -96,6 +93,12 @@
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
     </language>
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
@@ -1603,6 +1606,11 @@
             <property role="TrG5h" value="closure" />
             <node concept="2jfdEK" id="3umvbTCAhQC" role="2jfP_Y">
               <node concept="3clFbS" id="3umvbTCAhQE" role="2VODD2">
+                <node concept="3SKdUt" id="6p_fvFaALm9" role="3cqZAp">
+                  <node concept="3SKdUq" id="6p_fvFaALmb" role="3SKWNk">
+                    <property role="3SKdUp" value="design-time because of editor tests we need languages" />
+                  </node>
+                </node>
                 <node concept="3clFbF" id="3ZNuxuVIKrm" role="3cqZAp">
                   <node concept="2OqwBi" id="3ZNuxuVIKro" role="3clFbG">
                     <node concept="2ShNRf" id="3ZNuxuVIKrq" role="2Oq$k0">
@@ -1638,8 +1646,8 @@
                         </node>
                         <node concept="2OqwBi" id="7QNcMbqvBYM" role="37wK5m">
                           <node concept="2ShNRf" id="7QNcMbqvBCO" role="2Oq$k0">
-                            <node concept="HV5vD" id="7QNcMbqvBSx" role="2ShVmc">
-                              <ref role="HV5vE" to="tken:ECLZhkrFpC" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
+                            <node concept="1pGfFk" id="3SWSDDmiuFu" role="2ShVmc">
+                              <ref role="37wK5l" to="tken:1BCLQMpCXII" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
                             </node>
                           </node>
                           <node concept="liA8E" id="7QNcMbqvC4O" role="2OqNvi">
