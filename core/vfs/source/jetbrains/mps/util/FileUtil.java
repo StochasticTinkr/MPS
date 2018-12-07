@@ -36,6 +36,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.Reader;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -60,17 +61,13 @@ public class FileUtil {
   }
 
   public static File createTmpDir(@NotNull String prefix) {
-    File tmp = getTempDir();
-    for (int i = 0;; ++i) {
-      if (!new File(tmp, prefix + i).exists()) {
-        File tmpDir = new File(tmp, prefix + i);
-        boolean result = tmpDir.mkdir();
-        if (!result) {
-          throw new IllegalStateException("Could not create a directory " + tmpDir);
-        }
-        return tmpDir;
-      }
+    File tmpDir = null;
+    try {
+      tmpDir = Files.createTempDirectory(prefix).toFile();
+    } catch (IOException e) {
+      throw new IllegalStateException("Could not create a temporary directory", e);
     }
+    return tmpDir;
   }
 
   @NotNull
@@ -79,18 +76,9 @@ public class FileUtil {
   }
 
   public static File createTmpFile(@NotNull String prefix) {
-    File tmp = getTempDir();
-    int i = 0;
-    while (true) {
-      if (!new File(tmp, prefix + i).exists()) {
-        break;
-      }
-      i++;
-    }
-
-    File result = new File(tmp, prefix + i);
+    File result = null;
     try {
-      result.createNewFile();
+      result = File.createTempFile(prefix, "");
     } catch (IOException e) {
       LOG.error(e);
     }
