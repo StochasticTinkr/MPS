@@ -17,24 +17,24 @@
       <unit at="16,0,84,0" name="jetbrains.mps.samples.agreementLanguage.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="EventVariableReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.agreementLanguage.editor.EventVariableReference_SubstituteMenu$SMP_ReferenceScope_8sx8tt_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.agreementLanguage.editor.EventVariableReference_SubstituteMenu$SMP_Subconcepts_8sx8tt_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.agreementLanguage.editor.EventVariableReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.agreementLanguage.editor.EventVariableReference_SubstituteMenu$SMP_ReferenceScope_8sx8tt_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.agreementLanguage.editor.EventVariableReference_SubstituteMenu$SMP_Subconcepts_8sx8tt_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.agreementLanguage.editor.EventVariableReference_SubstituteMenu" />
     </file>
     <file name="Event_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.agreementLanguage.editor.Event_SubstituteMenu$SMP_ReferenceScope_lx4afj_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.agreementLanguage.editor.Event_SubstituteMenu$SMP_Subconcepts_lx4afj_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.agreementLanguage.editor.Event_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.agreementLanguage.editor.Event_SubstituteMenu$SMP_ReferenceScope_lx4afj_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.agreementLanguage.editor.Event_SubstituteMenu$SMP_Subconcepts_lx4afj_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.agreementLanguage.editor.Event_SubstituteMenu" />
     </file>
     <file name="PostingRule_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.agreementLanguage.editor.PostingRule_SubstituteMenu$SMP_ReferenceScope_79mqlp_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.agreementLanguage.editor.PostingRule_SubstituteMenu$SMP_Subconcepts_79mqlp_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.agreementLanguage.editor.PostingRule_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.agreementLanguage.editor.PostingRule_SubstituteMenu$SMP_ReferenceScope_79mqlp_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.agreementLanguage.editor.PostingRule_SubstituteMenu$SMP_Subconcepts_79mqlp_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.agreementLanguage.editor.PostingRule_SubstituteMenu" />
     </file>
     <file name="ValueReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.agreementLanguage.editor.ValueReference_SubstituteMenu$SMP_ReferenceScope_rakn0v_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.agreementLanguage.editor.ValueReference_SubstituteMenu$SMP_Subconcepts_rakn0v_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.agreementLanguage.editor.ValueReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.agreementLanguage.editor.ValueReference_SubstituteMenu$SMP_ReferenceScope_rakn0v_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.agreementLanguage.editor.ValueReference_SubstituteMenu$SMP_Subconcepts_rakn0v_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.agreementLanguage.editor.ValueReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590409(jetbrains.mps.samples.agreementLanguage.editor)/1111795517363">

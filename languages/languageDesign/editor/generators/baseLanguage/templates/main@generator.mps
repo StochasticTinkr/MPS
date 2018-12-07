@@ -47550,25 +47550,35 @@
           <node concept="3cqZAl" id="SDmlC7xpKF" role="3clF45" />
           <node concept="3Tm1VV" id="SDmlC7xpKG" role="1B3o_S" />
           <node concept="3clFbS" id="SDmlC7xpKI" role="3clF47">
+            <node concept="3SKdUt" id="WJTbyNitxY" role="3cqZAp">
+              <node concept="3SKdUq" id="WJTbyNity0" role="3SKWNk">
+                <property role="3SKdUp" value="that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051" />
+              </node>
+            </node>
             <node concept="XkiVB" id="SDmlC7xpKK" role="3cqZAp">
               <ref role="37wK5l" to="qtqj:~ReferenceScopeSubstituteMenuPart.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.language.SReferenceLink)" resolve="ReferenceScopeSubstituteMenuPart" />
-              <node concept="35c_gC" id="SDmlC7xre_" role="37wK5m">
-                <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                <node concept="1ZhdrF" id="SDmlC7xrfC" role="lGtFl">
-                  <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474300074836/2644386474300074837" />
-                  <property role="2qtEX8" value="conceptDeclaration" />
-                  <node concept="3$xsQk" id="SDmlC7xrfF" role="3$ytzL">
-                    <node concept="3clFbS" id="SDmlC7xrfG" role="2VODD2">
-                      <node concept="3clFbF" id="SDmlC7xrfM" role="3cqZAp">
-                        <node concept="2OqwBi" id="SDmlC7xrfH" role="3clFbG">
-                          <node concept="30H73N" id="SDmlC7xrfL" role="2Oq$k0" />
-                          <node concept="2qgKlT" id="2jhpiNnZisC" role="2OqNvi">
-                            <ref role="37wK5l" to="tpcb:3mnwiBI8ZE2" resolve="getOutputConcept" />
+              <node concept="10QFUN" id="WJTbyNie92" role="37wK5m">
+                <node concept="35c_gC" id="WJTbyNie8U" role="10QFUP">
+                  <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                  <node concept="1ZhdrF" id="WJTbyNie8V" role="lGtFl">
+                    <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474300074836/2644386474300074837" />
+                    <property role="2qtEX8" value="conceptDeclaration" />
+                    <node concept="3$xsQk" id="WJTbyNie8W" role="3$ytzL">
+                      <node concept="3clFbS" id="WJTbyNie8X" role="2VODD2">
+                        <node concept="3clFbF" id="WJTbyNie8Y" role="3cqZAp">
+                          <node concept="2OqwBi" id="WJTbyNie8Z" role="3clFbG">
+                            <node concept="30H73N" id="WJTbyNie90" role="2Oq$k0" />
+                            <node concept="2qgKlT" id="WJTbyNie91" role="2OqNvi">
+                              <ref role="37wK5l" to="tpcb:3mnwiBI8ZE2" resolve="getOutputConcept" />
+                            </node>
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
+                </node>
+                <node concept="3uibUv" id="WJTbyNie8d" role="10QFUM">
+                  <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
                 </node>
               </node>
               <node concept="359W_D" id="SDmlC7xsKz" role="37wK5m">

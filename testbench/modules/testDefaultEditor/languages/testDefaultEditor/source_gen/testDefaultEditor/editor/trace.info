@@ -13,9 +13,9 @@
       <unit at="16,0,50,0" name="testDefaultEditor.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="Friend_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="testDefaultEditor.editor.Friend_SubstituteMenu$SMP_ReferenceScope_8e6ru5_a" />
-      <unit at="65,0,86,0" name="testDefaultEditor.editor.Friend_SubstituteMenu$SMP_Subconcepts_8e6ru5_b" />
-      <unit at="24,0,87,0" name="testDefaultEditor.editor.Friend_SubstituteMenu" />
+      <unit at="47,0,66,0" name="testDefaultEditor.editor.Friend_SubstituteMenu$SMP_ReferenceScope_8e6ru5_a" />
+      <unit at="66,0,87,0" name="testDefaultEditor.editor.Friend_SubstituteMenu$SMP_Subconcepts_8e6ru5_b" />
+      <unit at="24,0,88,0" name="testDefaultEditor.editor.Friend_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:d1210bb2-885b-42ea-aaec-fbe9b5a5e2ba(testDefaultEditor.editor)/1741258697587122456">

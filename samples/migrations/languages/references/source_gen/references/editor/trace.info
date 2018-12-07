@@ -15,14 +15,14 @@
       <unit at="16,0,48,0" name="references.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="NewComponentRef_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="references.editor.NewComponentRef_SubstituteMenu$SMP_ReferenceScope_2nhj69_a" />
-      <unit at="65,0,86,0" name="references.editor.NewComponentRef_SubstituteMenu$SMP_Subconcepts_2nhj69_b" />
-      <unit at="24,0,87,0" name="references.editor.NewComponentRef_SubstituteMenu" />
+      <unit at="47,0,66,0" name="references.editor.NewComponentRef_SubstituteMenu$SMP_ReferenceScope_2nhj69_a" />
+      <unit at="66,0,87,0" name="references.editor.NewComponentRef_SubstituteMenu$SMP_Subconcepts_2nhj69_b" />
+      <unit at="24,0,88,0" name="references.editor.NewComponentRef_SubstituteMenu" />
     </file>
     <file name="OldComponentRef_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="references.editor.OldComponentRef_SubstituteMenu$SMP_ReferenceScope_buu76l_a" />
-      <unit at="65,0,86,0" name="references.editor.OldComponentRef_SubstituteMenu$SMP_Subconcepts_buu76l_b" />
-      <unit at="24,0,87,0" name="references.editor.OldComponentRef_SubstituteMenu" />
+      <unit at="47,0,66,0" name="references.editor.OldComponentRef_SubstituteMenu$SMP_ReferenceScope_buu76l_a" />
+      <unit at="66,0,87,0" name="references.editor.OldComponentRef_SubstituteMenu$SMP_Subconcepts_buu76l_b" />
+      <unit at="24,0,88,0" name="references.editor.OldComponentRef_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:39488800-d4e9-4c65-9ed9-8d5066a6f0c6(references.editor)/1233082194732315055">

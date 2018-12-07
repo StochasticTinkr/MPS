@@ -15,14 +15,14 @@
       <unit at="16,0,50,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="SimpleEditorDeclaration_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimpleEditorDeclaration_SubstituteMenu$SMP_ReferenceScope_roousu_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimpleEditorDeclaration_SubstituteMenu$SMP_Subconcepts_roousu_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimpleEditorDeclaration_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimpleEditorDeclaration_SubstituteMenu$SMP_ReferenceScope_roousu_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimpleEditorDeclaration_SubstituteMenu$SMP_Subconcepts_roousu_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimpleEditorDeclaration_SubstituteMenu" />
     </file>
     <file name="SimplePropertyReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimplePropertyReference_SubstituteMenu$SMP_ReferenceScope_3e0a16_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimplePropertyReference_SubstituteMenu$SMP_Subconcepts_3e0a16_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimplePropertyReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimplePropertyReference_SubstituteMenu$SMP_ReferenceScope_3e0a16_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimplePropertyReference_SubstituteMenu$SMP_Subconcepts_3e0a16_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.highlevel.simpleEditor.editor.SimplePropertyReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:480744f7-02c7-40e7-9a5b-a7b55c73f551(jetbrains.mps.samples.highlevel.simpleEditor.editor)/3778147542048241766">

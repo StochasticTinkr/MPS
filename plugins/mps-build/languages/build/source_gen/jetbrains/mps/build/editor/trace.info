@@ -19,63 +19,63 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="BuildExternalLayoutDependency_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.BuildExternalLayoutDependency_SubstituteMenu$SMP_ReferenceScope_ye7991_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.BuildExternalLayoutDependency_SubstituteMenu$SMP_Subconcepts_ye7991_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.BuildExternalLayoutDependency_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.build.editor.BuildExternalLayoutDependency_SubstituteMenu$SMP_ReferenceScope_ye7991_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.build.editor.BuildExternalLayoutDependency_SubstituteMenu$SMP_Subconcepts_ye7991_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.build.editor.BuildExternalLayoutDependency_SubstituteMenu" />
     </file>
     <file name="BuildProjectDependency_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.BuildProjectDependency_SubstituteMenu$SMP_ReferenceScope_xm6e4h_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.BuildProjectDependency_SubstituteMenu$SMP_Subconcepts_xm6e4h_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.BuildProjectDependency_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.build.editor.BuildProjectDependency_SubstituteMenu$SMP_ReferenceScope_xm6e4h_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.build.editor.BuildProjectDependency_SubstituteMenu$SMP_Subconcepts_xm6e4h_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.build.editor.BuildProjectDependency_SubstituteMenu" />
     </file>
     <file name="BuildSourceMacroRelativePath_SubstituteMenu.java">
-      <unit at="100,0,121,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu$SMP_Subconcepts_whou42_b" />
-      <unit at="74,0,99,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu$SMP_ReferenceScope_whou42_a$Item" />
-      <unit at="52,0,100,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu$SMP_ReferenceScope_whou42_a" />
-      <unit at="29,0,122,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu$SMP_Subconcepts_whou42_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu$SMP_ReferenceScope_whou42_a$Item" />
+      <unit at="52,0,101,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu$SMP_ReferenceScope_whou42_a" />
+      <unit at="29,0,123,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
       <unit at="20,0,428,0" name="jetbrains.mps.build.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="GeneratorInternal_BuildSource_JarFolder_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JarFolder_SubstituteMenu$SMP_ReferenceScope_o5vowq_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JarFolder_SubstituteMenu$SMP_Subconcepts_o5vowq_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JarFolder_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JarFolder_SubstituteMenu$SMP_ReferenceScope_o5vowq_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JarFolder_SubstituteMenu$SMP_Subconcepts_o5vowq_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JarFolder_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_BuildSource_JavaJar_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_SubstituteMenu$SMP_ReferenceScope_1wkndu_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_SubstituteMenu$SMP_Subconcepts_1wkndu_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_SubstituteMenu$SMP_ReferenceScope_1wkndu_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_SubstituteMenu$SMP_Subconcepts_1wkndu_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu$SMP_ReferenceScope_vxr8sy_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu$SMP_Subconcepts_vxr8sy_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu$SMP_ReferenceScope_vxr8sy_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu$SMP_Subconcepts_vxr8sy_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_BuildSource_JavaModule_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_SubstituteMenu$SMP_ReferenceScope_lnpg2_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_SubstituteMenu$SMP_Subconcepts_lnpg2_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_SubstituteMenu$SMP_ReferenceScope_lnpg2_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_SubstituteMenu$SMP_Subconcepts_lnpg2_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_BuildSource_SingleFile_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_SubstituteMenu$SMP_ReferenceScope_j0jkyf_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_SubstituteMenu$SMP_Subconcepts_j0jkyf_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_SubstituteMenu$SMP_ReferenceScope_j0jkyf_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_SubstituteMenu$SMP_Subconcepts_j0jkyf_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu$SMP_ReferenceScope_4td9tv_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu$SMP_Subconcepts_4td9tv_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu$SMP_ReferenceScope_4td9tv_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu$SMP_Subconcepts_4td9tv_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_IWorkfowParticipants_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_SubstituteMenu$SMP_ReferenceScope_8wb9uy_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_SubstituteMenu$SMP_Subconcepts_8wb9uy_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_SubstituteMenu$SMP_ReferenceScope_8wb9uy_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_SubstituteMenu$SMP_Subconcepts_8wb9uy_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_ProjectDependency_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu$SMP_ReferenceScope_jp6td_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu$SMP_Subconcepts_jp6td_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu$SMP_ReferenceScope_jp6td_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu$SMP_Subconcepts_jp6td_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu" />
     </file>
     <file name="PresentationProviders.java">
       <unit at="19,0,110,0" name="jetbrains.mps.build.editor.PresentationProviders" />
@@ -10649,68 +10649,69 @@
       <node id="4747359941571311902" at="42,49,43,264" concept="3" />
       <node id="4747359941571311902" at="44,9,45,44" concept="8" />
       <node id="4747359941571311902" at="46,15,47,50" concept="3" />
-      <node id="4747359941571311900" at="54,42,55,298" concept="13" />
-      <node id="4747359941571311900" at="59,80,60,51" concept="3" />
-      <node id="4747359941571311900" at="60,51,61,230" concept="3" />
-      <node id="4747359941571311900" at="62,11,63,42" concept="8" />
-      <node id="4747359941571311900" at="64,17,65,52" concept="3" />
-      <node id="4747359941571311900" at="71,112,72,156" concept="8" />
-      <node id="4747359941571311900" at="75,0,76,0" concept="4" trace="_context" />
-      <node id="4747359941571311900" at="76,0,77,0" concept="4" trace="referencedNode" />
-      <node id="4747359941571311900" at="77,0,78,0" concept="4" trace="myTraceInfo" />
-      <node id="4747359941571311900" at="79,122,80,132" concept="13" />
-      <node id="4747359941571311900" at="80,132,81,27" concept="3" />
-      <node id="4747359941571311900" at="81,27,82,33" concept="3" />
-      <node id="4747359941571311900" at="82,33,83,66" concept="3" />
-      <node id="4747359941571311828" at="86,53,87,242" concept="7" />
-      <node id="4747359941571311837" at="87,242,88,29" concept="7" />
-      <node id="4747359941571311843" at="89,39,90,87" concept="7" />
-      <node id="4747359941571311850" at="91,110,92,103" concept="3" />
-      <node id="4747359941571311871" at="95,29,96,716" concept="3" />
-      <node id="4747359941571311892" at="97,9,98,22" concept="8" />
-      <node id="4747359941571311900" at="101,60,102,40" concept="8" />
-      <node id="4747359941571311900" at="106,49,107,27" concept="8" />
-      <node id="4747359941571311900" at="54,0,57,0" concept="2" trace="SMP_ReferenceScope_fdjpgz_a#()V" />
-      <node id="4747359941571311848" at="90,87,93,11" concept="5" />
-      <node id="4747359941571311869" at="94,9,97,9" concept="5" />
-      <node id="4747359941571311900" at="100,0,104,0" concept="6" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="4747359941571311900" at="105,0,109,0" concept="6" trace="getTraceInfo#()Ljetbrains/mps/openapi/editor/menus/EditorMenuTraceInfo;" />
+      <node id="4747359941571311900" at="54,42,55,103" concept="9" />
+      <node id="4747359941571311900" at="55,103,56,317" concept="13" />
+      <node id="4747359941571311900" at="60,80,61,51" concept="3" />
+      <node id="4747359941571311900" at="61,51,62,230" concept="3" />
+      <node id="4747359941571311900" at="63,11,64,42" concept="8" />
+      <node id="4747359941571311900" at="65,17,66,52" concept="3" />
+      <node id="4747359941571311900" at="72,112,73,156" concept="8" />
+      <node id="4747359941571311900" at="76,0,77,0" concept="4" trace="_context" />
+      <node id="4747359941571311900" at="77,0,78,0" concept="4" trace="referencedNode" />
+      <node id="4747359941571311900" at="78,0,79,0" concept="4" trace="myTraceInfo" />
+      <node id="4747359941571311900" at="80,122,81,132" concept="13" />
+      <node id="4747359941571311900" at="81,132,82,27" concept="3" />
+      <node id="4747359941571311900" at="82,27,83,33" concept="3" />
+      <node id="4747359941571311900" at="83,33,84,66" concept="3" />
+      <node id="4747359941571311828" at="87,53,88,242" concept="7" />
+      <node id="4747359941571311837" at="88,242,89,29" concept="7" />
+      <node id="4747359941571311843" at="90,39,91,87" concept="7" />
+      <node id="4747359941571311850" at="92,110,93,103" concept="3" />
+      <node id="4747359941571311871" at="96,29,97,716" concept="3" />
+      <node id="4747359941571311892" at="98,9,99,22" concept="8" />
+      <node id="4747359941571311900" at="102,60,103,40" concept="8" />
+      <node id="4747359941571311900" at="107,49,108,27" concept="8" />
+      <node id="4747359941571311848" at="91,87,94,11" concept="5" />
+      <node id="4747359941571311869" at="95,9,98,9" concept="5" />
+      <node id="4747359941571311900" at="54,0,58,0" concept="2" trace="SMP_ReferenceScope_fdjpgz_a#()V" />
+      <node id="4747359941571311900" at="101,0,105,0" concept="6" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="4747359941571311900" at="106,0,110,0" concept="6" trace="getTraceInfo#()Ljetbrains/mps/openapi/editor/menus/EditorMenuTraceInfo;" />
       <node id="4747359941571311902" at="43,264,48,5" concept="15" />
-      <node id="4747359941571311900" at="61,230,66,7" concept="15" />
-      <node id="4747359941571311900" at="69,0,74,0" concept="6" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/editor/menus/substitute/ReferenceScopeSubstituteMenuItem;" />
-      <node id="4747359941571311900" at="79,0,85,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SReferenceLink;)V" />
-      <node id="4747359941571311841" at="88,29,94,9" concept="5" />
+      <node id="4747359941571311900" at="62,230,67,7" concept="15" />
+      <node id="4747359941571311900" at="70,0,75,0" concept="6" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/editor/menus/substitute/ReferenceScopeSubstituteMenuItem;" />
+      <node id="4747359941571311900" at="80,0,86,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SReferenceLink;)V" />
+      <node id="4747359941571311841" at="89,29,95,9" concept="5" />
       <node id="4747359941571311902" at="31,0,38,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="4747359941571311902" at="39,0,50,0" concept="6" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <node id="4747359941571311900" at="57,0,68,0" concept="6" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <node id="4747359941571311900" at="85,0,100,0" concept="6" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="4747359941571311900" at="58,0,69,0" concept="6" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="4747359941571311900" at="86,0,101,0" concept="6" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="4747359941571311902" at="44,9,45,44" />
       <scope id="4747359941571311902" at="46,15,47,50" />
-      <scope id="4747359941571311900" at="54,42,55,298" />
-      <scope id="4747359941571311900" at="62,11,63,42" />
-      <scope id="4747359941571311900" at="64,17,65,52" />
-      <scope id="4747359941571311900" at="71,112,72,156" />
-      <scope id="4747359941571311849" at="91,110,92,103" />
-      <scope id="4747359941571311870" at="95,29,96,716" />
-      <scope id="4747359941571311900" at="101,60,102,40" />
-      <scope id="4747359941571311900" at="106,49,107,27" />
+      <scope id="4747359941571311900" at="63,11,64,42" />
+      <scope id="4747359941571311900" at="65,17,66,52" />
+      <scope id="4747359941571311900" at="72,112,73,156" />
+      <scope id="4747359941571311849" at="92,110,93,103" />
+      <scope id="4747359941571311870" at="96,29,97,716" />
+      <scope id="4747359941571311900" at="102,60,103,40" />
+      <scope id="4747359941571311900" at="107,49,108,27" />
+      <scope id="4747359941571311900" at="54,42,56,317" />
       <scope id="4747359941571311902" at="33,118,36,18">
         <var name="result" id="4747359941571311902" />
       </scope>
-      <scope id="4747359941571311900" at="54,0,57,0" />
-      <scope id="4747359941571311900" at="79,122,83,66" />
-      <scope id="4747359941571311842" at="89,39,93,11">
+      <scope id="4747359941571311900" at="54,0,58,0" />
+      <scope id="4747359941571311900" at="80,122,84,66" />
+      <scope id="4747359941571311842" at="90,39,94,11">
         <var name="importedArtifactsScope" id="4747359941571311844" />
       </scope>
-      <scope id="4747359941571311900" at="100,0,104,0">
+      <scope id="4747359941571311900" at="101,0,105,0">
         <var name="pattern" id="4747359941571311900" />
       </scope>
-      <scope id="4747359941571311900" at="105,0,109,0" />
-      <scope id="4747359941571311900" at="69,0,74,0">
+      <scope id="4747359941571311900" at="106,0,110,0" />
+      <scope id="4747359941571311900" at="70,0,75,0">
         <var name="context" id="4747359941571311900" />
         <var name="referencedNode" id="4747359941571311900" />
       </scope>
-      <scope id="4747359941571311900" at="79,0,85,0">
+      <scope id="4747359941571311900" at="80,0,86,0">
         <var name="concept" id="4747359941571311900" />
         <var name="context" id="4747359941571311900" />
         <var name="refNode" id="4747359941571311900" />
@@ -10720,23 +10721,23 @@
         <var name="_context" id="4747359941571311902" />
       </scope>
       <scope id="4747359941571311902" at="41,91,48,5" />
-      <scope id="4747359941571311900" at="59,80,66,7" />
+      <scope id="4747359941571311900" at="60,80,67,7" />
       <scope id="4747359941571311902" at="39,0,50,0">
         <var name="context" id="4747359941571311902" />
       </scope>
-      <scope id="4747359941571311900" at="57,0,68,0">
+      <scope id="4747359941571311900" at="58,0,69,0">
         <var name="context" id="4747359941571311900" />
       </scope>
-      <scope id="4747359941571311827" at="86,53,98,22">
+      <scope id="4747359941571311827" at="87,53,99,22">
         <var name="contextProject" id="4747359941571311829" />
         <var name="target" id="4747359941571311838" />
       </scope>
-      <scope id="4747359941571311900" at="85,0,100,0">
+      <scope id="4747359941571311900" at="86,0,101,0">
         <var name="pattern" id="4747359941571311900" />
       </scope>
-      <unit id="4747359941571311900" at="74,0,110,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarRef_SmartReference$SMP_ReferenceScope_fdjpgz_a$Item" />
-      <unit id="4747359941571311900" at="52,0,111,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarRef_SmartReference$SMP_ReferenceScope_fdjpgz_a" />
-      <unit id="4747359941571311902" at="30,0,112,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarRef_SmartReference" />
+      <unit id="4747359941571311900" at="75,0,111,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarRef_SmartReference$SMP_ReferenceScope_fdjpgz_a$Item" />
+      <unit id="4747359941571311900" at="52,0,112,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarRef_SmartReference$SMP_ReferenceScope_fdjpgz_a" />
+      <unit id="4747359941571311902" at="30,0,113,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarRef_SmartReference" />
     </file>
   </root>
   <root nodeRef="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)/4747359941571311904">
@@ -10832,68 +10833,69 @@
       <node id="4747359941571312009" at="42,49,43,270" concept="3" />
       <node id="4747359941571312009" at="44,9,45,44" concept="8" />
       <node id="4747359941571312009" at="46,15,47,50" concept="3" />
-      <node id="4747359941571312007" at="54,42,55,307" concept="13" />
-      <node id="4747359941571312007" at="59,80,60,51" concept="3" />
-      <node id="4747359941571312007" at="60,51,61,230" concept="3" />
-      <node id="4747359941571312007" at="62,11,63,42" concept="8" />
-      <node id="4747359941571312007" at="64,17,65,52" concept="3" />
-      <node id="4747359941571312007" at="71,112,72,162" concept="8" />
-      <node id="4747359941571312007" at="75,0,76,0" concept="4" trace="_context" />
-      <node id="4747359941571312007" at="76,0,77,0" concept="4" trace="referencedNode" />
-      <node id="4747359941571312007" at="77,0,78,0" concept="4" trace="myTraceInfo" />
-      <node id="4747359941571312007" at="79,122,80,132" concept="13" />
-      <node id="4747359941571312007" at="80,132,81,27" concept="3" />
-      <node id="4747359941571312007" at="81,27,82,33" concept="3" />
-      <node id="4747359941571312007" at="82,33,83,66" concept="3" />
-      <node id="4747359941571311935" at="86,53,87,242" concept="7" />
-      <node id="4747359941571311944" at="87,242,88,29" concept="7" />
-      <node id="4747359941571311950" at="89,39,90,93" concept="7" />
-      <node id="4747359941571311957" at="91,110,92,103" concept="3" />
-      <node id="4747359941571311978" at="95,29,96,720" concept="3" />
-      <node id="4747359941571311999" at="97,9,98,22" concept="8" />
-      <node id="4747359941571312007" at="101,60,102,40" concept="8" />
-      <node id="4747359941571312007" at="106,49,107,27" concept="8" />
-      <node id="4747359941571312007" at="54,0,57,0" concept="2" trace="SMP_ReferenceScope_tq42m2_a#()V" />
-      <node id="4747359941571311955" at="90,93,93,11" concept="5" />
-      <node id="4747359941571311976" at="94,9,97,9" concept="5" />
-      <node id="4747359941571312007" at="100,0,104,0" concept="6" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="4747359941571312007" at="105,0,109,0" concept="6" trace="getTraceInfo#()Ljetbrains/mps/openapi/editor/menus/EditorMenuTraceInfo;" />
+      <node id="4747359941571312007" at="54,42,55,103" concept="9" />
+      <node id="4747359941571312007" at="55,103,56,326" concept="13" />
+      <node id="4747359941571312007" at="60,80,61,51" concept="3" />
+      <node id="4747359941571312007" at="61,51,62,230" concept="3" />
+      <node id="4747359941571312007" at="63,11,64,42" concept="8" />
+      <node id="4747359941571312007" at="65,17,66,52" concept="3" />
+      <node id="4747359941571312007" at="72,112,73,162" concept="8" />
+      <node id="4747359941571312007" at="76,0,77,0" concept="4" trace="_context" />
+      <node id="4747359941571312007" at="77,0,78,0" concept="4" trace="referencedNode" />
+      <node id="4747359941571312007" at="78,0,79,0" concept="4" trace="myTraceInfo" />
+      <node id="4747359941571312007" at="80,122,81,132" concept="13" />
+      <node id="4747359941571312007" at="81,132,82,27" concept="3" />
+      <node id="4747359941571312007" at="82,27,83,33" concept="3" />
+      <node id="4747359941571312007" at="83,33,84,66" concept="3" />
+      <node id="4747359941571311935" at="87,53,88,242" concept="7" />
+      <node id="4747359941571311944" at="88,242,89,29" concept="7" />
+      <node id="4747359941571311950" at="90,39,91,93" concept="7" />
+      <node id="4747359941571311957" at="92,110,93,103" concept="3" />
+      <node id="4747359941571311978" at="96,29,97,720" concept="3" />
+      <node id="4747359941571311999" at="98,9,99,22" concept="8" />
+      <node id="4747359941571312007" at="102,60,103,40" concept="8" />
+      <node id="4747359941571312007" at="107,49,108,27" concept="8" />
+      <node id="4747359941571311955" at="91,93,94,11" concept="5" />
+      <node id="4747359941571311976" at="95,9,98,9" concept="5" />
+      <node id="4747359941571312007" at="54,0,58,0" concept="2" trace="SMP_ReferenceScope_tq42m2_a#()V" />
+      <node id="4747359941571312007" at="101,0,105,0" concept="6" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="4747359941571312007" at="106,0,110,0" concept="6" trace="getTraceInfo#()Ljetbrains/mps/openapi/editor/menus/EditorMenuTraceInfo;" />
       <node id="4747359941571312009" at="43,270,48,5" concept="15" />
-      <node id="4747359941571312007" at="61,230,66,7" concept="15" />
-      <node id="4747359941571312007" at="69,0,74,0" concept="6" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/editor/menus/substitute/ReferenceScopeSubstituteMenuItem;" />
-      <node id="4747359941571312007" at="79,0,85,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SReferenceLink;)V" />
-      <node id="4747359941571311948" at="88,29,94,9" concept="5" />
+      <node id="4747359941571312007" at="62,230,67,7" concept="15" />
+      <node id="4747359941571312007" at="70,0,75,0" concept="6" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/editor/menus/substitute/ReferenceScopeSubstituteMenuItem;" />
+      <node id="4747359941571312007" at="80,0,86,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SReferenceLink;)V" />
+      <node id="4747359941571311948" at="89,29,95,9" concept="5" />
       <node id="4747359941571312009" at="31,0,38,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="4747359941571312009" at="39,0,50,0" concept="6" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <node id="4747359941571312007" at="57,0,68,0" concept="6" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <node id="4747359941571312007" at="85,0,100,0" concept="6" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="4747359941571312007" at="58,0,69,0" concept="6" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="4747359941571312007" at="86,0,101,0" concept="6" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="4747359941571312009" at="44,9,45,44" />
       <scope id="4747359941571312009" at="46,15,47,50" />
-      <scope id="4747359941571312007" at="54,42,55,307" />
-      <scope id="4747359941571312007" at="62,11,63,42" />
-      <scope id="4747359941571312007" at="64,17,65,52" />
-      <scope id="4747359941571312007" at="71,112,72,162" />
-      <scope id="4747359941571311956" at="91,110,92,103" />
-      <scope id="4747359941571311977" at="95,29,96,720" />
-      <scope id="4747359941571312007" at="101,60,102,40" />
-      <scope id="4747359941571312007" at="106,49,107,27" />
+      <scope id="4747359941571312007" at="63,11,64,42" />
+      <scope id="4747359941571312007" at="65,17,66,52" />
+      <scope id="4747359941571312007" at="72,112,73,162" />
+      <scope id="4747359941571311956" at="92,110,93,103" />
+      <scope id="4747359941571311977" at="96,29,97,720" />
+      <scope id="4747359941571312007" at="102,60,103,40" />
+      <scope id="4747359941571312007" at="107,49,108,27" />
+      <scope id="4747359941571312007" at="54,42,56,326" />
       <scope id="4747359941571312009" at="33,118,36,18">
         <var name="result" id="4747359941571312009" />
       </scope>
-      <scope id="4747359941571312007" at="54,0,57,0" />
-      <scope id="4747359941571312007" at="79,122,83,66" />
-      <scope id="4747359941571311949" at="89,39,93,11">
+      <scope id="4747359941571312007" at="54,0,58,0" />
+      <scope id="4747359941571312007" at="80,122,84,66" />
+      <scope id="4747359941571311949" at="90,39,94,11">
         <var name="importedArtifactsScope" id="4747359941571311951" />
       </scope>
-      <scope id="4747359941571312007" at="100,0,104,0">
+      <scope id="4747359941571312007" at="101,0,105,0">
         <var name="pattern" id="4747359941571312007" />
       </scope>
-      <scope id="4747359941571312007" at="105,0,109,0" />
-      <scope id="4747359941571312007" at="69,0,74,0">
+      <scope id="4747359941571312007" at="106,0,110,0" />
+      <scope id="4747359941571312007" at="70,0,75,0">
         <var name="context" id="4747359941571312007" />
         <var name="referencedNode" id="4747359941571312007" />
       </scope>
-      <scope id="4747359941571312007" at="79,0,85,0">
+      <scope id="4747359941571312007" at="80,0,86,0">
         <var name="concept" id="4747359941571312007" />
         <var name="context" id="4747359941571312007" />
         <var name="refNode" id="4747359941571312007" />
@@ -10903,23 +10905,23 @@
         <var name="_context" id="4747359941571312009" />
       </scope>
       <scope id="4747359941571312009" at="41,91,48,5" />
-      <scope id="4747359941571312007" at="59,80,66,7" />
+      <scope id="4747359941571312007" at="60,80,67,7" />
       <scope id="4747359941571312009" at="39,0,50,0">
         <var name="context" id="4747359941571312009" />
       </scope>
-      <scope id="4747359941571312007" at="57,0,68,0">
+      <scope id="4747359941571312007" at="58,0,69,0">
         <var name="context" id="4747359941571312007" />
       </scope>
-      <scope id="4747359941571311934" at="86,53,98,22">
+      <scope id="4747359941571311934" at="87,53,99,22">
         <var name="contextProject" id="4747359941571311936" />
         <var name="target" id="4747359941571311945" />
       </scope>
-      <scope id="4747359941571312007" at="85,0,100,0">
+      <scope id="4747359941571312007" at="86,0,101,0">
         <var name="pattern" id="4747359941571312007" />
       </scope>
-      <unit id="4747359941571312007" at="74,0,110,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarFolderRef_SmartReference$SMP_ReferenceScope_tq42m2_a$Item" />
-      <unit id="4747359941571312007" at="52,0,111,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarFolderRef_SmartReference$SMP_ReferenceScope_tq42m2_a" />
-      <unit id="4747359941571312009" at="30,0,112,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarFolderRef_SmartReference" />
+      <unit id="4747359941571312007" at="75,0,111,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarFolderRef_SmartReference$SMP_ReferenceScope_tq42m2_a$Item" />
+      <unit id="4747359941571312007" at="52,0,112,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarFolderRef_SmartReference$SMP_ReferenceScope_tq42m2_a" />
+      <unit id="4747359941571312009" at="30,0,113,0" name="jetbrains.mps.build.editor.BuildSource_JavaExternalJarFolderRef_SmartReference" />
     </file>
   </root>
   <root nodeRef="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)/4747359941571312011">

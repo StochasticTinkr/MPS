@@ -15,9 +15,9 @@
       <unit at="16,0,50,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="TransformationMenu_Test_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_SubstituteMenu$SMP_ReferenceScope_36xwx3_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_SubstituteMenu$SMP_Subconcepts_36xwx3_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_SubstituteMenu$SMP_ReferenceScope_36xwx3_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_SubstituteMenu$SMP_Subconcepts_36xwx3_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:87ff4c00-c6ac-42d9-bd84-c1eed9616ae7(jetbrains.mps.lang.editor.menus.testMetaLanguage.editor)/2710939522624389554">

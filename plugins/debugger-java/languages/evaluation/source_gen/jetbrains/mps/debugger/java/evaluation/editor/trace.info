@@ -18,9 +18,9 @@
       <unit at="17,0,77,0" name="jetbrains.mps.debugger.java.evaluation.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="LowLevelVariableReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.debugger.java.evaluation.editor.LowLevelVariableReference_SubstituteMenu$SMP_ReferenceScope_2icqa4_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.debugger.java.evaluation.editor.LowLevelVariableReference_SubstituteMenu$SMP_Subconcepts_2icqa4_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.debugger.java.evaluation.editor.LowLevelVariableReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.debugger.java.evaluation.editor.LowLevelVariableReference_SubstituteMenu$SMP_ReferenceScope_2icqa4_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.debugger.java.evaluation.editor.LowLevelVariableReference_SubstituteMenu$SMP_Subconcepts_2icqa4_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.debugger.java.evaluation.editor.LowLevelVariableReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:1725327f-608f-49f4-82f5-b90b00e35b3f(jetbrains.mps.debugger.java.evaluation.editor)/1707366700950402061">

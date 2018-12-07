@@ -20,24 +20,24 @@
       <unit at="16,0,82,0" name="jetbrains.mps.lang.quotation.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="NodeBuilderInitLink_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu$SMP_ReferenceScope_ej8zii_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu$SMP_Subconcepts_ej8zii_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu$SMP_ReferenceScope_ej8zii_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu$SMP_Subconcepts_ej8zii_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu" />
     </file>
     <file name="NodeBuilderInitProperty_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu$SMP_ReferenceScope_5m6b1p_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu$SMP_Subconcepts_5m6b1p_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu$SMP_ReferenceScope_5m6b1p_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu$SMP_Subconcepts_5m6b1p_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu" />
     </file>
     <file name="NodeBuilderNode_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu$SMP_ReferenceScope_div3q6_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu$SMP_Subconcepts_div3q6_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu$SMP_ReferenceScope_div3q6_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu$SMP_Subconcepts_div3q6_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu" />
     </file>
     <file name="NodeBuilderRef_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu$SMP_ReferenceScope_2r55m7_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu$SMP_Subconcepts_2r55m7_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu$SMP_ReferenceScope_2r55m7_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu$SMP_Subconcepts_2r55m7_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/1196350915486">

@@ -15,9 +15,9 @@
       <unit at="16,0,48,0" name="jetbrains.mps.samples.Entities.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="EntityReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.Entities.editor.EntityReference_SubstituteMenu$SMP_ReferenceScope_c8rze0_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.Entities.editor.EntityReference_SubstituteMenu$SMP_Subconcepts_c8rze0_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.Entities.editor.EntityReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.Entities.editor.EntityReference_SubstituteMenu$SMP_ReferenceScope_c8rze0_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.Entities.editor.EntityReference_SubstituteMenu$SMP_Subconcepts_c8rze0_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.Entities.editor.EntityReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:b9045035-fa47-4278-b3d0-1c7995da53ee(jetbrains.mps.samples.Entities.editor)/4053600266038192388">

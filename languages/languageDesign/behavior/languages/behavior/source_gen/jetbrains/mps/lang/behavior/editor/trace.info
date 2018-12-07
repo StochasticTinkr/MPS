@@ -18,9 +18,9 @@
       <unit at="17,0,77,0" name="jetbrains.mps.lang.behavior.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="LocalBehaviorMethodCall_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.behavior.editor.LocalBehaviorMethodCall_SubstituteMenu$SMP_ReferenceScope_e68vfy_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.behavior.editor.LocalBehaviorMethodCall_SubstituteMenu$SMP_Subconcepts_e68vfy_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.behavior.editor.LocalBehaviorMethodCall_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.behavior.editor.LocalBehaviorMethodCall_SubstituteMenu$SMP_ReferenceScope_e68vfy_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.behavior.editor.LocalBehaviorMethodCall_SubstituteMenu$SMP_Subconcepts_e68vfy_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.behavior.editor.LocalBehaviorMethodCall_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:dc79d042-ba38-4e91-9392-42f38106ae44(jetbrains.mps.lang.behavior.editor)/1225194241668">

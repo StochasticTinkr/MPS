@@ -20,29 +20,29 @@
       <unit at="18,0,118,0" name="jetbrains.mps.execution.settings.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="EditorOperationCall_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.execution.settings.editor.EditorOperationCall_SubstituteMenu$SMP_ReferenceScope_dak3eo_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.execution.settings.editor.EditorOperationCall_SubstituteMenu$SMP_Subconcepts_dak3eo_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.execution.settings.editor.EditorOperationCall_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.execution.settings.editor.EditorOperationCall_SubstituteMenu$SMP_ReferenceScope_dak3eo_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.execution.settings.editor.EditorOperationCall_SubstituteMenu$SMP_Subconcepts_dak3eo_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.execution.settings.editor.EditorOperationCall_SubstituteMenu" />
     </file>
     <file name="EditorPropertyReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.execution.settings.editor.EditorPropertyReference_SubstituteMenu$SMP_ReferenceScope_a6dvhj_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.execution.settings.editor.EditorPropertyReference_SubstituteMenu$SMP_Subconcepts_a6dvhj_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.execution.settings.editor.EditorPropertyReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.execution.settings.editor.EditorPropertyReference_SubstituteMenu$SMP_ReferenceScope_a6dvhj_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.execution.settings.editor.EditorPropertyReference_SubstituteMenu$SMP_Subconcepts_a6dvhj_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.execution.settings.editor.EditorPropertyReference_SubstituteMenu" />
     </file>
     <file name="PersistentConfigurationTemplateInitializer_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationTemplateInitializer_SubstituteMenu$SMP_ReferenceScope_tc85xz_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationTemplateInitializer_SubstituteMenu$SMP_Subconcepts_tc85xz_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationTemplateInitializer_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationTemplateInitializer_SubstituteMenu$SMP_ReferenceScope_tc85xz_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationTemplateInitializer_SubstituteMenu$SMP_Subconcepts_tc85xz_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationTemplateInitializer_SubstituteMenu" />
     </file>
     <file name="PersistentPropertyReferenceOperation_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.execution.settings.editor.PersistentPropertyReferenceOperation_SubstituteMenu$SMP_ReferenceScope_wh42hk_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.execution.settings.editor.PersistentPropertyReferenceOperation_SubstituteMenu$SMP_Subconcepts_wh42hk_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.execution.settings.editor.PersistentPropertyReferenceOperation_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.execution.settings.editor.PersistentPropertyReferenceOperation_SubstituteMenu$SMP_ReferenceScope_wh42hk_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.execution.settings.editor.PersistentPropertyReferenceOperation_SubstituteMenu$SMP_Subconcepts_wh42hk_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.execution.settings.editor.PersistentPropertyReferenceOperation_SubstituteMenu" />
     </file>
     <file name="TemplateParameterReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.execution.settings.editor.TemplateParameterReference_SubstituteMenu$SMP_ReferenceScope_uhqdxa_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.execution.settings.editor.TemplateParameterReference_SubstituteMenu$SMP_Subconcepts_uhqdxa_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.execution.settings.editor.TemplateParameterReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.execution.settings.editor.TemplateParameterReference_SubstituteMenu$SMP_ReferenceScope_uhqdxa_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.execution.settings.editor.TemplateParameterReference_SubstituteMenu$SMP_Subconcepts_uhqdxa_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.execution.settings.editor.TemplateParameterReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:328ff5ee-9330-4068-906e-6e3bb50e6e1d(jetbrains.mps.execution.settings.editor)/1741258697586930409">

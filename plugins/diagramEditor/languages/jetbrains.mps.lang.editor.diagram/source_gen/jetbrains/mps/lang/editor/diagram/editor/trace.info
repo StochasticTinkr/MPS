@@ -17,27 +17,27 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="AttributedFigureReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_SubstituteMenu$SMP_ReferenceScope_luac2k_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_SubstituteMenu$SMP_Subconcepts_luac2k_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_SubstituteMenu$SMP_ReferenceScope_luac2k_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_SubstituteMenu$SMP_Subconcepts_luac2k_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_SubstituteMenu" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
       <unit at="17,0,123,0" name="jetbrains.mps.lang.editor.diagram.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="ExternalFigureReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_SubstituteMenu$SMP_ReferenceScope_2fg9j2_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_SubstituteMenu$SMP_Subconcepts_2fg9j2_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_SubstituteMenu$SMP_ReferenceScope_2fg9j2_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_SubstituteMenu$SMP_Subconcepts_2fg9j2_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_SubstituteMenu" />
     </file>
     <file name="LinkArgument_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_SubstituteMenu$SMP_ReferenceScope_iyhn0g_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_SubstituteMenu$SMP_Subconcepts_iyhn0g_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_SubstituteMenu$SMP_ReferenceScope_iyhn0g_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_SubstituteMenu$SMP_Subconcepts_iyhn0g_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_SubstituteMenu" />
     </file>
     <file name="PropertyArgument_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_SubstituteMenu$SMP_ReferenceScope_6eico3_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_SubstituteMenu$SMP_Subconcepts_6eico3_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_SubstituteMenu$SMP_ReferenceScope_6eico3_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_SubstituteMenu$SMP_Subconcepts_6eico3_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/1094405431463761909">

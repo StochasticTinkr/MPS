@@ -15,24 +15,24 @@
       <unit at="16,0,62,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="HandleEvent_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_SubstituteMenu$SMP_ReferenceScope_7iv4dv_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_SubstituteMenu$SMP_Subconcepts_7iv4dv_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_SubstituteMenu$SMP_ReferenceScope_7iv4dv_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_SubstituteMenu$SMP_Subconcepts_7iv4dv_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_SubstituteMenu" />
     </file>
     <file name="StateMachineTestMethod_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_SubstituteMenu$SMP_ReferenceScope_ro57qv_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_SubstituteMenu$SMP_Subconcepts_ro57qv_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_SubstituteMenu$SMP_ReferenceScope_ro57qv_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_SubstituteMenu$SMP_Subconcepts_ro57qv_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_SubstituteMenu" />
     </file>
     <file name="StateMachineTest_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_SubstituteMenu$SMP_ReferenceScope_4nt6vc_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_SubstituteMenu$SMP_Subconcepts_4nt6vc_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_SubstituteMenu$SMP_ReferenceScope_4nt6vc_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_SubstituteMenu$SMP_Subconcepts_4nt6vc_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_SubstituteMenu" />
     </file>
     <file name="StateMachine_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_SubstituteMenu$SMP_ReferenceScope_kdnim9_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_SubstituteMenu$SMP_Subconcepts_kdnim9_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_SubstituteMenu$SMP_ReferenceScope_kdnim9_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_SubstituteMenu$SMP_Subconcepts_kdnim9_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)/1197149586039">

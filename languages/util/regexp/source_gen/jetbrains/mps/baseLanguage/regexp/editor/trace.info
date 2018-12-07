@@ -21,36 +21,36 @@
       <unit at="17,0,185,0" name="jetbrains.mps.baseLanguage.regexp.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="MatchVariableReferenceRegexp_SubstituteMenu.java">
-      <unit at="100,0,121,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_Subconcepts_8lasyq_b" />
-      <unit at="74,0,99,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_ReferenceScope_8lasyq_a$Item" />
-      <unit at="52,0,100,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_ReferenceScope_8lasyq_a" />
-      <unit at="29,0,122,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_Subconcepts_8lasyq_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_ReferenceScope_8lasyq_a$Item" />
+      <unit at="52,0,101,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu$SMP_ReferenceScope_8lasyq_a" />
+      <unit at="29,0,123,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu" />
     </file>
     <file name="MatchVariableReferenceReplacement_SubstituteMenu.java">
-      <unit at="100,0,121,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_Subconcepts_57bq3c_b" />
-      <unit at="74,0,99,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_ReferenceScope_57bq3c_a$Item" />
-      <unit at="52,0,100,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_ReferenceScope_57bq3c_a" />
-      <unit at="29,0,122,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_Subconcepts_57bq3c_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_ReferenceScope_57bq3c_a$Item" />
+      <unit at="52,0,101,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu$SMP_ReferenceScope_57bq3c_a" />
+      <unit at="29,0,123,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu" />
     </file>
     <file name="MatchVariableReference_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_SubstituteMenu$SMP_ReferenceScope_tdhr47_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_SubstituteMenu$SMP_Subconcepts_tdhr47_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_SubstituteMenu$SMP_ReferenceScope_tdhr47_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_SubstituteMenu$SMP_Subconcepts_tdhr47_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_SubstituteMenu" />
     </file>
     <file name="PredefinedSymbolClassRegexp_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_SubstituteMenu$SMP_ReferenceScope_lmi5ai_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_SubstituteMenu$SMP_Subconcepts_lmi5ai_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_SubstituteMenu$SMP_ReferenceScope_lmi5ai_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_SubstituteMenu$SMP_Subconcepts_lmi5ai_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_SubstituteMenu" />
     </file>
     <file name="PredefinedSymbolClassSymbolClassPart_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_SubstituteMenu$SMP_ReferenceScope_kon73z_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_SubstituteMenu$SMP_Subconcepts_kon73z_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_SubstituteMenu$SMP_ReferenceScope_kon73z_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_SubstituteMenu$SMP_Subconcepts_kon73z_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_SubstituteMenu" />
     </file>
     <file name="RegexpDeclarationReferenceRegexp_SubstituteMenu.java">
-      <unit at="47,0,65,0" name="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_SubstituteMenu$SMP_ReferenceScope_xnowcq_a" />
-      <unit at="65,0,86,0" name="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_SubstituteMenu$SMP_Subconcepts_xnowcq_b" />
-      <unit at="24,0,87,0" name="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_SubstituteMenu" />
+      <unit at="47,0,66,0" name="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_SubstituteMenu$SMP_ReferenceScope_xnowcq_a" />
+      <unit at="66,0,87,0" name="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_SubstituteMenu$SMP_Subconcepts_xnowcq_b" />
+      <unit at="24,0,88,0" name="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/1174482859926">
