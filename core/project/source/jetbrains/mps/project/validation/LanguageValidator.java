@@ -133,23 +133,6 @@ public class LanguageValidator {
       }
     }
 
-    // XXX why it's essential to have behavior aspects in extended languages?
-    if (LanguageAspect.BEHAVIOR.get(myLanguage) == null) {
-      if (!myProcessor.process(new ModuleValidationProblem(myLanguage, MessageStatus.ERROR, "Behavior aspect is absent"))) {
-        return;
-      }
-    }
-
-    for (Language l : extendedLanguagesClosure) {
-      SModel descriptor = LanguageAspect.BEHAVIOR.get(l);
-      if (descriptor != null) {
-        continue;
-      }
-      if (!myProcessor.process(new ModuleValidationProblem(myLanguage, MessageStatus.ERROR, "Cannot extend language without behavior aspect: " + l.getModuleName()))) {
-        return;
-      }
-    }
-
     for (SModuleReference mr : myLanguage.getRuntimeModulesReferences()) {
       SModule runtimeModule = mr.resolve(myRepository);
       if (runtimeModule == null) {
