@@ -1178,7 +1178,7 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       @Nullable
       @Override
       public String getDescriptionText(@NotNull String pattern) {
-        return "make constant";
+        return "text constant";
       }
       @Override
       public boolean canExecute(@NotNull String pattern) {

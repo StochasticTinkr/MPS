@@ -22869,7 +22869,7 @@
           <node concept="3clFbS" id="1wEcoXjJtqy" role="2VODD2">
             <node concept="3cpWs6" id="1wEcoXjJtqz" role="3cqZAp">
               <node concept="Xl_RD" id="1wEcoXjJtq$" role="3cqZAk">
-                <property role="Xl_RC" value="make constant" />
+                <property role="Xl_RC" value="text constant" />
               </node>
             </node>
           </node>
