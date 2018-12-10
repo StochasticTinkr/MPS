@@ -1,9 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info version="2">
-  <root>
-    <file name="MigrationDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.migration.MigrationDescriptor" />
-    </file>
-  </root>
-</debug-info>
+<debug-info version="2" />
 
