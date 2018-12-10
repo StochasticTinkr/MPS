@@ -14,5 +14,6 @@
     <orderEntry type="library" exported="" name="mps-core" level="project" />
     <orderEntry type="library" exported="" name="mps-logging" level="project" />
     <orderEntry type="library" exported="" name="mps-messaging" level="project" />
+    <orderEntry type="library" name="mps-annotations" level="project" />
   </component>
 </module>
