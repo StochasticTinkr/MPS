@@ -54,7 +54,6 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 
 /*package*/ class Refactoring_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -403,9 +402,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0664L, "jetbrains.mps.lang.refactoring.structure.RefactoringParameter");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0664L, "jetbrains.mps.lang.refactoring.structure.RefactoringParameter"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);
@@ -478,9 +475,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0662L, "jetbrains.mps.lang.refactoring.structure.RefactoringField");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0662L, "jetbrains.mps.lang.refactoring.structure.RefactoringField"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);

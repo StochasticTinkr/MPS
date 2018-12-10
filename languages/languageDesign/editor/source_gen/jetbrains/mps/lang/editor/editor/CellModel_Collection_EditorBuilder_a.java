@@ -35,7 +35,6 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
@@ -180,6 +179,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
     public SNode createNodeToInsert(EditorContext editorContext) {
       return nodeFactory();
     }
+
     public SNode nodeFactory() {
       return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"));
     }
@@ -313,9 +313,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);
@@ -415,9 +413,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);

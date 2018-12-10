@@ -22,12 +22,11 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertySubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.lang.editor.cellProviders.SChildListHandler;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorSReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteSReference;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -49,17 +48,15 @@ import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SEnumeration;
-import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -267,20 +264,36 @@ public class DefaultEditor extends AbstractDefaultEditor {
     return null;
   }
 
-  private static class ListHandler extends SChildListHandler {
-    ListHandler(SNode ownerNode, SContainmentLink link, EditorContext context) {
-      super(ownerNode, link, context, false);
-    }
+  private static class ListHandler extends RefNodeListHandler {
 
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      SNode listOwner = getNode();
-      return NodeFactoryManager.createNode(myLink.getTargetConcept(), null, listOwner, listOwner.getModel());
+    private final SContainmentLink myLink;
+    private final SNode myOwnerNode;
+
+    ListHandler(SNode ownerNode, SContainmentLink link, EditorContext context) {
+      super(context);
+      myLink = link;
+      myOwnerNode = ownerNode;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       this.installElementCellActions(getNode(), elementNode, elementCell);
       return elementCell;
+    }
+
+    @Override
+    public SContainmentLink getSLink() {
+      return myLink;
+    }
+
+    @Override
+    public SAbstractConcept getChildSConcept() {
+      return myLink.getTargetConcept();
+    }
+
+    @Override
+    public SNode getNode() {
+      return myOwnerNode;
     }
 
     public EditorCell createEmptyCell() {

@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -47,7 +47,8 @@ public class BuildMps_IdeaPluginModule_SmartReference extends SubstituteMenuBase
   public class SMP_ReferenceScope_wbo7rb_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_wbo7rb_a() {
-      super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule"), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x5b7be37b4de9bbddL, "target"));
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule"), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x5b7be37b4de9bbddL, "target"));
     }
     @NotNull
     @Override
@@ -64,14 +65,14 @@ public class BuildMps_IdeaPluginModule_SmartReference extends SubstituteMenuBase
     @Override
     @NotNull
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
-      return new BuildMps_IdeaPluginModule_SmartReference.SMP_ReferenceScope_wbo7rb_a.Item(context, referencedNode, getConcept(), getReferenceLink());
+      return new BuildMps_IdeaPluginModule_SmartReference.SMP_ReferenceScope_wbo7rb_a.Item(context, referencedNode, getSConcept(), getReferenceLink());
     }
     private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;
 
-      private Item(SubstituteMenuContext context, SNode refNode, SConcept concept, SReferenceLink referenceLink) {
+      private Item(SubstituteMenuContext context, SNode refNode, SAbstractConcept concept, SReferenceLink referenceLink) {
         super(concept, context.getParentNode(), context.getCurrentTargetNode(), refNode, referenceLink, context.getEditorContext());
         _context = context;
         referencedNode = refNode;

@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 
@@ -47,7 +47,8 @@ public class CommandParameterAssignment_SubstituteMenu extends SubstituteMenuBas
   public class SMP_ReferenceScope_hj1tk6_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_hj1tk6_a() {
-      super(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be4L, "jetbrains.mps.execution.commands.structure.CommandParameterAssignment"), MetaAdapterFactory.getReferenceLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be4L, 0xbe3a0d5ba1a2be5L, "parameterDeclaration"));
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be4L, "jetbrains.mps.execution.commands.structure.CommandParameterAssignment"), MetaAdapterFactory.getReferenceLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be4L, 0xbe3a0d5ba1a2be5L, "parameterDeclaration"));
     }
     @NotNull
     @Override

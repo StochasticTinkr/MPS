@@ -118,8 +118,7 @@ public class SetNodePackage_Action extends BaseAction {
     });
     final SetNodePackageDialog dialog = new SetNodePackageDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), packages.value);
     dialog.setPackage(oldPackage.value);
-    dialog.show();
-    if (dialog.isCancelled()) {
+    if (!(dialog.showAndGet())) {
       return;
     }
     modelAccess.executeCommandInEDT(new Runnable() {
@@ -128,7 +127,7 @@ public class SetNodePackage_Action extends BaseAction {
           SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), dialog.getPackage());
           if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
             for (SNode aspect : ListSequence.fromList(SetNodePackage_Action.this.findAllAspects(((Project) MapSequence.fromMap(_params).get("ideaProject")), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), _params))) {
-              SPropertyOperations.assign(((SNode) aspect), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), dialog.getPackage());
+              SPropertyOperations.assign(aspect, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), dialog.getPackage());
             }
           }
         }

@@ -309,7 +309,10 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
       BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
       for (SModel aspModel : LanguageAspectSupport.getAspectModels(myModule)) {
         if (aspModel instanceof EditableSModel && !((EditableSModel) aspModel).isChanged() && aspModel instanceof GeneratableSModel) {
-          modelHash = modelHash.xor(new BigInteger(((GeneratableSModel) aspModel).getModelHash(), Character.MAX_RADIX));
+          final String h = ((GeneratableSModel) aspModel).getModelHash();
+          if (h != null) {
+            modelHash = modelHash.xor(new BigInteger(h, Character.MAX_RADIX));
+          }
         }
       }
 

@@ -134,7 +134,7 @@ public class SampleRefMigration extends MigrationScriptBase {
   public List<SNode> getDeclData(SModule m) {
     {
       SearchScope scope_u457zm_a0g = CommandUtil.createScope(m);
-      final SearchScope scope_u457zm_a0g_0 = new EditableFilteringScope(scope_u457zm_a0g);
+      final SearchScope scope_u457zm_a0g_0 = scope_u457zm_a0g;
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope_u457zm_a0g_0;

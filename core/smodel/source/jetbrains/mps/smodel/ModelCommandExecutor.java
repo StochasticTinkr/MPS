@@ -17,15 +17,13 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-
-import java.util.concurrent.ConcurrentMap;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public interface ModelCommandExecutor {
+  // Despite most of the methods come from openapi.ModelAccess, can not remove them as long as there are uses of these methods in mbeddr.
 
   boolean canRead(); // == openapi.ModelAccess
 
@@ -114,12 +112,4 @@ public interface ModelCommandExecutor {
   @Deprecated
   @ToRemove(version = 3.3)
   void flushEventQueue();
-
-  /**
-   * @deprecated see {@code jetbrains.mps.smodel.ModelAccess#getRepositoryStateCache(String)}
-   */
-  @Deprecated
-  @Nullable
-  @ToRemove(version = 2018.3)
-  <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey);
 }

@@ -1486,6 +1486,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.openapi.navigation.EditorNavigator" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
@@ -2206,7 +2207,6 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.application.TransactionGuard" />
     <classNode dependClassName="com.intellij.openapi.options.ex.SingleConfigurableEditor" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -2224,6 +2224,7 @@
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.module.NamespaceTextNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.module.StereotypeProvider" />
@@ -2901,7 +2902,9 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.SetNodePackageDialog">
     <classNode dependClassName="com.intellij.openapi.ui.ComboBox" />
+    <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
     <classNode dependClassName="com.intellij.util.ui.JBUI" />
+    <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />

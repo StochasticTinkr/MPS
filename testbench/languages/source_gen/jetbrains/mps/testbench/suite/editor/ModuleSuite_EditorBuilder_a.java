@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 
 /*package*/ class ModuleSuite_EditorBuilder_a extends AbstractEditorBuilder {
@@ -152,9 +151,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, "jetbrains.mps.testbench.suite.structure.ITestRef");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, "jetbrains.mps.testbench.suite.structure.ITestRef"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);

@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 
@@ -47,7 +47,8 @@ public class MatrixInitializerIndexReference_SubstituteMenu extends SubstituteMe
   public class SMP_ReferenceScope_2x2usv_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_2x2usv_a() {
-      super(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference"), MetaAdapterFactory.getReferenceLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, 0x5650ac0d4240f275L, "index"));
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference"), MetaAdapterFactory.getReferenceLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, 0x5650ac0d4240f275L, "index"));
     }
     @NotNull
     @Override

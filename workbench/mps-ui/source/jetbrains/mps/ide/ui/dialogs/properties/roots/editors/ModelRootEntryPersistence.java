@@ -31,17 +31,15 @@ import java.util.function.BiConsumer;
 final class ModelRootEntryPersistence {
   private final PersistenceFacade myPersistenceFacade;
   // list with sequential search is perfectly ok, we don't expect it to grow too big
-  private final ModelRootEntryEP[] myExtensions;
 
   public ModelRootEntryPersistence(PersistenceFacade persistenceFacade) {
     myPersistenceFacade = persistenceFacade;
-    myExtensions = ModelRootEntryEP.EP_NAME.getExtensions();
   }
 
   @Nullable
   public ModelRootEntry getModelRootEntry(ModelRoot modelRoot) {
     final String kind = modelRoot.getType();
-    for (ModelRootEntryEP extension : myExtensions) {
+    for (ModelRootEntryEP extension : ModelRootEntryEP.EP_NAME.getExtensionList()) {
       if (kind.equals(extension.rootType)) {
         return extension.getModelRootEntryFactory().getModelRootEntry(modelRoot);
       }
@@ -50,7 +48,7 @@ final class ModelRootEntryPersistence {
   }
 
   public void foreachTypeAndName(BiConsumer<String,String> c) {
-    for (ModelRootEntryEP extension : myExtensions) {
+    for (ModelRootEntryEP extension : ModelRootEntryEP.EP_NAME.getExtensionList()) {
       c.accept(extension.rootType, extension.getTitle());
     }
   }

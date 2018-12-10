@@ -90,6 +90,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     public SNode createNodeToInsert(EditorContext editorContext) {
       return nodeFactory();
     }
+
     public SNode nodeFactory() {
       return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"));
     }

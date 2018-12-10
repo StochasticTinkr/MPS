@@ -133,6 +133,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
@@ -768,6 +769,51 @@
             <ref role="37wK5l" to="31cb:~SModuleBase.assertCanChange():void" resolve="assertCanChange" />
           </node>
         </node>
+        <node concept="3clFbJ" id="1h916lQAttL" role="3cqZAp">
+          <node concept="2ZW3vV" id="1h916lQArUE" role="3clFbw">
+            <node concept="3uibUv" id="1h916lQAsen" role="2ZW6by">
+              <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
+            </node>
+            <node concept="37vLTw" id="1h916lQArw1" role="2ZW6bz">
+              <ref role="3cqZAo" node="4fSpAVAUjwo" resolve="module" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="1h916lQAttM" role="3clFbx">
+            <node concept="3SKdUt" id="1h916lQA$aW" role="3cqZAp">
+              <node concept="3SKdUq" id="1h916lQA$aY" role="3SKWNk">
+                <property role="3SKdUp" value="workaround for https://youtrack.jetbrains.com/issue/MPS-28974" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="1h916lQA$j3" role="3cqZAp">
+              <node concept="3SKdUq" id="1h916lQA$j5" role="3SKWNk">
+                <property role="3SKdUp" value="Instead, shall cease being a global module, construct node&lt;Module&gt; on demand and don't bother with update" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="1h916lQAtNk" role="3cqZAp">
+              <node concept="37vLTI" id="1h916lQAtVF" role="3clFbG">
+                <node concept="2OqwBi" id="1h916lQAu_r" role="37vLTx">
+                  <node concept="1eOMI4" id="1h916lQAu8C" role="2Oq$k0">
+                    <node concept="10QFUN" id="1h916lQAu8_" role="1eOMHV">
+                      <node concept="3uibUv" id="1h916lQAuel" role="10QFUM">
+                        <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
+                      </node>
+                      <node concept="37vLTw" id="1h916lQAu1A" role="10QFUP">
+                        <ref role="3cqZAo" node="4fSpAVAUjwo" resolve="module" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1h916lQAvFD" role="2OqNvi">
+                    <ref role="37wK5l" to="w1kc:~Generator.getSourceLanguage():jetbrains.mps.smodel.Language" resolve="getSourceLanguage" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="1h916lQAtNi" role="37vLTJ">
+                  <ref role="3cqZAo" node="4fSpAVAUjwo" resolve="module" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1h916lQAtf5" role="3cqZAp" />
         <node concept="3clFbJ" id="4fSpAVAUjwv" role="3cqZAp">
           <node concept="3fqX7Q" id="4fSpAVAUjww" role="3clFbw">
             <node concept="1eOMI4" id="4fSpAVAUjwG" role="3fr31v">

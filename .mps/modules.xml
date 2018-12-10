@@ -28,6 +28,7 @@
       <modulePath path="$PROJECT_DIR$/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/core/migration-runtime/jetbrains.mps.lang.migration.runtime.msd" folder="core.aspects.migration" />
       <modulePath path="$PROJECT_DIR$/core/persistence/jetbrains.mps.persistence.msd" folder="core.kernel" />
+      <modulePath path="$PROJECT_DIR$/core/project/jetbrains.mps.project.msd" folder="core.kernel" />
       <modulePath path="$PROJECT_DIR$/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" folder="core.aspects.refactoring" />
       <modulePath path="$PROJECT_DIR$/core/refactoring/jetbrains.mps.refactoring.msd" folder="core.aspects.refactoring" />
       <modulePath path="$PROJECT_DIR$/core/resources/jetbrains.mps.smodel.resources.msd" folder="core.make" />

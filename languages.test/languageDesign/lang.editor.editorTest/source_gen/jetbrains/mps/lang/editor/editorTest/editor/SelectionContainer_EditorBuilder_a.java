@@ -28,7 +28,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 
 /*package*/ class SelectionContainer_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -138,6 +137,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     public SNode createNodeToInsert(EditorContext editorContext) {
       return nodeFactory();
     }
+
     public SNode nodeFactory() {
       SNode ch = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionChild"));
       SPropertyOperations.assign(ch, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, 0x617705b269dc8252L, "flag"), true);
@@ -250,9 +250,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionChild");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionChild"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);

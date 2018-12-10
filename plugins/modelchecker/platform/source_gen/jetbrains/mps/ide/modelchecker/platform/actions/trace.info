@@ -301,86 +301,83 @@
   </root>
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199793465778">
     <file name="ModelCheckerCheckinHandler.java">
-      <node id="3719390199793465779" at="30,0,31,0" concept="6" trace="myProject" />
-      <node id="3719390199793465782" at="31,0,32,0" concept="6" trace="myPanel" />
-      <node id="3719390199793465789" at="32,81,33,24" concept="5" />
-      <node id="3719390199793465793" at="33,24,34,20" concept="5" />
-      <node id="3719390199793465807" at="38,70,39,92" concept="11" />
-      <node id="3719390199793465821" at="42,40,43,56" concept="11" />
-      <node id="3719390199793465830" at="43,56,44,38" concept="5" />
-      <node id="3719390199793465835" at="44,38,45,21" concept="12" />
-      <node id="3719390199793465843" at="48,34,49,97" concept="5" />
-      <node id="3719390199793465853" at="52,31,53,97" concept="5" />
-      <node id="3719390199793465876" at="62,70,63,48" concept="12" />
-      <node id="3719390199793465878" at="64,5,65,0" concept="14" />
-      <node id="3719390199793465879" at="65,0,66,113" concept="12" />
-      <node id="7540523421682544193" at="68,63,69,110" concept="11" />
-      <node id="7540523421682544206" at="71,39,72,92" concept="12" />
-      <node id="7540523421682544223" at="75,53,76,39" concept="12" />
-      <node id="3719390199793465947" at="85,97,86,71" concept="12" />
-      <node id="3719390199793465939" at="81,0,83,0" concept="3" trace="ModelCheckerCheckinHandlerFactory#()V" />
-      <node id="3719390199793465863" at="55,0,58,0" concept="10" trace="refresh#()V" />
-      <node id="3719390199793465870" at="61,54,64,5" concept="9" />
-      <node id="7540523421682544204" at="71,0,74,0" concept="10" trace="select#(Ljava/io/File;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="7540523421682544219" at="75,0,78,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-      <node id="3719390199793465785" at="32,0,36,0" concept="3" trace="ModelCheckerCheckinHandler#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/CheckinProjectPanel;)V" />
-      <node id="3719390199793465839" at="47,0,51,0" concept="10" trace="restoreState#()V" />
-      <node id="3719390199793465851" at="51,0,55,0" concept="10" trace="saveState#()V" />
-      <node id="3719390199793465945" at="83,0,88,0" concept="10" trace="createHandler#(Lcom/intellij/openapi/vcs/CheckinProjectPanel;Lcom/intellij/openapi/vcs/changes/CommitContext;)Lcom/intellij/openapi/vcs/checkin/CheckinHandler;" />
-      <node id="3719390199793465818" at="41,0,47,0" concept="10" trace="getComponent#()Ljavax/swing/JComponent;" />
-      <node id="3719390199793465868" at="60,0,68,0" concept="10" trace="beforeCheckin#()Lcom/intellij/openapi/vcs/checkin/CheckinHandler/ReturnResult;" />
-      <node id="7540523421682544197" at="69,110,78,8" concept="12" />
-      <node id="7540523421682544190" at="68,0,80,0" concept="10" trace="getModelsByFiles#(Ljava/lang/Iterable;)Ljava/util/List;" />
-      <node id="3719390199793465813" at="39,92,58,6" concept="12" />
-      <node id="3719390199793465801" at="36,0,60,0" concept="10" trace="getBeforeCheckinConfigurationPanel#()Lcom/intellij/openapi/vcs/ui/RefreshableOnComponent;" />
-      <scope id="3719390199793465864" at="56,29,56,29" />
-      <scope id="3719390199793465940" at="81,48,81,48" />
-      <scope id="3719390199793465842" at="48,34,49,97" />
-      <scope id="3719390199793465852" at="52,31,53,97" />
-      <scope id="3719390199793465875" at="62,70,63,48" />
-      <scope id="7540523421682544205" at="71,39,72,92" />
-      <scope id="7540523421682544222" at="75,53,76,39" />
-      <scope id="3719390199793465946" at="85,97,86,71" />
-      <scope id="3719390199793465788" at="32,81,34,20" />
-      <scope id="3719390199793465939" at="81,0,83,0" />
-      <scope id="3719390199793465820" at="42,40,45,21">
+      <node id="3719390199793465779" at="29,0,30,0" concept="6" trace="myProject" />
+      <node id="3719390199793465782" at="30,0,31,0" concept="6" trace="myPanel" />
+      <node id="3719390199793465789" at="31,81,32,24" concept="5" />
+      <node id="3719390199793465793" at="32,24,33,20" concept="5" />
+      <node id="3719390199793465807" at="37,70,38,92" concept="11" />
+      <node id="3719390199793465821" at="41,40,42,56" concept="11" />
+      <node id="3719390199793465830" at="42,56,43,38" concept="5" />
+      <node id="3719390199793465835" at="43,38,44,21" concept="12" />
+      <node id="3719390199793465843" at="47,34,48,97" concept="5" />
+      <node id="3719390199793465853" at="51,31,52,97" concept="5" />
+      <node id="3719390199793465876" at="61,70,62,48" concept="12" />
+      <node id="3719390199793465878" at="63,5,64,0" concept="14" />
+      <node id="3719390199793465879" at="64,0,65,120" concept="12" />
+      <node id="7462343251447058976" at="67,70,68,75" concept="11" />
+      <node id="7462343251447075812" at="68,75,69,57" concept="11" />
+      <node id="7540523421682544193" at="69,57,70,91" concept="11" />
+      <node id="7462343251447110867" at="72,46,73,54" concept="12" />
+      <node id="3719390199793465947" at="83,97,84,71" concept="12" />
+      <node id="3719390199793465939" at="79,0,81,0" concept="3" trace="ModelCheckerCheckinHandlerFactory#()V" />
+      <node id="3719390199793465863" at="54,0,57,0" concept="10" trace="refresh#()V" />
+      <node id="3719390199793465870" at="60,54,63,5" concept="9" />
+      <node id="7462343251447110865" at="72,0,75,0" concept="10" trace="select#(Lcom/intellij/openapi/vfs/VirtualFile;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="3719390199793465785" at="31,0,35,0" concept="3" trace="ModelCheckerCheckinHandler#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/CheckinProjectPanel;)V" />
+      <node id="3719390199793465839" at="46,0,50,0" concept="10" trace="restoreState#()V" />
+      <node id="3719390199793465851" at="50,0,54,0" concept="10" trace="saveState#()V" />
+      <node id="7540523421682544197" at="70,91,75,64" concept="12" />
+      <node id="3719390199793465945" at="81,0,86,0" concept="10" trace="createHandler#(Lcom/intellij/openapi/vcs/CheckinProjectPanel;Lcom/intellij/openapi/vcs/changes/CommitContext;)Lcom/intellij/openapi/vcs/checkin/CheckinHandler;" />
+      <node id="3719390199793465818" at="40,0,46,0" concept="10" trace="getComponent#()Ljavax/swing/JComponent;" />
+      <node id="3719390199793465868" at="59,0,67,0" concept="10" trace="beforeCheckin#()Lcom/intellij/openapi/vcs/checkin/CheckinHandler/ReturnResult;" />
+      <node id="7540523421682544190" at="67,0,77,0" concept="10" trace="getModelsByFiles#(Ljava/lang/Iterable;)Ljava/util/List;" />
+      <node id="3719390199793465813" at="38,92,57,6" concept="12" />
+      <node id="3719390199793465801" at="35,0,59,0" concept="10" trace="getBeforeCheckinConfigurationPanel#()Lcom/intellij/openapi/vcs/ui/RefreshableOnComponent;" />
+      <scope id="3719390199793465864" at="55,29,55,29" />
+      <scope id="3719390199793465940" at="79,48,79,48" />
+      <scope id="3719390199793465842" at="47,34,48,97" />
+      <scope id="3719390199793465852" at="51,31,52,97" />
+      <scope id="3719390199793465875" at="61,70,62,48" />
+      <scope id="7462343251447110866" at="72,46,73,54" />
+      <scope id="3719390199793465946" at="83,97,84,71" />
+      <scope id="3719390199793465788" at="31,81,33,20" />
+      <scope id="3719390199793465939" at="79,0,81,0" />
+      <scope id="3719390199793465820" at="41,40,44,21">
         <var name="panel" id="3719390199793465822" />
       </scope>
-      <scope id="3719390199793465863" at="55,0,58,0" />
-      <scope id="7540523421682544204" at="71,0,74,0">
-        <var name="file" id="7540523421682544204" />
+      <scope id="3719390199793465863" at="54,0,57,0" />
+      <scope id="7462343251447110865" at="72,0,75,0">
+        <var name="file" id="7462343251447110865" />
       </scope>
-      <scope id="7540523421682544219" at="75,0,78,0">
-        <var name="modelDescriptor" id="7540523421682544219" />
-      </scope>
-      <scope id="3719390199793465785" at="32,0,36,0">
+      <scope id="3719390199793465785" at="31,0,35,0">
         <var name="panel" id="3719390199793465799" />
         <var name="project" id="3719390199793465786" />
       </scope>
-      <scope id="3719390199793465839" at="47,0,51,0" />
-      <scope id="3719390199793465851" at="51,0,55,0" />
-      <scope id="3719390199793465869" at="61,54,66,113" />
-      <scope id="3719390199793465945" at="83,0,88,0">
+      <scope id="3719390199793465839" at="46,0,50,0" />
+      <scope id="3719390199793465851" at="50,0,54,0" />
+      <scope id="3719390199793465869" at="60,54,65,120" />
+      <scope id="3719390199793465945" at="81,0,86,0">
         <var name="commitContext" id="3719390199793465959" />
         <var name="panel" id="3719390199793465955" />
       </scope>
-      <scope id="3719390199793465818" at="41,0,47,0" />
-      <scope id="3719390199793465868" at="60,0,68,0" />
-      <scope id="7540523421682544192" at="68,63,78,8">
+      <scope id="3719390199793465818" at="40,0,46,0" />
+      <scope id="3719390199793465868" at="59,0,67,0" />
+      <scope id="7540523421682544192" at="67,70,75,64">
+        <var name="fs" id="7462343251447075813" />
         <var name="ft" id="7540523421682544194" />
+        <var name="mpsProject" id="7462343251447058977" />
       </scope>
-      <scope id="7540523421682544190" at="68,0,80,0">
+      <scope id="7540523421682544190" at="67,0,77,0">
         <var name="files" id="7540523421682544228" />
       </scope>
-      <scope id="3719390199793465806" at="38,70,58,6">
+      <scope id="3719390199793465806" at="37,70,57,6">
         <var name="checkModelCheckBox" id="3719390199793465808" />
       </scope>
-      <scope id="3719390199793465801" at="36,0,60,0" />
-      <unit id="7540523421682544204" at="70,108,74,5" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler$2" />
-      <unit id="7540523421682544219" at="74,17,78,5" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler$3" />
-      <unit id="3719390199793465938" at="80,0,89,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory" />
-      <unit id="3719390199793465816" at="40,15,58,5" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler$1" />
-      <unit id="3719390199793465778" at="29,0,90,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler" />
+      <scope id="3719390199793465801" at="35,0,59,0" />
+      <unit id="7462343251447110865" at="71,51,75,5" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler$2" />
+      <unit id="3719390199793465938" at="78,0,87,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory" />
+      <unit id="3719390199793465816" at="39,15,57,5" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler$1" />
+      <unit id="3719390199793465778" at="28,0,88,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler" />
     </file>
   </root>
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199793466714">

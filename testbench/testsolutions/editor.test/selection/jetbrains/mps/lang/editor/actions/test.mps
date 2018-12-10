@@ -303,6 +303,10 @@
       <concept id="2943053183528026474" name="jetbrains.mps.lang.editor.editorTest.structure.ISpecialDelTestConcreteChild" flags="ng" index="J$D8H" />
       <concept id="2943053183527886798" name="jetbrains.mps.lang.editor.editorTest.structure.IDelTestConcreteChild" flags="ng" index="J_cM9" />
       <concept id="2943053183527886797" name="jetbrains.mps.lang.editor.editorTest.structure.IDelTestChild" flags="ng" index="J_cMa" />
+      <concept id="6520459826986847372" name="jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot_NoEditor" flags="ng" index="PJdWA">
+        <child id="6520459826986847384" name="multiChildWithDefaultConcreteConcept" index="PJdWM" />
+        <child id="6520459826986847385" name="singleChildWithDefaultConcreteConcept" index="PJdWN" />
+      </concept>
       <concept id="583472190600143134" name="jetbrains.mps.lang.editor.editorTest.structure.SubstTestChild_WithNextApplicableEditorAndMenu_1" flags="ng" index="2T4CB3">
         <property id="583472190600143305" name="property" index="2T4C$k" />
       </concept>
@@ -326,6 +330,8 @@
         <child id="583472190600143148" name="childWithNextEditorAndMenu" index="2T4CBL" />
         <child id="957371990174549618" name="multiChild" index="2X2waM" />
         <child id="957371990174086639" name="singleChild" index="2Xtn4J" />
+        <child id="3568961255313560026" name="multiChildWithDefaultConcreteConcept" index="1LBUU0" />
+        <child id="3568961255313560039" name="singleChildWithDefaultConcreteConcept" index="1LBUUX" />
       </concept>
       <concept id="427038688578133054" name="jetbrains.mps.lang.editor.editorTest.structure.AttributedConcept" flags="ng" index="2ZSn_i" />
       <concept id="427038688578132736" name="jetbrains.mps.lang.editor.editorTest.structure.AttributeWithChildren" flags="ng" index="2ZSnTG">
@@ -363,6 +369,7 @@
       <concept id="1077509448393313700" name="jetbrains.mps.lang.editor.editorTest.structure.DeleteWrapperRoot" flags="ng" index="1Bq5y6">
         <child id="1077509448393313715" name="child" index="1Bq5yh" />
       </concept>
+      <concept id="3568961255313559966" name="jetbrains.mps.lang.editor.editorTest.structure.SubstTestChild_DefaultConcreteConcept" flags="ng" index="1LBUV4" />
       <concept id="6739703022154345521" name="jetbrains.mps.lang.editor.editorTest.structure.DeleteLineTestRoot" flags="ng" index="3MEH01">
         <child id="7814731350146768884" name="multipleChildrenWithNested" index="1gUdWQ" />
         <child id="6739703022154345522" name="verticalMultiple" index="3MEH02" />
@@ -9514,6 +9521,342 @@
       <node concept="2HxZob" id="2oeJbOGKg9N" role="3cqZAp">
         <node concept="1iFQzN" id="2oeJbOGKga1" role="3iKnsn">
           <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="367vPD07oXB">
+    <property role="3GE5qa" value="defaultConcreteConcept" />
+    <property role="TrG5h" value="Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Empty" />
+    <node concept="2XtntR" id="367vPD07oXC" role="LiRBU">
+      <node concept="LIFWc" id="367vPD07p4_" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_multiChildWithDefaultConcreteConcept" />
+      </node>
+    </node>
+    <node concept="2XtntR" id="367vPD07oXE" role="LiZbd">
+      <node concept="1LBUV4" id="367vPD07YF1" role="1LBUU0">
+        <node concept="LIFWc" id="367vPD07YFk" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="367vPD07oXH" role="LjaKd">
+      <node concept="2HxZob" id="367vPD07oXI" role="3cqZAp">
+        <node concept="1iFQzN" id="367vPD07oXJ" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="367vPD07p5e">
+    <property role="3GE5qa" value="defaultConcreteConcept" />
+    <property role="TrG5h" value="Subst_MultiChildDefaultConcrete_AddNewChildByEnter_Existing" />
+    <node concept="2XtntR" id="367vPD07p5f" role="LiRBU">
+      <node concept="1LBUV4" id="367vPD07p6S" role="1LBUU0">
+        <node concept="LIFWc" id="367vPD07YFu" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="2XtntR" id="367vPD07p5h" role="LiZbd">
+      <node concept="1LBUV4" id="367vPD07p5i" role="1LBUU0" />
+      <node concept="1LBUV4" id="367vPD07YFV" role="1LBUU0">
+        <node concept="LIFWc" id="367vPD07YGf" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="367vPD07p5k" role="LjaKd">
+      <node concept="2HxZob" id="367vPD07p5l" role="3cqZAp">
+        <node concept="1iFQzN" id="367vPD07p5m" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="367vPD07YGp">
+    <property role="3GE5qa" value="defaultConcreteConcept" />
+    <property role="TrG5h" value="Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByEnter" />
+    <node concept="3clFbS" id="367vPD07YGv" role="LjaKd">
+      <node concept="2HxZob" id="367vPD07YGw" role="3cqZAp">
+        <node concept="1iFQzN" id="367vPD07YGx" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+    </node>
+    <node concept="PJdWA" id="L$FA8lYI0P" role="LiRBU">
+      <node concept="LIFWc" id="L$FA8lYI3n" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_singleChildWithDefaultConcreteConcept" />
+      </node>
+    </node>
+    <node concept="PJdWA" id="L$FA8lYI1b" role="LiZbd">
+      <node concept="1LBUV4" id="L$FA8lYI1V" role="PJdWN">
+        <node concept="LIFWc" id="L$FA8lYI2d" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="L$FA8lYHOF">
+    <property role="3GE5qa" value="defaultConcreteConcept" />
+    <property role="TrG5h" value="Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Empty" />
+    <node concept="3clFbS" id="L$FA8lYHOL" role="LjaKd">
+      <node concept="2HxZob" id="L$FA8lYHOM" role="3cqZAp">
+        <node concept="1iFQzN" id="L$FA8lYHON" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+    </node>
+    <node concept="PJdWA" id="L$FA8lYHS6" role="LiRBU">
+      <node concept="LIFWc" id="L$FA8lYHSo" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_multiChildWithDefaultConcreteConcept" />
+      </node>
+    </node>
+    <node concept="PJdWA" id="L$FA8lYHSy" role="LiZbd">
+      <node concept="1LBUV4" id="L$FA8lYHTi" role="PJdWM">
+        <node concept="LIFWc" id="L$FA8lYHTQ" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="L$FA8lYHOZ">
+    <property role="3GE5qa" value="defaultConcreteConcept" />
+    <property role="TrG5h" value="Subst_SingleChildDefaultConcrete_AddNewChildByEnter" />
+    <node concept="2XtntR" id="L$FA8lYHP0" role="LiRBU">
+      <node concept="LIFWc" id="L$FA8lYHP1" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_singleChildWithDefaultConcreteConcept" />
+      </node>
+    </node>
+    <node concept="2XtntR" id="L$FA8lYHP2" role="LiZbd">
+      <node concept="1LBUV4" id="L$FA8lYHP3" role="1LBUUX">
+        <node concept="LIFWc" id="L$FA8lYHP4" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="L$FA8lYHP5" role="LjaKd">
+      <node concept="2HxZob" id="L$FA8lYHP6" role="3cqZAp">
+        <node concept="1iFQzN" id="L$FA8lYHP7" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="L$FA8lYHWC">
+    <property role="3GE5qa" value="defaultConcreteConcept" />
+    <property role="TrG5h" value="Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByEnter_Existing" />
+    <node concept="3clFbS" id="L$FA8lYHWD" role="LjaKd">
+      <node concept="2HxZob" id="L$FA8lYHWE" role="3cqZAp">
+        <node concept="1iFQzN" id="L$FA8lYHWF" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+    </node>
+    <node concept="PJdWA" id="L$FA8lYHWG" role="LiRBU">
+      <node concept="1LBUV4" id="L$FA8lYHXB" role="PJdWM">
+        <node concept="LIFWc" id="L$FA8lYHYQ" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="PJdWA" id="L$FA8lYHWI" role="LiZbd">
+      <node concept="1LBUV4" id="L$FA8lYHWJ" role="PJdWM" />
+      <node concept="1LBUV4" id="L$FA8lYHZ8" role="PJdWM">
+        <node concept="LIFWc" id="L$FA8lYHZr" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="L$FA8lYI4L">
+    <property role="3GE5qa" value="defaultConcreteConcept" />
+    <property role="TrG5h" value="Subst_MultiChildDefaultConcreteDefEditor_AddNewChildByCompl_Empty" />
+    <node concept="3clFbS" id="L$FA8lYI4M" role="LjaKd">
+      <node concept="2HxZob" id="L$FA8lYI4N" role="3cqZAp">
+        <node concept="1iFQzN" id="L$FA8lYI4O" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="yd1bK" id="L$FA8lYIeC" role="3cqZAp">
+        <node concept="pLAjd" id="L$FA8lYIeE" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="PJdWA" id="L$FA8lYI4P" role="LiRBU">
+      <node concept="LIFWc" id="L$FA8lYI4Q" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_multiChildWithDefaultConcreteConcept" />
+      </node>
+    </node>
+    <node concept="PJdWA" id="L$FA8lYI4R" role="LiZbd">
+      <node concept="1LBUV4" id="L$FA8lYI4S" role="PJdWM">
+        <node concept="LIFWc" id="L$FA8lYI4T" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="L$FA8lYIf1">
+    <property role="3GE5qa" value="defaultConcreteConcept" />
+    <property role="TrG5h" value="Subst_MultiChildDefaultConcrete_AddNewChildByCompl_Empty" />
+    <node concept="2XtntR" id="L$FA8lYIf2" role="LiRBU">
+      <node concept="LIFWc" id="L$FA8lYIf3" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_multiChildWithDefaultConcreteConcept" />
+      </node>
+    </node>
+    <node concept="2XtntR" id="L$FA8lYIf4" role="LiZbd">
+      <node concept="1LBUV4" id="L$FA8lYIf5" role="1LBUU0">
+        <node concept="LIFWc" id="L$FA8lYIf6" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="L$FA8lYIf7" role="LjaKd">
+      <node concept="2HxZob" id="L$FA8lYIf8" role="3cqZAp">
+        <node concept="1iFQzN" id="L$FA8lYIf9" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="yd1bK" id="L$FA8lYIg8" role="3cqZAp">
+        <node concept="pLAjd" id="L$FA8lYIg9" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="L$FA8lYIgx">
+    <property role="3GE5qa" value="defaultConcreteConcept" />
+    <property role="TrG5h" value="Subst_SingleChildDefaultConcrete_AddNewChildByCompl" />
+    <node concept="2XtntR" id="L$FA8lYIgy" role="LiRBU">
+      <node concept="LIFWc" id="L$FA8lYIgz" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_singleChildWithDefaultConcreteConcept" />
+      </node>
+    </node>
+    <node concept="2XtntR" id="L$FA8lYIg$" role="LiZbd">
+      <node concept="1LBUV4" id="L$FA8lYIg_" role="1LBUUX">
+        <node concept="LIFWc" id="L$FA8lYIgA" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="L$FA8lYIgB" role="LjaKd">
+      <node concept="2HxZob" id="L$FA8lYIgC" role="3cqZAp">
+        <node concept="1iFQzN" id="L$FA8lYIgD" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="yd1bK" id="L$FA8lYIq0" role="3cqZAp">
+        <node concept="pLAjd" id="L$FA8lYIq2" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="L$FA8lYIqT">
+    <property role="3GE5qa" value="defaultConcreteConcept" />
+    <property role="TrG5h" value="Subst_SingleChildDefaultConcreteDefEditor_AddNewChildByCompl" />
+    <node concept="3clFbS" id="L$FA8lYIqU" role="LjaKd">
+      <node concept="2HxZob" id="L$FA8lYIqV" role="3cqZAp">
+        <node concept="1iFQzN" id="L$FA8lYIqW" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="yd1bK" id="L$FA8lYI$s" role="3cqZAp">
+        <node concept="pLAjd" id="L$FA8lYI$v" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="PJdWA" id="L$FA8lYIqX" role="LiRBU">
+      <node concept="LIFWc" id="L$FA8lYIqY" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_singleChildWithDefaultConcreteConcept" />
+      </node>
+    </node>
+    <node concept="PJdWA" id="L$FA8lYIqZ" role="LiZbd">
+      <node concept="1LBUV4" id="L$FA8lYIr0" role="PJdWN">
+        <node concept="LIFWc" id="L$FA8lYIr1" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
+          <property role="LIFWd" value="Constant_i5rpm_a" />
         </node>
       </node>
     </node>

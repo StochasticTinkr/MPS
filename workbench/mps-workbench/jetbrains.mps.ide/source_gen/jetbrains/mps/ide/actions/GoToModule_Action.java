@@ -36,7 +36,7 @@ public class GoToModule_Action extends BaseAction {
   public GoToModule_Action() {
     super("Go to Module", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -49,7 +49,7 @@ public class GoToModule_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
+      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
@@ -59,24 +59,24 @@ public class GoToModule_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.module");
-    // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
-    final MPSProject mpsProject = ((MPSProject) MapSequence.fromMap(_params).get("project"));
-    Condition<SModule> knownModules = new ModuleInstanceCondition(Solution.class, Language.class, DevKit.class);
-    SearchScope localScope = new ConditionalScope(mpsProject.getScope(), knownModules, null);
-    SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), knownModules, null);
 
-    SRepository repo = mpsProject.getRepository();
-    ChooseByNameData<SModuleReference> gotoData = new ChooseByNameData<SModuleReference>(new ModulesPresentation(repo));
+    // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
+    final Condition<SModule> knownModules = new ModuleInstanceCondition(Solution.class, Language.class, DevKit.class);
+    final SearchScope localScope = new ConditionalScope(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getScope(), knownModules, null);
+    final SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), knownModules, null);
+
+    final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository();
+    final ChooseByNameData<SModuleReference> gotoData = new ChooseByNameData<SModuleReference>(new ModulesPresentation(repo));
     gotoData.derivePrompts("module").setScope(new ModuleScopeIterable(localScope, repo), new ModuleScopeIterable(globalScope, repo));
 
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(mpsProject.getProject(), gotoData, GoToModule_Action.this);
+    final ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject(), gotoData, GoToModule_Action.this);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void elementChosen(Object p0) {
         if (p0 instanceof SModuleReference) {
-          new ProjectPaneNavigator(mpsProject).shallFocus(true).select((SModuleReference) p0);
+          new ProjectPaneNavigator(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).shallFocus(true).select((SModuleReference) p0);
         }
       }
-    }, ModalityState.current(), true);
+    }, ModalityState.current(), false);
   }
 }

@@ -88,6 +88,7 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     public SNode createNodeToInsert(EditorContext editorContext) {
       return nodeFactory();
     }
+
     public SNode nodeFactory() {
       return SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df404L, "jetbrains.mps.samples.notesOrganizer.structure.TextNotePart"), null);
     }

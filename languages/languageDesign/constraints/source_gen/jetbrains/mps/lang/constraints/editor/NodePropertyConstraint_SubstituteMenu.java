@@ -14,16 +14,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 
@@ -53,7 +52,8 @@ public class NodePropertyConstraint_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_ReferenceScope_szjyyq_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_szjyyq_a() {
-      super(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint"), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, 0x10b2a61697bL, "applicableProperty"));
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint"), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, 0x10b2a61697bL, "applicableProperty"));
     }
     @NotNull
     @Override
@@ -70,14 +70,14 @@ public class NodePropertyConstraint_SubstituteMenu extends SubstituteMenuBase {
     @Override
     @NotNull
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
-      return new NodePropertyConstraint_SubstituteMenu.SMP_ReferenceScope_szjyyq_a.Item(context, referencedNode, getConcept(), getReferenceLink());
+      return new NodePropertyConstraint_SubstituteMenu.SMP_ReferenceScope_szjyyq_a.Item(context, referencedNode, getSConcept(), getReferenceLink());
     }
     private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;
 
-      private Item(SubstituteMenuContext context, SNode refNode, SConcept concept, SReferenceLink referenceLink) {
+      private Item(SubstituteMenuContext context, SNode refNode, SAbstractConcept concept, SReferenceLink referenceLink) {
         super(concept, context.getParentNode(), context.getCurrentTargetNode(), refNode, referenceLink, context.getEditorContext());
         _context = context;
         referencedNode = refNode;

@@ -18,7 +18,6 @@
     <orderEntry type="module" module-name="tuples-runtime" />
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="debuginfo-api" />
-    <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="mps-platform" scope="TEST" />

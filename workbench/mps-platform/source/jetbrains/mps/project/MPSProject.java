@@ -24,6 +24,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -45,15 +46,18 @@ import java.util.List;
  * fixme introduce a project<->library relation on this particular level (AP)
  */
 public class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
-  private com.intellij.openapi.project.Project myProject;
+  private final com.intellij.openapi.project.Project myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<>();
+  private final IdeaFileSystem myProjectFileSystem;
 
   // WorkbenchModelAccess is provisional argument. Now it provides implementation of executeCommand method
   // with respect to shared model lock object from its smodel.ModelAccess superclass. Once each MA has own
   // model lock object and executeCommand* implementations, we won't need this WMA parameter
-  public MPSProject(@NotNull com.intellij.openapi.project.Project project, ProjectRootListenerComponent unused, MPSCoreComponents mpsCore, WorkbenchModelAccess wma) {
+  public MPSProject(@NotNull com.intellij.openapi.project.Project project, ProjectRootListenerComponent unused, MPSCoreComponents mpsCore,
+                    IdeaFileSystem ideaFS, WorkbenchModelAccess wma) {
     super(new ProjectDescriptor(project.getName()), mpsCore.getPlatform(), false);
     myProject = project;
+    myProjectFileSystem = ideaFS;
     final MPSModuleRepository extRepo = mpsCore.getPlatform().findComponent(MPSModuleRepository.class);
     final SRepositoryRegistry registry = mpsCore.getPlatform().findComponent(SRepositoryRegistry.class);
     final ModelAccess projectMA = wma.createForProject(MPSProject.this);
@@ -143,5 +147,14 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
       return super.getComponent(clazz);
     }
     return rv;
+  }
+
+  /**
+   * XXX the method might be worth exposing from {@link FileBasedProject} (with a more generic return type, of course), so that other Project clients has
+   *     a chance to access project's FS without need to use global singleton
+   * @return fs one may use to resolve string paths of a project
+   */
+  public final IdeaFileSystem getFileSystem() {
+    return myProjectFileSystem;
   }
 }

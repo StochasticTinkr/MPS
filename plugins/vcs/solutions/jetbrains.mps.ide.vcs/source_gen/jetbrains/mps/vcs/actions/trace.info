@@ -9,6 +9,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:b2d164a2-987a-4229-af85-1f4f7d3ef996(jetbrains.mps.vcs.actions)/7705742079275757540">
     <file name="ShowInFileView.java">
       <node id="7705742079275757553" at="17,58,18,113" concept="7" />
@@ -116,84 +117,69 @@
   </root>
   <root nodeRef="r:b2d164a2-987a-4229-af85-1f4f7d3ef996(jetbrains.mps.vcs.actions)/7705742079275757969">
     <file name="ShowInLogicalView.java">
-      <node id="7705742079275757982" at="28,48,29,43" concept="6" />
-      <node id="7705742079275757988" at="29,43,30,56" concept="6" />
-      <node id="7540523421683676137" at="30,56,31,92" concept="6" />
-      <node id="7705742079275757998" at="32,53,33,13" concept="7" />
-      <node id="1467120507706610294" at="34,5,35,68" concept="6" />
-      <node id="1467120507706741953" at="39,42,40,129" concept="6" />
-      <node id="7705742079275758121" at="40,129,41,55" concept="7" />
-      <node id="1467120507706733766" at="44,26,45,26" concept="2" />
-      <node id="1467120507706757330" at="48,57,49,119" concept="8" />
-      <node id="1467120507706751140" at="52,43,53,136" concept="6" />
-      <node id="7705742079275758128" at="53,136,54,61" concept="7" />
-      <node id="1467120507706737767" at="57,27,58,121" concept="8" />
-      <node id="1467120507706736091" at="58,121,59,29" concept="2" />
-      <node id="1467120507706738033" at="59,29,60,27" concept="2" />
-      <node id="7705742079275758074" at="65,53,66,55" concept="6" />
-      <node id="7705742079275758088" at="67,36,68,18" concept="7" />
-      <node id="7705742079275758090" at="69,5,70,28" concept="7" />
-      <node id="7705742079275758102" at="74,75,75,59" concept="6" />
-      <node id="7705742079275758107" at="75,59,76,125" concept="2" />
-      <node id="7705742079275757972" at="24,0,26,0" concept="1" trace="ShowInLogicalView#()V" />
-      <node id="7705742079275757993" at="31,92,34,5" concept="4" />
-      <node id="7705742079275758057" at="43,9,46,7" concept="4" />
-      <node id="7705742079275758081" at="66,55,69,5" concept="4" />
-      <node id="7705742079275758054" at="38,0,43,0" concept="5" trace="compute#()Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-      <node id="7705742079275758029" at="51,0,56,0" concept="5" trace="compute#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="7705742079275758032" at="56,9,61,7" concept="4" />
-      <node id="7705742079275758094" at="73,0,78,0" concept="5" trace="update#(Lcom/intellij/openapi/vcs/actions/VcsContext;Lcom/intellij/openapi/actionSystem/Presentation;)V" />
-      <node id="7705742079275758044" at="36,56,43,9" concept="6" />
-      <node id="7705742079275758019" at="49,119,56,9" concept="6" />
-      <node id="7705742079275758068" at="65,0,72,0" concept="5" trace="getSelectedFile#(Lcom/intellij/openapi/vcs/actions/VcsContext;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-      <node id="7705742079275758013" at="47,10,62,5" concept="4" />
-      <node id="7705742079275758008" at="35,68,62,5" concept="4" />
-      <node id="7705742079275757976" at="27,0,64,0" concept="5" trace="actionPerformed#(Lcom/intellij/openapi/vcs/actions/VcsContext;)V" />
-      <scope id="7705742079275757975" at="24,30,24,30" />
-      <scope id="7705742079275757997" at="32,53,33,13" />
-      <scope id="7705742079275758061" at="44,26,45,26" />
-      <scope id="7705742079275758087" at="67,36,68,18" />
-      <scope id="7705742079275757972" at="24,0,26,0" />
-      <scope id="7705742079275758120" at="39,42,41,55">
-        <var name="m" id="1467120507706741954" />
-      </scope>
-      <scope id="7705742079275758127" at="52,43,54,61">
-        <var name="m" id="1467120507706751141" />
-      </scope>
-      <scope id="7705742079275758101" at="74,75,76,125">
+      <node id="8300239536160237930" at="20,57,21,48" concept="6" />
+      <node id="8300239536160237935" at="21,48,22,59" concept="6" />
+      <node id="8300239536160237346" at="22,59,23,0" concept="9" />
+      <node id="7705742079275757998" at="24,45,25,13" concept="7" />
+      <node id="8300239536160137432" at="26,5,27,85" concept="6" />
+      <node id="8300239536160253604" at="27,85,28,133" concept="8" />
+      <node id="8300239536160250728" at="28,133,29,50" concept="2" />
+      <node id="7705742079275758074" at="33,53,34,55" concept="6" />
+      <node id="7705742079275758088" at="35,36,36,18" concept="7" />
+      <node id="7705742079275758090" at="37,5,38,28" concept="7" />
+      <node id="8300239536160209291" at="42,54,43,45" concept="6" />
+      <node id="8300239536160210235" at="44,26,45,18" concept="7" />
+      <node id="7540523421683676137" at="46,5,47,92" concept="6" />
+      <node id="8300239536160223060" at="48,29,49,18" concept="7" />
+      <node id="8300239536160214040" at="50,5,51,47" concept="7" />
+      <node id="8300239536160224216" at="55,75,56,48" concept="6" />
+      <node id="7705742079275758102" at="56,48,57,59" concept="6" />
+      <node id="7705742079275758107" at="57,59,58,159" concept="2" />
+      <node id="7705742079275757972" at="16,0,18,0" concept="1" trace="ShowInLogicalView#()V" />
+      <node id="7705742079275757993" at="23,0,26,5" concept="4" />
+      <node id="7705742079275758081" at="34,55,37,5" concept="4" />
+      <node id="8300239536160209535" at="43,45,46,5" concept="4" />
+      <node id="8300239536160221299" at="47,92,50,5" concept="4" />
+      <node id="7705742079275758094" at="54,0,60,0" concept="5" trace="update#(Lcom/intellij/openapi/vcs/actions/VcsContext;Lcom/intellij/openapi/actionSystem/Presentation;)V" />
+      <node id="7705742079275758068" at="32,0,40,0" concept="5" trace="getSelectedFile#(Lcom/intellij/openapi/vcs/actions/VcsContext;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+      <node id="7705742079275757976" at="19,0,31,0" concept="5" trace="actionPerformed#(Lcom/intellij/openapi/vcs/actions/VcsContext;)V" />
+      <node id="8300239536160204374" at="41,0,53,0" concept="5" trace="getProjectPane#(Lcom/intellij/openapi/vcs/actions/VcsContext;)Ljetbrains/mps/ide/projectPane/ProjectPane;" />
+      <scope id="7705742079275757975" at="16,30,16,30" />
+      <scope id="7705742079275757997" at="24,45,25,13" />
+      <scope id="7705742079275758087" at="35,36,36,18" />
+      <scope id="8300239536160209537" at="44,26,45,18" />
+      <scope id="8300239536160221301" at="48,29,49,18" />
+      <scope id="7705742079275757972" at="16,0,18,0" />
+      <scope id="7705742079275758101" at="55,75,58,159">
+        <var name="pp" id="8300239536160224217" />
         <var name="selectedFile" id="7705742079275758103" />
       </scope>
-      <scope id="7705742079275758036" at="57,27,60,27" />
-      <scope id="7705742079275758054" at="38,0,43,0" />
-      <scope id="7705742079275758029" at="51,0,56,0" />
-      <scope id="7705742079275758073" at="65,53,70,28">
+      <scope id="7705742079275758073" at="33,53,38,28">
         <var name="selectedFiles" id="7705742079275758075" />
       </scope>
-      <scope id="7705742079275758094" at="73,0,78,0">
+      <scope id="7705742079275758094" at="54,0,60,0">
         <var name="presentation" id="7705742079275758099" />
         <var name="vcsContext" id="7705742079275758097" />
       </scope>
-      <scope id="7705742079275758068" at="65,0,72,0">
+      <scope id="7705742079275758068" at="32,0,40,0">
         <var name="e" id="7705742079275758071" />
       </scope>
-      <scope id="7705742079275758043" at="36,56,46,7">
-        <var name="model" id="7705742079275758045" />
+      <scope id="7705742079275757981" at="20,57,29,50">
+        <var name="ctx" id="8300239536160137433" />
+        <var name="pp" id="8300239536160237931" />
+        <var name="selectedFile" id="8300239536160237936" />
       </scope>
-      <scope id="7705742079275758018" at="48,57,61,7">
-        <var name="module" id="7705742079275758020" />
-      </scope>
-      <scope id="7705742079275757981" at="28,48,62,5">
+      <scope id="8300239536160204377" at="42,54,51,47">
         <var name="mpsProject" id="7540523421683676138" />
-        <var name="ppn" id="1467120507706610295" />
-        <var name="project" id="7705742079275757983" />
-        <var name="selectedFile" id="7705742079275757989" />
+        <var name="project" id="8300239536160209292" />
       </scope>
-      <scope id="7705742079275757976" at="27,0,64,0">
-        <var name="e" id="7705742079275757979" />
+      <scope id="7705742079275757976" at="19,0,31,0">
+        <var name="vcsContext" id="7705742079275757979" />
       </scope>
-      <unit id="7705742079275758052" at="37,99,43,7" name="jetbrains.mps.vcs.actions.ShowInLogicalView$2" />
-      <unit id="7705742079275758027" at="50,101,56,7" name="jetbrains.mps.vcs.actions.ShowInLogicalView$1" />
-      <unit id="7705742079275757969" at="23,0,79,0" name="jetbrains.mps.vcs.actions.ShowInLogicalView" />
+      <scope id="8300239536160204374" at="41,0,53,0">
+        <var name="ctx" id="8300239536160205156" />
+      </scope>
+      <unit id="7705742079275757969" at="15,0,61,0" name="jetbrains.mps.vcs.actions.ShowInLogicalView" />
     </file>
   </root>
 </debug-info>

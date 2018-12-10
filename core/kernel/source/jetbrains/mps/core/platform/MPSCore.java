@@ -128,7 +128,6 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
 
     init(new SModelFileTracker.Plug(myRepositoryRegistry));
     init(new ModuleRepositoryFacade(myModuleRepository));
-    init(new ModuleFileTracker(myModuleRepository));
     myPathMacros = init(new PathMacros());
     myLibraryInitializer = init(new LibraryInitializer(myModuleRepository));
     init(new GlobalScope(myModuleRepository));

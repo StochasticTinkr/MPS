@@ -30,10 +30,10 @@ import org.apache.log4j.Logger;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -159,20 +159,14 @@ public class AbstractCreator_SubstituteMenu extends SubstituteMenuBase {
           SLinkOperations.setTarget(creator, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, 0x1133e3b8b49L, "cls"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), null));
           SLinkOperations.setTarget(SLinkOperations.getTarget(creator, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, 0x1133e3b8b49L, "cls")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier"), myParameterObject);
           SLinkOperations.setPointer(SLinkOperations.getTarget(creator, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, 0x1133e3b8b49L, "cls")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object.<init>()"));
-          List<SNode> methodsToImplement = Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(myParameterObject)).toListSequence();
-          if (SNodeOperations.isInstanceOf(myParameterObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-            methodsToImplement = ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return (boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(it);
-              }
-            }).toListSequence();
-            for (SNode baseMethodDeclaration : IMemberContainer__BehaviorDescriptor.getMethodsToImplement_id4GM03FJm5q2.invoke(SNodeOperations.cast(myParameterObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")))) {
-              ListSequence.fromList(methodsToImplement).addElement(SNodeOperations.cast(baseMethodDeclaration, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
+          SNode classifier = SNodeOperations.cast(myParameterObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+          Iterable<SNode> ancestorMethodsToImplement = SNodeOperations.ofConcept(IMemberContainer__BehaviorDescriptor.getMethodsToImplement_id4GM03FJm5q2.invoke(classifier), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+          Iterable<SNode> ownAbstractMethods = Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(classifier)).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return (boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(it);
             }
-          } else if (SNodeOperations.isInstanceOf(myParameterObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-            methodsToImplement = ListSequence.fromList(methodsToImplement).toListSequence();
-          }
-          for (SNode method : ListSequence.fromList(methodsToImplement)) {
+          });
+          for (SNode method : Sequence.fromIterable(ancestorMethodsToImplement).union(Sequence.fromIterable(ownAbstractMethods))) {
             SNode method_copy = SNodeOperations.copyNode(method);
             SPropertyOperations.assign(method_copy, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), false);
             SNodeFactoryOperations.setNewChild(method_copy, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));

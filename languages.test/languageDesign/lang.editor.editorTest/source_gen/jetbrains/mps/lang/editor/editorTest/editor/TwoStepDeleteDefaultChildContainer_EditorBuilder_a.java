@@ -25,7 +25,6 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 
 /*package*/ class TwoStepDeleteDefaultChildContainer_EditorBuilder_a extends AbstractEditorBuilder {
@@ -320,9 +319,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d5eL, "jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteDefaultChild");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d5eL, "jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteDefaultChild"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);

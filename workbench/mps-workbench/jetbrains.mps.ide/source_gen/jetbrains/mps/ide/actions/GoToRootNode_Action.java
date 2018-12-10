@@ -4,11 +4,12 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.workbench.choose.ChooseByNameData;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 import jetbrains.mps.workbench.choose.NavigationTargetPresentation;
@@ -34,30 +35,44 @@ public class GoToRootNode_Action extends BaseAction {
     super("Go to Root Node", "", ICON);
     this.savedText = savedText_par;
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
     return false;
   }
   @Override
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
+      return false;
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
+    }
+    return true;
+  }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.rootNode");
 
-    final MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-    assert mpsProject != null;
-
-    ChooseByNameData<NavigationParticipant.NavigationTarget> gotoData = new ChooseByNameData<NavigationParticipant.NavigationTarget>(new NavigationTargetPresentation());
+    final ChooseByNameData<NavigationParticipant.NavigationTarget> gotoData = new ChooseByNameData<NavigationParticipant.NavigationTarget>(new NavigationTargetPresentation());
     gotoData.derivePrompts("node").setCheckBoxName("Include stub and non-project models");
-    ConditionalScope localScope = new ConditionalScope(mpsProject.getScope(), null, new Condition<SModel>() {
+
+    final ConditionalScope localScope = new ConditionalScope(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getScope(), null, new Condition<SModel>() {
       public boolean met(SModel m) {
         return !(SModelStereotype.isStubModel(m));
       }
     });
-    SearchScope globalScope = GlobalScope.getInstance();
-    final SRepository repo = mpsProject.getRepository();
+    final SearchScope globalScope = GlobalScope.getInstance();
+
+    final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository();
     gotoData.setScope(new NavigationTargetScopeIterable(localScope, repo), new NavigationTargetScopeIterable(globalScope, repo));
-    final ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(mpsProject.getProject(), gotoData, GoToRootNode_Action.this.savedText, GoToRootNode_Action.this);
+
+    final ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject(), gotoData, GoToRootNode_Action.this.savedText, GoToRootNode_Action.this);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
@@ -68,7 +83,7 @@ public class GoToRootNode_Action extends BaseAction {
       public void elementChosen(Object element) {
         if (element instanceof NavigationParticipant.NavigationTarget) {
           NavigationParticipant.NavigationTarget nt = (NavigationParticipant.NavigationTarget) element;
-          new EditorNavigator(mpsProject).shallFocus(true).selectIfChild().open(nt.getNodeReference());
+          new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).shallFocus(true).selectIfChild().open(nt.getNodeReference());
         }
       }
     }, ModalityState.current(), true);

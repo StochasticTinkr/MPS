@@ -9766,27 +9766,6 @@
                   </node>
                 </node>
                 <node concept="3clFbH" id="4qk_0lIylGZ" role="3cqZAp" />
-                <node concept="3cpWs8" id="6kI5NXGO23e" role="3cqZAp">
-                  <node concept="3cpWsn" id="6kI5NXGO23c" role="3cpWs9">
-                    <property role="3TUv4t" value="true" />
-                    <property role="TrG5h" value="mpsProject" />
-                    <node concept="3uibUv" id="6kI5NXGOtX4" role="1tU5fm">
-                      <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
-                    </node>
-                    <node concept="2YIFZM" id="6kI5NXGOva0" role="33vP2m">
-                      <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
-                      <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                      <node concept="2OqwBi" id="6kI5NXGOvZK" role="37wK5m">
-                        <node concept="37vLTw" id="6kI5NXGOvCf" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4qk_0lIxhnV" resolve="context" />
-                        </node>
-                        <node concept="liA8E" id="6kI5NXGOwCh" role="2OqNvi">
-                          <ref role="37wK5l" to="o8e1:~MergeContext.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node concept="3cpWs8" id="4qk_0lIyubL" role="3cqZAp">
                   <node concept="3cpWsn" id="4qk_0lIyubO" role="3cpWs9">
                     <property role="TrG5h" value="saver" />
@@ -9849,66 +9828,22 @@
                               <node concept="3clFbH" id="4qk_0lIyuca" role="3cqZAp" />
                               <node concept="SfApY" id="4qk_0lIyuch" role="3cqZAp">
                                 <node concept="3clFbS" id="4qk_0lIyuci" role="SfCbr">
-                                  <node concept="3SKdUt" id="6kI5NXGOYzZ" role="3cqZAp">
-                                    <node concept="3SKdUq" id="6kI5NXGOY$1" role="3SKWNk">
-                                      <property role="3SKdUp" value="FIXME the only reason we need model read here is that we need to discover stub concept id during serializations." />
-                                    </node>
-                                  </node>
-                                  <node concept="3SKdUt" id="6kI5NXGOZGR" role="3cqZAp">
-                                    <node concept="3SKdUq" id="6kI5NXGOZGT" role="3SKWNk">
-                                      <property role="3SKdUp" value="      There are few possible ways to address it: (1) don't serialize stub concept id at all (merged model might be re-saved later to write them down)" />
-                                    </node>
-                                  </node>
-                                  <node concept="3SKdUt" id="6kI5NXGP0PN" role="3cqZAp">
-                                    <node concept="3SKdUq" id="6kI5NXGP0PP" role="3SKWNk">
-                                      <property role="3SKdUp" value="      (2) use StufferMetaInfoProvider based on base/loaded/new model meta info (and return null for unknown concept id)" />
-                                    </node>
-                                  </node>
-                                  <node concept="3SKdUt" id="6kI5NXGP1YN" role="3cqZAp">
-                                    <node concept="3SKdUq" id="6kI5NXGP1YP" role="3SKWNk">
-                                      <property role="3SKdUp" value="      (3) finally get concept declaration fixed to avoid need to look into structure SModel completely." />
-                                    </node>
-                                  </node>
                                   <node concept="3clFbF" id="4qk_0lIyucj" role="3cqZAp">
                                     <node concept="37vLTI" id="4qk_0lIyuck" role="3clFbG">
                                       <node concept="37vLTw" id="4qk_0lIyucl" role="37vLTJ">
                                         <ref role="3cqZAo" node="4qk_0lIyuc7" resolve="resultContent" />
                                       </node>
-                                      <node concept="2OqwBi" id="6kI5NXGOROD" role="37vLTx">
-                                        <node concept="2ShNRf" id="6kI5NXGOxHD" role="2Oq$k0">
-                                          <node concept="1pGfFk" id="6kI5NXGOO8G" role="2ShVmc">
-                                            <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ModelAccessHelper" />
-                                            <node concept="2OqwBi" id="6kI5NXGOQ9o" role="37wK5m">
-                                              <node concept="37vLTw" id="6kI5NXGOPbw" role="2Oq$k0">
-                                                <ref role="3cqZAo" node="6kI5NXGO23c" resolve="mpsProject" />
-                                              </node>
-                                              <node concept="liA8E" id="6kI5NXGORrJ" role="2OqNvi">
-                                                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-                                              </node>
-                                            </node>
-                                          </node>
+                                      <node concept="2YIFZM" id="4qk_0lIyucm" role="37vLTx">
+                                        <ref role="1Pybhc" node="4qk_0lIkYNV" resolve="ModelMergeViewer" />
+                                        <ref role="37wK5l" node="4qk_0lIxx8G" resolve="saveModel" />
+                                        <node concept="37vLTw" id="4qk_0lIyucn" role="37wK5m">
+                                          <ref role="3cqZAo" node="4qk_0lIyubZ" resolve="resultModel" />
                                         </node>
-                                        <node concept="liA8E" id="6kI5NXGOSm9" role="2OqNvi">
-                                          <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
-                                          <node concept="1bVj0M" id="6kI5NXGOUff" role="37wK5m">
-                                            <node concept="3clFbS" id="6kI5NXGOUfg" role="1bW5cS">
-                                              <node concept="3clFbF" id="6kI5NXGOU$r" role="3cqZAp">
-                                                <node concept="2YIFZM" id="4qk_0lIyucm" role="3clFbG">
-                                                  <ref role="37wK5l" node="4qk_0lIxx8G" resolve="saveModel" />
-                                                  <ref role="1Pybhc" node="4qk_0lIkYNV" resolve="ModelMergeViewer" />
-                                                  <node concept="37vLTw" id="4qk_0lIyucn" role="37wK5m">
-                                                    <ref role="3cqZAo" node="4qk_0lIyubZ" resolve="resultModel" />
-                                                  </node>
-                                                  <node concept="37vLTw" id="4qk_0lIyuco" role="37wK5m">
-                                                    <ref role="3cqZAo" node="4qk_0lIxhm5" resolve="file" />
-                                                  </node>
-                                                  <node concept="37vLTw" id="4qk_0lIyucp" role="37wK5m">
-                                                    <ref role="3cqZAo" node="4qk_0lIxhmo" resolve="ext" />
-                                                  </node>
-                                                </node>
-                                              </node>
-                                            </node>
-                                          </node>
+                                        <node concept="37vLTw" id="4qk_0lIyuco" role="37wK5m">
+                                          <ref role="3cqZAo" node="4qk_0lIxhm5" resolve="file" />
+                                        </node>
+                                        <node concept="37vLTw" id="4qk_0lIyucp" role="37wK5m">
+                                          <ref role="3cqZAo" node="4qk_0lIxhmo" resolve="ext" />
                                         </node>
                                       </node>
                                     </node>

@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -48,7 +48,8 @@ public class InequationReference_SmartReference extends SubstituteMenuBase {
   public class SMP_ReferenceScope_g0kter_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_g0kter_a() {
-      super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L, "jetbrains.mps.lang.typesystem.structure.InequationReference"), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L, 0x42501924d0bd1914L, "inequation"));
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L, "jetbrains.mps.lang.typesystem.structure.InequationReference"), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L, 0x42501924d0bd1914L, "inequation"));
     }
     @NotNull
     @Override
@@ -65,14 +66,14 @@ public class InequationReference_SmartReference extends SubstituteMenuBase {
     @Override
     @NotNull
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
-      return new InequationReference_SmartReference.SMP_ReferenceScope_g0kter_a.Item(context, referencedNode, getConcept(), getReferenceLink());
+      return new InequationReference_SmartReference.SMP_ReferenceScope_g0kter_a.Item(context, referencedNode, getSConcept(), getReferenceLink());
     }
     private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;
 
-      private Item(SubstituteMenuContext context, SNode refNode, SConcept concept, SReferenceLink referenceLink) {
+      private Item(SubstituteMenuContext context, SNode refNode, SAbstractConcept concept, SReferenceLink referenceLink) {
         super(concept, context.getParentNode(), context.getCurrentTargetNode(), refNode, referenceLink, context.getEditorContext());
         _context = context;
         referencedNode = refNode;

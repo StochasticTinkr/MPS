@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
@@ -46,7 +46,8 @@ public class TestSubstituteExceptionReferenceVisibleMatchingTextChild_Substitute
   public class SMP_ReferenceScope_smhjc8_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_smhjc8_a() {
-      super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x63457d5cb582b4edL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteExceptionReferenceVisibleMatchingTextChild"), MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x63457d5cb582b4edL, 0x63457d5cb582b4eeL, "reference"));
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x63457d5cb582b4edL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteExceptionReferenceVisibleMatchingTextChild"), MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x63457d5cb582b4edL, 0x63457d5cb582b4eeL, "reference"));
     }
     @NotNull
     @Override
@@ -63,14 +64,14 @@ public class TestSubstituteExceptionReferenceVisibleMatchingTextChild_Substitute
     @Override
     @NotNull
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
-      return new TestSubstituteExceptionReferenceVisibleMatchingTextChild_SubstituteMenu.SMP_ReferenceScope_smhjc8_a.Item(context, referencedNode, getConcept(), getReferenceLink());
+      return new TestSubstituteExceptionReferenceVisibleMatchingTextChild_SubstituteMenu.SMP_ReferenceScope_smhjc8_a.Item(context, referencedNode, getSConcept(), getReferenceLink());
     }
     private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;
 
-      private Item(SubstituteMenuContext context, SNode refNode, SConcept concept, SReferenceLink referenceLink) {
+      private Item(SubstituteMenuContext context, SNode refNode, SAbstractConcept concept, SReferenceLink referenceLink) {
         super(concept, context.getParentNode(), context.getCurrentTargetNode(), refNode, referenceLink, context.getEditorContext());
         _context = context;
         referencedNode = refNode;

@@ -159,6 +159,9 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-kernel-kernelSolution">
       <fileset dir="${mps_home}/core/kernel/kernelSolution" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-project-models">
+      <fileset dir="${mps_home}/core/project/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-persistence-models">
       <fileset dir="${mps_home}/core/persistence/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
@@ -222,6 +225,8 @@
       <zipfileset file="${mps_home}/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" prefix="modules/jetbrains.mps.kernel" />
       <zipfileset dir="${mps_home}/core/kernel/kernelSolution" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.kernel" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-kernel-kernelSolution" prefix="modules/jetbrains.mps.kernel/" />
+      <zipfileset file="${mps_home}/core/project/jetbrains.mps.project.msd" prefix="modules/jetbrains.mps.project" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-project-models" prefix="modules/jetbrains.mps.project/models" />
       <zipfileset file="${mps_home}/core/persistence/jetbrains.mps.persistence.msd" prefix="modules/jetbrains.mps.persistence" />
       <zipfileset dir="${mps_home}/core/persistence" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.persistence" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-persistence-models" prefix="modules/jetbrains.mps.persistence/models" />
@@ -6268,6 +6273,7 @@
         <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/jetbrains.mps.make.facets.msd" bootstrap="true" />
         <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/make/languages/script/jetbrains.mps.make.script.mpl" bootstrap="true" />
+        <module file="${mps_home}/core/project/jetbrains.mps.project.msd" bootstrap="true" />
         <module file="${mps_home}/core/refactoring/jetbrains.mps.refactoring.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/refactoring/participant/jetbrains.mps.refactoring.participant.mpl" bootstrap="true" />
         <module file="${mps_home}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" bootstrap="true" />
@@ -6573,6 +6579,7 @@
         <pathelement path="${mps_home}/core/generator/source" />
         <pathelement path="${mps_home}/core/generator/source_gen" />
         <pathelement path="${mps_home}/core/project/source" />
+        <pathelement path="${mps_home}/core/project/source_gen" />
         <pathelement path="${mps_home}/core/textgen/source" />
         <path location="${mps_home}/core/persistence/source" />
         <path location="${mps_home}/core/persistence/source_gen" />
@@ -6920,7 +6927,10 @@
     <mkdir dir="${build.tmp}/java/out/mps-project" />
     <javac2 destdir="${build.tmp}/java/out/mps-project" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${mps_home}/core/project/source" />
+      <src>
+        <pathelement path="${mps_home}/core/project/source" />
+        <pathelement path="${mps_home}/core/project/source_gen" />
+      </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-annotations" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -6945,6 +6955,7 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-project">
       <fileset dir="${mps_home}/core/project/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
+      <fileset dir="${mps_home}/core/project/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
     </copy>
   </target>
   

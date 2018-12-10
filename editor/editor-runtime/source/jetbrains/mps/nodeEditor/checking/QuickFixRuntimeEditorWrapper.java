@@ -16,7 +16,9 @@
 package jetbrains.mps.nodeEditor.checking;
 
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
+import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.errors.item.QuickFixBase;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 
@@ -46,6 +48,18 @@ public class QuickFixRuntimeEditorWrapper {
       editorContext.flushEvents();
       EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
       EditorCell leaf = rootCell.findLeaf(caretX, caretY);
+
+      // Currently findLeaf() doesn't look at firstPositionAllowed and uses strict inequality for last position and loose one for first.
+      // Since we need to put cursor at the most close position to the previous one,  so checking it manually.
+      if (leaf != null && leaf.getX() == caretX && !StyleAttributesUtil.isFirstPositionAllowed(leaf.getStyle())) {
+        while (leaf != null && leaf.getPrevSibling() == null) {
+          leaf = leaf.getParent();
+        }
+        if (leaf != null) {
+          leaf = CellFinderUtil.findLastSelectableLeaf(leaf.getPrevSibling(), true);
+        }
+      }
+
       if (leaf != null) {
         editorContext.getEditorComponent().changeSelection(leaf);
         leaf.setCaretX(caretX);

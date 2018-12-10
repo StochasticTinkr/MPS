@@ -35,6 +35,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @deprecated since {@link RefNodeListHandler} now works with {@link SContainmentLink} so {@link SChildListHandler} duplicates it. Use {@link RefNodeListHandler}
+ */
+@Deprecated
 public abstract class SChildListHandler extends AbstractCellListHandler {
 
   private final SNode myNode;

@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -47,7 +47,8 @@ public class GeneratorParameterReference_SmartReference extends SubstituteMenuBa
   public class SMP_ReferenceScope_zgxupi_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_zgxupi_a() {
-      super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283cbf8aL, "jetbrains.mps.lang.generator.structure.GeneratorParameterReference"), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283cbf8aL, 0x90726ff283cbf8cL, "declaration"));
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283cbf8aL, "jetbrains.mps.lang.generator.structure.GeneratorParameterReference"), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283cbf8aL, 0x90726ff283cbf8cL, "declaration"));
     }
     @NotNull
     @Override
@@ -64,14 +65,14 @@ public class GeneratorParameterReference_SmartReference extends SubstituteMenuBa
     @Override
     @NotNull
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
-      return new GeneratorParameterReference_SmartReference.SMP_ReferenceScope_zgxupi_a.Item(context, referencedNode, getConcept(), getReferenceLink());
+      return new GeneratorParameterReference_SmartReference.SMP_ReferenceScope_zgxupi_a.Item(context, referencedNode, getSConcept(), getReferenceLink());
     }
     private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;
 
-      private Item(SubstituteMenuContext context, SNode refNode, SConcept concept, SReferenceLink referenceLink) {
+      private Item(SubstituteMenuContext context, SNode refNode, SAbstractConcept concept, SReferenceLink referenceLink) {
         super(concept, context.getParentNode(), context.getCurrentTargetNode(), refNode, referenceLink, context.getEditorContext());
         _context = context;
         referencedNode = refNode;

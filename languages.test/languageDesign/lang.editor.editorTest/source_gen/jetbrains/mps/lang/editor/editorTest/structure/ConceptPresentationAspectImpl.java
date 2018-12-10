@@ -107,11 +107,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_StyleParent;
   private ConceptPresentation props_SubstMiddlewareChild;
   private ConceptPresentation props_SubstTestAbstractChild;
+  private ConceptPresentation props_SubstTestAbstractChild_WithDefaultConcreteConcept;
   private ConceptPresentation props_SubstTestBooleanPropertyChild;
+  private ConceptPresentation props_SubstTestChild_DefaultConcreteConcept;
   private ConceptPresentation props_SubstTestChild_WithNextApplicableEditorAndMenu_1;
   private ConceptPresentation props_SubstTestChild_WithNextApplicableEditorAndMenu_2;
   private ConceptPresentation props_SubstTestEnumPropertyChild;
   private ConceptPresentation props_SubstTestRoot;
+  private ConceptPresentation props_SubstTestRoot_NoEditor;
   private ConceptPresentation props_SwingComponent;
   private ConceptPresentation props_SwingComponentContainer;
   private ConceptPresentation props_SwingComponentinFoldedCell;
@@ -812,6 +815,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SubstTestAbstractChild = cpb.create();
         }
         return props_SubstTestAbstractChild;
+      case LanguageConceptSwitch.SubstTestAbstractChild_WithDefaultConcreteConcept:
+        if (props_SubstTestAbstractChild_WithDefaultConcreteConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SubstTestAbstractChild_WithDefaultConcreteConcept = cpb.create();
+        }
+        return props_SubstTestAbstractChild_WithDefaultConcreteConcept;
       case LanguageConceptSwitch.SubstTestBooleanPropertyChild:
         if (props_SubstTestBooleanPropertyChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -819,6 +828,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SubstTestBooleanPropertyChild = cpb.create();
         }
         return props_SubstTestBooleanPropertyChild;
+      case LanguageConceptSwitch.SubstTestChild_DefaultConcreteConcept:
+        if (props_SubstTestChild_DefaultConcreteConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SubstTestChild_DefaultConcreteConcept");
+          props_SubstTestChild_DefaultConcreteConcept = cpb.create();
+        }
+        return props_SubstTestChild_DefaultConcreteConcept;
       case LanguageConceptSwitch.SubstTestChild_WithNextApplicableEditorAndMenu_1:
         if (props_SubstTestChild_WithNextApplicableEditorAndMenu_1 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -847,6 +863,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SubstTestRoot = cpb.create();
         }
         return props_SubstTestRoot;
+      case LanguageConceptSwitch.SubstTestRoot_NoEditor:
+        if (props_SubstTestRoot_NoEditor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SubstTestRoot_NoEditor");
+          props_SubstTestRoot_NoEditor = cpb.create();
+        }
+        return props_SubstTestRoot_NoEditor;
       case LanguageConceptSwitch.SwingComponent:
         if (props_SwingComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

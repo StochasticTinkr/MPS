@@ -7629,6 +7629,17 @@
         <ref role="3uigEE" to="gola:~BuildException" resolve="BuildException" />
       </node>
       <node concept="3clFbS" id="7zEA_IIJ8Ol" role="3clF47">
+        <node concept="3SKdUt" id="dd5YedZWM7" role="3cqZAp">
+          <node concept="3SKdUq" id="dd5YedZWM9" role="3SKWNk">
+            <property role="3SKdUp" value="this line is here until we generate migration task and the list of needed modules for it" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="6cKQ1Xt_Bpc" role="3cqZAp">
+          <node concept="1rXfSq" id="6cKQ1Xt_Bpb" role="3clFbG">
+            <ref role="37wK5l" node="6cKQ1Xt_Bp8" resolve="addMpsModules" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="dd5YedZUpG" role="3cqZAp" />
         <node concept="3clFbF" id="7zEA_IIJ8On" role="3cqZAp">
           <node concept="3nyPlj" id="7zEA_IIJ8Om" role="3clFbG">
             <ref role="37wK5l" node="3ufQioQQtnL" resolve="execute" />
@@ -7806,6 +7817,83 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6cKQ1Xt_DDu" role="jymVt" />
+    <node concept="3clFb_" id="6cKQ1Xt_Bp8" role="jymVt">
+      <property role="TrG5h" value="addMpsModules" />
+      <node concept="3Tm6S6" id="6cKQ1Xt_Bp9" role="1B3o_S" />
+      <node concept="3cqZAl" id="6cKQ1Xt_Bpa" role="3clF45" />
+      <node concept="3clFbS" id="6cKQ1Xt_BoD" role="3clF47">
+        <node concept="3cpWs8" id="6cKQ1Xt_BoE" role="3cqZAp">
+          <node concept="3cpWsn" id="6cKQ1Xt_BoF" role="3cpWs9">
+            <property role="TrG5h" value="repoDesc" />
+            <node concept="3uibUv" id="6cKQ1Xt_BoG" role="1tU5fm">
+              <ref role="3uigEE" to="asz6:6aGZllYQgzH" resolve="RepositoryDescriptor" />
+            </node>
+            <node concept="2OqwBi" id="6cKQ1Xt_BoH" role="33vP2m">
+              <node concept="37vLTw" id="6cKQ1Xt_BoI" role="2Oq$k0">
+                <ref role="3cqZAo" node="3ufQioQQtje" resolve="myWhatToDo" />
+              </node>
+              <node concept="liA8E" id="6cKQ1Xt_BoJ" role="2OqNvi">
+                <ref role="37wK5l" to="asz6:6aGZllYSILI" resolve="getRepoDescriptor" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6cKQ1Xt_BoK" role="3cqZAp">
+          <node concept="3clFbS" id="6cKQ1Xt_BoL" role="3clFbx">
+            <node concept="3clFbF" id="6cKQ1Xt_BoM" role="3cqZAp">
+              <node concept="37vLTI" id="6cKQ1Xt_BoN" role="3clFbG">
+                <node concept="2ShNRf" id="6cKQ1Xt_BoO" role="37vLTx">
+                  <node concept="HV5vD" id="6cKQ1Xt_BoP" role="2ShVmc">
+                    <ref role="HV5vE" to="asz6:6aGZllYQgzH" resolve="RepositoryDescriptor" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="6cKQ1Xt_BoQ" role="37vLTJ">
+                  <ref role="3cqZAo" node="6cKQ1Xt_BoF" resolve="repoDesc" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6cKQ1Xt_BoR" role="3cqZAp">
+              <node concept="2OqwBi" id="6cKQ1Xt_BoS" role="3clFbG">
+                <node concept="37vLTw" id="6cKQ1Xt_BoT" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3ufQioQQtje" resolve="myWhatToDo" />
+                </node>
+                <node concept="liA8E" id="6cKQ1Xt_BoU" role="2OqNvi">
+                  <ref role="37wK5l" to="asz6:6aGZllYSILO" resolve="setRepoDescriptor" />
+                  <node concept="37vLTw" id="6cKQ1Xt_BoV" role="37wK5m">
+                    <ref role="3cqZAo" node="6cKQ1Xt_BoF" resolve="repoDesc" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="6cKQ1Xt_BoW" role="3clFbw">
+            <node concept="10Nm6u" id="6cKQ1Xt_BoX" role="3uHU7w" />
+            <node concept="37vLTw" id="6cKQ1Xt_BoY" role="3uHU7B">
+              <ref role="3cqZAo" node="6cKQ1Xt_BoF" resolve="repoDesc" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6cKQ1Xt_BoZ" role="3cqZAp">
+          <node concept="2OqwBi" id="6cKQ1Xt_Bp0" role="3clFbG">
+            <node concept="2OqwBi" id="6cKQ1Xt_Bp1" role="2Oq$k0">
+              <node concept="37vLTw" id="6cKQ1Xt_Bp2" role="2Oq$k0">
+                <ref role="3cqZAo" node="6cKQ1Xt_BoF" resolve="repoDesc" />
+              </node>
+              <node concept="2OwXpG" id="6cKQ1Xt_Bp3" role="2OqNvi">
+                <ref role="2Oxat5" to="asz6:6aGZllYQuUJ" resolve="folders" />
+              </node>
+            </node>
+            <node concept="liA8E" id="6cKQ1Xt_Bp4" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="1rXfSq" id="6cKQ1Xt_Bp5" role="37wK5m">
+                <ref role="37wK5l" node="6cKQ1Xt_oWh" resolve="getMpsHomePath" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="7zEA_IIJarc" role="jymVt" />
     <node concept="3clFb_" id="1oo0A63FYV0" role="jymVt">
       <property role="TrG5h" value="calculateClassPath" />
@@ -7897,39 +7985,12 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="10simrr3kC4" role="3cqZAp">
-          <node concept="3cpWsn" id="10simrr3kC5" role="3cpWs9">
-            <property role="TrG5h" value="mpsHome" />
-            <node concept="3uibUv" id="10simrr3kC3" role="1tU5fm">
-              <ref role="3uigEE" to="guwi:~File" resolve="File" />
-            </node>
-            <node concept="1rXfSq" id="10simrr3kC6" role="33vP2m">
-              <ref role="37wK5l" node="3ufQioQQtjK" resolve="getMpsHome" />
-            </node>
-          </node>
-        </node>
-        <node concept="1gVbGN" id="10simrr3m5F" role="3cqZAp">
-          <node concept="3y3z36" id="10simrr3nuR" role="1gVkn0">
-            <node concept="10Nm6u" id="10simrr3o26" role="3uHU7w" />
-            <node concept="37vLTw" id="10simrr3mOT" role="3uHU7B">
-              <ref role="3cqZAo" node="10simrr3kC5" resolve="mpsHome" />
-            </node>
-          </node>
-          <node concept="Xl_RD" id="10simrr3pFl" role="1gVpfI">
-            <property role="Xl_RC" value="MPSLoadTask.getMpsHome() == null. MPS home folder was not specified." />
-          </node>
-        </node>
         <node concept="3cpWs8" id="1oo0A63GPjg" role="3cqZAp">
           <node concept="3cpWsn" id="1oo0A63GPjh" role="3cpWs9">
             <property role="TrG5h" value="mpsHomePath" />
             <node concept="17QB3L" id="1oo0A63GPji" role="1tU5fm" />
-            <node concept="2OqwBi" id="10simrr35og" role="33vP2m">
-              <node concept="37vLTw" id="10simrr3kC7" role="2Oq$k0">
-                <ref role="3cqZAo" node="10simrr3kC5" resolve="mpsHome" />
-              </node>
-              <node concept="liA8E" id="10simrr35CQ" role="2OqNvi">
-                <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
-              </node>
+            <node concept="1rXfSq" id="6cKQ1Xt_oWk" role="33vP2m">
+              <ref role="37wK5l" node="6cKQ1Xt_oWh" resolve="getMpsHomePath" />
             </node>
           </node>
         </node>
@@ -8031,6 +8092,52 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6cKQ1Xt_sDf" role="jymVt" />
+    <node concept="3clFb_" id="6cKQ1Xt_oWh" role="jymVt">
+      <property role="TrG5h" value="getMpsHomePath" />
+      <node concept="3Tm6S6" id="6cKQ1Xt_oWi" role="1B3o_S" />
+      <node concept="17QB3L" id="6cKQ1Xt_oWj" role="3clF45" />
+      <node concept="3clFbS" id="6cKQ1Xt_oVV" role="3clF47">
+        <node concept="3clFbF" id="9HPbpkmhkN" role="3cqZAp">
+          <node concept="1rXfSq" id="9HPbpkmhkO" role="3clFbG">
+            <ref role="37wK5l" node="3ufQioQQtwg" resolve="checkMpsHome" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6cKQ1Xt_oVY" role="3cqZAp">
+          <node concept="3cpWsn" id="6cKQ1Xt_oVZ" role="3cpWs9">
+            <property role="TrG5h" value="mpsHome" />
+            <node concept="3uibUv" id="6cKQ1Xt_oW0" role="1tU5fm">
+              <ref role="3uigEE" to="guwi:~File" resolve="File" />
+            </node>
+            <node concept="1rXfSq" id="6cKQ1Xt_oW1" role="33vP2m">
+              <ref role="37wK5l" node="3ufQioQQtjK" resolve="getMpsHome" />
+            </node>
+          </node>
+        </node>
+        <node concept="1gVbGN" id="6cKQ1Xt_oW2" role="3cqZAp">
+          <node concept="3y3z36" id="6cKQ1Xt_oW3" role="1gVkn0">
+            <node concept="10Nm6u" id="6cKQ1Xt_oW4" role="3uHU7w" />
+            <node concept="37vLTw" id="6cKQ1Xt_oW5" role="3uHU7B">
+              <ref role="3cqZAo" node="6cKQ1Xt_oVZ" resolve="mpsHome" />
+            </node>
+          </node>
+          <node concept="Xl_RD" id="6cKQ1Xt_oW6" role="1gVpfI">
+            <property role="Xl_RC" value="MPSLoadTask.getMpsHome() == null. MPS home folder was not specified." />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6cKQ1Xt_oWd" role="3cqZAp">
+          <node concept="2OqwBi" id="6cKQ1Xt_oWa" role="3cqZAk">
+            <node concept="37vLTw" id="6cKQ1Xt_oWb" role="2Oq$k0">
+              <ref role="3cqZAo" node="6cKQ1Xt_oVZ" resolve="mpsHome" />
+            </node>
+            <node concept="liA8E" id="6cKQ1Xt_oWc" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6cKQ1Xt_umU" role="jymVt" />
     <node concept="3clFb_" id="4Szs9BHE4HH" role="jymVt">
       <property role="TrG5h" value="addClassPath" />
       <node concept="3Tm6S6" id="4Szs9BHE4HI" role="1B3o_S" />

@@ -241,7 +241,8 @@ public class MenuTraceSubstituteChild_SubstituteMenu extends SubstituteMenuBase 
   public class SMP_ReferenceScope_fxbim_d extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_fxbim_d() {
-      super(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xac2d3ee357de209L, "jetbrains.mps.lang.editor.editorTest.structure.MenuTraceSubstituteChild"), MetaAdapterFactory.getReferenceLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xac2d3ee357de209L, 0xcac9bf54313b229L, "nodeToReference"));
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xac2d3ee357de209L, "jetbrains.mps.lang.editor.editorTest.structure.MenuTraceSubstituteChild"), MetaAdapterFactory.getReferenceLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xac2d3ee357de209L, 0xcac9bf54313b229L, "nodeToReference"));
     }
     @NotNull
     @Override

@@ -1444,6 +1444,57 @@
         </node>
         <node concept="l2Vlx" id="woUdQL2A4Y" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="367vPD06ddE" role="3EZMnx">
+        <node concept="VPM3Z" id="367vPD06ddF" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="lj46D" id="367vPD06ddG" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="367vPD06ddH" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="367vPD06ddI" role="3EZMnx">
+          <property role="3F0ifm" value="multi child with default concrete concept" />
+          <node concept="ljvvj" id="367vPD06ddJ" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="367vPD06doU" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:367vPD06d7q" resolve="multiChildWithDefaultConcreteConcept" />
+          <node concept="l2Vlx" id="367vPD06doZ" role="2czzBx" />
+        </node>
+        <node concept="l2Vlx" id="367vPD06ddO" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="367vPD06dgb" role="3EZMnx">
+        <node concept="VPM3Z" id="367vPD06dgc" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="lj46D" id="367vPD06dgd" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="367vPD06dge" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="367vPD06dgf" role="3EZMnx">
+          <property role="3F0ifm" value="single child with default concrete concept" />
+          <node concept="ljvvj" id="367vPD06dgg" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="367vPD06dgh" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:367vPD06d7B" resolve="singleChildWithDefaultConcreteConcept" />
+          <node concept="lj46D" id="367vPD06dgi" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="2w$q5c" id="367vPD06dgj" role="3xwHhi">
+            <node concept="2aJ2om" id="367vPD06dgk" role="2w$qW5">
+              <ref role="2$4xQ3" node="woUdQL2A72" resolve="specificHint" />
+            </node>
+          </node>
+        </node>
+        <node concept="l2Vlx" id="367vPD06dgl" role="2iSdaV" />
+      </node>
       <node concept="3F0ifn" id="P9hc2KffzB" role="3EZMnx">
         <property role="3F0ifm" value="}" />
       </node>
@@ -7139,6 +7190,20 @@
         <node concept="2iRfu4" id="4Y8fggh5JFf" role="2iSdaV" />
       </node>
       <node concept="2iRkQZ" id="4Y8fggh5JEL" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="367vPD06d6v">
+    <property role="3GE5qa" value="substitute" />
+    <ref role="1XX52x" to="68nn:367vPD06d6u" resolve="SubstTestChild_DefaultConcreteConcept" />
+    <node concept="3F0ifn" id="367vPD07p7g" role="2wV5jI">
+      <property role="3F0ifm" value="SubstTestChild_DefaultConcreteConcept" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="367vPD06d6W">
+    <property role="3GE5qa" value="substitute" />
+    <ref role="1XX52x" to="68nn:367vPD06cFP" resolve="SubstTestAbstractChild_WithDefaultConcreteConcept" />
+    <node concept="3F0ifn" id="367vPD06d6Y" role="2wV5jI">
+      <property role="3F0ifm" value="SubstTestAbstractChild_WithDefaultConcreteConcept" />
     </node>
   </node>
 </model>

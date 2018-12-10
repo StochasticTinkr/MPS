@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor;
@@ -54,6 +55,11 @@ class InterpretedLanguageRuntime extends LanguageRuntime {
   protected <T extends ILanguageAspect> T createAspect(Class<T> descriptorInterface) {
     if (descriptorInterface == StructureAspectDescriptor.class) {
       return descriptorInterface.cast(new BaseStructureAspectDescriptor() {
+        @Override
+        public ConceptDescriptor getDescriptor(SConceptId id) {
+          return null;
+        }
+
         @Override
         public Collection<ConceptDescriptor> getDescriptors() {
           return Collections.emptyList();

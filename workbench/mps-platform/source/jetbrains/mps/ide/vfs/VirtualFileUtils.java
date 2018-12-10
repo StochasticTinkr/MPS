@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,9 +97,12 @@ public final class VirtualFileUtils {
   }
 
   /**
+   * @deprecated Prefer {@link IdeaFileSystem#fromVirtualFile(VirtualFile)} instead.
+   *             This method relies on global FS singleton.
    * @return null if current fs is not idea-based (it is very unlikely but still)
    */
   @Nullable
+  @Deprecated
   public static IFile toIFile(@NotNull VirtualFile f) {
     FileSystem fs = FileSystemExtPoint.getFS();
     if (!(fs instanceof IdeaFileSystem)) {
@@ -107,7 +110,7 @@ public final class VirtualFileUtils {
       return null;
     }
     IdeaFileSystem ideaFS = (IdeaFileSystem) fs;
-    return new IdeaFile(ideaFS, f);
+    return ideaFS.fromVirtualFile(f);
   }
 
   public static File toFile(VirtualFile f) {

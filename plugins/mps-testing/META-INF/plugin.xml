@@ -21,7 +21,7 @@
   <description>Languages unit-testing java code and MPS aspects such as editor and typesystem</description>
   <version>2019.1</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
-  <idea-version since-build="183.1" until-build="191.*"/>
+  <idea-version since-build="191.1" until-build="192.1"/>
 
   <depends>jetbrains.mps.core</depends>
   <depends>com.intellij.modules.lang</depends>

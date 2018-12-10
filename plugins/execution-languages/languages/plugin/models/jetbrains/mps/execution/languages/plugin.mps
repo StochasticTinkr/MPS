@@ -40,7 +40,7 @@
     <property role="9BnSK" value="2019.1" />
     <property role="9BnSM" value="JetBrains" />
     <property role="9BnSP" value="http://www.jetbrains.com/mps/" />
-    <property role="9BnSO" value="183.1" />
+    <property role="9BnSO" value="191.1" />
     <property role="2PJ1tZ" value="true" />
     <property role="3FCvg6" value="true" />
     <property role="1qHB85" value="/MPS_16.png" />

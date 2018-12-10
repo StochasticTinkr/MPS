@@ -34,6 +34,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -84,9 +85,9 @@ public class ModuleLibrariesUtil {
       return Collections.emptySet();
     }
     final Set<SModuleReference> modules = new HashSet<SModuleReference>();
-    final Set<IFile> moduleXmls = new HashSet<IFile>();
+    final Set<String> moduleXmlPaths = new HashSet<String>();
     for (VirtualFile file : library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)) {
-      moduleXmls.add(VirtualFileUtils.toIFile(file));
+      moduleXmlPaths.add(canonical(file));
     }
 
     repository.getModelAccess().runReadAction(new Runnable() {
@@ -97,10 +98,10 @@ public class ModuleLibrariesUtil {
             continue;
           }
           // Indeed, we don't check for xml file of a source module descriptor (available through DeploymentDescriptor). The reason is
-          // we care about deployed modules only, therefore expect moduleXmls to be filled only with 'module.xml' files of deployed modules and
+          // we care about deployed modules only, therefore expect moduleXmlPaths to be filled only with 'module.xml' files of deployed modules and
           // straightforward IFile match against repository module's files shall suffice.
           final IFile moduleDescriptorFile = ((AbstractModule) m).getDescriptorFile();
-          if (moduleDescriptorFile != null && moduleXmls.contains(moduleDescriptorFile)) {
+          if (moduleDescriptorFile != null && moduleXmlPaths.contains(canonical(moduleDescriptorFile))) {
             modules.add(m.getModuleReference());
           }
         }
@@ -131,6 +132,17 @@ public class ModuleLibrariesUtil {
       descriptorVirtualFile = VirtualFileUtils.getOrCreateVirtualFile(descriptorFile);
     }
     return createAutoLibrary(usedModule.getModuleName(), stubFiles, descriptorVirtualFile, container);
+  }
+
+  private static String canonical(VirtualFile vfile) {
+    // Bizarre way to get canonical path because we want to compare to canonical path of e.g. JarEntryFile,
+    // which is not an idea's VirtualFile, rather IFile.
+    // We want to make sure same logic is used.
+    return IFileUtils.getCanonicalPath(VirtualFileUtils.toIFile(vfile));
+  }
+
+  private static String canonical(IFile ifile) {
+    return IFileUtils.getCanonicalPath(ifile);
   }
 
   @Nullable

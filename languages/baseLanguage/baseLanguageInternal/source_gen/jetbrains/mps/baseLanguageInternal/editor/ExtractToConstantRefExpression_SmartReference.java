@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -46,7 +46,8 @@ public class ExtractToConstantRefExpression_SmartReference extends SubstituteMen
   public class SMP_ReferenceScope_ultiz_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ultiz_a() {
-      super(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression"), MetaAdapterFactory.getReferenceLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, 0x162724dabcdc672L, "original"));
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression"), MetaAdapterFactory.getReferenceLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, 0x162724dabcdc672L, "original"));
     }
     @NotNull
     @Override
@@ -63,14 +64,14 @@ public class ExtractToConstantRefExpression_SmartReference extends SubstituteMen
     @Override
     @NotNull
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
-      return new ExtractToConstantRefExpression_SmartReference.SMP_ReferenceScope_ultiz_a.Item(context, referencedNode, getConcept(), getReferenceLink());
+      return new ExtractToConstantRefExpression_SmartReference.SMP_ReferenceScope_ultiz_a.Item(context, referencedNode, getSConcept(), getReferenceLink());
     }
     private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;
 
-      private Item(SubstituteMenuContext context, SNode refNode, SConcept concept, SReferenceLink referenceLink) {
+      private Item(SubstituteMenuContext context, SNode refNode, SAbstractConcept concept, SReferenceLink referenceLink) {
         super(concept, context.getParentNode(), context.getCurrentTargetNode(), refNode, referenceLink, context.getEditorContext());
         _context = context;
         referencedNode = refNode;

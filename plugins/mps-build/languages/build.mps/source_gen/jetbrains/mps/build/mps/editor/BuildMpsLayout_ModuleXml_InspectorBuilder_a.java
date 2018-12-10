@@ -28,7 +28,6 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.hintStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
 
@@ -295,9 +294,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);
@@ -397,9 +394,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, "jetbrains.mps.build.mps.structure.GeneratorInternal_String");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, "jetbrains.mps.build.mps.structure.GeneratorInternal_String"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);

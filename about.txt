@@ -24,14 +24,29 @@ CLI Parser
 https://github.com/spullara/cli-parser
 Copyright (c) 2012 Sam Pullara
 
+TwelveMonkeys
+https://github.com/haraldk/TwelveMonkeys
+
+Nashorn Sandbox
+https://github.com/javadelight/delight-nashorn-sandbox
+
 Java Diff Utils
 http://code.google.com/p/java-diff-utils/
 
 Eclipse Software Foundation
 http://www.eclipse.org/
 
+EdDSA-Java
+https://github.com/str4d/ed25519-java
+
 Google
 http://www.google.com/
+
+JGoodies, Karsten Lentzsch
+http://www.jgoodies.com/freeware/
+
+FST
+https://github.com/RuedigerMoeller/fast-serialization
 
 Hamcrest project
 https://code.google.com/p/hamcrest/
@@ -39,14 +54,29 @@ https://code.google.com/p/hamcrest/
 Java Image-Scaling Library
 https://github.com/rkalla/imgscalr
 
+ini4j
+https://github.com/JetBrains/intellij-deps-ini4j
+
 SourceForge ISO-RELAX Project
 https://sourceforge.net/projects/iso-relax/
+
+Jackson
+https://github.com/FasterXML/jackson
+
+Oracle
+http://java.sun.com/javase/technologies/desktop/javahelp/
+
+Javassist
+http://www.javassist.org
 
 Jaxen project
 http://jaxen.codehaus.org
 
-java-swing-ayatana project
-https://code.google.com/p/java-swing-ayatana/
+JBCrypt
+https://github.com/jeremyh/jBCrypt
+
+JCIP Annotations
+http://jcip.net
 
 JDOM Project
 http://www.jdom.org/
@@ -55,31 +85,23 @@ Copyright (C) 2000-2002 Brett McLaughlin & Jason Hunter.
 Pure Java Terminal Emulator.
 https://github.com/JetBrains/jediterm
 
-JGoodies, Karsten Lentzsch
-http://www.jgoodies.com/freeware/
-Copyright (c) 2002-2006. All rights reserved.
-
-Sun Microsystems
-http://java.sun.com/javase/technologies/desktop/javahelp/
-
-Jing / RELAX NG validator in Java
+Jing
 http://www.thaiopensource.com/relaxng/jing.html
-Copyright (c) 2001, 2002, 2003, 2008 Thai Open Source Software Center Ltd
 
-The jMock project
-http://jmock.org/
-
-JNA Project
-https://jna.dev.java.net/
+Java Native Access
+https://github.com/java-native-access/jna
 
 JCraft/JSch project
 http://www.jcraft.com/jsch/
 
-JSR 173: Streaming API for XML
-https://www.jcp.org/en/jsr/detail?id=173
-
 Kent Beck, Erich Gamma, and David Saff
 http://www.junit.org/
+
+The jMock project
+http://jmock.org/
+
+LZ4 Java
+https://github.com/lz4/lz4-java
 
 Michael Baranov
 http://microba.sourceforge.net/
@@ -92,8 +114,14 @@ Marc De Scheemaecker
 http://devkix.com/nanoxml.php/
 Copyright (C) 2000-2008. All Rights Reserved.
 
+NekoHTML
+http://nekohtml.sourceforge.net
+
 Netty project
 http://netty.io/index.html
+
+Objenesis
+http://objenesis.org
 
 NanoContainer Organization
 http://www.picocontainer.org/
@@ -114,18 +142,14 @@ https://java.net/projects/rngom/
 Simple Logging Facade for Java
 https://www.slf4j.org
 
-Taro L. Saito
-https://github.com/xerial/snappy-java
+SnakeYAML
+https://bitbucket.org/asomov/snakeyaml
+
+StreamEx
+https://github.com/amaembo/streamex
 
 SQLite Project
 https://www.sqlite.org
-
-TMate Software Ltd
-http://svnkit.com/
-http://sqljet.com/
-
-StreamEx Project
-https://github.com/amaembo/streamex
 
 SwingLabs SwingX
 https://swingx.java.net
@@ -134,11 +158,21 @@ Trang Project
 http://www.thaiopensource.com/relaxng/trang.html
 Copyright (c) 2002, 2003, 2008 Thai Open Source Software Center Ltd
 
+Trilead SSH
+https://github.com/jenkinsci/trilead-ssh2
+
 Trove High Performance Collections for Java
 http://trove.starlight-systems.com
 
+WADL
+Web Application Description Language - Specification and Tools
+https://javaee.github.io/wadl/
+
 Winp project
 https://java.net/projects/winp
+
+The W3C consortium
+http://www.w3c.org
 
 XML Pull Parser (XPP3) project
 http://www.extreme.indiana.edu/xgws/xsoap/xpp/
@@ -146,15 +180,6 @@ http://www.extreme.indiana.edu/xgws/xsoap/xpp/
 Joe Walnes
 http://xstream.codehaus.org/
 Copyright (c) 2003-2005. All rights reserved.
-
-The W3C consortium
-http://www.w3c.org
-
-Java API for handling Windows ini file format
-http://ini4j.sourceforge.net/index.html
-
-Trilead SSH
-http://www.trilead.com/SSH_Library/
 
 You can find licenses for these software
 in the %MPS_HOME%/license directory

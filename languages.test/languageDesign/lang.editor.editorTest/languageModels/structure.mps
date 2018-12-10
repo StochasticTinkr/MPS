@@ -496,6 +496,20 @@
       <property role="20kJfa" value="childWithNextEditorAndMenu" />
       <ref role="20lvS9" node="woUdQL3814" resolve="Abstract_SubstTestChild_WithNextApplicableEditorAndMenu" />
     </node>
+    <node concept="1TJgyj" id="367vPD06d7q" role="1TKVEi">
+      <property role="IQ2ns" value="3568961255313560026" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="multiChildWithDefaultConcreteConcept" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="367vPD06cFP" resolve="SubstTestAbstractChild_WithDefaultConcreteConcept" />
+    </node>
+    <node concept="1TJgyj" id="367vPD06d7B" role="1TKVEi">
+      <property role="IQ2ns" value="3568961255313560039" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singleChildWithDefaultConcreteConcept" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="367vPD06cFP" resolve="SubstTestAbstractChild_WithDefaultConcreteConcept" />
+    </node>
   </node>
   <node concept="1TIwiD" id="P9hc2Kf3iI">
     <property role="3GE5qa" value="substitute" />
@@ -1695,6 +1709,39 @@
       <property role="IQ2nx" value="6517546124954507571" />
       <property role="TrG5h" value="result" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="367vPD06cFP">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTestAbstractChild_WithDefaultConcreteConcept" />
+    <property role="R5$K7" value="true" />
+    <property role="EcuMT" value="3568961255313558261" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="367vPD06d6u">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTestChild_DefaultConcreteConcept" />
+    <property role="EcuMT" value="3568961255313559966" />
+    <ref role="1TJDcQ" node="367vPD06cFP" resolve="SubstTestAbstractChild_WithDefaultConcreteConcept" />
+  </node>
+  <node concept="1TIwiD" id="5DXkUDJKoMc">
+    <property role="EcuMT" value="6520459826986847372" />
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTestRoot_NoEditor" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5DXkUDJKoMo" role="1TKVEi">
+      <property role="IQ2ns" value="6520459826986847384" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="multiChildWithDefaultConcreteConcept" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="367vPD06cFP" resolve="SubstTestAbstractChild_WithDefaultConcreteConcept" />
+    </node>
+    <node concept="1TJgyj" id="5DXkUDJKoMp" role="1TKVEi">
+      <property role="IQ2ns" value="6520459826986847385" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singleChildWithDefaultConcreteConcept" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="367vPD06cFP" resolve="SubstTestAbstractChild_WithDefaultConcreteConcept" />
     </node>
   </node>
 </model>

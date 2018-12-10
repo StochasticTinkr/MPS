@@ -4,20 +4,12 @@ package jetbrains.mps.vcs.actions;
 
 import com.intellij.openapi.vcs.actions.AbstractVcsAction;
 import com.intellij.openapi.vcs.actions.VcsContext;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.ide.FileSelectInContext;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
-import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModuleFileTracker;
 import com.intellij.openapi.actionSystem.Presentation;
 
 public class ShowInLogicalView extends AbstractVcsAction {
@@ -25,54 +17,44 @@ public class ShowInLogicalView extends AbstractVcsAction {
   }
 
   @Override
-  protected void actionPerformed(VcsContext e) {
-    final Project project = e.getProject();
-    final VirtualFile selectedFile = getSelectedFile(e);
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
-    if (selectedFile == null || mpsProject == null) {
+  protected void actionPerformed(VcsContext vcsContext) {
+    ProjectPane pp = getProjectPane(vcsContext);
+    VirtualFile selectedFile = getSelectedFile(vcsContext);
+
+    if (selectedFile == null || pp == null) {
       return;
     }
-    ProjectPaneNavigator ppn = new ProjectPaneNavigator(mpsProject);
-    if (MPSFileTypesManager.isModelFile(selectedFile)) {
-      SModelReference model = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SModelReference>() {
-        @Override
-        public SModelReference compute() {
-          SModel m = SModelFileTracker.getInstance(mpsProject.getRepository()).findModel(VirtualFileUtils.toIFile(selectedFile));
-          return (m == null ? null : m.getReference());
-        }
-      });
-      if (model != null) {
-        ppn.select(model);
-      }
-    } else
-    if (MPSFileTypesManager.isModuleFile(selectedFile)) {
-      // FIXME why on earth we obtain model access here? ProjectPaneSelectInTarget does the same without model access. 
-      SModuleReference module = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SModuleReference>() {
-        @Override
-        public SModuleReference compute() {
-          SModule m = ModuleFileTracker.getInstance(mpsProject.getRepository()).getModuleByFile(VirtualFileUtils.toIFile(selectedFile));
-          return (m == null ? null : m.getModuleReference());
-        }
-      });
-      if (module != null) {
-        // I have no idea why we focus module only, and do not focus on models, but it's the way it used to be for years 
-        ppn.shallFocus(true);
-        ppn.select(module);
-      }
-    }
+    FileSelectInContext ctx = new FileSelectInContext(pp.getProject(), selectedFile);
+    // I assume this is an action when user want's to get to the node in ProjectPane, not just reveal it, hence requestFocus == true 
+    pp.createSelectInTarget().selectIn(ctx, true);
   }
 
+  @Nullable
   private VirtualFile getSelectedFile(VcsContext e) {
     VirtualFile[] selectedFiles = e.getSelectedFiles();
-    if (selectedFiles.length == 0) {
+    if (selectedFiles.length != 1) {
       return null;
     }
     return selectedFiles[0];
   }
 
+  @Nullable
+  private ProjectPane getProjectPane(VcsContext ctx) {
+    final Project project = ctx.getProject();
+    if (project == null) {
+      return null;
+    }
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
+    if (mpsProject == null) {
+      return null;
+    }
+    return ProjectPane.getInstance(mpsProject);
+  }
+
   @Override
   protected void update(VcsContext vcsContext, Presentation presentation) {
+    ProjectPane pp = getProjectPane(vcsContext);
     VirtualFile selectedFile = getSelectedFile(vcsContext);
-    presentation.setEnabled(MPSFileTypesManager.isModelFile(selectedFile) || MPSFileTypesManager.isModuleFile(selectedFile));
+    presentation.setEnabled(pp != null && selectedFile != null && pp.createSelectInTarget().canSelect(new FileSelectInContext(pp.getProject(), selectedFile)));
   }
 }

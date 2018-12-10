@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 
@@ -47,7 +47,8 @@ public class GenerationContextOp_GenParameterRef_SubstituteMenu extends Substitu
   public class SMP_ReferenceScope_p50d8y_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_p50d8y_a() {
-      super(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef"), MetaAdapterFactory.getReferenceLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L, 0x22cdba820a9a0584L, "importClause"));
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef"), MetaAdapterFactory.getReferenceLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L, 0x22cdba820a9a0584L, "importClause"));
     }
     @NotNull
     @Override

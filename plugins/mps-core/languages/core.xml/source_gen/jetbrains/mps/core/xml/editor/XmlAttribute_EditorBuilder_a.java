@@ -190,6 +190,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     public SNode createNodeToInsert(EditorContext editorContext) {
       return nodeFactory();
     }
+
     public SNode nodeFactory() {
       return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"));
     }
@@ -337,6 +338,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     public SNode createNodeToInsert(EditorContext editorContext) {
       return nodeFactory();
     }
+
     public SNode nodeFactory() {
       return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"));
     }

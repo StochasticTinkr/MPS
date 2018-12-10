@@ -22,7 +22,6 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -215,9 +214,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL, "jetbrains.mps.lang.test.generator.structure.ArgumentReference");
     }
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL, "jetbrains.mps.lang.test.generator.structure.ArgumentReference"), null, getNode(), getNode().getModel());
-    }
+
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);

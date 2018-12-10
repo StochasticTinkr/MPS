@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /*package*/ class QuantityTemporalProperty_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -144,8 +144,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       return editorCell;
     }
 
-    protected SNode createNodeToInsert() {
-      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"), null, getNode(), getNode().getModel());
+    protected SAbstractConcept getTargetConcept() {
+      return MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity");
     }
 
 

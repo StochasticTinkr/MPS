@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
@@ -43,7 +44,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.SModuleNameComparator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -114,6 +114,12 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   private void refreshModule(SModule module, boolean isDeleted) {
     assertCanChange();
+    if (module instanceof Generator) {
+      // workaround for https://youtrack.jetbrains.com/issue/MPS-28974 
+      // Instead, shall cease being a global module, construct node<Module> on demand and don't bother with update 
+      module = ((Generator) module).getSourceLanguage();
+    }
+
     if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit))) {
       return;
     }

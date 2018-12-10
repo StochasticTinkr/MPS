@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -46,7 +46,8 @@ public class NamedNodeReference_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_ReferenceScope_t1mmv8_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_t1mmv8_a() {
-      super(MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference"), MetaAdapterFactory.getReferenceLink(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, 0x64b394b6ee402faaL, "target"));
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference"), MetaAdapterFactory.getReferenceLink(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, 0x64b394b6ee402faaL, "target"));
     }
     @NotNull
     @Override
@@ -63,14 +64,14 @@ public class NamedNodeReference_SubstituteMenu extends SubstituteMenuBase {
     @Override
     @NotNull
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
-      return new NamedNodeReference_SubstituteMenu.SMP_ReferenceScope_t1mmv8_a.Item(context, referencedNode, getConcept(), getReferenceLink());
+      return new NamedNodeReference_SubstituteMenu.SMP_ReferenceScope_t1mmv8_a.Item(context, referencedNode, getSConcept(), getReferenceLink());
     }
     private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;
 
-      private Item(SubstituteMenuContext context, SNode refNode, SConcept concept, SReferenceLink referenceLink) {
+      private Item(SubstituteMenuContext context, SNode refNode, SAbstractConcept concept, SReferenceLink referenceLink) {
         super(concept, context.getParentNode(), context.getCurrentTargetNode(), refNode, referenceLink, context.getEditorContext());
         _context = context;
         referencedNode = refNode;

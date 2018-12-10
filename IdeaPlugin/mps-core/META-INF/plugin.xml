@@ -21,7 +21,7 @@
   <description>MPS Core</description>
   <version>2019.1</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
-  <idea-version since-build="183.1" until-build="191.*"/>
+  <idea-version since-build="191.1" until-build="192.1"/>
 
   <depends optional="true" config-file="idea-support.xml">com.intellij.modules.java</depends>
   <depends optional="true" config-file="intellij-ides-support.xml">com.intellij.modules.ultimate</depends>
@@ -164,6 +164,7 @@
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
+    <mps.modelRootEntry rootType="default" title="&amp;Default" className="jetbrains.mps.ide.ui.dialogs.properties.roots.editors.FileBasedModelRootEntryFactory"/>
     <mps.modelRootContributor className="jetbrains.mps.idea.core.project.stubs.ModuleLibStubProvider"/>
     <editorOptionsProvider
             instance="jetbrains.mps.nodeEditor.EditorSettingsConfigurable$EditorSettingsConfigurableOptionsProvider"/>
