@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="42kuyoecf49eadtc968d2h1t0gnhdw6">
-  <files names="ClassNotToMove.java:ClassWithUsage.java" />
+<product version="3" modelHash="6dnwhst17qe74zs3dtwcjfouo8k01jd">
+  <files names="BehaviorAspectDescriptor.java:ClassNotToMove.java:ClassWithUsage.java" />
 </product>
 

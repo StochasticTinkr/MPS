@@ -4,5 +4,8 @@
   <dependency className="SourceLanguage.editor.ClassWithUsage">
     <classNode dependClassName="SourceLanguage.editor.ClassToMove_NoParticipants" />
   </dependency>
+  <dependency className="SourceLanguage.editor.EditorAspectDescriptorImpl">
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
+  </dependency>
 </dependenciesRoot>
 
