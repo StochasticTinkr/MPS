@@ -38,6 +38,11 @@
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIO" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOException" />
+    <classNode dependClassName="jetbrains.mps.project.persistence.DevkitDescriptorPersistence" />
+    <classNode dependClassName="jetbrains.mps.project.persistence.LanguageDescriptorPersistence" />
+    <classNode dependClassName="jetbrains.mps.project.persistence.ModuleDescriptorPersistence" />
+    <classNode dependClassName="jetbrains.mps.project.persistence.ModuleReadException" />
+    <classNode dependClassName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.DevkitDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
