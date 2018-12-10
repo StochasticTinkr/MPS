@@ -372,12 +372,12 @@
         <child id="1205679832066" name="ascending" index="2S7zOq" />
       </concept>
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
-      <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
-      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="7125221305512719026" name="jetbrains.mps.baseLanguage.collections.structure.CollectionType" flags="in" index="3vKaQO" />
+      <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
@@ -9450,6 +9450,23 @@
         </node>
         <node concept="3clFbH" id="2xoEMW8WfdD" role="3cqZAp" />
         <node concept="3clFbH" id="IMUMWuHR8Y" role="3cqZAp" />
+        <node concept="3cpWs8" id="6QvBpqz$jKH" role="3cqZAp">
+          <node concept="3cpWsn" id="6QvBpqz$jKI" role="3cpWs9">
+            <property role="TrG5h" value="additionalJavaStubPaths" />
+            <node concept="3uibUv" id="6QvBpqz$mhn" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+              <node concept="17QB3L" id="6QvBpqz$mD4" role="11_B2D" />
+            </node>
+            <node concept="2OqwBi" id="6QvBpqz$jKJ" role="33vP2m">
+              <node concept="37vLTw" id="6QvBpqz$jKK" role="2Oq$k0">
+                <ref role="3cqZAo" node="33oJVYhgCCY" resolve="descriptor" />
+              </node>
+              <node concept="liA8E" id="6QvBpqz$jKL" role="2OqNvi">
+                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getAdditionalJavaStubPaths():java.util.Collection" resolve="getAdditionalJavaStubPaths" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="B0RVt9PwSQ" role="3cqZAp">
           <node concept="3clFbS" id="B0RVt9PwSR" role="3clFbx">
             <node concept="3cpWs8" id="1Tieq1im8cD" role="3cqZAp">
@@ -9475,13 +9492,8 @@
                 <node concept="37vLTw" id="1Tieq1im8cM" role="37wK5m">
                   <ref role="3cqZAo" node="1Tieq1im8cE" resolve="stubModelEntries" />
                 </node>
-                <node concept="2OqwBi" id="B0RVt9PwSX" role="37wK5m">
-                  <node concept="37vLTw" id="2BHiRxgm5PP" role="2Oq$k0">
-                    <ref role="3cqZAo" node="33oJVYhgCCY" resolve="descriptor" />
-                  </node>
-                  <node concept="liA8E" id="B0RVt9PwSZ" role="2OqNvi">
-                    <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getAdditionalJavaStubPaths():java.util.Collection" resolve="getAdditionalJavaStubPaths" />
-                  </node>
+                <node concept="37vLTw" id="6QvBpqz$jKM" role="37wK5m">
+                  <ref role="3cqZAo" node="6QvBpqz$jKI" resolve="additionalJavaStubPaths" />
                 </node>
                 <node concept="37vLTw" id="33oJVYhgNbg" role="37wK5m">
                   <ref role="3cqZAo" node="33oJVYhfKyp" resolve="myMacroHelper" />
@@ -9504,13 +9516,8 @@
           </node>
           <node concept="3fqX7Q" id="B0RVt9PwT3" role="3clFbw">
             <node concept="2OqwBi" id="B0RVt9PwT4" role="3fr31v">
-              <node concept="2OqwBi" id="B0RVt9PwT5" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxgmLs1" role="2Oq$k0">
-                  <ref role="3cqZAo" node="33oJVYhgCCY" resolve="descriptor" />
-                </node>
-                <node concept="liA8E" id="B0RVt9PwT7" role="2OqNvi">
-                  <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getAdditionalJavaStubPaths():java.util.Collection" resolve="getAdditionalJavaStubPaths" />
-                </node>
+              <node concept="37vLTw" id="6QvBpqz$jKN" role="2Oq$k0">
+                <ref role="3cqZAo" node="6QvBpqz$jKI" resolve="additionalJavaStubPaths" />
               </node>
               <node concept="liA8E" id="B0RVt9PwT8" role="2OqNvi">
                 <ref role="37wK5l" to="33ny:~Collection.isEmpty():boolean" resolve="isEmpty" />

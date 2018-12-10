@@ -10,14 +10,10 @@
     <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
-    <classNode dependClassName="testOverridingType.behavior.BehaviorAspectDescriptor" />
-    <classNode dependClassName="testOverridingType.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="testOverridingType.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="testOverridingType.intentions.IntentionsDescriptor" />
     <classNode dependClassName="testOverridingType.structure.ConceptPresentationAspectImpl" />

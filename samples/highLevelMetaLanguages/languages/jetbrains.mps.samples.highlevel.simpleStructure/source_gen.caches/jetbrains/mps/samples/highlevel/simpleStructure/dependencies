@@ -5,15 +5,11 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.samples.highlevel.simpleStructure.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.highlevel.simpleStructure.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.samples.highlevel.simpleStructure.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.samples.highlevel.simpleStructure.structure.StructureAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.samples.highlevel.simpleStructure.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

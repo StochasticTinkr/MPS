@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
-import jetbrains.mps.lang.actions.testLanguage.actions.StringHolder;
 import jetbrains.mps.util.Computable;
 import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;

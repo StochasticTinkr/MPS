@@ -9,14 +9,10 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
-    <classNode dependClassName="testSubtypingB.behavior.BehaviorAspectDescriptor" />
-    <classNode dependClassName="testSubtypingB.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="testSubtypingB.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="testSubtypingB.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="testSubtypingB.structure.StructureAspectDescriptor" />

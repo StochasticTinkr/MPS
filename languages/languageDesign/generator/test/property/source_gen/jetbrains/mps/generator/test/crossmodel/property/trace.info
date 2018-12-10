@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root>
     <file name="Language.java">
-      <unit at="15,0,54,0" name="jetbrains.mps.generator.test.crossmodel.property.Language" />
+      <unit at="14,0,50,0" name="jetbrains.mps.generator.test.crossmodel.property.Language" />
     </file>
   </root>
 </debug-info>

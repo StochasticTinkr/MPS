@@ -5,23 +5,19 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
-    <classNode dependClassName="testDefaultEditor.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="testDefaultEditor.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="testDefaultEditor.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="testDefaultEditor.intentions.IntentionsDescriptor" />
     <classNode dependClassName="testDefaultEditor.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="testDefaultEditor.structure.StructureAspectDescriptor" />
-    <classNode dependClassName="testDefaultEditor.typesystem.TypesystemDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>
 </dependenciesRoot>

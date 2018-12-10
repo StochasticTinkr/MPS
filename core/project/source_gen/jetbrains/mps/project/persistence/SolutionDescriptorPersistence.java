@@ -12,6 +12,7 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.util.xml.XmlUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collection;
 
 /**
  * XML/DOM persistence for a descriptor of Solution module
@@ -123,9 +124,10 @@ public class SolutionDescriptorPersistence {
     }
 
 
-    if (!(descriptor.getAdditionalJavaStubPaths().isEmpty())) {
+    Collection<String> additionalJavaStubPaths = descriptor.getAdditionalJavaStubPaths();
+    if (!(additionalJavaStubPaths.isEmpty())) {
       Element stubModelEntries = new Element("stubModelEntries");
-      ModuleDescriptorPersistence.saveStubModelEntries(stubModelEntries, descriptor.getAdditionalJavaStubPaths(), myMacroHelper);
+      ModuleDescriptorPersistence.saveStubModelEntries(stubModelEntries, additionalJavaStubPaths, myMacroHelper);
       result.addContent(stubModelEntries);
     }
 

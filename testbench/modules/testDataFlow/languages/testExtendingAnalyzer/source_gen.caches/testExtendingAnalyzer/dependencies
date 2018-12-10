@@ -6,25 +6,21 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="testExtendingAnalyzer.behavior.BehaviorAspectDescriptor" />
-    <classNode dependClassName="testExtendingAnalyzer.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="testExtendingAnalyzer.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="testExtendingAnalyzer.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="testExtendingAnalyzer.intentions.IntentionsDescriptor" />
     <classNode dependClassName="testExtendingAnalyzer.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="testExtendingAnalyzer.structure.StructureAspectDescriptor" />
-    <classNode dependClassName="testExtendingAnalyzer.typesystem.TypesystemDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>
 </dependenciesRoot>

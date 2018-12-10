@@ -2,21 +2,15 @@
 <dependenciesRoot>
   <dependency className="BHL4.Language">
     <classNode dependClassName="BHL4.behavior.BehaviorAspectDescriptor" />
-    <classNode dependClassName="BHL4.constraints.ConstraintsAspectDescriptor" />
-    <classNode dependClassName="BHL4.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="BHL4.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="BHL4.structure.StructureAspectDescriptor" />
-    <classNode dependClassName="BHL4.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
