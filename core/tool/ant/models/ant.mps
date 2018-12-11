@@ -918,7 +918,7 @@
   <node concept="312cEu" id="3ufQioQQtf7">
     <property role="TrG5h" value="JvmArgs" />
     <property role="1sVAO0" value="false" />
-    <property role="1EXbeo" value="false" />
+    <property role="1EXbeo" value="true" />
     <node concept="3Tm1VV" id="3ufQioQQtf8" role="1B3o_S" />
     <node concept="3uibUv" id="3ufQioQQtf9" role="1zkMxy">
       <ref role="3uigEE" to="rg95:~DataType" resolve="DataType" />
@@ -957,9 +957,6 @@
         <node concept="Xl_RD" id="3ufQioQQtfn" role="37wK5m">
           <property role="Xl_RC" value="-Xmx512m" />
         </node>
-        <node concept="Xl_RD" id="3ufQioQQtfo" role="37wK5m">
-          <property role="Xl_RC" value="-XX:MaxPermSize=92m" />
-        </node>
         <node concept="Xl_RD" id="3ufQioQQtfp" role="37wK5m">
           <property role="Xl_RC" value="-XX:+HeapDumpOnOutOfMemoryError" />
         </node>
@@ -983,14 +980,12 @@
         <node concept="Xl_RD" id="3ufQioQQtfw" role="37wK5m">
           <property role="Xl_RC" value="Xmx" />
         </node>
-        <node concept="Xl_RD" id="3ufQioQQtfx" role="37wK5m">
-          <property role="Xl_RC" value="MaxPermSize=" />
-        </node>
         <node concept="Xl_RD" id="3ufQioQQtfy" role="37wK5m">
           <property role="Xl_RC" value="HeapDumpOnOutOfMemoryError" />
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1OjIqd7UP7p" role="jymVt" />
     <node concept="3clFbW" id="3ufQioQQtfz" role="jymVt">
       <node concept="3Tm1VV" id="3ufQioQQtf$" role="1B3o_S" />
       <node concept="3cqZAl" id="3ufQioQQtf_" role="3clF45" />
