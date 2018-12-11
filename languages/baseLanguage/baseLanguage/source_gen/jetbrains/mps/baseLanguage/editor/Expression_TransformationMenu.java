@@ -101,6 +101,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
       result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_q1());
       result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_r1());
       result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_s1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_t1());
     }
     return result;
   }
@@ -562,6 +563,29 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
       final EditorContext editorContext = _context.getEditorContext();
 
       return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.addComment_Expression");
+    }
+
+  }
+  public class TMP_Include_g28b5z_t1 extends IncludeTransformationMenuTransformationMenuPart {
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "Expression_wrapWithPassByRef", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "885351258698230459")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
+    @Nullable
+    @Override
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
+      final SNode node = _context.getNode();
+      final EditorContext editorContext = _context.getEditorContext();
+
+      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.Expression_wrapWithPassByRef");
     }
 
   }

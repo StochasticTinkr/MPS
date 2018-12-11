@@ -1716,7 +1716,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PassByRefExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("pass value by reference");
-          cpb.rawPresentation("byRef");
+          cpb.rawPresentation("@byRef[");
           props_PassByRefExpression = cpb.create();
         }
         return props_PassByRefExpression;

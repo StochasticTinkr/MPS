@@ -752,44 +752,46 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
             case 0:
               return Arrays.asList(new TransformationMenu[]{new Expression_to_type_Cast()});
             case 1:
-              return Arrays.asList(new TransformationMenu[]{new SubstringExpression_Transform()});
+              return Arrays.asList(new TransformationMenu[]{new Expression_wrapWithPassByRef()});
             case 2:
-              return Arrays.asList(new TransformationMenu[]{new UnaryMinusLeftTransform()});
+              return Arrays.asList(new TransformationMenu[]{new SubstringExpression_Transform()});
             case 3:
-              return Arrays.asList(new TransformationMenu[]{new addComment_Expression()});
+              return Arrays.asList(new TransformationMenu[]{new UnaryMinusLeftTransform()});
             case 4:
-              return Arrays.asList(new TransformationMenu[]{new arrayAccess()});
+              return Arrays.asList(new TransformationMenu[]{new addComment_Expression()});
             case 5:
-              return Arrays.asList(new TransformationMenu[]{new assert_()});
+              return Arrays.asList(new TransformationMenu[]{new arrayAccess()});
             case 6:
-              return Arrays.asList(new TransformationMenu[]{new assignment_to_variable_declaration()});
+              return Arrays.asList(new TransformationMenu[]{new assert_()});
             case 7:
-              return Arrays.asList(new TransformationMenu[]{new assignments()});
+              return Arrays.asList(new TransformationMenu[]{new assignment_to_variable_declaration()});
             case 8:
-              return Arrays.asList(new TransformationMenu[]{new binaryOperations_Expression()});
+              return Arrays.asList(new TransformationMenu[]{new assignments()});
             case 9:
-              return Arrays.asList(new TransformationMenu[]{new csharp_rTransform_Expression()});
+              return Arrays.asList(new TransformationMenu[]{new binaryOperations_Expression()});
             case 10:
-              return Arrays.asList(new TransformationMenu[]{new dotExpression()});
+              return Arrays.asList(new TransformationMenu[]{new csharp_rTransform_Expression()});
             case 11:
-              return Arrays.asList(new TransformationMenu[]{new expressionStatement()});
+              return Arrays.asList(new TransformationMenu[]{new dotExpression()});
             case 12:
-              return Arrays.asList(new TransformationMenu[]{new expressionToNotExpression()});
+              return Arrays.asList(new TransformationMenu[]{new expressionStatement()});
             case 13:
-              return Arrays.asList(new TransformationMenu[]{new expressionToParenthesis()});
+              return Arrays.asList(new TransformationMenu[]{new expressionToNotExpression()});
             case 14:
-              return Arrays.asList(new TransformationMenu[]{new expression_to_variable_declaration()});
+              return Arrays.asList(new TransformationMenu[]{new expressionToParenthesis()});
             case 15:
-              return Arrays.asList(new TransformationMenu[]{new expressionstmt_to_returnstms_on_expression()});
+              return Arrays.asList(new TransformationMenu[]{new expression_to_variable_declaration()});
             case 16:
-              return Arrays.asList(new TransformationMenu[]{new expressionstmt_to_variable_declaration()});
+              return Arrays.asList(new TransformationMenu[]{new expressionstmt_to_returnstms_on_expression()});
             case 17:
-              return Arrays.asList(new TransformationMenu[]{new instanceOf()});
+              return Arrays.asList(new TransformationMenu[]{new expressionstmt_to_variable_declaration()});
             case 18:
-              return Arrays.asList(new TransformationMenu[]{new postfix()});
+              return Arrays.asList(new TransformationMenu[]{new instanceOf()});
             case 19:
-              return Arrays.asList(new TransformationMenu[]{new prefix()});
+              return Arrays.asList(new TransformationMenu[]{new postfix()});
             case 20:
+              return Arrays.asList(new TransformationMenu[]{new prefix()});
+            case 21:
               return Arrays.asList(new TransformationMenu[]{new ternaryOperator()});
             default:
           }
@@ -1397,7 +1399,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private static String[] stringSwitchCases_xbvbvu_a0a0a0n1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.newExpression_DefaultClassCreator_ext_2"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0o1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.EnumClass_ApplySideTransforms"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0p1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.EnumConstantDeclaration_ApplySideTransforms", "jetbrains.mps.baseLanguage.editor.enumConstant_rt"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0q1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.Expression_to_type_Cast", "jetbrains.mps.baseLanguage.editor.SubstringExpression_Transform", "jetbrains.mps.baseLanguage.editor.UnaryMinusLeftTransform", "jetbrains.mps.baseLanguage.editor.addComment_Expression", "jetbrains.mps.baseLanguage.editor.arrayAccess", "jetbrains.mps.baseLanguage.editor.assert_", "jetbrains.mps.baseLanguage.editor.assignment_to_variable_declaration", "jetbrains.mps.baseLanguage.editor.assignments", "jetbrains.mps.baseLanguage.editor.binaryOperations_Expression", "jetbrains.mps.baseLanguage.editor.csharp_rTransform_Expression", "jetbrains.mps.baseLanguage.editor.dotExpression", "jetbrains.mps.baseLanguage.editor.expressionStatement", "jetbrains.mps.baseLanguage.editor.expressionToNotExpression", "jetbrains.mps.baseLanguage.editor.expressionToParenthesis", "jetbrains.mps.baseLanguage.editor.expression_to_variable_declaration", "jetbrains.mps.baseLanguage.editor.expressionstmt_to_returnstms_on_expression", "jetbrains.mps.baseLanguage.editor.expressionstmt_to_variable_declaration", "jetbrains.mps.baseLanguage.editor.instanceOf", "jetbrains.mps.baseLanguage.editor.postfix", "jetbrains.mps.baseLanguage.editor.prefix", "jetbrains.mps.baseLanguage.editor.ternaryOperator"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0q1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.Expression_to_type_Cast", "jetbrains.mps.baseLanguage.editor.Expression_wrapWithPassByRef", "jetbrains.mps.baseLanguage.editor.SubstringExpression_Transform", "jetbrains.mps.baseLanguage.editor.UnaryMinusLeftTransform", "jetbrains.mps.baseLanguage.editor.addComment_Expression", "jetbrains.mps.baseLanguage.editor.arrayAccess", "jetbrains.mps.baseLanguage.editor.assert_", "jetbrains.mps.baseLanguage.editor.assignment_to_variable_declaration", "jetbrains.mps.baseLanguage.editor.assignments", "jetbrains.mps.baseLanguage.editor.binaryOperations_Expression", "jetbrains.mps.baseLanguage.editor.csharp_rTransform_Expression", "jetbrains.mps.baseLanguage.editor.dotExpression", "jetbrains.mps.baseLanguage.editor.expressionStatement", "jetbrains.mps.baseLanguage.editor.expressionToNotExpression", "jetbrains.mps.baseLanguage.editor.expressionToParenthesis", "jetbrains.mps.baseLanguage.editor.expression_to_variable_declaration", "jetbrains.mps.baseLanguage.editor.expressionstmt_to_returnstms_on_expression", "jetbrains.mps.baseLanguage.editor.expressionstmt_to_variable_declaration", "jetbrains.mps.baseLanguage.editor.instanceOf", "jetbrains.mps.baseLanguage.editor.postfix", "jetbrains.mps.baseLanguage.editor.prefix", "jetbrains.mps.baseLanguage.editor.ternaryOperator"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0r1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.FieldDeclaration_ApplySideTransforms"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0s1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.addGenericTypeVariableInDeclaration", "jetbrains.mps.baseLanguage.editor.genericDeclaration_right"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0t1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.GenericLValueExpression_RTM"};
