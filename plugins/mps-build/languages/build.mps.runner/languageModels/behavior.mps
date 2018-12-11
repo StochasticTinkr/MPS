@@ -357,7 +357,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5I1s5NvyQLy" role="2OqNvi">
-                <ref role="37wK5l" to="tken:7LkEFTMzmuw" resolve="designtimeClosure" />
+                <ref role="37wK5l" to="tken:5bXKZTgq2AH" resolve="runtimeClosure" />
               </node>
             </node>
           </node>

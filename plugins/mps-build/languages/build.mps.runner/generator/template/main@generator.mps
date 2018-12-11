@@ -1020,7 +1020,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="3ZNuxuVIKrI" role="2OqNvi">
-                      <ref role="37wK5l" to="tken:7LkEFTMzmuw" resolve="designtimeClosure" />
+                      <ref role="37wK5l" to="tken:5bXKZTgq2AH" resolve="runtimeClosure" />
                     </node>
                   </node>
                 </node>
@@ -1101,11 +1101,11 @@
                 </node>
                 <node concept="3clFbF" id="3pzPpUGgDUg" role="3cqZAp">
                   <node concept="2OqwBi" id="3pzPpUGgFyt" role="3clFbG">
-                    <node concept="liA8E" id="3pzPpUGgG1O" role="2OqNvi">
-                      <ref role="37wK5l" to="tken:3pzPpUFQH5V" resolve="getPluginPaths" />
-                    </node>
                     <node concept="37vLTw" id="1bDPmBff00s" role="2Oq$k0">
                       <ref role="3cqZAo" node="5VKiljfMls" resolve="modulePlugins" />
+                    </node>
+                    <node concept="liA8E" id="3pzPpUGgG1O" role="2OqNvi">
+                      <ref role="37wK5l" to="tken:3pzPpUFQH5V" resolve="getPluginPaths" />
                     </node>
                   </node>
                 </node>
