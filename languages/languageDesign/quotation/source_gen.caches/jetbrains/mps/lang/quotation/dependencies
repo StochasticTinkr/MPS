@@ -6,11 +6,13 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.migration.MigrationDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.typesystem.TypesystemDescriptor" />
