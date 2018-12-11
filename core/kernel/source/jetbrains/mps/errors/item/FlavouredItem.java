@@ -24,7 +24,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -109,8 +108,8 @@ public interface FlavouredItem {
       }
 
       @Override
-      public boolean matches(String serialized) {
-        return mySerializedValue.equals(serialized);
+      public boolean matches(String serializedValue) {
+        return mySerializedValue.equals(serializedValue);
       }
 
       @Override
@@ -120,17 +119,13 @@ public interface FlavouredItem {
     }
   }
 
+  // todo rename
   interface FlavourPredicate2<I extends FlavouredItem, T> {
     ReportItemFlavour<I, T> getFlavour();
 
-    boolean matches(String serialized);
+    boolean matches(String serializedValue);
 
     String serialize();
-  }
-
-  @ToRemove(version = 2018.3)
-  interface SerializingFlavour<I extends FlavouredItem, T> {
-    T deserialize(String s);
   }
 
   // todo rename to ReportItemPredicate
@@ -146,7 +141,7 @@ public interface FlavouredItem {
       for (ReportItemFlavour<?, ?> flavour : flavouredItem.getIdFlavours()) {
         if (myFlavours.containsKey(flavour.getId())) {
           FlavourPredicate2<?, ?> predicate = flavour.deserializePredicate(myFlavours.get(flavour.getId()));
-          if (!predicate.matches(serializeFlavour2(flavouredItem, flavour))) {
+          if (!predicate.matches(serializeFlavour(flavouredItem, flavour))) {
             return false;
           }
         }
@@ -196,6 +191,7 @@ public interface FlavouredItem {
     }
   }
 
+  //todo rename
   default FlavourPredicate toPredicate2(Set<ReportItemFlavour<?, ?>> idFlavours) {
     Set<ReportItemFlavour<?, ?>> flavourKeys = new HashSet<>(idFlavours);
     flavourKeys.remove(FLAVOUR_NODE);
@@ -203,7 +199,7 @@ public interface FlavouredItem {
     List<FlavourPredicate2<?, ?>> predicates = flavourKeys.stream()
                                                        .map(flavour -> extractPredicate(this, flavour))
                                                        .sorted(Comparator.comparing(o -> Objects.requireNonNull(o).getFlavour().getId()))
-                                                       .collect(Collectors.<FlavourPredicate2<?, ?>>toList());
+                                                       .collect(Collectors.toList());
     LinkedHashMap<String, String> result = new LinkedHashMap<>();
     for (FlavourPredicate2<?, ?> predicate : predicates) {
       result.put(predicate.getFlavour().getId(), predicate.serialize());
@@ -216,7 +212,7 @@ public interface FlavouredItem {
     return toPredicate2(idFlavours);
   }
 
-  static <T> String serializeFlavour2(FlavouredItem fI, ReportItemFlavour<?, T> flavour) {
+  static <T> String serializeFlavour(FlavouredItem fI, ReportItemFlavour<?, T> flavour) {
     T value = flavour.tryToGet(fI);
     if (value != null) {
       return flavour.serialize(value);
