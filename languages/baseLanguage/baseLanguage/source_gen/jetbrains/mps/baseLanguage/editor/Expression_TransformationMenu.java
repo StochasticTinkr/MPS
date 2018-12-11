@@ -28,7 +28,7 @@ import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLoo
 import jetbrains.mps.smodel.language.LanguageRegistry;
 
 public class Expression_TransformationMenu extends TransformationMenuBase {
-  private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM);
+  private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.SUBSTITUTE, MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
     return SetSequence.fromSet(myLocations).contains(location);
@@ -50,6 +50,24 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   @NotNull
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_a0());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_b0());
+      result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))) {
+        @NotNull
+        @Override
+        public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+          context.getEditorMenuTrace().pushTraceInfo();
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct superconcepts of " + "Expression", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "6824408471347658076")));
+          try {
+            return super.createItems(context);
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+        }
+
+      });
+    }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))) {
         @NotNull
@@ -65,29 +83,75 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
         }
 
       });
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_b0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_c0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_d0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_e0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_f0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_g0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_h0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_i0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_j0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_k0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_l0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_m0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_n0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_o0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_p0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_q0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_r0());
-      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_s0());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_b1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_c1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_d1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_e1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_f1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_g1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_h1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_i1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_j1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_k1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_l1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_m1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_n1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_o1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_p1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_q1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_r1());
+      result.add(new Expression_TransformationMenu.TMP_Include_g28b5z_s1());
     }
     return result;
   }
 
+  public class TMP_Include_g28b5z_a0 extends IncludeTransformationMenuTransformationMenuPart {
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "expressionstmt_to_returnstms_on_expression", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "6824408471345375469")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
+    @Nullable
+    @Override
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
+      final SNode node = _context.getNode();
+      final EditorContext editorContext = _context.getEditorContext();
+
+      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.expressionstmt_to_returnstms_on_expression");
+    }
+
+  }
   public class TMP_Include_g28b5z_b0 extends IncludeTransformationMenuTransformationMenuPart {
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "expressionstmt_to_variable_declaration", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "6824408471354643086")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
+    @Nullable
+    @Override
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
+      final SNode node = _context.getNode();
+      final EditorContext editorContext = _context.getEditorContext();
+
+      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.expressionstmt_to_variable_declaration");
+    }
+
+  }
+  public class TMP_Include_g28b5z_b1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -110,7 +174,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_c0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_c1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -133,7 +197,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_d0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_d1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -156,7 +220,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_e0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_e1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -179,7 +243,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_f0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_f1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -202,7 +266,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_g0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_g1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -225,7 +289,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_h0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_h1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -248,7 +312,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_i0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_i1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -271,7 +335,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_j0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_j1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -294,7 +358,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_k0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_k1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -317,7 +381,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_l0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_l1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -340,7 +404,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_m0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_m1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -363,7 +427,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_n0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_n1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -386,12 +450,12 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_o0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_o1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "expression_to_varaible_declaration", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586945495")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "expression_to_variable_declaration", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586945495")));
       try {
         return super.createItems(context);
       } finally {
@@ -405,11 +469,11 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
-      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.expression_to_varaible_declaration");
+      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.expression_to_variable_declaration");
     }
 
   }
-  public class TMP_Include_g28b5z_p0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_p1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -432,7 +496,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_q0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_q1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -455,7 +519,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_r0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_r1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -478,7 +542,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_g28b5z_s0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_g28b5z_s1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
