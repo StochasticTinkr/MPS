@@ -18,7 +18,6 @@ package jetbrains.mps.errors.item;
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
 import jetbrains.mps.util.ListMap;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -87,18 +86,18 @@ public interface FlavouredItem {
       return value.toString();
     }
 
-    public FlavourPredicate2<I, T> toPredicate(T value) {
-      return new FlavourPredicate2Impl(ReportItemFlavour.this.serialize(value));
+    public FlavourPredicate<I, T> toPredicate(T value) {
+      return new FlavourPredicateImpl(ReportItemFlavour.this.serialize(value));
     }
 
-    public FlavourPredicate2<I, T> deserializePredicate(String serialized) {
-      return new FlavourPredicate2Impl(serialized);
+    public FlavourPredicate<I, T> deserializePredicate(String serialized) {
+      return new FlavourPredicateImpl(serialized);
     }
 
-    private class FlavourPredicate2Impl implements FlavourPredicate2<I, T> {
+    private class FlavourPredicateImpl implements FlavourPredicate<I, T> {
       private final String mySerializedValue;
 
-      FlavourPredicate2Impl(String serializedValue) {
+      FlavourPredicateImpl(String serializedValue) {
         mySerializedValue = serializedValue;
       }
 
@@ -119,8 +118,7 @@ public interface FlavouredItem {
     }
   }
 
-  // todo rename
-  interface FlavourPredicate2<I extends FlavouredItem, T> {
+  interface FlavourPredicate<I extends FlavouredItem, T> {
     ReportItemFlavour<I, T> getFlavour();
 
     boolean matches(String serializedValue);
@@ -128,11 +126,10 @@ public interface FlavouredItem {
     String serialize();
   }
 
-  // todo rename to ReportItemPredicate
-  class FlavourPredicate implements Predicate<FlavouredItem> {
+  class ReportItemPredicate implements Predicate<FlavouredItem> {
     final Map<String, String> myFlavours;
 
-    public FlavourPredicate(Map<String, String> flavours) {
+    public ReportItemPredicate(Map<String, String> flavours) {
       myFlavours = flavours;
     }
 
@@ -140,7 +137,7 @@ public interface FlavouredItem {
     public boolean test(FlavouredItem flavouredItem) {
       for (ReportItemFlavour<?, ?> flavour : flavouredItem.getIdFlavours()) {
         if (myFlavours.containsKey(flavour.getId())) {
-          FlavourPredicate2<?, ?> predicate = flavour.deserializePredicate(myFlavours.get(flavour.getId()));
+          FlavourPredicate<?, ?> predicate = flavour.deserializePredicate(myFlavours.get(flavour.getId()));
           if (!predicate.matches(serializeFlavour(flavouredItem, flavour))) {
             return false;
           }
@@ -154,7 +151,7 @@ public interface FlavouredItem {
       return new LinkedHashMap<>(myFlavours);
     }
 
-    public static FlavourPredicate deserialize(String s) {
+    public static ReportItemPredicate deserialize(String s) {
       Map<String, String> flavours = new ListMap<>();
       Matcher matcher = Pattern.compile("(\\w+)=\"(([^\"]|\\\\\")*)\";").matcher(s);
       int cursor = 0;
@@ -168,7 +165,7 @@ public interface FlavouredItem {
       if (cursor != s.length()) {
         throw new IllegalArgumentException("'" + s + "' is not a valid flavour map, parse error at position " + cursor);
       }
-      return new FlavourPredicate(flavours);
+      return new ReportItemPredicate(flavours);
     }
 
     public String serialize() {
@@ -182,7 +179,7 @@ public interface FlavouredItem {
     }
   }
 
-  static <T> FlavourPredicate2<?, T> extractPredicate(FlavouredItem fI, ReportItemFlavour<?, T> flavour) {
+  static <T> FlavourPredicate<?, T> extractPredicate(FlavouredItem fI, ReportItemFlavour<?, T> flavour) {
     T value = flavour.tryToGet(fI);
     if (value != null) {
       return flavour.toPredicate(value);
@@ -191,25 +188,19 @@ public interface FlavouredItem {
     }
   }
 
-  //todo rename
-  default FlavourPredicate toPredicate2(Set<ReportItemFlavour<?, ?>> idFlavours) {
+  default ReportItemPredicate toPredicate(Set<ReportItemFlavour<?, ?>> idFlavours) {
     Set<ReportItemFlavour<?, ?>> flavourKeys = new HashSet<>(idFlavours);
     flavourKeys.remove(FLAVOUR_NODE);
     flavourKeys.add(ReportItem.FLAVOUR_MESSAGE);
-    List<FlavourPredicate2<?, ?>> predicates = flavourKeys.stream()
-                                                       .map(flavour -> extractPredicate(this, flavour))
-                                                       .sorted(Comparator.comparing(o -> Objects.requireNonNull(o).getFlavour().getId()))
-                                                       .collect(Collectors.toList());
+    List<FlavourPredicate<?, ?>> predicates = flavourKeys.stream()
+                                                         .map(flavour -> extractPredicate(this, flavour))
+                                                         .sorted(Comparator.comparing(o -> Objects.requireNonNull(o).getFlavour().getId()))
+                                                         .collect(Collectors.toList());
     LinkedHashMap<String, String> result = new LinkedHashMap<>();
-    for (FlavourPredicate2<?, ?> predicate : predicates) {
+    for (FlavourPredicate<?, ?> predicate : predicates) {
       result.put(predicate.getFlavour().getId(), predicate.serialize());
     }
-    return new FlavourPredicate(result);
-  }
-
-  @ToRemove(version = 2018.3)
-  default FlavourPredicate toPredicate(Set<ReportItemFlavour<?, ?>> idFlavours) {
-    return toPredicate2(idFlavours);
+    return new ReportItemPredicate(result);
   }
 
   static <T> String serializeFlavour(FlavouredItem fI, ReportItemFlavour<?, T> flavour) {

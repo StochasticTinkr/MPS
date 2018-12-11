@@ -99,7 +99,7 @@ public interface RuleIdFlavouredItem extends FlavouredItem {
       return result;
     }
 
-    public class RuleIdFlavourPredicate implements FlavourPredicate2<RuleIdFlavouredItem, Collection<TypesystemRuleId>> {
+    public class RuleIdFlavourPredicate implements FlavourPredicate<RuleIdFlavouredItem, Collection<TypesystemRuleId>> {
       private final Collection<TypesystemRuleId> myValue;
       public RuleIdFlavourPredicate(Collection<TypesystemRuleId> value) {
         myValue = value;

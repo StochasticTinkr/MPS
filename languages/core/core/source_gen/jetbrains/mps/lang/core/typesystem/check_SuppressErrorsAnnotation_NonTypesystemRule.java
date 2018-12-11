@@ -22,7 +22,7 @@ public class check_SuppressErrorsAnnotation_NonTypesystemRule extends AbstractNo
   public void applyRule(final SNode suppressErrorsAnnotation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     try {
       String serializedPredicate = SPropertyOperations.getString(suppressErrorsAnnotation, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"));
-      FlavouredItem.FlavourPredicate.deserialize((serializedPredicate == null ? "" : serializedPredicate));
+      FlavouredItem.ReportItemPredicate.deserialize((serializedPredicate == null ? "" : serializedPredicate));
     } catch (IllegalArgumentException e) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

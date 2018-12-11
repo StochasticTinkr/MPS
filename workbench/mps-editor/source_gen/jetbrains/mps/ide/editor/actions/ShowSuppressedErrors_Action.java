@@ -112,7 +112,7 @@ public class ShowSuppressedErrors_Action extends BaseAction {
           final String errorSpecialization = SPropertyOperations.getString(suppress, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"));
           try {
             if ((errorSpecialization != null && errorSpecialization.length() > 0)) {
-              predicateFlavours = FlavouredItem.FlavourPredicate.deserialize(errorSpecialization).getFlavours();
+              predicateFlavours = FlavouredItem.ReportItemPredicate.deserialize(errorSpecialization).getFlavours();
             }
           } catch (RuntimeException exception) {
           }
@@ -129,7 +129,7 @@ public class ShowSuppressedErrors_Action extends BaseAction {
             }
           });
           if (Objects.equals(predicateFlavours.get(IssueKindReportItem.FLAVOUR_ISSUE_KIND.toString()), IssueKindReportItem.TYPESYSTEM.deriveItemKind().toString()) && predicateFlavours.containsKey(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.toString())) {
-            ListSequence.fromList(rules).addSequence(CollectionSequence.fromCollection(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.deserialize(predicateFlavours.get(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.toString()))));
+            ListSequence.fromList(rules).addSequence(CollectionSequence.fromCollection(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.deserializePredicate(predicateFlavours.get(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.toString())).getValue()));
             message = predicateFlavours.get(ReportItem.FLAVOUR_MESSAGE.toString());
             if (ListSequence.fromList(rules).isNotEmpty() && message != null) {
               for (RuleIdFlavouredItem.TypesystemRuleId rule : ListSequence.fromList(rules)) {

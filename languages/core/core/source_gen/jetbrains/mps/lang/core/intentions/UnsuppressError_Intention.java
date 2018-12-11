@@ -60,7 +60,7 @@ public final class UnsuppressError_Intention extends AbstractIntentionDescriptor
           return false;
         }
         try {
-          Map<String, String> flavours = FlavouredItem.FlavourPredicate.deserialize(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"))).getFlavours();
+          Map<String, String> flavours = FlavouredItem.ReportItemPredicate.deserialize(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"))).getFlavours();
           String message = flavours.get(ReportItem.FLAVOUR_MESSAGE.toString());
           if ((message == null || message.length() == 0)) {
             return false;
@@ -79,7 +79,7 @@ public final class UnsuppressError_Intention extends AbstractIntentionDescriptor
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      Map<String, String> flavours = FlavouredItem.FlavourPredicate.deserialize(SPropertyOperations.getString(myParameter, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"))).getFlavours();
+      Map<String, String> flavours = FlavouredItem.ReportItemPredicate.deserialize(SPropertyOperations.getString(myParameter, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"))).getFlavours();
       String message = flavours.get(ReportItem.FLAVOUR_MESSAGE.toString());
       return "Don't suppress error '" + message + "' for " + ICanSuppressErrors__BehaviorDescriptor.nodeDescription_id4oS1ku9jIXr.invoke(node);
     }

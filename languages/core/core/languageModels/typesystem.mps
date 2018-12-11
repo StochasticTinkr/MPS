@@ -2123,8 +2123,8 @@
           </node>
           <node concept="3clFbF" id="5OmbMbqfWRq" role="3cqZAp">
             <node concept="2YIFZM" id="12FRaDtGRUn" role="3clFbG">
-              <ref role="37wK5l" to="d6hs:~FlavouredItem$FlavourPredicate.deserialize(java.lang.String):jetbrains.mps.errors.item.FlavouredItem$FlavourPredicate" resolve="deserialize" />
-              <ref role="1Pybhc" to="d6hs:~FlavouredItem$FlavourPredicate" resolve="FlavourPredicate" />
+              <ref role="1Pybhc" to="d6hs:~FlavouredItem$ReportItemPredicate" resolve="FlavouredItem.ReportItemPredicate" />
+              <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemPredicate.deserialize(java.lang.String):jetbrains.mps.errors.item.FlavouredItem$ReportItemPredicate" resolve="deserialize" />
               <node concept="3K4zz7" id="12FRaDtGRUo" role="37wK5m">
                 <node concept="Xl_RD" id="12FRaDtGRUp" role="3K4E3e">
                   <property role="Xl_RC" value="" />

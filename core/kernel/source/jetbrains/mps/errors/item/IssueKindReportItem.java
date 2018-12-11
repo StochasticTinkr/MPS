@@ -38,7 +38,7 @@ public interface IssueKindReportItem extends ReportItem {
 
   ItemKind getIssueKind();
 
-  class IssueKindFlavourPredicate implements FlavourPredicate2<IssueKindReportItem, ItemKind> {
+  class IssueKindFlavourPredicate implements FlavourPredicate<IssueKindReportItem, ItemKind> {
     private final String mySerializedValue;
 
     public IssueKindFlavourPredicate(String serializedValue) {
@@ -64,11 +64,11 @@ public interface IssueKindReportItem extends ReportItem {
   SimpleReportItemFlavour<IssueKindReportItem, ItemKind> FLAVOUR_ISSUE_KIND =
       new SimpleReportItemFlavour<IssueKindReportItem, ItemKind>("FLAVOUR_ISSUE_KIND", IssueKindReportItem.class, IssueKindReportItem::getIssueKind) {
         @Override
-        public FlavourPredicate2<IssueKindReportItem, ItemKind> toPredicate(ItemKind value) {
+        public FlavourPredicate<IssueKindReportItem, ItemKind> toPredicate(ItemKind value) {
           return new IssueKindFlavourPredicate(FLAVOUR_ISSUE_KIND.serialize(value));
         }
         @Override
-        public FlavourPredicate2<IssueKindReportItem, ItemKind> deserializePredicate(String serialized) {
+        public FlavourPredicate<IssueKindReportItem, ItemKind> deserializePredicate(String serialized) {
           return new IssueKindFlavourPredicate(serialized);
         }
       };

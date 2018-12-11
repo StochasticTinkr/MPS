@@ -925,8 +925,8 @@
             <node concept="3cpWs6" id="1sQkH1xlo8L" role="3cqZAp">
               <node concept="2OqwBi" id="1sQkH1xlnz4" role="3cqZAk">
                 <node concept="2YIFZM" id="1sQkH1xlmKL" role="2Oq$k0">
-                  <ref role="1Pybhc" to="d6hs:~FlavouredItem$FlavourPredicate" resolve="FlavouredItem.FlavourPredicate" />
-                  <ref role="37wK5l" to="d6hs:~FlavouredItem$FlavourPredicate.deserialize(java.lang.String):jetbrains.mps.errors.item.FlavouredItem$FlavourPredicate" resolve="deserialize" />
+                  <ref role="1Pybhc" to="d6hs:~FlavouredItem$ReportItemPredicate" resolve="FlavouredItem.ReportItemPredicate" />
+                  <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemPredicate.deserialize(java.lang.String):jetbrains.mps.errors.item.FlavouredItem$ReportItemPredicate" resolve="deserialize" />
                   <node concept="2OqwBi" id="1sQkH1xln0r" role="37wK5m">
                     <node concept="13iPFW" id="1sQkH1xlmO8" role="2Oq$k0" />
                     <node concept="3TrcHB" id="1sQkH1xlnhS" role="2OqNvi">
@@ -935,7 +935,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="1sQkH1xlnNt" role="2OqNvi">
-                  <ref role="37wK5l" to="d6hs:~FlavouredItem$FlavourPredicate.test(jetbrains.mps.errors.item.FlavouredItem):boolean" resolve="test" />
+                  <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemPredicate.test(jetbrains.mps.errors.item.FlavouredItem):boolean" resolve="test" />
                   <node concept="37vLTw" id="1sQkH1xlnRA" role="37wK5m">
                     <ref role="3cqZAo" node="1sQkH1xlm8T" resolve="reportItem" />
                   </node>
