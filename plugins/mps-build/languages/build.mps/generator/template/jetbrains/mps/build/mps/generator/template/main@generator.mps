@@ -60,9 +60,6 @@
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
-      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
-        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -2203,8 +2200,8 @@
                             <ref role="37wK5l" to="tken:1jjYQYSjidB" resolve="MPSModulesClosure" />
                             <node concept="30H73N" id="4egE2DStpdn" role="37wK5m" />
                             <node concept="2ShNRf" id="7QNcMbqvrOY" role="37wK5m">
-                              <node concept="HV5vD" id="7QNcMbqvs31" role="2ShVmc">
-                                <ref role="HV5vE" to="tken:ECLZhkrFpC" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
+                              <node concept="1pGfFk" id="1bDPmBfbpst" role="2ShVmc">
+                                <ref role="37wK5l" to="tken:1BCLQMpCXII" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
                               </node>
                             </node>
                           </node>
@@ -2611,8 +2608,8 @@
                                         </node>
                                       </node>
                                       <node concept="2ShNRf" id="7QNcMbqvmYp" role="37wK5m">
-                                        <node concept="HV5vD" id="7QNcMbqvnkQ" role="2ShVmc">
-                                          <ref role="HV5vE" to="tken:ECLZhkrFpC" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
+                                        <node concept="1pGfFk" id="1bDPmBfbpsv" role="2ShVmc">
+                                          <ref role="37wK5l" to="tken:1BCLQMpCXII" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
                                         </node>
                                       </node>
                                     </node>
