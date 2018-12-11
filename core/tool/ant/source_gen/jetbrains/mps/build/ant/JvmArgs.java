@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public final class JvmArgs extends DataType {
   private final Set<String> myArgs = new HashSet<String>();
-  private final List<String> myDefaultArgs = Arrays.asList("-Xss1024k", "-Xmx512m", "-XX:+HeapDumpOnOutOfMemoryError");
-  private final List<String> myDefaultArgsPatterns = Arrays.asList("Xss", "Xmx", "HeapDumpOnOutOfMemoryError");
+  private final List<String> myDefaultArgs = Arrays.asList("-Xmx512m", "-XX:+HeapDumpOnOutOfMemoryError");
+  private final List<String> myDefaultArgsPatterns = Arrays.asList("-Xmx", "HeapDumpOnOutOfMemoryError");
 
   public JvmArgs() {
   }
@@ -29,20 +29,17 @@ public final class JvmArgs extends DataType {
     if (isReference()) {
       return ((JvmArgs) getCheckedRef()).getMergedArgs();
     }
-    List<String> args = new ArrayList<String>(myDefaultArgs);
-    args.add("-client");
-    for (String arg : myArgs) {
-      for (int i = 0; i < myDefaultArgs.size(); i++) {
-        if (arg.contains(myDefaultArgsPatterns.get(i))) {
-          args.remove(myDefaultArgs.get(i));
+    List<String> result = new ArrayList<String>(myDefaultArgs);
+    assert myDefaultArgs.size() == myDefaultArgsPatterns.size();
+    for (String userSuppliedArg : myArgs) {
+      for (int i = 0; i < myDefaultArgsPatterns.size(); i++) {
+        if (userSuppliedArg.contains(myDefaultArgsPatterns.get(i))) {
+          result.remove(myDefaultArgs.get(i));
           break;
         }
       }
-      if (!(arg.equals("-server"))) {
-        //  we always use client 
-        args.add(arg);
-      }
+      result.add(userSuppliedArg);
     }
-    return args;
+    return result;
   }
 }

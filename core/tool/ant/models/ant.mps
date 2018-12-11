@@ -951,9 +951,6 @@
       <node concept="2YIFZM" id="3ufQioQQtfl" role="33vP2m">
         <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
         <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-        <node concept="Xl_RD" id="3ufQioQQtfm" role="37wK5m">
-          <property role="Xl_RC" value="-Xss1024k" />
-        </node>
         <node concept="Xl_RD" id="3ufQioQQtfn" role="37wK5m">
           <property role="Xl_RC" value="-Xmx512m" />
         </node>
@@ -974,11 +971,8 @@
       <node concept="2YIFZM" id="3ufQioQQtfu" role="33vP2m">
         <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
         <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-        <node concept="Xl_RD" id="3ufQioQQtfv" role="37wK5m">
-          <property role="Xl_RC" value="Xss" />
-        </node>
         <node concept="Xl_RD" id="3ufQioQQtfw" role="37wK5m">
-          <property role="Xl_RC" value="Xmx" />
+          <property role="Xl_RC" value="-Xmx" />
         </node>
         <node concept="Xl_RD" id="3ufQioQQtfy" role="37wK5m">
           <property role="Xl_RC" value="HeapDumpOnOutOfMemoryError" />
@@ -1112,7 +1106,7 @@
         </node>
         <node concept="3cpWs8" id="3ufQioQQtgn" role="3cqZAp">
           <node concept="3cpWsn" id="3ufQioQQtgo" role="3cpWs9">
-            <property role="TrG5h" value="args" />
+            <property role="TrG5h" value="result" />
             <property role="3TUv4t" value="false" />
             <node concept="3uibUv" id="3ufQioQQtgp" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
@@ -1129,15 +1123,22 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3ufQioQQtgv" role="3cqZAp">
-          <node concept="2OqwBi" id="3ufQioQQtgw" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTx2G" role="2Oq$k0">
-              <ref role="3cqZAo" node="3ufQioQQtgo" resolve="args" />
+        <node concept="1gVbGN" id="1OjIqd7VgZH" role="3cqZAp">
+          <node concept="3clFbC" id="1OjIqd7VmNP" role="1gVkn0">
+            <node concept="2OqwBi" id="1OjIqd7VoK4" role="3uHU7w">
+              <node concept="37vLTw" id="1OjIqd7Vo9W" role="2Oq$k0">
+                <ref role="3cqZAo" node="3ufQioQQtfq" resolve="myDefaultArgsPatterns" />
+              </node>
+              <node concept="liA8E" id="1OjIqd7VpRk" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+              </node>
             </node>
-            <node concept="liA8E" id="3ufQioQQtgy" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="Xl_RD" id="3ufQioQQtgz" role="37wK5m">
-                <property role="Xl_RC" value="-client" />
+            <node concept="2OqwBi" id="1OjIqd7VjMJ" role="3uHU7B">
+              <node concept="37vLTw" id="1OjIqd7VijG" role="2Oq$k0">
+                <ref role="3cqZAo" node="3ufQioQQtfh" resolve="myDefaultArgs" />
+              </node>
+              <node concept="liA8E" id="1OjIqd7VkTZ" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
               </node>
             </node>
           </node>
@@ -1147,7 +1148,7 @@
             <ref role="3cqZAo" node="3ufQioQQtfa" resolve="myArgs" />
           </node>
           <node concept="3cpWsn" id="3ufQioQQtgA" role="1Duv9x">
-            <property role="TrG5h" value="arg" />
+            <property role="TrG5h" value="userSuppliedArg" />
             <property role="3TUv4t" value="false" />
             <node concept="17QB3L" id="2uUiGxAaMG2" role="1tU5fm" />
           </node>
@@ -1166,8 +1167,8 @@
                   <ref role="3cqZAo" node="3ufQioQQtgE" resolve="i" />
                 </node>
                 <node concept="2OqwBi" id="3ufQioQQtgJ" role="3uHU7w">
-                  <node concept="37vLTw" id="2BHiRxeukrz" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3ufQioQQtfh" resolve="myDefaultArgs" />
+                  <node concept="37vLTw" id="1OjIqd7Vevo" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3ufQioQQtfq" resolve="myDefaultArgsPatterns" />
                   </node>
                   <node concept="liA8E" id="3ufQioQQtgL" role="2OqNvi">
                     <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
@@ -1183,7 +1184,7 @@
                 <node concept="3clFbJ" id="3ufQioQQtgP" role="3cqZAp">
                   <node concept="2OqwBi" id="3ufQioQQtgQ" role="3clFbw">
                     <node concept="37vLTw" id="3GM_nagTuS8" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3ufQioQQtgA" resolve="arg" />
+                      <ref role="3cqZAo" node="3ufQioQQtgA" resolve="userSuppliedArg" />
                     </node>
                     <node concept="liA8E" id="3ufQioQQtgS" role="2OqNvi">
                       <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
@@ -1204,7 +1205,7 @@
                     <node concept="3clFbF" id="3ufQioQQtgY" role="3cqZAp">
                       <node concept="2OqwBi" id="3ufQioQQtgZ" role="3clFbG">
                         <node concept="37vLTw" id="3GM_nagT$aT" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3ufQioQQtgo" resolve="args" />
+                          <ref role="3cqZAo" node="3ufQioQQtgo" resolve="result" />
                         </node>
                         <node concept="liA8E" id="3ufQioQQth1" role="2OqNvi">
                           <ref role="37wK5l" to="33ny:~List.remove(java.lang.Object):boolean" resolve="remove" />
@@ -1227,37 +1228,15 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbJ" id="3ufQioQQth7" role="3cqZAp">
-              <node concept="3fqX7Q" id="3ufQioQQth8" role="3clFbw">
-                <node concept="2OqwBi" id="3ufQioQQth9" role="3fr31v">
-                  <node concept="37vLTw" id="3GM_nagTwuI" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3ufQioQQtgA" resolve="arg" />
-                  </node>
-                  <node concept="liA8E" id="3ufQioQQthb" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="Xl_RD" id="3ufQioQQthc" role="37wK5m">
-                      <property role="Xl_RC" value="-server" />
-                    </node>
-                  </node>
+            <node concept="3clFbF" id="3ufQioQQthe" role="3cqZAp">
+              <node concept="2OqwBi" id="3ufQioQQthf" role="3clFbG">
+                <node concept="37vLTw" id="3GM_nagT_KN" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3ufQioQQtgo" resolve="result" />
                 </node>
-              </node>
-              <node concept="3clFbS" id="3ufQioQQthd" role="3clFbx">
-                <node concept="3SKdUt" id="3ufQioQQufM" role="3cqZAp">
-                  <node concept="3SKdUq" id="3ufQioQQufN" role="3SKWNk">
-                    <property role="3SKdUp" value=" we always use client" />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="3ufQioQQthe" role="3cqZAp">
-                  <node concept="2OqwBi" id="3ufQioQQthf" role="3clFbG">
-                    <node concept="37vLTw" id="3GM_nagT_KN" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3ufQioQQtgo" resolve="args" />
-                    </node>
-                    <node concept="liA8E" id="3ufQioQQthh" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-                      <node concept="37vLTw" id="3GM_nagTufa" role="37wK5m">
-                        <ref role="3cqZAo" node="3ufQioQQtgA" resolve="arg" />
-                      </node>
-                    </node>
+                <node concept="liA8E" id="3ufQioQQthh" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                  <node concept="37vLTw" id="3GM_nagTufa" role="37wK5m">
+                    <ref role="3cqZAo" node="3ufQioQQtgA" resolve="userSuppliedArg" />
                   </node>
                 </node>
               </node>
@@ -1266,7 +1245,7 @@
         </node>
         <node concept="3cpWs6" id="3ufQioQQthj" role="3cqZAp">
           <node concept="37vLTw" id="3GM_nagTsxF" role="3cqZAk">
-            <ref role="3cqZAo" node="3ufQioQQtgo" resolve="args" />
+            <ref role="3cqZAo" node="3ufQioQQtgo" resolve="result" />
           </node>
         </node>
       </node>
