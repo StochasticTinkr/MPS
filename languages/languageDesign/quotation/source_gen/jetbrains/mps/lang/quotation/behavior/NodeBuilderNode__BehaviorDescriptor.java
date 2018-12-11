@@ -37,10 +37,9 @@ public final class NodeBuilderNode__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<Scope> getScope_id52_Geb4QDV$ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QDV$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Iterable<SNode>> getExternalExpressions_idRRzwLnBxZy = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getExternalExpressions").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("RRzwLnBxZy").registry(REGISTRY).build();
   public static final SMethod<Boolean> isExpressionExternal_id4IuFl2JvP6C = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isExpressionExternal").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4IuFl2JvP6C").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Boolean> isExpressionNull_id5OmbMbq8Z$h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isExpressionNull").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5OmbMbq8Z$h").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   /*package*/ static final SMethod<Void> collectExternalExpressions_idRRzwLnBy10 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("collectExternalExpressions").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("RRzwLnBy10").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getScope_id52_Geb4QDV$, getExternalExpressions_idRRzwLnBxZy, isExpressionExternal_id4IuFl2JvP6C, isExpressionNull_id5OmbMbq8Z$h, collectExternalExpressions_idRRzwLnBy10);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getScope_id52_Geb4QDV$, getExternalExpressions_idRRzwLnBxZy, isExpressionExternal_id4IuFl2JvP6C, collectExternalExpressions_idRRzwLnBy10);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -66,14 +65,7 @@ public final class NodeBuilderNode__BehaviorDescriptor extends BaseBHDescriptor 
     return result;
   }
   /*package*/ static boolean isExpressionExternal_id4IuFl2JvP6C(@NotNull SAbstractConcept __thisConcept__, SNode expression) {
-    if ((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(expression) && ListSequence.fromList(SNodeOperations.getNodeDescendants(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), true, new SAbstractConcept[]{})).isEmpty()) {
-      return false;
-    }
-    return true;
-  }
-  /*package*/ static boolean isExpressionNull_id5OmbMbq8Z$h(@NotNull SAbstractConcept __thisConcept__, SNode expression) {
-    // using this method in generator assumes that there are no compile-time constants of type node<> except null 
-    return (boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(expression) && Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(expression, SNodeOperations.getModel(expression).getModule()) == null;
+    return !((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(expression)) || ListSequence.fromList(SNodeOperations.getNodeDescendants(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), true, new SAbstractConcept[]{})).isNotEmpty();
   }
   /*package*/ static void collectExternalExpressions_idRRzwLnBy10(@NotNull SNode __thisNode__, List<SNode> list) {
     for (SNode v : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, 0x4bb51009d20b033bL, "values")))) {
@@ -125,7 +117,7 @@ public final class NodeBuilderNode__BehaviorDescriptor extends BaseBHDescriptor 
         return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
       case 1:
         return (T) ((Iterable<SNode>) getExternalExpressions_idRRzwLnBxZy(node));
-      case 4:
+      case 3:
         collectExternalExpressions_idRRzwLnBy10(node, (List<SNode>) parameters[0]);
         return null;
       default:
@@ -142,8 +134,6 @@ public final class NodeBuilderNode__BehaviorDescriptor extends BaseBHDescriptor 
     switch (methodIndex) {
       case 2:
         return (T) ((Boolean) isExpressionExternal_id4IuFl2JvP6C(concept, (SNode) parameters[0]));
-      case 3:
-        return (T) ((Boolean) isExpressionNull_id5OmbMbq8Z$h(concept, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
