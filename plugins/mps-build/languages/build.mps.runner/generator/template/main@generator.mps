@@ -224,7 +224,6 @@
       </concept>
     </language>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
-      <concept id="3542413272732750877" name="jetbrains.mps.build.structure.BuildAspect" flags="ng" index="1hX7C7" />
       <concept id="5617550519002745364" name="jetbrains.mps.build.structure.BuildLayout" flags="ng" index="1l3spV" />
       <concept id="5617550519002745363" name="jetbrains.mps.build.structure.BuildProject" flags="ng" index="1l3spW">
         <child id="3542413272732620719" name="aspects" index="1hWBAP" />
@@ -327,7 +326,6 @@
     <ref role="3gUMe" to="as3y:3BExUgsK89Y" resolve="BuildSolutionRunnerAspect" />
     <node concept="1l3spW" id="3BExUgsKgFP" role="13RCb5">
       <property role="TrG5h" value="_project" />
-      <node concept="1hX7C7" id="1bDPmBfvw21" role="1hWBAP" />
       <node concept="1y0Vig" id="3BExUgsKkP9" role="1hWBAP">
         <node concept="3bMsLL" id="3BExUgsKlLR" role="1y0Vin">
           <ref role="3bMsLK" to="boe:3BExUgsK9tI" resolve="run-mps-code" />
