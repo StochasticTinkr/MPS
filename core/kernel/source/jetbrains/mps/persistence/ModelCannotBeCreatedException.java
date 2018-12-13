@@ -31,8 +31,8 @@ public class ModelCannotBeCreatedException extends Exception {
   public ModelCannotBeCreatedException() {
   }
 
-  public ModelCannotBeCreatedException(IOException e) {
-    super("Due to IO exception", e);
+  public ModelCannotBeCreatedException(Exception e) {
+    super("Due to exception", e);
   }
 
   public ModelCannotBeCreatedException(@NotNull String message) {

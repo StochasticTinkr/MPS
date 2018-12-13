@@ -46,21 +46,18 @@ public class RegularFileDataSourceFactory implements DataSourceFactoryFromName {
   @NotNull
   @Override
   public DataSource create(@NotNull SModelName modelName,
-                           @NotNull SourceRoot sourceRoot,
-
-                           @ToRemove(version = 0)
-                           @Nullable ModelRoot modelRoot) {
-    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, modelRoot, myDataSourceType.getFileExtension());
+                           @NotNull SourceRoot sourceRoot) {
+    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, myDataSourceType.getFileExtension());
     IFile modelFile = modelFileCalculator.calculate();
-    return createFromFile(modelFile, modelRoot);
+    return createFromFile(modelFile);
   }
 
   @NotNull
-  private DataSource createFromFile(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
+  private DataSource createFromFile(@NotNull IFile file) {
     if (file.isDirectory()) {
       throw new IllegalArgumentException("Cannot accept directory file " + file);
     }
-    return new FileDataSource(file, modelRoot);
+    return new FileDataSource(file);
   }
 
   @NotNull

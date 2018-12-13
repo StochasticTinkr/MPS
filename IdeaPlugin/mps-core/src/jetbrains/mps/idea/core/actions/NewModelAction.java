@@ -195,12 +195,12 @@ public class NewModelAction extends NewModelActionBase {
 
       @NotNull
       @Override
-      public DataSource create(@NotNull SModelName modelName, @NotNull SourceRoot sourceRoot, @Nullable ModelRoot modelRoot) {
+      public DataSource create(@NotNull SModelName modelName, @NotNull SourceRoot sourceRoot) {
         String modelFilePath = modelName.getLongName();
         modelFilePath = modelFilePath.replace('.', File.separatorChar) + MPSExtentions.DOT_MODEL;
         modelFilePath = sourceRoot.getAbsolutePath().getPath() + File.separator + modelFilePath;
         IFile modelFile = sourceRoot.getAbsolutePath().getFileSystem().getFile(modelFilePath);
-        return new FileDataSource(modelFile, modelRoot);
+        return new FileDataSource(modelFile);
       }
     };
   }

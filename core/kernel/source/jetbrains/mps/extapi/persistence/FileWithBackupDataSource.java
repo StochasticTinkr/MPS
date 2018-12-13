@@ -31,8 +31,13 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 public class FileWithBackupDataSource extends FileDataSource {
   private BackupFileListener myBackupFileListener;
 
+  @Deprecated
   public FileWithBackupDataSource(@NotNull IFile file, ModelRoot modelRoot) {
     super(file, modelRoot);
+  }
+
+  public FileWithBackupDataSource(@NotNull IFile file) {
+    super(file);
   }
 
   @NotNull
@@ -113,6 +118,6 @@ public class FileWithBackupDataSource extends FileDataSource {
   }
 
   public static FileWithBackupDataSource create(FileDataSource source) {
-    return new FileWithBackupDataSource(source.getFile(), source.myModelRoot);
+    return new FileWithBackupDataSource(source.getFile());
   }
 }

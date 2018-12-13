@@ -165,9 +165,9 @@ public class MakeDirAModel extends NewModelActionBase {
 
       @NotNull
       @Override
-      public DataSource create(@NotNull SModelName modelName, @NotNull SourceRoot sourceRoot, @Nullable ModelRoot modelRoot) {
+      public DataSource create(@NotNull SModelName modelName, @NotNull SourceRoot sourceRoot) {
         IFile folder = VirtualFileUtils.toIFile(targetFile);
-        return new FilePerRootDataSource(folder, modelRoot);
+        return new FilePerRootDataSource(folder);
       }
     };
   }

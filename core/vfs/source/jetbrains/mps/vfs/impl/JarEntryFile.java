@@ -129,7 +129,7 @@ public class JarEntryFile implements IFile {
   @NotNull
   @Override
   public String getPath() {
-    return myJarFile.getAbsolutePath() + "!/" + myEntryPath;
+    return IoFile.toSystemIndependentName(myJarFile.getAbsolutePath()) + "!/" + myEntryPath;
   }
 
   @NotNull

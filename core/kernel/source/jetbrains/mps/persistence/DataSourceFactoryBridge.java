@@ -117,7 +117,7 @@ public final class DataSourceFactoryBridge {
     }
     checkSourceRootIsAttachedToTheModelRoot(sourceRoot);
     ModelCreationOptions parameters = new ParametersCalculator(myModelRoot).calculate(modelName);
-    DataSource dataSource = factory.create(modelName, sourceRoot, myModelRoot);
+    DataSource dataSource = factory.create(modelName, sourceRoot);
     return build(dataSource, parameters);
   }
 

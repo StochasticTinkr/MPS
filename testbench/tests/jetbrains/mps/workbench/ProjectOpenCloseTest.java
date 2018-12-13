@@ -56,7 +56,7 @@ public class ProjectOpenCloseTest implements EnvironmentAware {
   @Test
   public void addModule() {
     Project project = getEnvironment().createEmptyProject();
-    myTestModuleFactory = new TestModuleFactoryBase((SRepositoryExt) project.getRepository());
+    myTestModuleFactory = new TestModuleFactoryBase(myEnvironment, (SRepositoryExt) project.getRepository());
     IFile descriptorFile = FS.getFile(FileUtil.createTmpFile().getPath());
     SModule newModule = myTestModuleFactory.createSolution(descriptorFile);
     project.getModelAccess().runWriteAction(() -> project.addModule(newModule));
@@ -67,7 +67,7 @@ public class ProjectOpenCloseTest implements EnvironmentAware {
   @Test
   public void removeModule() {
     Project project = getEnvironment().createEmptyProject();
-    myTestModuleFactory = new TestModuleFactoryBase((SRepositoryExt) project.getRepository());
+    myTestModuleFactory = new TestModuleFactoryBase(myEnvironment, (SRepositoryExt) project.getRepository());
     IFile descriptorFile = FS.getFile(FileUtil.createTmpFile().getPath());
     SModule newModule = myTestModuleFactory.createSolution(descriptorFile);
     project.getModelAccess().runWriteAction(() -> project.addModule(newModule));

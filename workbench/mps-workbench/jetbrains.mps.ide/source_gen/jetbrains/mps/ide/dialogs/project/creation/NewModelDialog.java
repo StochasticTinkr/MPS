@@ -248,7 +248,6 @@ public class NewModelDialog extends DialogWrapper {
     final EditableSModel res = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<EditableSModel>() {
       @Override
       public EditableSModel compute() {
-
         SModel result;
         try {
           if (selectedModelRoot instanceof DefaultModelRoot) {

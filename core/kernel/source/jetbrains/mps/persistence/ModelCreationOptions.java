@@ -19,11 +19,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.annotations.Mutable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ContentOption;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -92,24 +96,12 @@ public final class ModelCreationOptions {
   }
 
   @NotNull
-  public Map<String,String> convertToMap() {
-    Map<String, String> result = new HashMap<>();
-    if (myJavaPackage != null) {
-      result.put(ModelFactory.OPTION_PACKAGE, myJavaPackage);
-    }
+  public ModelLoadingOption[] convertToLoadingOptions() {
+    List<ModelLoadingOption> options = new ArrayList<>();
     if (myContentOnly) {
-      result.put(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString());
+      options.add(ContentOption.CONTENT_ONLY);
     }
-    if (myModelName != null) {
-      result.put(ModelFactory.OPTION_MODELNAME, myModelName);
-    }
-    if (myModuleReference != null) {
-      result.put(ModelFactory.OPTION_MODULEREF, myModuleReference.toString());
-    }
-    if (myRelativePath != null) {
-      result.put(ModelFactory.OPTION_RELPATH, myRelativePath);
-    }
-    return Collections.unmodifiableMap(result);
+    return options.toArray(new ModelLoadingOption[0]);
   }
 
   @NotNull

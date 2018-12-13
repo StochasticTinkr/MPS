@@ -41,15 +41,13 @@ public final class FilePerRootDataSource extends FolderDataSource {
   public static final String HEADER_FILE = MPSExtentions.DOT_MODEL_HEADER;
   public static final String ROOT_EXTENSION = MPSExtentions.MODEL_ROOT;
 
-  /**
-   * @param modelRoot (optional) containing model root, which should be notified before the source during the update
-   *
-   * @deprecated use {@link DataSourceFactoryRuleService#getFactory} AND
-   *             {@link DataSourceFactoryFromName#create}
-   */
-  @ToRemove(version = 3.5) // will become package private
+  @ToRemove(version = 193)
   @Deprecated
-  public FilePerRootDataSource(@NotNull IFile folder, @Nullable ModelRoot modelRoot) {
+  public FilePerRootDataSource(@NotNull IFile folder, ModelRoot root) {
+    super(folder);
+  }
+
+  public FilePerRootDataSource(@NotNull IFile folder) {
     super(folder);
   }
 

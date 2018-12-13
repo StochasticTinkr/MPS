@@ -17,7 +17,10 @@ package jetbrains.mps.testbench;
 
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SRepositoryExt;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.persistence.PersistenceUtil.InMemoryStreamDataSource;
+import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleId;
@@ -35,17 +38,19 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.TestLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ModelCreationException;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.Assert;
 
 import java.io.IOException;
@@ -65,9 +70,11 @@ public class TestModuleFactoryBase implements TestModuleFactory {
   private static final String TEST_PREFIX_DEVKIT = "TEST_DVK";
   private static final String TEST_PREFIX_GENERATOR = "TEST_GEN";
   private static int ourId = 0;
+  private final Environment myEnvironment;
   private final SRepositoryExt myRepository;
 
-  public TestModuleFactoryBase(@NotNull SRepositoryExt repository) {
+  public TestModuleFactoryBase(Environment environment, @NotNull SRepositoryExt repository) {
+    myEnvironment = environment;
     myRepository = repository;
   }
 
@@ -87,11 +94,15 @@ public class TestModuleFactoryBase implements TestModuleFactory {
         // HACK. With used languages of a module being derived from that of owned models,
         // we need a model to keep this imports
         InMemoryStreamDataSource ds = new InMemoryStreamDataSource();
-        SModelBase m = (SModelBase) PersistenceFacade.getInstance().getDefaultModelFactory().create(ds, Collections.singletonMap(
-            ModelFactory.OPTION_MODELNAME, "model-for-language-imports"));
+        ModelFactoryService factoryService = myEnvironment.getPlatform().findComponent(ModelFactoryService.class);
+        if (factoryService == null) {
+          throw new IllegalStateException("Model factory service was not found");
+        }
+        ModelFactory defaultModelFactory = factoryService.getFactoryByType(PreinstalledModelFactoryTypes.PLAIN_XML);
+        SModelBase m = (SModelBase) defaultModelFactory.create(ds, new SModelName("model-for-language-imports"));
         module.registerModel(m);
       }
-    } catch (IOException ex) {
+    } catch (IOException | ModelCreationException ex) {
       throw new RuntimeException(ex);
     }
   }

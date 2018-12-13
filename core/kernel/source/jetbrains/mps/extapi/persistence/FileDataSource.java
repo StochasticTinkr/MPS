@@ -56,13 +56,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   private List<DataSourceListener> myListeners = new ArrayList<>();
 
   @NotNull private IFile myFile;
-  final ModelRoot myModelRoot; // fixme is needed only for the file system dependencies, to be removed
 
-  /**
-   * @deprecated see below
-   */
-  @Deprecated
-  @ToRemove(version = 3.5) // will become package-private
   public FileDataSource(@NotNull IFile file) {
     this(file, null);
   }
@@ -78,7 +72,6 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   @Deprecated
   public FileDataSource(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
     myFile = file;
-    myModelRoot = modelRoot;
   }
 
   @NotNull

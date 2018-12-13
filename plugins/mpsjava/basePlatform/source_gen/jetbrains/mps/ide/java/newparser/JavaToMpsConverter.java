@@ -1106,8 +1106,8 @@ public class JavaToMpsConverter {
 
     @NotNull
     @Override
-    public DataSource create(@NotNull SModelName name, @NotNull SourceRoot sourceRoot, @Nullable ModelRoot root) {
-      return new FilePerRootDataSource(myPkgDir, root);
+    public DataSource create(@NotNull SModelName name, @NotNull SourceRoot sourceRoot) {
+      return new FilePerRootDataSource(myPkgDir);
     }
 
     @NotNull

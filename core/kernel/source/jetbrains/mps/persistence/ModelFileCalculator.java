@@ -25,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 /**
  * Calculates model file from model name, enclosing source root and module and
@@ -36,7 +35,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
  */
 @Immutable
 public final class ModelFileCalculator {
-  @Nullable private final SModule myModule;
   @NotNull private final SModelName myModelName;
   @NotNull private final SourceRoot mySourceRoot;
   @NotNull private final String myFileExtension;
@@ -50,10 +48,8 @@ public final class ModelFileCalculator {
    */
   ModelFileCalculator(@NotNull SModelName modelName,
                       @NotNull SourceRoot sourceRoot,
-                      @Nullable ModelRoot modelRoot,
                       @NotNull String modelFileExtension,
                       boolean directoryBased) {
-    myModule = modelRoot != null ? modelRoot.getModule() : null;
     myModelName = modelName;
     mySourceRoot = sourceRoot;
     myFileExtension = modelFileExtension;
@@ -62,9 +58,8 @@ public final class ModelFileCalculator {
 
   ModelFileCalculator(@NotNull SModelName modelName,
                       @NotNull SourceRoot sourceRoot,
-                      @Nullable ModelRoot modelRoot,
                       @NotNull String modelFileExtension) {
-    this(modelName, sourceRoot, modelRoot, modelFileExtension, false);
+    this(modelName, sourceRoot, modelFileExtension, false);
   }
 
   @NotNull
@@ -77,10 +72,6 @@ public final class ModelFileCalculator {
   @NotNull
   private String calcFileName() {
     String modelFileName = myModelName.getValue();
-    if (myModule != null) {
-      String moduleFqName = myModule.getModuleName();
-      modelFileName = cutRedundantModuleFqNamePrefix(modelFileName, moduleFqName);
-    }
     if (myDirectoryBased) {
       modelFileName = modelFileName + Path.UNIX_SEPARATOR;
     }
@@ -91,11 +82,11 @@ public final class ModelFileCalculator {
     return StringUtil.emptyIfNull(myFileExtension);
   }
 
-  @NotNull
-  private String cutRedundantModuleFqNamePrefix(String filenameSuffix, String moduleFqName) {
-    if (filenameSuffix.startsWith(moduleFqName + MPSExtentions.DOT)) {
-      filenameSuffix = filenameSuffix.substring(moduleFqName.length() + 1);
-    }
-    return filenameSuffix;
-  }
+//  @NotNull
+//  private String cutRedundantModuleFqNamePrefix(String filenameSuffix, String moduleFqName) {
+//    if (filenameSuffix.startsWith(moduleFqName + MPSExtentions.DOT)) {
+//      filenameSuffix = filenameSuffix.substring(moduleFqName.length() + 1);
+//    }
+//    return filenameSuffix;
+//  }
 }

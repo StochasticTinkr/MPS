@@ -15,19 +15,16 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
-import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import static jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes.MODEL_ROOT;
 
@@ -43,18 +40,15 @@ public final class FilePerRootDataSourceFactory implements DataSourceFactoryFrom
   @NotNull
   @Override
   public DataSource create(@NotNull SModelName modelName,
-                           @NotNull SourceRoot sourceRoot,
-
-                           @ToRemove(version = 0)
-                           @Nullable ModelRoot modelRoot) {
-    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, modelRoot, MODEL_ROOT.getFileExtension(), true);
+                           @NotNull SourceRoot sourceRoot) {
+    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, MODEL_ROOT.getFileExtension(), true);
     IFile modelFile = modelFileCalculator.calculate();
-    return createFromFile(modelFile, modelRoot);
+    return createFromFile(modelFile);
   }
 
   @NotNull
-  private DataSource createFromFile(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
-    return PreinstalledURLDataSourceFactories.FILE_OR_FOLDER.createFromFile(file, modelRoot);
+  private DataSource createFromFile(@NotNull IFile file) {
+    return PreinstalledURLDataSourceFactories.FILE_OR_FOLDER.createFromFile(file);
   }
 
   @NotNull

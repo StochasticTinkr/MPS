@@ -17,10 +17,8 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.CopyUtil;
@@ -35,10 +33,9 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.List;
 
 import static jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories.FILE_OR_FOLDER;
 
@@ -79,9 +76,9 @@ final class CopyDefaultModelRootHelper extends CopyFileBasedModelRootHelper<Defa
     new ModelSourceRootWalker(mySourceModelRoot, (factory, dataSource, options, file) -> {
       try {
         IFile targetModelFile = calculateTargetModelFile(sourceModelSourceRoot, targetModelSourceRoot, file);
-        SModelBase modelData = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, options);
+        SModelBase modelData = (SModelBase) factory.load(dataSource, options.convertToLoadingOptions());
         createModelCopy(factory, targetModelFile, modelData);
-      } catch (URLNotSupportedException | IOException | ModelCannotBeCreatedException e) {
+      } catch (URLNotSupportedException | IOException | ModelCannotBeCreatedException | ModelLoadException e) {
         LOG.error("Could not create a model copy because of unexpected error", e);
       }
     }).traverse(sourceModelSourceRoot);

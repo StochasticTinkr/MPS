@@ -93,7 +93,7 @@ public class IoFile implements IFile {
   }
 
   @NotNull
-  private static String toSystemIndependentName(@NotNull String aFileName) {
+  static String toSystemIndependentName(@NotNull String aFileName) {
     return aFileName.replace(File.separatorChar, Path.UNIX_SEPARATOR_CHAR).replace('\\', Path.UNIX_SEPARATOR_CHAR);
   }
 

@@ -49,7 +49,7 @@ public enum PreinstalledURLDataSourceFactories implements DataSourceFactoryFromU
       throw new URLNotSupportedException(this, url);
     }
     IFile file = Files.fromURL(url);
-    return createFromFile(file, modelRoot);
+    return createFromFile(file);
   }
 
   // fixme elaborate
@@ -59,21 +59,21 @@ public enum PreinstalledURLDataSourceFactories implements DataSourceFactoryFromU
   }
 
   @NotNull
-  public DataSource createFromFile(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
+  public DataSource createFromFile(@NotNull IFile file) {
     if (file.exists() && file.isDirectory()) {
-      return createPerRootDS(file, modelRoot);
+      return createPerRootDS(file);
     } else if (file.getPath().endsWith(MPSExtentions.DOT_MODEL_ROOT)) {
-      return createPerRootDS(file.getParent(), modelRoot);
+      return createPerRootDS(file.getParent());
     } else if (file.getPath().endsWith(MPSExtentions.DOT_MODEL_HEADER)) {
-      return createPerRootDS(file.getParent(), modelRoot);
+      return createPerRootDS(file.getParent());
     }
-    return new FileDataSource(file, modelRoot);
+    return new FileDataSource(file);
   }
 
   // redundant branch, will go away with the {@link FilePerRootDataSource}
   // this must happen on the model factory side
   @NotNull
-  private DataSource createPerRootDS(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
-    return new FilePerRootDataSource(file, modelRoot);
+  private DataSource createPerRootDS(@NotNull IFile file) {
+    return new FilePerRootDataSource(file);
   }
 }

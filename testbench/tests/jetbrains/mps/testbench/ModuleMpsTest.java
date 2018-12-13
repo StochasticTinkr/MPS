@@ -62,7 +62,7 @@ public class ModuleMpsTest implements EnvironmentAware {
 
   @Before
   public void instantiateModuleFactory() {
-    myTestModuleFactory = new TestModuleFactoryBase(getTestRepository());
+    myTestModuleFactory = new TestModuleFactoryBase(myEnvironment, getTestRepository());
   }
 
   @After
