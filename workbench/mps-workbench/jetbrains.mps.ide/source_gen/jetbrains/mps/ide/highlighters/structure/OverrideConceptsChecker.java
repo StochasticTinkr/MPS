@@ -11,6 +11,7 @@ import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import com.intellij.openapi.project.DumbService;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.Collections;
@@ -33,6 +34,12 @@ public final class OverrideConceptsChecker extends BaseEventProcessingEditorChec
       return new UpdateResult.Completed(false, emptyListEditorMessage());
     }
 
+    if (DumbService.isDumb(myProject.getProject())) {
+      // workaround for https://youtrack.jetbrains.com/issue/MPS-29419 
+      // this checker has no idea about use of IDEA's index subsystem and the need to be aware of its 'dumb' mode 
+      // Alas, I didn't find the better place for the check. 
+      return UpdateResult.CANCELLED;
+    }
     List<EditorMessage> result = calculateEditorMessages(SNodeOperations.cast(rootNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), cancellable);
     if (cancellable.isCancelled()) {
       return new UpdateResult.Cancelled();

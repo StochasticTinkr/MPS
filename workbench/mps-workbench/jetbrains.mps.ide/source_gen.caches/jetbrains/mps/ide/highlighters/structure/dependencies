@@ -51,6 +51,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.highlighters.structure.OverrideConceptsChecker">
+    <classNode dependClassName="com.intellij.openapi.project.DumbService" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />

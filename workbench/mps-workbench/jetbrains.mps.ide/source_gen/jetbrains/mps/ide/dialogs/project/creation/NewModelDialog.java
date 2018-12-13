@@ -235,12 +235,8 @@ public class NewModelDialog extends DialogWrapper {
     final String fqName = getFqName();
 
     final Reference<SourceRoot> sourceRootOpt = new Reference<SourceRoot>(null);
-    // next constant is purely for documentation purposes, just to indicate what's the intention of getOrCreateAccessortySourceRoot method 
-    final boolean distinctSrcRoot4Accessory = false;
     if (myModule instanceof Language && selectedModelRoot instanceof DefaultModelRoot) {
-      if (distinctSrcRoot4Accessory || !(selectedModelRoot.canCreateModel(fqName))) {
-        sourceRootOpt.set(getOrCreateAccessorySourceRoot(((DefaultModelRoot) selectedModelRoot)));
-      }
+      sourceRootOpt.set(prepareAccessorySourceRootIfNeeded(((DefaultModelRoot) selectedModelRoot), fqName));
     }
 
     final Reference<ModelCannotBeCreatedException> refException = new Reference<ModelCannotBeCreatedException>();
@@ -306,19 +302,27 @@ public class NewModelDialog extends DialogWrapper {
     return res;
   }
 
-  private SourceRoot getOrCreateAccessorySourceRoot(final FileBasedModelRoot selectedModelRoot) {
+  private SourceRoot prepareAccessorySourceRootIfNeeded(final FileBasedModelRoot selectedModelRoot, final String fqName) {
+    // next constant is purely for documentation purposes, just to indicate what's the intention of getOrCreateAccessortySourceRoot method 
+    final boolean distinctSrcRoot4Accessory = false;
+
+    // FIXME distinct write with subsequent command. Is it the way we would like to go? 
     return new ModelAccessHelper(myProject.getModelAccess()).runWriteAction(new Computable<SourceRoot>() {
       public SourceRoot compute() {
-        final String dedicatedSourceRootName = "languageAccessories";
-        for (SourceRoot sr : selectedModelRoot.getSourceRoots(SourceRootKinds.SOURCES)) {
-          if (sr.getPath().endsWith(dedicatedSourceRootName)) {
-            return sr;
+        if (distinctSrcRoot4Accessory || !(selectedModelRoot.canCreateModel(fqName))) {
+          final String dedicatedSourceRootName = "languageAccessories";
+          for (SourceRoot sr : selectedModelRoot.getSourceRoots(SourceRootKinds.SOURCES)) {
+            if (sr.getPath().endsWith(dedicatedSourceRootName)) {
+              return sr;
+            }
           }
+          DefaultSourceRoot rv = new DefaultSourceRoot(dedicatedSourceRootName, selectedModelRoot.getContentDirectory());
+          selectedModelRoot.addSourceRoot(SourceRootKinds.SOURCES, rv);
+          // it's up to model root impl to ensure module is marked changed on source root addition 
+          return rv;
+        } else {
+          return null;
         }
-        DefaultSourceRoot rv = new DefaultSourceRoot(dedicatedSourceRootName, selectedModelRoot.getContentDirectory());
-        selectedModelRoot.addSourceRoot(SourceRootKinds.SOURCES, rv);
-        // it's up to model root impl to ensure module is marked changed on source root addition 
-        return rv;
       }
     });
   }
