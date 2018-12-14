@@ -6886,7 +6886,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-generator" depends="java.compile.mps-debuginfo-api, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-references, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.1">
+  <target name="java.compile.mps-generator" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-references, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-debuginfo-api, java.compile.java.modules.cycle.1">
     <mkdir dir="${build.tmp}/java/out/mps-generator" />
     <javac2 destdir="${build.tmp}/java/out/mps-generator" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -6895,7 +6895,6 @@
         <pathelement path="${mps_home}/core/generator/source_gen" />
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/mps-debuginfo-api" />
         <pathelement path="${build.tmp}/java/out/mps-annotations" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
         <pathelement path="${build.tmp}/java/out/mps-core-components" />
@@ -6909,6 +6908,7 @@
         <pathelement path="${build.tmp}/java/out/mps-references" />
         <pathelement path="${build.tmp}/java/out/mps-messaging" />
         <pathelement path="${build.tmp}/java/out/mps-boot-util" />
+        <pathelement path="${build.tmp}/java/out/mps-debuginfo-api" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.jdom-lib" />
@@ -6923,7 +6923,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-project" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-references, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.1">
+  <target name="java.compile.mps-project" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-references, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-debuginfo-api, java.compile.java.modules.cycle.1">
     <mkdir dir="${build.tmp}/java/out/mps-project" />
     <javac2 destdir="${build.tmp}/java/out/mps-project" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -6945,6 +6945,7 @@
         <pathelement path="${build.tmp}/java/out/mps-references" />
         <pathelement path="${build.tmp}/java/out/mps-messaging" />
         <pathelement path="${build.tmp}/java/out/mps-boot-util" />
+        <pathelement path="${build.tmp}/java/out/mps-debuginfo-api" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.jdom-lib" />

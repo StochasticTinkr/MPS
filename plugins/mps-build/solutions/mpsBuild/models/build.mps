@@ -1365,9 +1365,6 @@
           <property role="3LZaj6" value="source" />
         </node>
       </node>
-      <node concept="nCB5N" id="75RBgxKmm2n" role="nCB5Z">
-        <ref role="nCB5Y" node="75RBgxKmqIL" resolve="mps-debuginfo-api" />
-      </node>
       <node concept="nCB5N" id="7IVmW1Epg$k" role="nCB5Z">
         <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
       </node>
@@ -1425,6 +1422,9 @@
       </node>
       <node concept="nCB5N" id="58sFILYIQE8" role="nCB5Z">
         <ref role="nCB5Y" node="5StVQ8qcPeV" resolve="platform" />
+      </node>
+      <node concept="nCB5N" id="75RBgxKmm2n" role="nCB5Z">
+        <ref role="nCB5Y" node="75RBgxKmqIL" resolve="mps-debuginfo-api" />
       </node>
     </node>
     <node concept="398b33" id="6g0vjebAkhc" role="3989C9">
