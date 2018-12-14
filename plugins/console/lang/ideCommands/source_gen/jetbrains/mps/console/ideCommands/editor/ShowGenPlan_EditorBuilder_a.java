@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -17,6 +17,8 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 
 /*package*/ class ShowGenPlan_EditorBuilder_a extends AbstractEditorBuilder {
@@ -39,7 +41,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   private EditorCell createCollection_0() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_mrkoqg_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
@@ -86,6 +88,9 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       }
       if (editorCell.getSRole() == null) {
         editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x70ee8fac615b4f33L, "targetModel"));
+      }
+      if (true) {
+        editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
       }
     }
     @Override

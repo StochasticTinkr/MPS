@@ -51,7 +51,7 @@ public class AllRepoModels_MenuContrib extends SubstituteMenuBase {
   public class SMP_Group_ngt524_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget"));
+      return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget")) || SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, "jetbrains.mps.console.ideCommands.structure.ShowGenPlan"));
     }
     @NotNull
     @Override
