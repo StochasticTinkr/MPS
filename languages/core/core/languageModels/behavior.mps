@@ -1421,12 +1421,7 @@
                 </node>
               </node>
               <node concept="3clFbC" id="1RSSXziHz5j" role="3K4Cdx">
-                <node concept="3cpWs3" id="1RSSXziHz5k" role="3uHU7w">
-                  <node concept="Xl_RD" id="1RSSXziHz5l" role="3uHU7w">
-                    <property role="Xl_RC" value="" />
-                  </node>
-                  <node concept="10Nm6u" id="1RSSXziHz5m" role="3uHU7B" />
-                </node>
+                <node concept="10Nm6u" id="1RSSXziHz5m" role="3uHU7w" />
                 <node concept="2OqwBi" id="1RSSXziHz5n" role="3uHU7B">
                   <node concept="13iPFW" id="1RSSXziHz5o" role="2Oq$k0" />
                   <node concept="3TrcHB" id="1RSSXziHz5p" role="2OqNvi">
