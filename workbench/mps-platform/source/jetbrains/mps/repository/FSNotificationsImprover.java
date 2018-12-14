@@ -19,23 +19,22 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.platform.watching.WatchedRoots;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.FileListener;
-import jetbrains.mps.vfs.FileSystemExtPoint;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.impl.IoFileSystem;
-import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * here idea is the same as in {@code ProjectRootListenerComponent}
  */
 public class FSNotificationsImprover implements ApplicationComponent {
-  private final FileSystem myFS;
-  private FileListener myListener = null;
-  private IFile myFile;
+  private List<String> myRootsToAdd = new ArrayList<>();
+  private final WatchedRoots myWatchedRoots;
 
   //parameters left untouched while extracting from RepositoryInitializingComponentBase
   @SuppressWarnings("UnusedParameters")
@@ -43,30 +42,33 @@ public class FSNotificationsImprover implements ApplicationComponent {
                                  IRegistryManager registryManager,
                                  IdeaPluginFacetComponent ideaPluginFacetComponent,
                                  IdeaFSComponent fs,
-                                 PersistentFS filesystem //see MPS-22970
+                                 PersistentFS filesystem, //see MPS-22970
+                                 WatchedRoots watchedRoots
   ) {
-    myFS = PathManager.isFromSources() ? FileSystemExtPoint.getFS() : IoFileSystem.INSTANCE;
+    myWatchedRoots = watchedRoots;
   }
 
   @Override
   public void initComponent() {
-    if (PathManager.isFromSources()) {
-      ApplicationManager.getApplication().runReadAction(() -> {
-        myListener = (monitor, event) -> {
-        };
-        myFile = myFS.getFile(PathManager.getHomePath());
-        myFile.addListener(myListener);
-      });
-    }
+    ApplicationManager.getApplication().runReadAction(() -> {
+      myRootsToAdd.add(PathManager.getHomePath());
+      myRootsToAdd.add(com.intellij.openapi.application.PathManager.getPluginsPath());
+
+      for (String root : myRootsToAdd) {
+        myWatchedRoots.addWatchRequest(root);
+      }
+    });
   }
 
   @Override
   public void disposeComponent() {
-    if (myListener != null) {
-      ApplicationManager.getApplication().runReadAction(() -> {
-        myFile.removeListener(myListener);
-      });
-    }
+    Collections.reverse(myRootsToAdd);
+    ApplicationManager.getApplication().runReadAction(() -> {
+      for (String root : myRootsToAdd) {
+        myWatchedRoots.removeWatchRequest(root);
+      }
+      myRootsToAdd.clear();
+    });
   }
 
   @NotNull
