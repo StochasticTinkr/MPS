@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,22 +15,20 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import jetbrains.mps.VisibleModuleRegistry;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSModuleTreeNode, TreeElement {
-  private static final Logger LOG = LogManager.getLogger(ProjectModuleTreeNode.class);
-
   private final SModule myModule;
 
   public static ProjectModuleTreeNode createFor(Project project, SModule module) {
@@ -52,9 +50,6 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSMo
 
   protected ProjectModuleTreeNode(@NotNull SModule module) {
     super(module.getModuleName());
-    if (!VisibleModuleRegistry.getInstance().isVisible(module)) {
-      LOG.error("Tree node was created for non-visible module " + module.getModuleName(), new Throwable());
-    }
     myModule = module;
   }
 

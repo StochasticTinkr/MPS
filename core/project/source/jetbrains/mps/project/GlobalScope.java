@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.BaseScope;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.iterable.CollectManyIterator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -34,6 +35,11 @@ import java.util.Iterator;
 public class GlobalScope extends BaseScope implements CoreComponent {
   private static GlobalScope INSTANCE;
 
+  /**
+   * @deprecated there ain't no such thing as 'global' scope, use {@link #GlobalScope(SRepository)}
+   */
+  @Deprecated
+  @ToRemove(version = 2019.1)
   public static GlobalScope getInstance() {
     return INSTANCE;
   }
