@@ -28,7 +28,6 @@ import jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_unittest;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_build_tests;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_debugger_java_runtime_tests;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_generator_tests;
-import jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_tests;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_forms_tests;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_lang_extension_tests;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_lang_pattern_test;
@@ -70,7 +69,6 @@ import org.junit.runners.model.RunnerBuilder;
                         TestModule_jetbrains_mps_build_tests.class,
                         TestModule_jetbrains_mps_debugger_java_runtime_tests.class,
                         TestModule_jetbrains_mps_generator_tests.class,
-                        TestModule_jetbrains_mps_kernel_tests.class,
                         TestModule_jetbrains_mps_lang_editor_forms_tests.class,
                         TestModule_jetbrains_mps_lang_extension_tests.class,
                         TestModule_jetbrains_mps_lang_pattern_test.class,

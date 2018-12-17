@@ -35,7 +35,6 @@
     <import index="3zun" ref="r:eb1b318e-412f-4a0e-a1ff-62ff2ab9ff40(jetbrains.mps.lang.extension.tests.testExtension@tests)" />
     <import index="rq2b" ref="r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)" />
     <import index="msle" ref="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" />
-    <import index="537h" ref="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)" />
     <import index="b9cx" ref="r:43a3062d-cf3d-40ad-9c9d-c7da54cc927b(jetbrains.mps.testActions.test@tests)" />
     <import index="tild" ref="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)" />
     <import index="fw8r" ref="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" />
@@ -535,15 +534,6 @@
     </node>
     <node concept="lpD6D" id="2hA_2dv2ebT" role="lpD6w">
       <ref role="lpD7u" to="3zun:66AaOfxlr5e" resolve="Extension_Test" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="2Sv9ZGmYxR5">
-    <node concept="2R4zua" id="5$VJGCz8Ulk" role="2R4z3u">
-      <property role="2R4zu8" value="4076bab3-4981-4035-94aa-19b6b4c51a84" />
-      <property role="2R4zub" value="jetbrains.mps.kernel.tests" />
-    </node>
-    <node concept="lpD6D" id="2Sv9ZGmYxR8" role="lpD6w">
-      <ref role="lpD7u" to="537h:4uF2n1byLxZ" resolve="FacetDescriptorsIO_Test" />
     </node>
   </node>
   <node concept="lpD6F" id="2KT_lBAnCt6">
