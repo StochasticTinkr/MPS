@@ -282,6 +282,10 @@ public class ModelRootContentEntriesEditor implements Disposable {
     return descriptors;
   }
 
+  // FIXME it's odd we go to ModelRoot when in fact we have to edit ModelRootDescriptor, remove usages of this method
+  //       as I understand, confusion comes from the fact we've got a module with ModelRoots and it's easy to extract relevant data from the ModelRoot instance
+  //       However, SModule and Model Root are 'published/registered' projections of what we are going to modify, therefore we shall stick to editing of
+  //       respective descriptors
   public Collection<ModelRoot> getModelRoots() {
     List<ModelRoot> modelRoots = new LinkedList<>();
     for (ModelRootEntryContainer container : myModelRootEntries) {

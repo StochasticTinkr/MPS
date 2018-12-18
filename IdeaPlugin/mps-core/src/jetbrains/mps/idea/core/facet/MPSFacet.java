@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import com.intellij.ide.plugins.PluginManager;
 import com.intellij.internal.statistic.UsageTrigger;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -31,7 +30,7 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -44,7 +43,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
  */
 public class MPSFacet extends Facet<MPSFacetConfiguration> {
   private static final Logger LOG = Logger.getInstance(MPSFacet.class);
-  private final Project myMpsProject;
+  private final MPSProject myMpsProject;
   private Solution mySolution;
 
   public MPSFacet(@NotNull FacetType facetType, @NotNull Module module, @NotNull String name, @NotNull MPSFacetConfiguration configuration, Facet underlyingFacet) {
@@ -132,5 +131,9 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 
   public Solution getSolution() {
     return mySolution;
+  }
+
+  /*package*/ MPSProject getProject() {
+    return myMpsProject;
   }
 }

@@ -32,13 +32,10 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -48,6 +45,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
+ * FIXME shall decide whether {@link MPSFacetConfiguration} is stateful and this bean represents its state (then, cfg.getBean() call is justified and
+ * FIXME dropDescriptorInstance() is not, as well as facet.setConfiguration(existingConfiguration)) or this class is a detached wrapper for
+ * FIXME SolutionDescriptor and few MPSFacet-specific properties, and we can have a bean instance modified and eventually pushed into MPSFacetConfiguration
+ * FIXME for consideration (that's what Configurable#apply and MPSFacetCommonTab#onFacetInitialized() suggest. getBean accessor shall cease then,
+ * FIXME MPSFacet-specific properties to become exposed in MPSFacetConfiguration, which would manage Bean instance and associated SolutionDescriptor.)
  * evgeny, 10/26/11
  */
 public class MPSConfigurationBean {
@@ -84,13 +86,6 @@ public class MPSConfigurationBean {
       myDescriptor.setCompileInMPS(false);
       myDescriptor.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(IdeaPluginModuleFacet.FACET_TYPE, new MementoImpl()));
       Map<SLanguage, Integer> languageVersions = myDescriptor.getLanguageVersions();
-      if (myState.usedLanguages != null) {
-        Collection<SModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
-        for (String usedLanguage : myState.usedLanguages) {
-          SModuleReference mref = PersistenceFacade.getInstance().createModuleReference(usedLanguage);
-          usedLanguageReferences.add(mref);
-        }
-      }
       if (myState.languageVersions != null) {
         for (Entry<String, Integer> lv : myState.languageVersions.entrySet()) {
           languageVersions.put(SLanguageAdapter.deserialize(lv.getKey()), lv.getValue());
@@ -162,25 +157,6 @@ public class MPSConfigurationBean {
     dropDescriptorInstance();
   }
 
-  /**
-   * You can invoke this method only once MPS is initialized
-   * XXX prefer {@link #getModelRootDescriptors()} unless there's a true need to access ModelRoot
-   */
-  @Transient
-  public Collection<ModelRoot> getModelRoots() {
-    List<ModelRoot> rv = new ArrayList<>();
-    for (ModelRootDescriptor modelRootDescriptor : getModelRootDescriptors()) {
-      ModelRootFactory factory = PersistenceFacade.getInstance().getModelRootFactory(modelRootDescriptor.getType());
-      if (factory == null) {
-        continue;
-      }
-      ModelRoot root = factory.create();
-      root.load(modelRootDescriptor.getMemento());
-      rv.add(root);
-    }
-    return rv;
-  }
-
   public Collection<ModelRootDescriptor> getModelRootDescriptors() {
     List<ModelRootDescriptor> mrd = new ArrayList<>();
     fromPersistableState(mrd);
@@ -188,35 +164,8 @@ public class MPSConfigurationBean {
   }
 
 
-  /**
-   * @deprecated Prefer {@link #setModelRootDescriptors(Collection)} instead of this method.
-   *             Technically, the method itself is fine, the problem is that there's no way to create and configure ModeRoot instances
-   *             other that knowing their direct implementation classes (i.e. set/add methods for DefaultModelRoot)
-   */
-  @Transient
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public void setModelRoots(Collection<ModelRoot> roots) {
-    ArrayList<ModelRootDescriptor> mrd = new ArrayList<>(roots.size());
-    for (ModelRoot path : roots) {
-      ModelRootDescriptor descr = new ModelRootDescriptor();
-      path.save(descr.getMemento());
-      mrd.add(descr);
-    }
-    setModelRootDescriptors(mrd);
-  }
-
   public void setModelRootDescriptors(Collection<ModelRootDescriptor> roots) {
     myState.rootDescriptors = toPersistableState(roots);
-    dropDescriptorInstance();
-  }
-
-  public String[] getUsedLanguages() {
-    return myState.usedLanguages == null ? new String[0] : myState.usedLanguages.clone();
-  }
-
-  public void setUsedLanguages(@NonNls String[] usedLanguages) {
-    myState.usedLanguages = usedLanguages;
     dropDescriptorInstance();
   }
 
@@ -230,7 +179,6 @@ public class MPSConfigurationBean {
     setGeneratorOutputPath(state.generatorOutputPath);
     setUseModuleSourceFolder(state.useModuleSourceFolder);
     setUseTransientOutputFolder(state.useTransientOutputFolder);
-    myState.usedLanguages = state.usedLanguages == null ? null : state.usedLanguages.clone();
     myState.rootDescriptors = state.rootDescriptors == null ? null : state.rootDescriptors.clone();
     Map<String, Integer> lv = state.languageVersions;
     myState.languageVersions = lv == null ? null : new HashMap<String, Integer>(lv);
@@ -248,14 +196,6 @@ public class MPSConfigurationBean {
     result.generatorOutputPath = myDescriptor.getOutputPath();
     result.useModuleSourceFolder = myState.useModuleSourceFolder;
     result.useTransientOutputFolder = myState.useTransientOutputFolder;
-    if (!myDescriptor.getUsedLanguages().isEmpty()) {
-      result.usedLanguages = new String[myDescriptor.getUsedLanguages().size()];
-      int i = 0;
-      for (SModuleReference ref : myDescriptor.getUsedLanguages()) {
-        result.usedLanguages[i] = ref.toString();
-        i++;
-      }
-    }
     Map<SLanguage, Integer> lVersions = myDescriptor.getLanguageVersions();
     if (!lVersions.isEmpty()) {
       result.languageVersions = new HashMap<String, Integer>(lVersions.size());
@@ -307,7 +247,10 @@ public class MPSConfigurationBean {
     public String generatorOutputPath;
     public boolean useModuleSourceFolder = false;
     public boolean useTransientOutputFolder = false;
-    public String[] usedLanguages; //todo: store SLanaguage, not ModuleRefs
+    // FIXME unused, marked as transient to ensure we don't save anything back in case we happen to read a legacy value, remove once 2019.1 is out
+    //       We used to check it's empty with FacetTests, so I don't expect any uses.
+    @Transient
+    public String[] usedLanguages;
     @Tag("modelRoots")
     @AbstractCollection(surroundWithTag = false)
     public RootDescriptor[] rootDescriptors;

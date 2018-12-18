@@ -29,10 +29,6 @@ import java.io.File;
 import java.util.Collections;
 
 public class JpsTestModelsEnvironment extends JpsTestEnvironmentBase<JpsTestBean> {
-  @NonNls
-  private static final String[] LANGUAGES_TO_USE =
-    {"f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)",
-     "f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)"};
 
   private JpsModule myModule;
 
@@ -70,7 +66,6 @@ public class JpsTestModelsEnvironment extends JpsTestEnvironmentBase<JpsTestBean
   private MPSConfigurationBean initMpsConfiguration(JpsTestBean bean, String generatorOutput) {
     MPSConfigurationBean configuration = new MPSConfigurationBean();
     configuration.setIdByModuleName(bean.moduleName);
-    configuration.setUsedLanguages(LANGUAGES_TO_USE);
     configuration.setGeneratorOutputPath(generatorOutput);
     configuration.setUseModuleSourceFolder(bean.useModuleSourceFolder);
     configuration.setUseTransientOutputFolder(bean.useTransientOutputFolder);
