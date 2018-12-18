@@ -252,25 +252,23 @@
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/3567142084943000351">
     <file name="MPSAuditConstraints.java">
-      <node id="3567142084943000358" at="12,46,13,18" concept="14" />
-      <node id="3567142084943201225" at="15,41,16,239" concept="3" />
-      <node id="3567142084943201297" at="16,239,17,260" concept="3" />
-      <node id="3567142084943201261" at="17,260,18,266" concept="3" />
-      <node id="3567142084943201402" at="22,34,23,29" concept="3" />
-      <node id="3567142084943199497" at="23,29,24,0" concept="11" />
-      <node id="3567142084943000373" at="24,0,25,29" concept="3" />
-      <node id="3567142084943000354" at="12,0,15,0" concept="1" trace="MPSAuditConstraints#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <node id="3567142084943201398" at="15,0,20,0" concept="7" trace="processExcludedModules#()V" />
-      <node id="3567142084943000362" at="20,0,27,0" concept="7" trace="checkConstraints#()V" />
-      <scope id="3567142084943000357" at="12,46,13,18" />
-      <scope id="3567142084943000354" at="12,0,15,0">
+      <node id="3567142084943000358" at="9,46,10,18" concept="14" />
+      <node id="8404419601375393155" at="12,41,13,58" concept="10" />
+      <node id="3567142084943201402" at="17,34,18,29" concept="3" />
+      <node id="3567142084943199497" at="18,29,19,0" concept="11" />
+      <node id="3567142084943000373" at="19,0,20,29" concept="3" />
+      <node id="3567142084943000354" at="9,0,12,0" concept="1" trace="MPSAuditConstraints#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="3567142084943201398" at="12,0,15,0" concept="7" trace="processExcludedModules#()V" />
+      <node id="3567142084943000362" at="15,0,22,0" concept="7" trace="checkConstraints#()V" />
+      <scope id="3567142084943000357" at="9,46,10,18" />
+      <scope id="3567142084943201224" at="12,41,13,58" />
+      <scope id="3567142084943000354" at="9,0,12,0">
         <var name="module" id="3567142084943000360" />
       </scope>
-      <scope id="3567142084943201224" at="15,41,18,266" />
-      <scope id="3567142084943000366" at="22,34,25,29" />
-      <scope id="3567142084943201398" at="15,0,20,0" />
-      <scope id="3567142084943000362" at="20,0,27,0" />
-      <unit id="3567142084943000351" at="11,0,28,0" name="jetbrains.mps.testbench.junit.suites.MPSAuditConstraints" />
+      <scope id="3567142084943201398" at="12,0,15,0" />
+      <scope id="3567142084943000366" at="17,34,20,29" />
+      <scope id="3567142084943000362" at="15,0,22,0" />
+      <unit id="3567142084943000351" at="8,0,23,0" name="jetbrains.mps.testbench.junit.suites.MPSAuditConstraints" />
     </file>
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/3567142084943022134">
