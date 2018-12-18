@@ -233,9 +233,17 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -2174,23 +2182,32 @@
           </node>
         </node>
       </node>
-      <node concept="2Mj0R9" id="7s1FVdAzx8M" role="3cqZAp">
-        <node concept="2OqwBi" id="7s1FVdAzyne" role="2MkoU_">
-          <node concept="2OqwBi" id="7s1FVdAzxne" role="2Oq$k0">
-            <node concept="1YBJjd" id="7s1FVdAzxbc" role="2Oq$k0">
-              <ref role="1YBMHb" node="3jFdd0h1Et6" resolve="suppressErrorsAnnotation" />
+      <node concept="3SKdUt" id="WCbGpchVPg" role="3cqZAp">
+        <node concept="3SKdUq" id="WCbGpchVPi" role="3SKWNk">
+          <property role="3SKdUp" value="todo: message should be not empty, add migration if necessary" />
+        </node>
+      </node>
+      <node concept="1X3_iC" id="WCbGpchVnV" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="2Mj0R9" id="7s1FVdAzx8M" role="8Wnug">
+          <node concept="2OqwBi" id="7s1FVdAzyne" role="2MkoU_">
+            <node concept="2OqwBi" id="7s1FVdAzxne" role="2Oq$k0">
+              <node concept="1YBJjd" id="7s1FVdAzxbc" role="2Oq$k0">
+                <ref role="1YBMHb" node="3jFdd0h1Et6" resolve="suppressErrorsAnnotation" />
+              </node>
+              <node concept="3TrcHB" id="7s1FVdAzxCw" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:7s1FVdAuNzP" resolve="message" />
+              </node>
             </node>
-            <node concept="3TrcHB" id="7s1FVdAzxCw" role="2OqNvi">
-              <ref role="3TsBF5" to="tpck:7s1FVdAuNzP" resolve="message" />
-            </node>
+            <node concept="17RvpY" id="7s1FVdAzyFQ" role="2OqNvi" />
           </node>
-          <node concept="17RvpY" id="7s1FVdAzyFQ" role="2OqNvi" />
-        </node>
-        <node concept="Xl_RD" id="7s1FVdAzyGX" role="2MkJ7o">
-          <property role="Xl_RC" value="suppress error annotation without message" />
-        </node>
-        <node concept="1YBJjd" id="7s1FVdAzyTQ" role="2OEOjV">
-          <ref role="1YBMHb" node="3jFdd0h1Et6" resolve="suppressErrorsAnnotation" />
+          <node concept="Xl_RD" id="7s1FVdAzyGX" role="2MkJ7o">
+            <property role="Xl_RC" value="suppress error annotation without message" />
+          </node>
+          <node concept="1YBJjd" id="7s1FVdAzyTQ" role="2OEOjV">
+            <ref role="1YBMHb" node="3jFdd0h1Et6" resolve="suppressErrorsAnnotation" />
+          </node>
         </node>
       </node>
     </node>
