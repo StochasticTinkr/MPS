@@ -715,6 +715,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator", "InlineTemplateWithContext_RuleConsequence", 0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.generator.structure.RuleConsequence", 0xb401a68083254110L, 0x8fd384331ff25befL, 0x110138ccc4bL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L);
     b.origin("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/8900764248744213868");
     b.version(2);
     b.aggregate("contentNode", 0x7b85dded0be53d6fL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(false).ordered(true).multiple(false).origin("8900764248744213871").done();
@@ -726,6 +727,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator", "InlineTemplate_RuleConsequence", 0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.generator.structure.RuleConsequence", 0xb401a68083254110L, 0x8fd384331ff25befL, 0x110138ccc4bL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L);
     b.origin("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1177093525992");
     b.version(2);
     b.aggregate("templateNode", 0x112103ebf76L).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(false).ordered(true).multiple(false).origin("1177093586806").done();
@@ -1029,6 +1031,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L);
     b.origin("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1168619357332");
     b.version(2);
     b.associate("applicableConcept", 0x11017255ccfL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(true).origin("1168619429071").done();
@@ -1215,6 +1219,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator", "TemplateFragment", 0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L);
     b.origin("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1095672379244");
     b.version(2);
     b.associate("labelDeclaration", 0x1179c366b2fL).target(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1179be47606L).optional(true).origin("1200916687663").done();

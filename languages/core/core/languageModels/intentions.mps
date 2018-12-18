@@ -170,8 +170,13 @@
       <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt">
         <reference id="1139877738879" name="concept" index="1A0vxQ" />
       </concept>
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
+      </concept>
+      <concept id="1144195091934" name="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" flags="nn" index="1BlSNk">
+        <reference id="1144195362400" name="conceptOfParent" index="1BmUXE" />
+        <reference id="1144195396777" name="linkInParent" index="1Bn3mz" />
       </concept>
       <concept id="6407023681583036853" name="jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier" flags="ng" index="3CFYIy">
         <reference id="6407023681583036854" name="attributeConcept" index="3CFYIx" />
@@ -202,6 +207,9 @@
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
         <child id="540871147943773366" name="argument" index="25WWJ7" />
       </concept>
+      <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
+        <child id="1151688676805" name="elementType" index="_ZDj9" />
+      </concept>
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
       <concept id="1235566554328" name="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" flags="nn" index="2HwmR7" />
       <concept id="1235566831861" name="jetbrains.mps.baseLanguage.collections.structure.AllOperation" flags="nn" index="2HxqBE" />
@@ -213,6 +221,7 @@
       <concept id="1227022210526" name="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation" flags="nn" index="2Kehj3" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
+      <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" flags="in" index="3rvAFt">
         <child id="1197683466920" name="keyType" index="3rvQeY" />
         <child id="1197683475734" name="valueType" index="3rvSg0" />
@@ -928,26 +937,73 @@
         <node concept="3cpWs8" id="KgjTrBlINy" role="3cqZAp">
           <node concept="3cpWsn" id="KgjTrBlINz" role="3cpWs9">
             <property role="TrG5h" value="reportItemsForCell" />
-            <node concept="3vKaQO" id="KgjTrBlJB7" role="1tU5fm">
-              <node concept="3uibUv" id="KgjTrBlJB9" role="3O5elw">
+            <node concept="_YKpA" id="7iyvL_jintq" role="1tU5fm">
+              <node concept="3uibUv" id="7iyvL_jints" role="_ZDj9">
                 <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
               </node>
             </node>
-            <node concept="2OqwBi" id="KgjTrBlIN$" role="33vP2m">
-              <node concept="37vLTw" id="KgjTrBlIN_" role="2Oq$k0">
-                <ref role="3cqZAo" node="4oS1ku9jhLI" resolve="editorComponent" />
-              </node>
-              <node concept="liA8E" id="KgjTrBlINA" role="2OqNvi">
-                <ref role="37wK5l" to="exr9:~EditorComponent.getReportItemsForCell(jetbrains.mps.openapi.editor.cells.EditorCell):java.util.Collection" resolve="getReportItemsForCell" />
-                <node concept="2OqwBi" id="KgjTrBlINB" role="37wK5m">
-                  <node concept="37vLTw" id="KgjTrBlINC" role="2Oq$k0">
+            <node concept="2ShNRf" id="7iyvL_ji5Wt" role="33vP2m">
+              <node concept="Tc6Ow" id="7iyvL_jifWG" role="2ShVmc">
+                <node concept="3uibUv" id="7iyvL_jimyx" role="HW$YZ">
+                  <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                </node>
+                <node concept="2OqwBi" id="KgjTrBlIN$" role="I$8f6">
+                  <node concept="37vLTw" id="KgjTrBlIN_" role="2Oq$k0">
                     <ref role="3cqZAo" node="4oS1ku9jhLI" resolve="editorComponent" />
                   </node>
-                  <node concept="liA8E" id="KgjTrBlIND" role="2OqNvi">
-                    <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
+                  <node concept="liA8E" id="KgjTrBlINA" role="2OqNvi">
+                    <ref role="37wK5l" to="exr9:~EditorComponent.getReportItemsForCell(jetbrains.mps.openapi.editor.cells.EditorCell):java.util.Collection" resolve="getReportItemsForCell" />
+                    <node concept="2OqwBi" id="KgjTrBlINB" role="37wK5m">
+                      <node concept="37vLTw" id="KgjTrBlINC" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4oS1ku9jhLI" resolve="editorComponent" />
+                      </node>
+                      <node concept="liA8E" id="KgjTrBlIND" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7iyvL_jhKAn" role="3cqZAp">
+          <node concept="3clFbS" id="7iyvL_jhKAp" role="3clFbx">
+            <node concept="3clFbF" id="7iyvL_jir2Z" role="3cqZAp">
+              <node concept="2OqwBi" id="7iyvL_jissd" role="3clFbG">
+                <node concept="37vLTw" id="7iyvL_jir2X" role="2Oq$k0">
+                  <ref role="3cqZAo" node="KgjTrBlINz" resolve="reportItemsForCell" />
+                </node>
+                <node concept="X8dFx" id="7iyvL_jiu1k" role="2OqNvi">
+                  <node concept="2OqwBi" id="7iyvL_jiv5$" role="25WWJ7">
+                    <node concept="37vLTw" id="7iyvL_jiv5_" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4oS1ku9jhLI" resolve="editorComponent" />
+                    </node>
+                    <node concept="liA8E" id="7iyvL_jiv5A" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getReportItemsForCell(jetbrains.mps.openapi.editor.cells.EditorCell):java.util.Collection" resolve="getReportItemsForCell" />
+                      <node concept="2OqwBi" id="7iyvL_jhTVz" role="37wK5m">
+                        <node concept="37vLTw" id="7iyvL_jhT16" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4oS1ku9jhLI" resolve="editorComponent" />
+                        </node>
+                        <node concept="liA8E" id="7iyvL_jhYVk" role="2OqNvi">
+                          <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                          <node concept="2OqwBi" id="7iyvL_ji0gO" role="37wK5m">
+                            <node concept="2Sf5sV" id="7iyvL_jhZHq" role="2Oq$k0" />
+                            <node concept="1mfA1w" id="7iyvL_ji1dR" role="2OqNvi" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7iyvL_jhLW2" role="3clFbw">
+            <node concept="2Sf5sV" id="7iyvL_jhLoz" role="2Oq$k0" />
+            <node concept="1BlSNk" id="7iyvL_jhMPQ" role="2OqNvi">
+              <ref role="1BmUXE" to="tpck:gw2VY9q" resolve="BaseConcept" />
+              <ref role="1Bn3mz" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
             </node>
           </node>
         </node>

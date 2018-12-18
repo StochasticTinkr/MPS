@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
@@ -24,7 +26,6 @@ import jetbrains.mps.openapi.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.lang.core.behavior.ICanSuppressErrors__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
@@ -57,8 +58,11 @@ public final class SuppressSpecificErrors_Intention extends AbstractIntentionDes
   }
   private List<IssueKindReportItem> parameter(final SNode node, final EditorContext editorContext) {
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
-    Collection<IssueKindReportItem> reportItemsForCell = editorComponent.getReportItemsForCell(editorComponent.getSelectedCell());
-    return ListSequence.fromListWithValues(new ArrayList<IssueKindReportItem>(), CollectionSequence.fromCollection(reportItemsForCell).where(new IWhereFilter<IssueKindReportItem>() {
+    List<IssueKindReportItem> reportItemsForCell = ListSequence.fromListWithValues(new ArrayList<IssueKindReportItem>(), editorComponent.getReportItemsForCell(editorComponent.getSelectedCell()));
+    if (SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))) {
+      ListSequence.fromList(reportItemsForCell).addSequence(CollectionSequence.fromCollection(editorComponent.getReportItemsForCell(editorComponent.findNodeCell(SNodeOperations.getParent(node)))));
+    }
+    return ListSequence.fromListWithValues(new ArrayList<IssueKindReportItem>(), ListSequence.fromList(reportItemsForCell).where(new IWhereFilter<IssueKindReportItem>() {
       public boolean accept(IssueKindReportItem it) {
         return Objects.equals(it.getSeverity(), MessageStatus.ERROR);
       }

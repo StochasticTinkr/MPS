@@ -716,6 +716,10 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
+        <property id="8575328350543493365" name="message" index="huDt6" />
+        <property id="2423417345669755629" name="filter" index="1eyWvh" />
+      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
@@ -6347,6 +6351,10 @@
                 <node concept="raruj" id="14LJu4Zggo3" role="lGtFl" />
               </node>
             </node>
+            <node concept="15s5l7" id="7iyvL_jf8kd" role="lGtFl">
+              <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;reference scopes (reference scopes)&quot;;FLAVOUR_MESSAGE=&quot;reference aaa (module) is out of search scope&quot;;FLAVOUR_NODE_FEATURE=&quot;module&quot;;FLAVOUR_RULE_ID=&quot;[r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)/1224588814561913827]&quot;;" />
+              <property role="huDt6" value="reference aaa (module) is out of search scope" />
+            </node>
           </node>
         </node>
         <node concept="14ZrTv" id="5kC7eCQMmsf" role="14ZwWg">
@@ -6609,6 +6617,10 @@
                   <property role="3MwjfP" value="root" />
                 </node>
               </node>
+            </node>
+            <node concept="15s5l7" id="7iyvL_jf92h" role="lGtFl">
+              <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;reference scopes (reference scopes)&quot;;FLAVOUR_MESSAGE=&quot;reference aaa (module) is out of search scope&quot;;FLAVOUR_NODE_FEATURE=&quot;module&quot;;FLAVOUR_RULE_ID=&quot;[r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)/1224588814561913827]&quot;;" />
+              <property role="huDt6" value="reference aaa (module) is out of search scope" />
             </node>
           </node>
         </node>
