@@ -69,6 +69,7 @@
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -141,6 +142,9 @@
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
       <concept id="1207055528241" name="jetbrains.mps.lang.typesystem.structure.WarningStatement" flags="nn" index="a7r0C">
         <child id="1207055552304" name="warningText" index="a7wSD" />
+      </concept>
+      <concept id="1175517400280" name="jetbrains.mps.lang.typesystem.structure.AssertStatement" flags="nn" index="2Mj0R9">
+        <child id="1175517761460" name="condition" index="2MkoU_" />
       </concept>
       <concept id="1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" flags="nn" index="2MkqsV">
         <child id="1175517851849" name="errorString" index="2MkJ7o" />
@@ -2116,7 +2120,7 @@
                   <ref role="1YBMHb" node="3jFdd0h1Et6" resolve="suppressErrorsAnnotation" />
                 </node>
                 <node concept="3TrcHB" id="5OmbMbqfVGZ" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:26xHjLJaBbH" resolve="whichError" />
+                  <ref role="3TsBF5" to="tpck:26xHjLJaBbH" resolve="filter" />
                 </node>
               </node>
             </node>
@@ -2168,6 +2172,25 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="2Mj0R9" id="7s1FVdAzx8M" role="3cqZAp">
+        <node concept="2OqwBi" id="7s1FVdAzyne" role="2MkoU_">
+          <node concept="2OqwBi" id="7s1FVdAzxne" role="2Oq$k0">
+            <node concept="1YBJjd" id="7s1FVdAzxbc" role="2Oq$k0">
+              <ref role="1YBMHb" node="3jFdd0h1Et6" resolve="suppressErrorsAnnotation" />
+            </node>
+            <node concept="3TrcHB" id="7s1FVdAzxCw" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:7s1FVdAuNzP" resolve="message" />
+            </node>
+          </node>
+          <node concept="17RvpY" id="7s1FVdAzyFQ" role="2OqNvi" />
+        </node>
+        <node concept="Xl_RD" id="7s1FVdAzyGX" role="2MkJ7o">
+          <property role="Xl_RC" value="suppress error annotation without message" />
+        </node>
+        <node concept="1YBJjd" id="7s1FVdAzyTQ" role="2OEOjV">
+          <ref role="1YBMHb" node="3jFdd0h1Et6" resolve="suppressErrorsAnnotation" />
         </node>
       </node>
     </node>

@@ -35,7 +35,6 @@ import java.util.Objects;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.errors.item.ReportItem;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
@@ -109,7 +108,7 @@ public class ShowSuppressedErrors_Action extends BaseAction {
         }
         for (final SNode suppress : ListSequence.fromList(suppressed)) {
           Map<String, String> predicateFlavours = new HashMap<String, String>();
-          final String errorSpecialization = SPropertyOperations.getString(suppress, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"));
+          final String errorSpecialization = SPropertyOperations.getString(suppress, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "filter"));
           try {
             if ((errorSpecialization != null && errorSpecialization.length() > 0)) {
               predicateFlavours = FlavouredItem.ReportItemPredicate.deserialize(errorSpecialization).getFlavours();
@@ -117,7 +116,7 @@ public class ShowSuppressedErrors_Action extends BaseAction {
           } catch (RuntimeException exception) {
           }
           List<RuleIdFlavouredItem.TypesystemRuleId> rules = ListSequence.fromList(new ArrayList<RuleIdFlavouredItem.TypesystemRuleId>());
-          String message = null;
+          String message = SPropertyOperations.getString(suppress, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x7701afb3667b38f5L, "message"));
           DefaultActionGroup actionGroup = new DefaultActionGroup();
           actionGroup.add(new AnAction("Stop Suppressing", "Do not suppress error", MPSIcons.Actions.SuppressedError) {
             public void actionPerformed(@NotNull AnActionEvent event) {
@@ -130,7 +129,6 @@ public class ShowSuppressedErrors_Action extends BaseAction {
           });
           if (Objects.equals(predicateFlavours.get(IssueKindReportItem.FLAVOUR_ISSUE_KIND.toString()), IssueKindReportItem.TYPESYSTEM.deriveItemKind().toString()) && predicateFlavours.containsKey(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.toString())) {
             ListSequence.fromList(rules).addSequence(CollectionSequence.fromCollection(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.deserializePredicate(predicateFlavours.get(TypesystemReportItemAdapter.FLAVOUR_RULE_ID.toString())).getValue()));
-            message = predicateFlavours.get(ReportItem.FLAVOUR_MESSAGE.toString());
             if (ListSequence.fromList(rules).isNotEmpty() && message != null) {
               for (RuleIdFlavouredItem.TypesystemRuleId rule : ListSequence.fromList(rules)) {
                 SNodeReference ruleRef = rule.getSourceNode();

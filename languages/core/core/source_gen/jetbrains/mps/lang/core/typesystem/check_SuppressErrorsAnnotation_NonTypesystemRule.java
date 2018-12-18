@@ -21,7 +21,7 @@ public class check_SuppressErrorsAnnotation_NonTypesystemRule extends AbstractNo
   }
   public void applyRule(final SNode suppressErrorsAnnotation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     try {
-      String serializedPredicate = SPropertyOperations.getString(suppressErrorsAnnotation, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"));
+      String serializedPredicate = SPropertyOperations.getString(suppressErrorsAnnotation, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "filter"));
       FlavouredItem.ReportItemPredicate.deserialize((serializedPredicate == null ? "" : serializedPredicate));
     } catch (IllegalArgumentException e) {
       {
@@ -34,6 +34,10 @@ public class check_SuppressErrorsAnnotation_NonTypesystemRule extends AbstractNo
         }
       }
     }
+    if (!(isNotEmptyString(SPropertyOperations.getString(suppressErrorsAnnotation, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x7701afb3667b38f5L, "message"))))) {
+      MessageTarget errorTarget = new NodeMessageTarget();
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(suppressErrorsAnnotation, "suppress error annotation without message", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8575328350544728626", null, errorTarget);
+    }
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation");
@@ -43,5 +47,8 @@ public class check_SuppressErrorsAnnotation_NonTypesystemRule extends AbstractNo
   }
   public boolean overrides() {
     return false;
+  }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }
