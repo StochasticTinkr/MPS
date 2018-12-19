@@ -55,7 +55,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
   @Override
   public void initFacet() {
     myMpsProject.getModelAccess().runWriteAction(() -> {
-      SolutionDescriptor solutionDescriptor = getConfiguration().getBean().getSolutionDescriptor();
+      SolutionDescriptor solutionDescriptor = getConfiguration().createSolutionDescriptor();
       Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
 
       com.intellij.openapi.project.Project project = getModule().getProject();
@@ -118,15 +118,25 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 //  }
 
   public void updateModels() {
-    if (mySolution == null) return;
+    if (mySolution == null) {
+      return;
+    }
     mySolution.updateModelsSet();
   }
 
   public void setConfiguration(final MPSConfigurationBean configurationBean) {
+    // XXX what if ModuleRenameHandler uses this method prior to getSolution, we would have lost configurationBean settings then
     if (!wasInitialized()) {
+      // SD in cfgBean is provisional and kept here just in case there are settings coming through its SD
+      getConfiguration().loadState(/*FIXME just null*/ configurationBean.getSolutionDescriptor(), configurationBean);
       return;
     }
-    myMpsProject.getModelAccess().runWriteAction(() -> mySolution.setModuleDescriptor(configurationBean.getSolutionDescriptor()));
+    // FIXME not clear why not descriptor from the bean, as it's the one being modified from e.g. MPSFacetSourcesTab
+    //       we imply here mySolution.getModuleDescriptor() === configurationBean.getSolutionDescriptor(), otherwise changed done to SD through
+    //       configurationBean.getSolutionDescriptor() would get lost.
+    assert configurationBean.getSolutionDescriptor() == null || configurationBean.getSolutionDescriptor() == mySolution.getModuleDescriptor();
+    getConfiguration().loadState(mySolution.getModuleDescriptor(), configurationBean);
+    myMpsProject.getModelAccess().runWriteAction(() -> mySolution.setModuleDescriptor(getConfiguration().createSolutionDescriptor()));
   }
 
   public Solution getSolution() {

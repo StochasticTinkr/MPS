@@ -239,7 +239,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Creating solution for " + mod.getName()));
       }
 
-      SolutionDescriptor descriptor = extension.getConfiguration().getSolutionDescriptor();
+      SolutionDescriptor descriptor = extension.getConfiguration().newSolutionDescriptor();
       descriptor.setNamespace(mod.getName());
       MPSCompilerUtil.debug(context, "UUID " + descriptor.getId());
       // Commeted out. See SolutionIdea: solutions don't have foreign ids, rather regular

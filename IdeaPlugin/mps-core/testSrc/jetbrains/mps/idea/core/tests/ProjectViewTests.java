@@ -26,6 +26,7 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.Queryable;
 import com.intellij.projectView.BaseProjectViewTestCase;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -35,8 +36,6 @@ import jetbrains.mps.vfs.IFile;
 import org.junit.Assert;
 
 import java.util.Collections;
-
-import static com.intellij.testFramework.LightPlatformTestCase.getModule;
 
 /**
  * evgeny, 1/25/12
@@ -70,9 +69,10 @@ public class ProjectViewTests extends BaseProjectViewTestCase {
     FacetType<MPSFacet, MPSFacetConfiguration> facetType = FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID);
     Assert.assertNotNull("MPS facet type is not found", facetType);
     MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
-    final MPSFacetConfiguration configuration = facet.getConfiguration();
     IFile path = VirtualFileUtils.toIFile(getContentRoot().findChild("src"));
-    configuration.getBean().setModelRootDescriptors(Collections.singleton(DefaultModelRoot.createSingleFolderDescriptor(path)));
+    final MPSConfigurationBean cfgBean = facet.getConfiguration().getBean();
+    cfgBean.setModelRootDescriptors(Collections.singleton(DefaultModelRoot.createSingleFolderDescriptor(path)));
+    facet.setConfiguration(cfgBean);
 
     final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
     facetModel.addFacet(facet);

@@ -71,6 +71,7 @@ public class MPSFacetSourcesTab implements SModuleConfigurationTab {
       Disposer.dispose(myContentEntriesEditor);
       myContentEntriesEditor = null;
     }
+    // here come the only justified use of cfgBean.getSolutionDescriptor(), there's no other way to access Facet's SD here at the moment
     myContentEntriesEditor = new ModelRootContentEntriesEditor(data.getSolutionDescriptor(), ProjectHelper.getProjectRepository(myContext.getProject()));
     Disposer.register(myParentDisposable, myContentEntriesEditor);
     VirtualFile defaultFolder = myContext.getModule().getModuleFile() != null

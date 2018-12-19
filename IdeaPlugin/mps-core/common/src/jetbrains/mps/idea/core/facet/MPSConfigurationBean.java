@@ -30,13 +30,13 @@ import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -52,61 +52,64 @@ import java.util.Map.Entry;
  * FIXME MPSFacet-specific properties to become exposed in MPSFacetConfiguration, which would manage Bean instance and associated SolutionDescriptor.)
  * evgeny, 10/26/11
  */
-public class MPSConfigurationBean {
+public final class MPSConfigurationBean {
 
-  @Transient
-  private SolutionDescriptor myDescriptor;
-  @Transient
-  private final State myState = new State();
+  // FIXME this value is solely to overcome present limitation of SModuleConfigurationTab to get MPSConfigurationBean and the need to access SD from it.
+  private final SolutionDescriptor myDescriptor;
+  private final State myState;
 
-  public MPSConfigurationBean() {
+  /*package*/ MPSConfigurationBean(SolutionDescriptor sd, MPSConfigurationBean other) {
+    myDescriptor = sd;
+    myState = other.toState(sd);
   }
 
-  /**
-   * You can invoke this method only once MPS is initialized
-   * <p>
-   * Populate solution descriptor according to current state of the bean. Unless the state changes, this method
-   * returns the same instance of SolutionDescriptor.
-   * Bean class shall not serve as proxy to populate descriptor, if you'd need to modify SolutionDescriptor, do it directly:
-   * <pre>
-   *   SolutionDescriptor sd1 = bean.getSolutionDescriptor();
-   *   bean.setId(UUID.random().toString());
-   *   SolutionDescriptor sd2 = bean.getSolutionDescriptor();
-   *   assert sd1 != sd2;
-   *   assert !sd1.getId().equals(sd2.getId());
-   * </pre>
-   */
-  @Transient
-  public SolutionDescriptor getSolutionDescriptor() {
-    if (myDescriptor == null) {
-      // build descriptor that reflects actual state
-      myDescriptor = new SolutionDescriptor();
-      myDescriptor.setId(ModuleId.fromString(myState.UUID));
-      myDescriptor.setOutputPath(myState.generatorOutputPath);
-      myDescriptor.setCompileInMPS(false);
-      myDescriptor.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(IdeaPluginModuleFacet.FACET_TYPE, new MementoImpl()));
-      Map<SLanguage, Integer> languageVersions = myDescriptor.getLanguageVersions();
-      if (myState.languageVersions != null) {
-        for (Entry<String, Integer> lv : myState.languageVersions.entrySet()) {
-          languageVersions.put(SLanguageAdapter.deserialize(lv.getKey()), lv.getValue());
-        }
-      } else {
-        myDescriptor.setHasLanguageVersions(false);
-      }
+  /*package*/ MPSConfigurationBean(MPSConfigurationBean other) {
+    myDescriptor = null;
+    myState = other.toState();
+  }
 
-      Map<SModuleReference, Integer> depVersions = myDescriptor.getDependencyVersions();
-      if (myState.dependencyVersions != null) {
-        for (Entry<String, Integer> lv : myState.dependencyVersions.entrySet()) {
-          depVersions.put(ModuleReference.parseReference(lv.getKey()), lv.getValue());
-        }
-      } else {
-        myDescriptor.setHasDependencyVersions(false);
-      }
-      List<ModelRootDescriptor> roots = new ArrayList<>();
-      fromPersistableState(roots);
-      myDescriptor.getModelRootDescriptors().addAll(roots);
-    }
+  public MPSConfigurationBean() {
+    myDescriptor = null;
+    myState = new State();
+  }
+
+  // use only if you know what you're doing
+  @Nullable
+  @Deprecated
+  public SolutionDescriptor getSolutionDescriptor() {
     return myDescriptor;
+  }
+
+  // shall be visible for tests
+  @NotNull
+  public SolutionDescriptor newSolutionDescriptor() {
+    // build descriptor that reflects actual state
+    SolutionDescriptor sd = new SolutionDescriptor();
+    sd.setId(ModuleId.fromString(myState.UUID));
+    sd.setOutputPath(myState.generatorOutputPath);
+    sd.setCompileInMPS(false);
+    sd.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(IdeaPluginModuleFacet.FACET_TYPE, new MementoImpl()));
+    Map<SLanguage, Integer> languageVersions = sd.getLanguageVersions();
+    if (myState.languageVersions != null) {
+      for (Entry<String, Integer> lv : myState.languageVersions.entrySet()) {
+        languageVersions.put(SLanguageAdapter.deserialize(lv.getKey()), lv.getValue());
+      }
+    } else {
+      sd.setHasLanguageVersions(false);
+    }
+
+    Map<SModuleReference, Integer> depVersions = sd.getDependencyVersions();
+    if (myState.dependencyVersions != null) {
+      for (Entry<String, Integer> lv : myState.dependencyVersions.entrySet()) {
+        depVersions.put(ModuleReference.parseReference(lv.getKey()), lv.getValue());
+      }
+    } else {
+      sd.setHasDependencyVersions(false);
+    }
+    List<ModelRootDescriptor> roots = new ArrayList<>();
+    fromPersistableState(roots);
+    sd.getModelRootDescriptors().addAll(roots);
+    return sd;
   }
 
   public boolean isModuleIdSet() {
@@ -124,12 +127,12 @@ public class MPSConfigurationBean {
 
   public void setId(String uuid) {
     myState.UUID = uuid;
-    dropDescriptorInstance();
+    // markBeanAsChangedIfAnyoneCares
   }
 
   public void setIdByModuleName(String moduleName) {
     myState.UUID = ModuleId.foreign(moduleName).toString();
-    dropDescriptorInstance();
+    // markBeanAsChangedIfAnyoneCares
   }
 
   public void setUseModuleSourceFolder(boolean use) {
@@ -154,7 +157,7 @@ public class MPSConfigurationBean {
 
   public void setGeneratorOutputPath(String outputPath) {
     myState.generatorOutputPath = outputPath;
-    dropDescriptorInstance();
+    // markBeanAsChangedIfAnyoneCares
   }
 
   public Collection<ModelRootDescriptor> getModelRootDescriptors() {
@@ -166,11 +169,7 @@ public class MPSConfigurationBean {
 
   public void setModelRootDescriptors(Collection<ModelRootDescriptor> roots) {
     myState.rootDescriptors = toPersistableState(roots);
-    dropDescriptorInstance();
-  }
-
-  private void dropDescriptorInstance() {
-    myDescriptor = null;
+    // markBeanAsChangedIfAnyoneCares
   }
 
   public void loadFrom(State state) {
@@ -184,33 +183,37 @@ public class MPSConfigurationBean {
     myState.languageVersions = lv == null ? null : new HashMap<String, Integer>(lv);
     Map<String, Integer> dv = state.dependencyVersions;
     myState.dependencyVersions = dv == null ? null : new HashMap<String, Integer>(dv);
-    dropDescriptorInstance(); // just in case
+    // markBeanAsChangedIfAnyoneCares // just in case
   }
 
   public State toState() {
     if (myDescriptor == null) {
       return myState.clone();
     }
+    return toState(myDescriptor);
+  }
+
+  /*package*/ State toState(SolutionDescriptor actualDescriptor) {
     State result = new State();
-    result.UUID = myDescriptor.getId().toString();
-    result.generatorOutputPath = myDescriptor.getOutputPath();
+    result.UUID = actualDescriptor.getId().toString();
+    result.generatorOutputPath = actualDescriptor.getOutputPath();
     result.useModuleSourceFolder = myState.useModuleSourceFolder;
     result.useTransientOutputFolder = myState.useTransientOutputFolder;
-    Map<SLanguage, Integer> lVersions = myDescriptor.getLanguageVersions();
+    Map<SLanguage, Integer> lVersions = actualDescriptor.getLanguageVersions();
     if (!lVersions.isEmpty()) {
       result.languageVersions = new HashMap<String, Integer>(lVersions.size());
       for (Entry<SLanguage, Integer> lver : lVersions.entrySet()) {
         result.languageVersions.put(((SLanguageAdapter) lver.getKey()).serialize(), lver.getValue());
       }
     }
-    Map<SModuleReference, Integer> dVersions = myDescriptor.getDependencyVersions();
+    Map<SModuleReference, Integer> dVersions = actualDescriptor.getDependencyVersions();
     if (!dVersions.isEmpty()) {
       result.dependencyVersions = new HashMap<String, Integer>(dVersions.size());
       for (Entry<SModuleReference, Integer> dver : dVersions.entrySet()) {
         result.dependencyVersions.put(dver.getKey().toString(), dver.getValue());
       }
     }
-    result.rootDescriptors = toPersistableState(myDescriptor.getModelRootDescriptors());
+    result.rootDescriptors = toPersistableState(actualDescriptor.getModelRootDescriptors());
     return result;
   }
 
