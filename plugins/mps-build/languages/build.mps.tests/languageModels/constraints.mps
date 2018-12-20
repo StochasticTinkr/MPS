@@ -20,7 +20,6 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
@@ -85,9 +84,6 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
-      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
-        <child id="1081516765348" name="expression" index="3fr31v" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -197,71 +193,15 @@
       <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdN" resolve="module" />
       <node concept="3dgokm" id="5Vvmn_Ql1u4" role="1N6uqs">
         <node concept="3clFbS" id="5Vvmn_Ql1u5" role="2VODD2">
-          <node concept="3clFbF" id="5Vvmn_Ql1u6" role="3cqZAp">
-            <node concept="2ShNRf" id="5Vvmn_Ql1u7" role="3clFbG">
-              <node concept="YeOm9" id="5Vvmn_Ql1u8" role="2ShVmc">
-                <node concept="1Y3b0j" id="5Vvmn_Ql1u9" role="YeSDq">
-                  <property role="2bfB8j" value="true" />
-                  <ref role="1Y3XeK" to="o8zo:3rV3sBXetA0" resolve="FilteringScope" />
-                  <ref role="37wK5l" to="o8zo:3rV3sBXetA2" resolve="FilteringScope" />
-                  <node concept="3Tm1VV" id="5Vvmn_Ql1ua" role="1B3o_S" />
-                  <node concept="2YIFZM" id="5Vvmn_Ql1ub" role="37wK5m">
-                    <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-                    <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
-                    <node concept="2rP1CM" id="5Vvmn_Ql1uc" role="37wK5m" />
-                    <node concept="3dgs5T" id="5Vvmn_Ql1u_" role="37wK5m" />
-                    <node concept="$OBjv" id="5Vvmn_Ql1ue" role="37wK5m" />
-                    <node concept="35c_gC" id="4atz$vTM6jM" role="37wK5m">
-                      <ref role="35c_gD" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
-                    </node>
-                  </node>
-                  <node concept="3clFb_" id="5Vvmn_Ql1ug" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="isExcluded" />
-                    <node concept="10P_77" id="5Vvmn_Ql1uh" role="3clF45" />
-                    <node concept="3Tm1VV" id="5Vvmn_Ql1ui" role="1B3o_S" />
-                    <node concept="37vLTG" id="5Vvmn_Ql1uj" role="3clF46">
-                      <property role="TrG5h" value="node" />
-                      <node concept="3Tqbb2" id="5Vvmn_Ql1uk" role="1tU5fm" />
-                    </node>
-                    <node concept="3clFbS" id="5Vvmn_Ql1ul" role="3clF47">
-                      <node concept="3clFbF" id="5Vvmn_Ql1um" role="3cqZAp">
-                        <node concept="22lmx$" id="5Vvmn_Ql1un" role="3clFbG">
-                          <node concept="3fqX7Q" id="5Vvmn_Ql1uo" role="3uHU7w">
-                            <node concept="2OqwBi" id="5Vvmn_Ql1up" role="3fr31v">
-                              <node concept="2qgKlT" id="5Vvmn_Ql1uq" role="2OqNvi">
-                                <ref role="37wK5l" to="2txq:6ogfLD6evrW" resolve="hasTestsSources" />
-                              </node>
-                              <node concept="1PxgMI" id="5Vvmn_Ql1ur" role="2Oq$k0">
-                                <node concept="chp4Y" id="5Vvmn_Ql1us" role="3oSUPX">
-                                  <ref role="cht4Q" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
-                                </node>
-                                <node concept="37vLTw" id="5Vvmn_Ql1ut" role="1m5AlR">
-                                  <ref role="3cqZAo" node="5Vvmn_Ql1uj" resolve="node" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3fqX7Q" id="5Vvmn_Ql1uu" role="3uHU7B">
-                            <node concept="2OqwBi" id="5Vvmn_Ql1uv" role="3fr31v">
-                              <node concept="1mIQ4w" id="5Vvmn_Ql1uw" role="2OqNvi">
-                                <node concept="chp4Y" id="5Vvmn_Ql1ux" role="cj9EA">
-                                  <ref role="cht4Q" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
-                                </node>
-                              </node>
-                              <node concept="37vLTw" id="5Vvmn_Ql1uy" role="2Oq$k0">
-                                <ref role="3cqZAo" node="5Vvmn_Ql1uj" resolve="node" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="5Vvmn_Ql1uz" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
-                  </node>
-                </node>
+          <node concept="3clFbF" id="2tkRx60ARbs" role="3cqZAp">
+            <node concept="2YIFZM" id="5Vvmn_Ql1ub" role="3clFbG">
+              <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
+              <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+              <node concept="2rP1CM" id="5Vvmn_Ql1uc" role="37wK5m" />
+              <node concept="3dgs5T" id="5Vvmn_Ql1u_" role="37wK5m" />
+              <node concept="$OBjv" id="5Vvmn_Ql1ue" role="37wK5m" />
+              <node concept="35c_gC" id="4atz$vTM6jM" role="37wK5m">
+                <ref role="35c_gD" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
               </node>
             </node>
           </node>
