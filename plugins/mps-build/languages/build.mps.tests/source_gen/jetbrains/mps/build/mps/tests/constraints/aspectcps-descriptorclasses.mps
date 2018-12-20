@@ -2984,7 +2984,7 @@
                                           </node>
                                         </node>
                                         <node concept="35c_gC" id="gM" role="37wK5m">
-                                          <ref role="35c_gD" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+                                          <ref role="35c_gD" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
                                           <node concept="cd27G" id="h0" role="lGtFl">
                                             <node concept="3u3nmq" id="h1" role="cd27D">
                                               <property role="3u3nmv" value="4800149217631298802" />

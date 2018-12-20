@@ -201,7 +201,7 @@
               <node concept="3dgs5T" id="5Vvmn_Ql1u_" role="37wK5m" />
               <node concept="$OBjv" id="5Vvmn_Ql1ue" role="37wK5m" />
               <node concept="35c_gC" id="4atz$vTM6jM" role="37wK5m">
-                <ref role="35c_gD" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+                <ref role="35c_gD" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
               </node>
             </node>
           </node>
