@@ -47,6 +47,9 @@
         <exclude name="**/win/" />
       </fileset>
     </copy>
+    <copy todir="${build.layout}/bin">
+      <fileset file="${mps_home}/workbench/mps-icons/source/mps.svg" />
+    </copy>
     <mkdir dir="${build.layout}/languages" />
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.mpsStandalone}/languages" />
