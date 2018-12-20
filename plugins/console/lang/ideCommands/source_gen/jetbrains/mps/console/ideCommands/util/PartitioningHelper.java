@@ -11,6 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import java.util.Arrays;
 import java.util.List;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.util.Pair;
@@ -63,26 +64,41 @@ public class PartitioningHelper {
     int stepCount = 1;
     for (ModelGenerationPlan.Step step : plan.getSteps()) {
       console.addText(" [ " + stepCount++ + " ]\n");
-      if (step instanceof ModelGenerationPlan.Checkpoint) {
-        console.addText(" Checkpoint: " + ((ModelGenerationPlan.Checkpoint) step).getName());
-        console.addText("\n");
-      } else if (step instanceof ModelGenerationPlan.Transform) {
-        List<TemplateMappingConfiguration> mappingSet = ((ModelGenerationPlan.Transform) step).getTransformations();
-        List<Pair<String, TemplateMappingConfiguration>> strings = GenerationPartitioningUtil.toStrings(mappingSet);
-        for (Pair<String, TemplateMappingConfiguration> string : strings) {
-          SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator"));
-          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"), PersistenceFacade.getInstance().asString(string.o2.getModel().getModule().getModuleReference().getModuleId()));
-          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), string.o1);
-          console.addText(" ");
-          console.addNode(node);
-          console.addText("\n");
-        }
-      } else {
-        console.addText("Unknown step kind:" + step.getClass());
-      }
+      printStep(step, 0);
       console.addText("\n");
     }
     console.addText("---------------------------------------------------------------------------------\n");
+  }
+
+  private void printStep(ModelGenerationPlan.Step step, int indent) {
+    char[] indentText = new char[indent * 2];
+    Arrays.fill(indentText, ' ');
+    String indentString = new String(indentText);
+    if (step instanceof ModelGenerationPlan.Checkpoint) {
+
+      console.addText(String.format("%s Checkpoint: %s\n", indentString, ((ModelGenerationPlan.Checkpoint) step).getName()));
+    } else if (step instanceof ModelGenerationPlan.Transform) {
+      List<TemplateMappingConfiguration> mappingSet = ((ModelGenerationPlan.Transform) step).getTransformations();
+      List<Pair<String, TemplateMappingConfiguration>> strings = GenerationPartitioningUtil.toStrings(mappingSet);
+      for (Pair<String, TemplateMappingConfiguration> string : strings) {
+        SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator"));
+        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"), PersistenceFacade.getInstance().asString(string.o2.getModel().getModule().getModuleReference().getModuleId()));
+        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), string.o1);
+        console.addText(indentString);
+        console.addText(" ");
+        console.addNode(node);
+        console.addText("\n");
+      }
+    } else if (step instanceof ModelGenerationPlan.Fork) {
+      ModelGenerationPlan.Fork fork = (ModelGenerationPlan.Fork) step;
+      console.addText(String.format("%s Fork:\n", indentString));
+      for (ModelGenerationPlan.Step s : fork.getBranch()) {
+        printStep(s, indent + 1);
+        console.addText("\n");
+      }
+    } else {
+      console.addText(String.format("%s Unknown step kind: %s\n", indentString, step.getClass()));
+    }
   }
 
   public void printConnectedComponents(Iterable<SModel> models) {
