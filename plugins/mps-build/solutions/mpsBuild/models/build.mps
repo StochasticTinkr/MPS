@@ -51,6 +51,9 @@
         <child id="9126048691955220774" name="parameters" index="28jJR8" />
         <child id="9126048691955220762" name="path" index="28jJRO" />
       </concept>
+      <concept id="9126048691954557131" name="jetbrains.mps.build.structure.BuildLayout_Comment" flags="ng" index="28u9K_">
+        <property id="9126048691954700811" name="text" index="28hIV_" />
+      </concept>
       <concept id="2755237150521975431" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithString" flags="ng" index="aVJcg">
         <child id="2755237150521975437" name="value" index="aVJcq" />
       </concept>
@@ -19154,6 +19157,26 @@
           </node>
           <node concept="3LWZYq" id="5lvEvl1SOax" role="2HvfZ1">
             <property role="3LWZYl" value="**/win/" />
+          </node>
+        </node>
+        <node concept="28u9K_" id="4X_k8I5LKf3" role="39821P">
+          <property role="28hIV_" value="Product icon bin/mps.svg is required for ToolBox" />
+        </node>
+        <node concept="28jJK3" id="4X_k8I5LKdW" role="39821P">
+          <node concept="398BVA" id="4X_k8I5LKeb" role="28jJRO">
+            <ref role="398BVh" node="3IKDaVZoWUz" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="4X_k8I5LKeh" role="iGT6I">
+              <property role="2Ry0Am" value="workbench" />
+              <node concept="2Ry0Ak" id="4X_k8I5LKem" role="2Ry0An">
+                <property role="2Ry0Am" value="mps-icons" />
+                <node concept="2Ry0Ak" id="4X_k8I5LKet" role="2Ry0An">
+                  <property role="2Ry0Am" value="source" />
+                  <node concept="2Ry0Ak" id="4X_k8I5LKey" role="2Ry0An">
+                    <property role="2Ry0Am" value="mps.svg" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
