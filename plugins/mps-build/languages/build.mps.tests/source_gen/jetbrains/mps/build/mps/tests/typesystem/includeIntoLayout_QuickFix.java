@@ -17,10 +17,10 @@ public class includeIntoLayout_QuickFix extends QuickFix_Runtime {
     super(new SNodePointer("r:f8814f89-9801-40d6-822f-e0e0a3a2c53d(jetbrains.mps.build.mps.tests.typesystem)", "2834134232276458561"));
   }
   public String getDescription(SNode node) {
-    return "Add " + SPropertyOperations.getString(((SNode) includeIntoLayout_QuickFix.this.getField("solution")[0]), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " to the layout";
+    return "Add " + SPropertyOperations.getString(((SNode) includeIntoLayout_QuickFix.this.getField("module")[0]), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " to the layout";
   }
   public void execute(SNode node) {
-    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(((SNode) includeIntoLayout_QuickFix.this.getField("project")[0]), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).addElement(createBuildMpsLayout_ModuleJars_f5l1y2_a0a0a2(((SNode) includeIntoLayout_QuickFix.this.getField("solution")[0])));
+    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(((SNode) includeIntoLayout_QuickFix.this.getField("project")[0]), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).addElement(createBuildMpsLayout_ModuleJars_f5l1y2_a0a0a2(((SNode) includeIntoLayout_QuickFix.this.getField("module")[0])));
   }
   private static SNode createBuildMpsLayout_ModuleJars_f5l1y2_a0a0a2(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

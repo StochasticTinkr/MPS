@@ -7,30 +7,41 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.build.behavior.BuildString__BehaviorDescriptor;
+import jetbrains.mps.build.util.VisibleArtifacts;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_BuildMpsLayout_TestModules_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BuildMpsLayout_TestModules_NonTypesystemRule() {
   }
-  public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x6402cbb11c1307aeL, "haltonfailure")) != null)) {
-      String approxPresentation = BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x6402cbb11c1307aeL, "haltonfailure")), null);
-      if (approxPresentation.contains("${")) {
-        return;
-      } else if (approxPresentation.equals("true")) {
-        return;
-      } else if (approxPresentation.equals("false")) {
-        return;
-      } else {
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Inappropriate value for 'haltonfailure' property", "r:f8814f89-9801-40d6-822f-e0e0a3a2c53d(jetbrains.mps.build.mps.tests.typesystem)", "8674425381621591023", null, errorTarget);
+  public void applyRule(final SNode testModules, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    @NotNull SNode project = SNodeOperations.getNodeAncestor(testModules, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false);
+    VisibleArtifacts artifacts = new VisibleArtifacts(project);
+    artifacts.collect(true);
+    for (SNode testModuleContent : ListSequence.fromList(SLinkOperations.getChildren(testModules, MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x3f496e80bd8ef370L, "modules")))) {
+      for (SNode module : Sequence.fromIterable(BuildMpsLayout_TestModules_Content__BehaviorDescriptor.getModules_id3X9rC2XzJij.invoke(testModuleContent))) {
+        if ((artifacts.findArtifact(module) == null)) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(testModuleContent, "The module " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " is not contained in the layout of the build script", "r:f8814f89-9801-40d6-822f-e0e0a3a2c53d(jetbrains.mps.build.mps.tests.typesystem)", "2834134232275895007", null, errorTarget);
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.build.mps.tests.typesystem.includeIntoLayout_QuickFix", false);
+              intentionProvider.putArgument("project", project);
+              intentionProvider.putArgument("module", module);
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
+          }
         }
       }
     }
