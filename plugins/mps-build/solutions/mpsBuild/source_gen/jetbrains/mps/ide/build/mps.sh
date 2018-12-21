@@ -132,17 +132,20 @@ test ${BITS} -eq 0 && BITS="64" || BITS=""
 # ---------------------------------------------------------------------
 # Collect JVM options and properties.
 # ---------------------------------------------------------------------
-if [ -n "$IDEA_PROPERTIES" ]; then
-  IDE_PROPERTIES_PROPERTY="-Didea.properties.file=$IDEA_PROPERTIES"
+if [ -n "$MPS_PROPERTIES" ]; then
+  IDE_PROPERTIES_PROPERTY="-Didea.properties.file=$MPS_PROPERTIES"
 fi
 
 VM_OPTIONS_FILE=""
 if [ -n "$IDEA_VM_OPTIONS" -a -r "$IDEA_VM_OPTIONS" ]; then
   # explicit
   VM_OPTIONS_FILE="$IDEA_VM_OPTIONS"
-elif [ -r "$HOME/.MPS2018.3/mps$BITS.vmoptions" ]; then
+elif [ -r "$IDE_HOME.vmoptions" ]; then
+  # Toolbox
+  VM_OPTIONS_FILE="$IDE_HOME.vmoptions"
+elif [ -r "$HOME/.MPS2018.3/config/mps$BITS.vmoptions" ]; then
   # user-overridden
-  VM_OPTIONS_FILE="$HOME/.MPS2018.3/mps$BITS.vmoptions"
+  VM_OPTIONS_FILE="$HOME/.MPS2018.3/config/mps$BITS.vmoptions"
 elif [ -r "$IDE_BIN_HOME/mps$BITS.vmoptions" ]; then
   # default, standard installation
   VM_OPTIONS_FILE="$IDE_BIN_HOME/mps$BITS.vmoptions"
