@@ -10,12 +10,12 @@ import jetbrains.mps.openapi.intentions.Kind;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
 public final class SetCopyOutcome_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
@@ -29,7 +29,13 @@ public final class SetCopyOutcome_Intention extends AbstractIntentionDescriptor 
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(isApplicableToNode(node, editorContext))) {
+      return false;
+    }
     return true;
+  }
+  private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return !(SNodeOperations.isAttribute(node));
   }
   @Override
   public boolean isSurroundWith() {
