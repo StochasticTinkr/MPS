@@ -24,10 +24,21 @@ import java.util.List;
  * Sequence of plan steps to transform an input model and to produce an output model
  */
 /*package*/ final class PlanBranchInfo {
-      SModel inputModel;
-      List<GeneratorMappings> actualStateCopyOfLastBitTransformStepMappings;
-      ModelTransitions transitionTrace;
-      int majorStepAtFork;
-      int minorStepAtFork;
-      List<Step> branch;
+  SModel inputModel;
+  List<GeneratorMappings> actualStateCopyOfLastBitTransformStepMappings;
+  ModelTransitions transitionTrace;
+  int majorStepAtFork;
+  int minorStepAtFork;
+  List<Step> branch;
+
+  // just an identifier of a branch for later reference (e.g. distinguish models of different branches in UI)
+  final int serial;
+
+  PlanBranchInfo() {
+    serial = 0;
+  }
+
+  PlanBranchInfo(int ix) {
+    serial = ix;
+  }
 }
