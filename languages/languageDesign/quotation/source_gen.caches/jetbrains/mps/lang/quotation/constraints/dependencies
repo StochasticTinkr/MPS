@@ -25,7 +25,6 @@
     <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.NodeBuilderList_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.NodeBuilderNode_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.NodeBuilderRef_Constraints" />
-    <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.NodeBuilder_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.Quotation_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
@@ -185,22 +184,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.constraints.NodeBuilder_Constraints">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintFunction" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.constraints.Quotation_Constraints">
