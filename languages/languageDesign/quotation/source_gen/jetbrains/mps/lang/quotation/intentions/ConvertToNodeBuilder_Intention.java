@@ -47,7 +47,10 @@ public final class ConvertToNodeBuilder_Intention extends AbstractIntentionDescr
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeOperations.replaceWithAnother(node, new QuotationConverter(node).convert());
+      QuotationConverter replacement = new QuotationConverter(node);
+      if (replacement != null) {
+        SNodeOperations.replaceWithAnother(node, replacement.convert());
+      }
     }
     @Override
     public IntentionDescriptor getDescriptor() {
