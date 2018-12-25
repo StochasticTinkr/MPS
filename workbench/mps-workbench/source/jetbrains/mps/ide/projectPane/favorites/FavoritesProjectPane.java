@@ -96,6 +96,16 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       return myScrollPane;
     }
     myTree = new MyLogicalViewTree(ProjectHelper.toMPSProject(getProject()));
+    addListeners();
+    rebuild();
+
+    myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
+    return myScrollPane;
+  }
+
+  @Override
+  protected void addListeners() {
+    super.addListeners();
     myFavoritesListener = new MPSFavoritesListener() {
       @Override
       public void rootsChanged(String listName) {
@@ -128,10 +138,12 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       }
     };
     myFavoritesManager.addListener(myFavoritesListener);
-    rebuild();
+  }
 
-    myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
-    return myScrollPane;
+  @Override
+  protected void removeListeners() {
+    myFavoritesManager.removeListener(myFavoritesListener);
+    super.removeListeners();
   }
 
   @Override
