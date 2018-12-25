@@ -84,7 +84,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
         if (dataSourceFactory == null) {
           return null;
         }
-        DataSource dataSource = dataSourceFactory.create(url, null);
+        DataSource dataSource = dataSourceFactory.create(url);
         DataSourceType type = dataSource.getType();
         if (type == null) {
           return null;

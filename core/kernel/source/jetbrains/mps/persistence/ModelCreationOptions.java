@@ -18,15 +18,12 @@ package jetbrains.mps.persistence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.annotations.Mutable;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ContentOption;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -54,19 +51,9 @@ public final class ModelCreationOptions {
   private final boolean myContentOnly;
   private final String myModelName;
 
-  /**
-   * @deprecated not in use anymore
-   */
-  @Deprecated private final String myJavaPackage;
-  @Deprecated private final SModuleReference myModuleReference;
-  @Deprecated private final String myRelativePath;
-
   private ModelCreationOptions(@NotNull Builder builder) {
     myContentOnly = builder.myContentOnly;
     myModelName = builder.myModelName;
-    myJavaPackage = builder.myJavaPackage;
-    myRelativePath = builder.myRelativePath;
-    myModuleReference = builder.myModuleReference;
   }
 
   public boolean isContentOnly() {
@@ -75,24 +62,6 @@ public final class ModelCreationOptions {
 
   public String getModelName() {
     return myModelName;
-  }
-
-  @Deprecated
-  public String getJavaPackage() {
-    return myJavaPackage;
-  }
-
-  @Deprecated
-  public SModuleReference getModuleReference() {
-    return myModuleReference;
-  }
-
-  /**
-   * @return the path from the source root to the model file
-   */
-  @Deprecated
-  public String getRelativePath() {
-    return myRelativePath;
   }
 
   @NotNull
@@ -122,30 +91,14 @@ public final class ModelCreationOptions {
    */
   @Mutable
   public static final class Builder {
-    private String myJavaPackage;
-    private boolean myContentOnly;
     private String myModelName;
-    private SModuleReference myModuleReference;
-    private String myRelativePath;
+    private boolean myContentOnly;
 
     private Builder() {}
 
     private Builder(@NotNull ModelCreationOptions parameters) {
-      myJavaPackage = parameters.getJavaPackage();
-      myContentOnly = parameters.isContentOnly();
       myModelName = parameters.getModelName();
-      myModuleReference = parameters.getModuleReference();
-      myRelativePath = parameters.getRelativePath();
-    }
-
-    public Builder setPackage(String javaPackage) {
-      myJavaPackage = javaPackage;
-      return this;
-    }
-
-    public Builder setRelativePath(String relPath) {
-      myRelativePath = relPath;
-      return this;
+      myContentOnly = parameters.isContentOnly();
     }
 
     public Builder setModelName(String modelName) {
@@ -155,11 +108,6 @@ public final class ModelCreationOptions {
 
     public Builder setContentOnly(boolean contentOnly) {
       myContentOnly = contentOnly;
-      return this;
-    }
-
-    public Builder setModuleReference(SModuleReference moduleRef) {
-      myModuleReference = moduleRef;
       return this;
     }
 

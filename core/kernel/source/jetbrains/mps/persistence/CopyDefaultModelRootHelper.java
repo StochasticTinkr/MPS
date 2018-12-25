@@ -90,7 +90,7 @@ final class CopyDefaultModelRootHelper extends CopyFileBasedModelRootHelper<Defa
                                  @NotNull SModelBase modelDataToCopy) throws IOException,
                                                                              URLNotSupportedException,
                                                                              ModelCannotBeCreatedException {
-    DataSource targetDataSource = FILE_OR_FOLDER.create(targetModelFile.getUrl(), myTargetModelRoot);
+    DataSource targetDataSource = FILE_OR_FOLDER.create(targetModelFile.getUrl());
     ParametersCalculator prmCalculator = new ParametersCalculator(myTargetModelRoot);
     SModelName newModelName = new SModelName(convertNameConsideringModule(modelDataToCopy.getName().getValue()));
     ModelCreationOptions options = prmCalculator.calculate(newModelName);

@@ -125,23 +125,6 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     return getModelFactory(defaultExt);
   }
 
-  @Deprecated
-  @Override
-  public void setModelFactory(String extension, ModelFactory factory) {
-    if (factory == null) {
-      FileExtensionDataSourceType type = FileExtensionDataSourceType.of(extension);
-      myModelFactoryService.getModelFactories(type).forEach(myModelFactoryService::unregister);
-    } else {
-      myLegacyFileExt2ModelFactoryMap.put(extension, factory);
-      if (!Objects.equals(factory.getFileExtension(), extension)) {
-        LOG.error("The model factory '" + factory + "' is trying to register using the legacy mechanism via PersistenceFacade.\n" +
-                  "The declared file extension '" + factory.getFileExtension() + "' is not equal to the passed '" + extension + "'\n" +
-                  "Please fix this.", new Throwable());
-        return;
-      }
-      myModelFactoryService.register(factory);
-    }
-  }
 
   @Deprecated
   @Override

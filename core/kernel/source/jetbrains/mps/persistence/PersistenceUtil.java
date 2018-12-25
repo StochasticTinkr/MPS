@@ -31,13 +31,16 @@ import org.jdom.input.SAXBuilder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.ContentOption;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -70,9 +73,14 @@ public final class PersistenceUtil {
   @Nullable
   public static SModel loadModel(@NotNull String content) {
     @SuppressWarnings("ConstantConditions")
-    @NotNull ModelFactory factory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PLAIN_XML);
+    @NotNull ModelFactory factory = getModelFactoryService().getFactoryByType(PreinstalledModelFactoryTypes.PLAIN_XML);
     byte[] bytes = content.getBytes(FileUtil.DEFAULT_CHARSET);
     return loadModel(bytes, factory);
+  }
+
+  @NotNull
+  private static ModelFactoryService getModelFactoryService() {
+    return ModelFactoryService.getInstance();
   }
 
   /**
@@ -85,10 +93,10 @@ public final class PersistenceUtil {
   @Nullable
   public static SModel loadModel(final byte[] content, @NotNull ModelFactory factory) {
     try {
-      SModel model = factory.load(new ByteArrayInputSource(content), singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
+      SModel model = factory.load(new ByteArrayInputSource(content), ContentOption.CONTENT_ONLY);
       model.load();
       return model;
-    } catch (IOException ex) {
+    } catch (ModelLoadException | IOException ex) {
       return null;
     }
   }
@@ -96,7 +104,7 @@ public final class PersistenceUtil {
   @Nullable
   public static SModel loadBinaryModel(final byte[] content) {
     //noinspection ConstantConditions
-    return loadModel(content, ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.BINARY));
+    return loadModel(content, getModelFactoryService().getFactoryByType(PreinstalledModelFactoryTypes.BINARY));
   }
 
   public static SModel loadModel(@NotNull IFile file) {
@@ -106,19 +114,18 @@ public final class PersistenceUtil {
       if (dataSourceFactory == null) {
         return null;
       }
-      DataSource dataSource = dataSourceFactory.create(url, null);
+      DataSource dataSource = dataSourceFactory.create(url);
       if (dataSource.getType() == null) {
         return null;
       }
-      ModelFactory factory = ModelFactoryService.getInstance().getDefaultModelFactory(dataSource.getType());
+      ModelFactory factory = getModelFactoryService().getDefaultModelFactory(dataSource.getType());
       if (factory == null) {
         return null;
       }
-      final Map<String, String> options = singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString());
-      SModel model = factory.load(dataSource, options);
+      SModel model = factory.load(dataSource, ContentOption.CONTENT_ONLY);
       model.load();
       return model;
-    } catch (IOException | URLNotSupportedException e) {
+    } catch (ModelLoadException | IOException | URLNotSupportedException e) {
       LOG.error("", e);
       return null;
     }
@@ -136,8 +143,8 @@ public final class PersistenceUtil {
   }
 
   public static String saveModel(final SModel model, String extension) {
-    ModelFactory factory = PersistenceRegistry.getInstance().getModelFactory(extension);
-    if (factory == null || factory.isBinary()) {
+    ModelFactory factory = getModelFactoryService().getDefaultModelFactory(FileExtensionDataSourceType.of(extension));
+    if (factory == null) {
       return null;
     }
     try {
@@ -167,7 +174,7 @@ public final class PersistenceUtil {
   }
 
   public static byte[] saveBinaryModel(final SModel model) {
-    ModelFactory factory = PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY);
+    ModelFactory factory = getModelFactoryService().getFactoryByType(PreinstalledModelFactoryTypes.BINARY);
     try {
       InMemoryStreamDataSource source = new InMemoryStreamDataSource();
       factory.save(model, source);
@@ -183,7 +190,7 @@ public final class PersistenceUtil {
    * @return empty stream in case serialization failed. Caller is responsible to close the stream.
    */
   public static InputStream modelContentAsStream(final SModel model, String extension) {
-    ModelFactory factory = PersistenceRegistry.getInstance().getModelFactory(extension);
+    ModelFactory factory = getModelFactoryService().getDefaultModelFactory(FileExtensionDataSourceType.of(extension));
     if (factory != null) {
       try {
         InMemoryStreamDataSource source = new InMemoryStreamDataSource();
@@ -198,8 +205,8 @@ public final class PersistenceUtil {
   }
 
   public static String savePerRootModel(final SModel model, String name) {
-    ModelFactory factory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
-    if (factory == null || factory.isBinary()) {
+    ModelFactory factory = getModelFactoryService().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
+    if (factory == null) {
       return null;
     }
     try {
@@ -213,8 +220,8 @@ public final class PersistenceUtil {
   }
 
   public static String savePerRootModel(final SModel model, boolean isHeader) {
-    ModelFactory factory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
-    if (factory == null || factory.isBinary()) {
+    ModelFactory factory = getModelFactoryService().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
+    if (factory == null) {
       return null;
     }
     try {

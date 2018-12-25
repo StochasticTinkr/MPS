@@ -45,86 +45,6 @@ import java.util.Map;
  * @author apyshkin
  */
 public interface ModelFactory {
-  // --- default options ---
-  /**
-   * @deprecated not used currently
-   */
-  @ToRemove(version = 2017.2)
-  @Deprecated
-  String OPTION_MODULEREF = "moduleReference";
-
-  /**
-   * @deprecated not used currently
-   */
-  @ToRemove(version = 2017.2)
-  @Deprecated
-  String OPTION_PACKAGE = "package";
-
-  /**
-   * @deprecated not in use anymore
-   */
-  @ToRemove(version = 2017.2)
-  @Deprecated
-  String OPTION_RELPATH = "relativePath";
-
-  /**
-   * Denotes a model name, used as a key in the <code>Map<String, String></code> parameter
-   * in the {@link #create(DataSource, Map)} methods.
-   *
-   * @deprecated this option is unnecessary. Use {@link #create(DataSource, SModelName, ModelLoadingOption...)} instead.
-   */
-  @ToRemove(version = 2017.3)
-  @Deprecated
-  String OPTION_MODELNAME = "modelName";
-
-  /**
-   * Boolean value, indicates we don't care to build complete model on load, rather read content as-is,
-   * and tread loaded model as mere container for nodes, <code>SModelData</code>-like.
-   * We use this mechanism from merge driver and various tools that are going to access nodes from
-   * the model but are not going to expose this model anywhere else.
-   *
-   * @deprecated String option is not informatory. Use a {@link ContentOption} instead
-   */
-  @ToRemove(version = 2017.3)
-  @Deprecated
-  String OPTION_CONTENT_ONLY = "contentOnly";
-
-  // --- API ---
-
-  /**
-   * Instantiates a model on a given data source. Options can be used to pass additional parameters
-   * like stream encoding (usually, the default is utf-8), package name, containing module reference
-   * or module relative path of the source.
-   *
-   * @return The loaded model
-   * @throws UnsupportedDataSourceException if the data source is not supported
-   * @deprecated <code>Map<String,String></code> is hardly perceivable. Please use
-   *             rather {@link #load(DataSource, ModelLoadingOption...)} instead
-   */
-  @ToRemove(version = 2017.3)
-  @Deprecated
-  @NotNull
-  SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
-
-  /**
-   * Creates a new empty model.
-   * Implementor must throw <code>UnsupportedDataSourceException</code> if
-   * #canCreate returns false.
-   *
-   * @param dataSource if null then the default data source is created for the supplied model name
-   * @param options must content {@link #OPTION_MODELNAME} mapping.
-   *
-   * @throws UnsupportedDataSourceException if the data source is not supported, in other words 
-   *                                        {@link #canCreate(DataSource, Map)} returns false
-   * @throws IOException if the model cannot be created for some other reasons
-   *
-   * @deprecated use more flexible {@link #create(DataSource, SModelName, ModelLoadingOption...)} instead
-   */
-  @ToRemove(version = 2017.3)
-  @Deprecated
-  @NotNull
-  SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
-
   /**
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
    *
@@ -143,7 +63,12 @@ public interface ModelFactory {
    */
   @ToRemove(version = 2017.3)
   @Deprecated
-  boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options);
+  default boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
+    if (!supports(dataSource)) {
+      return false;
+    }
+    return true;
+  }
 
   /**
    * Determines whether the provided data source is maintained by this model factory instance.
@@ -174,12 +99,7 @@ public interface ModelFactory {
                         @NotNull SModelName modelName,
                         @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException,
                                                                        ModelCreationException {
-    try {
-      Map<String, String> options0 = Collections.singletonMap(OPTION_MODELNAME, modelName.getValue());
-      return create(dataSource, options0);
-    } catch (IOException e) {
-      throw new ModelCreationException("Default #create implementation failed. Please implement.", Collections.emptyList(), e);
-    }
+    throw new ModelCreationException("Default #create implementation failed. Please implement.", Collections.emptyList());
   }
 
   /**
@@ -197,26 +117,8 @@ public interface ModelFactory {
    */
   @NotNull
   default SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelLoadException {
-    try {
-      return load(dataSource, Collections.emptyMap());
-    } catch (IOException e) {
-      throw new ModelLoadException("Default #load implementation failed. Please implement.", Collections.emptyList(), e);
-    }
+    throw new ModelLoadException("Default #load implementation failed. Please implement.", Collections.emptyList());
   }
-
-  /**
-   * Checks if the source content is outdated and needs to be upgraded.
-   *
-   * @throws UnsupportedDataSourceException if the data source is not supported
-   */
-  boolean needsUpgrade(@NotNull DataSource dataSource) throws IOException;
-
-  /**
-   * Loads the model content, and saves it back in the up-to-date format.
-   *
-   * @throws UnsupportedDataSourceException if the data source is not supported
-   */
-  void upgrade(@NotNull DataSource dataSource) throws IOException;
 
   /**
    * Saves the model in the factory-specific format (including conversion when needed).
@@ -225,41 +127,20 @@ public interface ModelFactory {
   void save(@NotNull SModel model, @NotNull DataSource dataSource) throws ModelSaveException, IOException;
 
   /**
-   * returns true if plain text is not enough to represent stored data.
+   * Checks if the source content is outdated and needs to be upgraded.
    *
-   * // @deprecated The contract is not clear ("not enough" means what exactly?).
-   *                We would rather turn this into some marker interface than have it here
+   * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  /*@ToRemove(version = 2017.3)*/
-  /*@Deprecated*/
-  boolean isBinary();
+  default boolean needsUpgrade(@NotNull DataSource dataSource) throws IOException {
+    return false;
+  }
 
   /**
-   * @return the file extension this factory is registered on
-   *         null if for instance model factory is associated rather with a group of files than one file.
+   * Loads the model content, and saves it back in the up-to-date format.
    *
-   * @deprecated Outrageous breaking of the separation location from the loading strategy principle, which is
-   *             planted in the create, load, etc. methods.
-   *             The location notion is hidden in {@link DataSource} and there is absolutely no need to expose it.
-   *             In order to work out the currently running scenarios we set up special DataSourceFactory <-> ModelFactory
-   *             relations which are exposed through the <code>DataSourceFactoryRuleService</code>, <code>ModelFactoryService</code> and
-   *             {@link #getPreferredDataSourceTypes}.
+   * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  @ToRemove(version = 2017.3)
-  @Deprecated
-  @Nullable String getFileExtension();
-
-  /**
-   * User-readable title of the storage format.
-   *
-   * @deprecated use {@link #getType()} and {@link ModelFactoryType#getFormatTitle()} instead
-   */
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 2017.3)
-  /*default*/ String getFormatTitle(); /*{
-    return getType().getFormatTitle();
-  }*/
+  void upgrade(@NotNull DataSource dataSource) throws IOException;
 
   /**
    * Returns an id which is used to get model factory by id in the
@@ -289,8 +170,5 @@ public interface ModelFactory {
    * @implNote THE DEFAULT IMPLEMENTATION IS A FALLBACK STUB, PLEASE IMPLEMENT
    */
   @NotNull
-  default List<DataSourceType> getPreferredDataSourceTypes() {
-    String fileExtension = getFileExtension();
-    return Collections.singletonList(FileExtensionDataSourceType.of(fileExtension));
-  }
+  List<DataSourceType> getPreferredDataSourceTypes();
 }

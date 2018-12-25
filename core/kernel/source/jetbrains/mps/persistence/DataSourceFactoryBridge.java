@@ -147,7 +147,7 @@ public final class DataSourceFactoryBridge {
         throw new RuntimeException(new DataSourceFactoryNotFoundException("Could not find factory using the url " + url));
       }
       if (factory.supports(url)) {
-        dataSource = factory.create(url, myModelRoot);
+        dataSource = factory.create(url);
       }
     } catch (URLNotSupportedException | MalformedURLException e) {
       LOG.error("Could not get URL from IFile : '" + file + "'", e);

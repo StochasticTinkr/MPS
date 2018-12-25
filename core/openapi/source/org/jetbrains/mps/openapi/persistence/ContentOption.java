@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.model.SModelName;
  * the model but are not going to expose this model anywhere else.
  * [AT]
  *
- * @see ModelFactory#OPTION_CONTENT_ONLY
  * @see ModelFactory#create(DataSource, SModelName, ModelLoadingOption...)
  * @see ModelFactory#load(DataSource, ModelLoadingOption...)
  * @author apyshkin

@@ -41,10 +41,7 @@ public enum PreinstalledURLDataSourceFactories implements DataSourceFactoryFromU
 
   @NotNull
   @Override
-  public DataSource create(@NotNull URL url,
-
-                           @ToRemove(version = 0)
-                           @Nullable ModelRoot modelRoot) throws URLNotSupportedException {
+  public DataSource create(@NotNull URL url) throws URLNotSupportedException {
     if (!supports(url)) {
       throw new URLNotSupportedException(this, url);
     }

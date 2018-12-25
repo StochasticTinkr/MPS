@@ -24,6 +24,7 @@ import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.plan.ModelScanner;
 import jetbrains.mps.persistence.PersistenceVersionAware;
+import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
@@ -69,6 +70,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+
+import static jetbrains.mps.persistence.PreinstalledModelFactoryTypes.*;
 
 public class ValidationUtil {
 
@@ -117,8 +120,7 @@ public class ValidationUtil {
     if (!model.isReadOnly() && model instanceof PersistenceVersionAware) {
       PersistenceVersionAware pvaModel = (PersistenceVersionAware) model;
       ModelFactory pvaModelFactory = pvaModel.getModelFactory();
-      ModelFactory xmlModelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
-      if (pvaModelFactory != null && (xmlModelFactory == pvaModelFactory || xmlModelFactory.getFileExtension().equals(pvaModelFactory.getFileExtension()))) {
+      if (pvaModelFactory != null && (pvaModelFactory.getType() == PLAIN_XML || pvaModelFactory.getType() == PER_ROOT_XML)) {
         // ModelPersistence.LAST_VERSION doesn't make sense for anything but default xml persistence
         int persistenceVersion = pvaModel.getPersistenceVersion();
         if (persistenceVersion < ModelPersistence.LAST_VERSION) {

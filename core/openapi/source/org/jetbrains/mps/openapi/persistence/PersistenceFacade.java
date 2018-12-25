@@ -84,19 +84,6 @@ public abstract class PersistenceFacade {
   public abstract ModelFactory getDefaultModelFactory();
 
   /**
-   * Registers the factory with the file extension, overwriting the potential earlier registration.
-   *
-   * @param factory The factory to register, null to clear the registration for the given type.
-   * @deprecated ModelFactory notion is isolated from the location by {@link DataSource}.
-   *             Use {@code ModelFactoryRegistry#register} instead.
-   *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
-   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService</code>
-   */
-  @ToRemove(version = 181)
-  @Deprecated
-  public abstract void setModelFactory(@Nullable String extension, ModelFactory factory);
-
-  /**
    * Retrieves registered storage formats extensions.
    * @deprecated the model factories are separated from the type of location
    *             (while file extension as a key clearly violates this idea).

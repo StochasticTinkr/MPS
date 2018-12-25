@@ -44,7 +44,6 @@ final class ParametersCalculator {
   @NotNull
   public ModelCreationOptions calculate() {
     return ModelCreationOptions.startBuilding()
-                               .setModuleReference(myModelRoot.getModule().getModuleReference())
                                .finishBuilding();
   }
 
@@ -52,7 +51,6 @@ final class ParametersCalculator {
   public ModelCreationOptions calculate(@NotNull SModelName modelName) {
     return ModelCreationOptions.startBuilding()
                                .setModelName(modelName.getValue())
-                               .setModuleReference(myModelRoot.getModule().getModuleReference())
                                .finishBuilding();
   }
 }
