@@ -82,8 +82,7 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
   @Override
   public SModel create(@NotNull DataSource dataSource,
                        @NotNull SModelName modelName,
-                       @NotNull ModelLoadingOption... options) throws
-                                                               UnsupportedDataSourceException {
+                       @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException {
     if (!supports(dataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }

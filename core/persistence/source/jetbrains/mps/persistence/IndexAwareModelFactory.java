@@ -28,7 +28,7 @@ import java.io.InputStream;
 /**
  * PROVISIONAL API
  *
- * Extension to model factory to distinguish model persistence that cares about (usually platform) indexing support and knows ho to extract
+ * Extension to model factory to distinguish model persistence that cares about (usually platform) indexing support and knows how to extract
  * appropriate pieces from actual model persistence state.
  *
  * @author Artem Tikhomirov

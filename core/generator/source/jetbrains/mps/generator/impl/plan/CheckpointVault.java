@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.ModelStreamManager;
 import jetbrains.mps.generator.impl.SingleStreamSource;
