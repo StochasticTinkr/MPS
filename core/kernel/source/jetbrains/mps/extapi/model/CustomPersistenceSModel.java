@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -28,6 +29,7 @@ import org.jetbrains.mps.openapi.model.SModel.Problem.Kind;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
@@ -37,8 +39,14 @@ import java.util.Collections;
 import java.util.Iterator;
 
 /**
+ * A basic implementation of the EditableSmodelBase suitable for most of the custom persistence scenarios
+ * Supposed to be constructed in the implementing class of ModelFactory (corr. to the new persistence)
  *
+ * @deprecated better use {@link CustomPersistenceSModelBase}
+ * @see XmlPersistence for example
  */
+@ToRemove(version = 191)
+@Deprecated
 public final class CustomPersistenceSModel extends EditableSModelBase implements SingleRootSModel {
   @NotNull
   private final SModelPersistence myPersistence;
@@ -105,8 +113,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
       if (brokenFile != null) {
         long l = ((FileDataSource) getSource()).getFile().lastModified();
         if (l > 0 && brokenFile.lastModified() > l) {
-          SModelBase brokenModel = (SModelBase) PersistenceFacade.getInstance().getDefaultModelFactory().load(
-              new FileDataSource(brokenFile, null), Collections.emptyMap());
+          SModelBase brokenModel = (SModelBase) PersistenceFacade.getInstance().getDefaultModelFactory().load(new FileDataSource(brokenFile));
           brokenModel.load();
           // force save
           setChanged(true);
@@ -114,7 +121,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
         }
       }
       return (SModel) myPersistence.readModel(getReference(), getSource());
-    } catch (IOException e) {
+    } catch (IOException | ModelLoadException e) {
       return new StubModel(getReference(), e);
     }
   }
@@ -146,13 +153,13 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
 
   @Override
   protected boolean saveModel() throws ModelSaveException, IOException {
-    SModelData smodel = getModelData();
-    if (smodel instanceof InvalidSModel) {
+    SModelData modelData = getModelData();
+    if (modelData instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
     }
     try {
-      myPersistence.writeModel(smodel, getSource());
+      myPersistence.writeModel(modelData, getSource());
       IFile brokenFile = getBackupFile(true);
       if (brokenFile != null) {
         brokenFile.delete();
@@ -161,7 +168,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     } catch (ModelSaveException e) {
       IFile brokenFile = getBackupFile(false);
       try {
-        PersistenceFacade.getInstance().getDefaultModelFactory().save(this, new FileDataSource(brokenFile, null));
+        PersistenceFacade.getInstance().getDefaultModelFactory().save(this, new FileDataSource(brokenFile));
       } catch (ModelSaveException | IOException ignore) {
       }
       myProblems = e.getProblems();
@@ -183,9 +190,9 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   }
 
   public static class StubModel extends jetbrains.mps.smodel.SModel implements InvalidSModel {
-    private IOException myCause;
+    private Exception myCause;
 
-    public StubModel(@NotNull SModelReference modelReference, @Nullable IOException cause) {
+    public StubModel(@NotNull SModelReference modelReference, @Nullable Exception cause) {
       super(modelReference);
       myCause = cause;
     }
