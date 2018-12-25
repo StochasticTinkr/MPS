@@ -22,6 +22,7 @@ import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.util.xmlb.annotations.Attribute;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -48,10 +49,10 @@ public final class ModelFactoryRegister implements ApplicationComponent {
 
   private final List<ModelFactory> myRegisteredFactories = new ArrayList<>();
 
-  private final PersistenceFacade myPersistenceRegistry;
+  private final ModelFactoryService myModelFactoryRegistry;
 
   public ModelFactoryRegister(MPSCoreComponents mpsCoreComponents) {
-    myPersistenceRegistry = mpsCoreComponents.getPersistenceFacade();
+    myModelFactoryRegistry = mpsCoreComponents.getPlatform().findComponent(ModelFactoryService.class);
   }
 
   @Override
@@ -61,7 +62,7 @@ public final class ModelFactoryRegister implements ApplicationComponent {
         ModelFactory modelFactory = provider.instantiate(provider.getImplementationClass(), ApplicationManager.getApplication().getPicoContainer());
         myRegisteredFactories.add(modelFactory);
         check(modelFactory);
-        registerLEGACY(modelFactory);
+        register(modelFactory);
       } catch (ClassNotFoundException e) {
         String m = String.format("Failed to load %s in the plugin %s",
                                  provider.getImplementationClass(),
@@ -79,7 +80,7 @@ public final class ModelFactoryRegister implements ApplicationComponent {
   private void check(@NotNull ModelFactory modelFactory) {
     if (isLegacy(modelFactory)) {
       String message = "The model factory '" + modelFactory + "' seems to be restrained to the legacy API.\n" +
-                       "Please reimplement new methods properly since the legacy API will be dropped in the 2018.1 version.";
+                       "Please reimplement new methods properly since the legacy API is already dropped.";
       if (ApplicationManager.getApplication().isHeadlessEnvironment()) {
         LOG.error(message, new Throwable());
       } else {
@@ -88,22 +89,20 @@ public final class ModelFactoryRegister implements ApplicationComponent {
     }
   }
 
-  @ToRemove(version = 3.7)
-  @Deprecated
-  private void registerLEGACY(ModelFactory modelFactory) {
-    myPersistenceRegistry.setModelFactory(modelFactory.getFileExtension(), modelFactory);
+  private void register(ModelFactory modelFactory) {
+    myModelFactoryRegistry.register(modelFactory);
   }
 
   @Override
   public void disposeComponent() {
     for (ModelFactory modelFactory : myRegisteredFactories) {
-      unregisterLEGACY(modelFactory);
+      unregister(modelFactory);
     }
     myRegisteredFactories.clear();
   }
 
-  private void unregisterLEGACY(ModelFactory modelFactory) {
-    myPersistenceRegistry.setModelFactory(modelFactory.getFileExtension(), null);
+  private void unregister(ModelFactory modelFactory) {
+    myModelFactoryRegistry.unregister(modelFactory);
   }
 
   @NotNull
