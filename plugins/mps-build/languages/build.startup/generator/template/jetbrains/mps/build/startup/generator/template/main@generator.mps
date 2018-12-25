@@ -1569,7 +1569,7 @@
       <property role="2DPR8u" value="SET IDE_BIN_DIR=%~dp0" />
     </node>
     <node concept="2DRAP_" id="4eWOtElZKrh" role="2DRAPQ">
-      <property role="2DPR8u" value="SET IDE_HOME=%IDE_BIN_DIR%\.." />
+      <property role="2DPR8u" value="FOR /F &quot;delims=&quot; %%i in (&quot;%IDE_BIN_DIR%\..&quot;) DO SET IDE_HOME=%%~fi" />
     </node>
     <node concept="2DRAP_" id="61awNsXLWq4" role="2DRAPQ" />
     <node concept="2DRAP_" id="61awNsXLYMH" role="2DRAPQ">

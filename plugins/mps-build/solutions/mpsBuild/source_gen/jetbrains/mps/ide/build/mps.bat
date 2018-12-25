@@ -9,7 +9,7 @@
 :: Ensure IDE_HOME points to the directory where the IDE is installed.
 :: ---------------------------------------------------------------------
 SET IDE_BIN_DIR=%~dp0
-SET IDE_HOME=%IDE_BIN_DIR%\..
+FOR /F "delims=" %%i in ("%IDE_BIN_DIR%\..") DO SET IDE_HOME=%%~fi
 
 IF "%IDE_BIN_DIR:~-8%" == "bin\win\" (
   echo.
