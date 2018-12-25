@@ -115,9 +115,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
-        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
-      </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -318,7 +316,7 @@
                 <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
               </node>
               <node concept="liA8E" id="6NgXkpAWLJS" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                 <node concept="37vLTw" id="6NgXkpAWLJT" role="37wK5m">
                   <ref role="3cqZAo" node="6NgXkpAWLJG" resolve="sourceFile" />
                 </node>
@@ -469,7 +467,7 @@
                       <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                       <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                       <node concept="Xl_RD" id="QTAzJ3ME7I" role="37wK5m">
-                        <property role="Xl_RC" value="Failed to write model in binary format to file %s" />
+                        <property role="Xl_RC" value="Failed to write model in binary format to the file %s" />
                       </node>
                       <node concept="37vLTw" id="QTAzJ3ML36" role="37wK5m">
                         <ref role="3cqZAo" node="6NgXkpAWLJI" resolve="destFile" />
@@ -489,76 +487,37 @@
               </node>
             </node>
           </node>
+          <node concept="TDmWw" id="4i_jb5gTH9S" role="TEbGg">
+            <node concept="3cpWsn" id="4i_jb5gTH9T" role="TDEfY">
+              <property role="TrG5h" value="e" />
+              <node concept="3uibUv" id="4i_jb5gTIv0" role="1tU5fm">
+                <ref role="3uigEE" to="dush:~ModelLoadException" resolve="ModelLoadException" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="4i_jb5gTH9V" role="TDEfX">
+              <node concept="YS8fn" id="4i_jb5gTIOE" role="3cqZAp">
+                <node concept="2ShNRf" id="4i_jb5gTIOF" role="YScLw">
+                  <node concept="1pGfFk" id="4i_jb5gTIOG" role="2ShVmc">
+                    <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="RuntimeException" />
+                    <node concept="2YIFZM" id="4i_jb5gTIOH" role="37wK5m">
+                      <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <node concept="Xl_RD" id="4i_jb5gTIOI" role="37wK5m">
+                        <property role="Xl_RC" value="Failed to load model in binary format from the file %s" />
+                      </node>
+                      <node concept="37vLTw" id="4i_jb5gTIOJ" role="37wK5m">
+                        <ref role="3cqZAo" node="6NgXkpAWLJI" resolve="destFile" />
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="4i_jb5gTIOK" role="37wK5m">
+                      <ref role="3cqZAo" node="4i_jb5gTH9T" resolve="e" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbS" id="6NgXkpAWLJV" role="SfCbr">
-            <node concept="3cpWs8" id="6NYQxPk6MwT" role="3cqZAp">
-              <node concept="3cpWsn" id="6NYQxPk6MwU" role="3cpWs9">
-                <property role="TrG5h" value="options" />
-                <node concept="3uibUv" id="6NYQxPk6MwR" role="1tU5fm">
-                  <ref role="3uigEE" to="33ny:~HashMap" resolve="HashMap" />
-                  <node concept="3uibUv" id="6NYQxPk6MG7" role="11_B2D">
-                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                  </node>
-                  <node concept="3uibUv" id="6NYQxPk6MH5" role="11_B2D">
-                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                  </node>
-                </node>
-                <node concept="2ShNRf" id="6NYQxPk6N2y" role="33vP2m">
-                  <node concept="1pGfFk" id="6NYQxPk6SMy" role="2ShVmc">
-                    <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;()" resolve="HashMap" />
-                    <node concept="3uibUv" id="6NYQxPk6T1B" role="1pMfVU">
-                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                    </node>
-                    <node concept="3uibUv" id="6NYQxPk6Tjw" role="1pMfVU">
-                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="6NYQxPk6TOH" role="3cqZAp">
-              <node concept="2OqwBi" id="6NYQxPk6Xe$" role="3clFbG">
-                <node concept="37vLTw" id="6NYQxPk6TOF" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6NYQxPk6MwU" resolve="options" />
-                </node>
-                <node concept="liA8E" id="6NYQxPk6XVC" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~HashMap.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
-                  <node concept="10M0yZ" id="6NYQxPk6Yo3" role="37wK5m">
-                    <ref role="1PxDUh" to="pa15:~DefaultModelPersistence" resolve="DefaultModelPersistence" />
-                    <ref role="3cqZAo" to="pa15:~DefaultModelPersistence.OPTION_STRIP_IMPLEMENTATION" resolve="OPTION_STRIP_IMPLEMENTATION" />
-                  </node>
-                  <node concept="2YIFZM" id="6NYQxPk6Yo6" role="37wK5m">
-                    <ref role="37wK5l" to="wyt6:~Boolean.toString(boolean):java.lang.String" resolve="toString" />
-                    <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
-                    <node concept="37vLTw" id="6NYQxPk6Yo7" role="37wK5m">
-                      <ref role="3cqZAo" node="1y9wNTZf8V7" resolve="stripImplementation" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="6NYQxPk6Z8L" role="3cqZAp">
-              <node concept="2OqwBi" id="6NYQxPk6Zq0" role="3clFbG">
-                <node concept="37vLTw" id="6NYQxPk6Z8J" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6NYQxPk6MwU" resolve="options" />
-                </node>
-                <node concept="liA8E" id="6NYQxPk70cI" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~HashMap.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
-                  <node concept="10M0yZ" id="6NYQxPk70oU" role="37wK5m">
-                    <ref role="1PxDUh" to="pa15:~MetaModelInfoProvider" resolve="MetaModelInfoProvider" />
-                    <ref role="3cqZAo" to="pa15:~MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO" resolve="OPTION_KEEP_READ_METAINFO" />
-                  </node>
-                  <node concept="2OqwBi" id="6NYQxPk72gv" role="37wK5m">
-                    <node concept="10M0yZ" id="6NYQxPk71pT" role="2Oq$k0">
-                      <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
-                      <ref role="3cqZAo" to="wyt6:~Boolean.TRUE" resolve="TRUE" />
-                    </node>
-                    <node concept="liA8E" id="6NYQxPk72$l" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~Boolean.toString():java.lang.String" resolve="toString" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3cpWs8" id="QTAzJ3Mxrj" role="3cqZAp">
               <node concept="3cpWsn" id="QTAzJ3Mxrk" role="3cpWs9">
                 <property role="TrG5h" value="model" />
@@ -570,7 +529,7 @@
                     <ref role="3cqZAo" node="QTAzJ3MgES" resolve="modelFactory" />
                   </node>
                   <node concept="liA8E" id="QTAzJ3Mxrn" role="2OqNvi">
-                    <ref role="37wK5l" to="dush:~ModelFactory.load(org.jetbrains.mps.openapi.persistence.DataSource,java.util.Map):org.jetbrains.mps.openapi.model.SModel" resolve="load" />
+                    <ref role="37wK5l" to="dush:~ModelFactory.load(org.jetbrains.mps.openapi.persistence.DataSource,org.jetbrains.mps.openapi.persistence.ModelLoadingOption...):org.jetbrains.mps.openapi.model.SModel" resolve="load" />
                     <node concept="2ShNRf" id="QTAzJ3Mxro" role="37wK5m">
                       <node concept="1pGfFk" id="QTAzJ3Mxrp" role="2ShVmc">
                         <ref role="37wK5l" to="ends:~FileDataSource.&lt;init&gt;(jetbrains.mps.vfs.IFile)" resolve="FileDataSource" />
@@ -579,8 +538,13 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="37vLTw" id="6NYQxPk735w" role="37wK5m">
-                      <ref role="3cqZAo" node="6NYQxPk6MwU" resolve="options" />
+                    <node concept="Rm8GO" id="4i_jb5gTFQ6" role="37wK5m">
+                      <ref role="Rm8GQ" to="pa15:~DefaultModelPersistence$ContentLoadingExtentOptions.STRIP_IMPLEMENTATION" resolve="STRIP_IMPLEMENTATION" />
+                      <ref role="1Px2BO" to="pa15:~DefaultModelPersistence$ContentLoadingExtentOptions" resolve="DefaultModelPersistence.ContentLoadingExtentOptions" />
+                    </node>
+                    <node concept="Rm8GO" id="4i_jb5gTGvC" role="37wK5m">
+                      <ref role="Rm8GQ" to="pa15:~MetaModelInfoProvider$MetaInfoLoadingOption.KEEP_READ" resolve="KEEP_READ" />
+                      <ref role="1Px2BO" to="pa15:~MetaModelInfoProvider$MetaInfoLoadingOption" resolve="MetaModelInfoProvider.MetaInfoLoadingOption" />
                     </node>
                   </node>
                 </node>

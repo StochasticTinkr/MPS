@@ -26,8 +26,10 @@ import java.io.IOException;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import java.util.HashMap;
+import org.jetbrains.mps.openapi.persistence.ContentOption;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
+import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
@@ -166,12 +168,13 @@ import jetbrains.mps.extapi.model.SModelData;
     if (modelFactory == null) {
       return null;
     }
-    HashMap<String, String> options = new HashMap<String, String>();
-    options.put(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString());
-    options.put(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO, Boolean.TRUE.toString());
     try {
-      return modelFactory.load(content, options);
-    } catch (IOException ex) {
+      return modelFactory.load(content, ContentOption.CONTENT_ONLY, MetaModelInfoProvider.MetaInfoLoadingOption.KEEP_READ);
+    } catch (ModelLoadException ex) {
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("Failed to read model", ex);
+      }
+    } catch (UnsupportedDataSourceException ex) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Failed to read model", ex);
       }

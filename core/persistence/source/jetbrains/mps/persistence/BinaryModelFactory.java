@@ -68,29 +68,6 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
     // do not delete, it is a java service
   }
 
-  @NotNull
-  @Override
-  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    try {
-      if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
-        return load(dataSource, MetaInfoLoadingOption.KEEP_READ);
-      }
-      return load(dataSource);
-    } catch (ModelLoadException e) {
-      throw new IOException(e);
-    }
-  }
-
-  @NotNull
-  @Override
-  public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    String modelName = options.get(OPTION_MODELNAME);
-    if (modelName == null) {
-      throw new IOException("Model name is not provided");
-    }
-    return create(dataSource, new SModelName(modelName));
-  }
-
   @Override
   public boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
     return dataSource instanceof StreamDataSource;
@@ -166,22 +143,6 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
       throw new UnsupportedDataSourceException(dataSource);
     }
     BinaryPersistence.writeModel(((SModelBase) model).getSModel(), (StreamDataSource) dataSource);
-  }
-
-  @Override
-  public boolean isBinary() {
-    return true;
-  }
-
-  @Override
-  public String getFileExtension() {
-    return MPSExtentions.MODEL_BINARY;
-  }
-
-  @NotNull
-  @Override
-  public String getFormatTitle() {
-    return "Universal binary format";
   }
 
   @NotNull

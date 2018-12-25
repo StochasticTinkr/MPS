@@ -134,7 +134,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
@@ -160,8 +159,11 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelName" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ContentOption" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelLoadException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.SimpleMerger" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.core.mergedriver.SimpleMerger">

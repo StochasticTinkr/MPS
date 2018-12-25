@@ -62,7 +62,7 @@ public abstract class LazyLoadFacility {
       return modelHash;
     }
 
-    return ModelDigestUtil.hash((StreamDataSource) getSource(), !getModelFactory().isBinary());
+    return ModelDigestUtil.hash((StreamDataSource) getSource(), false); // ?what kind of optimisation it was?
   }
 
   public abstract Map<String, String> getGenerationHashes();

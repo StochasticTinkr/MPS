@@ -37,7 +37,8 @@ import jetbrains.mps.persistence.PersistenceUtil;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import java.io.InputStream;
 import java.io.ByteArrayInputStream;
-import java.util.Collections;
+import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
 
 public class BaseVersionUtil {
   private static final Logger LOG = LogManager.getLogger(BaseVersionUtil.class);
@@ -137,7 +138,7 @@ public class BaseVersionUtil {
 
   private static SModel loadPerRootModel(final Map<String, Object> content) {
     ModelFactory factory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
-    if (factory == null || factory.isBinary()) {
+    if (factory == null) {
       return null;
     }
     try {
@@ -163,12 +164,13 @@ public class BaseVersionUtil {
           }
           throw new UnsupportedOperationException("Unknown content type : " + content + "; name of the stream: " + name);
         }
-      }, Collections.<String,String>emptyMap());
+      });
       model.load();
       return model;
-    } catch (IOException ex) {
-      return null;
+    } catch (UnsupportedDataSourceException ex) {
+    } catch (ModelLoadException ex) {
     }
+    return null;
   }
 
 }

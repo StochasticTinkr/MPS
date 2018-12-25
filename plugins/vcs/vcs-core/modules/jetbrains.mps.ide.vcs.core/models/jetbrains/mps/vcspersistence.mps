@@ -3168,16 +3168,22 @@
         </node>
         <node concept="SfApY" id="1NiMOxiwPIS" role="3cqZAp">
           <node concept="TDmWw" id="1NiMOxiwPIT" role="TEbGg">
-            <node concept="3clFbS" id="1NiMOxiwPIP" role="TDEfX">
-              <node concept="3cpWs6" id="1NiMOxiwPIQ" role="3cqZAp">
-                <node concept="10Nm6u" id="1NiMOxiwPIR" role="3cqZAk" />
-              </node>
-            </node>
+            <node concept="3clFbS" id="1NiMOxiwPIP" role="TDEfX" />
             <node concept="3cpWsn" id="1NiMOxiwPIL" role="TDEfY">
               <property role="3TUv4t" value="false" />
               <property role="TrG5h" value="ex" />
-              <node concept="3uibUv" id="1NiMOxiwPIN" role="1tU5fm">
-                <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
+              <node concept="3uibUv" id="4i_jb5gUobm" role="1tU5fm">
+                <ref role="3uigEE" to="dush:~ModelLoadException" resolve="ModelLoadException" />
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="4i_jb5gUohF" role="TEbGg">
+            <node concept="3clFbS" id="4i_jb5gUohG" role="TDEfX" />
+            <node concept="3cpWsn" id="4i_jb5gUohJ" role="TDEfY">
+              <property role="3TUv4t" value="false" />
+              <property role="TrG5h" value="ex" />
+              <node concept="3uibUv" id="4i_jb5gUoDD" role="1tU5fm">
+                <ref role="3uigEE" to="dush:~UnsupportedDataSourceException" resolve="UnsupportedDataSourceException" />
               </node>
             </node>
           </node>
@@ -3194,7 +3200,7 @@
                     <ref role="3cqZAo" node="1NiMOxiwPI9" resolve="factory" />
                   </node>
                   <node concept="liA8E" id="1NiMOxiwPJ3" role="2OqNvi">
-                    <ref role="37wK5l" to="dush:~ModelFactory.load(org.jetbrains.mps.openapi.persistence.DataSource,java.util.Map):org.jetbrains.mps.openapi.model.SModel" resolve="load" />
+                    <ref role="37wK5l" to="dush:~ModelFactory.load(org.jetbrains.mps.openapi.persistence.DataSource,org.jetbrains.mps.openapi.persistence.ModelLoadingOption...):org.jetbrains.mps.openapi.model.SModel" resolve="load" />
                     <node concept="2ShNRf" id="1NiMOxiwPIt" role="37wK5m">
                       <node concept="1pGfFk" id="ZeugxXF2R_" role="2ShVmc">
                         <ref role="37wK5l" to="pa15:~ByteArrayInputSource.&lt;init&gt;(byte[])" resolve="ByteArrayInputSource" />
@@ -3203,22 +3209,9 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="1NiMOxiwPJ8" role="37wK5m">
-                      <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-                      <ref role="37wK5l" to="33ny:~Collections.singletonMap(java.lang.Object,java.lang.Object):java.util.Map" resolve="singletonMap" />
-                      <node concept="10M0yZ" id="1NiMOxiwPPh" role="37wK5m">
-                        <ref role="1PxDUh" to="dush:~ModelFactory" resolve="ModelFactory" />
-                        <ref role="3cqZAo" to="dush:~ModelFactory.OPTION_CONTENT_ONLY" resolve="OPTION_CONTENT_ONLY" />
-                      </node>
-                      <node concept="2OqwBi" id="1NiMOxiwPJf" role="37wK5m">
-                        <node concept="10M0yZ" id="1NiMOxiwPPi" role="2Oq$k0">
-                          <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
-                          <ref role="3cqZAo" to="wyt6:~Boolean.TRUE" resolve="TRUE" />
-                        </node>
-                        <node concept="liA8E" id="1NiMOxiwPJg" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~Boolean.toString():java.lang.String" resolve="toString" />
-                        </node>
-                      </node>
+                    <node concept="Rm8GO" id="4i_jb5gUnQo" role="37wK5m">
+                      <ref role="Rm8GQ" to="dush:~ContentOption.CONTENT_ONLY" resolve="CONTENT_ONLY" />
+                      <ref role="1Px2BO" to="dush:~ContentOption" resolve="ContentOption" />
                     </node>
                   </node>
                 </node>
@@ -3240,6 +3233,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="3cpWs6" id="4i_jb5gUohH" role="3cqZAp">
+          <node concept="10Nm6u" id="4i_jb5gUohI" role="3cqZAk" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1NiMOxiwPIU" role="1B3o_S" />

@@ -6,11 +6,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.persistence.ByteArrayInputSource;
-import java.util.Collections;
-import java.io.IOException;
+import org.jetbrains.mps.openapi.persistence.ContentOption;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
+import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import jetbrains.mps.vfs.IFile;
 import java.io.InputStream;
 import jetbrains.mps.util.ReadUtil;
+import java.io.IOException;
 import jetbrains.mps.smodel.SModelHeader;
 import org.xml.sax.InputSource;
 import java.io.ByteArrayInputStream;
@@ -43,12 +45,13 @@ public class VCSPersistenceUtil {
       return null;
     }
     try {
-      SModel model = factory.load(new ByteArrayInputSource(content), Collections.singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
+      SModel model = factory.load(new ByteArrayInputSource(content), ContentOption.CONTENT_ONLY);
       model.load();
       return model;
-    } catch (IOException ex) {
-      return null;
+    } catch (ModelLoadException ex) {
+    } catch (UnsupportedDataSourceException ex) {
     }
+    return null;
   }
 
   public static SModel loadModel(IFile file) {

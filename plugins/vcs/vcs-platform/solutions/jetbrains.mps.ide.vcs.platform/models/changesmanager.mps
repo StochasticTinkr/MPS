@@ -249,7 +249,6 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
-        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
@@ -2169,21 +2168,11 @@
           </node>
         </node>
         <node concept="3clFbJ" id="7l6b$Kxs8e6" role="3cqZAp">
-          <node concept="22lmx$" id="7l6b$Kxs8e7" role="3clFbw">
-            <node concept="3clFbC" id="7l6b$Kxs8e8" role="3uHU7B">
-              <node concept="37vLTw" id="7l6b$Kxs8e9" role="3uHU7B">
-                <ref role="3cqZAo" node="7l6b$Kxs8dZ" resolve="factory" />
-              </node>
-              <node concept="10Nm6u" id="7l6b$Kxs8ea" role="3uHU7w" />
+          <node concept="3clFbC" id="7l6b$Kxs8e8" role="3clFbw">
+            <node concept="37vLTw" id="7l6b$Kxs8e9" role="3uHU7B">
+              <ref role="3cqZAo" node="7l6b$Kxs8dZ" resolve="factory" />
             </node>
-            <node concept="2OqwBi" id="7l6b$Kxs8fV" role="3uHU7w">
-              <node concept="37vLTw" id="7l6b$Kxs8fU" role="2Oq$k0">
-                <ref role="3cqZAo" node="7l6b$Kxs8dZ" resolve="factory" />
-              </node>
-              <node concept="liA8E" id="7l6b$Kxs8fW" role="2OqNvi">
-                <ref role="37wK5l" to="dush:~ModelFactory.isBinary():boolean" resolve="isBinary" />
-              </node>
-            </node>
+            <node concept="10Nm6u" id="7l6b$Kxs8ea" role="3uHU7w" />
           </node>
           <node concept="3clFbS" id="7l6b$Kxs8ed" role="3clFbx">
             <node concept="3cpWs6" id="7l6b$Kxs8ee" role="3cqZAp">
@@ -2193,16 +2182,22 @@
         </node>
         <node concept="SfApY" id="7l6b$Kxs8fC" role="3cqZAp">
           <node concept="TDmWw" id="7l6b$Kxs8fD" role="TEbGg">
-            <node concept="3clFbS" id="7l6b$Kxs8f_" role="TDEfX">
-              <node concept="3cpWs6" id="7l6b$Kxs8fA" role="3cqZAp">
-                <node concept="10Nm6u" id="7l6b$Kxs8fB" role="3cqZAk" />
-              </node>
-            </node>
+            <node concept="3clFbS" id="7l6b$Kxs8f_" role="TDEfX" />
             <node concept="3cpWsn" id="7l6b$Kxs8fx" role="TDEfY">
               <property role="3TUv4t" value="false" />
               <property role="TrG5h" value="ex" />
-              <node concept="3uibUv" id="7l6b$Kxs8fz" role="1tU5fm">
-                <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
+              <node concept="3uibUv" id="4i_jb5gURhO" role="1tU5fm">
+                <ref role="3uigEE" to="dush:~UnsupportedDataSourceException" resolve="UnsupportedDataSourceException" />
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="4i_jb5gUO7V" role="TEbGg">
+            <node concept="3clFbS" id="4i_jb5gUO7W" role="TDEfX" />
+            <node concept="3cpWsn" id="4i_jb5gUO7X" role="TDEfY">
+              <property role="3TUv4t" value="false" />
+              <property role="TrG5h" value="ex" />
+              <node concept="3uibUv" id="4i_jb5gUR0g" role="1tU5fm">
+                <ref role="3uigEE" to="dush:~ModelLoadException" resolve="ModelLoadException" />
               </node>
             </node>
           </node>
@@ -2219,7 +2214,7 @@
                     <ref role="3cqZAo" node="7l6b$Kxs8dZ" resolve="factory" />
                   </node>
                   <node concept="liA8E" id="7l6b$Kxs8g3" role="2OqNvi">
-                    <ref role="37wK5l" to="dush:~ModelFactory.load(org.jetbrains.mps.openapi.persistence.DataSource,java.util.Map):org.jetbrains.mps.openapi.model.SModel" resolve="load" />
+                    <ref role="37wK5l" to="dush:~ModelFactory.load(org.jetbrains.mps.openapi.persistence.DataSource,org.jetbrains.mps.openapi.persistence.ModelLoadingOption...):org.jetbrains.mps.openapi.model.SModel" resolve="load" />
                     <node concept="2ShNRf" id="7l6b$Kxs8em" role="37wK5m">
                       <node concept="YeOm9" id="7l6b$Kxs8en" role="2ShVmc">
                         <node concept="1Y3b0j" id="7l6b$Kxs8eo" role="YeSDq">
@@ -2414,16 +2409,6 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="7l6b$Kxs8lK" role="37wK5m">
-                      <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-                      <ref role="37wK5l" to="33ny:~Collections.emptyMap():java.util.Map" resolve="emptyMap" />
-                      <node concept="3uibUv" id="7xZqdYzxWOn" role="3PaCim">
-                        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                      </node>
-                      <node concept="3uibUv" id="7xZqdYzxY6N" role="3PaCim">
-                        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                      </node>
-                    </node>
                   </node>
                 </node>
               </node>
@@ -2444,6 +2429,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="3cpWs6" id="7l6b$Kxs8fA" role="3cqZAp">
+          <node concept="10Nm6u" id="7l6b$Kxs8fB" role="3cqZAk" />
         </node>
       </node>
       <node concept="3Tm6S6" id="7l6b$Kxs8fE" role="1B3o_S" />

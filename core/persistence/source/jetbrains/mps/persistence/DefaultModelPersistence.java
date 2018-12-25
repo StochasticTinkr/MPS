@@ -41,7 +41,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.ModelCreationException;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.ModelLoadException;
@@ -95,40 +94,6 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
   @Internal
   public DefaultModelPersistence() {
     // do not delete, it is a java service
-  }
-
-  @NotNull
-  @Override
-  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    List<ModelLoadingOption> newOptions = new ArrayList<>();
-    if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
-      newOptions.add(MetaInfoLoadingOption.KEEP_READ);
-    }
-    if (options.containsKey(OPTION_STRIP_IMPLEMENTATION) && Boolean.parseBoolean(options.get(OPTION_STRIP_IMPLEMENTATION))) {
-      newOptions.add(ContentLoadingExtentOptions.STRIP_IMPLEMENTATION);
-    } else if (options.containsKey(OPTION_INTERFACE_ONLY) && Boolean.parseBoolean(options.get(OPTION_INTERFACE_ONLY))) {
-      newOptions.add(ContentLoadingExtentOptions.INTERFACE_ONLY);
-    }
-    try {
-      return load(dataSource, newOptions.toArray(new ModelLoadingOption[0]));
-    } catch (ModelLoadException e) {
-      throw new IOException(e);
-    }
-  }
-
-  @NotNull
-  @Override
-  public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    String modelName = options.get(OPTION_MODELNAME);
-    if (modelName == null) {
-      throw new IOException("modelName is not provided");
-    }
-    return create(dataSource, new SModelName(modelName));
-  }
-
-  @Override
-  public boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
-    return dataSource instanceof StreamDataSource;
   }
 
   @Override
@@ -288,22 +253,6 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
   @Override
   public SModelData parseSingleStream(@NotNull String name, @NotNull InputStream input) throws IOException {
     return ModelPersistence.getModelData(input);
-  }
-
-  @Override
-  public boolean isBinary() {
-    return false;
-  }
-
-  @Override
-  public String getFileExtension() {
-    return MPSExtentions.MODEL;
-  }
-
-  @NotNull
-  @Override
-  public String getFormatTitle() {
-    return "Universal XML-based format";
   }
 
   @NotNull

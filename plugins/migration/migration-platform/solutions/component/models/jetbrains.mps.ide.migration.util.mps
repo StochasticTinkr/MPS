@@ -160,7 +160,6 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
-        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
@@ -762,15 +761,9 @@
                     <ref role="3cqZAo" node="6rIOn75ZECC" resolve="factory" />
                   </node>
                   <node concept="liA8E" id="6rIOn75ZHfH" role="2OqNvi">
-                    <ref role="37wK5l" to="dush:~ModelFactory.load(org.jetbrains.mps.openapi.persistence.DataSource,java.util.Map):org.jetbrains.mps.openapi.model.SModel" resolve="load" />
+                    <ref role="37wK5l" to="dush:~ModelFactory.load(org.jetbrains.mps.openapi.persistence.DataSource,org.jetbrains.mps.openapi.persistence.ModelLoadingOption...):org.jetbrains.mps.openapi.model.SModel" resolve="load" />
                     <node concept="37vLTw" id="6rIOn75ZJaK" role="37wK5m">
                       <ref role="3cqZAo" node="6rIOn75ZECy" resolve="dataSource" />
-                    </node>
-                    <node concept="2YIFZM" id="6rIOn75ZLNR" role="37wK5m">
-                      <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-                      <ref role="37wK5l" to="33ny:~Collections.emptyMap():java.util.Map" resolve="emptyMap" />
-                      <node concept="17QB3L" id="6rIOn75ZQBF" role="3PaCim" />
-                      <node concept="17QB3L" id="6rIOn75ZQYP" role="3PaCim" />
                     </node>
                   </node>
                 </node>
@@ -792,8 +785,28 @@
             </node>
             <node concept="3cpWsn" id="6rIOn75ZSBw" role="TDEfY">
               <property role="TrG5h" value="e" />
-              <node concept="3uibUv" id="6rIOn75ZSBx" role="1tU5fm">
-                <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
+              <node concept="3uibUv" id="4i_jb5gTOEK" role="1tU5fm">
+                <ref role="3uigEE" to="dush:~ModelLoadException" resolve="ModelLoadException" />
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="4i_jb5gTQet" role="TEbGg">
+            <node concept="3clFbS" id="4i_jb5gTQeu" role="TDEfX">
+              <node concept="YS8fn" id="4i_jb5gTQev" role="3cqZAp">
+                <node concept="2ShNRf" id="4i_jb5gTQew" role="YScLw">
+                  <node concept="1pGfFk" id="4i_jb5gTQex" role="2ShVmc">
+                    <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.Throwable)" resolve="RuntimeException" />
+                    <node concept="37vLTw" id="4i_jb5gTQey" role="37wK5m">
+                      <ref role="3cqZAo" node="4i_jb5gTQez" resolve="e" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWsn" id="4i_jb5gTQez" role="TDEfY">
+              <property role="TrG5h" value="e" />
+              <node concept="3uibUv" id="4i_jb5gTQGc" role="1tU5fm">
+                <ref role="3uigEE" to="dush:~UnsupportedDataSourceException" resolve="UnsupportedDataSourceException" />
               </node>
             </node>
           </node>

@@ -124,17 +124,13 @@ public class ModelPersistence {
 
   @NotNull
   public static SModelHeader loadDescriptor(StreamDataSource source) throws ModelReadException {
-    InputStream in = null;
-    try {
-      in = source.openInputStream();
+    try (InputStream in = source.openInputStream()) {
       final SModelHeader result = new SModelHeader();
       parseAndHandleExceptions(new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET)), new HeaderOnlyHandler(result));
       return result;
     } catch (Exception e) {
       Throwable th = e.getCause() == null ? e : e.getCause();
       throw new ModelReadException(String.format("Couldn't read descriptor from %s: %s", source.getLocation(), th.getMessage()), th);
-    } finally {
-      FileUtil.closeFileSafe(in);
     }
   }
 
@@ -318,7 +314,6 @@ public class ModelPersistence {
       throw new Exception(er);
     }
   }
-
 
 
   /**

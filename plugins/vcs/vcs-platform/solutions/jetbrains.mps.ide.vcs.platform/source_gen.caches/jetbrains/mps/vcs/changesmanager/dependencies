@@ -19,7 +19,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
@@ -41,6 +40,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelLoadException" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.datasource.DataSourceType" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.ChangesTracking">

@@ -12,14 +12,14 @@ import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.FileUtil;
-import java.util.HashMap;
-import jetbrains.mps.persistence.DefaultModelPersistence;
-import jetbrains.mps.persistence.MetaModelInfoProvider;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.persistence.DefaultModelPersistence;
+import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.project.MPSExtentions;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
 
 public class ConvertToBinaryWorker {
   public ConvertToBinaryWorker() {
@@ -38,17 +38,14 @@ public class ConvertToBinaryWorker {
   }
 
   private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) {
-    IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
+    IFile source = FileSystem.getInstance().getFile(sourceFile);
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(FileUtil.getExtension(source.getName()));
     if (modelFactory == null) {
       // assuming user knows what he's doing and supplied us with a model file, try default factory. 
       modelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
     }
     try {
-      HashMap<String, String> options = new HashMap<String, String>();
-      options.put(DefaultModelPersistence.OPTION_STRIP_IMPLEMENTATION, Boolean.toString(stripImplementation));
-      options.put(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO, Boolean.TRUE.toString());
-      SModel model = modelFactory.load(new FileDataSource(source), options);
+      SModel model = modelFactory.load(new FileDataSource(source), DefaultModelPersistence.ContentLoadingExtentOptions.STRIP_IMPLEMENTATION, MetaModelInfoProvider.MetaInfoLoadingOption.KEEP_READ);
       PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY).save(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
     } catch (RuntimeException ex) {
       System.out.printf("Conversion of %s\n", sourceFile);
@@ -57,7 +54,9 @@ public class ConvertToBinaryWorker {
     } catch (IOException ex) {
       throw new RuntimeException(String.format("Failed to read model from file %s", sourceFile), ex);
     } catch (ModelSaveException e) {
-      throw new RuntimeException(String.format("Failed to write model in binary format to file %s", destFile), e);
+      throw new RuntimeException(String.format("Failed to write model in binary format to the file %s", destFile), e);
+    } catch (ModelLoadException e) {
+      throw new RuntimeException(String.format("Failed to load model in binary format from the file %s", destFile), e);
     }
   }
 }

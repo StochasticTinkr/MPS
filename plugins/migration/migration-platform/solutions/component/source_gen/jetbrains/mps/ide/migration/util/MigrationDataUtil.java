@@ -25,6 +25,8 @@ import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
+import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -66,8 +68,10 @@ public class MigrationDataUtil {
     ModelFactory factory = PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL);
     SModel model;
     try {
-      model = factory.load(dataSource, Collections.<String,String>emptyMap());
-    } catch (IOException e) {
+      model = factory.load(dataSource);
+    } catch (ModelLoadException e) {
+      throw new RuntimeException(e);
+    } catch (UnsupportedDataSourceException e) {
       throw new RuntimeException(e);
     }
 

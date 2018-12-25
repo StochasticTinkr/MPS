@@ -69,11 +69,9 @@
     <classNode dependClassName="java.io.ByteArrayInputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.persistence.ByteArrayInputSource" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceVersionAware" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
@@ -95,8 +93,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ContentOption" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelLoadException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException" />
     <classNode dependClassName="org.xml.sax.InputSource" />
   </dependency>
 </dependenciesRoot>

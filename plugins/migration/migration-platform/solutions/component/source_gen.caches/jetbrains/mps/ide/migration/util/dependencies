@@ -68,7 +68,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelCreationException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelLoadException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelSaveException" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException" />
   </dependency>
 </dependenciesRoot>
 

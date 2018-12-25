@@ -78,26 +78,6 @@ public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFac
     // do not delete, it is a java service
   }
 
-  @NotNull
-  @Override
-  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    try {
-      return load(dataSource);
-    } catch (ModelLoadException e) {
-      throw new IOException(e);
-    }
-  }
-
-  @NotNull
-  @Override
-  public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    String modelName = options.get(OPTION_MODELNAME);
-    if (modelName == null) {
-      throw new IOException("Model name is not provided");
-    }
-    return create(dataSource, new SModelName(modelName));
-  }
-
   /**
    * @see BinaryModelPersistence#createFromHeader() for details, same motivation here
    */
@@ -201,22 +181,6 @@ public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFac
 
     FilePerRootFormatUtil.saveModel(((SModelBase) model).getSModel(), (MultiStreamDataSource) dataSource,
         ModelPersistence.LAST_VERSION);
-  }
-
-  @Override
-  public boolean isBinary() {
-    return false;
-  }
-
-  @Override
-  public String getFileExtension() {
-    return null;
-  }
-
-  @NotNull
-  @Override
-  public String getFormatTitle() {
-    return "Universal XML-based file-per-root format";
   }
 
   @NotNull
