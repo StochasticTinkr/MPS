@@ -233,7 +233,11 @@
         <child id="1235573175711" name="elementType" index="2HTBi0" />
         <child id="1235573187520" name="singletonValue" index="2HTEbv" />
       </concept>
+      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
+      </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
@@ -859,7 +863,6 @@
       </node>
     </node>
     <node concept="13i0hz" id="3X9rC2XzJij" role="13h7CS">
-      <property role="13i0iv" value="true" />
       <property role="TrG5h" value="getModules" />
       <property role="13i0it" value="true" />
       <node concept="A3Dl8" id="3X9rC2XzJik" role="3clF45">
@@ -868,7 +871,22 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="3X9rC2XzJim" role="1B3o_S" />
-      <node concept="3clFbS" id="3X9rC2XzJin" role="3clF47" />
+      <node concept="3clFbS" id="3X9rC2XzJin" role="3clF47">
+        <node concept="3SKdUt" id="Dk0PXgLcZn" role="3cqZAp">
+          <node concept="3SKdUq" id="Dk0PXgLcZp" role="3SKWNk">
+            <property role="3SKdUp" value="for the editor abstract instances" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="Dk0PXgLbhf" role="3cqZAp">
+          <node concept="2ShNRf" id="Dk0PXgLbic" role="3cqZAk">
+            <node concept="Tc6Ow" id="Dk0PXgLcoC" role="2ShVmc">
+              <node concept="3Tqbb2" id="Dk0PXgLcIn" role="HW$YZ">
+                <ref role="ehGHo" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="13hLZK" id="3X9rC2XzJio" role="13h7CW">
       <node concept="3clFbS" id="3X9rC2XzJip" role="2VODD2" />
