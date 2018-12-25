@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.lang.quotation.test.generationTest.QuotationConverterPreservesSemantics_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
