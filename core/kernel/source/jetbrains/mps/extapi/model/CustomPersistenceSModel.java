@@ -146,8 +146,6 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     myModel.setModelDescriptor(this, getNodeEventDispatch());
     setChanged(false);
 
-    // XXX loadSModel() doesn't change loading state (though it's wrong, as reload might load empty model)
-    //     hence no fireModelStateChanged() call here
     fireModelReplaced();
   }
 

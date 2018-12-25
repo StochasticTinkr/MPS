@@ -43,6 +43,7 @@ public final class CustomPersistenceSModelBase extends EditableSModelBase {
   private volatile SModel myModel = null;
   private final List<Problem> myProblems = new ArrayList<>();
   private final SModelSimpleHeader myHeader;
+  protected final Object myLoadLock = new Object();
 
   public CustomPersistenceSModelBase(@NotNull SModelSimpleHeader header,
                                      @NotNull StreamDataSource source,
@@ -74,8 +75,7 @@ public final class CustomPersistenceSModelBase extends EditableSModelBase {
   public SModel getSModelInternal() {
     if (myModel == null) {
       final ModelLoadingState oldState;
-      // why sync on this?
-      synchronized (this) {
+      synchronized (myLoadLock) {
         oldState = getLoadingState();
         if (myModel == null) {
           myModel = loadSModel();
