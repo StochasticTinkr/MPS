@@ -263,6 +263,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForHistory() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.console.base", "History", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL);
     b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x1ec383e5b4bdca56L);
     b.origin("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)/757553790980850366");
     b.version(2);
     b.aggregate("item", 0x63da33792b5df49aL).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f195a051bd47defL).optional(true).ordered(true).multiple(true).origin("7195119950189425818").done();
