@@ -198,8 +198,8 @@ public class Switch_NodeBuilder_child extends TemplateSwitchBase implements Temp
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_6_1(new SourceSubstituteMacroNodeContext(context, copySrcMacro_zay0px_b0a0d0b8));
-      tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_zay0px_b0a0d0b8, "tpl/r:00000000-0000-4000-0000-011c8959034c/5756354288101687077", context);
+      final SNode copySrcInput1 = context.getInput();
+      tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_zay0px_b0a0d0b8, "tpl/r:00000000-0000-4000-0000-011c8959034c/2760023158758793786", context);
       final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement"));
       try {
         TemplateContext context1 = context.subContext();
@@ -237,7 +237,7 @@ public class Switch_NodeBuilder_child extends TemplateSwitchBase implements Temp
                 TemplateContext context4 = context2.subContext();
                 {
                   Collection<SNode> tlist7 = null;
-                  SNode callInputNode7 = QueriesGenerated.sourceNodeQuery_6_2(new SourceSubstituteMacroNodeContext(context4, callMacro_zay0px_b0a0a1a2a1a2a1a1a5a1i));
+                  SNode callInputNode7 = QueriesGenerated.sourceNodeQuery_6_1(new SourceSubstituteMacroNodeContext(context4, callMacro_zay0px_b0a0a1a2a1a2a1a1a5a1i));
                   TemplateContext context5;
                   context5 = context4.subContext(null, callInputNode7);
                   if (callInputNode7 != null) {
@@ -279,6 +279,6 @@ public class Switch_NodeBuilder_child extends TemplateSwitchBase implements Temp
     }
   }
   private static SNodePointer callMacro_zay0px_b0a0a1a2a1a2a1a1a1a1a1a1a2a1h = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "633481135935144954");
-  private static SNodePointer copySrcMacro_zay0px_b0a0d0b8 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101728248");
+  private static SNodePointer copySrcMacro_zay0px_b0a0d0b8 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2760023158758795616");
   private static SNodePointer callMacro_zay0px_b0a0a1a2a1a2a1a1a5a1i = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "633481135935144955");
 }

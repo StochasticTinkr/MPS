@@ -31,8 +31,6 @@
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi">
         <child id="1078153129734" name="inspectedCellModel" index="6VMZX" />
       </concept>
-      <concept id="1164052439493" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText" flags="in" index="6VE3a" />
-      <concept id="1164052588708" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText" flags="in" index="6WeAF" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
@@ -93,8 +91,6 @@
       <concept id="1165253627126" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup" flags="ng" index="1exORT">
         <property id="1165254125954" name="presentation" index="1ezIyd" />
         <child id="1165253890469" name="parameterObjectType" index="1eyP2E" />
-        <child id="1165254159533" name="matchingTextFunction" index="1ezQQy" />
-        <child id="1165254180581" name="descriptionTextFunction" index="1ezVZE" />
       </concept>
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
@@ -243,7 +239,6 @@
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
-      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -2353,48 +2348,6 @@
           </node>
         </node>
         <node concept="3bZ5Sz" id="7viyBeYJ6aS" role="1eyP2E" />
-        <node concept="6WeAF" id="7CDYDAPrHf9" role="1ezVZE">
-          <node concept="3clFbS" id="7CDYDAPrHfa" role="2VODD2">
-            <node concept="3clFbF" id="7CDYDAPrHfb" role="3cqZAp">
-              <node concept="3cpWs3" id="7CDYDAPrHfc" role="3clFbG">
-                <node concept="2YIFZM" id="7CDYDAPrHfd" role="3uHU7w">
-                  <ref role="37wK5l" to="18ew:~NameUtil.compactNamespace(java.lang.String):java.lang.String" resolve="compactNamespace" />
-                  <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
-                  <node concept="2YIFZM" id="7CDYDAPrHfe" role="37wK5m">
-                    <ref role="37wK5l" to="18ew:~NameUtil.namespaceFromConceptFQName(java.lang.String):java.lang.String" resolve="namespaceFromConceptFQName" />
-                    <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
-                    <node concept="2OqwBi" id="1$sIUMYaz$z" role="37wK5m">
-                      <node concept="3GLrbK" id="1$sIUMYaz$y" role="2Oq$k0" />
-                      <node concept="liA8E" id="XfBUhN$VVp" role="2OqNvi">
-                        <ref role="37wK5l" to="c17a:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="Xl_RD" id="7CDYDAPrHfi" role="3uHU7B">
-                  <property role="Xl_RC" value="lang: " />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="6VE3a" id="7CDYDAPrHfj" role="1ezQQy">
-          <node concept="3clFbS" id="7CDYDAPrHfk" role="2VODD2">
-            <node concept="3clFbF" id="7CDYDAPrHfl" role="3cqZAp">
-              <node concept="2YIFZM" id="7CDYDAPrHfm" role="3clFbG">
-                <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode,boolean,boolean):java.lang.String" resolve="matchingText" />
-                <node concept="3GLrbK" id="7CDYDAPrHfn" role="37wK5m" />
-                <node concept="3clFbT" id="7CDYDAPrHfo" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
-                <node concept="3clFbT" id="7CDYDAPrHfp" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>
