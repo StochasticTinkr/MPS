@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
@@ -71,7 +70,7 @@ public class ConvertOldMergeHints extends MigrationScriptBase {
       SNode hRoot = createOrGetHintsAspect(((Language) m));
 
       for (SNode cNode : ListSequence.fromList(conceptsWithHints)) {
-        SNode dNode = ListSequence.fromList(SLinkOperations.getChildren(hRoot, MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648f9L, 0x39744cf955c648faL, "concepts"))).addElement(createConceptVCSDescriptor_fwc2c_a0a0a0g0c0g(cNode, SNodeOperations.cast(HUtil.copyIfNecessary(convertHint(AttributeOperations.getAttribute(cNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))))), MetaAdapterFactory.getInterfaceConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a5c6fdL, "jetbrains.mps.vcs.mergehints.structure.MergeStrategy"))));
+        SNode dNode = ListSequence.fromList(SLinkOperations.getChildren(hRoot, MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648f9L, 0x39744cf955c648faL, "concepts"))).addElement(createConceptVCSDescriptor_fwc2c_a0a0a0g0c0g(cNode, convertHint(AttributeOperations.getAttribute(cNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))))));
         // note: .toList is important here 
         List<SNode> propList = ListSequence.fromList(SLinkOperations.getChildren(cNode, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -79,7 +78,7 @@ public class ConvertOldMergeHints extends MigrationScriptBase {
           }
         }).toListSequence();
         for (SNode pNode : ListSequence.fromList(propList)) {
-          ListSequence.fromList(SLinkOperations.getChildren(dNode, MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a4f8c9L, "features"))).addElement(createPropertyVCSDescriptor_fwc2c_a0a0a3a6a2a6(pNode, SNodeOperations.cast(HUtil.copyIfNecessary(convertHint(AttributeOperations.getAttribute(pNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))))), MetaAdapterFactory.getInterfaceConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a5c6fdL, "jetbrains.mps.vcs.mergehints.structure.MergeStrategy"))));
+          ListSequence.fromList(SLinkOperations.getChildren(dNode, MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a4f8c9L, "features"))).addElement(createPropertyVCSDescriptor_fwc2c_a0a0a3a6a2a6(pNode, convertHint(AttributeOperations.getAttribute(pNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))))));
           SNodeOperations.deleteNode(AttributeOperations.getAttribute(pNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))));
         }
 
@@ -90,7 +89,7 @@ public class ConvertOldMergeHints extends MigrationScriptBase {
           }
         }).toListSequence();
         for (SNode lNode : ListSequence.fromList(linkList)) {
-          ListSequence.fromList(SLinkOperations.getChildren(dNode, MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a4f8c9L, "features"))).addElement(createLinkVCSDescriptor_fwc2c_a0a0a7a6a2a6(lNode, SNodeOperations.cast(HUtil.copyIfNecessary(convertHint(AttributeOperations.getAttribute(lNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))))), MetaAdapterFactory.getInterfaceConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a5c6fdL, "jetbrains.mps.vcs.mergehints.structure.MergeStrategy"))));
+          ListSequence.fromList(SLinkOperations.getChildren(dNode, MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a4f8c9L, "features"))).addElement(createLinkVCSDescriptor_fwc2c_a0a0a7a6a2a6(lNode, convertHint(AttributeOperations.getAttribute(lNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))))));
           SNodeOperations.deleteNode(AttributeOperations.getAttribute(lNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))));
         }
 
@@ -147,30 +146,30 @@ public class ConvertOldMergeHints extends MigrationScriptBase {
   private SNode convertHint(SNode cNode) {
     return ((cNode == null) ? null : ((SPropertyOperations.hasEnumValue(cNode, MetaAdapterFactory.getProperty(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, 0x75c17d085c8e0dbaL, "hint"), "1") ? createOursStrategy_fwc2c_a0a0a0m() : createTheirsStrategy_fwc2c_a0a0a0m())));
   }
-  private static SNode createConceptVCSDescriptor_fwc2c_a0a0a0g0c0g(Object p0, Object p1) {
+  private static SNode createConceptVCSDescriptor_fwc2c_a0a0a0g0c0g(SNode node0, SNode node1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, "jetbrains.mps.vcs.mergehints.structure.ConceptVCSDescriptor"), null, null, false);
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x39744cf955c649b5L, "cncpt"), (SNode) p0);
-    if (p1 != null) {
-      n1.addChild(MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a5c741L, "strategy"), (SNode) p1);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x39744cf955c649b5L, "cncpt"), node0);
+    if (node1 != null) {
+      n1.addChild(MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a5c741L, "strategy"), SNodeOperations.copyIfNecessary(SNodeOperations.cast(node1, MetaAdapterFactory.getInterfaceConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a5c6fdL, "jetbrains.mps.vcs.mergehints.structure.MergeStrategy"))));
     }
     return n1;
   }
-  private static SNode createPropertyVCSDescriptor_fwc2c_a0a0a3a6a2a6(Object p0, Object p1) {
+  private static SNode createPropertyVCSDescriptor_fwc2c_a0a0a3a6a2a6(SNode node0, SNode node1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9d0L, "jetbrains.mps.vcs.mergehints.structure.PropertyVCSDescriptor"), null, null, false);
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9d0L, 0x4f2cc0d970a4f877L, "prop"), (SNode) p0);
-    if (p1 != null) {
-      n1.addChild(MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f875L, 0x4f2cc0d970a5c73fL, "strategy"), (SNode) p1);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9d0L, 0x4f2cc0d970a4f877L, "prop"), node0);
+    if (node1 != null) {
+      n1.addChild(MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f875L, 0x4f2cc0d970a5c73fL, "strategy"), SNodeOperations.copyIfNecessary(SNodeOperations.cast(node1, MetaAdapterFactory.getInterfaceConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a5c6fdL, "jetbrains.mps.vcs.mergehints.structure.MergeStrategy"))));
     }
     return n1;
   }
-  private static SNode createLinkVCSDescriptor_fwc2c_a0a0a7a6a2a6(Object p0, Object p1) {
+  private static SNode createLinkVCSDescriptor_fwc2c_a0a0a7a6a2a6(SNode node0, SNode node1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9ceL, "jetbrains.mps.vcs.mergehints.structure.LinkVCSDescriptor"), null, null, false);
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9ceL, 0x4f2cc0d970a4f877L, "lnk"), (SNode) p0);
-    if (p1 != null) {
-      n1.addChild(MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f875L, 0x4f2cc0d970a5c73fL, "strategy"), (SNode) p1);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9ceL, 0x4f2cc0d970a4f877L, "lnk"), node0);
+    if (node1 != null) {
+      n1.addChild(MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f875L, 0x4f2cc0d970a5c73fL, "strategy"), SNodeOperations.copyIfNecessary(SNodeOperations.cast(node1, MetaAdapterFactory.getInterfaceConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a5c6fdL, "jetbrains.mps.vcs.mergehints.structure.MergeStrategy"))));
     }
     return n1;
   }

@@ -36,10 +36,10 @@ public class typeof_NodePointerArg_Identity_InferenceRule extends AbstractInfere
   public boolean overrides() {
     return false;
   }
-  private static SNode createSNodePointerType_xw4dmd_a1a2a1a1(Object p0) {
+  private static SNode createSNodePointerType_xw4dmd_a1a2a1a1(SNode node0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fad6b29eL, "jetbrains.mps.lang.smodel.structure.SNodePointerType"), null, null, false);
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fad6b29eL, 0x66b228a4fad6b2adL, "concept"), (SNode) p0);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fad6b29eL, 0x66b228a4fad6b2adL, "concept"), node0);
     return n1;
   }
 }

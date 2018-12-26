@@ -22,10 +22,10 @@ public class includeIntoLayout_QuickFix extends QuickFix_Runtime {
   public void execute(SNode node) {
     ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(((SNode) includeIntoLayout_QuickFix.this.getField("project")[0]), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).addElement(createBuildMpsLayout_ModuleJars_f5l1y2_a0a0a2(((SNode) includeIntoLayout_QuickFix.this.getField("module")[0])));
   }
-  private static SNode createBuildMpsLayout_ModuleJars_f5l1y2_a0a0a2(Object p0) {
+  private static SNode createBuildMpsLayout_ModuleJars_f5l1y2_a0a0a2(SNode node0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars"), null, null, false);
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module"), (SNode) p0);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module"), node0);
     return n1;
   }
 }

@@ -374,10 +374,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
       protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
         return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)", "6626913010124512135"));
       }
-      private static SNode createMigrationReference_w3rzlq_a0a0a0a0a2c0(Object p0) {
+      private static SNode createMigrationReference_w3rzlq_a0a0a0a0a2c0(SNode node0) {
         PersistenceFacade facade = PersistenceFacade.getInstance();
         SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x5bf7864595dddf89L, "jetbrains.mps.lang.test.structure.MigrationReference"), null, null, false);
-        n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x5bf7864595dddf89L, 0x5bf7864595dddf8aL, "migration"), (SNode) p0);
+        n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x5bf7864595dddf89L, 0x5bf7864595dddf8aL, "migration"), node0);
         return n1;
       }
     }

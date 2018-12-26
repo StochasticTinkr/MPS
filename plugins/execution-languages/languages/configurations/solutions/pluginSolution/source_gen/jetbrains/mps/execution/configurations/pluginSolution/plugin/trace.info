@@ -538,10 +538,10 @@
       <node id="8401208354348535506" at="59,225,60,235" concept="2" />
       <node id="8401208354348535512" at="60,235,61,75" concept="2" />
       <node id="8401208354348535519" at="61,75,62,20" concept="7" />
-      <node id="8401208354348601310" at="64,83,65,63" concept="6" />
+      <node id="8401208354348601310" at="64,85,65,63" concept="6" />
       <node id="8401208354348601310" at="65,63,66,246" concept="6" />
-      <node id="8401208354348601310" at="66,246,67,184" concept="2" />
-      <node id="8401208354348601310" at="67,184,68,14" concept="7" />
+      <node id="8401208354348601310" at="66,246,67,179" concept="2" />
+      <node id="8401208354348601310" at="67,179,68,14" concept="7" />
       <node id="8401208354348251730" at="24,0,26,0" concept="1" trace="Producer_TabDescriptor#()V" />
       <node id="8401208354348251730" at="26,0,29,0" concept="5" trace="getTitle#()Ljava/lang/String;" />
       <node id="8401208354348251730" at="29,0,32,0" concept="5" trace="compareTo#(Ljetbrains/mps/plugins/relations/RelationDescriptor;)I" />
@@ -554,7 +554,7 @@
       <node id="8401208354348472247" at="45,33,50,24" concept="7" />
       <node id="8401208354348251730" at="35,0,41,0" concept="5" trace="getBaseNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8401208354348251730" at="58,0,64,0" concept="5" trace="createAspect#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="8401208354348601310" at="64,0,70,0" concept="11" trace="createPersistentConfigurationType_rqzr2x_a0b0a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8401208354348601310" at="64,0,70,0" concept="11" trace="createPersistentConfigurationType_rqzr2x_a0b0a0#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8401208354348251730" at="44,0,52,0" concept="5" trace="getNodes#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <scope id="8401208354348251730" at="24,35,24,35" />
       <scope id="8401208354348251730" at="26,28,27,22" />
@@ -584,7 +584,7 @@
       <scope id="7459370737648052998" at="58,71,62,20">
         <var name="producer" id="8401208354348535501" />
       </scope>
-      <scope id="8401208354348601310" at="64,83,68,14">
+      <scope id="8401208354348601310" at="64,85,68,14">
         <var name="facade" id="8401208354348601310" />
         <var name="n1" id="8401208354348601310" />
       </scope>
@@ -599,7 +599,7 @@
         <var name="node" id="8401208354348251730" />
       </scope>
       <scope id="8401208354348601310" at="64,0,70,0">
-        <var name="p0" id="8401208354348601310" />
+        <var name="node0" id="8401208354348601310" />
       </scope>
       <scope id="8401208354348251730" at="44,0,52,0">
         <var name="node" id="8401208354348251730" />

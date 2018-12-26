@@ -86,10 +86,10 @@
       <node id="1782525708531760295" at="68,360,69,137" concept="6" />
       <node id="7487379546349295391" at="70,204,71,61" concept="7" />
       <node id="1782525708531760334" at="73,5,74,16" concept="7" />
-      <node id="7487379546349376222" at="76,79,77,63" concept="6" />
+      <node id="7487379546349376222" at="76,81,77,63" concept="6" />
       <node id="7487379546349376222" at="77,63,78,239" concept="6" />
-      <node id="7487379546349376222" at="78,239,79,185" concept="2" />
-      <node id="7487379546349376222" at="79,185,80,14" concept="7" />
+      <node id="7487379546349376222" at="78,239,79,180" concept="2" />
+      <node id="7487379546349376222" at="79,180,80,14" concept="7" />
       <node id="1782525708531760318" at="82,52,83,44" concept="7" />
       <node id="1782525708519283076" at="20,0,22,0" concept="1" trace="SmartRefAttributeUtil#()V" />
       <node id="7487379546349368227" at="36,10,38,5" concept="0" />
@@ -106,7 +106,7 @@
       <node id="7487379546349359334" at="33,66,38,5" concept="4" />
       <node id="7487379546349281468" at="56,5,61,5" concept="4" />
       <node id="1782525708531760293" at="67,5,73,5" concept="4" />
-      <node id="7487379546349376222" at="76,0,82,0" concept="10" trace="createSmartReferenceAttribute_9k4hui_a0a5a4#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7487379546349376222" at="76,0,82,0" concept="10" trace="createSmartReferenceAttribute_9k4hui_a0a5a4#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7487379546349281105" at="53,0,63,0" concept="10" trace="getCharacteristicLinkDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7487379546349286798" at="64,0,76,0" concept="10" trace="getImplicitCharacteristicLinkDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1782525708519283240" at="24,0,40,0" concept="10" trace="extractAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -140,12 +140,12 @@
       <scope id="1782525708531760294" at="68,360,72,7">
         <var name="referenceLinks" id="1782525708531760296" />
       </scope>
-      <scope id="7487379546349376222" at="76,79,80,14">
+      <scope id="7487379546349376222" at="76,81,80,14">
         <var name="facade" id="7487379546349376222" />
         <var name="n1" id="7487379546349376222" />
       </scope>
       <scope id="7487379546349376222" at="76,0,82,0">
-        <var name="p0" id="7487379546349376222" />
+        <var name="node0" id="7487379546349376222" />
       </scope>
       <scope id="7487379546349281108" at="53,71,61,5" />
       <scope id="7487379546349281105" at="53,0,63,0">

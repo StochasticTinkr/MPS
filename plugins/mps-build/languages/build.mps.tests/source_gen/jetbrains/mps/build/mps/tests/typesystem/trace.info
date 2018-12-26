@@ -155,14 +155,14 @@
       <node id="2834134232276458561" at="16,39,17,135" concept="9" />
       <node id="2834134232276459149" at="19,44,20,248" concept="7" />
       <node id="2834134232276487698" at="22,35,23,539" concept="2" />
-      <node id="2834134232276538381" at="25,81,26,63" concept="6" />
+      <node id="2834134232276538381" at="25,83,26,63" concept="6" />
       <node id="2834134232276538381" at="26,63,27,235" concept="6" />
-      <node id="2834134232276538381" at="27,235,28,168" concept="2" />
-      <node id="2834134232276538381" at="28,168,29,14" concept="7" />
+      <node id="2834134232276538381" at="27,235,28,163" concept="2" />
+      <node id="2834134232276538381" at="28,163,29,14" concept="7" />
       <node id="2834134232276458561" at="16,0,19,0" concept="1" trace="includeIntoLayout_QuickFix#()V" />
       <node id="2834134232276458561" at="19,0,22,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="2834134232276458561" at="22,0,25,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2834134232276538381" at="25,0,31,0" concept="8" trace="createBuildMpsLayout_ModuleJars_f5l1y2_a0a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2834134232276538381" at="25,0,31,0" concept="8" trace="createBuildMpsLayout_ModuleJars_f5l1y2_a0a0a2#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2834134232276458561" at="16,39,17,135" />
       <scope id="2834134232276458598" at="19,44,20,248" />
       <scope id="2834134232276458563" at="22,35,23,539" />
@@ -173,12 +173,12 @@
       <scope id="2834134232276458561" at="22,0,25,0">
         <var name="node" id="2834134232276458561" />
       </scope>
-      <scope id="2834134232276538381" at="25,81,29,14">
+      <scope id="2834134232276538381" at="25,83,29,14">
         <var name="facade" id="2834134232276538381" />
         <var name="n1" id="2834134232276538381" />
       </scope>
       <scope id="2834134232276538381" at="25,0,31,0">
-        <var name="p0" id="2834134232276538381" />
+        <var name="node0" id="2834134232276538381" />
       </scope>
       <unit id="2834134232276458561" at="15,0,32,0" name="jetbrains.mps.build.mps.tests.typesystem.includeIntoLayout_QuickFix" />
     </file>

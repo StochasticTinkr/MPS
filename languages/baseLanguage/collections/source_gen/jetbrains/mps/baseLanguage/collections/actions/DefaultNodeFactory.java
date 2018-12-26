@@ -37,10 +37,10 @@ public class DefaultNodeFactory {
         });
       }
     }
-    private static SNode createMultiForEachVariableReference_a0a0a0a0f0a0a0(Object p0) {
+    private static SNode createMultiForEachVariableReference_a0a0a0a0f0a0a0(SNode node0) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x731a0dad81895f16L, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference"), null, null, false);
-      n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x731a0dad81895f16L, 0x731a0dad818984f5L, "variable"), (SNode) p0);
+      n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x731a0dad81895f16L, 0x731a0dad818984f5L, "variable"), node0);
       return n1;
     }
   }
@@ -62,10 +62,10 @@ public class DefaultNodeFactory {
         });
       }
     }
-    private static SNode createForEachVariableReference_a0a0a0a0e0a0a1(Object p0) {
+    private static SNode createForEachVariableReference_a0a0a0a0e0a0a1(SNode node0) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6fa5c3L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference"), null, null, false);
-      n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6fa5c3L, 0x10cac7007baL, "variable"), (SNode) p0);
+      n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6fa5c3L, 0x10cac7007baL, "variable"), node0);
       return n1;
     }
   }

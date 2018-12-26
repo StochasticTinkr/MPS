@@ -104,7 +104,7 @@
       <node id="4739047193854376707" at="39,30,40,30" concept="6" />
       <node id="4739047193854376707" at="40,30,41,258" concept="2" />
       <node id="4739047193854376707" at="41,258,42,39" concept="2" />
-      <node id="4739047193854376707" at="43,31,44,193" concept="2" />
+      <node id="4739047193854376707" at="43,31,44,203" concept="2" />
       <node id="4739047193854376707" at="45,5,46,24" concept="7" />
       <node id="4739047193854376701" at="19,0,21,0" concept="1" trace="typeof_ListCustomParameter_InferenceRule#()V" />
       <node id="4739047193854376701" at="28,0,31,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -118,7 +118,7 @@
       <scope id="4739047193854376701" at="28,50,29,176" />
       <scope id="4739047193854376701" at="31,68,32,102" />
       <scope id="4739047193854376701" at="34,30,35,16" />
-      <scope id="4739047193854376707" at="43,31,44,193" />
+      <scope id="4739047193854376707" at="43,31,44,203" />
       <scope id="4739047193854376701" at="19,0,21,0" />
       <scope id="4739047193854376705" at="22,5,25,472">
         <var name="_info_12389875345" id="4739047193854376705" />

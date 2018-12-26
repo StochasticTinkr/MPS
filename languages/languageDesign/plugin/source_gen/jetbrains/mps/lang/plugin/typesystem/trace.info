@@ -1466,7 +1466,7 @@
       <node id="242278890012143702" at="60,252,61,435" concept="3" />
       <node id="242278890012143702" at="61,435,62,165" concept="3" />
       <node id="242278890012143702" at="62,165,63,39" concept="3" />
-      <node id="242278890012143702" at="64,31,65,190" concept="3" />
+      <node id="242278890012143702" at="64,31,65,200" concept="3" />
       <node id="242278890012143702" at="66,5,67,24" concept="7" />
       <node id="5527296032508935549" at="20,0,22,0" concept="2" trace="typeof_PersistentPropertyDeclaration_InferenceRule#()V" />
       <node id="5527296032508935549" at="30,0,33,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -1481,7 +1481,7 @@
       <scope id="5527296032508935549" at="30,50,31,168" />
       <scope id="5527296032508935549" at="33,68,34,102" />
       <scope id="5527296032508935549" at="36,30,37,17" />
-      <scope id="242278890012143702" at="64,31,65,190" />
+      <scope id="242278890012143702" at="64,31,65,200" />
       <scope id="5527296032508935549" at="20,0,22,0" />
       <scope id="5527296032508935722" at="24,5,27,338">
         <var name="_info_12389875345" id="5527296032508935722" />
@@ -1830,7 +1830,7 @@
       <node id="6938053545825381698" at="90,259,91,245" concept="3" />
       <node id="6938053545825381698" at="91,245,92,167" concept="3" />
       <node id="6938053545825381698" at="92,167,93,39" concept="3" />
-      <node id="6938053545825381698" at="94,31,95,195" concept="3" />
+      <node id="6938053545825381698" at="94,31,95,205" concept="3" />
       <node id="6938053545825381698" at="96,5,97,24" concept="7" />
       <node id="6938053545825381657" at="20,0,22,0" concept="2" trace="typeof_ToolTab_InferenceRule#()V" />
       <node id="6938053545825381657" at="56,0,59,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -1854,7 +1854,7 @@
       <scope id="6938053545825381657" at="56,50,57,151" />
       <scope id="6938053545825381657" at="59,68,60,102" />
       <scope id="6938053545825381657" at="62,30,63,17" />
-      <scope id="6938053545825381698" at="94,31,95,195" />
+      <scope id="6938053545825381698" at="94,31,95,205" />
       <scope id="6938053545825381657" at="20,0,22,0" />
       <scope id="6938053545825381661" at="24,5,27,323">
         <var name="_info_12389875345" id="6938053545825381661" />

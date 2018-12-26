@@ -83,10 +83,10 @@ public class MigrationTestCase_migration extends MigrationScriptBase {
   }
 
 
-  private static SNode createMigrationReference_y0ige7_a0a0a0a0a0a0d(Object p0) {
+  private static SNode createMigrationReference_y0ige7_a0a0a0a0a0a0d(SNode node0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x5bf7864595dddf89L, "jetbrains.mps.lang.test.structure.MigrationReference"), null, null, false);
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x5bf7864595dddf89L, 0x5bf7864595dddf8aL, "migration"), (SNode) p0);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x5bf7864595dddf89L, 0x5bf7864595dddf8aL, "migration"), node0);
     return n1;
   }
 }

@@ -35,9 +35,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.migration.util.NodeReferenceUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.migration.behavior.AbstractNodeReference__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
@@ -159,7 +158,7 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
 
 
   public SNode serializeInitialState(Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef> initialState) {
-    return createConceptMigrationReference_8k3jue_a0a51(initialState._1().getVersion(), PersistenceFacade.getInstance().asString(initialState._1().getLanguage()), SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(initialState._0().reference(), initialState._0().name())), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.structure.AbstractNodeReference")));
+    return createConceptMigrationReference_8k3jue_a0a51(NodeReferenceUtil.makeReflection(initialState._0().reference(), initialState._0().name()), initialState._1().getVersion(), PersistenceFacade.getInstance().asString(initialState._1().getLanguage()));
   }
   public Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef> deserializeInitialState(SNode serialized) {
     return MultiTuple.<NamedNodeReference,WriteSubconceptMigrationParticipant.MigrationScriptRef>from(new NamedNodeReference(AbstractNodeReference__BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(SLinkOperations.getTarget(serialized, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x36182c4cf6238c95L, 0x36182c4cf6238c99L, "oldConcept"))), BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(serialized, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x36182c4cf6238c95L, 0x36182c4cf6238c99L, "oldConcept")))), new WriteSubconceptMigrationParticipant.MigrationScriptRef(PersistenceFacade.getInstance().createModuleReference(SPropertyOperations.getString(SLinkOperations.getTarget(serialized, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x36182c4cf6238c95L, 0x36182c4cf6238c96L, "migrationScript")), MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x66eed171c5f83bcaL, 0x66eed171c602da74L, "module"))), SPropertyOperations.getInteger(SLinkOperations.getTarget(serialized, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x36182c4cf6238c95L, 0x36182c4cf6238c96L, "migrationScript")), MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x66eed171c5f83bcaL, 0x66eed171c5f90222L, "fromVersion"))));
@@ -185,13 +184,13 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void> getDataCollector() {
     return myDataCollector;
   }
-  private static SNode createIncludeMigrationPart_8k3jue_a0a1a1a0a0a0a0a0a5a2a21(Object p0) {
+  private static SNode createIncludeMigrationPart_8k3jue_a0a1a1a0a0a0a0a0a5a2a21(SNode node0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x267418e6b5c2b903L, "jetbrains.mps.lang.migration.structure.IncludeMigrationPart"), null, null, false);
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x267418e6b5c2b903L, 0x267418e6b5c2b960L, "target"), (SNode) p0);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x267418e6b5c2b903L, 0x267418e6b5c2b960L, "target"), node0);
     return n1;
   }
-  private static SNode createConceptMigrationReference_8k3jue_a0a51(Object p0, Object p1, Object p2) {
+  private static SNode createConceptMigrationReference_8k3jue_a0a51(SNode node0, Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x36182c4cf6238c95L, "jetbrains.mps.lang.migration.structure.ConceptMigrationReference"), null, null, false);
     {
@@ -199,8 +198,8 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
       n2.setProperty(MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x66eed171c5f83bcaL, 0x66eed171c5f90222L, "fromVersion"), p0 + "");
       n2.setProperty(MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x66eed171c5f83bcaL, 0x66eed171c602da74L, "module"), p1 + "");
       n1.addChild(MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x36182c4cf6238c95L, 0x36182c4cf6238c96L, "migrationScript"), n2);
-      if (p2 != null) {
-        n1.addChild(MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x36182c4cf6238c95L, 0x36182c4cf6238c99L, "oldConcept"), (SNode) p2);
+      if (node0 != null) {
+        n1.addChild(MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x36182c4cf6238c95L, 0x36182c4cf6238c99L, "oldConcept"), SNodeOperations.copyIfNecessary(SNodeOperations.cast(node0, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.structure.AbstractNodeReference"))));
       }
     }
     return n1;

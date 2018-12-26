@@ -37,7 +37,7 @@
       <node id="5371100132593307341" at="44,30,45,30" concept="5" />
       <node id="5371100132593307341" at="45,30,46,254" concept="2" />
       <node id="5371100132593307341" at="46,254,47,39" concept="2" />
-      <node id="5371100132593307341" at="48,31,49,196" concept="2" />
+      <node id="5371100132593307341" at="48,31,49,206" concept="2" />
       <node id="5371100132593307341" at="50,5,51,24" concept="6" />
       <node id="8995237445478423795" at="19,0,21,0" concept="1" trace="typeof_BoxCreator_InferenceRule#()V" />
       <node id="8995237445478423795" at="33,0,36,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -52,7 +52,7 @@
       <scope id="8995237445478423795" at="33,50,34,159" />
       <scope id="8995237445478423795" at="36,68,37,102" />
       <scope id="8995237445478423795" at="39,30,40,17" />
-      <scope id="5371100132593307341" at="48,31,49,196" />
+      <scope id="5371100132593307341" at="48,31,49,206" />
       <scope id="8995237445478423795" at="19,0,21,0" />
       <scope id="8995237445478466469" at="22,5,25,455">
         <var name="_info_12389875345" id="8995237445478466469" />
@@ -109,7 +109,7 @@
       <node id="6320827127613826706" at="45,30,46,30" concept="5" />
       <node id="6320827127613826706" at="46,30,47,254" concept="2" />
       <node id="6320827127613826706" at="47,254,48,39" concept="2" />
-      <node id="6320827127613826706" at="49,31,50,196" concept="2" />
+      <node id="6320827127613826706" at="49,31,50,206" concept="2" />
       <node id="6320827127613826706" at="51,5,52,24" concept="6" />
       <node id="8995237445478613807" at="19,0,21,0" concept="1" trace="typeof_Box_ValueOperation_InferenceRule#()V" />
       <node id="8995237445478613807" at="34,0,37,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -124,7 +124,7 @@
       <scope id="8995237445478613807" at="34,50,35,167" />
       <scope id="8995237445478613807" at="37,68,38,102" />
       <scope id="8995237445478613807" at="40,30,41,17" />
-      <scope id="6320827127613826706" at="49,31,50,196" />
+      <scope id="6320827127613826706" at="49,31,50,206" />
       <scope id="8995237445478613807" at="19,0,21,0" />
       <scope id="8995237445478617412" at="23,5,26,386">
         <var name="_info_12389875345" id="8995237445478617412" />

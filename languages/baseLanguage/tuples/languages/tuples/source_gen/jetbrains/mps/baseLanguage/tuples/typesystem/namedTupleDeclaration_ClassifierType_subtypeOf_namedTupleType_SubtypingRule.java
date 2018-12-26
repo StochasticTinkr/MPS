@@ -32,10 +32,10 @@ public class namedTupleDeclaration_ClassifierType_subtypeOf_namedTupleType_Subty
   public boolean isWeak() {
     return false;
   }
-  private static SNode createNamedTupleType_hwsftp_a0a0a1(Object p0) {
+  private static SNode createNamedTupleType_hwsftp_a0a0a1(SNode node0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), null, null, false);
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) p0);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), node0);
     return n1;
   }
 }
