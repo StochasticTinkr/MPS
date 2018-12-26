@@ -41,12 +41,11 @@ import java.util.List;
 /**
  * Represents a project based on the idea platform project
  * Used in the idea plugin
- *
+ * <p>
  * fixme introduce a project<->library relation on this particular level (AP)
  */
 public class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
   private com.intellij.openapi.project.Project myProject;
-  private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<>();
 
   // WorkbenchModelAccess is provisional argument. Now it provides implementation of executeCommand method
   // with respect to shared model lock object from its smodel.ModelAccess superclass. Once each MA has own
@@ -64,14 +63,11 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
 
   @Override
   public void initComponent() {
-    ProjectModuleFileChangeListener listener = new ProjectModuleFileChangeListener(this);
-    myListeners.add(listener);
-    addListener(listener);
     myPlatform.findComponent(ClassLoaderManager.class).runNonReloadableTransaction(this::update);
   }
 
   public void disposeComponent() {
-    myListeners.forEach(this::removeListener);
+
   }
 
   @NotNull
@@ -139,7 +135,7 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
   @Override
   public <T> T getComponent(Class<T> clazz) {
     T rv = getProject().getComponent(clazz);
-    if (rv == null ) {
+    if (rv == null) {
       return super.getComponent(clazz);
     }
     return rv;

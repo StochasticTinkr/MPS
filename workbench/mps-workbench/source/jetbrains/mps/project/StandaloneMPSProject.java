@@ -46,6 +46,7 @@ import java.util.List;
 
 /**
  * FIXME: AP what is the difference with the MPSProject? Both are based on the idea platform... Merge?
+ * Note for AP from MM: at least I've added a difference in how module file changes are handled.
  *
  * It must save/load its state only via the platform methods #saveState, #loadState
  * The project may be changed externally via addModule/removeModule methods,
@@ -60,6 +61,7 @@ import java.util.List;
 )
 public class StandaloneMPSProject extends MPSProject implements PersistentStateComponent<Element> {
   private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
+  private ProjectModuleFileChangeListener myListener;
 
   @SuppressWarnings("UnusedParameters")
   public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager, ProjectRootListenerComponent unused,
@@ -106,8 +108,16 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   @Override
+  public void initComponent() {
+    myListener = new ProjectModuleFileChangeListener(this);
+    addListener(myListener);
+    super.initComponent();
+  }
+
+  @Override
   public void disposeComponent() {
     super.disposeComponent();
+    removeListener(myListener);
     dispose();
   }
 
