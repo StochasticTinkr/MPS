@@ -99,9 +99,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.scope.FilteringScope" />
-    <classNode dependClassName="jetbrains.mps.scope.ModelPlusImportedScope" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.constraints.Scopes" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
@@ -163,7 +161,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.scope.ModelPlusImportedScope" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.constraints.Scopes" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />

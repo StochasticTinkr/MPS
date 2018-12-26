@@ -277,7 +277,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.constraints.Scopes">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.constraints.Concepts" />
