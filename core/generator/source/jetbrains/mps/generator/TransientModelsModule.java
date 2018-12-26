@@ -185,10 +185,18 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   public SModel createTransientModel(SModelReference modelReference) {
     TransientSModelDescriptor result = new TransientSModelDescriptor(modelReference);
+    // XXX why do we load new model?
     result.load();
 
     myModelVault.add(result);
 
+    return result;
+  }
+
+  // TODO generify attributes so that we can pass whatever information we find handy along with a transient model
+  public SModel createTransientModel(SModelReference modelReference, int branchSerial) {
+    TransientSModelDescriptor result = (TransientSModelDescriptor) createTransientModel(modelReference);
+    result.setBranchSerial(branchSerial);
     return result;
   }
 
@@ -283,10 +291,19 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     protected volatile TransientSModel mySModel;
     private boolean wasUnloaded = false;
     private ImmatureReferencesTracker myRefsTracker = new ImmatureReferencesTracker();
+    private int myBranchSerial = 0;
 
     private TransientSModelDescriptor(@NotNull SModelReference modelRef) {
       super(modelRef, new NullDataSource());
       myRefsTracker.attach(this,false);
+    }
+
+    /*package*/ void setBranchSerial(int v) {
+      myBranchSerial = v;
+    }
+
+    public int getBranchSerial() {
+      return myBranchSerial;
     }
 
     @Override

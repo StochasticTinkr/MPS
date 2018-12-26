@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.ModelGenerationPlan.Fork;
 import jetbrains.mps.generator.ModelGenerationPlan.Step;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
@@ -24,12 +25,14 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -124,14 +127,14 @@ final class GenPlanActiveStep {
     return lastSeen;
   }
 
+  /**
+   * @deprecated unused, just drop it
+   */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 0)
   public Checkpoint getNextCheckpoint() {
-    Iterator<Step> it = myPlan.getSteps().iterator();
-    while (it.hasNext()) {
-      if (myStep.equals(it.next())) {
-        break;
-      }
-    }
+    Iterator<Step> it = locateActiveStep(myPlan.getSteps());
     while (it.hasNext()) {
       Step p = it.next();
       if (p instanceof Checkpoint) {
@@ -139,5 +142,26 @@ final class GenPlanActiveStep {
       }
     }
     return null;
+  }
+
+  // find sequence of steps with iterator pointing at myStep with respect to forks in the plan
+  private Iterator<Step> locateActiveStep(Iterable<Step> steps) {
+    // I prefer this code to nice tree-aware API of a GP as this class (along with GenerationSession) shall get refactored and be aware of active branch
+    // rather than whole plan. With active branch, there'd be no need to care about tree-ish plans.
+    ArrayDeque<Iterable<Step>> queue = new ArrayDeque<>();
+    queue.add(steps);
+    do {
+      Iterator<Step> it = queue.removeFirst().iterator();
+      while (it.hasNext()) {
+        final Step next = it.next();
+        if (myStep == next) {
+          return it;
+        }
+        if (next instanceof Fork) {
+          queue.addLast(((Fork) next).getBranch());
+        }
+      }
+    } while (!queue.isEmpty());
+    return Collections.emptyIterator();
   }
 }
