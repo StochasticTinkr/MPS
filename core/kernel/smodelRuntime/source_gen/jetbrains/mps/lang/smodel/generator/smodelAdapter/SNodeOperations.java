@@ -493,13 +493,6 @@ public class SNodeOperations {
     }
     return node;
   }
-  public static SNode detachNode(SNode node) {
-    if (node != null && node.getParent() != null && node.getModel() == null) {
-      // this case is the only difference between detachNode and deleteNode 
-      return node;
-    }
-    return deleteNode(node);
-  }
   public static boolean hasRole(SNode node, SContainmentLink role) {
     if (node == null || node.getParent() == null || role == null) {
       return false;
@@ -706,4 +699,14 @@ public class SNodeOperations {
   public static boolean is(SNode node, SNodeReference nodePtr) {
     return (node == null ? false : node.getReference().equals(nodePtr));
   }
+
+  public static SNode copyIfNecessary(SNode node) {
+    if (node != null && (node.getParent() != null || node.getModel() != null)) {
+      // this copies all the attributes, because can be used in migration scripts 
+      return CopyUtil.copy(node, true);
+    } else {
+      return node;
+    }
+  }
+
 }

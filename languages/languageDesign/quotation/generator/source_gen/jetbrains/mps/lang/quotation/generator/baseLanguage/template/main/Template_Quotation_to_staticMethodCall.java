@@ -180,7 +180,7 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
                     TemplateContext context11 = context10.subContext();
                     {
                       Collection<SNode> tlist20 = null;
-                      TemplateContext context12 = context11.subContext("nodeVariable");
+                      TemplateContext context12 = context11.subContext("nodeVariableQ");
                       final SNode tnode21 = environment.createOutputNode(myConcepts[9]);
                       try {
                         environment.nodeCopied(context12, tnode21, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396681223");
@@ -206,7 +206,7 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
                       } finally {
                       }
                       tlist20 = TemplateUtil.singletonList(tnode21);
-                      environment.registerLabel(context11.getInput(), tnode21, "nodeVariable");
+                      environment.registerLabel(context11.getInput(), tnode21, "nodeVariableQ");
                       for (SNode child24 : TemplateUtil.asNotNull(tlist20)) {
                         tnode19.addChild(myAggregationLinks[7], child24);
                       }

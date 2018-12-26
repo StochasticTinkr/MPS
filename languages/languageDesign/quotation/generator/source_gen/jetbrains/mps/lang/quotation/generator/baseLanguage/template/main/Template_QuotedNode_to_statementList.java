@@ -1023,13 +1023,13 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                       {
                                         final SNode tnode120 = environment.createOutputNode(myConcepts[7]);
                                         try {
-                                          tnode120.setReference(myAssociationLinks[2], SReference.create(myAssociationLinks[2], tnode120, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.typesystem.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~HUtil")));
-                                          tnode120.setReference(myAssociationLinks[1], SReference.create(myAssociationLinks[1], tnode120, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.typesystem.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~HUtil.copyIfNecessary(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode")));
+                                          tnode120.setReference(myAssociationLinks[1], SReference.create(myAssociationLinks[1], tnode120, PersistenceFacade.getInstance().createModelReference("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), PersistenceFacade.getInstance().createNodeId("4097555883694681820")));
+                                          tnode120.setReference(myAssociationLinks[2], SReference.create(myAssociationLinks[2], tnode120, PersistenceFacade.getInstance().createModelReference("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), PersistenceFacade.getInstance().createNodeId("6599163591527286941")));
                                           TemplateContext context60 = context58.subContext();
                                           {
                                             final SNode tnode121 = environment.createOutputNode(myConcepts[10]);
                                             try {
-                                              environment.resolve(new RefResolver(tnode121, myAssociationLinks[3], context60, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "767161977436105373"), "_node_") {
+                                              environment.resolve(new RefResolver(tnode121, myAssociationLinks[3], context60, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4097555883694853198"), "_node_") {
                                                 @Override
                                                 public Object resolve() {
                                                   return QueriesGenerated.referenceMacro_GetReferent_0_16(createQueryContext());
@@ -1238,8 +1238,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                       {
                                         final SNode tnode145 = environment.createOutputNode(myConcepts[7]);
                                         try {
-                                          tnode145.setReference(myAssociationLinks[2], SReference.create(myAssociationLinks[2], tnode145, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.typesystem.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~HUtil")));
-                                          tnode145.setReference(myAssociationLinks[1], SReference.create(myAssociationLinks[1], tnode145, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.typesystem.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~HUtil.copyIfNecessary(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode")));
+                                          tnode145.setReference(myAssociationLinks[1], SReference.create(myAssociationLinks[1], tnode145, PersistenceFacade.getInstance().createModelReference("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), PersistenceFacade.getInstance().createNodeId("4097555883694681820")));
+                                          tnode145.setReference(myAssociationLinks[2], SReference.create(myAssociationLinks[2], tnode145, PersistenceFacade.getInstance().createModelReference("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), PersistenceFacade.getInstance().createNodeId("6599163591527286941")));
                                           TemplateContext context73 = context71.subContext();
                                           {
                                             final SNode tnode146 = environment.createOutputNode(myConcepts[10]);
@@ -1414,7 +1414,7 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
   private static SNodePointer ifMacroRef_mmylek_b0a0b0d0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887376");
   private static SNodePointer templateNode_mmylek_c0a0a1a1a1a2a1a1a1a1a4a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363096914");
   private static SNodePointer callMacro_mmylek_b0a0a1a2a1a2a1a1a1a1a1a1a3a1a2a1a1a1a1a4a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "633481135935144944");
-  private static SNodePointer templateNode_mmylek_c0a0a1a3a1a3a1a2a1a1a1a1a1a1a3a1a2a1a1a1a1a4a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363087958");
+  private static SNodePointer templateNode_mmylek_c0a0a1a3a1a3a1a2a1a1a1a1a1a1a3a1a2a1a1a1a1a4a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4097555883694856119");
   private static SNodePointer ifMacroRef_mmylek_b0a0b0b0b0d0b0c0b0b0b0b0e0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887516");
   private static SNodePointer ifMacroRef_mmylek_b0a0b0e0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887528");
 }

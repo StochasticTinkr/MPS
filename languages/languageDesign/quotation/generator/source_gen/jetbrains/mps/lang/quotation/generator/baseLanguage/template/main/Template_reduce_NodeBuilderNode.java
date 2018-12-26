@@ -57,7 +57,7 @@ public class Template_reduce_NodeBuilderNode extends TemplateDeclarationBase imp
       TemplateContext context2 = context1.subContext();
       {
         Collection<SNode> tlist3 = null;
-        TemplateContext context3 = context2.subContext("nodeVariable");
+        TemplateContext context3 = context2.subContext("nodeVariableL");
         final SNode tnode4 = environment.createOutputNode(myConcepts[1]);
         try {
           environment.nodeCopied(context3, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784");
@@ -158,7 +158,7 @@ public class Template_reduce_NodeBuilderNode extends TemplateDeclarationBase imp
         } finally {
         }
         tlist3 = TemplateUtil.singletonList(tnode4);
-        environment.registerLabel(context2.getInput(), tnode4, "nodeVariable");
+        environment.registerLabel(context2.getInput(), tnode4, "nodeVariableL");
         for (SNode child17 : TemplateUtil.asNotNull(tlist3)) {
           tnode2.addChild(myAggregationLinks[5], child17);
         }
