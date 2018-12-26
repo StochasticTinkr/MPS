@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProcessCanceledException;
+import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.FindUsagesUtil;
@@ -49,6 +50,7 @@ import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -56,6 +58,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.function.Function;
 
+// FIXME why not ProjectComponent? Would help us to deal with dumb mode and use project's FS to get VirtualFile for an IFile
 public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
   @Override
   public void initComponent() {
@@ -129,6 +132,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
                                                  @NotNull ProgressMonitor monitor) {
     // get all files in scope
     final ManyToManyMap<SModel, VirtualFile> scopeFiles = new ManyToManyMap<>();
+    final ArrayList<SModel> models2consume = new ArrayList<>(models.size());
     for (final SModel sm : models) {
       if (sm instanceof EditableSModel && ((EditableSModel) sm).isChanged()) {
         continue;
@@ -166,7 +170,9 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
               String.format("Model %s: virtual file not found for model file. Model file: %s", sm.getName(), modelFile.getPath()));
           continue;
         }
-        processedModels.consume(sm);
+        // we shall not report models we've found files for as 'consumed' before we really made a search with their files.
+        // chances are we get 'index not ready' and shall walk models with a fall-back mechanism then.
+        models2consume.add(sm);
         scopeFiles.addLink(sm, vf);
       }
     }
@@ -175,6 +181,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
     ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
     // process indexes
     MultiMap<SModel, T> result = new SetBasedMultiMap<>();
+    boolean fileMatchFailedAtLeastOnce = false;
     for (T elem : elems) {
       UsageEntry entry = id.apply(elem);
 
@@ -182,7 +189,8 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
 
       try {
         matchingFiles = MPSModelsIndexer.getContainingFiles(entry, allFiles);
-      } catch (ProcessCanceledException ce) {
+      } catch (ProcessCanceledException | IndexNotReadyException ex) {
+        fileMatchFailedAtLeastOnce = true;
         matchingFiles = Collections.emptyList();
       }
 
@@ -192,6 +200,10 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
           result.putValue(m, elem);
         }
       }
+    }
+    if (!fileMatchFailedAtLeastOnce) {
+      // if any index operation failed, resort to fall-back lookup mechanism
+      models2consume.forEach(processedModels::consume);
     }
     return result;
   }
