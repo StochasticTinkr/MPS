@@ -1448,6 +1448,6 @@
     <orderEntry type="module" module-name="httpsupport" />
     <orderEntry type="module" module-name="migration-platform" />
     <orderEntry type="module" module-name="model" />
+    <orderEntry type="module" module-name="debuginfo-impl" />
   </component>
 </module>
-

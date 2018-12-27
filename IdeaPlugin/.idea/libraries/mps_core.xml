@@ -23,7 +23,8 @@
       <root url="file://$PROJECT_DIR$/../core/kernel/dataFlowRuntime/source" />
       <root url="file://$PROJECT_DIR$/../core/kernel/dataFlowRuntime/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/kernel/dataFlowRuntime/test" />
-      <root url="file://$PROJECT_DIR$/../core/kernel/jetbrains.mps.debug.api.info/source" />
+      <root url="file://$PROJECT_DIR$/../core/kernel/debuginfo/api/source" />
+      <root url="file://$PROJECT_DIR$/../core/kernel/debuginfo/impl/source" />
       <root url="file://$PROJECT_DIR$/../core/kernel/patternRuntime/source" />
       <root url="file://$PROJECT_DIR$/../core/kernel/patternRuntime/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/kernel/patternRuntime/test" />
@@ -44,6 +45,7 @@
       <root url="file://$PROJECT_DIR$/../core/persistence/source" />
       <root url="file://$PROJECT_DIR$/../core/persistence/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/project/source" />
+      <root url="file://$PROJECT_DIR$/../core/project/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/refactoring-runtime/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/scripts-runtime/source" />
       <root url="file://$PROJECT_DIR$/../core/smodel/source" />

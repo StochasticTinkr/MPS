@@ -30,9 +30,9 @@ core/make-runtime/classes
 core/make-runtime/solutions/jetbrains.mps.make.facets/classes
 core/migration-runtime/classes/
 core/textgen/classes
-core/jetbrains.mps.debug.api.info/classes
+core/debuginfo/api/classes
+core/debuginfo/impl/classes
 core/dataFlowRuntime/classes
-core/mps-core/classes
 core/project/classes
 core/tool/builder/classes
 core/scripts-runtime/classes
