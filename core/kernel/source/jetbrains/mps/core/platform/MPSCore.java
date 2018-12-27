@@ -30,6 +30,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.PathMacros;
+import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.structure.DescriptorModelComponent;
 import jetbrains.mps.project.structure.GeneratorDescriptorModelProvider;
 import jetbrains.mps.project.structure.GenericDescriptorModelProvider;
@@ -41,7 +42,6 @@ import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.Generator.GeneratorModelsAutoImports;
 import jetbrains.mps.smodel.Language.LanguageModelsAutoImports;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.PropertySupport.PropertySupportCache;
 import jetbrains.mps.smodel.SModelFileTracker;
@@ -79,6 +79,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   private DataSourceFactoryRuleService myDataSourceService;
   private ModelFactoryService myModelFactoryService;
   private ModelsAutoImportsManager myAutoImportsManager;
+  private DescriptorIOFacade myModuleDescriptorFacade;
 
   /**
    * made package-private
@@ -97,6 +98,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   @Override
   public void dispose() {
     super.dispose();
+    myModuleDescriptorFacade = null;
     myAutoImportsManager = null;
     myModelFactoryService = null;
     myClassLoaderManager = null;
@@ -148,6 +150,8 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
                                       new GenericDescriptorModelProvider()));
     init(new TypeRegistry());
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
+
+    init(myModuleDescriptorFacade = new DescriptorIOFacade());
 
     init(new ResolverComponent());
     init(new ValidationSettings());
@@ -243,6 +247,9 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     }
     if (DataSourceFactoryRuleService.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myDataSourceService);
+    }
+    if (DescriptorIOFacade.class == componentClass) {
+      return componentClass.cast(myModuleDescriptorFacade);
     }
     if (ModelsAutoImportsManager.class.equals(componentClass)) {
       return componentClass.cast(myAutoImportsManager);
