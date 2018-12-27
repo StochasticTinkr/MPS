@@ -22,7 +22,6 @@
     <orderEntry type="library" exported="" name="JDOM" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="library" name="Diff-utils" level="project" />
-    <orderEntry type="module" module-name="java-stub" scope="TEST" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="JMock" level="project" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />

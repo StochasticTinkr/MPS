@@ -21,9 +21,9 @@ import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.ModelReportItem;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.module.TransientSModule;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.plan.ModelScanner;
-import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
@@ -45,11 +45,11 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -60,11 +60,13 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -114,22 +116,32 @@ public class ValidationUtil {
       return; // force return
     }
 
-    if (!model.isReadOnly() && model instanceof PersistenceVersionAware) {
-      PersistenceVersionAware pvaModel = (PersistenceVersionAware) model;
-      ModelFactory pvaModelFactory = pvaModel.getModelFactory();
-      ModelFactory xmlModelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
-      if (pvaModelFactory != null && (xmlModelFactory == pvaModelFactory || xmlModelFactory.getFileExtension().equals(pvaModelFactory.getFileExtension()))) {
-        // ModelPersistence.LAST_VERSION doesn't make sense for anything but default xml persistence
-        int persistenceVersion = pvaModel.getPersistenceVersion();
-        if (persistenceVersion < ModelPersistence.LAST_VERSION) {
-          String msg;
-          if (persistenceVersion == -1) {
-            msg = "Undefined model persistence version, please check model persistence";
-          } else {
-            msg = String.format("Outdated model persistence is used: %d. Please upgrade model persistence.", persistenceVersion);
-          }
-          if (!processor.process(new ModelValidationProblem(model, MessageStatus.ERROR, msg))) {
-            return;
+    if (!model.isReadOnly() /* && model instanceof PersistenceVersionAware*/) {
+      // FIXME proper check has to use PersistenceVersionAware and its getModelFactory. However, this induces
+      // excessive dependency to [persistence] module from the [project]. As long as ValidationUtil stays as part of
+      // the project, and we don't want dependency cycles between [project], [kernel], [generator] and [persistence],
+      // have to be careful about which classes we use here
+      final DataSource modelSource = model.getSource();
+      final DataSourceType modelSourceType = modelSource.getType();
+      if (modelSourceType != null ) {
+        // assumption model has been loaded through the same ModelFactory as the default for its DS's type is indeed bad here,
+        // but there's no proper way I'm aware of to find out ModelFactory for a loaded model.
+        // Use of `((DefaultSModelDescriptor) model).getModelFactory()` would restore undesired [persistence] dependency.
+        // Anyway, hiding ModelPersistence.LAST_VERSION logic behind ModelFactory.needsUpgrade() is much better approach
+        // than the one used to be here (with knowledge of specific implementation internals and assumption about xml as default model factory kind).
+        ModelFactory actualModelFactory = ModelFactoryService.getInstance().getDefaultModelFactory(modelSourceType);
+        // FIXME ModelFactoryService.getInstance() is inevitable here until ValidationUtil is refactored to abandon its static essence.
+        if (actualModelFactory != null && actualModelFactory.supports(modelSource)) {
+          try {
+            if (actualModelFactory.needsUpgrade(modelSource)) {
+              String msg = "Model uses outdated persistence data, please upgrade.";
+              if (!processor.process(new ModelValidationProblem(model, MessageStatus.ERROR, msg))) {
+                return;
+              }
+            }
+          } catch (IOException ex) {
+            // ignore, we did our best to ensure there's no exception with 'supports' call
+            Logger.getLogger(ValidationUtil.class).info(ex.toString()); // don't care to get stacktrace
           }
         }
       }
