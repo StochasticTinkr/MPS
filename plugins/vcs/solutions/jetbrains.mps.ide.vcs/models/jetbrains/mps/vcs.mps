@@ -242,6 +242,12 @@
         <child id="1206629521979" name="statementList" index="3KIlGz" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -2430,7 +2436,21 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="6kmsk4KDJ2C" role="3cqZAp" />
+        <node concept="3SKdUt" id="$wIWWjuwOn" role="3cqZAp">
+          <node concept="3SKdUq" id="$wIWWjuwOp" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME I doubt we need all of these or that the set if complete. Some of these are just to satisfy direct Java dependency of PlatformBase class (e.g. dataFlowRuntime or textgen) - " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="$wIWWju$N_" role="3cqZAp">
+          <node concept="3SKdUq" id="$wIWWju$NB" role="3SKWNk">
+            <property role="3SKdUp" value="      MergeDriverMain uses 'PERSISTENCE' level of the Platform, hence doesn't need to load MPSDataFlow or MPSTextGenerator classes. Shall refactor PlatformBase not to trigger classloading" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="$wIWWjuFOG" role="3cqZAp">
+          <node concept="3SKdUq" id="$wIWWjuFOI" role="3SKWNk">
+            <property role="3SKdUp" value="      of classes beyond the desired level and reduce the list" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="6gjr9XnnBS6" role="3cqZAp">
           <node concept="3cpWsn" id="6gjr9XnnBS7" role="3cpWs9">
             <property role="TrG5h" value="CLASSPATHS" />
@@ -2461,6 +2481,9 @@
               </node>
               <node concept="Xl_RD" id="4hNzukCU_PK" role="37wK5m">
                 <property role="Xl_RC" value="project" />
+              </node>
+              <node concept="Xl_RD" id="$wIWWjtOc1" role="37wK5m">
+                <property role="Xl_RC" value="project-check" />
               </node>
               <node concept="Xl_RD" id="6gjr9XnnBSD" role="37wK5m">
                 <property role="Xl_RC" value="generator" />

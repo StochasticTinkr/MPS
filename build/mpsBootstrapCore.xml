@@ -6362,6 +6362,9 @@
     <jar destfile="${build.tmp}/antTasks/mps-behavior-runtime.jar">
       <fileset dir="${build.tmp}/java/out/mps-behavior-runtime" />
     </jar>
+    <jar destfile="${build.tmp}/antTasks/mps-project-check.jar">
+      <fileset dir="${build.tmp}/java/out/mps-project-check" />
+    </jar>
     <jar destfile="${build.tmp}/antTasks/mps-core.jar">
       <fileset dir="${build.tmp}/java/out/mps-kernel" />
       <fileset dir="${build.tmp}/java/out/vfs" />
@@ -6371,7 +6374,6 @@
       <fileset dir="${build.tmp}/java/out/mps-smodel" />
       <fileset dir="${build.tmp}/java/out/mps-persistence" />
       <fileset dir="${build.tmp}/java/out/mps-project" />
-      <fileset dir="${build.tmp}/java/out/mps-debuginfo-api" />
       <fileset dir="${build.tmp}/java/out/mps-generator" />
       <fileset dir="${build.tmp}/java/out/mps-textgen" />
       <fileset dir="${build.tmp}/java/out/kernel-resources" />

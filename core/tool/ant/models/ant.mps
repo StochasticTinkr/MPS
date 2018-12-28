@@ -4563,6 +4563,9 @@
           <node concept="Xl_RD" id="5d$B_bo0J8a" role="3g7hyw">
             <property role="Xl_RC" value="mps-boot-util.jar" />
           </node>
+          <node concept="Xl_RD" id="$wIWWjt1Ft" role="3g7hyw">
+            <property role="Xl_RC" value="mps-project-check.jar" />
+          </node>
           <node concept="17QB3L" id="70B3qCBD4_m" role="3g7fb8" />
         </node>
       </node>

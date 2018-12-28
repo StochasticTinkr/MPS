@@ -7696,6 +7696,9 @@
         <node concept="Xl_RD" id="5d$B_bo0qx1" role="37wK5m">
           <property role="Xl_RC" value="mps-boot-util.jar" />
         </node>
+        <node concept="Xl_RD" id="$wIWWjtsvb" role="37wK5m">
+          <property role="Xl_RC" value="mps-project-check.jar" />
+        </node>
       </node>
       <node concept="A3Dl8" id="7yiwGpnLbjo" role="1tU5fm">
         <node concept="17QB3L" id="7yiwGpnLbju" role="A3Ik2" />
@@ -8722,6 +8725,11 @@
           </node>
           <node concept="9aQIb" id="5drFrG61MoB" role="9aQIa">
             <node concept="3clFbS" id="5drFrG61MoC" role="9aQI4">
+              <node concept="3SKdUt" id="$wIWWjtZ6j" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjtZ6l" role="3SKWNk">
+                  <property role="3SKdUp" value="FIXME why don't we use CommonPath.getMPSPaths(ClassType.[CORE|OPENAPI|ANNOATATION]) That would reduce number of places with jar names we have to keep!" />
+                </node>
+              </node>
               <node concept="3cpWs8" id="1DEOIxKIXxV" role="3cqZAp">
                 <node concept="3cpWsn" id="1DEOIxKIXxW" role="3cpWs9">
                   <property role="TrG5h" value="mpsCorePath" />

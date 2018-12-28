@@ -12145,6 +12145,27 @@
                 </node>
               </node>
             </node>
+            <node concept="2Vbh7Z" id="$wIWWjuObf" role="2VaTZU">
+              <node concept="2pNNFK" id="$wIWWjuObg" role="2Vbh7K">
+                <property role="2pNNFO" value="jar" />
+                <node concept="2pNNFK" id="$wIWWjuObh" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNUuL" id="$wIWWjuObi" role="2pNNFR">
+                    <property role="2pNUuO" value="dir" />
+                    <node concept="2pMdtt" id="$wIWWjuObj" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/mps-project-check" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNUuL" id="$wIWWjuObk" role="2pNNFR">
+                  <property role="2pNUuO" value="destfile" />
+                  <node concept="2pMdtt" id="$wIWWjuObl" role="2pMdts">
+                    <property role="2pMdty" value="${build.tmp}/antTasks/mps-project-check.jar" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="2Vbh7Z" id="5mxyaMf$njU" role="2VaTZU">
               <node concept="2pNNFK" id="5mxyaMf$njV" role="2Vbh7K">
                 <property role="2pNNFO" value="jar" />
@@ -12225,16 +12246,6 @@
                     <property role="2pNUuO" value="dir" />
                     <node concept="2pMdtt" id="6OTUdBQYCc9" role="2pMdts">
                       <property role="2pMdty" value="${build.tmp}/java/out/mps-project" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="2pNNFK" id="6OTUdBR4tuZ" role="3o6s8t">
-                  <property role="qg3DV" value="true" />
-                  <property role="2pNNFO" value="fileset" />
-                  <node concept="2pNUuL" id="6OTUdBR4tv0" role="2pNNFR">
-                    <property role="2pNUuO" value="dir" />
-                    <node concept="2pMdtt" id="6OTUdBR4tv1" role="2pMdts">
-                      <property role="2pMdty" value="${build.tmp}/java/out/mps-debuginfo-api" />
                     </node>
                   </node>
                 </node>
@@ -12356,6 +12367,56 @@
           <property role="TrG5h" value="mpsBootCore" />
           <node concept="2jfdEK" id="g0fHFWlnqM" role="2jfP_Y">
             <node concept="3clFbS" id="g0fHFWlnqO" role="2VODD2">
+              <node concept="3SKdUt" id="$wIWWjuPgF" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuPgH" role="3SKWNk">
+                  <property role="3SKdUp" value=" FIXME this hack is to allow mpsBootstrapCore to assemble MPS sources into jars" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuPNe" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuPNg" role="3SKWNk">
+                  <property role="3SKdUp" value="using the same mechanism as for any other MPS-orchestrated build project." />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuQal" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuQan" role="3SKWNk">
+                  <property role="3SKdUp" value="In fact, it seems that only copyModels task is important (hence, Platform of 'PERSISTENCE' level)" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuQxw" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuQxy" role="3SKWNk">
+                  <property role="3SKdUp" value="as MPS itself has been already generated and compiled (i.e no need for generate, migrate or runMPS tasks, see" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuRIQ" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuRIR" role="3SKWNk">
+                  <property role="3SKdUp" value="antlib.xml for full list). Therefore, once PlatformBase is capable to load only deisred ComponentPlugin classes," />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuS65" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuS67" role="3SKWNk">
+                  <property role="3SKdUp" value="we can limit this hack to much smaller subset." />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuSid" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuSif" role="3SKWNk">
+                  <property role="3SKdUp" value="Unfortunately, MPSClasspathUtil expects jar names to match for both deployed and bootstrap MPS builds, hence" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuSup" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuSur" role="3SKWNk">
+                  <property role="3SKdUp" value="we can't just jar all copyModels-relevant classes into single mps-core.jar. OTOH, I don't quite understand why" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuSPO" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuSPQ" role="3SKWNk">
+                  <property role="3SKdUp" value="do we need MPSClasspathUtil for ant tasks, why don't we build proper classpath right inside the build script " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuT1$" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuT1_" role="3SKWNk">
+                  <property role="3SKdUp" value="(classpathref of respective taskdef)?" />
+                </node>
+              </node>
               <node concept="3clFbF" id="g0fHFWlnF9" role="3cqZAp">
                 <node concept="1Wc70l" id="g0fHFWic07" role="3clFbG">
                   <node concept="2OqwBi" id="g0fHFWigLw" role="3uHU7w">

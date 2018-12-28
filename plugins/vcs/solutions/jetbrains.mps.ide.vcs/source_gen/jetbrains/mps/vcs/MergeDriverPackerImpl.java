@@ -31,8 +31,10 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
         return PathManager.getLibPath() + fsep + it;
       }
     }));
-
-    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "logging", "openapi", "smodel", "make-runtime", "dataFlowRuntime", "project", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence", "platform", "components", "migration-runtime", "textgen", "java-stub", "util", "vfs", "aspects" + fsep + "behavior" + fsep + "behavior-api", "aspects" + fsep + "behavior" + fsep + "behavior-runtime", "make-runtime" + fsep + "solutions" + fsep + "jetbrains.mps.make.facets");
+    // FIXME I doubt we need all of these or that the set if complete. Some of these are just to satisfy direct Java dependency of PlatformBase class (e.g. dataFlowRuntime or textgen) -  
+    //       MergeDriverMain uses 'PERSISTENCE' level of the Platform, hence doesn't need to load MPSDataFlow or MPSTextGenerator classes. Shall refactor PlatformBase not to trigger classloading 
+    //       of classes beyond the desired level and reduce the list 
+    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "logging", "openapi", "smodel", "make-runtime", "dataFlowRuntime", "project", "project-check", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence", "platform", "components", "migration-runtime", "textgen", "java-stub", "util", "vfs", "aspects" + fsep + "behavior" + fsep + "behavior-api", "aspects" + fsep + "behavior" + fsep + "behavior-runtime", "make-runtime" + fsep + "solutions" + fsep + "jetbrains.mps.make.facets");
     String homePath = PathManager.getHomePath();
     final String corePath = homePath + fsep + "core";
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(CLASSPATHS).select(new ISelector<String, String>() {
