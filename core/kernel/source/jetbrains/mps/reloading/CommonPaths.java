@@ -191,6 +191,7 @@ public final class CommonPaths {
     addIfExists(result, "lib/mps-closures.jar");
     addIfExists(result, "lib/mps-collections.jar");
     addIfExists(result, "lib/mps-tuples.jar");
+    addIfExists(result, "lib/mps-project-check.jar");
     addIfExists(result, "lib/log4j.jar");
     addIfExists(result, "lib/trove4j.jar");
     addIfExists(result, "lib/jdom.jar");

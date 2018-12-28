@@ -172,6 +172,7 @@
         <fileset file="${artifacts.mpsJavaIdeaPlugin}/mps-idea-java/lib/mps-java-idea.jar" />
         <fileset file="${artifacts.mpsPluginCore}/mps-core/lib/mps-tool.jar" />
         <fileset file="${artifacts.mpsJavaPlatform}/lib/mps-java-platform.jar" />
+        <fileset file="${artifacts.mpsPluginCore}/mps-core/lib/mps-project-check.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />

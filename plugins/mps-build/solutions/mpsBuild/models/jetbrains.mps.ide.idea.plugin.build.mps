@@ -1616,6 +1616,9 @@
       <node concept="nCB5N" id="3ZROizBYYvl" role="nCB5Z">
         <ref role="nCB5Y" to="ffeo:57J5fkcylG8" resolve="mps-java-platform" />
       </node>
+      <node concept="nCB5N" id="21XsCNMQUyz" role="nCB5Z">
+        <ref role="nCB5Y" to="ffeo:6UWbfHq6Ys7" resolve="mps-project-check" />
+      </node>
       <node concept="2sjeV3" id="3L2iO8sKLih" role="nCB5Z">
         <ref role="2sjeV2" node="3L2iO8sIVea" resolve="mps-testing-artifacts" />
       </node>

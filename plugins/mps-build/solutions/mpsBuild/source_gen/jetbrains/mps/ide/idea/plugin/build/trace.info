@@ -37,7 +37,7 @@
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/6977615362525216882">
     <file name="mpsPluginTests.xml">
-      <unit id="6977615362525216882" at="1,0,238,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPluginTests" />
+      <unit id="6977615362525216882" at="1,0,239,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPluginTests" />
     </file>
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/7848168823642910785">
