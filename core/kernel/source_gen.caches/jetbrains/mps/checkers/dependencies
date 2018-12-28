@@ -233,31 +233,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.ModelPropertiesChecker">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
-    <classNode dependClassName="jetbrains.mps.errors.item.ModelReportItem" />
-    <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="jetbrains.mps.checkers.IChecker" />
-  </dependency>
-  <dependency className="jetbrains.mps.checkers.ModuleChecker">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
-    <classNode dependClassName="jetbrains.mps.errors.item.ModuleReportItem" />
-    <classNode dependClassName="jetbrains.mps.project.validation.ModuleValidationProblem" />
-    <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="jetbrains.mps.checkers.IChecker" />
-  </dependency>
   <dependency className="jetbrains.mps.checkers.ModuleImportQuickFix">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

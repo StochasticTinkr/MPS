@@ -4,7 +4,6 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
@@ -1402,8 +1401,8 @@
                   </node>
                 </node>
                 <node concept="2ShNRf" id="3ukCc1ofBtz" role="HW$Y0">
-                  <node concept="1pGfFk" id="3ukCc1ofZ$A" role="2ShVmc">
-                    <ref role="37wK5l" to="wsw7:3etVqSRT$Df" resolve="ModuleChecker" />
+                  <node concept="1pGfFk" id="CxQQw_GQGU" role="2ShVmc">
+                    <ref role="37wK5l" to="k2t0:~ModuleChecker.&lt;init&gt;()" resolve="ModuleChecker" />
                   </node>
                 </node>
               </node>
@@ -1451,8 +1450,8 @@
                   </node>
                 </node>
                 <node concept="2ShNRf" id="3ukCc1okn9S" role="HW$Y0">
-                  <node concept="HV5vD" id="3ukCc1okntE" role="2ShVmc">
-                    <ref role="HV5vE" to="wsw7:3etVqSRK$2L" resolve="ModelPropertiesChecker" />
+                  <node concept="1pGfFk" id="CxQQw_GSH7" role="2ShVmc">
+                    <ref role="37wK5l" to="k2t0:~ModelPropertiesChecker.&lt;init&gt;()" resolve="ModelPropertiesChecker" />
                   </node>
                 </node>
               </node>

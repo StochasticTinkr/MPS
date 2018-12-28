@@ -34,6 +34,7 @@ core/debuginfo/api/classes
 core/debuginfo/impl/classes
 core/dataFlowRuntime/classes
 core/project/classes
+core/project-check/classes
 core/tool/builder/classes
 core/scripts-runtime/classes
 languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes

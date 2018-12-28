@@ -17,9 +17,13 @@ package jetbrains.mps.validation;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.errors.CheckerRegistry;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * FIXME  I suspect there's no need in settings of IModelValidationSettings these days, therefore CheckerRegistry is kept separate so that
+ * we can remove this class once settings are gone. OTOH, CheckerRegistry itself is kind of odd (especially as an MPSCore component), perhaps,
+ * is less odd if part of generic 'validation' infrastructure.
  * evgeny, 12/27/11
  */
 public class ValidationSettings implements CoreComponent {
@@ -32,7 +36,11 @@ public class ValidationSettings implements CoreComponent {
 
   private IModelValidationSettings myModelValidationSettings;
 
-  private CheckerRegistry myCheckerRegistry = new CheckerRegistry();
+  private final CheckerRegistry myCheckerRegistry;
+
+  public ValidationSettings(CheckerRegistry checkerRegistry) {
+    myCheckerRegistry = checkerRegistry;
+  }
 
   @Override
   public void init() {
@@ -52,6 +60,13 @@ public class ValidationSettings implements CoreComponent {
     return myModelValidationSettings;
   }
 
+  /**
+   * @deprecated {@link CheckerRegistry} is {@link CoreComponent}, use {@link jetbrains.mps.components.ComponentHost#findComponent(Class)} to obtain its instance
+   *
+   * To my best knowledge, there are no uses of this method in mbeddr.
+   */
+  @Deprecated
+  @ToRemove(version = 2019.1)
   public CheckerRegistry getCheckerRegistry() {
     return myCheckerRegistry;
   }

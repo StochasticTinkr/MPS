@@ -20,6 +20,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.errors.CheckerRegistry;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
@@ -80,6 +81,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   private ModelFactoryService myModelFactoryService;
   private ModelsAutoImportsManager myAutoImportsManager;
   private DescriptorIOFacade myModuleDescriptorFacade;
+  private CheckerRegistry myCheckerRegistry;
 
   /**
    * made package-private
@@ -154,7 +156,8 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     init(myModuleDescriptorFacade = new DescriptorIOFacade());
 
     init(new ResolverComponent());
-    init(new ValidationSettings());
+    myCheckerRegistry = init(new CheckerRegistry());
+    init(new ValidationSettings(myCheckerRegistry));
 
     init(new PropertySupportCache(myClassLoaderManager));
     myAutoImportsManager = init(new ModelsAutoImportsManager());
@@ -253,6 +256,9 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     }
     if (ModelsAutoImportsManager.class.equals(componentClass)) {
       return componentClass.cast(myAutoImportsManager);
+    }
+    if (CheckerRegistry.class.equals(componentClass)) {
+      return componentClass.cast(myCheckerRegistry);
     }
     return null;
   }

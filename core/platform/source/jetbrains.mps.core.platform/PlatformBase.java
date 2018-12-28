@@ -36,8 +36,10 @@ class PlatformBase implements Platform {
   private MPSTextGenerator myTextGen;
   private MPSDataFlow myDataFlow;
   private MPSMake myMake;
+  private MPSProjectValidation myProjectCheck;
 
   PlatformBase(PlatformOptionsBuilder options) {
+    // FIXME is there any scenario for loadCore == false?!
     if (options.loadsCore()) {
       myCore = new MPSCore();
       myCore.init();
@@ -47,12 +49,14 @@ class PlatformBase implements Platform {
       myPersistence.init();
     }
     if (options.loadsOthers()) {
+      myProjectCheck = new MPSProjectValidation(myCore);
       myMake = new MPSMake(myCore.getLanguageRegistry());
       myTypesystem = new MPSTypesystem(myCore.getLanguageRegistry(), myCore.getClassLoaderManager());
       myGenerator = new MPSGenerator(myCore);
       myFindUsages = new MPSFindUsages(myCore.getLanguageRegistry());
       myTextGen = new MPSTextGenerator(myCore.getLanguageRegistry());
       myDataFlow = new MPSDataFlow(myCore.getClassLoaderManager());
+      myProjectCheck.init();
       myMake.init();
       myTypesystem.init();
       myGenerator.init();
@@ -89,12 +93,13 @@ class PlatformBase implements Platform {
 
   @Override
   public void dispose() {
-    dispose(myMake);
     dispose(myDataFlow);
     dispose(myTextGen);
     dispose(myFindUsages);
     dispose(myGenerator);
     dispose(myTypesystem);
+    dispose(myMake);
+    dispose(myProjectCheck);
     dispose(myPersistence);
     dispose(myCore);
   }

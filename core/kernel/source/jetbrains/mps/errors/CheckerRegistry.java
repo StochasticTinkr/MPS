@@ -18,34 +18,41 @@ package jetbrains.mps.errors;
 import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.IChecker;
-import jetbrains.mps.checkers.ModelPropertiesChecker;
-import jetbrains.mps.checkers.ModuleChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.checkers.UsedLanguagesChecker;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.errors.item.IssueKindReportItem.CheckerCategory;
-import jetbrains.mps.project.validation.StructureChecker;
 import jetbrains.mps.util.containers.MultiMap;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public final class CheckerRegistry {
+public final class CheckerRegistry implements CoreComponent {
 
   private MultiMap<CheckerCategory, IChecker<?, ?>> myCheckers;
   private MultiMap<CheckerCategory, AbstractNodeCheckerInEditor> myEditorCheckers;
 
   public CheckerRegistry() {
-    clear();
+  }
+
+  @Override
+  public void init() {
+    myCheckers = new MultiMap<>();
+    myEditorCheckers = new MultiMap<>();
+    registerCoreCheckers();
+  }
+
+  @Override
+  public void dispose() {
+    myCheckers.clear();
+    myEditorCheckers.clear();
   }
 
   private void registerCoreCheckers() {
     registerChecker(new ConstraintsChecker());
     registerChecker(new TargetConceptChecker());
     registerChecker(new UsedLanguagesChecker());
-    registerChecker(new StructureChecker().withoutBrokenReferences());
-    registerChecker(new ModelPropertiesChecker());
-    registerChecker(new ModuleChecker());
     registerChecker(new RefScopeChecker());
   }
 
@@ -78,11 +85,4 @@ public final class CheckerRegistry {
     }
     return result;
   }
-
-  private void clear() {
-    myCheckers = new MultiMap<>();
-    myEditorCheckers = new MultiMap<>();
-    registerCoreCheckers();
-  }
-
 }

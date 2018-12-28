@@ -74,6 +74,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/persistence/persistence.iml" filepath="$PROJECT_DIR$/core/persistence/persistence.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/platform/platform.iml" filepath="$PROJECT_DIR$/core/platform/platform.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/project/project.iml" filepath="$PROJECT_DIR$/core/project/project.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/project-check/project-check.iml" filepath="$PROJECT_DIR$/core/project-check/project-check.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/projectMigrations/projectMigrations.iml" filepath="$PROJECT_DIR$/plugins/projectMigrations/projectMigrations.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/core/refactoring/refactoring.iml" filepath="$PROJECT_DIR$/core/refactoring/refactoring.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/refactoring-runtime/refactoring-runtime.iml" filepath="$PROJECT_DIR$/core/refactoring-runtime/refactoring-runtime.iml" group="core" />
