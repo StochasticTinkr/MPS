@@ -16,29 +16,40 @@
 package jetbrains.mps.typesystem.checking;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.checkers.IChecker;
+import jetbrains.mps.errors.CheckerRegistry;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
-import jetbrains.mps.validation.ValidationSettings;
 import typesystemIntegration.languageChecker.RefScopeCheckerInEditor;
 
-import java.util.ArrayList;
-import java.util.List;
-
+// XXX this one could be ProjectComponent if needs to pass context down to checkers (e.g. TypesystemChecker)
 public class EditorCheckerComponent implements ApplicationComponent {
+  private final MPSCoreComponents myCoreComponents;
   private TypesystemChecker myTypesystemChecker;
   private RefScopeCheckerInEditor myRefScopeCheckerInEditor;
 
+  public EditorCheckerComponent(MPSCoreComponents mpsCoreComponents) {
+    myCoreComponents = mpsCoreComponents;
+  }
+
   @Override
   public void initComponent() {
-    myRefScopeCheckerInEditor = new RefScopeCheckerInEditor();
-    myTypesystemChecker = new TypesystemChecker();
-    ValidationSettings.getInstance().getCheckerRegistry().registerChecker(myTypesystemChecker);
-    ValidationSettings.getInstance().getCheckerRegistry().registerEditorChecker(myRefScopeCheckerInEditor);
+    final CheckerRegistry registry = myCoreComponents.getPlatform().findComponent(CheckerRegistry.class);
+    if (registry != null) {
+      myRefScopeCheckerInEditor = new RefScopeCheckerInEditor();
+      myTypesystemChecker = new TypesystemChecker();
+      registry.registerChecker(myTypesystemChecker);
+      registry.registerEditorChecker(myRefScopeCheckerInEditor);
+    }
   }
 
   @Override
   public void disposeComponent() {
-    ValidationSettings.getInstance().getCheckerRegistry().unregisterChecker(myTypesystemChecker);
-    ValidationSettings.getInstance().getCheckerRegistry().unregisterEditorChecker(myRefScopeCheckerInEditor);
+    final CheckerRegistry registry = myCoreComponents.getPlatform().findComponent(CheckerRegistry.class);
+    if (registry != null) {
+      registry.unregisterChecker(myTypesystemChecker);
+      registry.unregisterEditorChecker(myRefScopeCheckerInEditor);
+      myTypesystemChecker = null;
+      myRefScopeCheckerInEditor = null;
+    }
   }
 }

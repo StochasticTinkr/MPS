@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.editor.runtime.LanguageEditorChecker;
+import jetbrains.mps.errors.CheckerRegistry;
 import jetbrains.mps.ide.editor.checkers.ModelProblemsChecker;
 import jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker;
 import jetbrains.mps.nodeEditor.Highlighter;
@@ -71,7 +72,10 @@ public class MPSValidationComponent implements ProjectComponent {
       addChecker(new NonTypesystemEditorChecker());
       addChecker(new AutoResolver(myProject));
       final SRepository repositoryToTrack4Changes = myProject.getRepository();
-      addChecker(new LanguageEditorChecker(repositoryToTrack4Changes));
+      final CheckerRegistry checkerRegistry = myProject.getComponent(CheckerRegistry.class);
+      if (checkerRegistry != null) {
+        addChecker(new LanguageEditorChecker(repositoryToTrack4Changes, checkerRegistry.getEditorCheckers()));
+      }
       addChecker(new SuppressErrorsChecker());
       addChecker(new ModelProblemsChecker(repositoryToTrack4Changes));
     });

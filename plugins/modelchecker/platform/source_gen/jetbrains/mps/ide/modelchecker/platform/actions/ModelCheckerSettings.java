@@ -16,15 +16,17 @@ import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.errors.CheckerRegistry;
 import jetbrains.mps.errors.item.IssueKindReportItem;
-import jetbrains.mps.validation.ValidationSettings;
 
 @State(name = "ModelCheckerSettings", storages = @Storage(value = "modelCheckerSettings.xml")
 )
 public class ModelCheckerSettings implements PersistentStateComponent<ModelCheckerSettings.MyState>, ApplicationComponent {
   private ModelCheckerSettings.MyState myState = new ModelCheckerSettings.MyState();
+
   public ModelCheckerSettings() {
   }
+
   @NonNls
   @NotNull
   @Override
@@ -54,8 +56,12 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   }
   public List<IChecker<?, ?>> getSpecificCheckers(@NotNull Project mpsProject) {
     List<IChecker<?, ?>> result = ListSequence.fromList(new ArrayList<IChecker<?, ?>>());
+    CheckerRegistry checkerRegistry = mpsProject.getComponent(CheckerRegistry.class);
+    if (checkerRegistry == null) {
+      return result;
+    }
     IssueKindReportItem.KindLevel checkingLevel = myState.myCheckingLevel.getKindLevel();
-    for (IChecker<?, ?> checker : ListSequence.fromList(ValidationSettings.getInstance().getCheckerRegistry().getCheckers())) {
+    for (IChecker<?, ?> checker : ListSequence.fromList(checkerRegistry.getCheckers())) {
       IssueKindReportItem.KindLevel checkerLevel = checker.getCategory().getKindLevel();
       switch (checkerLevel) {
         case MANUAL:

@@ -33,13 +33,10 @@
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="18nx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vcs.checkin(MPS.IDEA/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
-    <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
-    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="1037" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vcs.changes(MPS.IDEA/)" />
     <import index="9z78" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.border(JDK/)" />
     <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
     <import index="bfoa" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.findusages.view.icons(MPS.Platform/)" />
-    <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
     <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
     <import index="71xd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.tools(MPS.Platform/)" />
     <import index="jkny" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm(MPS.IDEA/)" />
@@ -55,15 +52,15 @@
     <import index="gp7a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.dependency(MPS.Core/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="z2i8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.icons(MPS.IDEA/)" />
-    <import index="k8ev" ref="r:f39afe13-666a-48f2-9d7c-2f9366f78fe5(jetbrains.mps.typesystemEngine.checker)" />
     <import index="gsia" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.event(JDK/)" />
     <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="k2t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.checkers(MPS.Core/)" />
-    <import index="dl8v" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.validation(MPS.Core/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
     <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
+    <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
@@ -444,11 +441,13 @@
       </node>
       <node concept="3Tm6S6" id="3etVqSRKzpl" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="6UWbfHqgQvx" role="jymVt" />
     <node concept="3clFbW" id="3etVqSRKzpt" role="jymVt">
       <node concept="3cqZAl" id="3etVqSRKzpu" role="3clF45" />
       <node concept="3Tm1VV" id="3etVqSRKzpv" role="1B3o_S" />
       <node concept="3clFbS" id="3etVqSRKzpw" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="6UWbfHqgRWY" role="jymVt" />
     <node concept="3clFb_" id="3etVqSRKzpx" role="jymVt">
       <property role="TrG5h" value="getComponentName" />
       <node concept="17QB3L" id="3etVqSRKzpy" role="3clF45" />
@@ -593,6 +592,40 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="6UWbfHqh1Gf" role="3cqZAp">
+          <node concept="3cpWsn" id="6UWbfHqh1Gg" role="3cpWs9">
+            <property role="TrG5h" value="checkerRegistry" />
+            <node concept="3uibUv" id="6UWbfHqh1Gc" role="1tU5fm">
+              <ref role="3uigEE" to="2gg1:~CheckerRegistry" resolve="CheckerRegistry" />
+            </node>
+            <node concept="2OqwBi" id="6UWbfHqh1Gh" role="33vP2m">
+              <node concept="37vLTw" id="6UWbfHqh1Gi" role="2Oq$k0">
+                <ref role="3cqZAo" node="3GsVPVaO875" resolve="mpsProject" />
+              </node>
+              <node concept="liA8E" id="6UWbfHqh1Gj" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="6UWbfHqh1Gk" role="37wK5m">
+                  <ref role="3VsUkX" to="2gg1:~CheckerRegistry" resolve="CheckerRegistry" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6UWbfHqh61V" role="3cqZAp">
+          <node concept="3clFbS" id="6UWbfHqh61X" role="3clFbx">
+            <node concept="3cpWs6" id="6UWbfHqhbtN" role="3cqZAp">
+              <node concept="37vLTw" id="6UWbfHqhdAI" role="3cqZAk">
+                <ref role="3cqZAo" node="3GsVPVaO85v" resolve="result" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="6UWbfHqh7UL" role="3clFbw">
+            <node concept="10Nm6u" id="6UWbfHqh8mu" role="3uHU7w" />
+            <node concept="37vLTw" id="6UWbfHqh7p5" role="3uHU7B">
+              <ref role="3cqZAo" node="6UWbfHqh1Gg" resolve="checkerRegistry" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="3GsVPVaOyVE" role="3cqZAp">
           <node concept="3cpWsn" id="3GsVPVaOyVF" role="3cpWs9">
             <property role="TrG5h" value="checkingLevel" />
@@ -708,14 +741,8 @@
             </node>
           </node>
           <node concept="2OqwBi" id="3GsVPVaOk6H" role="2GsD0m">
-            <node concept="2OqwBi" id="3GsVPVaOk6I" role="2Oq$k0">
-              <node concept="2YIFZM" id="3GsVPVaOk6J" role="2Oq$k0">
-                <ref role="37wK5l" to="dl8v:~ValidationSettings.getInstance():jetbrains.mps.validation.ValidationSettings" resolve="getInstance" />
-                <ref role="1Pybhc" to="dl8v:~ValidationSettings" resolve="ValidationSettings" />
-              </node>
-              <node concept="liA8E" id="3GsVPVaOk6K" role="2OqNvi">
-                <ref role="37wK5l" to="dl8v:~ValidationSettings.getCheckerRegistry():jetbrains.mps.errors.CheckerRegistry" resolve="getCheckerRegistry" />
-              </node>
+            <node concept="37vLTw" id="6UWbfHqheYQ" role="2Oq$k0">
+              <ref role="3cqZAo" node="6UWbfHqh1Gg" resolve="checkerRegistry" />
             </node>
             <node concept="liA8E" id="3GsVPVaOk6L" role="2OqNvi">
               <ref role="37wK5l" to="2gg1:~CheckerRegistry.getCheckers():java.util.List" resolve="getCheckers" />
@@ -8072,6 +8099,38 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="6UWbfHqhzDv" role="jymVt">
+      <property role="TrG5h" value="myCoreComponents" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="6UWbfHqhzDw" role="1B3o_S" />
+      <node concept="3uibUv" id="6UWbfHqhzDy" role="1tU5fm">
+        <ref role="3uigEE" to="3a50:~MPSCoreComponents" resolve="MPSCoreComponents" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6UWbfHqhyKL" role="jymVt" />
+    <node concept="3clFbW" id="6UWbfHqhy2s" role="jymVt">
+      <node concept="3cqZAl" id="6UWbfHqhy2v" role="3clF45" />
+      <node concept="3Tm1VV" id="6UWbfHqhy2w" role="1B3o_S" />
+      <node concept="3clFbS" id="6UWbfHqhy2x" role="3clF47">
+        <node concept="3clFbF" id="6UWbfHqhzDz" role="3cqZAp">
+          <node concept="37vLTI" id="6UWbfHqhzD_" role="3clFbG">
+            <node concept="37vLTw" id="6UWbfHqhzDC" role="37vLTJ">
+              <ref role="3cqZAo" node="6UWbfHqhzDv" resolve="myCoreComponents" />
+            </node>
+            <node concept="37vLTw" id="6UWbfHqhzDD" role="37vLTx">
+              <ref role="3cqZAo" node="6UWbfHqhzAx" resolve="mpsCore" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="6UWbfHqhzAx" role="3clF46">
+        <property role="TrG5h" value="mpsCore" />
+        <node concept="3uibUv" id="6UWbfHqhzAw" role="1tU5fm">
+          <ref role="3uigEE" to="3a50:~MPSCoreComponents" resolve="MPSCoreComponents" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6UWbfHqhvkT" role="jymVt" />
     <node concept="3clFb_" id="xWHpBq5PLx" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="initComponent" />
@@ -8080,6 +8139,41 @@
       <node concept="3Tm1VV" id="xWHpBq5PLy" role="1B3o_S" />
       <node concept="3cqZAl" id="xWHpBq5PL$" role="3clF45" />
       <node concept="3clFbS" id="xWHpBq5PLA" role="3clF47">
+        <node concept="3cpWs8" id="6UWbfHqhELe" role="3cqZAp">
+          <node concept="3cpWsn" id="6UWbfHqhELf" role="3cpWs9">
+            <property role="TrG5h" value="checkerRegistry" />
+            <node concept="3uibUv" id="6UWbfHqhEL8" role="1tU5fm">
+              <ref role="3uigEE" to="2gg1:~CheckerRegistry" resolve="CheckerRegistry" />
+            </node>
+            <node concept="2OqwBi" id="6UWbfHqhELg" role="33vP2m">
+              <node concept="2OqwBi" id="6UWbfHqhELh" role="2Oq$k0">
+                <node concept="37vLTw" id="6UWbfHqhELi" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6UWbfHqhzDv" resolve="myCoreComponents" />
+                </node>
+                <node concept="liA8E" id="6UWbfHqhELj" role="2OqNvi">
+                  <ref role="37wK5l" to="3a50:~MPSCoreComponents.getPlatform():jetbrains.mps.core.platform.Platform" resolve="getPlatform" />
+                </node>
+              </node>
+              <node concept="liA8E" id="6UWbfHqhELk" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="6UWbfHqhELl" role="37wK5m">
+                  <ref role="3VsUkX" to="2gg1:~CheckerRegistry" resolve="CheckerRegistry" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6UWbfHqhGnZ" role="3cqZAp">
+          <node concept="3clFbS" id="6UWbfHqhGo1" role="3clFbx">
+            <node concept="3cpWs6" id="6UWbfHqhIGl" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="6UWbfHqhIn0" role="3clFbw">
+            <node concept="10Nm6u" id="6UWbfHqhI$c" role="3uHU7w" />
+            <node concept="37vLTw" id="6UWbfHqhHa8" role="3uHU7B">
+              <ref role="3cqZAo" node="6UWbfHqhELf" resolve="checkerRegistry" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="xWHpBq5RdL" role="3cqZAp">
           <node concept="37vLTI" id="xWHpBq609v" role="3clFbG">
             <node concept="2ShNRf" id="xWHpBq61oG" role="37vLTx">
@@ -8116,14 +8210,8 @@
           <node concept="3clFbS" id="xWHpBq6iv_" role="2LFqv$">
             <node concept="3clFbF" id="xWHpBq6ivA" role="3cqZAp">
               <node concept="2OqwBi" id="xWHpBq6ivB" role="3clFbG">
-                <node concept="2OqwBi" id="xWHpBq6ivC" role="2Oq$k0">
-                  <node concept="2YIFZM" id="xWHpBq6ivD" role="2Oq$k0">
-                    <ref role="37wK5l" to="dl8v:~ValidationSettings.getInstance():jetbrains.mps.validation.ValidationSettings" resolve="getInstance" />
-                    <ref role="1Pybhc" to="dl8v:~ValidationSettings" resolve="ValidationSettings" />
-                  </node>
-                  <node concept="liA8E" id="xWHpBq6ivE" role="2OqNvi">
-                    <ref role="37wK5l" to="dl8v:~ValidationSettings.getCheckerRegistry():jetbrains.mps.errors.CheckerRegistry" resolve="getCheckerRegistry" />
-                  </node>
+                <node concept="37vLTw" id="6UWbfHqhJAZ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6UWbfHqhELf" resolve="checkerRegistry" />
                 </node>
                 <node concept="liA8E" id="xWHpBq6ivF" role="2OqNvi">
                   <ref role="37wK5l" to="2gg1:~CheckerRegistry.registerChecker(jetbrains.mps.checkers.IChecker):void" resolve="registerChecker" />
@@ -8148,6 +8236,41 @@
       <node concept="3Tm1VV" id="xWHpBq5PLD" role="1B3o_S" />
       <node concept="3cqZAl" id="xWHpBq5PLF" role="3clF45" />
       <node concept="3clFbS" id="xWHpBq5PLH" role="3clF47">
+        <node concept="3cpWs8" id="6UWbfHqhJCw" role="3cqZAp">
+          <node concept="3cpWsn" id="6UWbfHqhJCx" role="3cpWs9">
+            <property role="TrG5h" value="checkerRegistry" />
+            <node concept="3uibUv" id="6UWbfHqhJCy" role="1tU5fm">
+              <ref role="3uigEE" to="2gg1:~CheckerRegistry" resolve="CheckerRegistry" />
+            </node>
+            <node concept="2OqwBi" id="6UWbfHqhJCz" role="33vP2m">
+              <node concept="2OqwBi" id="6UWbfHqhJC$" role="2Oq$k0">
+                <node concept="37vLTw" id="6UWbfHqhJC_" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6UWbfHqhzDv" resolve="myCoreComponents" />
+                </node>
+                <node concept="liA8E" id="6UWbfHqhJCA" role="2OqNvi">
+                  <ref role="37wK5l" to="3a50:~MPSCoreComponents.getPlatform():jetbrains.mps.core.platform.Platform" resolve="getPlatform" />
+                </node>
+              </node>
+              <node concept="liA8E" id="6UWbfHqhJCB" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="6UWbfHqhJCC" role="37wK5m">
+                  <ref role="3VsUkX" to="2gg1:~CheckerRegistry" resolve="CheckerRegistry" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6UWbfHqhJCD" role="3cqZAp">
+          <node concept="3clFbS" id="6UWbfHqhJCE" role="3clFbx">
+            <node concept="3cpWs6" id="6UWbfHqhJCF" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="6UWbfHqhJCG" role="3clFbw">
+            <node concept="10Nm6u" id="6UWbfHqhJCH" role="3uHU7w" />
+            <node concept="37vLTw" id="6UWbfHqhJCI" role="3uHU7B">
+              <ref role="3cqZAo" node="6UWbfHqhJCx" resolve="checkerRegistry" />
+            </node>
+          </node>
+        </node>
         <node concept="2Gpval" id="xWHpBq6eRS" role="3cqZAp">
           <node concept="2GrKxI" id="xWHpBq6eRT" role="2Gsz3X">
             <property role="TrG5h" value="checker" />
@@ -8158,14 +8281,8 @@
           <node concept="3clFbS" id="xWHpBq6eRV" role="2LFqv$">
             <node concept="3clFbF" id="xWHpBq6hU$" role="3cqZAp">
               <node concept="2OqwBi" id="xWHpBq6iei" role="3clFbG">
-                <node concept="2OqwBi" id="xWHpBq6i1e" role="2Oq$k0">
-                  <node concept="2YIFZM" id="xWHpBq6hUP" role="2Oq$k0">
-                    <ref role="37wK5l" to="dl8v:~ValidationSettings.getInstance():jetbrains.mps.validation.ValidationSettings" resolve="getInstance" />
-                    <ref role="1Pybhc" to="dl8v:~ValidationSettings" resolve="ValidationSettings" />
-                  </node>
-                  <node concept="liA8E" id="xWHpBq6i9G" role="2OqNvi">
-                    <ref role="37wK5l" to="dl8v:~ValidationSettings.getCheckerRegistry():jetbrains.mps.errors.CheckerRegistry" resolve="getCheckerRegistry" />
-                  </node>
+                <node concept="37vLTw" id="6UWbfHqhKic" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6UWbfHqhJCx" resolve="checkerRegistry" />
                 </node>
                 <node concept="liA8E" id="xWHpBq6ikB" role="2OqNvi">
                   <ref role="37wK5l" to="2gg1:~CheckerRegistry.unregisterChecker(jetbrains.mps.checkers.IChecker):void" resolve="unregisterChecker" />
@@ -8183,8 +8300,8 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="xWHpBq5$qW" role="1B3o_S" />
-    <node concept="3uibUv" id="xWHpBq6ktE" role="EKbjA">
-      <ref role="3uigEE" to="1m72:~ProjectComponent" resolve="ProjectComponent" />
+    <node concept="3uibUv" id="6UWbfHqhtTp" role="EKbjA">
+      <ref role="3uigEE" to="1m72:~BaseComponent" resolve="BaseComponent" />
     </node>
   </node>
 </model>
