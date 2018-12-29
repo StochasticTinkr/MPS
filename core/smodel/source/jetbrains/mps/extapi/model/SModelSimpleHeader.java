@@ -21,12 +21,13 @@ import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 /**
- * Essential meta information about persisted model
+ * Essential meta information about the persisted model.
  * Its intention is to keep data that might be helpful/essential prior to model loading.
- * Virtually it contains only smodel reference, which is supposed to be persisted in the start of the stream
+ * Virtually, it contains only smodel reference, which is supposed to be persisted in the start of the stream.
  *
  * @see CustomPersistenceSModelBase
  * @see XmlPersistence
+ * @author apyshkin
  */
 @Immutable
 public class SModelSimpleHeader {

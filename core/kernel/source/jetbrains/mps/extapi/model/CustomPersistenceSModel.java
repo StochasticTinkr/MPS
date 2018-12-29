@@ -42,7 +42,7 @@ import java.util.Iterator;
  * A basic implementation of the EditableSmodelBase suitable for most of the custom persistence scenarios
  * Supposed to be constructed in the implementing class of ModelFactory (corr. to the new persistence)
  *
- * @deprecated better use {@link CustomPersistenceSModelBase}
+ * @deprecated better use {@link CustomPersistenceModelWithHeader}
  * @see XmlPersistence for example
  */
 @ToRemove(version = 191)

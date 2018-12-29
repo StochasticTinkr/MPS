@@ -88,7 +88,7 @@
     <node concept="3bMsLL" id="o7F7WgLLi3" role="yghi5">
       <ref role="3bMsLK" to="arit:6l_Qx579cKM" resolve="clean" />
       <node concept="2VaFvH" id="o7F7WgLLia" role="3bMsLN">
-        <property role="TrG5h" value="clear.mps.cahces" />
+        <property role="TrG5h" value="clear.mps.caches" />
         <node concept="2Vbh7Z" id="o7F7WgLLtL" role="2VaTZU">
           <node concept="2pNNFK" id="o7F7WgLLtV" role="2Vbh7K">
             <property role="2pNNFO" value="delete" />

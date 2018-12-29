@@ -73,8 +73,6 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   private final ModelFactoryService myModelFactoryService;
   private final DataSourceFactoryRuleService myDataSourceRegistry;
 
-  @ToRemove(version = 181) private final Map<String, ModelFactory> myLegacyFileExt2ModelFactoryMap = new ConcurrentHashMap<>();
-
   private final Map<String, ModelRootFactory> myRootFactories = new HashMap<>();
   private final Map<String, SModelIdFactory> myModelIdFactory = new HashMap<>();
   private final Map<String, SNodeIdFactory> myNodeIdFactory = new HashMap<>();
@@ -112,10 +110,12 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Deprecated
   @Override
   public ModelFactory getModelFactory(String extension) {
-    if (myLegacyFileExt2ModelFactoryMap.containsKey(extension)) {
-      return myLegacyFileExt2ModelFactoryMap.get(extension);
-    }
     return myModelFactoryService.getDefaultModelFactory(FileExtensionDataSourceType.of(extension));
+  }
+
+  @Nullable
+  public final ModelFactory getModelFactory(@NotNull DataSourceType dataSourceType) {
+    return myModelFactoryService.getDefaultModelFactory(dataSourceType);
   }
 
   @Deprecated
@@ -123,21 +123,6 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   public ModelFactory getDefaultModelFactory() {
     String defaultExt = MPSExtentions.MODEL;
     return getModelFactory(defaultExt);
-  }
-
-
-  @Deprecated
-  @Override
-  public Set<String> getModelFactoryExtensions() {
-    Set<String> result = new HashSet<>(myLegacyFileExt2ModelFactoryMap.keySet());
-    for (ModelFactory modelFactory : myModelFactoryService.getFactories()) {
-      List<DataSourceType> preferredDataSourceTypes = new ArrayList<>(modelFactory.getPreferredDataSourceTypes());
-      result.addAll(preferredDataSourceTypes.stream()
-                                            .filter(dataSourceType -> dataSourceType instanceof FileExtensionDataSourceType)
-                                            .map(dataSourceType -> ((FileExtensionDataSourceType) dataSourceType).getFileExtension())
-                                            .collect(Collectors.toList()));
-    }
-    return Collections.unmodifiableSet(result);
   }
 
   @NotNull

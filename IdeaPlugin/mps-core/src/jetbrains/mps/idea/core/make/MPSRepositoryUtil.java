@@ -31,18 +31,21 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.PersistenceVersionAware;
+import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
@@ -123,12 +126,16 @@ public class MPSRepositoryUtil {
       CachedModelData.Kind cacheKind = CachedModelData.Kind.Unknown;
       if (model instanceof PersistenceVersionAware) {
         ModelFactory mf = ((PersistenceVersionAware) model).getModelFactory();
-        String persistenceIdentifier = mf == null ? null : mf.getFileExtension();
-        if (MPSExtentions.MODEL.equals(persistenceIdentifier)) {
+        if (mf == null) {
+          LogManager.getLogger(MPSRepositoryUtil.class).warn("The model factory is null for the model " + model);
+          return null;
+        }
+        ModelFactoryType type = mf.getType();
+        if (PreinstalledModelFactoryTypes.PLAIN_XML == type) {
           cacheKind = CachedModelData.Kind.Regular;
         } else if (dataSource instanceof FilePerRootDataSource) {
           cacheKind = Kind.RegularFilePerRoot;
-        } else if (MPSExtentions.MODEL_BINARY.equals(persistenceIdentifier)) {
+        } else if (PreinstalledModelFactoryTypes.BINARY == type) {
           cacheKind = CachedModelData.Kind.Binary;
         }
       }

@@ -45,6 +45,7 @@ import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXNotRecognizedException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.io.ByteArrayInputStream;
@@ -85,6 +86,9 @@ public class ModelPersistence {
 
   public static final String MODEL = "model";
   public static final String REF = "ref";
+  public static final String MODEL_UID = "modelUID";
+  public static final String NAME = "name";
+  public static final String VALUE = "value";
 
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
@@ -369,7 +373,7 @@ public class ModelPersistence {
     }
   }
 
-  private static class HeaderOnlyHandler extends DefaultHandler {
+  public static class HeaderOnlyHandler extends DefaultHandler {
     private final SModelHeader myResult;
 
     public HeaderOnlyHandler(SModelHeader result) {
@@ -383,11 +387,15 @@ public class ModelPersistence {
         for (int idx = 0; idx < attributes.getLength(); idx++) {
           String name = attributes.getQName(idx);
           String value = attributes.getValue(idx);
-          if ("modelUID".equals(name) || ModelPersistence9.REF.equals(name)) {
+          if (MODEL_UID.equals(name) || ModelPersistence9.REF.equals(name)) {
             final SModelReference mr = value == null ? null : PersistenceFacade.getInstance().createModelReference(value);
             myResult.setModelReference(mr);
           } else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
             myResult.setDoNotGenerate(Boolean.parseBoolean(value));
+          } else if ("version".equals(name)) {
+            // old model version
+            // [AP] copied as is from the VCSPersistenceSupport: I have know idea whether this branch is necessary
+            // nop
           } else {
             myResult.setOptionalProperty(name, StringUtil.unescapeXml(value));
           }
@@ -400,7 +408,14 @@ public class ModelPersistence {
           } catch (NumberFormatException ignored) {
           }
         }
+      } else if ("attribute".equals(qName)) {
+        // copied as is from the VCSPersistenceSupport
+        myResult.setOptionalProperty(attributes.getValue(NAME), attributes.getValue(VALUE));
       } else {
+        // here we supposed to be always finished with the main model tag parsing
+        if (myResult.getModelReference() == null) {
+          throw new SAXException("Could not find the model reference in the model file header while parsing");
+        }
         throw new BreakParseSAXException();
       }
     }

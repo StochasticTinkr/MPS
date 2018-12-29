@@ -45,14 +45,9 @@ import org.xml.sax.helpers.DefaultHandler;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
-import org.xml.sax.Attributes;
-import jetbrains.mps.smodel.persistence.def.v9.ModelPersistence9;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.util.StringUtil;
 
 /**
- * This is old persistences support for version control purposes. 
+ * 
  * It's desirable to be possible to see diff and merge with models in very old persistences, which MPS can't fully 
  * support because of changes to SModel. 
  * For VCS purposes, what is needed is to show the model to the user in a state, which is near to how this model 
@@ -134,7 +129,7 @@ public class VCSPersistenceSupport {
     try {
       in = dataSource.openInputStream();
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
-      parseAndHandleExceptions(source, new VCSPersistenceSupport.MyDescriptorHandler(result), "model descriptor");
+      parseAndHandleExceptions(source, new ModelPersistence.HeaderOnlyHandler(result), "model descriptor");
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read descriptor from " + dataSource.getLocation() + ": " + e.getMessage(), e);
     } finally {
@@ -145,7 +140,7 @@ public class VCSPersistenceSupport {
   @NotNull
   public static SModelHeader loadDescriptor(InputSource source) throws IOException {
     SModelHeader result = new SModelHeader();
-    parseAndHandleExceptions(source, new VCSPersistenceSupport.MyDescriptorHandler(result), "model descriptor");
+    parseAndHandleExceptions(source, new ModelPersistence.HeaderOnlyHandler(result), "model descriptor");
     return result;
   }
 
@@ -282,52 +277,6 @@ public class VCSPersistenceSupport {
       throw new IOException(String.format("Couldn't read %s: %s", what, e.getMessage()), e);
     } catch (SAXException e) {
       throw new IOException(String.format("Couldn't read %s: %s", what, e.getMessage()), e);
-    }
-  }
-
-  private static class MyDescriptorHandler extends DefaultHandler {
-    private final SModelHeader myResult;
-    public MyDescriptorHandler(SModelHeader result) {
-      myResult = result;
-    }
-    @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-      if (VCSPersistenceSupport.MODEL.equals(qName)) {
-        for (int idx = 0; idx < attributes.getLength(); idx++) {
-          String name = attributes.getQName(idx);
-          String value = attributes.getValue(idx);
-          if (VCSPersistenceSupport.MODEL_UID.equals(name) || ModelPersistence9.REF.equals(name)) {
-            final SModelReference mr = (value == null ? null : PersistenceFacade.getInstance().createModelReference(value));
-            myResult.setModelReference(mr);
-          } else
-          if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
-            myResult.setDoNotGenerate(Boolean.parseBoolean(value));
-          } else
-          if ("version".equals(name)) {
-            // old model version 
-          } else {
-            myResult.setOptionalProperty(name, StringUtil.unescapeXml(value));
-          }
-        }
-      } else
-      if (VCSPersistenceSupport.PERSISTENCE.equals(qName)) {
-        String s = attributes.getValue(VCSPersistenceSupport.PERSISTENCE_VERSION);
-        if (s != null) {
-          try {
-            myResult.setPersistenceVersion(Integer.parseInt(s));
-          } catch (NumberFormatException ignored) {
-          }
-        }
-      } else
-      if ("attribute".equals(qName)) {
-        myResult.setOptionalProperty(attributes.getValue(VCSPersistenceSupport.NAME), attributes.getValue(VCSPersistenceSupport.VALUE));
-      } else {
-        throw new BreakParseSAXException();
-      }
-    }
-    @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
-      throw new BreakParseSAXException();
     }
   }
 }

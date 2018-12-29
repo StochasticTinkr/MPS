@@ -13,7 +13,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelData" />
-    <classNode dependClassName="jetbrains.mps.extapi.model.SModelPersistence" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.SModelSimpleHeader" />
     <classNode dependClassName="jetbrains.mps.persistence.XmlModelPersistence" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -25,6 +25,7 @@
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSourceListener" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelLoadException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelSaveException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.StreamDataSource" />
     <classNode dependClassName="org.junit.After" />

@@ -27,6 +27,7 @@ import com.intellij.util.indexing.FileContent;
 import com.intellij.util.indexing.ID;
 import com.intellij.util.indexing.ScalarIndexExtension;
 import com.intellij.util.io.KeyDescriptor;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.persistence.IndexAwareModelFactory;
 import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
@@ -39,7 +40,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -61,13 +63,16 @@ public class MPSModelsIndexer extends ScalarIndexExtension<UsageEntry> {
   }
 
   public MPSModelsIndexer() {
-    PersistenceFacade persistenceRegistry = PersistenceFacade.getInstance();
-    for (String ext : persistenceRegistry.getModelFactoryExtensions()) {
-      final ModelFactory mf = persistenceRegistry.getModelFactory(ext);
+    for (ModelFactory mf : ModelFactoryService.getInstance().getFactories()) {
       if (mf instanceof IndexAwareModelFactory) {
-        final FileType ft = MPSFileTypeFactory.findByExtension(ext);
-        if (ft != null) {
-          myIndexAwareFileTypes.put(ft, (IndexAwareModelFactory) mf);
+        for (DataSourceType type : mf.getPreferredDataSourceTypes()) {
+          if (type instanceof FileExtensionDataSourceType) {
+            String fileExt = ((FileExtensionDataSourceType) type).getFileExtension();
+            final FileType ft = MPSFileTypeFactory.findByExtension(fileExt);
+            if (ft != null) {
+              myIndexAwareFileTypes.put(ft, (IndexAwareModelFactory) mf);
+            }
+          }
         }
       }
     }

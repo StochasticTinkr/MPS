@@ -2,9 +2,9 @@
 <model ref="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
-    <use id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers" version="0" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
+    <use id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <devkit ref="00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)" />
   </languages>
   <imports>
@@ -23197,7 +23197,7 @@
                   <ref role="1YBMHb" node="rFwcinz1N9" resolve="staticMethodDeclaration" />
                 </node>
                 <node concept="Xl_RD" id="rFwcinz1Oa" role="2MkJ7o">
-                  <property role="Xl_RC" value="Inner classes cannot have static fields" />
+                  <property role="Xl_RC" value="Inner classes cannot have static methods" />
                 </node>
                 <node concept="3Cnw8n" id="rFwcinC3Lz" role="2OEOjU">
                   <ref role="QpYPw" node="rFwcinC29c" resolve="MakeStaticMethodNotStatic" />

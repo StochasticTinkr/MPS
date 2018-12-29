@@ -2,22 +2,25 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.persistence.XmlModelPersistence">
     <classNode dependClassName="java.io.BufferedOutputStream" />
+    <classNode dependClassName="java.io.BufferedReader" />
+    <classNode dependClassName="java.io.ByteArrayOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.InputStreamReader" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.extapi.model.CustomPersistenceSModel" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.CustomPersistenceLoadFacility" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.CustomPersistenceModelWithHeader" />
     <classNode dependClassName="jetbrains.mps.extapi.model.PersistenceProblem" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelData" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.SModelSimpleHeader" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileSystemBasedDataSource" />
     <classNode dependClassName="jetbrains.mps.persistence.xml.XmlConverter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -28,19 +31,17 @@
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.TestOnly" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelName" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelCreationException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelFactoryType" />
@@ -53,7 +54,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.datasource.DataSourceType" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType" />
     <classNode dependClassName="org.xml.sax.InputSource" />
-    <classNode extendsClassName="jetbrains.mps.extapi.model.SModelPersistence" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.ModelFactory" />
   </dependency>
 </dependenciesRoot>

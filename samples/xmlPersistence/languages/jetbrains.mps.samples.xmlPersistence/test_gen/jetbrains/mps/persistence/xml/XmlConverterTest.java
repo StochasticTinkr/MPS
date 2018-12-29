@@ -12,14 +12,15 @@ import org.junit.After;
 import org.junit.Test;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
-import jetbrains.mps.extapi.model.SModelPersistence;
 import jetbrains.mps.persistence.XmlModelPersistence;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
-import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.extapi.model.SModelSimpleHeader;
+import jetbrains.mps.extapi.model.SModelData;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
 import jetbrains.mps.util.FileUtil;
 import java.io.InputStreamReader;
 import org.junit.Assert;
@@ -63,102 +64,128 @@ public class XmlConverterTest implements EnvironmentAware {
   public void testXml1() throws Exception {
     testXml("/jetbrains/mps/persistence/xml/testdata/test1.xml");
   }
+
   @Test
   public void testXml2() throws Exception {
     testXml("/jetbrains/mps/persistence/xml/testdata/test2.xml");
   }
+
   @Test
   public void testXml3() throws Exception {
     testXml("/jetbrains/mps/persistence/xml/testdata/test3.xml");
   }
+
   private void testXml(String resource) throws IOException, ModelSaveException {
-    final SModelPersistence pers = new XmlModelPersistence();
+    final XmlModelPersistence persistence = new XmlModelPersistence();
     final StreamDataSource source = new XmlConverterTest.MyDataSource(resource);
-    final XmlConverterTest.StringBuilderDataSource sbds = new XmlConverterTest.StringBuilderDataSource();
+    final XmlConverterTest.StringBuilderDataSource dataSourceToCheck = new XmlConverterTest.StringBuilderDataSource();
+    final SModelReference reference = new SModelReference(new ModuleReference("mockModule", ModuleId.regular()), SModelId.generate(), "xmlfile");
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         try {
-          SModelData model = pers.readModel(new SModelReference(new ModuleReference("mockModule", ModuleId.regular()), SModelId.generate(), "xmlfile"), source);
-          pers.writeModel(model, sbds);
-        } catch (IOException e) {
+          final XmlModelPersistence.XmlCustomPersistenceLoadFacility facilityToRead = new XmlModelPersistence.XmlCustomPersistenceLoadFacility(source, persistence);
+          final XmlModelPersistence.XmlCustomPersistenceLoadFacility facilityToWrite = new XmlModelPersistence.XmlCustomPersistenceLoadFacility(dataSourceToCheck, persistence);
+
+          SModelSimpleHeader header = new SModelSimpleHeader(reference);
+          SModelData model = facilityToRead.readModel(header);
+          facilityToWrite.writeModel(header, model);
+        } catch (ModelLoadException e) {
           throw new RuntimeException(e);
         } catch (ModelSaveException e) {
           throw new RuntimeException(e);
         }
       }
     });
-    String after = sbds.getResult();
+    String after = dataSourceToCheck.getResult();
     String before = FileUtil.read(new InputStreamReader(source.openInputStream(), FileUtil.DEFAULT_CHARSET)).trim();
     Assert.assertEquals(before, after);
   }
+
   private class MyDataSource implements StreamDataSource {
     private final String resourceName;
+
     private MyDataSource(String resourceName) {
       this.resourceName = resourceName;
     }
+
     @NotNull
     @Override
     public String getLocation() {
       return "test";
     }
+
     @Override
     public InputStream openInputStream() throws IOException {
       InputStream stream = XmlConverterTest.this.getClass().getResourceAsStream(resourceName);
       Assert.assertNotNull(stream);
       return stream;
     }
+
     @Override
     public boolean isReadOnly() {
       return true;
     }
+
     @Override
     public OutputStream openOutputStream() throws IOException {
       throw new UnsupportedOperationException();
     }
+
     @Override
     public void addListener(DataSourceListener listener) {
       throw new UnsupportedOperationException();
     }
+
     @Override
     public void removeListener(DataSourceListener listener) {
       throw new UnsupportedOperationException();
     }
+
     @Override
     public long getTimestamp() {
       return 0;
     }
   }
+
   private static class StringBuilderDataSource implements StreamDataSource {
     /*package*/ ByteArrayOutputStream bos = new ByteArrayOutputStream();
     private StringBuilderDataSource() {
     }
+
     public String getResult() {
       return new String(bos.toByteArray(), FileUtil.DEFAULT_CHARSET);
     }
+
     @NotNull
     @Override
     public String getLocation() {
       return "test";
     }
+
     @Override
     public InputStream openInputStream() throws IOException {
       throw new UnsupportedOperationException();
     }
+
     @Override
     public boolean isReadOnly() {
       return false;
     }
+
     @Override
     public OutputStream openOutputStream() throws IOException {
       return bos;
     }
+
     @Override
     public void addListener(DataSourceListener listener) {
     }
+
     @Override
     public void removeListener(DataSourceListener listener) {
     }
+
     @Override
     public long getTimestamp() {
       return 0;

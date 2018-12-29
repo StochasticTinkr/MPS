@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.util.Set;
 
@@ -73,6 +74,9 @@ public abstract class PersistenceFacade {
   @Deprecated
   public abstract ModelFactory getModelFactory(@Nullable String extension);
 
+  @Nullable
+  public abstract ModelFactory getModelFactory(@NotNull DataSourceType dataSourceType);
+
   /**
    * Retrieves the factory for default MPS storage format (xml-based).
    * @deprecated unclear contract, use {@code ModelFactoryRegistry#getDefault(DataSourceType)}
@@ -82,21 +86,6 @@ public abstract class PersistenceFacade {
   @ToRemove(version = 181)
   @Deprecated
   public abstract ModelFactory getDefaultModelFactory();
-
-  /**
-   * Retrieves registered storage formats extensions.
-   * @deprecated the model factories are separated from the type of location
-   *             (while file extension as a key clearly violates this idea).
-   *             Thus one might to look at the
-   *             <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService</code>
-   *             which can be used to register your one custom data source factories.
-   *             <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code> is an extension point
-   *             to register your custom model factory implementation and associate it (if needed)
-   *             with some specific data source type.
-   */
-  @ToRemove(version = 181)
-  @Deprecated
-  public abstract Set<String> getModelFactoryExtensions();
 
   /**
    * @return module identity object created from persistence text

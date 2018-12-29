@@ -15,9 +15,6 @@
     <classNode dependClassName="java.io.InputStreamReader" />
     <classNode dependClassName="java.io.StringReader" />
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.NumberFormatException" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
@@ -42,11 +39,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v8.ModelPersistence8" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.ModelPersistence9" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
-    <classNode dependClassName="jetbrains.mps.util.StringUtil" />
     <classNode dependClassName="jetbrains.mps.util.xml.BreakParseSAXException" />
     <classNode dependClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
@@ -57,10 +52,7 @@
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.StreamDataSource" />
-    <classNode dependClassName="org.xml.sax.Attributes" />
     <classNode dependClassName="org.xml.sax.InputSource" />
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.helpers.DefaultHandler" />
