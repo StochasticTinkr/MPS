@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public class MPSProjectValidation extends ComponentPlugin {
   private final ComponentHost myCoreComponents;
   private final List<IChecker<?, ?>> myCheckers = new ArrayList<>(4);
 
-  public MPSProjectValidation(ComponentHost mpsCore) {
+  MPSProjectValidation(ComponentHost mpsCore) {
     myCoreComponents = mpsCore;
   }
 

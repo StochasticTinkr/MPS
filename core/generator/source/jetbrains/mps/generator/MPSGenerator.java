@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,8 @@ package jetbrains.mps.generator;
 import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.core.platform.MPSCore;
+import jetbrains.mps.extapi.module.FacetsRegistry;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
 import jetbrains.mps.generator.trace.TraceRegistry;
@@ -34,7 +35,7 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
  * @author Artem Tikhomirov
  */
 public final class MPSGenerator extends ComponentPlugin implements ComponentHost {
-  private final MPSCore myKernelComponents;
+  private final ComponentHost myKernelComponents;
   private FacetFactory myGeneratorFacetFactory = new FacetFactory() {
     @Override
     public SModuleFacet create(@NotNull SModule module) {
@@ -47,10 +48,12 @@ public final class MPSGenerator extends ComponentPlugin implements ComponentHost
   private GenerationSettingsProvider mySettingsProvider;
   private TraceRegistry myTraceRegistry;
 
-  public MPSGenerator(MPSCore mpsCore) {
-    // it's ok for MPSGenerator ComponentPlugin to depend from another CP, MPSCore (provided the one lives in [kernel] and doesn't drag
-    // any superfluous/unnatural dependencies). Instead, would need to pass few individual CoreComponents, which is not quite handy.
-    // Could be ComponentPlugin (with findComponent instead of named methods), but at the moment I don't care to abstact that much.
+  public MPSGenerator(ComponentHost mpsCore) {
+    // It is not quite handy to pass few individual CoreComponents, use a generic component accessor.
+    // Though it's ok for MPSGenerator ComponentPlugin to depend directly from MPSCore,
+    // provided the one lives in [kernel] and doesn't drag any superfluous/unnatural dependencies), it's better to avoid superfluous dependencies provided
+    // we've got nice abstraction for component provider. However, in case we would like to manifest dependencies, like typesystem, we might need to
+    // reconsider what to pass here (using ComponentHost hides actual requirements/dependencies/initialization order)
     myKernelComponents = mpsCore;
   }
 
@@ -58,16 +61,19 @@ public final class MPSGenerator extends ComponentPlugin implements ComponentHost
   public void init() {
     super.init();
     final GenerationDependenciesCache depsCache = new GenerationDependenciesCache();
-    myGenerationStatusManager = init(new ModelGenerationStatusManager(myKernelComponents.getRepositoryRegistry(), depsCache));
+    final SRepositoryRegistry repoRegistry = myKernelComponents.findComponent(SRepositoryRegistry.class);
+    myGenerationStatusManager = init(new ModelGenerationStatusManager(repoRegistry, depsCache));
     init(new GeneratorPathsComponent());
     mySettingsProvider = init(new GenerationSettingsProvider());
-    myKernelComponents.getModuleFacetRegistry().addFactory(CustomGenerationModuleFacet.FACET_TYPE, myGeneratorFacetFactory);
+    final FacetsRegistry moduleFacetRegistry = myKernelComponents.findComponent(FacetsRegistry.class);
+    moduleFacetRegistry.addFactory(CustomGenerationModuleFacet.FACET_TYPE, myGeneratorFacetFactory);
     myTraceRegistry = init(new TraceRegistry());
   }
 
   @Override
   public void dispose() {
-    myKernelComponents.getModuleFacetRegistry().removeFactory(myGeneratorFacetFactory);
+    final FacetsRegistry moduleFacetRegistry = myKernelComponents.findComponent(FacetsRegistry.class);
+    moduleFacetRegistry.removeFactory(myGeneratorFacetFactory);
     super.dispose();
     myGeneratorFacetFactory = null;
     myGenerationStatusManager = null;

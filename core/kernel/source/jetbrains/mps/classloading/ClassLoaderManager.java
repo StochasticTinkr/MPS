@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,7 +128,7 @@ public class ClassLoaderManager implements CoreComponent {
   private final Object myLoadingModulesLock = new Object();
 
   /**
-   * @deprecated use {@link MPSCoreComponents#getClassLoaderManager} instead
+   * @deprecated use {@link jetbrains.mps.components.ComponentHost#findComponent(Class) ComponentHost#findComponent(ClassLoaderManager.class)} instead
    */
   @Deprecated
   public static ClassLoaderManager getInstance() {

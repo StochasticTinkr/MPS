@@ -179,14 +179,9 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   }
 
   @NotNull
-  public LibraryInitializer getLibraryInitializer() {
-    checkInitialized();
-    return myLibraryInitializer;
-  }
-
-  @NotNull
   public PersistenceFacade getPersistenceFacade() {
     checkInitialized();
+    // PersistenceFacade is not a CoreComponent, one need to ask for findComponent(PersistenceRegistry.class) instead
     return myPersistenceFacade;
   }
 
@@ -196,19 +191,9 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     return myLanguageRegistry;
   }
 
-  @NotNull
-  public MPSModuleRepository getModuleRepository() {
-    checkInitialized();
-    return myModuleRepository;
-  }
-
-  public SRepositoryRegistry getRepositoryRegistry() {
-    checkInitialized();
-    return myRepositoryRegistry;
-  }
-
   public FacetsFacade getModuleFacetRegistry() {
     checkInitialized();
+    // FacetsFacade is not a CoreComponent, one need to ask for findComponent(FacetsRegistry.class) instead.
     return myModuleFacetsRegistry;
   }
 
