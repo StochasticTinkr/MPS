@@ -94,9 +94,6 @@
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -1415,43 +1412,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="1dN09JzXJZ1" role="3cqZAp" />
-        <node concept="3clFbJ" id="jyqlNLcjBT" role="3cqZAp">
-          <node concept="3clFbS" id="jyqlNLcjBV" role="3clFbx">
-            <node concept="3SKdUt" id="jyqlNLcIGx" role="3cqZAp">
-              <node concept="3SKdUq" id="jyqlNLcIGz" role="3SKWNk">
-                <property role="3SKdUp" value="workaround for https://youtrack.jetbrains.com/issue/MPS-29419" />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="jyqlNLcK5c" role="3cqZAp">
-              <node concept="3SKdUq" id="jyqlNLcK5e" role="3SKWNk">
-                <property role="3SKdUp" value="this checker has no idea about use of IDEA's index subsystem and the need to be aware of its 'dumb' mode" />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="jyqlNLcLtV" role="3cqZAp">
-              <node concept="3SKdUq" id="jyqlNLcLtX" role="3SKWNk">
-                <property role="3SKdUp" value="Alas, I didn't find the better place for the check." />
-              </node>
-            </node>
-            <node concept="3cpWs6" id="jyqlNLcFM8" role="3cqZAp">
-              <node concept="10M0yZ" id="jyqlNLcHfj" role="3cqZAk">
-                <ref role="3cqZAo" to="n70j:~UpdateResult.CANCELLED" resolve="CANCELLED" />
-                <ref role="1PxDUh" to="n70j:~UpdateResult" resolve="UpdateResult" />
-              </node>
-            </node>
-          </node>
-          <node concept="2YIFZM" id="jyqlNLctZL" role="3clFbw">
-            <ref role="37wK5l" to="4nm9:~DumbService.isDumb(com.intellij.openapi.project.Project):boolean" resolve="isDumb" />
-            <ref role="1Pybhc" to="4nm9:~DumbService" resolve="DumbService" />
-            <node concept="2OqwBi" id="jyqlNLcy9h" role="37wK5m">
-              <node concept="37vLTw" id="jyqlNLcx$k" role="2Oq$k0">
-                <ref role="3cqZAo" node="1fzBqomd41" resolve="myProject" />
-              </node>
-              <node concept="liA8E" id="jyqlNLcFyM" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="1dN09JzXLqz" role="3cqZAp">
           <node concept="3cpWsn" id="1dN09JzXLqA" role="3cpWs9">
             <property role="TrG5h" value="result" />
