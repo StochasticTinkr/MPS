@@ -12,20 +12,10 @@ import org.apache.tools.ant.BuildException;
 import java.util.LinkedHashSet;
 
 public class CustomMPSLoadTask extends MpsLoadTask {
-  private String myWorkerClass;
   private List<String> myArgs;
-
-  public void setWorker(String workerClass) {
-    myWorkerClass = workerClass;
-  }
 
   public void setArgs(String args) {
     myArgs = Arrays.asList(args.split(" "));
-
-  }
-
-  protected String getWorkerClass() {
-    return myWorkerClass;
   }
 
   @Override

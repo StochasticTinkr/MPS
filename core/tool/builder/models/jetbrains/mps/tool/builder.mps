@@ -3090,6 +3090,36 @@
         </node>
       </node>
     </node>
+    <node concept="3UR2Jj" id="4vDU0BP$kpM" role="lGtFl">
+      <node concept="TZ5HA" id="4vDU0BP$kpN" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BP$kpO" role="1dT_Ay">
+          <property role="1dT_AB" value="MPS-aware job triggered by an Ant task. Unlike the task, assumes MPS classes in the classpath. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4vDU0BP$pDZ" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BP$pE0" role="1dT_Ay">
+          <property role="1dT_AB" value="Extent of the classes is not well defined, though and may vary from worker to worker (e.g. some gonna use IdeaEnironment and hence " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4vDU0BP$q90" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BP$q91" role="1dT_Ay">
+          <property role="1dT_AB" value="need IDEA platform, others may stick to MpsEnvironment with less classes in the classpath). The mechanism to describe this is not " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4vDU0BP$qJe" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BP$qJf" role="1dT_Ay">
+          <property role="1dT_AB" value="well-defined at the moment. Forked workers start with a help of AntBootstrap class which generally loads everything under mps-home/lib" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4vDU0BP$rzy" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BP$rzz" role="1dT_Ay">
+          <property role="1dT_AB" value="while in-process tasks rely on Ant mechanism to configure classpath for a task." />
+        </node>
+        <node concept="1dT_AC" id="4vDU0BP$rrN" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="2doG_VG5fjO">
     <property role="TrG5h" value="AntBootstrap" />
@@ -3345,6 +3375,33 @@
               <property role="3cmrfH" value="1" />
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3UR2Jj" id="4vDU0BP$sgL" role="lGtFl">
+      <node concept="TZ5HA" id="4vDU0BP$sgM" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BP$sgN" role="1dT_Ay">
+          <property role="1dT_AB" value="This is projection of j.m.Launcher together with com.intellij.ide.Bootstrap into Ant-MPS integration." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4vDU0BP$sYv" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BP$sYw" role="1dT_Ay">
+          <property role="1dT_AB" value="Here, we have to prepare classpath with MPS for an MPS-aware worker, so that it can initialize proper environment/platform." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4vDU0BP$tqJ" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BP$tqK" role="1dT_Ay">
+          <property role="1dT_AB" value="Therefore, this class itself shall not depend from MPS classes outside of this module (this is not true at the moment as" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4vDU0BP$tND" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BP$tNE" role="1dT_Ay">
+          <property role="1dT_AB" value="this class resides in j.m.tool.builder with worker classes for MPS's Ant tasks" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4vDU0BP$sXh" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BP$sXi" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
         </node>
       </node>
     </node>

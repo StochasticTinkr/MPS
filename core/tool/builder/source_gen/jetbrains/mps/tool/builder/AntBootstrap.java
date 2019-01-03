@@ -9,6 +9,13 @@ import java.util.ArrayList;
 import java.net.URL;
 import java.lang.reflect.Method;
 
+/**
+ * This is projection of j.m.Launcher together with com.intellij.ide.Bootstrap into Ant-MPS integration.
+ * Here, we have to prepare classpath with MPS for an MPS-aware worker, so that it can initialize proper environment/platform.
+ * Therefore, this class itself shall not depend from MPS classes outside of this module (this is not true at the moment as
+ * this class resides in j.m.tool.builder with worker classes for MPS's Ant tasks
+ * 
+ */
 public class AntBootstrap {
   static {
     // This is a temporary workaround for classloading loop problem 

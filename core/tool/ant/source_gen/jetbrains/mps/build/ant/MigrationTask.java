@@ -24,15 +24,12 @@ public class MigrationTask extends MpsLoadTask {
   private static final String ERR_CODE_KEY = "mps.migration.errcode";
 
   public MigrationTask() {
+    super("jetbrains.mps.build.migration.MigrationWorker");
     setFailOnError(true);
   }
 
   public void setProject(String project) {
     myWhatToDo.addProjectFile(new File(project));
-  }
-
-  protected String getWorkerClass() {
-    return "jetbrains.mps.build.migration.MigrationWorker";
   }
 
   @Override

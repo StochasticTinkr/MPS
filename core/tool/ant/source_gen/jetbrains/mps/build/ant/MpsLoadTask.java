@@ -33,15 +33,27 @@ import org.apache.tools.ant.types.EnumeratedAttribute;
 import org.apache.log4j.Level;
 import java.util.Scanner;
 
-public abstract class MpsLoadTask extends Task {
+/**
+ * Ant task that is capable to execute an MPS-aware 'worker' class.
+ * Generally, MPS Ant tasks have very limited classpath (j.m.tool.common and j.m.tool.ant, respectively [ant-mps] and [ant-mps-common])
+ * while actual 'worker' class likely to employ full power of MPS (either with MpsEnvironment or IdeaEnvironment).
+ * Hence, the idea of the task is to get worker's classpath ready to use whatever MPS functionality needed.
+ */
+public class MpsLoadTask extends Task {
   public static final String CONFIGURATION_NAME = "configuration.name";
   public static final String BUILD_NUMBER = "build.number";
   private File myMpsHome;
   protected final Script myWhatToDo = new Script();
   private boolean myUsePropertiesAsMacro = false;
   private boolean myFork = true;
+  private String myWorkerClass;
   private final List<String> myJvmArgs = new ArrayList<String>();
+
   public MpsLoadTask() {
+  }
+
+  public MpsLoadTask(String workerClass) {
+    myWorkerClass = workerClass;
   }
 
   public void setMpsHome(File mpsHome) {
@@ -99,6 +111,14 @@ public abstract class MpsLoadTask extends Task {
       throw new BuildException("Nested jvmargs is only allowed in fork mode.");
     }
     myJvmArgs.addAll(jvmArg.getArgs());
+  }
+
+  public void setWorker(String workerClass) {
+    myWorkerClass = workerClass;
+  }
+
+  public String getWorker() {
+    return myWorkerClass;
   }
 
   @Override
@@ -296,7 +316,20 @@ public abstract class MpsLoadTask extends Task {
     return result;
   }
 
-  protected abstract String getWorkerClass();
+  /**
+   * 
+   * @deprecated pass worker class name as cons argument or using #setWorker
+   */
+  @Deprecated
+  protected String getWorkerClass() {
+    // I'd like to keep getWorkerClass(), but can't make it public to satisfy Ant and not break binary code compatibility. 
+    // Left for compatibility, just in case there are other subclasses of MpsLoadTask that override the method 
+    String rv = getWorker();
+    if (rv == null) {
+      throw new IllegalStateException("Please specify 'worker' class to execute");
+    }
+    return rv;
+  }
 
   public static String readBuildNumber(InputStream stream) {
     BufferedReader bufferedReader = null;

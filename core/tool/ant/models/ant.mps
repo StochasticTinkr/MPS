@@ -84,6 +84,7 @@
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
+      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -1253,7 +1254,6 @@
   </node>
   <node concept="312cEu" id="3ufQioQQti6">
     <property role="TrG5h" value="MpsLoadTask" />
-    <property role="1sVAO0" value="true" />
     <property role="1EXbeo" value="false" />
     <node concept="3Tm1VV" id="3ufQioQQti7" role="1B3o_S" />
     <node concept="3uibUv" id="3ufQioQQti8" role="1zkMxy">
@@ -1320,6 +1320,13 @@
         <property role="3clFbU" value="true" />
       </node>
     </node>
+    <node concept="312cEg" id="4vDU0BPy5F9" role="jymVt">
+      <property role="TrG5h" value="myWorkerClass" />
+      <node concept="3Tm6S6" id="4vDU0BPxYwB" role="1B3o_S" />
+      <node concept="3uibUv" id="4vDU0BPy4t$" role="1tU5fm">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+    </node>
     <node concept="312cEg" id="3ufQioQQtjr" role="jymVt">
       <property role="TrG5h" value="myJvmArgs" />
       <property role="34CwA1" value="false" />
@@ -1336,10 +1343,34 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4vDU0BPxrCV" role="jymVt" />
     <node concept="3clFbW" id="3ufQioQQtjy" role="jymVt">
       <node concept="3Tm1VV" id="3ufQioQQtjz" role="1B3o_S" />
       <node concept="3cqZAl" id="3ufQioQQtj$" role="3clF45" />
       <node concept="3clFbS" id="3ufQioQQtj_" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="4vDU0BPxGJC" role="jymVt" />
+    <node concept="3clFbW" id="4vDU0BPxMGt" role="jymVt">
+      <node concept="3cqZAl" id="4vDU0BPxMGu" role="3clF45" />
+      <node concept="3clFbS" id="4vDU0BPxMGw" role="3clF47">
+        <node concept="3clFbF" id="4vDU0BPybO0" role="3cqZAp">
+          <node concept="37vLTI" id="4vDU0BPycf8" role="3clFbG">
+            <node concept="37vLTw" id="4vDU0BPycnT" role="37vLTx">
+              <ref role="3cqZAo" node="4vDU0BPxSIm" resolve="workerClass" />
+            </node>
+            <node concept="37vLTw" id="4vDU0BPybNZ" role="37vLTJ">
+              <ref role="3cqZAo" node="4vDU0BPy5F9" resolve="myWorkerClass" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4vDU0BP$axq" role="1B3o_S" />
+      <node concept="37vLTG" id="4vDU0BPxSIm" role="3clF46">
+        <property role="TrG5h" value="workerClass" />
+        <node concept="3uibUv" id="4vDU0BPxSIl" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="1_4F7FNq2Ws" role="jymVt" />
     <node concept="3clFb_" id="3ufQioQQtjA" role="jymVt">
@@ -1757,6 +1788,45 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4vDU0BPycGH" role="jymVt" />
+    <node concept="3clFb_" id="4vDU0BPyiY6" role="jymVt">
+      <property role="TrG5h" value="setWorker" />
+      <node concept="3cqZAl" id="4vDU0BPyiY8" role="3clF45" />
+      <node concept="3Tm1VV" id="4vDU0BPyiY9" role="1B3o_S" />
+      <node concept="3clFbS" id="4vDU0BPyiYa" role="3clF47">
+        <node concept="3clFbF" id="4vDU0BPyzGX" role="3cqZAp">
+          <node concept="37vLTI" id="4vDU0BPy$7P" role="3clFbG">
+            <node concept="37vLTw" id="4vDU0BPy$vs" role="37vLTx">
+              <ref role="3cqZAo" node="4vDU0BPytkV" resolve="workerClass" />
+            </node>
+            <node concept="37vLTw" id="4vDU0BPyzGW" role="37vLTJ">
+              <ref role="3cqZAo" node="4vDU0BPy5F9" resolve="myWorkerClass" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4vDU0BPytkV" role="3clF46">
+        <property role="TrG5h" value="workerClass" />
+        <node concept="3uibUv" id="4vDU0BPytkU" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4vDU0BPy$KG" role="jymVt" />
+    <node concept="3clFb_" id="4vDU0BPyKWd" role="jymVt">
+      <property role="TrG5h" value="getWorker" />
+      <node concept="3clFbS" id="4vDU0BPyKWg" role="3clF47">
+        <node concept="3clFbF" id="4vDU0BPz2j7" role="3cqZAp">
+          <node concept="37vLTw" id="4vDU0BPz2j6" role="3clFbG">
+            <ref role="3cqZAo" node="4vDU0BPy5F9" resolve="myWorkerClass" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4vDU0BPyF3P" role="1B3o_S" />
+      <node concept="3uibUv" id="4vDU0BPyKiY" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
     </node>
     <node concept="2tJIrI" id="1_4F7FNq2WB" role="jymVt" />
@@ -3809,12 +3879,70 @@
     </node>
     <node concept="2tJIrI" id="1_4F7FNq2WI" role="jymVt" />
     <node concept="3clFb_" id="3ufQioQQt$B" role="jymVt">
-      <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getWorkerClass" />
       <property role="DiZV1" value="false" />
       <node concept="17QB3L" id="2g9KPLQIWLl" role="3clF45" />
       <node concept="3Tmbuc" id="3ufQioQQt$C" role="1B3o_S" />
-      <node concept="3clFbS" id="3ufQioQQt$G" role="3clF47" />
+      <node concept="3clFbS" id="3ufQioQQt$G" role="3clF47">
+        <node concept="3SKdUt" id="4vDU0BP$67t" role="3cqZAp">
+          <node concept="3SKdUq" id="4vDU0BP$67v" role="3SKWNk">
+            <property role="3SKdUp" value="I'd like to keep getWorkerClass(), but can't make it public to satisfy Ant and not break binary code compatibility." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4vDU0BPzW3E" role="3cqZAp">
+          <node concept="3SKdUq" id="4vDU0BPzW3G" role="3SKWNk">
+            <property role="3SKdUp" value="Left for compatibility, just in case there are other subclasses of MpsLoadTask that override the method" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4vDU0BP_kLX" role="3cqZAp">
+          <node concept="3cpWsn" id="4vDU0BP_kLY" role="3cpWs9">
+            <property role="TrG5h" value="rv" />
+            <node concept="3uibUv" id="4vDU0BP_kLZ" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="1rXfSq" id="4vDU0BP_qE2" role="33vP2m">
+              <ref role="37wK5l" node="4vDU0BPyKWd" resolve="getWorker" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4vDU0BP_vDF" role="3cqZAp">
+          <node concept="3clFbS" id="4vDU0BP_vDH" role="3clFbx">
+            <node concept="YS8fn" id="4vDU0BPzkAp" role="3cqZAp">
+              <node concept="2ShNRf" id="4vDU0BPzpQq" role="YScLw">
+                <node concept="1pGfFk" id="4vDU0BPzqP2" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                  <node concept="Xl_RD" id="4vDU0BP_QN7" role="37wK5m">
+                    <property role="Xl_RC" value="Please specify 'worker' class to execute" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="4vDU0BP__wF" role="3clFbw">
+            <node concept="10Nm6u" id="4vDU0BP__xU" role="3uHU7w" />
+            <node concept="37vLTw" id="4vDU0BP__oO" role="3uHU7B">
+              <ref role="3cqZAo" node="4vDU0BP_kLY" resolve="rv" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4vDU0BP_L1U" role="3cqZAp">
+          <node concept="37vLTw" id="4vDU0BP_V7t" role="3cqZAk">
+            <ref role="3cqZAo" node="4vDU0BP_kLY" resolve="rv" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="4vDU0BPzqSs" role="lGtFl">
+        <node concept="TZ5HI" id="4vDU0BPzqSt" role="3nqlJM">
+          <node concept="TZ5HA" id="4vDU0BPzqSu" role="3HnX3l">
+            <node concept="1dT_AC" id="4vDU0BPzwHb" role="1dT_Ay">
+              <property role="1dT_AB" value="pass worker class name as cons argument or using #setWorker" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="4vDU0BPzqSv" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
     <node concept="2tJIrI" id="1_4F7FNq2WJ" role="jymVt" />
     <node concept="2YIFZL" id="3ufQioQQtAL" role="jymVt">
@@ -4364,6 +4492,28 @@
           <node concept="17QB3L" id="2uUiGxAaMGg" role="1tU5fm" />
         </node>
         <node concept="3clFbS" id="3ufQioQQtEl" role="3clF47" />
+      </node>
+    </node>
+    <node concept="3UR2Jj" id="4vDU0BPxjHv" role="lGtFl">
+      <node concept="TZ5HA" id="4vDU0BPxjHw" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BPxjHx" role="1dT_Ay">
+          <property role="1dT_AB" value="Ant task that is capable to execute an MPS-aware 'worker' class." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4vDU0BPxpDC" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BPxpDD" role="1dT_Ay">
+          <property role="1dT_AB" value="Generally, MPS Ant tasks have very limited classpath (j.m.tool.common and j.m.tool.ant, respectively [ant-mps] and [ant-mps-common])" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4vDU0BPxqrw" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BPxqrx" role="1dT_Ay">
+          <property role="1dT_AB" value="while actual 'worker' class likely to employ full power of MPS (either with MpsEnvironment or IdeaEnvironment)." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4vDU0BPxr4z" role="TZ5H$">
+        <node concept="1dT_AC" id="4vDU0BPxr4$" role="1dT_Ay">
+          <property role="1dT_AB" value="Hence, the idea of the task is to get worker's classpath ready to use whatever MPS functionality needed." />
+        </node>
       </node>
     </node>
   </node>
@@ -7532,6 +7682,12 @@
       <node concept="3Tm1VV" id="60oBoEdcoq" role="1B3o_S" />
       <node concept="3cqZAl" id="60oBoEdcor" role="3clF45" />
       <node concept="3clFbS" id="60oBoEdcos" role="3clF47">
+        <node concept="XkiVB" id="4vDU0BPA6W8" role="3cqZAp">
+          <ref role="37wK5l" node="4vDU0BPxMGt" resolve="MpsLoadTask" />
+          <node concept="Xl_RD" id="5reM9ACTkmr" role="37wK5m">
+            <property role="Xl_RC" value="jetbrains.mps.build.migration.MigrationWorker" />
+          </node>
+        </node>
         <node concept="3clFbF" id="7zEA_IIJM58" role="3cqZAp">
           <node concept="1rXfSq" id="7zEA_IIJM57" role="3clFbG">
             <ref role="37wK5l" node="3ufQioQQtjQ" resolve="setFailOnError" />
@@ -7578,21 +7734,6 @@
       <node concept="3cqZAl" id="75eqTYkrAbJ" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="60oBoEdxLi" role="jymVt" />
-    <node concept="3clFb_" id="60oBoEdc_r" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getWorkerClass" />
-      <property role="DiZV1" value="false" />
-      <node concept="17QB3L" id="60oBoEdc_s" role="3clF45" />
-      <node concept="3Tmbuc" id="60oBoEdc_t" role="1B3o_S" />
-      <node concept="3clFbS" id="60oBoEdc_u" role="3clF47">
-        <node concept="3clFbF" id="60oBoEdzlx" role="3cqZAp">
-          <node concept="Xl_RD" id="5reM9ACTkmr" role="3clFbG">
-            <property role="Xl_RC" value="jetbrains.mps.build.migration.MigrationWorker" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1oo0A63FZi$" role="jymVt" />
     <node concept="3clFb_" id="7zEA_IIJ2No" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="execute" />
@@ -8644,47 +8785,12 @@
   </node>
   <node concept="312cEu" id="7oFdQJwEW3N">
     <property role="TrG5h" value="CustomMPSLoadTask" />
-    <node concept="312cEg" id="7oFdQJwGYd7" role="jymVt">
-      <property role="TrG5h" value="myWorkerClass" />
-      <node concept="3Tm6S6" id="7oFdQJwGYd8" role="1B3o_S" />
-      <node concept="3uibUv" id="7oFdQJwGYda" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
-    </node>
     <node concept="312cEg" id="7oFdQJwH8yC" role="jymVt">
       <property role="TrG5h" value="myArgs" />
       <node concept="3Tm6S6" id="7oFdQJwH8yD" role="1B3o_S" />
       <node concept="3uibUv" id="7oFdQJwIOiq" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="7oFdQJwIOir" role="11_B2D">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7oFdQJwH15u" role="jymVt" />
-    <node concept="3clFb_" id="7oFdQJwGW$3" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="setWorker" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="7oFdQJwGW$6" role="3clF47">
-        <node concept="3clFbF" id="7oFdQJwGYdb" role="3cqZAp">
-          <node concept="37vLTI" id="7oFdQJwGYdd" role="3clFbG">
-            <node concept="37vLTw" id="7oFdQJwGYdg" role="37vLTJ">
-              <ref role="3cqZAo" node="7oFdQJwGYd7" resolve="myWorkerClass" />
-            </node>
-            <node concept="37vLTw" id="7oFdQJwGYdh" role="37vLTx">
-              <ref role="3cqZAo" node="7oFdQJwGXb$" resolve="workerClass" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="7oFdQJwGW1C" role="1B3o_S" />
-      <node concept="3cqZAl" id="7oFdQJwGWxc" role="3clF45" />
-      <node concept="37vLTG" id="7oFdQJwGXb$" role="3clF46">
-        <property role="TrG5h" value="workerClass" />
-        <node concept="3uibUv" id="7oFdQJwGXbz" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
@@ -8719,7 +8825,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="1y5ORaox15n" role="3cqZAp" />
       </node>
       <node concept="3Tm1VV" id="7oFdQJwH2n8" role="1B3o_S" />
       <node concept="3cqZAl" id="7oFdQJwH2n9" role="3clF45" />
@@ -8727,21 +8832,6 @@
         <property role="TrG5h" value="args" />
         <node concept="3uibUv" id="7oFdQJwH2nb" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7oFdQJwH1Pf" role="jymVt" />
-    <node concept="3clFb_" id="7oFdQJwGCR5" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getWorkerClass" />
-      <property role="DiZV1" value="false" />
-      <node concept="17QB3L" id="7oFdQJwGCR6" role="3clF45" />
-      <node concept="3Tmbuc" id="7oFdQJwGCR7" role="1B3o_S" />
-      <node concept="3clFbS" id="7oFdQJwGCR8" role="3clF47">
-        <node concept="3clFbF" id="7oFdQJwGCR9" role="3cqZAp">
-          <node concept="37vLTw" id="7oFdQJwH1Fn" role="3clFbG">
-            <ref role="3cqZAo" node="7oFdQJwGYd7" resolve="myWorkerClass" />
-          </node>
         </node>
       </node>
     </node>

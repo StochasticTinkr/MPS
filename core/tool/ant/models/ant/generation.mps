@@ -41,6 +41,7 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
+      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -403,6 +404,12 @@
     <node concept="3clFbW" id="4VsuddjqnLq" role="jymVt">
       <node concept="3cqZAl" id="4VsuddjqnLr" role="3clF45" />
       <node concept="3clFbS" id="4VsuddjqnLs" role="3clF47">
+        <node concept="XkiVB" id="4vDU0BP$Ds_" role="3cqZAp">
+          <ref role="37wK5l" to="644x:4vDU0BPxMGt" resolve="MpsLoadTask" />
+          <node concept="Xl_RD" id="5reM9ACTkmr" role="37wK5m">
+            <property role="Xl_RC" value="jetbrains.mps.tool.builder.make.GeneratorWorker" />
+          </node>
+        </node>
         <node concept="3clFbF" id="2XB5puvn6gH" role="3cqZAp">
           <node concept="37vLTI" id="2XB5puvn6MN" role="3clFbG">
             <node concept="2ShNRf" id="2XB5puvn6S7" role="37vLTx">
@@ -479,23 +486,7 @@
       </node>
       <node concept="3Tm1VV" id="4VsuddjqnLt" role="1B3o_S" />
     </node>
-    <node concept="3clFb_" id="4Vsuddjh5gy" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getWorkerClass" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="4Vsuddjh5gz" role="1B3o_S" />
-      <node concept="3clFbS" id="4Vsuddjh5g$" role="3clF47">
-        <node concept="3clFbF" id="5reM9ACTkmp" role="3cqZAp">
-          <node concept="Xl_RD" id="5reM9ACTkmr" role="3clFbG">
-            <property role="Xl_RC" value="jetbrains.mps.tool.builder.make.GeneratorWorker" />
-          </node>
-        </node>
-      </node>
-      <node concept="17QB3L" id="5reM9ACT8QE" role="3clF45" />
-      <node concept="2AHcQZ" id="3tYsUK_p6pX" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
+    <node concept="2tJIrI" id="4vDU0BP$GES" role="jymVt" />
     <node concept="3clFb_" id="4Vsuddjh5gP" role="jymVt">
       <property role="TrG5h" value="addConfiguredChunk" />
       <node concept="3cqZAl" id="4Vsuddjh5gQ" role="3clF45" />
@@ -1240,25 +1231,23 @@
     <property role="TrG5h" value="GenTestTask" />
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
-    <node concept="3uibUv" id="JPOEsuruc1" role="1zkMxy">
-      <ref role="3uigEE" node="3GGnItM970V" resolve="GenerateTask" />
-    </node>
-    <node concept="3clFb_" id="JPOEsurt9e" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getWorkerClass" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="JPOEsurt9f" role="1B3o_S" />
-      <node concept="3clFbS" id="JPOEsurt9g" role="3clF47">
-        <node concept="3clFbF" id="JPOEsurt9h" role="3cqZAp">
-          <node concept="Xl_RD" id="JPOEsurt9i" role="3clFbG">
-            <property role="Xl_RC" value="jetbrains.mps.tool.builder.make.GenTestWorker" />
+    <node concept="2tJIrI" id="4vDU0BPA2sS" role="jymVt" />
+    <node concept="3clFbW" id="4vDU0BPA2AU" role="jymVt">
+      <node concept="3cqZAl" id="4vDU0BPA2AV" role="3clF45" />
+      <node concept="3clFbS" id="4vDU0BPA2AX" role="3clF47">
+        <node concept="3clFbF" id="4vDU0BPA2L8" role="3cqZAp">
+          <node concept="1rXfSq" id="4vDU0BPA2L7" role="3clFbG">
+            <ref role="37wK5l" to="644x:4vDU0BPyiY6" resolve="setWorker" />
+            <node concept="Xl_RD" id="JPOEsurt9i" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.tool.builder.make.GenTestWorker" />
+            </node>
           </node>
         </node>
       </node>
-      <node concept="17QB3L" id="JPOEsurt9j" role="3clF45" />
-      <node concept="2AHcQZ" id="JPOEsurt9k" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
+      <node concept="3Tm1VV" id="4vDU0BPA2AY" role="1B3o_S" />
+    </node>
+    <node concept="3uibUv" id="JPOEsuruc1" role="1zkMxy">
+      <ref role="3uigEE" node="3GGnItM970V" resolve="GenerateTask" />
     </node>
     <node concept="3clFb_" id="3ufQioQQtFv" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -1361,16 +1350,22 @@
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myProperties" />
-      <property role="3TUv4t" value="false" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="1Vi5mb_op2v" role="1B3o_S" />
       <node concept="3uibUv" id="1Vi5mb_opjQ" role="1tU5fm">
         <ref role="3uigEE" to="asz6:1Vi5mb_oi7$" resolve="MpsRunnerProperties" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4vDU0BPA3BG" role="jymVt" />
     <node concept="3clFbW" id="1Vi5mb_opSC" role="jymVt">
       <node concept="3cqZAl" id="1Vi5mb_opSE" role="3clF45" />
       <node concept="3Tm1VV" id="1Vi5mb_opSF" role="1B3o_S" />
       <node concept="3clFbS" id="1Vi5mb_opSG" role="3clF47">
+        <node concept="3SKdUt" id="4vDU0BPA3TN" role="3cqZAp">
+          <node concept="3SKdUq" id="4vDU0BPA3TP" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME Please, oh PLEASE, stop extending GenerateTask!!!!" />
+          </node>
+        </node>
         <node concept="3clFbF" id="1Vi5mb_opYR" role="3cqZAp">
           <node concept="37vLTI" id="1Vi5mb_oq0o" role="3clFbG">
             <node concept="2ShNRf" id="1Vi5mb_oq2e" role="37vLTx">
@@ -1386,27 +1381,17 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1Vi5mb_oqs1" role="jymVt" />
-    <node concept="3clFb_" id="3H7CugYdMHL" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getWorkerClass" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="3H7CugYdMHM" role="1B3o_S" />
-      <node concept="3clFbS" id="3H7CugYdMHN" role="3clF47">
-        <node concept="3clFbF" id="3H7CugYdMHO" role="3cqZAp">
-          <node concept="Xl_RD" id="3H7CugYdMHP" role="3clFbG">
-            <property role="Xl_RC" value="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker" />
+        <node concept="3clFbF" id="4vDU0BPA3dQ" role="3cqZAp">
+          <node concept="1rXfSq" id="4vDU0BPA3dO" role="3clFbG">
+            <ref role="37wK5l" to="644x:4vDU0BPyiY6" resolve="setWorker" />
+            <node concept="Xl_RD" id="3H7CugYdMHP" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker" />
+            </node>
           </node>
         </node>
       </node>
-      <node concept="17QB3L" id="3H7CugYdMHQ" role="3clF45" />
-      <node concept="2AHcQZ" id="3H7CugYdMHR" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
     </node>
-    <node concept="2tJIrI" id="3H7CugYdMwg" role="jymVt" />
+    <node concept="2tJIrI" id="1Vi5mb_oqs1" role="jymVt" />
     <node concept="3clFb_" id="5iKxrmkqBvm" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSolution" />

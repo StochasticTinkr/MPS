@@ -18,14 +18,12 @@ public class GenerateTask extends MpsLoadTask {
   private final GeneratorProperties myGenProps;
   private final JavaCompilerProperties myJavaCompilerProperties;
   public GenerateTask() {
+    super("jetbrains.mps.tool.builder.make.GeneratorWorker");
     myGenProps = new GeneratorProperties(myWhatToDo);
     myGenProps.setStrictMode(true).setParallelMode(false).setInplaceTransform(false).setHideWarnings(false).setCreateStaticRefs(true);
     myJavaCompilerProperties = new JavaCompilerProperties(myWhatToDo);
   }
-  @Override
-  protected String getWorkerClass() {
-    return "jetbrains.mps.tool.builder.make.GeneratorWorker";
-  }
+
   public void addConfiguredChunk(Chunk chunk) {
     myWhatToDo.addChunk(chunk.getModules(), chunk.getBootstrap());
   }

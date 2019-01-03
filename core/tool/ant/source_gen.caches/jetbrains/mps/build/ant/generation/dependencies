@@ -9,8 +9,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.GenTestTask">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.ModuleChunkPart" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
     <classNode extendsClassName="jetbrains.mps.build.ant.generation.GenerateTask" />
@@ -37,7 +35,6 @@
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.MpsRunnerTask">
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.tool.common.MpsRunnerProperties" />
     <classNode extendsClassName="jetbrains.mps.build.ant.generation.GenerateTask" />
