@@ -3,8 +3,8 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/notesOrganizer" />
   <property name="build.layout" location="${build.dir}/artifacts/notesOrganizer" />
-  <property name="idea_home" location="${basedir}/../../../../../../Applications/IntelliJ IDEA 15.app/Contents" />
-  <property name="plugins_home" location="${basedir}/../../../../Library/Application Support/IntelliJIdea15" />
+  <property name="idea_home" location="${basedir}/../../../../../../Applications/IntelliJ IDEA.app/Contents" />
+  <property name="plugins_home" location="${basedir}/../../../../Library/Application Support/IntelliJIdea2018.3" />
   <property name="artifacts.mpsPlugin" location="${plugins_home}" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsPlugin}/build.properties" prefix="import.mpsPlugin" />
@@ -31,11 +31,9 @@
   </path>
   
   <target name="assemble" depends="classes, declare-mps-tasks">
-    <mkdir dir="${build.layout}" />
-    <mkdir dir="${build.tmp}/default/notesOrganizer.zip" />
-    <mkdir dir="${build.tmp}/default/notesOrganizer.zip/notesOrganizer" />
-    <mkdir dir="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/META-INF" />
-    <echoxml file="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/META-INF/plugin.xml">
+    <mkdir dir="${build.layout}/notesOrganizer" />
+    <mkdir dir="${build.layout}/notesOrganizer/META-INF" />
+    <echoxml file="${build.layout}/notesOrganizer/META-INF/plugin.xml">
       <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>notesOrganizer</id>
         <name>notesOrganizer</name>
@@ -47,8 +45,8 @@
         </extensions>
       </idea-plugin>
     </echoxml>
-    <mkdir dir="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/languages" />
-    <mkdir dir="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/languages/notesOrganizer" />
+    <mkdir dir="${build.layout}/notesOrganizer/languages" />
+    <mkdir dir="${build.layout}/notesOrganizer/languages/notesOrganizer" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.samples.notesOrganizer.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.samples.notesOrganizer.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.samples.notesOrganizer.jar/META-INF/module.xml">
@@ -77,7 +75,7 @@
         <sources jar="jetbrains.mps.samples.notesOrganizer-src.jar" descriptor="jetbrains.mps.samples.notesOrganizer.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/languages/notesOrganizer/jetbrains.mps.samples.notesOrganizer.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/notesOrganizer/languages/notesOrganizer/jetbrains.mps.samples.notesOrganizer.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer" />
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -106,7 +104,7 @@
         <sources jar="jetbrains.mps.samples.notesOrganizer-src.jar" descriptor="jetbrains.mps.samples.notesOrganizer.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/languages/notesOrganizer/jetbrains.mps.samples.notesOrganizer-generator.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/notesOrganizer/languages/notesOrganizer/jetbrains.mps.samples.notesOrganizer-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer#8908453262579799816" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.notesOrganizer-generator.jar" />
     </jar>
@@ -116,7 +114,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.notesOrganizer-models">
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/languages/notesOrganizer/jetbrains.mps.samples.notesOrganizer-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/notesOrganizer/languages/notesOrganizer/jetbrains.mps.samples.notesOrganizer-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -133,9 +131,6 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.notesOrganizer-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.notesOrganizer-models" prefix="module/models" />
     </jar>
-    <zip destfile="${build.layout}/notesOrganizer.zip">
-      <fileset dir="${build.tmp}/default/notesOrganizer.zip" />
-    </zip>
     <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}mpsPluginCommon.plugin.version=${mpsPluginCommon.plugin.version}${line.separator}mpsPluginCommon.date=${mpsPluginCommon.date}${line.separator}mpsPluginCore.plugin.version=${mpsPluginCore.plugin.version}${line.separator}mpsPluginCore.date=${mpsPluginCore.date}${line.separator}mpsIdeaVcs.plugin.version=${mpsIdeaVcs.plugin.version}${line.separator}mpsIdeaVcs.date=${mpsIdeaVcs.date}${line.separator}mpsIdeaMigration.plugin.version=${mpsIdeaMigration.plugin.version}${line.separator}mpsIdeaMigration.date=${mpsIdeaMigration.date}</echo>
   </target>
   

@@ -22,6 +22,10 @@
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
+      <concept id="732853304284119468" name="jetbrains.mps.lang.editor.structure.ModuleImageProvider" flags="ng" index="20u1Yu">
+        <property id="4098264106349410193" name="imagePath" index="26rObG" />
+        <child id="4098264106349410195" name="moduleRef" index="26rObI" />
+      </concept>
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi">
         <child id="1078153129734" name="inspectedCellModel" index="6VMZX" />
         <child id="2597348684684069742" name="contextHints" index="CpUAK" />
@@ -85,6 +89,11 @@
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
+      <concept id="1139744628335" name="jetbrains.mps.lang.editor.structure.CellModel_Image" flags="sg" stub="8104358048506731195" index="1u4HXA">
+        <property id="1139746504291" name="imageFile" index="1ubRXE" />
+        <property id="1139858284555" name="descent" index="1$Qi42" />
+        <child id="1176899909521" name="imagePathProvider" index="4GRq3" />
+      </concept>
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140017977771" name="readOnly" index="1Intyy" />
@@ -264,6 +273,12 @@
       <concept id="1340057216891283515" name="jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Text" flags="ng" index="1563Vb">
         <property id="1340057216891283520" name="falseText" index="1563UK" />
         <property id="1340057216891283518" name="trueText" index="1563Ve" />
+      </concept>
+    </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="361130699826193249" name="jetbrains.mps.lang.modelapi.structure.ModulePointer" flags="ng" index="1dCxOk">
+        <property id="1863527487546097500" name="moduleId" index="1XweGW" />
+        <property id="1863527487545993577" name="moduleName" index="1XxBO9" />
       </concept>
     </language>
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
@@ -1627,6 +1642,20 @@
     <property role="TrG5h" value="NoteMetaInformation" />
     <ref role="1XX52x" to="g4p9:7IxbKGmfvcH" resolve="Note" />
     <node concept="3EZMnI" id="3o4bEdk_VcF" role="2wV5jI">
+      <node concept="1u4HXA" id="3F44tPntcUD" role="3EZMnx">
+        <property role="1ubRXE" value="${module}/icons/MPS_24.png" />
+        <property role="1$Qi42" value="-1" />
+        <node concept="20u1Yu" id="3F44tPntgdG" role="4GRq3">
+          <property role="26rObG" value="${module}/icons/MPS_24.png" />
+          <node concept="1dCxOk" id="3F44tPntgdK" role="26rObI">
+            <property role="1XweGW" value="4b0f115a-8868-4d72-8d61-97071eaaa5f1" />
+            <property role="1XxBO9" value="jetbrains.mps.samples.notesOrganizer" />
+          </node>
+        </node>
+        <node concept="lj46D" id="3F44tPnuBT6" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
       <node concept="1iCGBv" id="3o4bEdk_VsP" role="3EZMnx">
         <ref role="1NtTu8" to="g4p9:7IxbKGmfve4" resolve="status" />
         <node concept="1sVBvm" id="3o4bEdk_VsQ" role="1sWHZn">
@@ -1634,9 +1663,6 @@
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
-        </node>
-        <node concept="lj46D" id="3o4bEdk_VsS" role="3F10Kt">
-          <property role="VOm3f" value="true" />
         </node>
         <node concept="Veino" id="3o4bEdk_VsT" role="3F10Kt">
           <property role="Vb096" value="lightGray" />
@@ -1670,6 +1696,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="lj46D" id="3F44tPnuCbb" role="3F10Kt">
+          <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="1iCGBv" id="3o4bEdk_VsU" role="3EZMnx">
