@@ -29,15 +29,17 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
   protected Set<String> getClasspathInternal() {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
     final String fsep = File.separator;
+    // XXX Guess, the reason we use IDEA's PathManager instead of MPS's own copy is that we are running from sources here, and no chances to get <project home>/lib location 
+    //     by using resource root of PathManager class. 
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(MergeDriverPacker.mpsAddJars).select(new ISelector<String, String>() {
       public String select(String it) {
         return PathManager.getLibPath() + fsep + it;
       }
     }));
-    // FIXME I doubt we need all of these or that the set if complete. Some of these are just to satisfy direct Java dependency of PlatformBase class (e.g. dataFlowRuntime or textgen) -  
-    //       MergeDriverMain uses 'PERSISTENCE' level of the Platform, hence doesn't need to load MPSDataFlow or MPSTextGenerator classes. Shall refactor PlatformBase not to trigger classloading 
-    //       of classes beyond the desired level and reduce the list 
-    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "logging", "openapi", "smodel", "make-runtime", "dataFlowRuntime", "project", "project-check", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence", "platform", "components", "migration-runtime", "textgen", "java-stub", "util", "vfs", "aspects" + fsep + "behavior" + fsep + "behavior-api", "aspects" + fsep + "behavior" + fsep + "behavior-runtime", "make-runtime" + fsep + "solutions" + fsep + "jetbrains.mps.make.facets");
+    // IMPORTANT 
+    //       MergeDriverMain uses 'PERSISTENCE' level of the Platform, hence doesn't need to load MPSDataFlow or MPSTextGenerator classes. 
+    //       Here, we shall satisfy relevant 'PERSISTANCE'-level dependencies only, not complete mps-core.jar content 
+    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "logging", "openapi", "smodel", "project", "typesystemEngine", "persistence", "components", "platform", "java-stub", "util", "vfs", "aspects" + fsep + "behavior" + fsep + "behavior-api", "aspects" + fsep + "behavior" + fsep + "behavior-runtime");
     String homePath = PathManager.getHomePath();
     final String corePath = homePath + fsep + "core";
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(CLASSPATHS).select(new ISelector<String, String>() {

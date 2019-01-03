@@ -7696,9 +7696,6 @@
         <node concept="Xl_RD" id="5d$B_bo0qx1" role="37wK5m">
           <property role="Xl_RC" value="mps-boot-util.jar" />
         </node>
-        <node concept="Xl_RD" id="$wIWWjtsvb" role="37wK5m">
-          <property role="Xl_RC" value="mps-project-check.jar" />
-        </node>
       </node>
       <node concept="A3Dl8" id="7yiwGpnLbjo" role="1tU5fm">
         <node concept="17QB3L" id="7yiwGpnLbju" role="A3Ik2" />

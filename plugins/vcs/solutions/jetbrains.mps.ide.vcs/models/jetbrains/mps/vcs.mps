@@ -2,12 +2,12 @@
 <model ref="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -52,8 +52,8 @@
     <import index="yt4f" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.diff(MPS.IDEA/)" />
     <import index="tcg7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.fileTypes(MPS.Platform/)" />
     <import index="iwsx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileEditor(MPS.IDEA/)" />
-    <import index="zkib" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.reloading(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="zkib" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.reloading(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2397,6 +2397,16 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="1K3lKVMZfVd" role="3cqZAp">
+          <node concept="3SKdUq" id="1K3lKVMZfVf" role="3SKWNk">
+            <property role="3SKdUp" value="XXX Guess, the reason we use IDEA's PathManager instead of MPS's own copy is that we are running from sources here, and no chances to get &lt;project home&gt;/lib location" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="1K3lKVMZkWz" role="3cqZAp">
+          <node concept="3SKdUq" id="1K3lKVMZkW_" role="3SKWNk">
+            <property role="3SKdUp" value="    by using resource root of PathManager class." />
+          </node>
+        </node>
         <node concept="3clFbF" id="6kmsk4KDJ2c" role="3cqZAp">
           <node concept="2OqwBi" id="6kmsk4KDJ2d" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTsJ6" role="2Oq$k0">
@@ -2438,19 +2448,19 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="$wIWWjuwOn" role="3cqZAp">
-          <node concept="3SKdUq" id="$wIWWjuwOp" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME I doubt we need all of these or that the set if complete. Some of these are just to satisfy direct Java dependency of PlatformBase class (e.g. dataFlowRuntime or textgen) - " />
-          </node>
-        </node>
         <node concept="3SKdUt" id="$wIWWju$N_" role="3cqZAp">
           <node concept="3SKdUq" id="$wIWWju$NB" role="3SKWNk">
-            <property role="3SKdUp" value="      MergeDriverMain uses 'PERSISTENCE' level of the Platform, hence doesn't need to load MPSDataFlow or MPSTextGenerator classes. Shall refactor PlatformBase not to trigger classloading" />
+            <property role="3SKdUp" value="IMPORTANT" />
           </node>
         </node>
-        <node concept="3SKdUt" id="$wIWWjuFOG" role="3cqZAp">
-          <node concept="3SKdUq" id="$wIWWjuFOI" role="3SKWNk">
-            <property role="3SKdUp" value="      of classes beyond the desired level and reduce the list" />
+        <node concept="3SKdUt" id="1K3lKVMZ4Wy" role="3cqZAp">
+          <node concept="3SKdUq" id="1K3lKVMZ4Wz" role="3SKWNk">
+            <property role="3SKdUp" value="      MergeDriverMain uses 'PERSISTENCE' level of the Platform, hence doesn't need to load MPSDataFlow or MPSTextGenerator classes." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="1K3lKVMZa53" role="3cqZAp">
+          <node concept="3SKdUq" id="1K3lKVMZa54" role="3SKWNk">
+            <property role="3SKdUp" value="      Here, we shall satisfy relevant 'PERSISTANCE'-level dependencies only, not complete mps-core.jar content" />
           </node>
         </node>
         <node concept="3cpWs8" id="6gjr9XnnBS6" role="3cqZAp">
@@ -2475,47 +2485,20 @@
               <node concept="Xl_RD" id="7uoPV6B$Mht" role="37wK5m">
                 <property role="Xl_RC" value="smodel" />
               </node>
-              <node concept="Xl_RD" id="6gjr9XnnBSw" role="37wK5m">
-                <property role="Xl_RC" value="make-runtime" />
-              </node>
-              <node concept="Xl_RD" id="4J5nzKIHq$v" role="37wK5m">
-                <property role="Xl_RC" value="dataFlowRuntime" />
-              </node>
               <node concept="Xl_RD" id="4hNzukCU_PK" role="37wK5m">
                 <property role="Xl_RC" value="project" />
-              </node>
-              <node concept="Xl_RD" id="$wIWWjtOc1" role="37wK5m">
-                <property role="Xl_RC" value="project-check" />
-              </node>
-              <node concept="Xl_RD" id="6gjr9XnnBSD" role="37wK5m">
-                <property role="Xl_RC" value="generator" />
               </node>
               <node concept="Xl_RD" id="6gjr9XnnBSM" role="37wK5m">
                 <property role="Xl_RC" value="typesystemEngine" />
               </node>
-              <node concept="Xl_RD" id="6gjr9XnnBSV" role="37wK5m">
-                <property role="Xl_RC" value="findUsages-runtime" />
-              </node>
-              <node concept="Xl_RD" id="6gjr9XnnBT4" role="37wK5m">
-                <property role="Xl_RC" value="refactoring-runtime" />
-              </node>
-              <node concept="Xl_RD" id="6gjr9XnnBTd" role="37wK5m">
-                <property role="Xl_RC" value="analyzers" />
-              </node>
               <node concept="Xl_RD" id="n3g0Q5nSc4" role="37wK5m">
                 <property role="Xl_RC" value="persistence" />
-              </node>
-              <node concept="Xl_RD" id="55$LBuYmqPo" role="37wK5m">
-                <property role="Xl_RC" value="platform" />
               </node>
               <node concept="Xl_RD" id="55$LBuYmrSI" role="37wK5m">
                 <property role="Xl_RC" value="components" />
               </node>
-              <node concept="Xl_RD" id="55$LBuYmx$K" role="37wK5m">
-                <property role="Xl_RC" value="migration-runtime" />
-              </node>
-              <node concept="Xl_RD" id="55$LBuYmAyA" role="37wK5m">
-                <property role="Xl_RC" value="textgen" />
+              <node concept="Xl_RD" id="55$LBuYmqPo" role="37wK5m">
+                <property role="Xl_RC" value="platform" />
               </node>
               <node concept="Xl_RD" id="55$LBuYmD0y" role="37wK5m">
                 <property role="Xl_RC" value="java-stub" />
@@ -2570,29 +2553,6 @@
                 </node>
                 <node concept="Xl_RD" id="4J5nzKIHKjs" role="3uHU7w">
                   <property role="Xl_RC" value="behavior-runtime" />
-                </node>
-              </node>
-              <node concept="3cpWs3" id="4J5nzKIHPY3" role="37wK5m">
-                <node concept="3cpWs3" id="4J5nzKIHSPo" role="3uHU7B">
-                  <node concept="37vLTw" id="4J5nzKIHTiP" role="3uHU7w">
-                    <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
-                  </node>
-                  <node concept="3cpWs3" id="4J5nzKIHPH2" role="3uHU7B">
-                    <node concept="3cpWs3" id="4J5nzKIHRd4" role="3uHU7B">
-                      <node concept="37vLTw" id="4J5nzKIHREy" role="3uHU7w">
-                        <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
-                      </node>
-                      <node concept="Xl_RD" id="4J5nzKIHPH8" role="3uHU7B">
-                        <property role="Xl_RC" value="make-runtime" />
-                      </node>
-                    </node>
-                    <node concept="Xl_RD" id="4J5nzKIHPY9" role="3uHU7w">
-                      <property role="Xl_RC" value="solutions" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="Xl_RD" id="4J5nzKIHQvs" role="3uHU7w">
-                  <property role="Xl_RC" value="jetbrains.mps.make.facets" />
                 </node>
               </node>
             </node>
