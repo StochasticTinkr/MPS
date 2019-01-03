@@ -37,8 +37,6 @@ core/project/classes
 core/project-check/classes
 core/tool/builder/classes
 core/scripts-runtime/classes
-languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes
-languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes
 languages/baseLanguage/collections/runtime/classes
 languages/baseLanguage/closures/runtime/classes
 languages/baseLanguage/tuples/runtime/classes
@@ -53,6 +51,8 @@ editor/intentions-runtime/classes
 editor/typesystemIntegration/classes
 workbench/mps-editor/classes
 :platform
+languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes
+languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes
 workbench/mps-platform/classes
 workbench/mps-debugger/classes
 workbench/mps-ui/classes
