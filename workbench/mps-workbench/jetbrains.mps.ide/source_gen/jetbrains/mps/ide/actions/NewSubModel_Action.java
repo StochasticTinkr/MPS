@@ -7,18 +7,18 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.module.SModule;
+import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewSubModel_Action extends BaseAction {
@@ -35,7 +35,10 @@ public class NewSubModel_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
+    if (!(((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof SModelTreeNode)) {
+      return false;
+    }
+    if (!(((SModel) MapSequence.fromMap(_params).get("model")).getModule() instanceof AbstractModule)) {
       return false;
     }
 
@@ -80,8 +83,8 @@ public class NewSubModel_Action extends BaseAction {
       }
     }
     {
-      SModule p = event.getData(MPSCommonDataKeys.MODULE);
-      MapSequence.fromMap(_params).put("module", p);
+      TreeNode p = event.getData(MPSCommonDataKeys.TREE_NODE);
+      MapSequence.fromMap(_params).put("treeNode", p);
       if (p == null) {
         return false;
       }
@@ -91,12 +94,12 @@ public class NewSubModel_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-    final String namespace = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model")));
+    final String namespace = ((SModel) MapSequence.fromMap(_params).get("model")).getName().getLongName();
 
     ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         String stereotype = SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model")));
-        dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), namespace, stereotype, true);
+        dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModel) MapSequence.fromMap(_params).get("model")).getModule(), namespace, stereotype, true);
       }
     });
 
