@@ -165,7 +165,8 @@ public class MpsLoadTask extends Task {
       }
       commandLine.add("-classpath");
       commandLine.add(sb.toString());
-      commandLine.add("jetbrains.mps.tool.builder.AntBootstrap");
+      // AntBootstrap comes from this module, and this module is part of currentClassPathString, hence AntBootstrap would be available 
+      commandLine.add(AntBootstrap.class.getName());
       commandLine.add(getWorkerClass());
       dumpPropertiesToWhatToDo();
       try {

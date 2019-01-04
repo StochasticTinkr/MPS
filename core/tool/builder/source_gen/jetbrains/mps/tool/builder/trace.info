@@ -19,94 +19,64 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-  <root nodeRef="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)/2546981710035481844">
-    <file name="AntBootstrap.java">
-      <node id="1463465047941145111" at="20,10,21,68" concept="11" />
-      <node id="1463465047941127641" at="21,68,22,33" concept="3" />
-      <node id="2546981710035481857" at="26,42,27,104" concept="11" />
-      <node id="2546981710035481863" at="27,104,28,90" concept="9" />
-      <node id="649634318839110960" at="28,90,29,65" concept="3" />
-      <node id="2546981710035481881" at="30,9,31,54" concept="9" />
-      <node id="2546981710035481890" at="31,54,32,75" concept="9" />
-      <node id="2546981710035481900" at="32,75,33,37" concept="3" />
-      <node id="2546981710035481905" at="33,37,34,56" concept="9" />
-      <node id="2546981710035481918" at="34,56,35,66" concept="3" />
-      <node id="2546981710035481927" at="35,66,36,51" concept="3" />
-      <node id="2546981710035481873" at="37,27,38,36" concept="3" />
-      <node id="2546981710035481935" at="39,5,40,19" concept="3" />
-      <node id="2546981710035481846" at="24,0,26,0" concept="2" trace="AntBootstrap#()V" />
-      <node id="2546981710035481870" at="29,65,39,5" concept="18" />
-      <node id="2546981710035481850" at="26,0,42,0" concept="14" trace="main#([Ljava/lang/String;)V" />
-      <scope id="2546981710035481849" at="24,25,24,25" />
-      <scope id="2546981710035481871" at="37,0,38,36">
-        <var name="e" id="2546981710035481878" />
-      </scope>
-      <scope id="2546981710035481872" at="37,27,38,36" />
-      <scope id="1463465047941104340" at="20,10,22,33" />
-      <scope id="2546981710035481846" at="24,0,26,0" />
-      <scope id="2546981710035481880" at="30,9,36,51">
-        <var name="clazz" id="2546981710035481882" />
-        <var name="mainMethod" id="2546981710035481891" />
-        <var name="passedArgs" id="2546981710035481906" />
-      </scope>
-      <scope id="2546981710035481856" at="26,42,40,19">
-        <var name="newClassLoader" id="2546981710035481864" />
-      </scope>
-      <scope id="2546981710035481850" at="26,0,42,0">
-        <var name="args" id="2546981710035481853" />
-      </scope>
-      <unit id="2546981710035481844" at="19,0,43,0" name="jetbrains.mps.tool.builder.AntBootstrap" />
-    </file>
-  </root>
   <root nodeRef="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)/8514960456944541507">
     <file name="MpsWorkerTest.java">
       <node id="8514960456944776450" at="13,0,14,0" concept="4" trace="myModuleRef" />
       <node id="8514960456944777205" at="14,0,15,0" concept="4" trace="myIsPresent" />
-      <node id="8514960456944780551" at="16,113,17,28" concept="15" />
-      <node id="8514960456944780562" at="17,28,18,25" concept="3" />
-      <node id="8514960456944780572" at="18,25,19,28" concept="3" />
-      <node id="679099339648918904" at="23,22,24,106" concept="9" />
-      <node id="8514960456944801770" at="27,13,28,53" concept="9" />
-      <node id="8514960456945574715" at="29,45,30,51" concept="3" />
-      <node id="8514960456945580103" at="32,31,33,30" concept="3" />
-      <node id="1592025086119891527" at="39,42,40,196" concept="9" />
-      <node id="1592025086119891536" at="40,196,41,30" concept="3" />
-      <node id="679099339648939375" at="28,53,31,11" concept="7" />
-      <node id="1592025086119891521" at="39,0,43,0" concept="14" trace="main#([Ljava/lang/String;)V" />
-      <node id="8514960456944780545" at="16,0,21,0" concept="2" trace="MpsWorkerTest#(Ljetbrains/mps/tool/common/Script;Ljetbrains/mps/tool/builder/MpsWorker/AntLogger;Lorg/jetbrains/mps/openapi/module/SModuleReference;Z)V" />
-      <node id="8514960456945579679" at="26,25,34,9" concept="18" />
-      <node id="679099339648927198" at="26,0,36,0" concept="8" trace="run#()V" />
-      <node id="679099339648921340" at="24,106,36,7" concept="3" />
-      <node id="878521226301294266" at="22,0,38,0" concept="8" trace="work#()V" />
-      <scope id="679099339648939377" at="29,45,30,51" />
-      <scope id="8514960456945579675" at="32,0,33,30">
+      <node id="8514960456944780551" at="16,69,17,28" concept="15" />
+      <node id="8514960456944780562" at="20,70,21,28" concept="3" />
+      <node id="8514960456944780572" at="21,28,22,28" concept="3" />
+      <node id="679099339648918904" at="26,22,27,106" concept="9" />
+      <node id="2326999218710608594" at="27,106,28,98" concept="9" />
+      <node id="2326999218710621698" at="28,98,29,77" concept="9" />
+      <node id="8514960456944801770" at="32,13,33,51" concept="9" />
+      <node id="8514960456945574715" at="34,45,35,51" concept="3" />
+      <node id="8514960456945580103" at="37,31,38,30" concept="3" />
+      <node id="1592025086119891527" at="44,42,45,124" concept="9" />
+      <node id="2326999218710585128" at="45,124,46,72" concept="3" />
+      <node id="1592025086119891536" at="46,72,47,30" concept="3" />
+      <node id="8514960456944780545" at="16,0,19,0" concept="2" trace="MpsWorkerTest#(Ljetbrains/mps/tool/common/Script;Ljetbrains/mps/tool/builder/MpsWorker/AntLogger;)V" />
+      <node id="679099339648939375" at="33,51,36,11" concept="7" />
+      <node id="2326999218710575320" at="20,0,24,0" concept="8" trace="setModuleToCheck#(Ljava/lang/String;Z)V" />
+      <node id="1592025086119891521" at="44,0,49,0" concept="14" trace="main#([Ljava/lang/String;)V" />
+      <node id="8514960456945579679" at="31,25,39,9" concept="18" />
+      <node id="679099339648927198" at="31,0,41,0" concept="8" trace="run#()V" />
+      <node id="679099339648921340" at="29,77,41,7" concept="3" />
+      <node id="878521226301294266" at="25,0,43,0" concept="8" trace="work#()V" />
+      <scope id="8514960456944780549" at="16,69,17,28" />
+      <scope id="679099339648939377" at="34,45,35,51" />
+      <scope id="8514960456945579675" at="37,0,38,30">
         <var name="e" id="8514960456945579677" />
       </scope>
-      <scope id="8514960456945579676" at="32,31,33,30" />
-      <scope id="1592025086119891525" at="39,42,41,30">
-        <var name="testWorker" id="1592025086119891526" />
-      </scope>
-      <scope id="8514960456944780549" at="16,113,19,28" />
-      <scope id="8514960456945579680" at="27,13,31,11">
-        <var name="module" id="8514960456944801771" />
-      </scope>
-      <scope id="1592025086119891521" at="39,0,43,0">
-        <var name="args" id="1592025086119891522" />
-      </scope>
-      <scope id="8514960456944780545" at="16,0,21,0">
-        <var name="isPresent" id="8514960456944780571" />
+      <scope id="8514960456945579676" at="37,31,38,30" />
+      <scope id="2326999218710575323" at="20,70,22,28" />
+      <scope id="8514960456944780545" at="16,0,19,0">
         <var name="logger" id="8514960456944780556" />
-        <var name="module" id="8514960456944780561" />
         <var name="whatToDo" id="8514960456944780552" />
       </scope>
-      <scope id="679099339648927199" at="26,25,34,9" />
-      <scope id="679099339648927198" at="26,0,36,0" />
-      <scope id="878521226301294269" at="23,22,36,7">
+      <scope id="1592025086119891525" at="44,42,47,30">
+        <var name="testWorker" id="1592025086119891526" />
+      </scope>
+      <scope id="2326999218710575320" at="20,0,24,0">
+        <var name="isPresent" id="2326999218710579616" />
+        <var name="moduleRef" id="2326999218710577409" />
+      </scope>
+      <scope id="8514960456945579680" at="32,13,36,11">
+        <var name="module" id="8514960456944801771" />
+      </scope>
+      <scope id="1592025086119891521" at="44,0,49,0">
+        <var name="args" id="1592025086119891522" />
+      </scope>
+      <scope id="679099339648927199" at="31,25,39,9" />
+      <scope id="679099339648927198" at="31,0,41,0" />
+      <scope id="878521226301294269" at="26,22,41,7">
+        <var name="moduleRef" id="2326999218710621699" />
+        <var name="pf" id="2326999218710608595" />
         <var name="repo" id="679099339648918905" />
       </scope>
-      <scope id="878521226301294266" at="22,0,38,0" />
-      <unit id="679099339648927198" at="25,44,36,5" name="jetbrains.mps.tool.builder.MpsWorkerTest$1" />
-      <unit id="8514960456944541507" at="12,0,44,0" name="jetbrains.mps.tool.builder.MpsWorkerTest" />
+      <scope id="878521226301294266" at="25,0,43,0" />
+      <unit id="679099339648927198" at="30,44,41,5" name="jetbrains.mps.tool.builder.MpsWorkerTest$1" />
+      <unit id="8514960456944541507" at="12,0,50,0" name="jetbrains.mps.tool.builder.MpsWorkerTest" />
     </file>
   </root>
   <root nodeRef="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)/878521226300773719">

@@ -4,6 +4,20 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
+  <dependency className="jetbrains.mps.build.ant.AntBootstrap">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.Thread" />
+    <classNode dependClassName="java.lang.reflect.Method" />
+    <classNode dependClassName="java.net.URL" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil" />
+    <classNode dependClassName="jetbrains.mps.core.tool.environment.classloading.UrlClassLoader" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.Arg">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="org.apache.tools.ant.ProjectComponent" />
@@ -129,6 +143,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Scanner" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.build.ant.AntBootstrap" />
     <classNode dependClassName="jetbrains.mps.build.ant.Arg" />
     <classNode dependClassName="jetbrains.mps.build.ant.ExcludeNested" />
     <classNode dependClassName="jetbrains.mps.build.ant.JvmArgs" />
