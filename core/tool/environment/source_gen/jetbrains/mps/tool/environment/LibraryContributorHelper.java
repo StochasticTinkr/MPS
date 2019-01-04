@@ -10,13 +10,13 @@ import java.util.LinkedHashSet;
 import java.util.Arrays;
 import jetbrains.mps.tool.common.PathManager;
 import java.io.File;
-import jetbrains.mps.core.tool.environment.classloading.UrlClassLoader;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import java.util.Collections;
 import java.util.List;
 import java.net.URL;
 import java.util.ArrayList;
 import java.net.MalformedURLException;
+import jetbrains.mps.core.tool.environment.classloading.UrlClassLoader;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.core.tool.environment.util.SetLibraryContributor;
@@ -48,7 +48,7 @@ import java.util.LinkedHashMap;
       for (String pluginsPath : Arrays.asList(PathManager.getPluginsPath(), jetbrains.mps.util.PathManager.getPreInstalledPluginsPath())) {
         File pluginDirectory = new File(pluginsPath, pluginFolder);
         File libFolder = new File(pluginDirectory, "lib");
-        UrlClassLoader pluginCL = null;
+        ClassLoader pluginCL = null;
         if (libFolder.exists() && libFolder.isDirectory()) {
           pluginCL = createPluginClassLoader(libFolder);
           for (File jar : libFolder.listFiles(jetbrains.mps.util.PathManager.JAR_FILE_FILTER)) {
@@ -68,7 +68,7 @@ import java.util.LinkedHashMap;
     return Collections.unmodifiableSet(paths);
   }
 
-  private static UrlClassLoader createPluginClassLoader(File lib) {
+  private static ClassLoader createPluginClassLoader(File lib) {
     List<URL> urls = new ArrayList<URL>();
     File[] files = lib.listFiles(jetbrains.mps.util.PathManager.JAR_FILE_FILTER);
     if (files == null) {

@@ -1445,37 +1445,12 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="5hfNQWynXUh" role="3clF47">
-        <node concept="3SKdUt" id="21bannvQy$e" role="3cqZAp">
-          <node concept="3SKdUq" id="21bannvQy$g" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME there's also j.m.util.PathManager.getHomePath wich I would prefere to use over mps.tool.common.PathManager, but they are different in implementation" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="5hfNQWynZeF" role="3cqZAp">
-          <node concept="3cpWsn" id="5hfNQWynZeG" role="3cpWs9">
-            <property role="TrG5h" value="workbenchPath" />
-            <node concept="17QB3L" id="DMIDDhgGfE" role="1tU5fm" />
-            <node concept="3cpWs3" id="5hfNQWynZeJ" role="33vP2m">
-              <node concept="Xl_RD" id="5hfNQWynZeK" role="3uHU7w">
-                <property role="Xl_RC" value="workbench" />
-              </node>
-              <node concept="3cpWs3" id="5hfNQWynZeL" role="3uHU7B">
-                <node concept="10M0yZ" id="5hfNQWynZeM" role="3uHU7w">
-                  <ref role="1PxDUh" to="guwi:~File" resolve="File" />
-                  <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
-                </node>
-                <node concept="2YIFZM" id="4TNBaKVrsVt" role="3uHU7B">
-                  <ref role="37wK5l" to="asz6:4937uxYQn9c" resolve="getHomePath" />
-                  <ref role="1Pybhc" to="asz6:4937uxYQn6D" resolve="PathManager" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="5hfNQWynZeU" role="3cqZAp">
           <node concept="1rXfSq" id="5hfNQWynZeV" role="3clFbG">
             <ref role="37wK5l" node="6rx4kZDk8ph" resolve="addLib" />
-            <node concept="37vLTw" id="5hfNQWynZeW" role="37wK5m">
-              <ref role="3cqZAo" node="5hfNQWynZeG" resolve="workbenchPath" />
+            <node concept="2YIFZM" id="7F6rovmpvXz" role="37wK5m">
+              <ref role="37wK5l" to="18ew:~PathManager.getWorkbenchPath():java.lang.String" resolve="getWorkbenchPath" />
+              <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
             </node>
           </node>
         </node>
@@ -4844,8 +4819,8 @@
                   <node concept="3cpWsn" id="4937uxYQns1" role="3cpWs9">
                     <property role="TrG5h" value="pluginCL" />
                     <property role="3TUv4t" value="false" />
-                    <node concept="3uibUv" id="4937uxYQns2" role="1tU5fm">
-                      <ref role="3uigEE" to="d6hn:5QbKaIbm7l0" resolve="UrlClassLoader" />
+                    <node concept="3uibUv" id="7F6rovmp$E$" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~ClassLoader" resolve="ClassLoader" />
                     </node>
                     <node concept="10Nm6u" id="4937uxYQns3" role="33vP2m" />
                   </node>
@@ -5269,6 +5244,16 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="7F6rovmpCRd" role="3cqZAp">
+          <node concept="3SKdUq" id="7F6rovmpCRf" role="3SKWNk">
+            <property role="3SKdUp" value="XXX why don't we use myRootClassLoader as a parent CL here? &lt;mps-home&gt;/lib seems to be proper parent CL for a plugin." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7F6rovmpHJX" role="3cqZAp">
+          <node concept="3SKdUq" id="7F6rovmpHJZ" role="3SKWNk">
+            <property role="3SKdUp" value="    HOWEVER, the judgement above is just a guess, EnvironmentBase.createRootClassLoader" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="4937uxYQnu2" role="3cqZAp">
           <node concept="2ShNRf" id="4937uxYQnu3" role="3cqZAk">
             <node concept="1pGfFk" id="4937uxYQnu4" role="2ShVmc">
@@ -5288,8 +5273,8 @@
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="4937uxYQnu9" role="3clF45">
-        <ref role="3uigEE" to="d6hn:5QbKaIbm7l0" resolve="UrlClassLoader" />
+      <node concept="3uibUv" id="7F6rovmp$mH" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~ClassLoader" resolve="ClassLoader" />
       </node>
       <node concept="37vLTG" id="4937uxYQnua" role="3clF46">
         <property role="TrG5h" value="lib" />

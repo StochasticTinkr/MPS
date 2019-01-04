@@ -116,9 +116,7 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withWorkbenchPath() {
-    // FIXME there's also j.m.util.PathManager.getHomePath wich I would prefere to use over mps.tool.common.PathManager, but they are different in implementation 
-    String workbenchPath = jetbrains.mps.tool.common.PathManager.getHomePath() + File.separator + "workbench";
-    addLib(workbenchPath);
+    addLib(PathManager.getWorkbenchPath());
     return this;
   }
 

@@ -64,7 +64,6 @@
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
@@ -78,7 +77,6 @@
     <classNode dependClassName="jetbrains.mps.core.tool.environment.common.SystemInfo" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.common.URLUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.RepositoryDescriptor">

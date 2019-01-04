@@ -18,7 +18,6 @@ import java.util.PropertyResourceBundle;
 import java.util.Enumeration;
 import java.util.Properties;
 import java.util.Set;
-import org.jetbrains.annotations.NotNull;
 
 public class PathManager {
 
@@ -30,27 +29,19 @@ public class PathManager {
   @NonNls
   private static final String PROPERTIES_FILE_NAME = "idea.properties";
   @NonNls
-  private static final String PROPERTY_SYSTEM_PATH = "idea.system.path";
-  @NonNls
   private static final String PROPERTY_CONFIG_PATH = "idea.config.path";
   @NonNls
   private static final String PROPERTY_PLUGINS_PATH = "idea.plugins.path";
   @NonNls
   private static final String PROPERTY_HOME_PATH = "idea.home.path";
   @NonNls
-  private static final String PROPERTY_LOG_PATH = "idea.log.path";
-  @NonNls
   public static final String PROPERTY_PATHS_SELECTOR = "idea.paths.selector";
   @NonNls
   private static String ourHomePath;
   @NonNls
-  private static String ourSystemPath;
-  @NonNls
   private static String ourConfigPath;
   @NonNls
   private static String ourPluginsPath;
-  @NonNls
-  private static String ourLogPath;
   @NonNls
   private static final String FILE = "file";
   @NonNls
@@ -60,17 +51,9 @@ public class PathManager {
   @NonNls
   private static final String PROTOCOL_DELIMITER = ":";
   @NonNls
-  public static final String DEFAULT_OPTIONS_FILE_NAME = "other";
-  @NonNls
-  private static final String LIB_FOLDER = "lib";
-  @NonNls
   public static final String PLUGINS_FOLDER = "plugins";
   @NonNls
   private static final String BIN_FOLDER = "bin";
-  @NonNls
-  private static final String LOG_DIRECTORY = "log";
-  @NonNls
-  private static final String OPTIONS_FOLDER = "options";
 
   private static final String PATHS_SELECTOR = System.getProperty(PROPERTY_PATHS_SELECTOR);
 
@@ -84,6 +67,9 @@ public class PathManager {
     if (System.getProperty(PathManager.PROPERTY_HOME_PATH) != null) {
       PathManager.ourHomePath = FileUtil.getAbsolutePath(System.getProperty(PathManager.PROPERTY_HOME_PATH));
     } else {
+      // FIXME if this PathManager class is loaded through ant cp (lib/ant/lib/ant-mps.jar), home folder would be wrong! 
+      //       This means use of this method and related makes sense for the case when this PathManager is loaded through e.g. core.tool.environment 
+      //       or tool.builder classloaders (mps-tool.jar or mps-environment.jar). 
       final Class aClass = PathManager.class;
       String rootPath = PathManager.getResourceRoot(aClass, "/" + aClass.getName().replace('.', '/') + ".class");
       if (rootPath != null) {
@@ -110,34 +96,8 @@ public class PathManager {
     return PathManager.ourHomePath;
   }
 
-  private static boolean isIdeaHome(final File root) {
-    return new File(root, FileUtil.toSystemDependentName("bin/idea.properties")).exists() || new File(root, FileUtil.toSystemDependentName("community/bin/idea.properties")).exists();
-  }
-
   private static boolean isMpsDir(File file) {
     return new File(file, FileUtil.toSystemDependentName("bin/" + PROPERTIES_FILE_NAME)).exists();
-  }
-
-  public static String getLibPath() {
-    return PathManager.getHomePath() + File.separator + PathManager.LIB_FOLDER;
-  }
-
-  public static String getSystemPath() {
-    if (PathManager.ourSystemPath != null) {
-      return PathManager.ourSystemPath;
-    }
-    if (System.getProperty(PathManager.PROPERTY_SYSTEM_PATH) != null) {
-      PathManager.ourSystemPath = FileUtil.getAbsolutePath(FileUtil.trimPathQuotes(System.getProperty(PathManager.PROPERTY_SYSTEM_PATH)));
-    } else {
-      PathManager.ourSystemPath = PathManager.getHomePath() + File.separator + "system";
-    }
-    try {
-      File file = new File(PathManager.ourSystemPath);
-      file.mkdirs();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return PathManager.ourSystemPath;
   }
 
   public static boolean ensureConfigFolderExists(final boolean createIfNotExists) {
@@ -150,12 +110,12 @@ public class PathManager {
     return false;
   }
 
-  public static String getConfigPath(boolean createIfNotExists) {
+  private static String getConfigPath(boolean createIfNotExists) {
     PathManager.ensureConfigFolderExists(createIfNotExists);
     return PathManager.ourConfigPath;
   }
 
-  public static String getConfigPath() {
+  private static String getConfigPath() {
     return PathManager.getConfigPath(true);
   }
 
@@ -169,28 +129,6 @@ public class PathManager {
       PathManager.ourConfigPath = PathManager.getHomePath() + File.separator + "config";
     }
     return PathManager.ourConfigPath;
-  }
-
-  public static String getBinPath() {
-    return PathManager.getHomePath() + File.separator + PathManager.BIN_FOLDER;
-  }
-
-  public static String getOptionsPath() {
-    return PathManager.getConfigPath() + File.separator + PathManager.OPTIONS_FOLDER;
-  }
-
-  public static String getOptionsPathWithoutDialog() {
-    return PathManager.getConfigPathWithoutDialog() + File.separator + PathManager.OPTIONS_FOLDER;
-  }
-
-  public static File getIndexRoot() {
-    File file = new File(PathManager.getSystemPath(), "index");
-    try {
-      file = file.getCanonicalFile();
-    } catch (IOException ignored) {
-    }
-    file.mkdirs();
-    return file;
   }
 
   public static String getPluginsPath() {
@@ -207,22 +145,6 @@ public class PathManager {
     }
 
     return ourPluginsPath;
-  }
-
-  public static String getLogPath() {
-    if (PathManager.ourLogPath == null) {
-      if (System.getProperty(PathManager.PROPERTY_LOG_PATH) != null) {
-        PathManager.ourLogPath = FileUtil.getAbsolutePath(FileUtil.trimPathQuotes(System.getProperty(PathManager.PROPERTY_LOG_PATH)));
-      } else {
-        PathManager.ourLogPath = PathManager.getSystemPath() + File.separatorChar + PathManager.LOG_DIRECTORY;
-      }
-    }
-    return PathManager.ourLogPath;
-  }
-
-  @NonNls
-  public static File getOptionsFile(@NonNls String fileName) {
-    return new File(PathManager.getOptionsPath() + File.separatorChar + fileName + ".xml");
   }
 
   /**
@@ -278,11 +200,6 @@ public class PathManager {
     resultPath = StringUtil.trimEnd(resultPath, File.separator);
     resultPath = URLUtil.unescapePercentSequences(resultPath);
     return resultPath;
-  }
-
-  @NonNls
-  public static File getDefaultOptionsFile() {
-    return new File(PathManager.getOptionsPath(), PathManager.DEFAULT_OPTIONS_FILE_NAME + ".xml");
   }
 
   public static void loadProperties() {
@@ -343,16 +260,4 @@ public class PathManager {
     return s;
   }
 
-  public static String getPluginTempPath() {
-    String systemPath = PathManager.getSystemPath();
-    return systemPath + File.separator + PathManager.PLUGINS_FOLDER;
-  }
-
-  public static File findFileInLibDirectory(@NotNull String relativePath) {
-    File file = new File(PathManager.getLibPath() + File.separator + relativePath);
-    if (file.exists()) {
-      return file;
-    }
-    return new File(PathManager.getHomePath() + File.separator + "community" + File.separator + "lib" + File.separator + relativePath);
-  }
 }
