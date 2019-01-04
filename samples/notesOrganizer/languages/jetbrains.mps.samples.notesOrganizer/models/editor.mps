@@ -90,7 +90,6 @@
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139744628335" name="jetbrains.mps.lang.editor.structure.CellModel_Image" flags="sg" stub="8104358048506731195" index="1u4HXA">
-        <property id="1139746504291" name="imageFile" index="1ubRXE" />
         <property id="1139858284555" name="descent" index="1$Qi42" />
         <child id="1176899909521" name="imagePathProvider" index="4GRq3" />
       </concept>
@@ -550,6 +549,19 @@
   <node concept="24kQdi" id="7IxbKGmfvgW">
     <ref role="1XX52x" to="g4p9:7IxbKGmfvcH" resolve="Note" />
     <node concept="3EZMnI" id="7IxbKGmfvgY" role="2wV5jI">
+      <node concept="1u4HXA" id="75xFEaYwrWp" role="3EZMnx">
+        <property role="1$Qi42" value="-1" />
+        <node concept="20u1Yu" id="75xFEaYwrWD" role="4GRq3">
+          <property role="26rObG" value="${module}/icons/task.svg" />
+          <node concept="1dCxOk" id="75xFEaYwrWH" role="26rObI">
+            <property role="1XweGW" value="4b0f115a-8868-4d72-8d61-97071eaaa5f1" />
+            <property role="1XxBO9" value="jetbrains.mps.samples.notesOrganizer" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="75xFEaYwGQ1" role="3EZMnx">
+        <property role="3F0ifm" value="" />
+      </node>
       <node concept="3F2HdR" id="7IxbKGmfvh5" role="3EZMnx">
         <ref role="1NtTu8" to="g4p9:7IxbKGmfvfZ" resolve="parts" />
         <node concept="l2Vlx" id="7IxbKGmfvh7" role="2czzBx" />
@@ -1642,20 +1654,6 @@
     <property role="TrG5h" value="NoteMetaInformation" />
     <ref role="1XX52x" to="g4p9:7IxbKGmfvcH" resolve="Note" />
     <node concept="3EZMnI" id="3o4bEdk_VcF" role="2wV5jI">
-      <node concept="1u4HXA" id="3F44tPntcUD" role="3EZMnx">
-        <property role="1ubRXE" value="${module}/icons/MPS_24.png" />
-        <property role="1$Qi42" value="-1" />
-        <node concept="20u1Yu" id="3F44tPntgdG" role="4GRq3">
-          <property role="26rObG" value="${module}/icons/MPS_24.png" />
-          <node concept="1dCxOk" id="3F44tPntgdK" role="26rObI">
-            <property role="1XweGW" value="4b0f115a-8868-4d72-8d61-97071eaaa5f1" />
-            <property role="1XxBO9" value="jetbrains.mps.samples.notesOrganizer" />
-          </node>
-        </node>
-        <node concept="lj46D" id="3F44tPnuBT6" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
       <node concept="1iCGBv" id="3o4bEdk_VsP" role="3EZMnx">
         <ref role="1NtTu8" to="g4p9:7IxbKGmfve4" resolve="status" />
         <node concept="1sVBvm" id="3o4bEdk_VsQ" role="1sWHZn">
