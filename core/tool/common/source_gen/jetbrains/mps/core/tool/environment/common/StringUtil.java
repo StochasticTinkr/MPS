@@ -15,10 +15,10 @@ public class StringUtil {
     return stringLength >= suffixLength && str.regionMatches(true, stringLength - suffixLength, suffix, 0, suffixLength);
   }
   public static boolean startsWithChar(@Nullable CharSequence s, char prefix) {
-    return jetbrains.mps.util.StringUtil.startsWithChar(s, prefix);
+    return s != null && s.length() > 0 && s.charAt(0) == prefix;
   }
   public static boolean endsWithChar(@Nullable CharSequence s, char suffix) {
-    return jetbrains.mps.util.StringUtil.endsWithChar(s, suffix);
+    return s != null && s.length() > 0 && s.charAt(s.length() - 1) == suffix;
   }
   public static boolean startsWithConcatenationOf(String testee, String firstPrefix, String secondPrefix) {
     int l1 = firstPrefix.length();

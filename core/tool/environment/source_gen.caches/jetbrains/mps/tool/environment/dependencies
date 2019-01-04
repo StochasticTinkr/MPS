@@ -86,10 +86,11 @@
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.tool.common.PathManager" />
     <classNode dependClassName="jetbrains.mps.tool.environment.PluginDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.EnvironmentContainer">
@@ -120,11 +121,11 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.classloading.UrlClassLoader" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.util.SetLibraryContributor" />
     <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
     <classNode dependClassName="jetbrains.mps.library.contributor.LibDescriptor" />
     <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
+    <classNode dependClassName="jetbrains.mps.tool.common.PathManager" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.PluginDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />

@@ -51,7 +51,7 @@
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.classloading.UrlClassLoader" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.common.StringUtil" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.util.PathManager" />
+    <classNode dependClassName="jetbrains.mps.tool.common.PathManager" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

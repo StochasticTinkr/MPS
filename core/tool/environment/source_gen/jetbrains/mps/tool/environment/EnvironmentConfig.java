@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collections;
-import jetbrains.mps.core.tool.environment.util.PathManager;
+import jetbrains.mps.util.PathManager;
 
 /**
  * Represents a configuration options list for an environment, used a Builder pattern
@@ -116,7 +116,8 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withWorkbenchPath() {
-    String workbenchPath = PathManager.getHomePath() + File.separator + "workbench";
+    // FIXME there's also j.m.util.PathManager.getHomePath wich I would prefere to use over mps.tool.common.PathManager, but they are different in implementation 
+    String workbenchPath = jetbrains.mps.tool.common.PathManager.getHomePath() + File.separator + "workbench";
     addLib(workbenchPath);
     return this;
   }

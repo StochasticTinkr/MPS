@@ -1,84 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.core.tool.environment.util.CanonicalPath">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.String" />
+  <dependency className="jetbrains.mps.core.tool.environment.util.CanonicalPath" file="jetbrains.mps.core.tool.environment.util.CanonicalPath">
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-  </dependency>
-  <dependency className="jetbrains.mps.core.tool.environment.util.FileMPSProject">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.core.platform.Platform" />
-    <classNode dependClassName="jetbrains.mps.project.ElementProjectDataSource" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.io.File" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.tool.environment.util.FileMPSProject" file="jetbrains.mps.core.tool.environment.util.FileMPSProject">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.project.persistence.ProjectDescriptorPersistence" />
-    <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.vfs.impl.IoFile" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="jetbrains.mps.project.ElementProjectDataSource" />
+    <classNode dependClassName="jetbrains.mps.core.platform.Platform" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="jetbrains.mps.vfs.util.PathUtil" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.iofs.file.LocalIoFileSystem" />
-    <classNode dependClassName="jetbrains.mps.vfs.util.PathUtil" />
     <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="jetbrains.mps.project.FileBasedProject" />
     <classNode extendsClassName="jetbrains.mps.project.ProjectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
+  <dependency className="jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider" file="jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider">
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode extendsClassName="jetbrains.mps.project.PathMacrosProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.core.tool.environment.util.PathManager">
+  <dependency className="jetbrains.mps.core.tool.environment.util.PathManager" file="jetbrains.mps.core.tool.environment.util.PathManager">
     <classNode dependClassName="java.io.BufferedInputStream" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileInputStream" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.InputStream" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassLoader" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.util.StringUtil" />
+    <classNode dependClassName="java.util.Enumeration" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.net.URL" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Enumeration" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.tool.environment.common.StringUtil" />
     <classNode dependClassName="java.util.Properties" />
+    <classNode dependClassName="jetbrains.mps.core.tool.environment.common.FileUtil" />
+    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.PropertyResourceBundle" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.common.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.common.StringUtil" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.common.SystemInfo" />
-    <classNode dependClassName="jetbrains.mps.util.PathManager" />
-    <classNode dependClassName="jetbrains.mps.util.PathUtil" />
-    <classNode dependClassName="jetbrains.mps.util.StringUtil" />
-    <classNode dependClassName="jetbrains.mps.util.URLUtil" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.FileInputStream" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-  </dependency>
-  <dependency className="jetbrains.mps.core.tool.environment.util.SetLibraryContributor">
+    <classNode dependClassName="jetbrains.mps.util.PathManager" />
+    <classNode dependClassName="jetbrains.mps.core.tool.environment.common.SystemInfo" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.util.PathUtil" />
     <classNode dependClassName="java.lang.ClassLoader" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.util.URLUtil" />
+    <classNode dependClassName="java.io.InputStream" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.tool.environment.util.SetLibraryContributor" file="jetbrains.mps.core.tool.environment.util.SetLibraryContributor">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.lang.ClassLoader" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="jetbrains.mps.library.contributor.LibDescriptor" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode extendsClassName="jetbrains.mps.library.contributor.LibraryContributor" />

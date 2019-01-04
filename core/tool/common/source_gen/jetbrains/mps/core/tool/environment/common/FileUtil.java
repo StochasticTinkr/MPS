@@ -31,4 +31,22 @@ public class FileUtil {
     }
     return null;
   }
+
+  public static String getAbsolutePath(String path) {
+    // copy of j.m.util.PathUtil.getAbsolutePath, to avoid dependency from MPS.Core/[kernel] 
+    if (path.startsWith("~/") || path.startsWith("~\\")) {
+      path = System.getProperty("user.home") + path.substring(1);
+    }
+    return new File(path).getAbsolutePath();
+  }
+
+  public static String trimPathQuotes(String path) {
+    if (path == null || path.length() < 3) {
+      return path;
+    }
+    if (StringUtil.startsWithChar(path, '"') && StringUtil.endsWithChar(path, '"')) {
+      return path.substring(1, path.length() - 1);
+    }
+    return path;
+  }
 }

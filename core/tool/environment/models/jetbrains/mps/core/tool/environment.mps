@@ -32,7 +32,8 @@
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
-    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" implicit="true" />
+    <import index="asz6" ref="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1413,17 +1414,17 @@
               </node>
             </node>
           </node>
-          <node concept="2YIFZM" id="KL8AqljyKH" role="2GsD0m">
-            <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
-            <ref role="37wK5l" to="v9gs:4937uxYQnqa" resolve="getBootstrapPaths" />
+          <node concept="2YIFZM" id="4TNBaKVrsVy" role="2GsD0m">
+            <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+            <ref role="37wK5l" to="18ew:~PathManager.getBootstrapPaths():java.util.Collection" resolve="getBootstrapPaths" />
           </node>
         </node>
         <node concept="3clFbF" id="5mza6QqhEZj" role="3cqZAp">
           <node concept="1rXfSq" id="5mza6QqhEZi" role="3clFbG">
             <ref role="37wK5l" node="6rx4kZDk8ph" resolve="addLib" />
-            <node concept="2YIFZM" id="DMIDDhgEJx" role="37wK5m">
-              <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
-              <ref role="37wK5l" to="v9gs:4937uxYQnre" resolve="getLanguagesPath" />
+            <node concept="2YIFZM" id="4TNBaKVrsVz" role="37wK5m">
+              <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+              <ref role="37wK5l" to="18ew:~PathManager.getLanguagesPath():java.lang.String" resolve="getLanguagesPath" />
             </node>
           </node>
         </node>
@@ -1444,6 +1445,11 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="5hfNQWynXUh" role="3clF47">
+        <node concept="3SKdUt" id="21bannvQy$e" role="3cqZAp">
+          <node concept="3SKdUq" id="21bannvQy$g" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME there's also j.m.util.PathManager.getHomePath wich I would prefere to use over mps.tool.common.PathManager, but they are different in implementation" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="5hfNQWynZeF" role="3cqZAp">
           <node concept="3cpWsn" id="5hfNQWynZeG" role="3cpWs9">
             <property role="TrG5h" value="workbenchPath" />
@@ -1457,9 +1463,9 @@
                   <ref role="1PxDUh" to="guwi:~File" resolve="File" />
                   <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
                 </node>
-                <node concept="2YIFZM" id="5hfNQWynZeN" role="3uHU7B">
-                  <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
-                  <ref role="37wK5l" to="v9gs:4937uxYQn9c" resolve="getHomePath" />
+                <node concept="2YIFZM" id="4TNBaKVrsVt" role="3uHU7B">
+                  <ref role="37wK5l" to="asz6:4937uxYQn9c" resolve="getHomePath" />
+                  <ref role="1Pybhc" to="asz6:4937uxYQn6D" resolve="PathManager" />
                 </node>
               </node>
             </node>
@@ -4783,6 +4789,16 @@
                 </node>
               </node>
             </node>
+            <node concept="3SKdUt" id="21bannvQpty" role="3cqZAp">
+              <node concept="3SKdUq" id="21bannvQpt$" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME PathManager.getPluginsPath is a dependency to j.m.tool.common I'd like to get rid of (this class has access to MPS kernel classes" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="21bannvQvvw" role="3cqZAp">
+              <node concept="3SKdUq" id="21bannvQvvy" role="3SKWNk">
+                <property role="3SKdUp" value="      and doesn't need to depend from tool.common at all), but I didn't find a proper alternative. Alex P., could you please help me here?" />
+              </node>
+            </node>
             <node concept="1DcWWT" id="3FVfMMI1n6k" role="3cqZAp">
               <node concept="3clFbS" id="3FVfMMI1n6m" role="2LFqv$">
                 <node concept="3cpWs8" id="3FVfMMI1qAv" role="3cqZAp">
@@ -5094,13 +5110,13 @@
               <node concept="2YIFZM" id="3FVfMMI1nv5" role="1DdaDG">
                 <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                 <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-                <node concept="2YIFZM" id="3FVfMMI1nB$" role="37wK5m">
-                  <ref role="37wK5l" to="v9gs:4937uxYQng3" resolve="getPluginsPath" />
-                  <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
+                <node concept="2YIFZM" id="4TNBaKVrsVu" role="37wK5m">
+                  <ref role="37wK5l" to="asz6:4937uxYQng3" resolve="getPluginsPath" />
+                  <ref role="1Pybhc" to="asz6:4937uxYQn6D" resolve="PathManager" />
                 </node>
-                <node concept="2YIFZM" id="3FVfMMI1Kwt" role="37wK5m">
-                  <ref role="37wK5l" to="v9gs:3FVfMMI1J$9" resolve="getPreInstalledPluginsPath" />
-                  <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
+                <node concept="2YIFZM" id="4TNBaKVrsVv" role="37wK5m">
+                  <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+                  <ref role="37wK5l" to="18ew:~PathManager.getPreInstalledPluginsPath():java.lang.String" resolve="getPreInstalledPluginsPath" />
                 </node>
               </node>
             </node>

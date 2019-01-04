@@ -8,7 +8,7 @@ import java.util.Set;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import java.util.LinkedHashSet;
 import java.util.Arrays;
-import jetbrains.mps.core.tool.environment.util.PathManager;
+import jetbrains.mps.tool.common.PathManager;
 import java.io.File;
 import jetbrains.mps.core.tool.environment.classloading.UrlClassLoader;
 import jetbrains.mps.vfs.impl.IoFileSystem;
@@ -43,7 +43,9 @@ import java.util.LinkedHashMap;
 
     for (PluginDescriptor descriptor : myConfig.getPlugins()) {
       String pluginFolder = descriptor.getPath();
-      for (String pluginsPath : Arrays.asList(PathManager.getPluginsPath(), PathManager.getPreInstalledPluginsPath())) {
+      // FIXME PathManager.getPluginsPath is a dependency to j.m.tool.common I'd like to get rid of (this class has access to MPS kernel classes 
+      //       and doesn't need to depend from tool.common at all), but I didn't find a proper alternative. Alex P., could you please help me here? 
+      for (String pluginsPath : Arrays.asList(PathManager.getPluginsPath(), jetbrains.mps.util.PathManager.getPreInstalledPluginsPath())) {
         File pluginDirectory = new File(pluginsPath, pluginFolder);
         File libFolder = new File(pluginDirectory, "lib");
         UrlClassLoader pluginCL = null;

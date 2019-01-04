@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.List;
 import java.net.URL;
-import jetbrains.mps.core.tool.environment.util.PathManager;
+import jetbrains.mps.tool.common.PathManager;
 import java.net.MalformedURLException;
 import java.util.regex.Pattern;
 import java.util.Iterator;

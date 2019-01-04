@@ -15,7 +15,7 @@
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
     <import index="ni5j" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.regex(JDK/)" />
-    <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
+    <import index="asz6" ref="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
     <import index="ddon" ref="r:58ba176b-8a52-400c-bf27-725996471cb9(jetbrains.mps.core.tool.environment.common)" />
   </imports>
   <registry>
@@ -5977,9 +5977,9 @@
       </node>
       <node concept="3clFbS" id="1bMaI2XqGfn" role="3clF47">
         <node concept="3clFbF" id="1bMaI2XqGfo" role="3cqZAp">
-          <node concept="2YIFZM" id="1bMaI2XqGfp" role="3clFbG">
-            <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
-            <ref role="37wK5l" to="v9gs:4937uxYQnlx" resolve="loadProperties" />
+          <node concept="2YIFZM" id="4TNBaKVrsVx" role="3clFbG">
+            <ref role="37wK5l" to="asz6:4937uxYQnlx" resolve="loadProperties" />
+            <ref role="1Pybhc" to="asz6:4937uxYQn6D" resolve="PathManager" />
           </node>
         </node>
         <node concept="SfApY" id="1bMaI2XqGfq" role="3cqZAp">
@@ -6908,9 +6908,9 @@
             <property role="TrG5h" value="ideaHomePath" />
             <property role="3TUv4t" value="true" />
             <node concept="17QB3L" id="1bMaI2XqGkO" role="1tU5fm" />
-            <node concept="2YIFZM" id="1bMaI2XqGkP" role="33vP2m">
-              <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
-              <ref role="37wK5l" to="v9gs:4937uxYQn9c" resolve="getHomePath" />
+            <node concept="2YIFZM" id="4TNBaKVrsVs" role="33vP2m">
+              <ref role="37wK5l" to="asz6:4937uxYQn9c" resolve="getHomePath" />
+              <ref role="1Pybhc" to="asz6:4937uxYQn6D" resolve="PathManager" />
             </node>
           </node>
         </node>
@@ -6998,9 +6998,9 @@
                 <property role="TrG5h" value="selfRoot" />
                 <property role="3TUv4t" value="true" />
                 <node concept="17QB3L" id="1bMaI2XqGll" role="1tU5fm" />
-                <node concept="2YIFZM" id="1bMaI2XqGlm" role="33vP2m">
-                  <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
-                  <ref role="37wK5l" to="v9gs:4937uxYQnhU" resolve="getResourceRoot" />
+                <node concept="2YIFZM" id="4TNBaKVrsVw" role="33vP2m">
+                  <ref role="37wK5l" to="asz6:4937uxYQnhU" resolve="getResourceRoot" />
+                  <ref role="1Pybhc" to="asz6:4937uxYQn6D" resolve="PathManager" />
                   <node concept="37vLTw" id="3GM_nagTzPa" role="37wK5m">
                     <ref role="3cqZAo" node="1bMaI2XqGlf" resolve="aClass" />
                   </node>
