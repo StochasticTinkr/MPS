@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import java.util.ArrayList;
 
 public class GenericTypesUtil {
   private GenericTypesUtil() {
@@ -45,9 +47,12 @@ public class GenericTypesUtil {
     return typeCopy;
   }
   private static SNode getTypeByTypeVariable(SNode typeVariableRef, Map<SNode, SNode> typeByTypeVar) {
+    List<SNode> visitedVars = ListSequence.fromList(new ArrayList<SNode>());
+
     SNode result = typeVariableRef;
     SNode typeVar = SLinkOperations.getTarget(typeVariableRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"));
     while ((typeVar != null)) {
+      ListSequence.fromList(visitedVars).addElement(typeVar);
       SNode typeVarValue = typeByTypeVar.get(typeVar);
       if ((typeVarValue == null)) {
         break;
@@ -55,7 +60,7 @@ public class GenericTypesUtil {
       result = typeVarValue;
       if (SNodeOperations.isInstanceOf(result, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
         SNode newTypeVar = SLinkOperations.getTarget(SNodeOperations.cast(result, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"));
-        if (typeVar == newTypeVar) {
+        if (ListSequence.fromList(visitedVars).contains(newTypeVar)) {
           break;
         }
         typeVar = newTypeVar;

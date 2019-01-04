@@ -162,6 +162,8 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.scopes.Signature" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.GenericTypesUtil">
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
