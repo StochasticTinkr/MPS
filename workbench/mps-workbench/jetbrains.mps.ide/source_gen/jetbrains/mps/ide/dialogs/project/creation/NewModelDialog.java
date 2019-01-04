@@ -222,10 +222,8 @@ public class NewModelDialog extends DialogWrapper {
     super.doOKAction();
   }
 
-  @NotNull
-  private ModelCreateHelper makeHelper() {
-    return new ModelCreateHelper(myProject, myModule, new SModelName(myModelName.getText(), myModelStereotype.getSelectedItem().toString().trim()), (ModelRoot) myModelRoots.getSelectedItem(),
-                                 (ModelFactoryType) myModelStorageFormat.getSelectedItem());
+  public ModelCreateHelper makeHelper() {
+    return new ModelCreateHelper(myProject, myModule, new SModelName(myModelName.getText(), myModelStereotype.getItemAt(myModelStereotype.getSelectedIndex()).trim()), myModelRoots.getItemAt(myModelRoots.getSelectedIndex()), myModelStorageFormat.getItemAt(myModelStorageFormat.getSelectedIndex()));
   }
 
   private boolean check() {
