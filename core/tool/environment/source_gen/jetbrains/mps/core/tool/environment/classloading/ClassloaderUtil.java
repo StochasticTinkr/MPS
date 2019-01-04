@@ -14,6 +14,7 @@ import java.net.MalformedURLException;
 import java.util.regex.Pattern;
 import java.util.Iterator;
 import java.net.URLClassLoader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
@@ -105,7 +106,7 @@ public class ClassloaderUtil {
     final ClassLoader loader = ClassloaderUtil.class.getClassLoader();
     if (loader instanceof URLClassLoader) {
       URLClassLoader urlClassLoader = (URLClassLoader) loader;
-      ContainerUtil.addAll(aClasspathElements, urlClassLoader.getURLs());
+      aClasspathElements.addAll(Arrays.asList(urlClassLoader.getURLs()));
     } else {
       try {
         Class antClassLoaderClass = Class.forName("org.apache.tools.ant.AntClassLoader");

@@ -16,7 +16,7 @@ import java.net.URISyntaxException;
 import java.io.File;
 import java.util.NoSuchElementException;
 
-public class ClassPath {
+/*package*/ final class ClassPath {
   @NonNls
   private static final String FILE_PROTOCOL = "file";
   private static final boolean myDebugTime = false;
@@ -26,14 +26,9 @@ public class ClassPath {
   private final ArrayList<Loader> myLoaders = new ArrayList<Loader>();
   private final HashMap<URL, Loader> myLoadersMap = new HashMap<URL, Loader>();
   private final ClasspathCache myCache = new ClasspathCache();
-  private final boolean myCanLockJars;
   private final boolean myCanUseCache;
   private final boolean myAcceptUnescapedUrls;
-  public ClassPath(URL[] urls, boolean canLockJars, boolean canUseCache) {
-    this(urls, canLockJars, canUseCache, false);
-  }
-  public ClassPath(URL[] urls, boolean canLockJars, boolean canUseCache, boolean acceptUnescapedUrls) {
-    this.myCanLockJars = canLockJars;
+  public ClassPath(URL[] urls, boolean canUseCache, boolean acceptUnescapedUrls) {
     this.myCanUseCache = canUseCache;
     this.myAcceptUnescapedUrls = acceptUnescapedUrls;
     push(urls);
@@ -136,7 +131,7 @@ public class ClassPath {
         loader = new FileLoader(url);
       }
     } else {
-      loader = new JarLoader(url, myCanLockJars);
+      loader = new JarLoader(url);
     }
     if (loader != null && myCanUseCache) {
       try {

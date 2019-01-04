@@ -1,28 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.core.tool.environment.common.ConcurrencyUtil">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Thread" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.concurrent.Callable" />
-    <classNode dependClassName="java.util.concurrent.CancellationException" />
-    <classNode dependClassName="java.util.concurrent.ConcurrentMap" />
-    <classNode dependClassName="java.util.concurrent.ExecutionException" />
-    <classNode dependClassName="java.util.concurrent.ExecutorService" />
-    <classNode dependClassName="java.util.concurrent.Future" />
-    <classNode dependClassName="java.util.concurrent.LinkedBlockingQueue" />
-    <classNode dependClassName="java.util.concurrent.ScheduledThreadPoolExecutor" />
-    <classNode dependClassName="java.util.concurrent.ThreadFactory" />
-    <classNode dependClassName="java.util.concurrent.ThreadPoolExecutor" />
-    <classNode dependClassName="java.util.concurrent.TimeUnit" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-  </dependency>
   <dependency className="jetbrains.mps.core.tool.environment.common.FileUtil">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />

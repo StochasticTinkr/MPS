@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.ArrayList;
 
-public class ClasspathCache {
+/*package*/ final class ClasspathCache {
   private final Map<String, List<Loader>> myClassPackagesCache = new HashMap<String, List<Loader>>();
   private final Map<String, List<Loader>> myResourcePackagesCache = new HashMap<String, List<Loader>>();
   public ClasspathCache() {

@@ -4,10 +4,9 @@ package jetbrains.mps.core.tool.environment.classloading;
 
 import org.jetbrains.annotations.NonNls;
 import java.net.URL;
-import java.util.zip.ZipFile;
-import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import org.jetbrains.annotations.Nullable;
+import java.util.zip.ZipFile;
 import jetbrains.mps.core.tool.environment.common.FileUtil;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -24,41 +23,20 @@ import java.io.FilterInputStream;
   private static final String FILE_PROTOCOL = "file";
   private static final long NS_THRESHOLD = 10000000;
   private final URL myURL;
-  private final boolean myCanLockJar;
-  private final TimedComputable<ZipFile> myZipFileRef = new TimedComputable<ZipFile>() {
-    @NotNull
-    @Override
-    protected ZipFile calc() {
-      try {
-        final ZipFile zipFile = doGetZipFile();
-        if (zipFile == null) {
-          throw new RuntimeException("Can't load zip file");
-        }
-        return zipFile;
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
-    }
-  };
-  /*package*/ JarLoader(URL url, boolean canLockJar) throws IOException {
+
+  /*package*/ JarLoader(URL url) throws IOException {
     super(new URL(JarLoader.JAR_PROTOCOL, "", -1, url + "!/"));
     myURL = url;
-    myCanLockJar = canLockJar;
   }
   @Nullable
   private ZipFile acquireZipFile() throws IOException {
-    if (myCanLockJar) {
-      return myZipFileRef.acquire();
-    }
     return doGetZipFile();
   }
   private void releaseZipFile(final ZipFile zipFile) throws IOException {
-    if (myCanLockJar) {
-      myZipFileRef.release();
-    } else
     if (zipFile != null) {
       zipFile.close();
     }
+
   }
   @Nullable
   private ZipFile doGetZipFile() throws IOException {
@@ -74,7 +52,6 @@ import java.io.FilterInputStream;
   }
   @Override
   /*package*/ void dispose() {
-    myZipFileRef.dispose();
   }
   @Override
   /*package*/ void buildCache(final ClasspathCache cache) throws IOException {

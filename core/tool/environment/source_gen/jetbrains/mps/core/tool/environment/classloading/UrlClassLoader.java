@@ -14,7 +14,10 @@ import org.jetbrains.annotations.Nullable;
 import java.io.InputStream;
 import java.util.Enumeration;
 
-public class UrlClassLoader extends ClassLoader {
+/**
+ * No idea why do we need to use this class and not {@code java.net.URLClassLoader}
+ */
+public final class UrlClassLoader extends ClassLoader {
   @NonNls
   /*package*/ static final String CLASS_EXTENSION = ".class";
   protected static final boolean myDebugTime = false;
@@ -30,12 +33,12 @@ public class UrlClassLoader extends ClassLoader {
   public UrlClassLoader(URL[] urls, ClassLoader parent) {
     this(Arrays.asList(urls), parent, false, false);
   }
-  public UrlClassLoader(List<URL> urls, ClassLoader parent, boolean canLockJars, boolean canUseCache) {
-    this(urls, parent, canLockJars, canUseCache, false);
+  public UrlClassLoader(List<URL> urls, ClassLoader parent, boolean unused, boolean canUseCache) {
+    this(urls, parent, unused, canUseCache, false);
   }
-  public UrlClassLoader(List<URL> urls, ClassLoader parent, boolean canLockJars, boolean canUseCache, boolean acceptUnescapedUrls) {
+  public UrlClassLoader(List<URL> urls, ClassLoader parent, boolean unused, boolean canUseCache, boolean acceptUnescapedUrls) {
     super(parent);
-    myClassPath = new ClassPath(urls.toArray(new URL[urls.size()]), canLockJars, canUseCache, acceptUnescapedUrls);
+    myClassPath = new ClassPath(urls.toArray(new URL[urls.size()]), canUseCache, acceptUnescapedUrls);
     myURLs = new ArrayList<URL>(urls);
   }
   public void addURL(URL url) {
