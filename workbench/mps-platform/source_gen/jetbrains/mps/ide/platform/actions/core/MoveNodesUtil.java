@@ -139,36 +139,36 @@ public class MoveNodesUtil {
         return allNodes;
       }
       @Override
-      public void doRefactor(final Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>> participantStates, final RefactoringSession refactoringSession) {
+      public void prepareRefactoring() {
+        // do nothing 
+      }
+      @Override
+      public void doRefactor(final Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>> participantStates, RefactoringSession refactoringSession) {
         myRefactoringSession = refactoringSession;
 
-        project.getRepository().getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            for (IMapping<MoveNodesUtil.NodeProcessor, List<SNode>> mapping : MapSequence.fromMap(processorToMoveRoots)) {
-              List<SNode> moveRoots = mapping.value();
-              MoveNodesUtil.NodeProcessor processor = mapping.key();
+        for (IMapping<MoveNodesUtil.NodeProcessor, List<SNode>> mapping : MapSequence.fromMap(processorToMoveRoots)) {
+          List<SNode> moveRoots = mapping.value();
+          MoveNodesUtil.NodeProcessor processor = mapping.key();
 
-              for (SNode moveRoot : ListSequence.fromList(moveRoots)) {
-                MapSequence.fromMap(removeOldRoots).put(moveRoot, RefactoringParticipant.KeepOldNodes.max(ListSequence.fromList(MapSequence.fromMap(moveRootsToDescendants).get(SNodeOperations.getPointer(moveRoot))).translate(new ITranslator2<SNodeReference, RefactoringParticipant.KeepOldNodes>() {
-                  public Iterable<RefactoringParticipant.KeepOldNodes> translate(final SNodeReference descendant) {
-                    return Sequence.fromIterable(participantStates).select(new ISelector<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>, RefactoringParticipant.KeepOldNodes>() {
-                      public RefactoringParticipant.KeepOldNodes select(RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode> participantState) {
-                        List<? extends RefactoringParticipant.Change<?, ?>> changes = nodeChangesCorrespondence.getCorrespondent(participantState.getChanges(), descendant);
-                        return RefactoringParticipant.KeepOldNodes.max(ListSequence.fromList(changes).select(new ISelector<RefactoringParticipant.Change<?, ?>, RefactoringParticipant.KeepOldNodes>() {
-                          public RefactoringParticipant.KeepOldNodes select(RefactoringParticipant.Change<?, ?> change) {
-                            return ((MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>) ((RefactoringParticipant.Change) change)).needsToPreserveOldNode();
-                          }
-                        }));
+          for (SNode moveRoot : ListSequence.fromList(moveRoots)) {
+            MapSequence.fromMap(removeOldRoots).put(moveRoot, RefactoringParticipant.KeepOldNodes.max(ListSequence.fromList(MapSequence.fromMap(moveRootsToDescendants).get(SNodeOperations.getPointer(moveRoot))).translate(new ITranslator2<SNodeReference, RefactoringParticipant.KeepOldNodes>() {
+              public Iterable<RefactoringParticipant.KeepOldNodes> translate(final SNodeReference descendant) {
+                return Sequence.fromIterable(participantStates).select(new ISelector<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>, RefactoringParticipant.KeepOldNodes>() {
+                  public RefactoringParticipant.KeepOldNodes select(RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode> participantState) {
+                    List<? extends RefactoringParticipant.Change<?, ?>> changes = nodeChangesCorrespondence.getCorrespondent(participantState.getChanges(), descendant);
+                    return RefactoringParticipant.KeepOldNodes.max(ListSequence.fromList(changes).select(new ISelector<RefactoringParticipant.Change<?, ?>, RefactoringParticipant.KeepOldNodes>() {
+                      public RefactoringParticipant.KeepOldNodes select(RefactoringParticipant.Change<?, ?> change) {
+                        return ((MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>) ((RefactoringParticipant.Change) change)).needsToPreserveOldNode();
                       }
-                    });
+                    }));
                   }
-                })));
+                });
               }
-
-              processor.process(moveRoots, removeOldRoots, refactoringSession);
-            }
+            })));
           }
-        });
+
+          processor.process(moveRoots, removeOldRoots, refactoringSession);
+        }
       }
       @Override
       public SNode getFinalStateFor(SNode initialState) {
@@ -176,13 +176,9 @@ public class MoveNodesUtil {
       }
       @Override
       public void doCleanup() {
-        project.getRepository().getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            for (MoveNodesUtil.NodeProcessor processor : SetSequence.fromSet(MapSequence.fromMap(processorToMoveRoots).keySet())) {
-              processor.removeAfterRefactoring(removeOldRoots, myRefactoringSession);
-            }
-          }
-        });
+        for (MoveNodesUtil.NodeProcessor processor : SetSequence.fromSet(MapSequence.fromMap(processorToMoveRoots).keySet())) {
+          processor.removeAfterRefactoring(removeOldRoots, myRefactoringSession);
+        }
       }
     };
     RefactoringProcessor.performRefactoringInProject(project, refactoringUI, usagesUpdate);

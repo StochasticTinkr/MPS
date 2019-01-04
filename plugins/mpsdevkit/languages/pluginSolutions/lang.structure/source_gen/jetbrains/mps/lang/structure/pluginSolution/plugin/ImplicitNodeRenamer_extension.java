@@ -67,7 +67,7 @@ public class ImplicitNodeRenamer_extension extends Extension.Default<_FunctionTy
                     return m;
                   }
                 };
-                RefactoringProcessor.performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<SNode, String>(), refactoringUI, refactoringSession, repository, scope, refactoringName, participants, initialStates, doRefactor, new _FunctionTypes._void_P0_E0() {
+                RefactoringProcessor.performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<SNode, String>(), refactoringUI, refactoringSession, repository, scope, refactoringName, participants, initialStates, null, doRefactor, new _FunctionTypes._void_P0_E0() {
                   public void invoke() {
                     refactoringSession.performAllRegistered();
                   }
