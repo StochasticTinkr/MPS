@@ -15,7 +15,6 @@ import com.intellij.ui.JBSplitter;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import com.intellij.ide.util.PropertiesComponent;
-import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
 import org.jetbrains.annotations.Nullable;
@@ -57,11 +56,10 @@ public class StructDifferencePane {
   private JPanel myBottomPanel = new JPanel(new GridBagLayout());
   private boolean isInspectorShown = PropertiesComponent.getInstance().getBoolean(PARAM_SHOW_INSPECTOR, true);
 
-  private DiffStatusBar myStatusBar;
   private DefaultActionGroup myActionGroup;
   private NextPreviousTraverser myTraverser;
 
-  public StructDifferencePane(Project project, StructChangeSet changeSet, String[] titles, DiffStatusBar statusBar) {
+  public StructDifferencePane(Project project, StructChangeSet changeSet, String[] titles) {
     myChangeSet = changeSet;
     myProject = project;
     myDiffEditorsGroup = new DiffEditorsGroup() {
@@ -80,8 +78,6 @@ public class StructDifferencePane {
         return null;
       }
     };
-
-    myStatusBar = statusBar;
 
     myOldEditor = addEditor(0, myChangeSet.getOldModel(), myChangeSet.getOldNodeId(), titles[0]);
     myNewEditor = addEditor(1, myChangeSet.getNewModel(), myChangeSet.getNewNodeId(), titles[1]);
@@ -195,7 +191,6 @@ public class StructDifferencePane {
     myNewEditor.repaintAndRebuildEditorMessages();
 
     int count = ListSequence.fromList(myChangeSet.getModelChanges()).count();
-    myStatusBar.setText((count == 0 ? "no differences" : NameUtil.formatNumericalString(count, "difference")));
   }
   private void higlightChange(DiffEditor diffEditor, SModel model, boolean isOldEditor, ModelChange change) {
     diffEditor.highlightChange(model, change, isOldEditor, null);

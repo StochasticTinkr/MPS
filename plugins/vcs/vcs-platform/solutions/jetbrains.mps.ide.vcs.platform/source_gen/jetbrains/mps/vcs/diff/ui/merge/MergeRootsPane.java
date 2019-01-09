@@ -22,7 +22,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup;
-import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -68,18 +67,15 @@ public class MergeRootsPane {
   private List<DiffEditorSeparator> myEdtiorSeparators = ListSequence.fromList(new ArrayList<DiffEditorSeparator>());
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
 
-  private DiffStatusBar myStatusBar;
   private DefaultActionGroup myActionGroup;
   private NextPreviousTraverser myTraverser;
 
-  public MergeRootsPane(Project project, MergeSession mergeSession, SNodeId rootId, String rootName, String[] titles, DiffStatusBar statusBar) {
+  public MergeRootsPane(Project project, MergeSession mergeSession, SNodeId rootId, String rootName, String[] titles) {
     myProject = project;
     myMergeSession = mergeSession;
     myRootId = rootId;
     myStateToRestore = myMergeSession.getCurrentState();
     myTitles = titles;
-
-    myStatusBar = statusBar;
 
     myConflictChecker = new ChangeEditorMessage.ConflictChecker() {
       public boolean isChangeConflicted(ModelChange ch) {
@@ -241,7 +237,6 @@ public class MergeRootsPane {
         return Sequence.fromIterable(myMergeSession.getConflictedWith(ch)).isNotEmpty();
       }
     }).count();
-    myStatusBar.setText(MergeModelsPanel.generateUnresolvedChangesText(ListSequence.fromList(changesForRoot).count(), conflictingChanges));
   }
   private void higlightChange(DiffEditor diffEditor, SModel model, boolean isOldEditor, ModelChange change) {
     diffEditor.highlightChange(model, change, isOldEditor, myConflictChecker);

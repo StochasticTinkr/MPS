@@ -12,8 +12,6 @@ import com.intellij.ui.JBSplitter;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import com.intellij.openapi.diff.ex.DiffStatusBar;
-import com.intellij.openapi.diff.impl.util.TextDiffType;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.SNodeOperations;
@@ -61,7 +59,6 @@ public class ModelDifferenceViewer implements DataProvider {
   private JBSplitter myPanel = new JBSplitter(true, 0.25f);
   private RootDifferencePane myRootDifferencePane = null;
   private final JComponent myNoRootPanel = new JLabel("Select root to show", SwingConstants.CENTER);
-  private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
 
   private GoToNeighbourRootActions myGoToNeighbourRootActions;
 
@@ -120,7 +117,6 @@ public class ModelDifferenceViewer implements DataProvider {
 
 
     myComponent.add(myPanel, BorderLayout.CENTER);
-    myComponent.add(myStatusBar, BorderLayout.SOUTH);
 
     Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
@@ -188,7 +184,6 @@ public class ModelDifferenceViewer implements DataProvider {
     myRootDifferencePane.dispose();
     myRootDifferencePane = null;
     myRootId = null;
-    myStatusBar.setText("");
     syncMetadataChanges();
   }
   private void changeCurrentRoot(@Nullable final SNodeId rootId) {
@@ -203,7 +198,7 @@ public class ModelDifferenceViewer implements DataProvider {
         ModelChangeSet changeSet = (rootId == null ? myMetadataChangeSet : myChangeSet);
         SNodeId nodeId = (rootId == null ? ListSequence.fromList(SModelOperations.roots(myMetadataChangeSet.getOldModel(), null)).first().getNodeId() : rootId);
         if (myRootDifferencePane == null) {
-          myRootDifferencePane = new RootDifferencePane(myProject, changeSet, nodeId, getNameForRoot(rootId), myContentTitles, myEditable, myStatusBar);
+          myRootDifferencePane = new RootDifferencePane(myProject, changeSet, nodeId, getNameForRoot(rootId), myContentTitles, myEditable);
           DefaultActionGroup actionGroup = new DefaultActionGroup();
           actionGroup.addAll(myRootDifferencePane.getActions());
           ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);

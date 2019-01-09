@@ -18,8 +18,6 @@ import javax.swing.SwingConstants;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionToolbar;
-import com.intellij.openapi.diff.ex.DiffStatusBar;
-import com.intellij.openapi.diff.impl.util.TextDiffType;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import java.util.Set;
@@ -86,7 +84,6 @@ public class MergeModelsPanel extends JPanel {
   private final JComponent myNoRootPanel = new JLabel("Select root to merge", SwingConstants.CENTER);
   private List<AnAction> myToolbarActions;
   private ActionToolbar myToolbar;
-  private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
 
   private DefaultActionGroup myActionGroup;
   private GoToNeighbourRootActions myGoToNeighbourRootActions;
@@ -164,7 +161,6 @@ public class MergeModelsPanel extends JPanel {
 
 
     this.add(myPanel, BorderLayout.CENTER);
-    this.add(myStatusBar, BorderLayout.SOUTH);
 
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
@@ -262,7 +258,6 @@ public class MergeModelsPanel extends JPanel {
     myMergeRootsPane.dispose();
     myMergeRootsPane = null;
     myRootId = null;
-    myStatusBar.setText("");
     applyMetadataChanges();
   }
   private void changeCurrentRoot(@Nullable final SNodeId rootId) {
@@ -277,7 +272,7 @@ public class MergeModelsPanel extends JPanel {
       public void run() {
         SNodeId nodeId = (rootId == null ? Sequence.fromIterable(myMetadataMergeSession.getAffectedRoots()).first() : rootId);
         if (myMergeRootsPane == null) {
-          myMergeRootsPane = new MergeRootsPane(myProject, session, nodeId, myMergeTree.getNameForRoot(rootId), myContentTitles, myStatusBar);
+          myMergeRootsPane = new MergeRootsPane(myProject, session, nodeId, myMergeTree.getNameForRoot(rootId), myContentTitles);
           DefaultActionGroup actionGroup = new DefaultActionGroup();
           actionGroup.addAll(myMergeRootsPane.getActions());
           ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
