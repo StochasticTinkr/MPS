@@ -122,7 +122,7 @@ public abstract class ChangesTestBase implements EnvironmentAware {
     setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
 
     if (!(ChangesTestBase.ourEnabled)) {
-      myChangeListManager.ensureUpToDate(false);
+      myChangeListManager.ensureUpToDate();
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
           public void run() {
@@ -232,7 +232,7 @@ public abstract class ChangesTestBase implements EnvironmentAware {
   }
 
   protected void revertDiskChangesAndWait(VirtualFile modelFile) {
-    myChangeListManager.ensureUpToDate(false);
+    myChangeListManager.ensureUpToDate();
     Change modelFileChange = myChangeListManager.getChange(modelFile);
     List<VcsException> exceptions = ListSequence.fromList(new ArrayList<VcsException>());
     myGitVcs.getRollbackEnvironment().rollbackChanges(Arrays.asList(modelFileChange), exceptions, RollbackProgressListener.EMPTY);
