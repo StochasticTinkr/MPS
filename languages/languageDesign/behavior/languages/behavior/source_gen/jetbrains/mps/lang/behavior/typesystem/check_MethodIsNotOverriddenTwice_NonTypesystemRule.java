@@ -45,6 +45,6 @@ public class check_MethodIsNotOverriddenTwice_NonTypesystemRule extends Abstract
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
-    return true;
+    return false;
   }
 }
