@@ -35,7 +35,6 @@ import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.StructChangeSetBuilder;
 
 public class StructDifferencePane {
@@ -189,8 +188,6 @@ public class StructDifferencePane {
 
     myOldEditor.repaintAndRebuildEditorMessages();
     myNewEditor.repaintAndRebuildEditorMessages();
-
-    int count = ListSequence.fromList(myChangeSet.getModelChanges()).count();
   }
   private void higlightChange(DiffEditor diffEditor, SModel model, boolean isOldEditor, ModelChange change) {
     diffEditor.highlightChange(model, change, isOldEditor, null);

@@ -39,8 +39,7 @@ public class MPSVcsHelper extends AbstractVcsHelperImpl {
       }
       if (answer == Messages.YES) {
         MergeSession session = (provider instanceof MergeProvider2 ? ((MergeProvider2) provider).createMergeSession((List<VirtualFile>) files) : null);
-        ConflictingModelsUtil.ModelConflictResolver modelConflictResolverTask = ConflictingModelsUtil.getModelConflictResolverTask(myProject, provider, session,
-                                                                                                                                   files);
+        ConflictingModelsUtil.ModelConflictResolver modelConflictResolverTask = ConflictingModelsUtil.getModelConflictResolverTask(myProject, provider, session, files);
         ProgressManager.getInstance().run(modelConflictResolverTask);
         // update list of files 
         List<VirtualFile> autoResolvedFiles = modelConflictResolverTask.getResolvedFiles();

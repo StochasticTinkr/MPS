@@ -2497,13 +2497,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2jv$fqwlny4" role="jymVt" />
-    <node concept="312cEg" id="2jv$fqwev8a" role="jymVt">
-      <property role="TrG5h" value="myStatusBar" />
-      <node concept="3Tm6S6" id="2jv$fqwev8b" role="1B3o_S" />
-      <node concept="3uibUv" id="2jv$fqwev8c" role="1tU5fm">
-        <ref role="3uigEE" to="8zas:~DiffStatusBar" resolve="DiffStatusBar" />
-      </node>
-    </node>
     <node concept="312cEg" id="2jv$fqwev8g" role="jymVt">
       <property role="TrG5h" value="myActionGroup" />
       <node concept="3Tm6S6" id="2jv$fqwev8h" role="1B3o_S" />
@@ -2581,17 +2574,6 @@
             </node>
             <node concept="37vLTw" id="2jv$fqwev8T" role="37vLTJ">
               <ref role="3cqZAo" node="2jv$fqwev76" resolve="myTitles" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="2jv$fqwsNmp" role="3cqZAp" />
-        <node concept="3clFbF" id="2jv$fqwtDEt" role="3cqZAp">
-          <node concept="37vLTI" id="2jv$fqwtKPv" role="3clFbG">
-            <node concept="37vLTw" id="2jv$fqwtQ3L" role="37vLTx">
-              <ref role="3cqZAo" node="2jv$fqws1Nk" resolve="statusBar" />
-            </node>
-            <node concept="37vLTw" id="2jv$fqwtDEs" role="37vLTJ">
-              <ref role="3cqZAo" node="2jv$fqwev8a" resolve="myStatusBar" />
             </node>
           </node>
         </node>
@@ -2910,12 +2892,6 @@
         <property role="TrG5h" value="titles" />
         <node concept="10Q1$e" id="2jv$fqwevcY" role="1tU5fm">
           <node concept="17QB3L" id="2jv$fqwevcZ" role="10Q1$1" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="2jv$fqws1Nk" role="3clF46">
-        <property role="TrG5h" value="statusBar" />
-        <node concept="3uibUv" id="2jv$fqws7l1" role="1tU5fm">
-          <ref role="3uigEE" to="8zas:~DiffStatusBar" resolve="DiffStatusBar" />
         </node>
       </node>
     </node>
@@ -4072,69 +4048,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="2jv$fqwevhZ" role="3cqZAp">
-          <node concept="3cpWsn" id="2jv$fqwevi0" role="3cpWs9">
-            <property role="TrG5h" value="conflictingChanges" />
-            <node concept="10Oyi0" id="2jv$fqwevi1" role="1tU5fm" />
-            <node concept="2OqwBi" id="2jv$fqwevi2" role="33vP2m">
-              <node concept="2OqwBi" id="2jv$fqwevi3" role="2Oq$k0">
-                <node concept="37vLTw" id="3GM_nagTtP6" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2jv$fqwevgK" resolve="changesForRoot" />
-                </node>
-                <node concept="3zZkjj" id="2jv$fqwevi5" role="2OqNvi">
-                  <node concept="1bVj0M" id="2jv$fqwevi6" role="23t8la">
-                    <node concept="3clFbS" id="2jv$fqwevi7" role="1bW5cS">
-                      <node concept="3clFbF" id="2jv$fqwevi8" role="3cqZAp">
-                        <node concept="2OqwBi" id="2jv$fqwevi9" role="3clFbG">
-                          <node concept="2OqwBi" id="2jv$fqwevia" role="2Oq$k0">
-                            <node concept="37vLTw" id="2BHiRxeusrw" role="2Oq$k0">
-                              <ref role="3cqZAo" node="2jv$fqwev6T" resolve="myMergeSession" />
-                            </node>
-                            <node concept="liA8E" id="2jv$fqwevic" role="2OqNvi">
-                              <ref role="37wK5l" to="bmv6:3$YpntjF4nE" resolve="getConflictedWith" />
-                              <node concept="37vLTw" id="2BHiRxgl6$t" role="37wK5m">
-                                <ref role="3cqZAo" node="2jv$fqwevif" resolve="ch" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3GX2aA" id="2jv$fqwevie" role="2OqNvi" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rh6nW" id="2jv$fqwevif" role="1bW2Oz">
-                      <property role="TrG5h" value="ch" />
-                      <node concept="2jxLKc" id="2jv$fqwevig" role="1tU5fm" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="34oBXx" id="2jv$fqwevih" role="2OqNvi" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="2jv$fqwevii" role="3cqZAp">
-          <node concept="2OqwBi" id="2jv$fqwevij" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuknc" role="2Oq$k0">
-              <ref role="3cqZAo" node="2jv$fqwev8a" resolve="myStatusBar" />
-            </node>
-            <node concept="liA8E" id="2jv$fqwevil" role="2OqNvi">
-              <ref role="37wK5l" to="8zas:~DiffStatusBar.setText(java.lang.String):void" resolve="setText" />
-              <node concept="2YIFZM" id="2jv$fqwevim" role="37wK5m">
-                <ref role="37wK5l" node="2jv$fqwD$DL" resolve="generateUnresolvedChangesText" />
-                <ref role="1Pybhc" node="2jv$fqwD$ox" resolve="MergeModelsPanel" />
-                <node concept="2OqwBi" id="2jv$fqwevin" role="37wK5m">
-                  <node concept="37vLTw" id="3GM_nagTs6P" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2jv$fqwevgK" resolve="changesForRoot" />
-                  </node>
-                  <node concept="34oBXx" id="2jv$fqwevip" role="2OqNvi" />
-                </node>
-                <node concept="37vLTw" id="3GM_nagTBHH" role="37wK5m">
-                  <ref role="3cqZAo" node="2jv$fqwevi0" resolve="conflictingChanges" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node concept="3clFb_" id="2jv$fqwevir" role="jymVt">
@@ -5200,25 +5113,6 @@
         <ref role="3uigEE" to="qkt:~ActionToolbar" resolve="ActionToolbar" />
       </node>
     </node>
-    <node concept="312cEg" id="3SMO48GG57S" role="jymVt">
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myStatusBar" />
-      <property role="34CwA1" value="false" />
-      <property role="3TUv4t" value="false" />
-      <node concept="2ShNRf" id="haj_nVCouU" role="33vP2m">
-        <node concept="1pGfFk" id="haj_nVCouT" role="2ShVmc">
-          <ref role="37wK5l" to="8zas:~DiffStatusBar.&lt;init&gt;(java.util.List)" resolve="DiffStatusBar" />
-          <node concept="10M0yZ" id="haj_nVCuHr" role="37wK5m">
-            <ref role="1PxDUh" to="wo33:~TextDiffType" resolve="TextDiffType" />
-            <ref role="3cqZAo" to="wo33:~TextDiffType.DIFF_TYPES" resolve="DIFF_TYPES" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="3SMO48GG57T" role="1B3o_S" />
-      <node concept="3uibUv" id="3SMO48GG57U" role="1tU5fm">
-        <ref role="3uigEE" to="8zas:~DiffStatusBar" resolve="DiffStatusBar" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="2jv$fqwWSLm" role="jymVt" />
     <node concept="312cEg" id="3SMO48GGEDr" role="jymVt">
       <property role="TrG5h" value="myActionGroup" />
@@ -6065,21 +5959,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5BHMdu2u72h" role="3cqZAp">
-          <node concept="2OqwBi" id="5BHMdu2u72i" role="3clFbG">
-            <node concept="Xjq3P" id="4qk_0lIniW1" role="2Oq$k0" />
-            <node concept="liA8E" id="5BHMdu2u72j" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="37vLTw" id="5BHMdu2u72k" role="37wK5m">
-                <ref role="3cqZAo" node="3SMO48GG57S" resolve="myStatusBar" />
-              </node>
-              <node concept="10M0yZ" id="5BHMdu2u72l" role="37wK5m">
-                <ref role="3cqZAo" to="z60i:~BorderLayout.SOUTH" resolve="SOUTH" />
-                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="2jv$fqx1eD8" role="3cqZAp" />
         <node concept="3cpWs8" id="2jv$fqwD$tB" role="3cqZAp">
           <node concept="3cpWsn" id="2jv$fqwD$tC" role="3cpWs9">
@@ -6781,19 +6660,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="681Qtyavox_" role="3cqZAp">
-          <node concept="2OqwBi" id="681QtyavsmL" role="3clFbG">
-            <node concept="liA8E" id="681QtyavAbZ" role="2OqNvi">
-              <ref role="37wK5l" to="8zas:~DiffStatusBar.setText(java.lang.String):void" resolve="setText" />
-              <node concept="Xl_RD" id="681QtyavDjJ" role="37wK5m">
-                <property role="Xl_RC" value="" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="681Qtyavox$" role="2Oq$k0">
-              <ref role="3cqZAo" node="3SMO48GG57S" resolve="myStatusBar" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="haj_nYkogQ" role="3cqZAp">
           <node concept="1rXfSq" id="haj_nYkogP" role="3clFbG">
             <ref role="37wK5l" node="2jv$fqwD$_T" resolve="applyMetadataChanges" />
@@ -6949,9 +6815,6 @@
                               </node>
                               <node concept="37vLTw" id="1KUoCipv$Sq" role="37wK5m">
                                 <ref role="3cqZAo" node="2jv$fqwD$pg" resolve="myContentTitles" />
-                              </node>
-                              <node concept="37vLTw" id="1KUoCipv$Sr" role="37wK5m">
-                                <ref role="3cqZAo" node="3SMO48GG57S" resolve="myStatusBar" />
                               </node>
                             </node>
                           </node>

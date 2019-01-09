@@ -69,7 +69,7 @@ public class StructDifferenceDialog extends DialogWrapper implements DataProvide
         update();
       }
       private void update() {
-        check_rohu9p_a0a4a0a0k0k(myNodeDifferencePane);
+        check_rohu9p_a0a4a0a0k0j(myNodeDifferencePane);
       }
     };
     SNodeOperations.getModel(oldNode).addChangeListener(myChangeListener);
@@ -145,7 +145,7 @@ public class StructDifferenceDialog extends DialogWrapper implements DataProvide
   }
 
 
-  private static void check_rohu9p_a0a4a0a0k0k(StructDifferencePane checkedDotOperand) {
+  private static void check_rohu9p_a0a4a0a0k0j(StructDifferencePane checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.rehighlight();
     }

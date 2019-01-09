@@ -35,7 +35,6 @@ import java.awt.Insets;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 
 public class RootDifferencePane implements IHighlighter {
@@ -208,8 +207,6 @@ public class RootDifferencePane implements IHighlighter {
 
     myOldEditor.repaintAndRebuildEditorMessages();
     myNewEditor.repaintAndRebuildEditorMessages();
-
-    int count = Sequence.fromIterable(myChangeSet.getChangesForRoot(myRootId)).count();
   }
   private void higlightChange(DiffEditor diffEditor, SModel model, boolean isOldEditor, ModelChange change) {
     diffEditor.highlightChange(model, change, isOldEditor, null);

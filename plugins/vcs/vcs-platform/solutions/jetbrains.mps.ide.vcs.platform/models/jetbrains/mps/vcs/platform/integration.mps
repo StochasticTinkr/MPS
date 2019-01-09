@@ -4,13 +4,13 @@
   <languages>
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="p37l" ref="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)" />
@@ -289,6 +289,9 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
+        <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
@@ -5179,8 +5182,10 @@
       <node concept="37vLTG" id="68MS4n2MMls" role="3clF46">
         <property role="TrG5h" value="conflictedFiles" />
         <node concept="_YKpA" id="68MS4n2MMlT" role="1tU5fm">
-          <node concept="3uibUv" id="68MS4n2MMmk" role="_ZDj9">
-            <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+          <node concept="3qUE_q" id="4CUd3ljUVYN" role="_ZDj9">
+            <node concept="3uibUv" id="4CUd3ljUWwq" role="3qUE_r">
+              <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+            </node>
           </node>
         </node>
       </node>
@@ -5252,8 +5257,10 @@
         <property role="TrG5h" value="myConflictedModelFiles" />
         <property role="3TUv4t" value="false" />
         <node concept="_YKpA" id="68MS4n2IQGE" role="1tU5fm">
-          <node concept="3uibUv" id="68MS4n2IS8b" role="_ZDj9">
-            <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+          <node concept="3qUE_q" id="4CUd3ljUYJ8" role="_ZDj9">
+            <node concept="3uibUv" id="4CUd3ljV0M1" role="3qUE_r">
+              <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+            </node>
           </node>
         </node>
         <node concept="3Tm6S6" id="68MS4n2ITpf" role="1B3o_S" />
@@ -5375,8 +5382,10 @@
         <node concept="37vLTG" id="68MS4n2J8Ma" role="3clF46">
           <property role="TrG5h" value="conflictedFiles" />
           <node concept="_YKpA" id="68MS4n2J8W7" role="1tU5fm">
-            <node concept="3uibUv" id="68MS4n2J8ZI" role="_ZDj9">
-              <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+            <node concept="3qUE_q" id="4CUd3ljUXbR" role="_ZDj9">
+              <node concept="3uibUv" id="4CUd3ljUXWX" role="3qUE_r">
+                <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+              </node>
             </node>
           </node>
         </node>
@@ -6577,8 +6586,10 @@
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="3oPvWSRpVEX" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
-          <node concept="3uibUv" id="3oPvWSRpVEY" role="11_B2D">
-            <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+          <node concept="3qUE_q" id="4CUd3ljTarz" role="11_B2D">
+            <node concept="3uibUv" id="4CUd3ljTbHL" role="3qUE_r">
+              <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+            </node>
           </node>
         </node>
       </node>
@@ -6672,8 +6683,16 @@
                         </node>
                         <node concept="liA8E" id="7yFo2Ea1nHR" role="2OqNvi">
                           <ref role="37wK5l" to="hlwo:~MergeProvider2.createMergeSession(java.util.List):com.intellij.openapi.vcs.merge.MergeSession" resolve="createMergeSession" />
-                          <node concept="37vLTw" id="7UDnPJKk8Y1" role="37wK5m">
-                            <ref role="3cqZAo" node="3oPvWSRpVEW" resolve="files" />
+                          <node concept="10QFUN" id="4CUd3ljV5HG" role="37wK5m">
+                            <node concept="3uibUv" id="4CUd3ljV5Vj" role="10QFUM">
+                              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                              <node concept="3uibUv" id="4CUd3ljV60x" role="11_B2D">
+                                <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="4CUd3ljUPXQ" role="10QFUP">
+                              <ref role="3cqZAo" node="3oPvWSRpVEW" resolve="files" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -6694,19 +6713,19 @@
                     <node concept="3uibUv" id="3xywf4w3rFk" role="1tU5fm">
                       <ref role="3uigEE" node="68MS4n2IA6m" resolve="ConflictingModelsUtil.ModelConflictResolver" />
                     </node>
-                    <node concept="2YIFZM" id="3xywf4w3r7P" role="33vP2m">
+                    <node concept="2YIFZM" id="4CUd3ljV4qy" role="33vP2m">
                       <ref role="37wK5l" node="68MS4n2MKAn" resolve="getModelConflictResolverTask" />
                       <ref role="1Pybhc" node="68MS4n2I8HR" resolve="ConflictingModelsUtil" />
-                      <node concept="37vLTw" id="3xywf4w3r7Q" role="37wK5m">
+                      <node concept="37vLTw" id="4CUd3ljV4qz" role="37wK5m">
                         <ref role="3cqZAo" to="jlcu:~AbstractVcsHelper.myProject" resolve="myProject" />
                       </node>
-                      <node concept="37vLTw" id="3xywf4w3r7R" role="37wK5m">
+                      <node concept="37vLTw" id="4CUd3ljV4q$" role="37wK5m">
                         <ref role="3cqZAo" node="3oPvWSRpVEZ" resolve="provider" />
                       </node>
-                      <node concept="37vLTw" id="3xywf4w3r7S" role="37wK5m">
+                      <node concept="37vLTw" id="4CUd3ljV4q_" role="37wK5m">
                         <ref role="3cqZAo" node="7yFo2Ea1kAk" resolve="session" />
                       </node>
-                      <node concept="37vLTw" id="3xywf4w3r7T" role="37wK5m">
+                      <node concept="37vLTw" id="4CUd3ljV4qA" role="37wK5m">
                         <ref role="3cqZAo" node="3oPvWSRpVEW" resolve="files" />
                       </node>
                     </node>

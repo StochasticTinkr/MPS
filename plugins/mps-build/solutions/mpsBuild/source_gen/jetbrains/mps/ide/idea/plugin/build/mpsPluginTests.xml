@@ -178,7 +178,7 @@
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.10.jar" />
         <path refid="path.java.library.mps-testing-artifacts" />
         <path refid="path.jdk.classpath" />
       </classpath>
@@ -226,7 +226,7 @@
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.10.jar" />
         <path refid="path.java.library.idea-devkit-jps" />
         <path refid="path.java.library.idea-jps-tests" />
         <path refid="path.jdk.classpath" />

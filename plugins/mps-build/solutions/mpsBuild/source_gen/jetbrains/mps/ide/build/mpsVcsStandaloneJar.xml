@@ -123,7 +123,7 @@
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.10.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset dir="${artifacts.IDEA}/plugins/git4idea/lib" includes="*.jar" />
         <fileset dir="${artifacts.IDEA}/plugins/svn4idea/lib" includes="*.jar" />

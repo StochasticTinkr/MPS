@@ -232,11 +232,6 @@ public class MergeRootsPane {
     myMineEditor.repaintAndRebuildEditorMessages();
     myResultEditor.repaintAndRebuildEditorMessages();
     myRepositoryEditor.repaintAndRebuildEditorMessages();
-    int conflictingChanges = ListSequence.fromList(changesForRoot).where(new IWhereFilter<ModelChange>() {
-      public boolean accept(ModelChange ch) {
-        return Sequence.fromIterable(myMergeSession.getConflictedWith(ch)).isNotEmpty();
-      }
-    }).count();
   }
   private void higlightChange(DiffEditor diffEditor, SModel model, boolean isOldEditor, ModelChange change) {
     diffEditor.highlightChange(model, change, isOldEditor, myConflictChecker);

@@ -1121,10 +1121,7 @@
                   <ref role="3cqZAo" node="3oUomEoMAZS" resolve="myChangeListManager" />
                 </node>
                 <node concept="liA8E" id="4fbpUpEDrh$" role="2OqNvi">
-                  <ref role="37wK5l" to="1037:~ChangeListManagerImpl.ensureUpToDate(boolean):boolean" resolve="ensureUpToDate" />
-                  <node concept="3clFbT" id="4fbpUpEDrhB" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <ref role="37wK5l" to="1037:~ChangeListManagerImpl.ensureUpToDate():boolean" resolve="ensureUpToDate" />
                 </node>
               </node>
             </node>
@@ -1933,10 +1930,7 @@
               <ref role="3cqZAo" node="3oUomEoMAZS" resolve="myChangeListManager" />
             </node>
             <node concept="liA8E" id="64KdXaUqxsy" role="2OqNvi">
-              <ref role="37wK5l" to="1037:~ChangeListManagerImpl.ensureUpToDate(boolean):boolean" resolve="ensureUpToDate" />
-              <node concept="3clFbT" id="64KdXaUqxuN" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <ref role="37wK5l" to="1037:~ChangeListManagerImpl.ensureUpToDate():boolean" resolve="ensureUpToDate" />
             </node>
           </node>
         </node>
