@@ -231,9 +231,9 @@
                       serviceImplementation="com.intellij.execution.process.impl.OSProcessManagerImpl"/>
 
   <applicationService serviceInterface="com.intellij.openapi.options.SchemeManagerFactory"
-                      serviceImplementation="com.intellij.configurationStore.SchemeManagerFactoryBase$ApplicationSchemeManagerFactory"/>
+                        serviceImplementation="com.intellij.configurationStore.schemeManager.SchemeManagerFactoryBase$ApplicationSchemeManagerFactory"/>
   <projectService serviceInterface="com.intellij.openapi.options.SchemeManagerFactory"
-                  serviceImplementation="com.intellij.configurationStore.SchemeManagerFactoryBase$ProjectSchemeManagerFactory"/>
+                    serviceImplementation="com.intellij.configurationStore.schemeManager.SchemeManagerFactoryBase$ProjectSchemeManagerFactory"/>
 
   <applicationService serviceImplementation="com.intellij.openapi.editor.colors.ex.DefaultColorSchemesManager"/>
   <applicationService serviceInterface="com.intellij.openapi.editor.colors.TextAttributesKey$TextAttributeKeyDefaultsProvider"
@@ -248,6 +248,8 @@
 
   <projectService serviceImplementation="com.intellij.internal.statistic.service.fus.collectors.FUSProjectUsageTrigger"/>
   <applicationService serviceImplementation="com.intellij.internal.statistic.service.fus.collectors.FUSApplicationUsageTrigger"/>
+  <applicationService serviceImplementation="com.intellij.internal.statistic.service.fus.collectors.LegacyApplicationUsageTriggers"/>
+  <applicationService serviceImplementation="com.intellij.internal.statistic.service.fus.collectors.LegacyApplicationUsageTriggers$LegacyUsageTrigger"/>
 
   <applicationService serviceImplementation="com.intellij.internal.statistic.collectors.fus.ui.persistence.ToolbarClicksCollector"/>
   <applicationService serviceImplementation="com.intellij.internal.statistic.collectors.fus.ui.persistence.ShortcutsCollector"/>
@@ -374,7 +376,7 @@
 
   <!-- Plugins -->
   <applicationConfigurable groupId="root" groupWeight="55" instance="com.intellij.ide.plugins.PluginManagerConfigurableProxy" id="preferences.pluginManager"
-                           displayName="Plugins"/>
+                             treeRenderer="com.intellij.ide.plugins.PluginManagerConfigurableTreeRenderer" displayName="Plugins"/>
   <actionFromOptionDescriptorProvider implementation="com.intellij.ide.plugins.InstalledPluginsManagerMain$PluginsActionFromOptionDescriptorProvider"/>
   <customFileDropHandler implementation="com.intellij.ide.plugins.InstalledPluginsManagerMain$PluginDropHandler"/>
   <applicationConfigurable parentId="preferences.general" instance="com.intellij.util.net.HttpProxyConfigurable" id="http.proxy" displayName="HTTP Proxy"/>
@@ -460,22 +462,15 @@
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ProductivityUsageCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.plugins.DisabledPluginsUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.plugins.NonBundledPluginsUsagesCollector"/>
-  <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.ToolbarClicksUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.EditorColorSchemesUsagesCollector"/>
-  <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.actions.ActionUsagesCollector"/>
-  <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.actions.ActionFromContextMenuUsagesCollector"/>
-  <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.actions.ToolWindowUsagesCollector"/>
-  <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.actions.IntentionUsagesCollector"/>
-  <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.actions.MainMenuUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.jdk.JdkInfoUsageCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.os.OsNameUsageCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.os.OsVersionUsageCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.FontSizeInfoUsageCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.HiDPIModeUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.LaFUsagesCollector"/>
-    <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.os.LinuxWindowManagerUsageCollector"/>
+  <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.os.LinuxWindowManagerUsageCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.ScaleInfoUsageCollector"/>
-  <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.ShortcutUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.UiInfoUsageCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.A11YUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.diff.statistics.DiffUsagesCollector"/>
@@ -629,6 +624,12 @@
   <actionPromoter implementation="com.intellij.execution.testframework.TestTreeViewActionsPromoter"/>
   <smartSelectProvider implementation="com.intellij.ui.tree.TreeSmartSelectProvider"/>
   <postStartupActivity implementation="com.intellij.tasks.context.BranchContextTracker$TrackerStartupActivity"/>
+
+  <!--troubleshooting-->
+  <generalTroubleInfoCollector implementation="com.intellij.ide.troubleshooting.AboutTroubleInfoCollector"/>
+  <generalTroubleInfoCollector implementation="com.intellij.ide.troubleshooting.SystemTroubleInfoCollector"/>
+  <generalTroubleInfoCollector implementation="com.intellij.ide.troubleshooting.DisplayTroubleInfoCollector"/>
+  <generalTroubleInfoCollector implementation="com.intellij.ide.troubleshooting.PluginTroubleInfoCollector"/>
 
   <!-- experiments -->
   <experimentalFeature id="inline.browse.button" percentOfUsers="100">

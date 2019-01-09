@@ -16,6 +16,7 @@
 <idea-plugin>
   <actions>
     <action id="QuickActionPopup" text="Show Quick Actions Popup" class="com.intellij.ui.switcher.ShowQuickActionPopupAction"/>
+    <action id="RunConfigurationTemplatesForNewProjects" class="com.intellij.execution.actions.EditRunConfigurationTemplatesForNewProjectsAction"/>
 
     <group id="Other.KeymapGroup"/> <!-- grouping for Settings -> Keymap -> Others -->
     <group id="Vcs.KeymapGroup" text="Version Control Systems"/> <!-- grouping for Settings -> Keymap -> Version Control Systems -->
@@ -142,6 +143,7 @@
       <action id="EditorAddOrRemoveCaret" class="com.intellij.openapi.editor.actions.AddOrRemoveCaretDummyAction"/>
       <action id="EditorCreateRectangularSelection" class="com.intellij.openapi.editor.actions.CreateRectangularSelectionAction"/>
       <action id="EditorAddRectangularSelectionOnMouseDrag" class="com.intellij.openapi.editor.actions.AddRectangularSelectionOnMouseDragAction"/>
+      <action id="EditorCreateRectangularSelectionOnMouseDrag" class="com.intellij.openapi.editor.actions.CreateRectangularSelectionOnMouseDragAction"/>
       <action id="EditorCloneCaretBelow" class="com.intellij.openapi.editor.actions.CloneCaretBelow"/>
       <action id="EditorCloneCaretAbove" class="com.intellij.openapi.editor.actions.CloneCaretAbove"/>
       -->
@@ -160,6 +162,8 @@
       <!-- MPS
       <action id="EditorForwardParagraph" class="com.intellij.openapi.editor.actions.ForwardParagraphAction"/>
       <action id="EditorBackwardParagraph" class="com.intellij.openapi.editor.actions.BackwardParagraphAction"/>
+      <action id="EditorForwardParagraphWithSelection" class="com.intellij.openapi.editor.actions.ForwardParagraphWithSelectionAction"/>
+      <action id="EditorBackwardParagraphWithSelection" class="com.intellij.openapi.editor.actions.BackwardParagraphWithSelectionAction"/>
       -->
       <action id="EditorLineStartWithSelection" class="com.intellij.openapi.editor.actions.LineStartWithSelectionAction"/>
       <action id="EditorLineEndWithSelection" class="com.intellij.openapi.editor.actions.LineEndWithSelectionAction"/>
@@ -228,7 +232,7 @@
       <action id="ShowBlankDiffWindow" class="com.intellij.diff.actions.ShowBlankDiffWindowAction" icon="AllIcons.Actions.Diff"/>
 
       <separator/>
-      <action id="Diff.FocusOppositePane" class="com.intellij.openapi.diff.actions.FocusOppositePaneAction"/>
+      <action id="Diff.FocusOppositePane" class="com.intellij.openapi.actionSystem.EmptyAction"/>
       <action id="Diff.FocusOppositePaneAndScroll" class="com.intellij.openapi.actionSystem.EmptyAction"/>
 
       <action id="Diff.ShowSettingsPopup" class="com.intellij.openapi.actionSystem.EmptyAction" text="Show Diff Settings Popup..."/>
@@ -239,8 +243,8 @@
       <action id="Diff.PrevChange" class="com.intellij.openapi.actionSystem.EmptyAction" icon="AllIcons.Actions.Back"/>
       <action id="Diff.NextChange" class="com.intellij.openapi.actionSystem.EmptyAction" icon="AllIcons.Actions.Forward"/>
 
-      <action id="NextDiff" class="com.intellij.openapi.diff.actions.NextDiffAction" icon="AllIcons.Actions.NextOccurence"/>
-      <action id="PreviousDiff" class="com.intellij.openapi.diff.actions.PreviousDiffAction" icon="AllIcons.Actions.PreviousOccurence"/>
+      <action id="NextDiff" class="com.intellij.openapi.actionSystem.EmptyAction" icon="AllIcons.Actions.NextOccurence"/>
+      <action id="PreviousDiff" class="com.intellij.openapi.actionSystem.EmptyAction" icon="AllIcons.Actions.PreviousOccurence"/>
       <action id="Diff.NextConflict" class="com.intellij.openapi.actionSystem.EmptyAction" icon="AllIcons.Actions.MoveDown"/>
       <action id="Diff.PreviousConflict" class="com.intellij.openapi.actionSystem.EmptyAction" icon="AllIcons.Actions.MoveUp"/>
       <action id="GotoChangedFile" class="com.intellij.openapi.actionSystem.EmptyAction" icon="AllIcons.Actions.ListFiles"/>
@@ -309,6 +313,7 @@
           <action id="ShowSettings" class="com.intellij.ide.actions.ShowSettingsAction"/>
           <group id="FileOtherSettingsGroup" class="com.intellij.ide.actions.SmartPopupActionGroup">
              <action id="TemplateProjectProperties" class="com.intellij.ide.actions.TemplateProjectPropertiesAction"/>
+            <reference ref="RunConfigurationTemplatesForNewProjects"/>
              <group id="FileSettingsGroup"/>
           </group>
           <separator/>
@@ -472,6 +477,7 @@
           <!-- TODO: Enable DistractionFreeMode after implementation mock DaemonCodeAnalyzerSettings (MPSLangExtensions.xml) or InspectionProfileManager (add to IdeaPlugin.xml)
           <action id="ToggleDistractionFreeMode" class="com.intellij.ide.actions.ToggleDistractionFreeModeAction"/>
           -->
+          <action id="ToggleFocusMode" class="com.intellij.ide.actions.ToggleFocusViewModeAction" internal="true"/>
           <action id="ToggleFullScreen" class="com.intellij.ide.actions.ToggleFullScreenAction"/>
         </group>
       </group>
@@ -517,11 +523,8 @@
           <action id="JumpToLastWindow" class="com.intellij.ide.actions.JumpToLastWindowAction"/>
           <action id="MaximizeToolWindow" class="com.intellij.openapi.wm.impl.MaximizeToolWindowAction"/>
           <separator/>
-          <action id="TogglePinnedMode" class="com.intellij.ide.actions.TogglePinnedModeAction"/>
-          <action id="ToggleDockMode" class="com.intellij.ide.actions.ToggleDockModeAction"/>
-          <action id="ToggleFloatingMode" class="com.intellij.ide.actions.ToggleFloatingModeAction"/>
-          <action id="ToggleWindowedMode" class="com.intellij.ide.actions.ToggleWindowedModeAction"/>
-          <action id="ToggleSideMode" class="com.intellij.ide.actions.ToggleSideModeAction"/>
+          <group id="TW.ViewModeGroup" class="com.intellij.ide.actions.ToolWindowViewModeAction$Group"/>
+          <group id="TW.MoveToGroup" class="com.intellij.ide.actions.ToolWindowMoveAction$Group"/>
           <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
           <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
           <group id="ResizeToolWindowGroup" popup="true">
@@ -608,7 +611,7 @@
         <action id="ReportProblem" class="com.intellij.ide.actions.ReportProblemAction"/>
         <action id="SendFeedback" class="com.intellij.ide.actions.SendFeedbackAction"/>
         <action id="ShowLog" class="com.intellij.ide.actions.ShowLogAction"/>
-        <action id="CollectSettings" class="com.intellij.ide.actions.CollectSettingsAction" text="Settings Summary"/>
+        <action id="CollectTroubleshootingInformation" class="com.intellij.ide.actions.CollectTroubleshootingInformationAction" text="Collect Troubleshooting Information"/>
         <action id="CollectZippedLogs" class="com.intellij.ide.actions.CollectZippedLogsAction"/>
         <action id="EditCustomProperties" class="com.intellij.ide.actions.EditCustomPropertiesAction"/>
         <action id="EditCustomVmOptions" class="com.intellij.ide.actions.EditCustomVmOptionsAction"/>
@@ -676,6 +679,7 @@
       <reference ref="CompareClipboardWithSelection"/>
       <reference ref="$SearchWeb"/>
       <action id="CopyUrl" class="com.intellij.ide.actions.CopyUrlAction"/>
+      <action id="PauseOutput" class="com.intellij.execution.actions.PauseOutputAction"/>
     </group>
 
     <group id="EditorTabPopupMenu">
@@ -716,7 +720,8 @@
 
     <group id="WelcomeScreen.Configure">
       <action id="WelcomeScreen.Settings" class="com.intellij.ide.actions.ShowSettingsAction" icon="AllIcons.General.Settings"/>
-      <action id="WelcomeScreen.Plugins" class="com.intellij.ide.actions.ShowPluginManagerAction" icon="AllIcons.General.PluginManager"/>
+      <action id="WelcomeScreen.Plugins" class="com.intellij.ide.actions.ShowPluginManagerAction"/>
+      <reference ref="RunConfigurationTemplatesForNewProjects"/>
 
       <action id="WelcomeScreen.Configure.Import" class="com.intellij.configurationStore.ImportSettingsAction" icon="AllIcons.ToolbarDecorator.Import"/>
       <action id="WelcomeScreen.Configure.Export" class="com.intellij.configurationStore.ExportSettingsAction" icon="AllIcons.ToolbarDecorator.Export"/>
@@ -776,15 +781,6 @@
       <separator/>
       <action id="FileChooser.ShowHiddens" class="com.intellij.openapi.fileChooser.actions.ShowHiddensAction"
         icon="AllIcons.Actions.ShowHiddens"/>
-    </group>
-
-    <group id="DiffPanel.Toolbar">
-      <reference ref="PreviousDiff"/>
-      <reference ref="NextDiff"/>
-      <separator/>
-      <action id="Diff.IgnoreWhitespace" class="com.intellij.openapi.diff.actions.IgnoreWhiteSpacesAction" text=""/>
-      <separator/>
-      <action id="Diff.HighlightMode" class="com.intellij.openapi.diff.actions.HighlightModeAction" text=""/>
     </group>
 
     <group id="ChangeScheme">
@@ -898,8 +894,13 @@
       <reference ref="MaintenanceGroup"/>
 
       <group id="FeatureUsage.Internal" popup="true" compact="true" text="Feature Usages Statistics">
-        <action internal="true" id="SendFUStatistics" class="com.intellij.internal.statistic.actions.SendFUStatisticsAction" text="Collect And Send Statistics"/>
       <action internal="true" id="SendEventLogStatistics" class="com.intellij.internal.statistic.actions.SendEventLogAction" text="Send Feature Usage Event Log"/>
+      <action internal="true" id="RecordStateCollectors" class="com.intellij.internal.statistic.actions.RecordStateStatisticsEventLogAction" text="Record State Collectors to Event Log"/>
+      </group>
+
+      <group id="Internal.PMM" popup="true" text="PMM Utils">
+        <action id="ApplyFixedWindowSize" internal="true" class="com.intellij.internal.inspector.ApplyWindowSizeAction" text="Apply Specific Size"/>
+        <action id="ConfigureDefaultSize" internal="true" class="com.intellij.internal.inspector.ConfigureCustomSizeAction" text="Configure Default Size..."/>
       </group>
 
       <action internal="true" id="ShowEditorHighlighterTokens" class="com.intellij.openapi.editor.actions.ShowEditorHighlighterTokensAction"
@@ -963,6 +964,7 @@
     <action id="CopySettingsPath" class="com.intellij.openapi.options.newEditor.CopySettingsPathAction"/>
 
     <action id="ShowFilterPopup" class="com.intellij.find.editorHeaderActions.ShowMoreOptions" text="Show Filter Popup"/>
+    <action id="ShowSearchHistory" class="com.intellij.find.actions.ShowSearchHistoryAction" text="Show Search History"/>
 
     <group id="TabsActions" text="Tabs">
       <action id="GoToTab1" class="com.intellij.ide.actions.TabNavigationActionBase$GoToTab1Action"/>
@@ -984,6 +986,22 @@
       <reference id="MoveEditorToOppositeTabGroup"/>
       <reference id="OpenEditorInOppositeTabGroup"/>
 
+      <add-to-group group-id="Other.KeymapGroup"/>
+    </group>
+    <group id="TWViewModes" text="Tool Windows View Modes">
+      <action id="DockPinnedMode" class="com.intellij.ide.actions.ToolWindowDockPinnedAction"/>
+      <action id="DockUnpinnedMode" class="com.intellij.ide.actions.ToolWindowDockUnpinnedAction"/>
+      <action id="UndockMode" class="com.intellij.ide.actions.ToolWindowUndockAction"/>
+      <action id="FloatMode" class="com.intellij.ide.actions.ToolWindowFloatAction"/>
+      <action id="WindowMode" class="com.intellij.ide.actions.ToolWindowWindowAction"/>
+      <add-to-group group-id="Other.KeymapGroup"/>
+    </group>
+    <group id="TWViewModesLegacy" text="Tool Windows Legacy View Modes (deprecated)">
+      <action id="TogglePinnedMode" class="com.intellij.ide.actions.TogglePinnedModeAction"/>
+      <action id="ToggleDockMode" class="com.intellij.ide.actions.ToggleDockModeAction"/>
+      <action id="ToggleFloatingMode" class="com.intellij.ide.actions.ToggleFloatingModeAction"/>
+      <action id="ToggleWindowedMode" class="com.intellij.ide.actions.ToggleWindowedModeAction"/>
+      <action id="ToggleSideMode" class="com.intellij.ide.actions.ToggleSideModeAction"/>
       <add-to-group group-id="Other.KeymapGroup"/>
     </group>
     <group id="ToolWindowContextMenu"/>

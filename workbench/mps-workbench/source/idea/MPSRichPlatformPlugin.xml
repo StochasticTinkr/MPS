@@ -405,6 +405,7 @@
 
   <extensionPoints>
     <!-- Copy paste from XmlPlugin.xml-->
+    <extensionPoint name="embeddedTokenHighlighter" interface="com.intellij.ide.highlighter.EmbeddedTokenHighlighter"/>
     <extensionPoint name="breadcrumbsPresentationProvider" interface="com.intellij.xml.breadcrumbs.BreadcrumbsPresentationProvider"/>
   </extensionPoints>
   <!--
