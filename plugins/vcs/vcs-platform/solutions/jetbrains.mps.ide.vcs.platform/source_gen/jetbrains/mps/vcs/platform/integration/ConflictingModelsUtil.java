@@ -121,7 +121,7 @@ public class ConflictingModelsUtil {
     return false;
   }
 
-  public static ConflictingModelsUtil.ModelConflictResolver getModelConflictResolverTask(Project project, MergeProvider provider, com.intellij.openapi.vcs.merge.MergeSession session, List<VirtualFile> conflictedFiles) {
+  public static ConflictingModelsUtil.ModelConflictResolver getModelConflictResolverTask(Project project, MergeProvider provider, com.intellij.openapi.vcs.merge.MergeSession session, List<? extends VirtualFile> conflictedFiles) {
     return new ConflictingModelsUtil.ModelConflictResolver(project, provider, session, conflictedFiles);
   }
 
@@ -129,11 +129,11 @@ public class ConflictingModelsUtil {
     private Project myProject;
     private MergeProvider myProvider;
     private com.intellij.openapi.vcs.merge.MergeSession mySession;
-    private List<VirtualFile> myConflictedModelFiles;
+    private List<? extends VirtualFile> myConflictedModelFiles;
     private List<VirtualFile> myResolvedModelFiles = ListSequence.fromList(new ArrayList<VirtualFile>());
     private List<VirtualFile> myUnresolvedModelFiles = ListSequence.fromList(new ArrayList<VirtualFile>());
 
-    public ModelConflictResolver(Project project, MergeProvider provider, com.intellij.openapi.vcs.merge.MergeSession session, List<VirtualFile> conflictedFiles) {
+    public ModelConflictResolver(Project project, MergeProvider provider, com.intellij.openapi.vcs.merge.MergeSession session, List<? extends VirtualFile> conflictedFiles) {
       super(project, "Resolving conflicts in models", true);
       myProvider = provider;
       mySession = session;
