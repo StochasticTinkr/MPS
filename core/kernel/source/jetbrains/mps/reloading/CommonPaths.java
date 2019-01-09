@@ -98,7 +98,7 @@ public final class CommonPaths {
     addIfExists(result, "lib/log4j.jar");
     addIfExists(result, "lib/trove4j.jar");
     addIfExists(result, "lib/jdom.jar");
-    addIfExists(result, "lib/ecj-4.7.2.jar");
+    addIfExists(result, "lib/ecj-4.10.jar");
     addIfExists(result, "lib/guava-25.1-jre.jar");
     addIfExists(result, "lib/xstream-1.4.8.jar");
     addIfExists(result, "lib/asm-all-7.0.jar");
@@ -119,13 +119,13 @@ public final class CommonPaths {
 
   private static void addIdeaJars(Collection<QualifiedPath> result) {
     addRepackedIdeaJars(result);
-    addIfExists(result, "lib/netty-buffer-4.1.30.Final.jar");
-    addIfExists(result, "lib/netty-codec-4.1.30.Final.jar");
-    addIfExists(result, "lib/netty-codec-http-4.1.30.Final.jar");
-    addIfExists(result, "lib/netty-common-4.1.30.Final.jar");
-    addIfExists(result, "lib/netty-handler-4.1.30.Final.jar");
-    addIfExists(result, "lib/netty-resolver-4.1.30.Final.jar");
-    addIfExists(result, "lib/netty-transport-4.1.30.Final.jar");
+    addIfExists(result, "lib/netty-buffer-4.1.32.Final.jar");
+    addIfExists(result, "lib/netty-codec-4.1.32.Final.jar");
+    addIfExists(result, "lib/netty-codec-http-4.1.32.Final.jar");
+    addIfExists(result, "lib/netty-common-4.1.32.Final.jar");
+    addIfExists(result, "lib/netty-handler-4.1.32.Final.jar");
+    addIfExists(result, "lib/netty-resolver-4.1.32.Final.jar");
+    addIfExists(result, "lib/netty-transport-4.1.32.Final.jar");
     addIfExists(result, "lib/commons-imaging-1.0-RC.jar");
     addIfExists(result, "lib/util.jar");
     addIfExists(result, "lib/extensions.jar");
