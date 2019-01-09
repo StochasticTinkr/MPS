@@ -38,6 +38,6 @@ public class check_FinalMethodIsVirtual_NonTypesystemRule extends AbstractNonTyp
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
-    return true;
+    return false;
   }
 }
