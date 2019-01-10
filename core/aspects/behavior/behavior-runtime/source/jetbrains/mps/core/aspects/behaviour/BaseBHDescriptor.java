@@ -39,6 +39,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkForConcept;
 import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkNotStatic;
@@ -59,13 +60,14 @@ import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkStatic;
 public abstract class BaseBHDescriptor implements BHDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBHDescriptor.class);
 
+  private final SMethodVirtualTable mySuperVTable = new SMethodVirtualTable();
+  private final BehaviorRegistry myBehaviorRegistry;
+  private final AtomicReference<List<SMethod<?>>> myCachedMethods = new AtomicReference<>(); // optimization by ashatalin
+
   private SAbstractConcept myConcept;
   private boolean myInitialized = false;
   private SMethodVirtualTable myVTable;
-  private final SMethodVirtualTable mySuperVTable = new SMethodVirtualTable();
-  private final BehaviorRegistry myBehaviorRegistry;
   private AncestorCache myAncestorCache;
-  private List<SMethod<?>> myMethods;
 
   protected BaseBHDescriptor(BehaviorRegistry behaviorRegistry) {
     myBehaviorRegistry = behaviorRegistry;
@@ -361,7 +363,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   @NotNull
   @Override
   public List<SMethod<?>> getMethods() {
-    if (myMethods == null) {
+    List<SMethod<?>> currentMethods = myCachedMethods.get();
+    if (currentMethods == null) {
       Set<SMethod<?>> result = new HashSet<>();
       for (SAbstractConcept concept : myAncestorCache.getAncestorsConstructionOrder()) {
         BHDescriptor bhDescriptor = getBHDescriptor(concept);
@@ -373,9 +376,14 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
         }
       }
       result.addAll(myVTable.getMethods());
-      myMethods = new ArrayList<>(result);
+      currentMethods = new ArrayList<>(result);
+      if (myCachedMethods.compareAndSet(null, currentMethods)) {
+        return currentMethods;
+      } else {
+        return myCachedMethods.get();
+      }
     }
-    return myMethods;
+    return currentMethods;
   }
 
   /**
