@@ -171,13 +171,13 @@ public class SModuleOperations {
     } else {
       model = (EditableSModel) root.createModel(name);
     }
+    ModelsAutoImportsManager.doAutoImport(root.getModule(), model);
 
     // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
     // model.getSModel() ?
     model.setChanged(true);
     model.save();
 
-    ModelsAutoImportsManager.doAutoImport(root.getModule(), model);
     new MissingDependenciesFixer(model).fixModuleDependencies();
     return model;
   }
