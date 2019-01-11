@@ -36,7 +36,7 @@ public class check_DefaultMethodIsNotAbstract_NonTypesystemRule extends Abstract
         }
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.jdk8.typesystem.RemoveDefaultModifier_QuickFix", false);
-          intentionProvider.putArgument("method", method);
+          intentionProvider.putArgument("member", method);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }

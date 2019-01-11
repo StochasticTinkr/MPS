@@ -66,7 +66,6 @@ public final class ClassConcept__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Boolean> hasStaticMemebers_idhFq8xqE = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasStaticMemebers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hFq8xqE").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getMethodsToOverride_id4GM03FJm3zL = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getMethodsToOverride").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4GM03FJm3zL").registry(REGISTRY).build();
   public static final SMethod<SNode> getSuperclass_idi3H_lLu = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getSuperclass").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i3H_lLu").registry(REGISTRY).build();
-  public static final SMethod<List<SNode>> getOwnMethods_id1DPgsAlM_WC = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOwnMethods").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1DPgsAlM_WC").registry(REGISTRY).build();
   public static final SMethod<String> getUnitName_id4pl5GY7LKmR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getUnitName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4pl5GY7LKmR").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getAllSuperClassifiers_id4fAeKISQjDi = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAllSuperClassifiers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4fAeKISQjDi").registry(REGISTRY).build();
   public static final SMethod<Scope> getMembers_id1UeCwxlVpJs = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1UeCwxlVpJs").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
@@ -84,7 +83,7 @@ public final class ClassConcept__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Void> unmarkDeprecated_id6Va_BJex$aE = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unmarkDeprecated").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Va_BJex$aE").registry(REGISTRY).build();
   public static final SMethod<Void> markLoadedNodeAsDeprecated_id5H8W9_EDlcn = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("markLoadedNodeAsDeprecated").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5H8W9_EDlcn").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExtendedClassifierTypes_id1UeCwxlWKny, getIconMarks_id6TtJ6IUkhQJ, isDescendant_checkLoops_id6dL7A1DpKoA, checkLoops_id3sXyOQUqKq5, getMainMethod_idhEwIClG, hasStaticMemebers_idhFq8xqE, getMethodsToOverride_id4GM03FJm3zL, getSuperclass_idi3H_lLu, getOwnMethods_id1DPgsAlM_WC, getUnitName_id4pl5GY7LKmR, getAllSuperClassifiers_id4fAeKISQjDi, getMembers_id1UeCwxlVpJs, getScope_id52_Geb4QDV$, populateMembers_id6r77ob2USUV, instanceInitializers_id6Fz0RL3y9UD, staticInitializers_id2I6sE$IuBP7, fields_id4_LVZ3pC27C, staticMethods_id4_LVZ3pCeXr, constructors_id4_LVZ3pCvsd, properties_id4_LVZ3pCxYY, canBeStatic_id2L7NFMAtrRg, getContextClass_id6WzWPTX2$6q, markDeprecated_id6Va_BJexupi, unmarkDeprecated_id6Va_BJex$aE, markLoadedNodeAsDeprecated_id5H8W9_EDlcn);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExtendedClassifierTypes_id1UeCwxlWKny, getIconMarks_id6TtJ6IUkhQJ, isDescendant_checkLoops_id6dL7A1DpKoA, checkLoops_id3sXyOQUqKq5, getMainMethod_idhEwIClG, hasStaticMemebers_idhFq8xqE, getMethodsToOverride_id4GM03FJm3zL, getSuperclass_idi3H_lLu, getUnitName_id4pl5GY7LKmR, getAllSuperClassifiers_id4fAeKISQjDi, getMembers_id1UeCwxlVpJs, getScope_id52_Geb4QDV$, populateMembers_id6r77ob2USUV, instanceInitializers_id6Fz0RL3y9UD, staticInitializers_id2I6sE$IuBP7, fields_id4_LVZ3pC27C, staticMethods_id4_LVZ3pCeXr, constructors_id4_LVZ3pCvsd, properties_id4_LVZ3pCxYY, canBeStatic_id2L7NFMAtrRg, getContextClass_id6WzWPTX2$6q, markDeprecated_id6Va_BJexupi, unmarkDeprecated_id6Va_BJex$aE, markLoadedNodeAsDeprecated_id5H8W9_EDlcn);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -197,12 +196,6 @@ public final class ClassConcept__BehaviorDescriptor extends BaseBHDescriptor {
     }
     SNode classifier = SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
     return ((classifier != null) && SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) ? SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")) : _quotation_createNode_xjj00_a0c0h());
-  }
-  /*package*/ static List<SNode> getOwnMethods_id1DPgsAlM_WC(@NotNull SNode __thisNode__) {
-    List<SNode> baseMethodDeclarations = new ArrayList<SNode>();
-    ListSequence.fromList(baseMethodDeclarations).addSequence(Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(__thisNode__)));
-    ListSequence.fromList(baseMethodDeclarations).addSequence(Sequence.fromIterable(ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(__thisNode__)));
-    return baseMethodDeclarations;
   }
   /*package*/ static String getUnitName_id4pl5GY7LKmR(@NotNull SNode __thisNode__) {
     SNode ancestorClass = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
@@ -370,36 +363,34 @@ public final class ClassConcept__BehaviorDescriptor extends BaseBHDescriptor {
       case 7:
         return (T) ((SNode) getSuperclass_idi3H_lLu(node));
       case 8:
-        return (T) ((List<SNode>) getOwnMethods_id1DPgsAlM_WC(node));
-      case 9:
         return (T) ((String) getUnitName_id4pl5GY7LKmR(node));
-      case 10:
+      case 9:
         return (T) ((List<SNode>) getAllSuperClassifiers_id4fAeKISQjDi(node));
-      case 11:
+      case 10:
         return (T) ((Scope) getMembers_id1UeCwxlVpJs(node, (SAbstractConcept) parameters[0]));
-      case 12:
+      case 11:
         return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
-      case 13:
+      case 12:
         populateMembers_id6r77ob2USUV(node, (MembersPopulatingContext) parameters[0], (SNode) parameters[1]);
         return null;
-      case 14:
+      case 13:
         return (T) ((Iterable<SNode>) instanceInitializers_id6Fz0RL3y9UD(node));
-      case 15:
+      case 14:
         return (T) ((Iterable<SNode>) staticInitializers_id2I6sE$IuBP7(node));
-      case 16:
+      case 15:
         return (T) ((Iterable<SNode>) fields_id4_LVZ3pC27C(node));
-      case 17:
+      case 16:
         return (T) ((Iterable<SNode>) staticMethods_id4_LVZ3pCeXr(node));
-      case 18:
+      case 17:
         return (T) ((Iterable<SNode>) constructors_id4_LVZ3pCvsd(node));
-      case 19:
+      case 18:
         return (T) ((Iterable<SNode>) properties_id4_LVZ3pCxYY(node));
-      case 20:
+      case 19:
         return (T) ((Boolean) canBeStatic_id2L7NFMAtrRg(node));
-      case 22:
+      case 21:
         markDeprecated_id6Va_BJexupi(node);
         return null;
-      case 23:
+      case 22:
         unmarkDeprecated_id6Va_BJex$aE(node);
         return null;
       default:
@@ -414,9 +405,9 @@ public final class ClassConcept__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 21:
+      case 20:
         return (T) ((SNode) getContextClass_id6WzWPTX2$6q(concept, (SNode) parameters[0]));
-      case 24:
+      case 23:
         markLoadedNodeAsDeprecated_id5H8W9_EDlcn(concept, (SNode) parameters[0]);
         return null;
       default:

@@ -37,6 +37,7 @@ public class MoveStaticMethod implements MoveNodesAction {
   public String getName() {
     return "Move Static Method";
   }
+
   public boolean isApplicable(MPSProject project, final List<SNode> nodes) {
     final Wrappers._boolean result = new Wrappers._boolean();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -46,13 +47,14 @@ public class MoveStaticMethod implements MoveNodesAction {
     });
     return result.value;
   }
+
   public void execute(MPSProject project, List<SNode> nodes) {
     final SNode target = SNodeOperations.cast(ListSequence.fromList(nodes).first(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
 
-    final SNode whereToMove = MoveNodeDialog.getSelectedObject(project, target, new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
+    final SNode whereToMove = MoveNodeDialog.getSelectedObject(project, target, new MoveNodeDialog.NodeFilter("Select classifier to move to: refactoring can't be applied to the selected node") {
       @Override
       public boolean check(SNode selectedObject, SNode nodeToMove, SModel modelOfSelectedNode) {
-        return SNodeOperations.isInstanceOf(selectedObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && !(ListSequence.fromList(SNodeOperations.getNodeAncestors(nodeToMove, null, false)).contains(selectedObject));
+        return SNodeOperations.isInstanceOf(selectedObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) && !(ListSequence.fromList(SNodeOperations.getNodeAncestors(nodeToMove, null, false)).contains(selectedObject));
       }
     });
     if (whereToMove == null) {
@@ -64,6 +66,7 @@ public class MoveStaticMethod implements MoveNodesAction {
       public List<SNode> getNodesToSearch(SNode nodeToMove) {
         return ListSequence.fromListAndArray(new ArrayList<SNode>(), nodeToMove);
       }
+
       @Override
       public void process(List<SNode> nodesRootsToMove, Map<SNode, RefactoringParticipant.KeepOldNodes> ifKeepOldNodes, RefactoringSession refactoringSession) {
         NodeCopyTracker copyMap = NodeCopyTracker.get(refactoringSession);

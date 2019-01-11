@@ -704,6 +704,17 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="v45Epvg1CP" role="3cqZAp">
+                <node concept="1rXfSq" id="v45Epvg1CN" role="3clFbG">
+                  <ref role="37wK5l" node="4sm8lF4o_YW" resolve="updateStaticMethods" />
+                  <node concept="37vLTw" id="v45Epvg2un" role="37wK5m">
+                    <ref role="3cqZAo" node="2esXIF0W1Ud" resolve="ac" />
+                  </node>
+                  <node concept="37vLTw" id="v45Epvg4_U" role="37wK5m">
+                    <ref role="3cqZAo" node="gPyMK9FQG7" resolve="kind" />
+                  </node>
+                </node>
+              </node>
             </node>
             <node concept="3clFbC" id="3LuY8HzxGZu" role="3eO9$A">
               <node concept="37vLTw" id="2BHiRxgmjxH" role="3uHU7B">

@@ -2925,9 +2925,9 @@
     <node concept="9SLcT" id="147CB3QsTSz" role="9SGkU">
       <node concept="3clFbS" id="147CB3QsTS$" role="2VODD2">
         <node concept="3clFbJ" id="147CB3QsTS_" role="3cqZAp">
-          <node concept="3clFbC" id="147CB3QsTSA" role="3clFbw">
-            <node concept="2DA6wF" id="147CB3QsTSU" role="3uHU7B" />
-            <node concept="359W_D" id="147CB3QsTSV" role="3uHU7w">
+          <node concept="17R0WA" id="v45EpuxFxh" role="3clFbw">
+            <node concept="2DA6wF" id="v45EpuxFxi" role="3uHU7B" />
+            <node concept="359W_D" id="v45EpuxFxj" role="3uHU7w">
               <ref role="359W_E" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
               <ref role="359W_F" to="tpee:h9B3oxE" resolve="visibility" />
             </node>
@@ -2947,11 +2947,11 @@
               </node>
               <node concept="3clFbS" id="147CB3QsTSL" role="3clFbx">
                 <node concept="3cpWs6" id="147CB3QsTSM" role="3cqZAp">
-                  <node concept="3clFbC" id="147CB3QsTSN" role="3cqZAk">
-                    <node concept="35c_gC" id="147CB3QsTST" role="3uHU7w">
+                  <node concept="17R0WA" id="v45EpuxFOb" role="3cqZAk">
+                    <node concept="2DD5aU" id="v45EpuxFOc" role="3uHU7B" />
+                    <node concept="35c_gC" id="v45EpuxFOd" role="3uHU7w">
                       <ref role="35c_gD" to="tpee:gFTm1ZL" resolve="PublicVisibility" />
                     </node>
-                    <node concept="2DD5aU" id="147CB3QsTSS" role="3uHU7B" />
                   </node>
                 </node>
               </node>

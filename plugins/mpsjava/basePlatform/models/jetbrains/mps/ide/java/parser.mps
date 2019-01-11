@@ -7,11 +7,11 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="7db4447f-913e-4b81-bd75-c9a473319ac6" name="jetbrains.mps.baseLanguage.doubleDispatch" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="1" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -14090,8 +14090,8 @@
           <node concept="3cpWsn" id="6CKW2FPjXKf" role="3cpWs9">
             <property role="TrG5h" value="contents" />
             <node concept="2YIFZM" id="317B3Pc$yhB" role="33vP2m">
-              <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
               <ref role="37wK5l" to="18ew:~IFileUtil.getTextContents(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getTextContents" />
+              <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
               <node concept="37vLTw" id="2BHiRxgkX5$" role="37wK5m">
                 <ref role="3cqZAo" node="6CKW2FPjFm$" resolve="file" />
               </node>
@@ -23973,8 +23973,8 @@
             <property role="TrG5h" value="contents" />
             <node concept="17QB3L" id="2Uk7YSyBCn_" role="1tU5fm" />
             <node concept="2YIFZM" id="2Uk7YSyBCNF" role="33vP2m">
-              <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
               <ref role="37wK5l" to="18ew:~IFileUtil.getTextContents(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getTextContents" />
+              <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
               <node concept="37vLTw" id="2Uk7YSyULME" role="37wK5m">
                 <ref role="3cqZAo" node="2Uk7YSyB28L" resolve="file" />
               </node>
@@ -27325,8 +27325,8 @@
               </node>
               <node concept="2Xjw5R" id="1$AwQro$3q4" role="2OqNvi">
                 <node concept="1xMEDy" id="1$AwQro$3q6" role="1xVPHs">
-                  <node concept="chp4Y" id="1kuOZsiQpzI" role="ri$Ld">
-                    <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                  <node concept="chp4Y" id="v45Epvf3im" role="ri$Ld">
+                    <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                   </node>
                 </node>
               </node>
@@ -30328,8 +30328,8 @@
                     </node>
                   </node>
                   <node concept="2YIFZM" id="3jGGvHIl43O" role="2GsD0m">
-                    <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
                     <ref role="37wK5l" to="18ew:~IFileUtil.getAllFiles(jetbrains.mps.vfs.IFile):java.util.List" resolve="getAllFiles" />
+                    <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
                     <node concept="2GrUjf" id="3jGGvHIl43P" role="37wK5m">
                       <ref role="2Gs0qQ" node="3jGGvHIjU9t" resolve="entry" />
                     </node>
