@@ -27,7 +27,7 @@ public class check_StaticInterfaceMethodCall_NonTypesystemRule extends AbstractN
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(staticMethodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       return;
     }
-    Project project = null;
+    Project project;
     SModule module = check_93pmib_a0c0b(SNodeOperations.getModel(staticMethodCall));
     project = SModuleOperations.getProjectForModule(module);
     if (project == null) {

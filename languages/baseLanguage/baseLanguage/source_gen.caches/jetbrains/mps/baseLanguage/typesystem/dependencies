@@ -1325,6 +1325,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_StaticFinalFieldWasAssigned_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_StaticInitializer_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_StaticInterfaceMethodCall_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_StaticInterfaceMethodDeclarationV8_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_StaticInterfaceMethodsHaveAllowedModifiers_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_StringLiteral_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_StringTypeClassifierType_NonTypesystemRule" />
@@ -3847,6 +3848,26 @@
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.check_StaticInterfaceMethodDeclarationV8_NonTypesystemRule">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.compiler.JavaCompilerOptionsComponent" />
+    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
