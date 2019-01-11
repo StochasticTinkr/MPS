@@ -489,11 +489,11 @@
             <node concept="liA8E" id="3qWAZKIruuj" role="2OqNvi">
               <ref role="37wK5l" to="tken:5VKiljgm7i" resolve="collect" />
               <node concept="2OqwBi" id="3x_dLGIxRCg" role="37wK5m">
-                <node concept="liA8E" id="3x_dLGIxZKs" role="2OqNvi">
-                  <ref role="37wK5l" to="tken:2pk5iwY3SS_" resolve="getAllModules" />
-                </node>
                 <node concept="37vLTw" id="6tUicD6yReQ" role="2Oq$k0">
                   <ref role="3cqZAo" node="6tUicD6yJc$" resolve="designtimeClosure" />
+                </node>
+                <node concept="liA8E" id="3x_dLGIxZKs" role="2OqNvi">
+                  <ref role="37wK5l" to="tken:2pk5iwY3SS_" resolve="getAllModules" />
                 </node>
               </node>
               <node concept="37vLTw" id="5I1s5Nvyo7U" role="37wK5m">
@@ -584,11 +584,11 @@
                 </node>
               </node>
               <node concept="2OqwBi" id="2whOjLMv80B" role="2Oq$k0">
-                <node concept="liA8E" id="2whOjLMv80Z" role="2OqNvi">
-                  <ref role="37wK5l" to="tken:2pk5iwY3SS_" resolve="getAllModules" />
-                </node>
                 <node concept="37vLTw" id="6tUicD6yJcI" role="2Oq$k0">
                   <ref role="3cqZAo" node="6tUicD6yJc$" resolve="designtimeClosure" />
+                </node>
+                <node concept="liA8E" id="2whOjLMv80Z" role="2OqNvi">
+                  <ref role="37wK5l" to="tken:2pk5iwY3SS_" resolve="getAllModules" />
                 </node>
               </node>
             </node>
@@ -805,7 +805,6 @@
       </node>
     </node>
     <node concept="13i0hz" id="3X9rC2XzJij" role="13h7CS">
-      <property role="13i0iv" value="true" />
       <property role="TrG5h" value="getModules" />
       <property role="13i0it" value="true" />
       <node concept="A3Dl8" id="3X9rC2XzJik" role="3clF45">

@@ -29,7 +29,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.*;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -39,6 +39,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkForConcept;
 import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkNotStatic;
@@ -48,7 +49,7 @@ import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkStatic;
 /**
  * Common ancestor for all the generated behavior aspects (per concept).
  * Exploiting the idea of virtual table to yield the dynamic dispatch for behavior methods' invocation.
-
+ * <p>
  * TODO
  * Features:
  * Multiple dispatch?
@@ -59,11 +60,13 @@ import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkStatic;
 public abstract class BaseBHDescriptor implements BHDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBHDescriptor.class);
 
+  private final SMethodVirtualTable mySuperVTable = new SMethodVirtualTable();
+  private final BehaviorRegistry myBehaviorRegistry;
+  private final AtomicReference<List<SMethod<?>>> myCachedMethods = new AtomicReference<>(); // optimization by ashatalin
+
   private SAbstractConcept myConcept;
   private boolean myInitialized = false;
   private SMethodVirtualTable myVTable;
-  private final SMethodVirtualTable mySuperVTable = new SMethodVirtualTable();
-  private final BehaviorRegistry myBehaviorRegistry;
   private AncestorCache myAncestorCache;
 
   protected BaseBHDescriptor(BehaviorRegistry behaviorRegistry) {
@@ -215,7 +218,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     SConstructor defaultConstructor = new SDefaultConstructorImpl(this, AccessPrivileges.PUBLIC);
     Object[] emptyParameters = new Object[0];
     new ConstructionHandler(myAncestorCache, myConcept).initNode(node, defaultConstructor,
-        getParametersArray(Collections.emptyList(), emptyParameters));
+                                                                 getParametersArray(Collections.emptyList(), emptyParameters));
   }
 
   @Override
@@ -360,18 +363,27 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   @NotNull
   @Override
   public List<SMethod<?>> getMethods() {
-    Set<SMethod<?>> result = new HashSet<>();
-    for (SAbstractConcept concept : myAncestorCache.getAncestorsConstructionOrder()) {
-      BHDescriptor bhDescriptor = getBHDescriptor(concept);
-      List<SMethod<?>> conceptMethods = bhDescriptor.getDeclaredMethods();
-      for (SMethod<?> method : conceptMethods) {
-        if (method.getModifiers().isPublic() && !method.getModifiers().isVirtual()) {
-          result.add(method);
+    List<SMethod<?>> currentMethods = myCachedMethods.get();
+    if (currentMethods == null) {
+      Set<SMethod<?>> result = new HashSet<>();
+      for (SAbstractConcept concept : myAncestorCache.getAncestorsConstructionOrder()) {
+        BHDescriptor bhDescriptor = getBHDescriptor(concept);
+        List<SMethod<?>> conceptMethods = bhDescriptor.getDeclaredMethods();
+        for (SMethod<?> method : conceptMethods) {
+          if (method.getModifiers().isPublic() && !method.getModifiers().isVirtual()) {
+            result.add(method);
+          }
         }
       }
+      result.addAll(myVTable.getMethods());
+      currentMethods = new ArrayList<>(result);
+      if (myCachedMethods.compareAndSet(null, currentMethods)) {
+        return currentMethods;
+      } else {
+        return myCachedMethods.get();
+      }
     }
-    result.addAll(myVTable.getMethods());
-    return new ArrayList<>(result);
+    return currentMethods;
   }
 
   /**
