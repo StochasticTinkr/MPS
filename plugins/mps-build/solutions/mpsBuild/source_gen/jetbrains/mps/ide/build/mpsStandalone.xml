@@ -35,9 +35,6 @@
         <exclude name="src/" />
         <exclude name="ant/docs.zip" />
         <exclude name="ant/src/*" />
-        <exclude name="java-api.jar" />
-        <exclude name="java-impl.jar" />
-        <exclude name="java_resources_en.jar" />
       </fileset>
     </copy>
     <copy todir="${build.layout}/lib">

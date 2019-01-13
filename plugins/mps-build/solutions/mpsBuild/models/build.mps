@@ -2744,16 +2744,16 @@
             <ref role="Saw0g" node="1nB28rXacP" resolve="mps-environment" />
           </node>
           <node concept="398223" id="1nB28rXgfj" role="39821P">
+            <node concept="3_J27D" id="1nB28rXgfl" role="Nbhlr">
+              <node concept="3Mxwew" id="1nB28rXgfr" role="3MwsjC">
+                <property role="3MwjfP" value="modules" />
+              </node>
+            </node>
             <node concept="1bldCd" id="21bannvWpJS" role="39821P">
               <ref role="3$exzV" node="3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
             </node>
             <node concept="1bldCd" id="21bannvWpOi" role="39821P">
               <ref role="3$exzV" node="4Hc8TwAmypn" resolve="jetbrains.mps.tool.common" />
-            </node>
-            <node concept="3_J27D" id="1nB28rXgfl" role="Nbhlr">
-              <node concept="3Mxwew" id="1nB28rXgfr" role="3MwsjC">
-                <property role="3MwjfP" value="modules" />
-              </node>
             </node>
           </node>
           <node concept="3_J27D" id="3zjMY$964$r" role="Nbhlr">
@@ -28641,15 +28641,6 @@
           </node>
           <node concept="3LWZYq" id="4qSyqY5QLlw" role="1juEy9">
             <property role="3LWZYl" value="ant/src/*" />
-          </node>
-          <node concept="3LWZYq" id="5$FmWuuZkCq" role="1juEy9">
-            <property role="3LWZYl" value="java-api.jar" />
-          </node>
-          <node concept="3LWZYq" id="5$FmWuuZkCX" role="1juEy9">
-            <property role="3LWZYl" value="java-impl.jar" />
-          </node>
-          <node concept="3LWZYq" id="5$FmWuuZkD5" role="1juEy9">
-            <property role="3LWZYl" value="java_resources_en.jar" />
           </node>
         </node>
         <node concept="3ygNvl" id="1Z_UwmP8dJo" role="39821P">
