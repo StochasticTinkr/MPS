@@ -26,6 +26,7 @@ import org.jetbrains.mps.annotations.Internal;
 import java.io.File;
 
 public class JarIoFileSystem implements IFileSystem {
+  public static final String JAR_SEPARATOR = "!";
   private static final Logger LOG = LogManager.getLogger(JarIoFileSystem.class);
 
   private static final JarIoFileSystem INSTANCE = new JarIoFileSystem();
@@ -41,7 +42,7 @@ public class JarIoFileSystem implements IFileSystem {
   @Override
   public IFile getFile(@NotNull String path) {
     new PathAssert(path).absolute().noDots().osIndependentPath();
-    int index = path.indexOf('!');
+    int index = path.indexOf(JAR_SEPARATOR);
     assert index > 0;
     String jarPath = path.substring(0, index);
     String entryPath = path.substring(index + 1);

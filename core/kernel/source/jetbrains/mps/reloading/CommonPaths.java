@@ -30,14 +30,7 @@ import java.util.stream.Collectors;
 
 //todo [MM] rename this class, possibly make it a component
 public final class CommonPaths {
-  private static Computable<List<String>> ourJDKProducer = null;
-
   //--------paths-----------
-
-
-  public static void setJDKProducer(Computable<List<String>> JDKProducer) {
-    ourJDKProducer = JDKProducer;
-  }
 
   public static List<String> getMPSPaths(ClassType type) {
     Predicate<String> toolsPredicate = s -> s.contains("jdk.jdi") || s.contains("tools.jar");
@@ -74,7 +67,7 @@ public final class CommonPaths {
   }
 
   public static List<String> getJDKPath() {
-    return ourJDKProducer.compute();
+    return SDKDiscovery.discover().stream().map(qualifiedPath -> qualifiedPath.getPath()).collect(Collectors.toList());
   }
 
   //------classpaths : MPS--------

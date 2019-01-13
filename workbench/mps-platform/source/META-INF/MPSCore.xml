@@ -10,10 +10,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.java.IdeaSDKDiscovery</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.help.PlatformHelpURLProvider</implementation-class>
     </component>
 
