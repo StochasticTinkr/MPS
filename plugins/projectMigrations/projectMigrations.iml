@@ -30,7 +30,6 @@
     <orderEntry type="module" module-name="console" />
     <orderEntry type="module" module-name="migrations-runtime" />
     <orderEntry type="module" module-name="make-runtime" />
-    <orderEntry type="module" module-name="migrationAssistant" />
     <orderEntry type="module" module-name="smodelquery-runtime" />
   </component>
 </module>
