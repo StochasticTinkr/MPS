@@ -11222,6 +11222,18 @@
       </node>
     </node>
     <node concept="2tJIrI" id="stxyIU1Hf3" role="jymVt" />
+    <node concept="3UR2Jj" id="3uHpWKwuCBX" role="lGtFl">
+      <node concept="TZ5HI" id="3uHpWKwuDGh" role="3nqlJM">
+        <node concept="TZ5HA" id="3uHpWKwuDGi" role="3HnX3l">
+          <node concept="1dT_AC" id="3uHpWKwuETX" role="1dT_Ay">
+            <property role="1dT_AB" value="Likely, shall cease to exist. No reason to duplicate IDEA startup code. IdeaEnvironment starts IDEA app, and Ant has to ensure classpath only" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="3uHpWKwuDGj" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
   </node>
 </model>
 

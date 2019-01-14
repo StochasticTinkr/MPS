@@ -19,7 +19,6 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="zf81" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.net(JDK/)" />
     <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
-    <import index="d6hn" ref="r:f9ad0653-f934-4037-8035-de5d2e74cf22(jetbrains.mps.core.tool.environment.classloading)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -259,10 +258,6 @@
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
-      <concept id="1221737317277" name="jetbrains.mps.baseLanguage.structure.StaticInitializer" flags="lg" index="1Pe0a1">
-        <child id="1221737317278" name="statementList" index="1Pe0a2" />
-      </concept>
-      <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -2744,29 +2739,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3SKdUt" id="21bannvRwzs" role="3cqZAp">
-              <node concept="3SKdUq" id="21bannvRwzu" role="3SKWNk">
-                <property role="3SKdUp" value="AntBootstrap comes from this module, and this module is part of currentClassPathString, hence AntBootstrap would be available" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="3ufQioQQtrU" role="3cqZAp">
-              <node concept="2OqwBi" id="3ufQioQQtrV" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagTtxL" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3ufQioQQtqL" resolve="commandLine" />
-                </node>
-                <node concept="liA8E" id="3ufQioQQtrX" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-                  <node concept="2OqwBi" id="21bannvRu$6" role="37wK5m">
-                    <node concept="3VsKOn" id="21bannvRunB" role="2Oq$k0">
-                      <ref role="3VsUkX" node="2doG_VG5fjO" resolve="AntBootstrap" />
-                    </node>
-                    <node concept="liA8E" id="21bannvRuWQ" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="3ufQioQQts1" role="3cqZAp">
               <node concept="2OqwBi" id="3ufQioQQts2" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTxnd" role="2Oq$k0">
@@ -4967,6 +4939,22 @@
       <node concept="TZ5HA" id="4vDU0BPxr4z" role="TZ5H$">
         <node concept="1dT_AC" id="4vDU0BPxr4$" role="1dT_Ay">
           <property role="1dT_AB" value="Hence, the idea of the task is to get worker's classpath ready to use whatever MPS functionality needed." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3uHpWKwvaFS" role="TZ5H$">
+        <node concept="1dT_AC" id="3uHpWKwvaFT" role="1dT_Ay">
+          <property role="1dT_AB" value="Specific task subclasses may control exact classpath with " />
+        </node>
+        <node concept="1dT_AA" id="3uHpWKwvb0Z" role="1dT_Ay">
+          <node concept="92FcH" id="3uHpWKwvb15" role="qph3F">
+            <node concept="TZ5HA" id="3uHpWKwvb17" role="2XjZqd" />
+            <node concept="VXe0Z" id="3uHpWKwvkjf" role="92FcQ">
+              <ref role="VXe0S" node="3ufQioQQtwU" resolve="calculateClassPath" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="3uHpWKwvb0Y" role="1dT_Ay">
+          <property role="1dT_AB" value=" based on their worker's demand." />
         </node>
       </node>
     </node>
@@ -8808,6 +8796,18 @@
   </node>
   <node concept="312cEu" id="7oFdQJwEW3N">
     <property role="TrG5h" value="CustomMPSLoadTask" />
+    <node concept="3UR2Jj" id="3uHpWKwuFVA" role="lGtFl">
+      <node concept="TZ5HI" id="3uHpWKwuFVB" role="3nqlJM">
+        <node concept="TZ5HA" id="3uHpWKwuFVC" role="3HnX3l">
+          <node concept="1dT_AC" id="3uHpWKwuG6H" role="1dT_Ay">
+            <property role="1dT_AB" value="MpsLoadTask could do the same" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="3uHpWKwuFVD" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
     <node concept="312cEg" id="7oFdQJwH8yC" role="jymVt">
       <property role="TrG5h" value="myArgs" />
       <node concept="3Tm6S6" id="7oFdQJwH8yD" role="1B3o_S" />
@@ -8904,286 +8904,6 @@
     <node concept="3Tm1VV" id="7oFdQJwEW3O" role="1B3o_S" />
     <node concept="3uibUv" id="7oFdQJwGxm$" role="1zkMxy">
       <ref role="3uigEE" node="3ufQioQQti6" resolve="MpsLoadTask" />
-    </node>
-  </node>
-  <node concept="312cEu" id="2doG_VG5fjO">
-    <property role="TrG5h" value="AntBootstrap" />
-    <property role="1sVAO0" value="false" />
-    <property role="1EXbeo" value="false" />
-    <node concept="1Pe0a1" id="1hfhrkjIGbi" role="jymVt">
-      <node concept="3clFbS" id="1hfhrkjIGbk" role="1Pe0a2">
-        <node concept="3SKdUt" id="1hfhrkjIQ8n" role="3cqZAp">
-          <node concept="3SKdUq" id="1hfhrkjIQ8W" role="3SKWNk">
-            <property role="3SKdUp" value="This is a temporary workaround for classloading loop problem" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="1hfhrkjILRp" role="3cqZAp">
-          <node concept="2YIFZM" id="1hfhrkjIM4w" role="3clFbG">
-            <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
-            <ref role="37wK5l" to="q7tw:~LogManager.exists(java.lang.String):org.apache.log4j.Logger" resolve="exists" />
-            <node concept="Xl_RD" id="1hfhrkjIM5t" role="37wK5m">
-              <property role="Xl_RC" value="testLog" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="2doG_VG5fjP" role="1B3o_S" />
-    <node concept="3clFbW" id="2doG_VG5fjQ" role="jymVt">
-      <node concept="3Tm1VV" id="2doG_VG5fjR" role="1B3o_S" />
-      <node concept="3cqZAl" id="2doG_VG5fjS" role="3clF45" />
-      <node concept="3clFbS" id="2doG_VG5fjT" role="3clF47" />
-    </node>
-    <node concept="2YIFZL" id="2doG_VG5fjU" role="jymVt">
-      <property role="TrG5h" value="main" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="2doG_VG5fjV" role="1B3o_S" />
-      <node concept="3cqZAl" id="2doG_VG5fjW" role="3clF45" />
-      <node concept="37vLTG" id="2doG_VG5fjX" role="3clF46">
-        <property role="TrG5h" value="args" />
-        <property role="3TUv4t" value="false" />
-        <node concept="10Q1$e" id="2doG_VG5fjY" role="1tU5fm">
-          <node concept="17QB3L" id="2doG_VG5fjZ" role="10Q1$1" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="2doG_VG5fk0" role="3clF47">
-        <node concept="3SKdUt" id="2doG_VG5fk1" role="3cqZAp">
-          <node concept="3SKdUq" id="2doG_VG5fk2" role="3SKWNk">
-            <property role="3SKdUp" value="    System.setProperty(ClassloaderUtil.PROPERTY_IGNORE_CLASSPATH, &quot;.*trove4j.*trove4j.*\\.jar&quot;);" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="2doG_VG5fk7" role="3cqZAp">
-          <node concept="3cpWsn" id="2doG_VG5fk8" role="3cpWs9">
-            <property role="TrG5h" value="newClassLoader" />
-            <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="1nB28s0mxK" role="1tU5fm">
-              <ref role="3uigEE" to="d6hn:5QbKaIbm7l0" resolve="UrlClassLoader" />
-            </node>
-            <node concept="2YIFZM" id="2doG_VG5fka" role="33vP2m">
-              <ref role="1Pybhc" to="d6hn:1bMaI2XqGdw" resolve="ClassloaderUtil" />
-              <ref role="37wK5l" to="d6hn:1bMaI2XqGfh" resolve="initClassloader" />
-              <node concept="2ShNRf" id="2doG_VG5fkb" role="37wK5m">
-                <node concept="1pGfFk" id="2doG_VG5fkc" role="2ShVmc">
-                  <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
-                  <node concept="3uibUv" id="2doG_VG5fkd" role="1pMfVU">
-                    <ref role="3uigEE" to="zf81:~URL" resolve="URL" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="$3XJyojHOK" role="3cqZAp">
-          <node concept="2OqwBi" id="$3XJyojIyi" role="3clFbG">
-            <node concept="2YIFZM" id="$3XJyojIub" role="2Oq$k0">
-              <ref role="37wK5l" to="wyt6:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
-              <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
-            </node>
-            <node concept="liA8E" id="$3XJyojIEe" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Thread.setContextClassLoader(java.lang.ClassLoader):void" resolve="setContextClassLoader" />
-              <node concept="37vLTw" id="$3XJyojIGN" role="37wK5m">
-                <ref role="3cqZAo" node="2doG_VG5fk8" resolve="newClassLoader" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="SfApY" id="2doG_VG5fke" role="3cqZAp">
-          <node concept="TDmWw" id="2doG_VG5fkf" role="TEbGg">
-            <node concept="3clFbS" id="2doG_VG5fkg" role="TDEfX">
-              <node concept="3clFbF" id="2doG_VG5fkh" role="3cqZAp">
-                <node concept="2OqwBi" id="2doG_VG5fki" role="3clFbG">
-                  <node concept="37vLTw" id="3GM_nagTsnp" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2doG_VG5fkm" resolve="e" />
-                  </node>
-                  <node concept="liA8E" id="2doG_VG5fkk" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace(java.io.PrintStream):void" resolve="printStackTrace" />
-                    <node concept="10M0yZ" id="2doG_VG5fkl" role="37wK5m">
-                      <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                      <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWsn" id="2doG_VG5fkm" role="TDEfY">
-              <property role="TrG5h" value="e" />
-              <property role="3TUv4t" value="false" />
-              <node concept="3uibUv" id="2doG_VG5fkn" role="1tU5fm">
-                <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="2doG_VG5fko" role="SfCbr">
-            <node concept="3cpWs8" id="2doG_VG5fkp" role="3cqZAp">
-              <node concept="3cpWsn" id="2doG_VG5fkq" role="3cpWs9">
-                <property role="TrG5h" value="clazz" />
-                <property role="3TUv4t" value="false" />
-                <node concept="3uibUv" id="2doG_VG5fkr" role="1tU5fm">
-                  <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-                </node>
-                <node concept="2OqwBi" id="2doG_VG5fks" role="33vP2m">
-                  <node concept="37vLTw" id="3GM_nagTt$_" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2doG_VG5fk8" resolve="newClassLoader" />
-                  </node>
-                  <node concept="liA8E" id="2doG_VG5fku" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~ClassLoader.loadClass(java.lang.String):java.lang.Class" resolve="loadClass" />
-                    <node concept="AH0OO" id="2doG_VG5fkv" role="37wK5m">
-                      <node concept="37vLTw" id="2BHiRxgmyVZ" role="AHHXb">
-                        <ref role="3cqZAo" node="2doG_VG5fjX" resolve="args" />
-                      </node>
-                      <node concept="3cmrfG" id="2doG_VG5fkx" role="AHEQo">
-                        <property role="3cmrfH" value="0" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="2doG_VG5fky" role="3cqZAp">
-              <node concept="3cpWsn" id="2doG_VG5fkz" role="3cpWs9">
-                <property role="TrG5h" value="mainMethod" />
-                <property role="3TUv4t" value="false" />
-                <node concept="3uibUv" id="2doG_VG5fk$" role="1tU5fm">
-                  <ref role="3uigEE" to="t6h5:~Method" resolve="Method" />
-                </node>
-                <node concept="2OqwBi" id="2doG_VG5fk_" role="33vP2m">
-                  <node concept="37vLTw" id="3GM_nagTtDK" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2doG_VG5fkq" resolve="clazz" />
-                  </node>
-                  <node concept="liA8E" id="2doG_VG5fkB" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Class.getDeclaredMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getDeclaredMethod" />
-                    <node concept="Xl_RD" id="2doG_VG5fkC" role="37wK5m">
-                      <property role="Xl_RC" value="main" />
-                    </node>
-                    <node concept="2OqwBi" id="2doG_VG5fkD" role="37wK5m">
-                      <node concept="37vLTw" id="2BHiRxgllde" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2doG_VG5fjX" resolve="args" />
-                      </node>
-                      <node concept="liA8E" id="2doG_VG5fkF" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="2doG_VG5fkG" role="3cqZAp">
-              <node concept="2OqwBi" id="2doG_VG5fkH" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagT_rg" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2doG_VG5fkz" resolve="mainMethod" />
-                </node>
-                <node concept="liA8E" id="2doG_VG5fkJ" role="2OqNvi">
-                  <ref role="37wK5l" to="t6h5:~AccessibleObject.setAccessible(boolean):void" resolve="setAccessible" />
-                  <node concept="3clFbT" id="2doG_VG5fkK" role="37wK5m">
-                    <property role="3clFbU" value="true" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="2doG_VG5fkL" role="3cqZAp">
-              <node concept="3cpWsn" id="2doG_VG5fkM" role="3cpWs9">
-                <property role="TrG5h" value="passedArgs" />
-                <property role="3TUv4t" value="false" />
-                <node concept="10Q1$e" id="2doG_VG5fkN" role="1tU5fm">
-                  <node concept="17QB3L" id="2doG_VG5fkO" role="10Q1$1" />
-                </node>
-                <node concept="2ShNRf" id="2doG_VG5fkP" role="33vP2m">
-                  <node concept="3$_iS1" id="2doG_VG5fkQ" role="2ShVmc">
-                    <node concept="3$GHV9" id="2doG_VG5fkR" role="3$GQph">
-                      <node concept="3cpWsd" id="2doG_VG5fkS" role="3$I4v7">
-                        <node concept="2OqwBi" id="2doG_VG5fkT" role="3uHU7B">
-                          <node concept="37vLTw" id="2BHiRxglf4V" role="2Oq$k0">
-                            <ref role="3cqZAo" node="2doG_VG5fjX" resolve="args" />
-                          </node>
-                          <node concept="1Rwk04" id="2doG_VG5fkV" role="2OqNvi" />
-                        </node>
-                        <node concept="3cmrfG" id="2doG_VG5fkW" role="3uHU7w">
-                          <property role="3cmrfH" value="1" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="17QB3L" id="2doG_VG5fkX" role="3$_nBY" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="2doG_VG5fkY" role="3cqZAp">
-              <node concept="2YIFZM" id="2doG_VG5fkZ" role="3clFbG">
-                <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                <ref role="37wK5l" to="wyt6:~System.arraycopy(java.lang.Object,int,java.lang.Object,int,int):void" resolve="arraycopy" />
-                <node concept="37vLTw" id="2BHiRxglwxv" role="37wK5m">
-                  <ref role="3cqZAo" node="2doG_VG5fjX" resolve="args" />
-                </node>
-                <node concept="3cmrfG" id="2doG_VG5fl1" role="37wK5m">
-                  <property role="3cmrfH" value="1" />
-                </node>
-                <node concept="37vLTw" id="3GM_nagTzTS" role="37wK5m">
-                  <ref role="3cqZAo" node="2doG_VG5fkM" resolve="passedArgs" />
-                </node>
-                <node concept="3cmrfG" id="2doG_VG5fl3" role="37wK5m">
-                  <property role="3cmrfH" value="0" />
-                </node>
-                <node concept="2OqwBi" id="2doG_VG5fl4" role="37wK5m">
-                  <node concept="37vLTw" id="3GM_nagTxLW" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2doG_VG5fkM" resolve="passedArgs" />
-                  </node>
-                  <node concept="1Rwk04" id="2doG_VG5fl6" role="2OqNvi" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="2doG_VG5fl7" role="3cqZAp">
-              <node concept="2OqwBi" id="2doG_VG5fl8" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagTx32" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2doG_VG5fkz" resolve="mainMethod" />
-                </node>
-                <node concept="liA8E" id="2doG_VG5fla" role="2OqNvi">
-                  <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
-                  <node concept="10Nm6u" id="2doG_VG5flb" role="37wK5m" />
-                  <node concept="10QFUN" id="2doG_VG5flc" role="37wK5m">
-                    <node concept="37vLTw" id="3GM_nagTx67" role="10QFUP">
-                      <ref role="3cqZAo" node="2doG_VG5fkM" resolve="passedArgs" />
-                    </node>
-                    <node concept="3uibUv" id="2doG_VG5fle" role="10QFUM">
-                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="2doG_VG5flf" role="3cqZAp">
-          <node concept="2YIFZM" id="2doG_VG5flg" role="3clFbG">
-            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-            <ref role="37wK5l" to="wyt6:~System.exit(int):void" resolve="exit" />
-            <node concept="3cmrfG" id="2doG_VG5flh" role="37wK5m">
-              <property role="3cmrfH" value="1" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3UR2Jj" id="4vDU0BP$sgL" role="lGtFl">
-      <node concept="TZ5HA" id="4vDU0BP$sgM" role="TZ5H$">
-        <node concept="1dT_AC" id="4vDU0BP$sgN" role="1dT_Ay">
-          <property role="1dT_AB" value="This is projection of j.m.Launcher together with com.intellij.ide.Bootstrap into Ant-MPS integration." />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="4vDU0BP$sYv" role="TZ5H$">
-        <node concept="1dT_AC" id="4vDU0BP$sYw" role="1dT_Ay">
-          <property role="1dT_AB" value="Here, we have to prepare classpath with MPS for an MPS-aware worker, so that it can initialize proper environment/platform." />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="4vDU0BP$tqJ" role="TZ5H$">
-        <node concept="1dT_AC" id="4vDU0BP$tqK" role="1dT_Ay">
-          <property role="1dT_AB" value="Therefore, this class itself shall not depend from MPS classes outside of this module or its direct dependencies (i.e j.m.tool.common aka [ant-mps-common])" />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="4vDU0BP$sXh" role="TZ5H$">
-        <node concept="1dT_AC" id="4vDU0BP$sXi" role="1dT_Ay">
-          <property role="1dT_AB" value="" />
-        </node>
-      </node>
     </node>
   </node>
 </model>

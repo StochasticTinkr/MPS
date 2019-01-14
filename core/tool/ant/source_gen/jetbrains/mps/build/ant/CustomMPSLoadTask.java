@@ -7,6 +7,11 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
 
+/**
+ * 
+ * @deprecated MpsLoadTask could do the same
+ */
+@Deprecated
 public class CustomMPSLoadTask extends MpsLoadTask {
   private List<String> myArgs;
 

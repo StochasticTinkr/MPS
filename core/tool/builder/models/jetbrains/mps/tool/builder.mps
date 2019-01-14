@@ -3086,15 +3086,17 @@
       </node>
       <node concept="TZ5HA" id="4vDU0BP$qJe" role="TZ5H$">
         <node concept="1dT_AC" id="4vDU0BP$qJf" role="1dT_Ay">
-          <property role="1dT_AB" value="well-defined at the moment. Forked workers start with a help of AntBootstrap class which generally loads everything under mps-home/lib" />
+          <property role="1dT_AB" value="well-defined at the moment. Now MPS workers start with a help of a code in MpsLoadTask class which generally loads everything " />
         </node>
       </node>
-      <node concept="TZ5HA" id="4vDU0BP$rzy" role="TZ5H$">
-        <node concept="1dT_AC" id="4vDU0BP$rzz" role="1dT_Ay">
-          <property role="1dT_AB" value="while in-process tasks rely on Ant mechanism to configure classpath for a task." />
+      <node concept="TZ5HA" id="3uHpWKwuTTb" role="TZ5H$">
+        <node concept="1dT_AC" id="3uHpWKwuTTc" role="1dT_Ay">
+          <property role="1dT_AB" value="under mps-home/lib based on Ant Project properties (various &quot;artifacts.*&quot; values). Task has control over classpath through " />
         </node>
-        <node concept="1dT_AC" id="4vDU0BP$rrN" role="1dT_Ay">
-          <property role="1dT_AB" value="" />
+      </node>
+      <node concept="TZ5HA" id="3uHpWKwuUjr" role="TZ5H$">
+        <node concept="1dT_AC" id="3uHpWKwuUjs" role="1dT_Ay">
+          <property role="1dT_AB" value="MpsLoadTask#calculateClassPath() method and may supply extra elements in use by particular worker (e.g. MigrationTask adds jars of migration plugin)" />
         </node>
       </node>
     </node>

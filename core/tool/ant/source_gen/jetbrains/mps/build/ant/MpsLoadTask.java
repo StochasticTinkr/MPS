@@ -38,6 +38,7 @@ import java.util.Scanner;
  * Generally, MPS Ant tasks have very limited classpath (j.m.tool.common and j.m.tool.ant, respectively [ant-mps] and [ant-mps-common])
  * while actual 'worker' class likely to employ full power of MPS (either with MpsEnvironment or IdeaEnvironment).
  * Hence, the idea of the task is to get worker's classpath ready to use whatever MPS functionality needed.
+ * Specific task subclasses may control exact classpath with {@link jetbrains.mps.build.ant.MpsLoadTask#calculateClassPath(boolean) } based on their worker's demand.
  */
 public class MpsLoadTask extends Task {
   public static final String CONFIGURATION_NAME = "configuration.name";
@@ -166,8 +167,6 @@ public class MpsLoadTask extends Task {
       }
       commandLine.add("-classpath");
       commandLine.add(sb.toString());
-      // AntBootstrap comes from this module, and this module is part of currentClassPathString, hence AntBootstrap would be available 
-      commandLine.add(AntBootstrap.class.getName());
       commandLine.add(getWorkerClass());
       dumpPropertiesToWhatToDo();
       try {

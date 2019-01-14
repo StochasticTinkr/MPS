@@ -19,6 +19,11 @@ import java.util.Enumeration;
 import java.util.Properties;
 import java.util.Set;
 
+/**
+ * 
+ * @deprecated Likely, shall cease to exist. No reason to duplicate IDEA startup code. IdeaEnvironment starts IDEA app, and Ant has to ensure classpath only
+ */
+@Deprecated
 public class PathManager {
 
   /**
@@ -57,6 +62,7 @@ public class PathManager {
 
   private static final String PATHS_SELECTOR = System.getProperty(PROPERTY_PATHS_SELECTOR);
 
+  @Deprecated
   private PathManager() {
   }
 

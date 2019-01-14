@@ -50,8 +50,9 @@ import jetbrains.mps.util.annotation.ToRemove;
  * MPS-aware job triggered by an Ant task. Unlike the task, assumes MPS classes in the classpath. 
  * Extent of the classes is not well defined, though and may vary from worker to worker (e.g. some gonna use IdeaEnironment and hence 
  * need IDEA platform, others may stick to MpsEnvironment with less classes in the classpath). The mechanism to describe this is not 
- * well-defined at the moment. Forked workers start with a help of AntBootstrap class which generally loads everything under mps-home/lib
- * while in-process tasks rely on Ant mechanism to configure classpath for a task.
+ * well-defined at the moment. Now MPS workers start with a help of a code in MpsLoadTask class which generally loads everything 
+ * under mps-home/lib based on Ant Project properties (various "artifacts.*" values). Task has control over classpath through 
+ * MpsLoadTask#calculateClassPath() method and may supply extra elements in use by particular worker (e.g. MigrationTask adds jars of migration plugin)
  */
 public abstract class MpsWorker {
   private static final Logger LOG = LogManager.getLogger(MpsWorker.class);
