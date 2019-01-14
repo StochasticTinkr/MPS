@@ -28,7 +28,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class HashProvider9 extends IHashProvider {
-
   @Override
   public String getHash(String content) {
     return ModelDigestUtil.hashText(content);

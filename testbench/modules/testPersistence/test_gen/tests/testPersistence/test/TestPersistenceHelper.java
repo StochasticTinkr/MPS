@@ -18,7 +18,7 @@ import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import java.io.IOException;
 import junit.framework.Assert;
-import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import java.util.List;
 import java.util.Comparator;
 import java.util.ArrayList;
@@ -83,7 +83,7 @@ public class TestPersistenceHelper {
   }
 
   /*package*/ String getDefaultExt() {
-    return PersistenceRegistry.getInstance().getDefaultModelFactory().getFileExtension();
+    return PreinstalledDataSourceTypes.MPS.getFileExtension();
   }
 
   /*package*/ static <C> String assertListsEqual(List<C> expectedList, List<C> actualList, String name) {

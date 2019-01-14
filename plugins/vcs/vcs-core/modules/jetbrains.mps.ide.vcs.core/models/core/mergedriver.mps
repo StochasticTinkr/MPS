@@ -33,6 +33,8 @@
     <import index="7a2w" ref="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.util.xml)" />
     <import index="ends" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence(MPS.Core/)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
+    <import index="bxo2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence.datasource(MPS.OpenAPI/)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" implicit="true" />
     <import index="vpqd" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.xml.parsers(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -297,6 +299,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
         <property id="1200397540847" name="charConstant" index="1XhdNS" />
@@ -1249,6 +1254,17 @@
                         <node concept="2YIFZM" id="2TzypFyLI8J" role="3clFbG">
                           <ref role="37wK5l" node="2TzypFyLPSl" resolve="get" />
                           <ref role="1Pybhc" node="2TzypFyLPSe" resolve="FileType" />
+                          <node concept="2OqwBi" id="7RZXbb$4BhO" role="37wK5m">
+                            <node concept="37vLTw" id="7RZXbb$4B0I" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6ZJWS$QOgrU" resolve="mpsPlatform" />
+                            </node>
+                            <node concept="liA8E" id="7RZXbb$4BVK" role="2OqNvi">
+                              <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                              <node concept="3VsKOn" id="7RZXbb$4Cfa" role="37wK5m">
+                                <ref role="3VsUkX" to="ends:~ModelFactoryService" resolve="ModelFactoryService" />
+                              </node>
+                            </node>
+                          </node>
                           <node concept="37vLTw" id="7zbsrrw71_I" role="37wK5m">
                             <ref role="3cqZAo" node="7zbsrrw6uaL" resolve="filetype" />
                           </node>
@@ -5306,6 +5322,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7RZXbb$4k2A" role="jymVt" />
     <node concept="2YIFZL" id="2TzypFyLPSl" role="jymVt">
       <property role="TrG5h" value="get" />
       <node concept="3uibUv" id="2TzypFyLPSm" role="3clF45">
@@ -5339,7 +5356,7 @@
                         <node concept="3clFbF" id="7zbsrrw_D$c" role="3cqZAp">
                           <node concept="2OqwBi" id="7zbsrrw_D$d" role="3clFbG">
                             <node concept="37vLTw" id="7zbsrrw_O_v" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7zbsrrw72vN" resolve="filetype" />
+                              <ref role="3cqZAo" node="7zbsrrw72vN" resolve="fileExt" />
                             </node>
                             <node concept="liA8E" id="7zbsrrw_D$f" role="2OqNvi">
                               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
@@ -5388,20 +5405,21 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="7zbsrrwcr6U" role="3clFbw">
-                <node concept="2OqwBi" id="7zbsrrwcr6V" role="2Oq$k0">
-                  <node concept="liA8E" id="7zbsrrwcr6W" role="2OqNvi">
-                    <ref role="37wK5l" to="dush:~PersistenceFacade.getModelFactoryExtensions():java.util.Set" resolve="getModelFactoryExtensions" />
+              <node concept="3y3z36" id="7RZXbb$4y$s" role="3clFbw">
+                <node concept="10Nm6u" id="7RZXbb$4y_L" role="3uHU7w" />
+                <node concept="2OqwBi" id="7RZXbb$4rjZ" role="3uHU7B">
+                  <node concept="37vLTw" id="7RZXbb$4qQO" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7RZXbb$4oK5" resolve="service" />
                   </node>
-                  <node concept="2YIFZM" id="7zbsrrwcr6X" role="2Oq$k0">
-                    <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
-                    <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="7zbsrrwcr6Y" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />
-                  <node concept="37vLTw" id="7zbsrrwct8Q" role="37wK5m">
-                    <ref role="3cqZAo" node="7zbsrrw72vN" resolve="filetype" />
+                  <node concept="liA8E" id="7RZXbb$4sjR" role="2OqNvi">
+                    <ref role="37wK5l" to="ends:~ModelFactoryService.getDefaultModelFactory(org.jetbrains.mps.openapi.persistence.datasource.DataSourceType):org.jetbrains.mps.openapi.persistence.ModelFactory" resolve="getDefaultModelFactory" />
+                    <node concept="2YIFZM" id="7RZXbb$4yjC" role="37wK5m">
+                      <ref role="37wK5l" to="bxo2:~FileExtensionDataSourceType.of(java.lang.String):org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType" resolve="of" />
+                      <ref role="1Pybhc" to="bxo2:~FileExtensionDataSourceType" resolve="FileExtensionDataSourceType" />
+                      <node concept="37vLTw" id="7RZXbb$4yp8" role="37wK5m">
+                        <ref role="3cqZAo" node="7zbsrrw72vN" resolve="fileExt" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -5410,7 +5428,7 @@
           <node concept="3y3z36" id="7zbsrrw8DhI" role="3clFbw">
             <node concept="10Nm6u" id="7zbsrrw8FdO" role="3uHU7w" />
             <node concept="37vLTw" id="7zbsrrw8_sC" role="3uHU7B">
-              <ref role="3cqZAo" node="7zbsrrw72vN" resolve="filetype" />
+              <ref role="3cqZAo" node="7zbsrrw72vN" resolve="fileExt" />
             </node>
           </node>
         </node>
@@ -5551,23 +5569,24 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="7zbsrrw4IuP" role="3clFbw">
-                <node concept="2OqwBi" id="7zbsrrw4GfD" role="2Oq$k0">
-                  <node concept="liA8E" id="7zbsrrw4GfE" role="2OqNvi">
-                    <ref role="37wK5l" to="dush:~PersistenceFacade.getModelFactoryExtensions():java.util.Set" resolve="getModelFactoryExtensions" />
+              <node concept="3y3z36" id="7RZXbb$4z5H" role="3clFbw">
+                <node concept="10Nm6u" id="7RZXbb$4z5I" role="3uHU7w" />
+                <node concept="2OqwBi" id="7RZXbb$4z5J" role="3uHU7B">
+                  <node concept="37vLTw" id="7RZXbb$4z5K" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7RZXbb$4oK5" resolve="service" />
                   </node>
-                  <node concept="2YIFZM" id="7zbsrrw4GfF" role="2Oq$k0">
-                    <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-                    <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="7zbsrrw4Our" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />
-                  <node concept="2YIFZM" id="7zbsrrw4ZRq" role="37wK5m">
-                    <ref role="37wK5l" to="18ew:~FileUtil.getExtension(java.lang.String):java.lang.String" resolve="getExtension" />
-                    <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
-                    <node concept="37vLTw" id="7zbsrrw51wq" role="37wK5m">
-                      <ref role="3cqZAo" node="2TzypFyLPSq" resolve="fileName" />
+                  <node concept="liA8E" id="7RZXbb$4z5L" role="2OqNvi">
+                    <ref role="37wK5l" to="ends:~ModelFactoryService.getDefaultModelFactory(org.jetbrains.mps.openapi.persistence.datasource.DataSourceType):org.jetbrains.mps.openapi.persistence.ModelFactory" resolve="getDefaultModelFactory" />
+                    <node concept="2YIFZM" id="7RZXbb$4z5M" role="37wK5m">
+                      <ref role="37wK5l" to="bxo2:~FileExtensionDataSourceType.of(java.lang.String):org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType" resolve="of" />
+                      <ref role="1Pybhc" to="bxo2:~FileExtensionDataSourceType" resolve="FileExtensionDataSourceType" />
+                      <node concept="2YIFZM" id="7zbsrrw4ZRq" role="37wK5m">
+                        <ref role="37wK5l" to="18ew:~FileUtil.getExtension(java.lang.String):java.lang.String" resolve="getExtension" />
+                        <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
+                        <node concept="37vLTw" id="7zbsrrw51wq" role="37wK5m">
+                          <ref role="3cqZAo" node="2TzypFyLPSq" resolve="fileName" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -5589,8 +5608,17 @@
           </node>
         </node>
       </node>
+      <node concept="37vLTG" id="7RZXbb$4oK5" role="3clF46">
+        <property role="TrG5h" value="service" />
+        <node concept="3uibUv" id="7RZXbb$4pF9" role="1tU5fm">
+          <ref role="3uigEE" to="ends:~ModelFactoryService" resolve="ModelFactoryService" />
+        </node>
+        <node concept="2AHcQZ" id="7RZXbb$4pLC" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
       <node concept="37vLTG" id="7zbsrrw72vN" role="3clF46">
-        <property role="TrG5h" value="filetype" />
+        <property role="TrG5h" value="fileExt" />
         <node concept="17QB3L" id="7zbsrrw75UT" role="1tU5fm" />
         <node concept="2AHcQZ" id="7zbsrrwcceD" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
@@ -5606,6 +5634,7 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7RZXbb$4k2B" role="jymVt" />
     <node concept="2YIFZL" id="5YKGT2oU8EX" role="jymVt">
       <property role="TrG5h" value="getTypeByXmlRoot" />
       <property role="DiZV1" value="false" />

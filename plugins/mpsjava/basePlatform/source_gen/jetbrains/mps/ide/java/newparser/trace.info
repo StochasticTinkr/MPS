@@ -601,7 +601,7 @@
       <node id="3356342729942924450" at="1096,0,1097,22" concept="13" />
       <node id="8450492655314254848" at="1101,0,1102,0" concept="7" trace="myPkgDir" />
       <node id="8450492655314258073" at="1103,46,1104,24" concept="6" />
-      <node id="8450492655314245049" at="1109,114,1110,55" concept="13" />
+      <node id="8450492655314245049" at="1109,88,1110,49" concept="13" />
       <node id="8450492655314250412" at="1115,37,1116,48" concept="13" />
       <node id="3815171369211380804" at="1123,48,1124,17" concept="4" />
       <node id="3356342729942924471" at="1126,45,1127,39" concept="13" />
@@ -739,7 +739,7 @@
       <node id="2717473728236781844" at="910,422,915,9" concept="6" />
       <node id="2717473728237567229" at="917,191,922,9" concept="6" />
       <node id="5285105605105633834" at="985,63,990,7" concept="13" />
-      <node id="8450492655314243837" at="1107,0,1112,0" concept="11" trace="create#(Lorg/jetbrains/mps/openapi/model/SModelName;Ljetbrains/mps/extapi/persistence/SourceRoot;Lorg/jetbrains/mps/openapi/persistence/ModelRoot;)Lorg/jetbrains/mps/openapi/persistence/DataSource;" />
+      <node id="8450492655314243837" at="1107,0,1112,0" concept="11" trace="create#(Lorg/jetbrains/mps/openapi/model/SModelName;Ljetbrains/mps/extapi/persistence/SourceRoot;)Lorg/jetbrains/mps/openapi/persistence/DataSource;" />
       <node id="8450492655314250404" at="1113,0,1118,0" concept="11" trace="getType#()Lorg/jetbrains/mps/openapi/persistence/datasource/DataSourceType;" />
       <node id="7238794918750918758" at="1139,7,1144,7" concept="9" />
       <node id="5645087958772145493" at="137,25,143,7" concept="6" />
@@ -942,7 +942,7 @@
       <scope id="4120717315215040545" at="1045,82,1046,92" />
       <scope id="3815171369212939082" at="1056,51,1057,21" />
       <scope id="8450492655314253341" at="1103,46,1104,24" />
-      <scope id="8450492655314243857" at="1109,114,1110,55" />
+      <scope id="8450492655314243857" at="1109,88,1110,49" />
       <scope id="8450492655314250409" at="1115,37,1116,48" />
       <scope id="3815171369211083251" at="1123,48,1124,17" />
       <scope id="3356342729942924470" at="1126,45,1127,39" />
@@ -1146,7 +1146,6 @@
       <scope id="3815171369212518411" at="1053,70,1058,7" />
       <scope id="8450492655314243837" at="1107,0,1112,0">
         <var name="name" id="8450492655314243842" />
-        <var name="root" id="8450492655314243851" />
         <var name="sourceRoot" id="8450492655314243845" />
       </scope>
       <scope id="8450492655314250404" at="1113,0,1118,0" />

@@ -106,6 +106,9 @@
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
@@ -115,7 +118,9 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
+        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
+      </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -127,6 +132,13 @@
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
+      </concept>
+      <concept id="1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" flags="nn" index="3$_iS1">
+        <child id="1184951007469" name="componentType" index="3$_nBY" />
+        <child id="1184952969026" name="dimensionExpression" index="3$GQph" />
+      </concept>
+      <concept id="1184952934362" name="jetbrains.mps.baseLanguage.structure.DimensionExpression" flags="nn" index="3$GHV9">
+        <child id="1184953288404" name="expression" index="3$I4v7" />
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
@@ -303,6 +315,18 @@
         <node concept="10P_77" id="1y9wNTZf8V8" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="6NgXkpAWLJL" role="3clF47">
+        <node concept="3cpWs8" id="1xbl4oDoULy" role="3cqZAp">
+          <node concept="3cpWsn" id="1xbl4oDoULz" role="3cpWs9">
+            <property role="TrG5h" value="factoryService" />
+            <node concept="3uibUv" id="1xbl4oDoULx" role="1tU5fm">
+              <ref role="3uigEE" to="ends:~ModelFactoryService" resolve="ModelFactoryService" />
+            </node>
+            <node concept="2YIFZM" id="1xbl4oDoUL$" role="33vP2m">
+              <ref role="37wK5l" to="ends:~ModelFactoryService.getInstance():jetbrains.mps.extapi.persistence.ModelFactoryService" resolve="getInstance" />
+              <ref role="1Pybhc" to="ends:~ModelFactoryService" resolve="ModelFactoryService" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="6NgXkpAWLJN" role="3cqZAp">
           <node concept="3cpWsn" id="6NgXkpAWLJM" role="3cpWs9">
             <property role="TrG5h" value="source" />
@@ -518,6 +542,60 @@
             </node>
           </node>
           <node concept="3clFbS" id="6NgXkpAWLJV" role="SfCbr">
+            <node concept="3cpWs8" id="1xbl4oDp43W" role="3cqZAp">
+              <node concept="3cpWsn" id="1xbl4oDp442" role="3cpWs9">
+                <property role="TrG5h" value="options" />
+                <node concept="3uibUv" id="1xbl4oDp444" role="1tU5fm">
+                  <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                  <node concept="3uibUv" id="1xbl4oDp4ol" role="11_B2D">
+                    <ref role="3uigEE" to="dush:~ModelLoadingOption" resolve="ModelLoadingOption" />
+                  </node>
+                </node>
+                <node concept="2ShNRf" id="1xbl4oDp4CN" role="33vP2m">
+                  <node concept="1pGfFk" id="1xbl4oDp54v" role="2ShVmc">
+                    <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                    <node concept="3uibUv" id="1xbl4oDp5zL" role="1pMfVU">
+                      <ref role="3uigEE" to="dush:~ModelLoadingOption" resolve="ModelLoadingOption" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1xbl4oDp65m" role="3cqZAp">
+              <node concept="2OqwBi" id="1xbl4oDp6pp" role="3clFbG">
+                <node concept="37vLTw" id="1xbl4oDp65k" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1xbl4oDp442" resolve="options" />
+                </node>
+                <node concept="liA8E" id="1xbl4oDp7C_" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                  <node concept="Rm8GO" id="4i_jb5gTGvC" role="37wK5m">
+                    <ref role="1Px2BO" to="pa15:~MetaModelInfoProvider$MetaInfoLoadingOption" resolve="MetaModelInfoProvider.MetaInfoLoadingOption" />
+                    <ref role="Rm8GQ" to="pa15:~MetaModelInfoProvider$MetaInfoLoadingOption.KEEP_READ" resolve="KEEP_READ" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="1xbl4oDp8PI" role="3cqZAp">
+              <node concept="3clFbS" id="1xbl4oDp8PK" role="3clFbx">
+                <node concept="3clFbF" id="1xbl4oDp9tQ" role="3cqZAp">
+                  <node concept="2OqwBi" id="1xbl4oDp9HY" role="3clFbG">
+                    <node concept="37vLTw" id="1xbl4oDp9tO" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1xbl4oDp442" resolve="options" />
+                    </node>
+                    <node concept="liA8E" id="1xbl4oDpbK_" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                      <node concept="Rm8GO" id="4i_jb5gTFQ6" role="37wK5m">
+                        <ref role="1Px2BO" to="pa15:~DefaultModelPersistence$ContentLoadingExtentOptions" resolve="DefaultModelPersistence.ContentLoadingExtentOptions" />
+                        <ref role="Rm8GQ" to="pa15:~DefaultModelPersistence$ContentLoadingExtentOptions.STRIP_IMPLEMENTATION" resolve="STRIP_IMPLEMENTATION" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="37vLTw" id="1xbl4oDp9jy" role="3clFbw">
+                <ref role="3cqZAo" node="1y9wNTZf8V7" resolve="stripImplementation" />
+              </node>
+            </node>
             <node concept="3cpWs8" id="QTAzJ3Mxrj" role="3cqZAp">
               <node concept="3cpWsn" id="QTAzJ3Mxrk" role="3cpWs9">
                 <property role="TrG5h" value="model" />
@@ -538,32 +616,85 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="Rm8GO" id="4i_jb5gTFQ6" role="37wK5m">
-                      <ref role="Rm8GQ" to="pa15:~DefaultModelPersistence$ContentLoadingExtentOptions.STRIP_IMPLEMENTATION" resolve="STRIP_IMPLEMENTATION" />
-                      <ref role="1Px2BO" to="pa15:~DefaultModelPersistence$ContentLoadingExtentOptions" resolve="DefaultModelPersistence.ContentLoadingExtentOptions" />
-                    </node>
-                    <node concept="Rm8GO" id="4i_jb5gTGvC" role="37wK5m">
-                      <ref role="Rm8GQ" to="pa15:~MetaModelInfoProvider$MetaInfoLoadingOption.KEEP_READ" resolve="KEEP_READ" />
-                      <ref role="1Px2BO" to="pa15:~MetaModelInfoProvider$MetaInfoLoadingOption" resolve="MetaModelInfoProvider.MetaInfoLoadingOption" />
+                    <node concept="2OqwBi" id="1xbl4oDpdA9" role="37wK5m">
+                      <node concept="37vLTw" id="1xbl4oDpcFg" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1xbl4oDp442" resolve="options" />
+                      </node>
+                      <node concept="liA8E" id="1xbl4oDpewN" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~List.toArray(java.lang.Object[]):java.lang.Object[]" resolve="toArray" />
+                        <node concept="2ShNRf" id="1xbl4oDpeZ9" role="37wK5m">
+                          <node concept="3$_iS1" id="1xbl4oDpfY8" role="2ShVmc">
+                            <node concept="3$GHV9" id="1xbl4oDpfYa" role="3$GQph">
+                              <node concept="3cmrfG" id="1xbl4oDpgqP" role="3$I4v7">
+                                <property role="3cmrfH" value="0" />
+                              </node>
+                            </node>
+                            <node concept="3uibUv" id="1xbl4oDpfVl" role="3$_nBY">
+                              <ref role="3uigEE" to="dush:~ModelLoadingOption" resolve="ModelLoadingOption" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="QTAzJ3MyVa" role="3cqZAp">
-              <node concept="2OqwBi" id="QTAzJ3M$XK" role="3clFbG">
-                <node concept="2OqwBi" id="QTAzJ3MzmE" role="2Oq$k0">
-                  <node concept="2YIFZM" id="QTAzJ3Mzl_" role="2Oq$k0">
-                    <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-                    <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+            <node concept="3cpWs8" id="1xbl4oDoQAW" role="3cqZAp">
+              <node concept="3cpWsn" id="1xbl4oDoQAX" role="3cpWs9">
+                <property role="TrG5h" value="binaryType" />
+                <node concept="3uibUv" id="1xbl4oDoSgp" role="1tU5fm">
+                  <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
+                </node>
+                <node concept="Rm8GO" id="1xbl4oDoQAY" role="33vP2m">
+                  <ref role="Rm8GQ" to="pa15:~PreinstalledModelFactoryTypes.BINARY" resolve="BINARY" />
+                  <ref role="1Px2BO" to="pa15:~PreinstalledModelFactoryTypes" resolve="PreinstalledModelFactoryTypes" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="1xbl4oDoTzy" role="3cqZAp">
+              <node concept="3cpWsn" id="1xbl4oDoTzz" role="3cpWs9">
+                <property role="TrG5h" value="binaryFactory" />
+                <node concept="3uibUv" id="1xbl4oDoTzx" role="1tU5fm">
+                  <ref role="3uigEE" to="dush:~ModelFactory" resolve="ModelFactory" />
+                </node>
+                <node concept="2OqwBi" id="1xbl4oDoTz$" role="33vP2m">
+                  <node concept="37vLTw" id="1xbl4oDoUL_" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1xbl4oDoULz" resolve="factoryService" />
                   </node>
-                  <node concept="liA8E" id="QTAzJ3MzxW" role="2OqNvi">
-                    <ref role="37wK5l" to="dush:~PersistenceFacade.getModelFactory(java.lang.String):org.jetbrains.mps.openapi.persistence.ModelFactory" resolve="getModelFactory" />
-                    <node concept="10M0yZ" id="QTAzJ3M$Db" role="37wK5m">
-                      <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
-                      <ref role="3cqZAo" to="z1c3:~MPSExtentions.MODEL_BINARY" resolve="MODEL_BINARY" />
+                  <node concept="liA8E" id="1xbl4oDoTzA" role="2OqNvi">
+                    <ref role="37wK5l" to="ends:~ModelFactoryService.getFactoryByType(org.jetbrains.mps.openapi.persistence.ModelFactoryType):org.jetbrains.mps.openapi.persistence.ModelFactory" resolve="getFactoryByType" />
+                    <node concept="37vLTw" id="1xbl4oDoTzB" role="37wK5m">
+                      <ref role="3cqZAo" node="1xbl4oDoQAX" resolve="binaryType" />
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="1xbl4oDoWD6" role="3cqZAp">
+              <node concept="3clFbS" id="1xbl4oDoWD8" role="3clFbx">
+                <node concept="YS8fn" id="1xbl4oDoXC1" role="3cqZAp">
+                  <node concept="2ShNRf" id="1xbl4oDoXCf" role="YScLw">
+                    <node concept="1pGfFk" id="1xbl4oDp2mB" role="2ShVmc">
+                      <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                      <node concept="Xl_RD" id="1xbl4oDp2Cg" role="37wK5m">
+                        <property role="Xl_RC" value="Binary Model Factory Is Not Found" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbC" id="1xbl4oDoXp$" role="3clFbw">
+                <node concept="10Nm6u" id="1xbl4oDoXwV" role="3uHU7w" />
+                <node concept="37vLTw" id="1xbl4oDoWVR" role="3uHU7B">
+                  <ref role="3cqZAo" node="1xbl4oDoTzz" resolve="binaryFactory" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="QTAzJ3MyVa" role="3cqZAp">
+              <node concept="2OqwBi" id="QTAzJ3M$XK" role="3clFbG">
+                <node concept="37vLTw" id="1xbl4oDoTzC" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1xbl4oDoTzz" resolve="binaryFactory" />
                 </node>
                 <node concept="liA8E" id="QTAzJ3M_c9" role="2OqNvi">
                   <ref role="37wK5l" to="dush:~ModelFactory.save(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.persistence.DataSource):void" resolve="save" />

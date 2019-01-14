@@ -6,7 +6,6 @@ import java.io.File;
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
-import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -18,6 +17,7 @@ import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import java.util.Properties;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -97,11 +97,11 @@ public class MergeDriverMain {
     }
     return false;
   }
-  private static AbstractContentMerger selectMerger(Platform mpsPlatform, final String filetype, File... files) {
-    ModelFactoryService modelFactoryService = mpsPlatform.findComponent(ModelFactoryService.class);
+  @Nullable
+  private static AbstractContentMerger selectMerger(final Platform mpsPlatform, final String filetype, File... files) {
     FileType fileType = Sequence.fromIterable(Sequence.fromArray(files)).select(new ISelector<File, FileType>() {
       public FileType select(File f) {
-        return FileType.get(modelFactoryService, filetype, f);
+        return FileType.get(mpsPlatform.findComponent(ModelFactoryService.class), filetype, f);
       }
     }).findFirst(new IWhereFilter<FileType>() {
       public boolean accept(FileType f) {

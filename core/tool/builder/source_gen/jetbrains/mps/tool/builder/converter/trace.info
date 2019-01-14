@@ -12,74 +12,89 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root nodeRef="r:39e596a9-ed2d-4e2f-b055-9544a1f3a151(jetbrains.mps.tool.builder.converter)/7841036633975757760">
     <file name="ConvertToBinaryWorker.java">
-      <node id="1117348409516165620" at="28,89,29,95" concept="5" />
-      <node id="7841036633989771059" at="29,95,30,42" concept="1" />
-      <node id="7841036633975757778" at="32,62,33,84" concept="1" />
-      <node id="1117348409516167450" at="35,15,36,25" concept="1" />
-      <node id="7841036633975757811" at="40,102,41,64" concept="5" />
-      <node id="988991174663015095" at="41,64,42,121" concept="5" />
-      <node id="988991174663028657" at="43,31,44,101" concept="6" />
-      <node id="988991174663020542" at="44,101,45,78" concept="1" />
-      <node id="988991174663083731" at="47,9,48,196" concept="5" />
-      <node id="988991174663089866" at="48,196,49,164" concept="1" />
-      <node id="8008997321254882371" at="50,35,51,58" concept="1" />
-      <node id="8008997321254873965" at="51,58,52,27" concept="1" />
-      <node id="8008997321254878839" at="52,27,53,15" concept="7" />
-      <node id="8008997321254797436" at="54,30,55,101" concept="7" />
-      <node id="988991174663113014" at="56,36,57,118" concept="7" />
-      <node id="4946444090186591530" at="58,36,59,119" concept="7" />
-      <node id="7841036633975757763" at="25,0,27,0" concept="0" trace="ConvertToBinaryWorker#()V" />
-      <node id="7841036633975757775" at="31,9,34,7" concept="2" />
-      <node id="988991174663016906" at="42,121,46,5" concept="3" />
-      <node id="3563859626232997535" at="30,42,37,5" concept="9" />
-      <node id="7841036633975757767" at="28,0,39,0" concept="4" trace="convert#(Ljava/util/Map;Ljava/lang/Boolean;)V" />
-      <node id="7841036633975757876" at="46,5,60,5" concept="8" />
-      <node id="7841036633975757803" at="40,0,62,0" concept="4" trace="convertModelToBinary#(Ljava/lang/String;Ljava/lang/String;Z)V" />
-      <scope id="7841036633975757765" at="25,34,25,34" />
-      <scope id="7841036633975757777" at="32,62,33,84" />
-      <scope id="3563859626232997538" at="35,15,36,25" />
-      <scope id="8008997321254774047" at="54,0,55,101">
+      <node id="1117348409516165620" at="33,89,34,95" concept="5" />
+      <node id="7841036633989771059" at="34,95,35,42" concept="1" />
+      <node id="7841036633975757778" at="37,62,38,84" concept="1" />
+      <node id="1117348409516167450" at="40,15,41,25" concept="1" />
+      <node id="1750585540482411618" at="45,102,46,75" concept="5" />
+      <node id="7841036633975757811" at="46,75,47,64" concept="5" />
+      <node id="988991174663015095" at="47,64,48,121" concept="5" />
+      <node id="988991174663028657" at="49,31,50,101" concept="6" />
+      <node id="988991174663020542" at="50,101,51,78" concept="1" />
+      <node id="1750585540482449660" at="53,9,54,77" concept="5" />
+      <node id="1750585540482457942" at="54,77,55,73" concept="1" />
+      <node id="1750585540482471798" at="56,32,57,94" concept="1" />
+      <node id="988991174663083731" at="58,7,59,111" concept="5" />
+      <node id="1750585540482394556" at="59,111,60,73" concept="5" />
+      <node id="1750585540482406626" at="60,73,61,79" concept="5" />
+      <node id="1750585540482423297" at="62,34,63,77" concept="7" />
+      <node id="988991174663089866" at="64,7,65,102" concept="1" />
+      <node id="8008997321254882371" at="66,35,67,58" concept="1" />
+      <node id="8008997321254873965" at="67,58,68,27" concept="1" />
+      <node id="8008997321254878839" at="68,27,69,15" concept="7" />
+      <node id="8008997321254797436" at="70,30,71,101" concept="7" />
+      <node id="988991174663113014" at="72,36,73,118" concept="7" />
+      <node id="4946444090186591530" at="74,36,75,119" concept="7" />
+      <node id="7841036633975757763" at="30,0,32,0" concept="0" trace="ConvertToBinaryWorker#()V" />
+      <node id="7841036633975757775" at="36,9,39,7" concept="2" />
+      <node id="1750585540482469230" at="55,73,58,7" concept="3" />
+      <node id="1750585540482419270" at="61,79,64,7" concept="3" />
+      <node id="988991174663016906" at="48,121,52,5" concept="3" />
+      <node id="3563859626232997535" at="35,42,42,5" concept="9" />
+      <node id="7841036633975757767" at="33,0,44,0" concept="4" trace="convert#(Ljava/util/Map;Ljava/lang/Boolean;)V" />
+      <node id="7841036633975757876" at="52,5,76,5" concept="8" />
+      <node id="7841036633975757803" at="45,0,78,0" concept="4" trace="convertModelToBinary#(Ljava/lang/String;Ljava/lang/String;Z)V" />
+      <scope id="7841036633975757765" at="30,34,30,34" />
+      <scope id="7841036633975757777" at="37,62,38,84" />
+      <scope id="3563859626232997538" at="40,15,41,25" />
+      <scope id="1750585540482469232" at="56,32,57,94" />
+      <scope id="1750585540482419272" at="62,34,63,77" />
+      <scope id="8008997321254774047" at="70,0,71,101">
         <var name="ex" id="8008997321254774049" />
       </scope>
-      <scope id="8008997321254774048" at="54,30,55,101" />
-      <scope id="988991174663109950" at="56,0,57,118">
+      <scope id="8008997321254774048" at="70,30,71,101" />
+      <scope id="988991174663109950" at="72,0,73,118">
         <var name="e" id="988991174663109952" />
       </scope>
-      <scope id="988991174663109951" at="56,36,57,118" />
-      <scope id="4946444090186584696" at="58,0,59,119">
+      <scope id="988991174663109951" at="72,36,73,118" />
+      <scope id="4946444090186584696" at="74,0,75,119">
         <var name="e" id="4946444090186584697" />
       </scope>
-      <scope id="4946444090186584699" at="58,36,59,119" />
-      <scope id="7841036633975757763" at="25,0,27,0" />
-      <scope id="988991174663016909" at="43,31,45,78" />
-      <scope id="7841036633975757819" at="47,9,49,164">
-        <var name="model" id="988991174663083732" />
-      </scope>
-      <scope id="7841036633975757774" at="31,9,34,7" />
-      <scope id="7841036633975757775" at="31,9,34,7">
+      <scope id="4946444090186584699" at="74,36,75,119" />
+      <scope id="7841036633975757763" at="30,0,32,0" />
+      <scope id="988991174663016909" at="49,31,51,78" />
+      <scope id="7841036633975757774" at="36,9,39,7" />
+      <scope id="7841036633975757775" at="36,9,39,7">
         <var name="entry" id="7841036633975757784" />
       </scope>
-      <scope id="8008997321254868466" at="50,0,53,15">
+      <scope id="8008997321254868466" at="66,0,69,15">
         <var name="ex" id="8008997321254868468" />
       </scope>
-      <scope id="8008997321254868467" at="50,35,53,15" />
-      <scope id="7841036633975757772" at="28,89,37,5">
+      <scope id="8008997321254868467" at="66,35,69,15" />
+      <scope id="7841036633975757772" at="33,89,42,5">
         <var name="platform" id="1117348409516165618" />
       </scope>
-      <scope id="7841036633975757767" at="28,0,39,0">
+      <scope id="7841036633975757767" at="33,0,44,0">
         <var name="map" id="7841036633975757768" />
         <var name="stripImplementation" id="1768088633165482237" />
       </scope>
-      <scope id="7841036633975757809" at="40,102,60,5">
+      <scope id="7841036633975757819" at="53,9,65,102">
+        <var name="binaryFactory" id="1750585540482406627" />
+        <var name="binaryType" id="1750585540482394557" />
+        <var name="model" id="988991174663083732" />
+        <var name="options" id="1750585540482449666" />
+      </scope>
+      <scope id="7841036633975757809" at="45,102,76,5">
+        <var name="factoryService" id="1750585540482411619" />
         <var name="modelFactory" id="988991174663015096" />
         <var name="source" id="7841036633975757810" />
       </scope>
-      <scope id="7841036633975757803" at="40,0,62,0">
+      <scope id="7841036633975757803" at="45,0,78,0">
         <var name="destFile" id="7841036633975757806" />
         <var name="sourceFile" id="7841036633975757804" />
         <var name="stripImplementation" id="1768088633165516487" />
       </scope>
-      <unit id="7841036633975757760" at="24,0,63,0" name="jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker" />
+      <unit id="7841036633975757760" at="29,0,79,0" name="jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker" />
     </file>
   </root>
 </debug-info>

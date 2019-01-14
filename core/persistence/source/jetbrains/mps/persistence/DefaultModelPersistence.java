@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -55,7 +54,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -67,27 +65,16 @@ import java.util.Map;
 public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFactory {
   private static final Logger LOG = LogManager.getLogger(DefaultModelPersistence.class);
 
-  /**
-   * Boolean option for model loading, indicates loaded model doesn't care about implementation node.
-   * For the time being, implementation node is the one with appropriate ConceptKind (designated according to concept's implemented interfaces).
-   *
-   * @deprecated use {@link ContentLoadingExtentOptions} instead
-   */
-  @ToRemove(version = 3.7)
-  @Deprecated
-  public static final String OPTION_STRIP_IMPLEMENTATION = "load-without-impl";
-
-  /**
-   * Boolean option for model loading, indicates loaded model cares about its interface aspects only.
-   *
-   * @deprecated use {@link ContentLoadingExtentOptions} instead
-   */
-  @ToRemove(version = 3.7)
-  @Deprecated
-  public static final String OPTION_INTERFACE_ONLY = "load-interface-only";
-
   public enum ContentLoadingExtentOptions implements ModelLoadingOption {
+    /**
+     * An option for model loading, indicates loaded model doesn't care about implementation node.
+     * For the time being, implementation node is the one with appropriate ConceptKind (designated according to concept's implemented interfaces).
+     */
     STRIP_IMPLEMENTATION,
+    /**
+     * Boolean option for model loading, indicates loaded model cares about its interface aspects only.
+     *
+     */
     INTERFACE_ONLY
   }
 
@@ -312,35 +299,34 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
 
   private static class PersistenceFacility extends LazyLoadFacility {
     /*package*/ PersistenceFacility(DefaultModelPersistence modelFactory, StreamDataSource dataSource) {
-      super(modelFactory, dataSource);
+      super(modelFactory, dataSource, true);
     }
 
     @NotNull
-    @Override
-    public StreamDataSource getSource() {
+    private StreamDataSource getSource0() {
       return (StreamDataSource) super.getSource();
     }
 
     @Override
     public Map<String, String> getGenerationHashes() {
-      Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
+      Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource0());
       if (generationHashes != null) {
         return generationHashes;
       }
 
-      return DefaultModelPersistence.getDigestMap(getSource());
+      return DefaultModelPersistence.getDigestMap(getSource0());
     }
 
     @NotNull
     @Override
     public SModelHeader readHeader() throws ModelReadException {
-      return ModelPersistence.loadDescriptor(getSource());
+      return ModelPersistence.loadDescriptor(getSource0());
     }
 
     @NotNull
     @Override
     public ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull ModelLoadingState state) throws ModelReadException {
-      return ModelPersistence.readModel(header, getSource(), state);
+      return ModelPersistence.readModel(header, getSource0(), state);
     }
 
     @Override
@@ -351,7 +337,7 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
 
     @Override
     public void saveModel(@NotNull SModelHeader header, SModelData modelData) throws IOException {
-      ModelPersistence.saveModel((jetbrains.mps.smodel.SModel) modelData, getSource(), header.getPersistenceVersion());
+      ModelPersistence.saveModel((jetbrains.mps.smodel.SModel) modelData, getSource0(), header.getPersistenceVersion());
     }
   }
 }

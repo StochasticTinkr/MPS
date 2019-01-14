@@ -37,7 +37,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.ModelCreationException;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.ModelLoadException;
@@ -197,33 +196,32 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
 
   private static class PersistenceFacility extends LazyLoadFacility {
     /*package*/ PersistenceFacility(BinaryModelFactory modelFactory, StreamDataSource dataSource) {
-      super(modelFactory, dataSource);
+      super(modelFactory, dataSource, false);
     }
 
     @NotNull
-    @Override
-    public StreamDataSource getSource() {
+    private StreamDataSource getSource0() {
       return (StreamDataSource) super.getSource();
     }
 
     @Override
     public Map<String, String> getGenerationHashes() {
-      Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
+      Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource0());
       if (generationHashes != null) return generationHashes;
 
-      return BinaryModelFactory.getDigestMap(getSource());
+      return BinaryModelFactory.getDigestMap(getSource0());
     }
 
     @NotNull
     @Override
     public SModelHeader readHeader() throws ModelReadException {
-      return BinaryPersistence.readHeader(getSource());
+      return BinaryPersistence.readHeader(getSource0());
     }
 
     @NotNull
     @Override
     public ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull ModelLoadingState state) throws ModelReadException {
-      return BinaryPersistence.readModel(header, getSource(), state == ModelLoadingState.INTERFACE_LOADED);
+      return BinaryPersistence.readModel(header, getSource0(), state == ModelLoadingState.INTERFACE_LOADED);
     }
 
     @Override
@@ -234,7 +232,7 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
 
     @Override
     public void saveModel(@NotNull SModelHeader header, SModelData modelData) throws IOException {
-      BinaryPersistence.writeModel((jetbrains.mps.smodel.SModel) modelData, getSource());
+      BinaryPersistence.writeModel((jetbrains.mps.smodel.SModel) modelData, getSource0());
     }
   }
 }

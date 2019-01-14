@@ -2538,7 +2538,6 @@
                           <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
                         </node>
                         <node concept="3clFbS" id="1l1jHO6h5Ks" role="3clF47">
-                          <node concept="3clFbH" id="1l1jHO6h5Kt" role="3cqZAp" />
                           <node concept="3cpWs8" id="1l1jHO6h5Ku" role="3cqZAp">
                             <node concept="3cpWsn" id="1l1jHO6h5Kv" role="3cpWs9">
                               <property role="TrG5h" value="result" />

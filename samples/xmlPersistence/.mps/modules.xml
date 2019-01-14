@@ -5,7 +5,6 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.samples.xmlPersistence.build/jetbrains.mps.samples.xmlPersistence.build.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.samples.xmlPersistence/jetbrains.mps.samples.xmlPersistence.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/a/a.msd" folder="" />
     </projectModules>
   </component>
 </project>

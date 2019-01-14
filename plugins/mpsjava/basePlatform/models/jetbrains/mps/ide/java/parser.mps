@@ -29948,25 +29948,13 @@
             <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
           </node>
         </node>
-        <node concept="37vLTG" id="7l6b$Kx3p4b" role="3clF46">
-          <property role="TrG5h" value="root" />
-          <node concept="3uibUv" id="7l6b$Kx3p4c" role="1tU5fm">
-            <ref role="3uigEE" to="dush:~ModelRoot" resolve="ModelRoot" />
-          </node>
-          <node concept="2AHcQZ" id="7l6b$Kx3p4g" role="2AJF6D">
-            <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
-          </node>
-        </node>
         <node concept="3clFbS" id="7l6b$Kx3p4h" role="3clF47">
           <node concept="3cpWs6" id="7l6b$Kx3pmT" role="3cqZAp">
             <node concept="2ShNRf" id="7l6b$Kx3p$_" role="3cqZAk">
               <node concept="1pGfFk" id="7l6b$Kx3qEf" role="2ShVmc">
-                <ref role="37wK5l" to="pa15:~FilePerRootDataSource.&lt;init&gt;(jetbrains.mps.vfs.IFile,org.jetbrains.mps.openapi.persistence.ModelRoot)" resolve="FilePerRootDataSource" />
+                <ref role="37wK5l" to="pa15:~FilePerRootDataSource.&lt;init&gt;(jetbrains.mps.vfs.IFile)" resolve="FilePerRootDataSource" />
                 <node concept="37vLTw" id="7l6b$Kx3tm3" role="37wK5m">
                   <ref role="3cqZAo" node="7l6b$Kx3rK0" resolve="myPkgDir" />
-                </node>
-                <node concept="37vLTw" id="7l6b$Kx3uKt" role="37wK5m">
-                  <ref role="3cqZAo" node="7l6b$Kx3p4b" resolve="root" />
                 </node>
               </node>
             </node>

@@ -16,7 +16,9 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.BufferedReader;
@@ -38,17 +40,13 @@ public class ModelDigestUtil {
   /**
    * Ignores newlines when isText == true.
    */
-  public static String hash(StreamDataSource source, boolean isText) {
-    if (source == null) return null;
-
-    InputStream is = null;
-    try {
-      is = source.openInputStream();
-      return isText ? hashText(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET)) : hashBytes(is);
-    } catch (IOException e) {
-      /* ignore */
-    } finally {
-      FileUtil.closeFileSafe(is);
+  @Contract(value = "null, _ -> null")
+  public static String hash(@Nullable StreamDataSource source, boolean isText) {
+    if (source != null) {
+      try (InputStream is = source.openInputStream()) {
+        return isText ? hashText(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET)) : hashBytes(is);
+      } catch (IOException ignored) {
+      }
     }
     return null;
   }
@@ -69,7 +67,7 @@ public class ModelDigestUtil {
   @NotNull
   public static String hashBytes(InputStream stream) throws IOException {
     try {
-      MessageDigest digest = MessageDigest.getInstance("SHA");
+      MessageDigest digest = getSHA();
       byte[] block = new byte[1024];
       int size;
       while ((size = stream.read(block)) > 0) {
@@ -83,12 +81,16 @@ public class ModelDigestUtil {
     }
   }
 
+  private static MessageDigest getSHA() throws NoSuchAlgorithmException {
+    return MessageDigest.getInstance("SHA");
+  }
+
   @NotNull
-  public static String hashText(Reader r) throws IOException {
+  public static String hashText(@NotNull Reader r) throws IOException {
     try {
       BufferedReader reader = new BufferedReader(r);
 
-      MessageDigest digest = MessageDigest.getInstance("SHA");
+      MessageDigest digest = getSHA();
       String line;
       while ((line = reader.readLine()) != null) {
         digest.update(line.getBytes(FileUtil.DEFAULT_CHARSET));
@@ -103,28 +105,27 @@ public class ModelDigestUtil {
 
   public static DigestBuilderOutputStream createDigestBuilderOutputStream() {
     try {
-      return new DigestBuilderOutputStream(MessageDigest.getInstance("SHA"));
+      return new DigestBuilderOutputStream(getSHA());
     } catch (NoSuchAlgorithmException e) {
       throw new IllegalStateException(e);
     }
   }
 
   public final static class DigestBuilderOutputStream extends OutputStream {
-
-    private final MessageDigest digest;
+    private final MessageDigest myDigest;
 
     private DigestBuilderOutputStream(MessageDigest digest) {
-      this.digest = digest;
+      this.myDigest = digest;
     }
 
     @Override
     public void write(int b) {
-      digest.update((byte) (b & 0xff));
+      myDigest.update((byte) (b & 0xff));
     }
 
     @Override
     public void write(@NotNull byte[] b) {
-      digest.update(b);
+      myDigest.update(b);
     }
 
     @Override
@@ -132,11 +133,11 @@ public class ModelDigestUtil {
       if (off < 0 || off > b.length || len < 0 || off + len > b.length) {
         throw new IndexOutOfBoundsException();
       }
-      digest.update(b, off, len);
+      myDigest.update(b, off, len);
     }
 
     public String getResult() {
-      byte[] res = digest.digest();
+      byte[] res = myDigest.digest();
       return new BigInteger(res).toString(Character.MAX_RADIX);
     }
   }

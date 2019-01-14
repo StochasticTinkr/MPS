@@ -39,12 +39,10 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.ModelCreationException;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.ModelLoadException;
 import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
-import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
@@ -79,7 +77,7 @@ public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFac
   }
 
   /**
-   * @see BinaryModelPersistence#createFromHeader() for details, same motivation here
+   * see BinaryModelPersistence#createFromHeader() for details, same motivation here
    */
   public static SModel createFromHeader(@NotNull SModelHeader header, @NotNull FilePerRootDataSource dataSource) {
     final ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_HEADER);
@@ -244,12 +242,11 @@ public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFac
 
   private static class PersistenceFacility extends LazyLoadFacility {
     public PersistenceFacility(@NotNull FilePerRootModelFactory modelFactory, @NotNull MultiStreamDataSource dataSource) {
-      super(modelFactory, dataSource);
+      super(modelFactory, dataSource, true);
     }
 
     @NotNull
-    @Override
-    public MultiStreamDataSource getSource() {
+    private MultiStreamDataSource getSource0() {
       return (MultiStreamDataSource) super.getSource();
     }
 
@@ -266,19 +263,19 @@ public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFac
 
     @Override
     public Map<String, String> getGenerationHashes() {
-      return FilePerRootModelFactory.getModelHashes(getSource());
+      return FilePerRootModelFactory.getModelHashes(getSource0());
     }
 
     @NotNull
     @Override
     public SModelHeader readHeader() throws ModelReadException {
-      return FilePerRootFormatUtil.loadDescriptor(getSource());
+      return FilePerRootFormatUtil.loadDescriptor(getSource0());
     }
 
     @NotNull
     @Override
     public ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull ModelLoadingState state) throws ModelReadException {
-      return FilePerRootFormatUtil.readModel(header, getSource(), state);
+      return FilePerRootFormatUtil.readModel(header, getSource0(), state);
     }
 
     @Override
@@ -288,7 +285,7 @@ public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFac
 
     @Override
     public void saveModel(@NotNull SModelHeader header, SModelData modelData) throws IOException {
-      FilePerRootFormatUtil.saveModel((jetbrains.mps.smodel.SModel) modelData, getSource(), header.getPersistenceVersion());
+      FilePerRootFormatUtil.saveModel((jetbrains.mps.smodel.SModel) modelData, getSource0(), header.getPersistenceVersion());
     }
   }
 }

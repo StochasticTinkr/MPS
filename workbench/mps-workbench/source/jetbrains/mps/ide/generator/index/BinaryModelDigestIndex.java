@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.generator.index;
 
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;

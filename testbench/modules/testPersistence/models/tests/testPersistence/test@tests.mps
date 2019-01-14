@@ -39,7 +39,9 @@
     <import index="4it6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.loading(MPS.Core/)" />
     <import index="i290" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.java.stub(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="iyvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence.datasource(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
+    <import index="bxo2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence.datasource(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -4788,18 +4790,13 @@
       </node>
       <node concept="3clFbS" id="3ofMfJ51M96" role="3clF47">
         <node concept="3cpWs6" id="3ofMfJ51M9_" role="3cqZAp">
-          <node concept="2OqwBi" id="3ofMfJ51M9A" role="3cqZAk">
-            <node concept="2OqwBi" id="3ofMfJ51M9B" role="2Oq$k0">
-              <node concept="2YIFZM" id="3ofMfJ51M9C" role="2Oq$k0">
-                <ref role="1Pybhc" to="pa15:~PersistenceRegistry" resolve="PersistenceRegistry" />
-                <ref role="37wK5l" to="pa15:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="3ofMfJ51M9D" role="2OqNvi">
-                <ref role="37wK5l" to="pa15:~PersistenceRegistry.getDefaultModelFactory():org.jetbrains.mps.openapi.persistence.ModelFactory" resolve="getDefaultModelFactory" />
-              </node>
+          <node concept="2OqwBi" id="5RlXihw7pET" role="3cqZAk">
+            <node concept="10M0yZ" id="5RlXihw7okO" role="2Oq$k0">
+              <ref role="3cqZAo" to="iyvn:~PreinstalledDataSourceTypes.MPS" resolve="MPS" />
+              <ref role="1PxDUh" to="iyvn:~PreinstalledDataSourceTypes" resolve="PreinstalledDataSourceTypes" />
             </node>
-            <node concept="liA8E" id="3ofMfJ51M9E" role="2OqNvi">
-              <ref role="37wK5l" to="dush:~ModelFactory.getFileExtension():java.lang.String" resolve="getFileExtension" />
+            <node concept="liA8E" id="5RlXihw7vqm" role="2OqNvi">
+              <ref role="37wK5l" to="bxo2:~FileExtensionDataSourceType.getFileExtension():java.lang.String" resolve="getFileExtension" />
             </node>
           </node>
         </node>

@@ -39,30 +39,39 @@ import java.util.Map;
 public abstract class LazyLoadFacility {
   private final ModelFactory myModelFactory;
   private final DataSource mySource;
+  private final boolean myPersistenceIsTextBased;
 
   public LazyLoadFacility(@NotNull ModelFactory modelFactory, @NotNull DataSource dataSource) {
+    this(modelFactory, dataSource, false);
+  }
+
+  public LazyLoadFacility(@NotNull ModelFactory modelFactory, @NotNull DataSource dataSource, boolean isPersistenceTextBased) {
     myModelFactory = modelFactory;
     mySource = dataSource;
+    myPersistenceIsTextBased = isPersistenceTextBased;
   }
 
   @NotNull
-  public ModelFactory getModelFactory() {
+  public final ModelFactory getModelFactory() {
     return myModelFactory;
   }
 
   @NotNull
-  public DataSource getSource() {
+  public final DataSource getSource() {
     return mySource;
   }
 
   public String getModelHash() {
     // FIXME refactor DataSource to answer hash()/digest() queries itself (and move this code back to generatable model impl)
+    // AP: I suppose DataSource is a far too generic object to contain the #hash method.
+    // Furthermore, #hash neighbouring with the DataSourceListener mechanism is rather questionable.
     String modelHash = ModelDigestHelper.getInstance().getModelHash((StreamDataSource) getSource());
     if (modelHash != null) {
       return modelHash;
     }
 
-    return ModelDigestUtil.hash((StreamDataSource) getSource(), false); // ?what kind of optimisation it was?
+    // AP why the flag, what do we gain?
+    return ModelDigestUtil.hash((StreamDataSource) getSource(), myPersistenceIsTextBased);
   }
 
   public abstract Map<String, String> getGenerationHashes();

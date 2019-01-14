@@ -21,11 +21,11 @@ import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.EverythingGlobalScope;
 import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.persistence.ModelDigestHelper.DigestProvider;
+import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -75,13 +75,13 @@ public class IndexBasedModelDigest implements ApplicationComponent {
           return null;
         }
 
-        final Map<String, String>[] valueArray = new Map[]{null};
+        final Reference<Map<String, String>> valueArray = new Reference<>(null);
         FileBasedIndex.getInstance().processValues(myName, FileBasedIndex.getFileId(file), file,
                                                    (file1, values) -> {
-                                                     valueArray[0] = values;
+                                                     valueArray.set(values);
                                                      return true;
                                                    }, new EverythingGlobalScope());
-        return valueArray[0];
+        return valueArray.get();
       } catch (IndexNotReadyException e) {
         // generally, it's bad to get here (we'd rather check for dumb mode prior accessing the index
         // however, there's nothing bad in returning null here as it's merely an indication of no cached

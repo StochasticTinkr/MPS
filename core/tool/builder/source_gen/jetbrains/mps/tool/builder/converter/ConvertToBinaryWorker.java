@@ -7,16 +7,21 @@ import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.FileUtil;
+import java.util.List;
+import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
+import java.util.ArrayList;
+import jetbrains.mps.persistence.MetaModelInfoProvider;
+import jetbrains.mps.persistence.DefaultModelPersistence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.persistence.DefaultModelPersistence;
-import jetbrains.mps.persistence.MetaModelInfoProvider;
-import jetbrains.mps.project.MPSExtentions;
+import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
+import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.ModelLoadException;
@@ -38,6 +43,7 @@ public class ConvertToBinaryWorker {
   }
 
   private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) {
+    ModelFactoryService factoryService = ModelFactoryService.getInstance();
     IFile source = FileSystem.getInstance().getFile(sourceFile);
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(FileUtil.getExtension(source.getName()));
     if (modelFactory == null) {
@@ -45,8 +51,18 @@ public class ConvertToBinaryWorker {
       modelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
     }
     try {
-      SModel model = modelFactory.load(new FileDataSource(source), DefaultModelPersistence.ContentLoadingExtentOptions.STRIP_IMPLEMENTATION, MetaModelInfoProvider.MetaInfoLoadingOption.KEEP_READ);
-      PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY).save(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
+      List<ModelLoadingOption> options = new ArrayList<ModelLoadingOption>();
+      options.add(MetaModelInfoProvider.MetaInfoLoadingOption.KEEP_READ);
+      if (stripImplementation) {
+        options.add(DefaultModelPersistence.ContentLoadingExtentOptions.STRIP_IMPLEMENTATION);
+      }
+      SModel model = modelFactory.load(new FileDataSource(source), options.toArray(new ModelLoadingOption[0]));
+      ModelFactoryType binaryType = PreinstalledModelFactoryTypes.BINARY;
+      ModelFactory binaryFactory = factoryService.getFactoryByType(binaryType);
+      if (binaryFactory == null) {
+        throw new IllegalStateException("Binary Model Factory Is Not Found");
+      }
+      binaryFactory.save(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
     } catch (RuntimeException ex) {
       System.out.printf("Conversion of %s\n", sourceFile);
       ex.printStackTrace();
