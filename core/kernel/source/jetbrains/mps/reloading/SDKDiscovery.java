@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SystemInfo;
+import jetbrains.mps.util.URLUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
@@ -33,6 +35,12 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -47,6 +55,33 @@ import java.util.Set;
 public class SDKDiscovery {
   public static List<QualifiedPath> discover() {
     return findClasses(new File(System.getProperty("java.home")), false);
+  }
+
+  @Nullable
+  private static QualifiedPath getJDK_ToolsPath() {
+    String toolsJarClass = "com.sun.jdi.Field";
+    Class cls;
+    try {
+      cls = Class.forName(toolsJarClass);
+    } catch (ClassNotFoundException e) {
+      LOG.warn("jar file for class " + toolsJarClass + " could not be found");
+      return null;
+    }
+
+    String url = cls.getResource(cls.getSimpleName() + ".class").toString();
+    String protocol = "jar:file:";
+    assert url.startsWith(protocol);
+
+    URI jarUri;
+    try {
+      jarUri = new URI(url.substring("jar:".length(), url.indexOf('!')));
+    } catch (URISyntaxException e) {
+      LOG.error(e);
+      return null;
+    }
+
+    String path = new File(jarUri).getAbsolutePath();
+    return new QualifiedPath(VFSManager.FILE_FS, path);
   }
 
   //-------------------------------------copied from JavaSdkImpl----------------------------------
@@ -85,6 +120,7 @@ public class SDKDiscovery {
         String proto = VFSManager.FILE_FS;
         result.add(new QualifiedPath(proto, path));
       }
+      result.add(getJDK_ToolsPath());
     }
 
     result.sort((o1, o2) -> {
