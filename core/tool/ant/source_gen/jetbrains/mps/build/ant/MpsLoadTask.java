@@ -18,11 +18,11 @@ import org.apache.tools.ant.taskdefs.Execute;
 import java.net.URL;
 import java.net.MalformedURLException;
 import java.net.URLClassLoader;
-import java.lang.reflect.Method;
-import org.jetbrains.annotations.NotNull;
 import java.lang.reflect.InvocationTargetException;
+import org.jetbrains.annotations.NotNull;
 import java.lang.reflect.Constructor;
 import org.apache.tools.ant.ProjectComponent;
+import java.lang.reflect.Method;
 import java.util.Collections;
 import java.io.FileInputStream;
 import java.util.LinkedHashSet;
@@ -203,18 +203,38 @@ public class MpsLoadTask extends Task {
       try {
         Thread.currentThread().setContextClassLoader(classLoader);
         Class<?> workerClass = classLoader.loadClass(getWorkerClass());
-        Object worker = instantiateInProcessWorker(workerClass);
-        Method method = workerClass.getMethod("work");
-        method.invoke(worker);
+        doInProcessWork(workerClass);
+      } catch (BuildException ex) {
+        throw ex;
       } catch (Throwable t) {
-        throw new BuildException(t.getMessage() + "\n" + "Used class path: " + classPathUrls.toString());
+        if (t instanceof RuntimeException && t.getCause() instanceof IOException) {
+          t = t.getCause();
+        } else if (t instanceof InvocationTargetException) {
+          t = ((InvocationTargetException) t).getTargetException();
+        }
+        log(String.format("Task [%s] failed with exception", getTaskName()), t, Project.MSG_ERR);
+        log("Used class path: " + classPathUrls.toString(), Project.MSG_ERR);
+        throw new BuildException(t, getLocation());
       } finally {
         Thread.currentThread().setContextClassLoader(threadContextCL);
       }
     }
   }
 
-  protected Object instantiateInProcessWorker(@NotNull Class<?> workerClass) throws IllegalAccessException, InvocationTargetException, InstantiationException {
+  /**
+   * Receives properly loaded worker class and may start worker as appropriate.
+   * By default, instantiates an object and fires its no-arg "work" method, see {@link jetbrains.mps.build.ant.MpsLoadTask#instantiateInProcessWorker(Class<?>) } and {@link jetbrains.mps.build.ant.MpsLoadTask#invokeInProcessMain(Class<?>, Object) }
+   */
+  protected void doInProcessWork(@NotNull Class<?> workerClass) throws Exception {
+    Object worker = instantiateInProcessWorker(workerClass);
+    invokeInProcessMain(workerClass, worker);
+  }
+
+  /**
+   * Controls construction of a new worker instance, subclasses may override e.g. to pass arguments to a worker through constructor.
+   * This method is part of {@link jetbrains.mps.build.ant.MpsLoadTask#doInProcessWork(Class<?>) }.
+   */
+  protected Object instantiateInProcessWorker(@NotNull Class<?> workerClass) throws Exception {
     // First, check if there's a desire to get ProjectComponent, i.e. a worker that is Ant-aware 
     for (Constructor<?> constructor : workerClass.getConstructors()) {
       if (constructor.getParameterCount() != 2) {
@@ -237,6 +257,15 @@ public class MpsLoadTask extends Task {
     }
     // Last, respect the case worker doesn't need anything 
     return workerClass.newInstance();
+  }
+
+  /**
+   * Controls execution of a worker code, by default just invokes "work" no-arg method for supplied worker instance.
+   * Subclasses may override. This method is part of {@link jetbrains.mps.build.ant.MpsLoadTask#doInProcessWork(Class<?>) }.
+   */
+  protected void invokeInProcessMain(@NotNull Class<?> workerClass, @NotNull Object workerInstance) throws Exception {
+    Method method = workerClass.getMethod("work");
+    method.invoke(workerInstance);
   }
 
   @NotNull

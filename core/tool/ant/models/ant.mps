@@ -99,6 +99,10 @@
       <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
         <child id="1164991057263" name="throwable" index="YScLw" />
       </concept>
+      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
+        <child id="1081256993305" name="classType" index="2ZW6by" />
+        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
@@ -280,6 +284,10 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
       <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
@@ -295,6 +303,12 @@
       <concept id="6612597108003615641" name="jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement" flags="ng" index="2U$1Ah">
         <property id="6612597108003615642" name="name" index="2U$1Ai" />
         <child id="6612597108003615643" name="line" index="2U$1Aj" />
+      </concept>
+      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
+        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -2166,88 +2180,161 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="3ufQioQQtqm" role="3cqZAp">
-                    <node concept="3cpWsn" id="3ufQioQQtqn" role="3cpWs9">
-                      <property role="TrG5h" value="worker" />
-                      <property role="3TUv4t" value="false" />
-                      <node concept="1rXfSq" id="3QFNug6AsP3" role="33vP2m">
-                        <ref role="37wK5l" node="3QFNug6_7d9" resolve="instantiateInProcessWorker" />
-                        <node concept="37vLTw" id="3QFNug6ClLb" role="37wK5m">
-                          <ref role="3cqZAo" node="3ufQioQQtq4" resolve="workerClass" />
-                        </node>
-                      </node>
-                      <node concept="3uibUv" id="3ufQioQQtqo" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  <node concept="3clFbF" id="1XAHtgEDsaN" role="3cqZAp">
+                    <node concept="1rXfSq" id="1XAHtgEDsaL" role="3clFbG">
+                      <ref role="37wK5l" node="1XAHtgECVZn" resolve="doInProcessWork" />
+                      <node concept="37vLTw" id="1XAHtgEDsYq" role="37wK5m">
+                        <ref role="3cqZAo" node="3ufQioQQtq4" resolve="workerClass" />
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="3ufQioQQtqu" role="3cqZAp">
-                    <node concept="3cpWsn" id="3ufQioQQtqv" role="3cpWs9">
-                      <property role="TrG5h" value="method" />
-                      <property role="3TUv4t" value="false" />
-                      <node concept="3uibUv" id="3ufQioQQtqw" role="1tU5fm">
-                        <ref role="3uigEE" to="t6h5:~Method" resolve="Method" />
-                      </node>
-                      <node concept="2OqwBi" id="3ufQioQQtqx" role="33vP2m">
-                        <node concept="37vLTw" id="3GM_nagTx4x" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3ufQioQQtq4" resolve="workerClass" />
-                        </node>
-                        <node concept="liA8E" id="3ufQioQQtqz" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getMethod" />
-                          <node concept="Xl_RD" id="3ufQioQQtq$" role="37wK5m">
-                            <property role="Xl_RC" value="work" />
-                          </node>
-                        </node>
-                      </node>
+                </node>
+                <node concept="TDmWw" id="1XAHtgEGE8j" role="TEXxN">
+                  <node concept="3cpWsn" id="1XAHtgEGE8k" role="TDEfY">
+                    <property role="TrG5h" value="ex" />
+                    <node concept="3uibUv" id="1XAHtgEGEOG" role="1tU5fm">
+                      <ref role="3uigEE" to="gola:~BuildException" resolve="BuildException" />
                     </node>
                   </node>
-                  <node concept="3clFbF" id="3ufQioQQtq_" role="3cqZAp">
-                    <node concept="2OqwBi" id="3ufQioQQtqA" role="3clFbG">
-                      <node concept="37vLTw" id="3GM_nagTsuk" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3ufQioQQtqv" resolve="method" />
-                      </node>
-                      <node concept="liA8E" id="3ufQioQQtqC" role="2OqNvi">
-                        <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
-                        <node concept="37vLTw" id="3GM_nagTzQ2" role="37wK5m">
-                          <ref role="3cqZAo" node="3ufQioQQtqn" resolve="worker" />
-                        </node>
+                  <node concept="3clFbS" id="1XAHtgEGE8m" role="TDEfX">
+                    <node concept="YS8fn" id="1XAHtgEGFqi" role="3cqZAp">
+                      <node concept="37vLTw" id="1XAHtgEGFx8" role="YScLw">
+                        <ref role="3cqZAo" node="1XAHtgEGE8k" resolve="ex" />
                       </node>
                     </node>
                   </node>
                 </node>
                 <node concept="TDmWw" id="3ufQioQQtpr" role="TEXxN">
                   <node concept="3clFbS" id="3ufQioQQtps" role="TDEfX">
+                    <node concept="3clFbJ" id="6NgXkpAZm1i" role="3cqZAp">
+                      <node concept="1Wc70l" id="6NgXkpAZm1j" role="3clFbw">
+                        <node concept="2ZW3vV" id="6NgXkpAZm1m" role="3uHU7B">
+                          <node concept="37vLTw" id="6NgXkpAZm1k" role="2ZW6bz">
+                            <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
+                          </node>
+                          <node concept="3uibUv" id="6NgXkpAZm1l" role="2ZW6by">
+                            <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
+                          </node>
+                        </node>
+                        <node concept="2ZW3vV" id="6NgXkpAZm1q" role="3uHU7w">
+                          <node concept="2OqwBi" id="6NgXkpAZm2u" role="2ZW6bz">
+                            <node concept="37vLTw" id="6NgXkpAZm2t" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
+                            </node>
+                            <node concept="liA8E" id="6NgXkpAZm2v" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~Throwable.getCause():java.lang.Throwable" resolve="getCause" />
+                            </node>
+                          </node>
+                          <node concept="3uibUv" id="6NgXkpAZm1p" role="2ZW6by">
+                            <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbS" id="6NgXkpAZm1s" role="3clFbx">
+                        <node concept="3clFbF" id="6NgXkpAZm1t" role="3cqZAp">
+                          <node concept="37vLTI" id="6NgXkpAZm1u" role="3clFbG">
+                            <node concept="2OqwBi" id="6NgXkpAZm2y" role="37vLTx">
+                              <node concept="37vLTw" id="6NgXkpAZm2x" role="2Oq$k0">
+                                <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
+                              </node>
+                              <node concept="liA8E" id="6NgXkpAZm2z" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~Throwable.getCause():java.lang.Throwable" resolve="getCause" />
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="6NgXkpAZm1v" role="37vLTJ">
+                              <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3eNFk2" id="2FjfLS1Xh0E" role="3eNLev">
+                        <node concept="2ZW3vV" id="2FjfLS1XiJW" role="3eO9$A">
+                          <node concept="3uibUv" id="2FjfLS1XiK3" role="2ZW6by">
+                            <ref role="3uigEE" to="t6h5:~InvocationTargetException" resolve="InvocationTargetException" />
+                          </node>
+                          <node concept="37vLTw" id="2FjfLS1XiI8" role="2ZW6bz">
+                            <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
+                          </node>
+                        </node>
+                        <node concept="3clFbS" id="2FjfLS1Xh0G" role="3eOfB_">
+                          <node concept="3clFbF" id="2FjfLS1XjJa" role="3cqZAp">
+                            <node concept="37vLTI" id="2FjfLS1XjKZ" role="3clFbG">
+                              <node concept="37vLTw" id="2FjfLS1XjJ9" role="37vLTJ">
+                                <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
+                              </node>
+                              <node concept="2OqwBi" id="2FjfLS1XiMP" role="37vLTx">
+                                <node concept="liA8E" id="2FjfLS1XjCB" role="2OqNvi">
+                                  <ref role="37wK5l" to="t6h5:~InvocationTargetException.getTargetException():java.lang.Throwable" resolve="getTargetException" />
+                                </node>
+                                <node concept="1eOMI4" id="2FjfLS1XiKi" role="2Oq$k0">
+                                  <node concept="10QFUN" id="2FjfLS1XiKf" role="1eOMHV">
+                                    <node concept="3uibUv" id="2FjfLS1XiKk" role="10QFUM">
+                                      <ref role="3uigEE" to="t6h5:~InvocationTargetException" resolve="InvocationTargetException" />
+                                    </node>
+                                    <node concept="37vLTw" id="2FjfLS1XiKl" role="10QFUP">
+                                      <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="1XAHtgEGFEY" role="3cqZAp">
+                      <node concept="1rXfSq" id="1XAHtgEGFEW" role="3clFbG">
+                        <ref role="37wK5l" to="gola:~Task.log(java.lang.String,java.lang.Throwable,int):void" resolve="log" />
+                        <node concept="2YIFZM" id="1XAHtgEH5hD" role="37wK5m">
+                          <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                          <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                          <node concept="Xl_RD" id="1XAHtgEH60H" role="37wK5m">
+                            <property role="Xl_RC" value="Task [%s] failed with exception" />
+                          </node>
+                          <node concept="1rXfSq" id="1XAHtgEH7tg" role="37wK5m">
+                            <ref role="37wK5l" to="gola:~Task.getTaskName():java.lang.String" resolve="getTaskName" />
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="1XAHtgEGUS9" role="37wK5m">
+                          <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
+                        </node>
+                        <node concept="10M0yZ" id="1XAHtgEGVU$" role="37wK5m">
+                          <ref role="3cqZAo" to="gola:~Project.MSG_ERR" resolve="MSG_ERR" />
+                          <ref role="1PxDUh" to="gola:~Project" resolve="Project" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="1XAHtgEGWmp" role="3cqZAp">
+                      <node concept="1rXfSq" id="1XAHtgEGWmq" role="3clFbG">
+                        <ref role="37wK5l" to="gola:~Task.log(java.lang.String,int):void" resolve="log" />
+                        <node concept="3cpWs3" id="1XAHtgEGXR_" role="37wK5m">
+                          <node concept="Xl_RD" id="1XAHtgEGXRG" role="3uHU7B">
+                            <property role="Xl_RC" value="Used class path: " />
+                          </node>
+                          <node concept="2OqwBi" id="1XAHtgEGXRH" role="3uHU7w">
+                            <node concept="37vLTw" id="1XAHtgEGXRI" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3ufQioQQtoy" resolve="classPathUrls" />
+                            </node>
+                            <node concept="liA8E" id="1XAHtgEGXRJ" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="10M0yZ" id="1XAHtgEGWmt" role="37wK5m">
+                          <ref role="3cqZAo" to="gola:~Project.MSG_ERR" resolve="MSG_ERR" />
+                          <ref role="1PxDUh" to="gola:~Project" resolve="Project" />
+                        </node>
+                      </node>
+                    </node>
                     <node concept="YS8fn" id="3ufQioQQtpt" role="3cqZAp">
                       <node concept="2ShNRf" id="3ufQioQQtpu" role="YScLw">
                         <node concept="1pGfFk" id="3ufQioQQtpv" role="2ShVmc">
-                          <ref role="37wK5l" to="gola:~BuildException.&lt;init&gt;(java.lang.String)" resolve="BuildException" />
-                          <node concept="3cpWs3" id="3ufQioQQtpw" role="37wK5m">
-                            <node concept="3cpWs3" id="3ufQioQQtpx" role="3uHU7B">
-                              <node concept="3cpWs3" id="3ufQioQQtpy" role="3uHU7B">
-                                <node concept="2OqwBi" id="3ufQioQQtpz" role="3uHU7B">
-                                  <node concept="37vLTw" id="3GM_nagTrqx" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
-                                  </node>
-                                  <node concept="liA8E" id="3ufQioQQtp_" role="2OqNvi">
-                                    <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
-                                  </node>
-                                </node>
-                                <node concept="Xl_RD" id="3ufQioQQtpA" role="3uHU7w">
-                                  <property role="Xl_RC" value="\n" />
-                                </node>
-                              </node>
-                              <node concept="Xl_RD" id="3ufQioQQtpB" role="3uHU7w">
-                                <property role="Xl_RC" value="Used class path: " />
-                              </node>
-                            </node>
-                            <node concept="2OqwBi" id="3ufQioQQtpC" role="3uHU7w">
-                              <node concept="37vLTw" id="3GM_nagTv6X" role="2Oq$k0">
-                                <ref role="3cqZAo" node="3ufQioQQtoy" resolve="classPathUrls" />
-                              </node>
-                              <node concept="liA8E" id="3ufQioQQtpE" role="2OqNvi">
-                                <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
-                              </node>
-                            </node>
+                          <ref role="37wK5l" to="gola:~BuildException.&lt;init&gt;(java.lang.Throwable,org.apache.tools.ant.Location)" resolve="BuildException" />
+                          <node concept="37vLTw" id="1XAHtgEH1P3" role="37wK5m">
+                            <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
+                          </node>
+                          <node concept="1rXfSq" id="1XAHtgEH2$7" role="37wK5m">
+                            <ref role="37wK5l" to="gola:~ProjectComponent.getLocation():org.apache.tools.ant.Location" resolve="getLocation" />
                           </node>
                         </node>
                       </node>
@@ -2926,6 +3013,87 @@
         <ref role="3uigEE" to="gola:~BuildException" resolve="BuildException" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1XAHtgECJ9k" role="jymVt" />
+    <node concept="3clFb_" id="1XAHtgECVZn" role="jymVt">
+      <property role="TrG5h" value="doInProcessWork" />
+      <node concept="37vLTG" id="1XAHtgED2eR" role="3clF46">
+        <property role="TrG5h" value="workerClass" />
+        <node concept="3uibUv" id="1XAHtgED2eS" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qTvmN" id="1XAHtgED2eT" role="11_B2D" />
+        </node>
+        <node concept="2AHcQZ" id="1XAHtgED2eU" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1XAHtgECVZq" role="3clF47">
+        <node concept="3cpWs8" id="1XAHtgEDmz$" role="3cqZAp">
+          <node concept="3cpWsn" id="1XAHtgEDmz_" role="3cpWs9">
+            <property role="TrG5h" value="worker" />
+            <property role="3TUv4t" value="false" />
+            <node concept="1rXfSq" id="1XAHtgEDmzA" role="33vP2m">
+              <ref role="37wK5l" node="3QFNug6_7d9" resolve="instantiateInProcessWorker" />
+              <node concept="37vLTw" id="1XAHtgEDmzB" role="37wK5m">
+                <ref role="3cqZAo" node="1XAHtgED2eR" resolve="workerClass" />
+              </node>
+            </node>
+            <node concept="3uibUv" id="1XAHtgEDmzC" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1XAHtgEDv8G" role="3cqZAp">
+          <node concept="1rXfSq" id="1XAHtgEDv8E" role="3clFbG">
+            <ref role="37wK5l" node="1XAHtgEBNbH" resolve="invokeInProcessMain" />
+            <node concept="37vLTw" id="1XAHtgEDvB0" role="37wK5m">
+              <ref role="3cqZAo" node="1XAHtgED2eR" resolve="workerClass" />
+            </node>
+            <node concept="37vLTw" id="1XAHtgEDw3m" role="37wK5m">
+              <ref role="3cqZAo" node="1XAHtgEDmz_" resolve="worker" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="1XAHtgECPBL" role="1B3o_S" />
+      <node concept="3cqZAl" id="1XAHtgECVIw" role="3clF45" />
+      <node concept="3uibUv" id="1XAHtgEDgKi" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+      <node concept="P$JXv" id="1XAHtgEDZ3o" role="lGtFl">
+        <node concept="TZ5HA" id="1XAHtgEDZ3p" role="TZ5H$">
+          <node concept="1dT_AC" id="1XAHtgEDZ3q" role="1dT_Ay">
+            <property role="1dT_AB" value="Receives properly loaded worker class and may start worker as appropriate." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="1XAHtgEE528" role="TZ5H$">
+          <node concept="1dT_AC" id="1XAHtgEE529" role="1dT_Ay">
+            <property role="1dT_AB" value="By default, instantiates an object and fires its no-arg &quot;work&quot; method, see " />
+          </node>
+          <node concept="1dT_AA" id="1XAHtgEE53g" role="1dT_Ay">
+            <node concept="92FcH" id="1XAHtgEE53u" role="qph3F">
+              <node concept="TZ5HA" id="1XAHtgEE53w" role="2XjZqd" />
+              <node concept="VXe0Z" id="1XAHtgEEemc" role="92FcQ">
+                <ref role="VXe0S" node="3QFNug6_7d9" resolve="instantiateInProcessWorker" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="1XAHtgEE53f" role="1dT_Ay">
+            <property role="1dT_AB" value=" and " />
+          </node>
+          <node concept="1dT_AA" id="1XAHtgEEhNL" role="1dT_Ay">
+            <node concept="92FcH" id="1XAHtgEEhO4" role="qph3F">
+              <node concept="TZ5HA" id="1XAHtgEEhO6" role="2XjZqd" />
+              <node concept="VXe0Z" id="1XAHtgEEpYf" role="92FcQ">
+                <ref role="VXe0S" node="1XAHtgEBNbH" resolve="invokeInProcessMain" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="1XAHtgEEhNK" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="3QFNug6$TSH" role="jymVt" />
     <node concept="3clFb_" id="3QFNug6_7d9" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -3171,14 +3339,117 @@
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
-      <node concept="3uibUv" id="3QFNug6A8S3" role="Sfmx6">
-        <ref role="3uigEE" to="wyt6:~IllegalAccessException" resolve="IllegalAccessException" />
+      <node concept="3uibUv" id="1XAHtgEDK7o" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
-      <node concept="3uibUv" id="3QFNug6Adm8" role="Sfmx6">
-        <ref role="3uigEE" to="t6h5:~InvocationTargetException" resolve="InvocationTargetException" />
+      <node concept="P$JXv" id="1XAHtgEEtgc" role="lGtFl">
+        <node concept="TZ5HA" id="1XAHtgEEtgd" role="TZ5H$">
+          <node concept="1dT_AC" id="1XAHtgEEtge" role="1dT_Ay">
+            <property role="1dT_AB" value="Controls construction of a new worker instance, subclasses may override e.g. to pass arguments to a worker through constructor." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="1XAHtgEEzw5" role="TZ5H$">
+          <node concept="1dT_AC" id="1XAHtgEEzw6" role="1dT_Ay">
+            <property role="1dT_AB" value="This method is part of " />
+          </node>
+          <node concept="1dT_AA" id="1XAHtgEEzxn" role="1dT_Ay">
+            <node concept="92FcH" id="1XAHtgEEzx_" role="qph3F">
+              <node concept="TZ5HA" id="1XAHtgEEzxB" role="2XjZqd" />
+              <node concept="VXe0Z" id="1XAHtgEEFFK" role="92FcQ">
+                <ref role="VXe0S" node="1XAHtgECVZn" resolve="doInProcessWork" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="1XAHtgEEzxm" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
+          </node>
+        </node>
       </node>
-      <node concept="3uibUv" id="3QFNug6AhOl" role="Sfmx6">
-        <ref role="3uigEE" to="wyt6:~InstantiationException" resolve="InstantiationException" />
+    </node>
+    <node concept="2tJIrI" id="1XAHtgEBAtY" role="jymVt" />
+    <node concept="3clFb_" id="1XAHtgEBNbH" role="jymVt">
+      <property role="TrG5h" value="invokeInProcessMain" />
+      <node concept="37vLTG" id="1XAHtgEC6DH" role="3clF46">
+        <property role="TrG5h" value="workerClass" />
+        <node concept="3uibUv" id="1XAHtgEC6DI" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qTvmN" id="1XAHtgEC6DJ" role="11_B2D" />
+        </node>
+        <node concept="2AHcQZ" id="1XAHtgEC6DK" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1XAHtgEBTmO" role="3clF46">
+        <property role="TrG5h" value="workerInstance" />
+        <node concept="3uibUv" id="1XAHtgEBZgc" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+        <node concept="2AHcQZ" id="1XAHtgECiqr" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1XAHtgEBNbK" role="3clF47">
+        <node concept="3cpWs8" id="1XAHtgECiYL" role="3cqZAp">
+          <node concept="3cpWsn" id="1XAHtgECiYM" role="3cpWs9">
+            <property role="TrG5h" value="method" />
+            <property role="3TUv4t" value="false" />
+            <node concept="3uibUv" id="1XAHtgECiYN" role="1tU5fm">
+              <ref role="3uigEE" to="t6h5:~Method" resolve="Method" />
+            </node>
+            <node concept="2OqwBi" id="1XAHtgECiYO" role="33vP2m">
+              <node concept="37vLTw" id="1XAHtgECiYP" role="2Oq$k0">
+                <ref role="3cqZAo" node="1XAHtgEC6DH" resolve="workerClass" />
+              </node>
+              <node concept="liA8E" id="1XAHtgECiYQ" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getMethod" />
+                <node concept="Xl_RD" id="1XAHtgECiYR" role="37wK5m">
+                  <property role="Xl_RC" value="work" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1XAHtgECiYS" role="3cqZAp">
+          <node concept="2OqwBi" id="1XAHtgECiYT" role="3clFbG">
+            <node concept="37vLTw" id="1XAHtgECiYU" role="2Oq$k0">
+              <ref role="3cqZAo" node="1XAHtgECiYM" resolve="method" />
+            </node>
+            <node concept="liA8E" id="1XAHtgECiYV" role="2OqNvi">
+              <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
+              <node concept="37vLTw" id="1XAHtgECICi" role="37wK5m">
+                <ref role="3cqZAo" node="1XAHtgEBTmO" resolve="workerInstance" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="1XAHtgEBGS5" role="1B3o_S" />
+      <node concept="3cqZAl" id="1XAHtgEBMUT" role="3clF45" />
+      <node concept="3uibUv" id="1XAHtgEDwLV" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+      <node concept="P$JXv" id="1XAHtgEEIWS" role="lGtFl">
+        <node concept="TZ5HA" id="1XAHtgEEIWT" role="TZ5H$">
+          <node concept="1dT_AC" id="1XAHtgEEIWU" role="1dT_Ay">
+            <property role="1dT_AB" value="Controls execution of a worker code, by default just invokes &quot;work&quot; no-arg method for supplied worker instance." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="1XAHtgEEOWn" role="TZ5H$">
+          <node concept="1dT_AC" id="1XAHtgEEOWo" role="1dT_Ay">
+            <property role="1dT_AB" value="Subclasses may override. This method is part of " />
+          </node>
+          <node concept="1dT_AA" id="1XAHtgEEOXl" role="1dT_Ay">
+            <node concept="92FcH" id="1XAHtgEEOXz" role="qph3F">
+              <node concept="TZ5HA" id="1XAHtgEEOX_" role="2XjZqd" />
+              <node concept="VXe0Z" id="1XAHtgEEX7I" role="92FcQ">
+                <ref role="VXe0S" node="1XAHtgECVZn" resolve="doInProcessWork" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="1XAHtgEEOXk" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="1_4F7FNq2WC" role="jymVt" />
@@ -6750,7 +7021,17 @@
               </node>
               <node concept="3SKdUt" id="gQDJKN9pc2" role="3cqZAp">
                 <node concept="3SKdUq" id="gQDJKN9pc4" role="3SKWNk">
-                  <property role="3SKdUp" value="FIXME I intend to change this so that there's no need to have custom handling both in mpsBootstrapCore.xml and here" />
+                  <property role="3SKdUp" value="FIXME I intend to change this so that there's no need to have custom handling both in mpsBootstrapCore.xml and here." />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="1XAHtgEKzQd" role="3cqZAp">
+                <node concept="3SKdUq" id="1XAHtgEKzQf" role="3SKWNk">
+                  <property role="3SKdUp" value="FWIW, the only assumption this code has about jars weave_Tasks generate for this case is that there's mps-core.jar somewhere up 3" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="1XAHtgEK$1z" role="3cqZAp">
+                <node concept="3SKdUq" id="1XAHtgEK$1_" role="3SKWNk">
+                  <property role="3SKdUp" value="      directories from ant-mps.jar (the one holding MPSClasspathUtil.class), see #getAntJARRelativeHome" />
                 </node>
               </node>
               <node concept="3clFbF" id="gQDJKN9miC" role="3cqZAp">

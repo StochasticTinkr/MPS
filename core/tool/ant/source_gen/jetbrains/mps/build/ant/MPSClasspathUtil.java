@@ -195,7 +195,9 @@ public class MPSClasspathUtil {
       // In particular, it's copyModels in <assemble> task that needs to start MPS in-process at PERSISTENCE level. 
       roots.add(new File(project.resolveFile(ideaHome).getPath(), "lib"));
       // FIXME here, we assume weave_Tasks jars respective core classes under antTasks/ as it used to do. However, 
-      // FIXME I intend to change this so that there's no need to have custom handling both in mpsBootstrapCore.xml and here 
+      // FIXME I intend to change this so that there's no need to have custom handling both in mpsBootstrapCore.xml and here. 
+      // FWIW, the only assumption this code has about jars weave_Tasks generate for this case is that there's mps-core.jar somewhere up 3 
+      //       directories from ant-mps.jar (the one holding MPSClasspathUtil.class), see #getAntJARRelativeHome 
       roots.add(getAntJARRelativeHome());
     }
 
