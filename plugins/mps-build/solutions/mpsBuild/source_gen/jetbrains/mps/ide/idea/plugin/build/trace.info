@@ -42,7 +42,7 @@
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/7848168823642910785">
     <file name="mpsEditorTestsPlugin.xml">
-      <unit id="7848168823642910785" at="1,0,70,10" name="jetbrains.mps.ide.idea.plugin.build.mpsEditorTestsPlugin" />
+      <unit id="7848168823642910785" at="1,0,64,10" name="jetbrains.mps.ide.idea.plugin.build.mpsEditorTestsPlugin" />
     </file>
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/8128914530389845295">
