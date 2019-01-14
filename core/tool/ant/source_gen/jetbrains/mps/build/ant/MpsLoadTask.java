@@ -315,7 +315,7 @@ public class MpsLoadTask extends Task {
   protected Set<File> calculateClassPath(boolean fork) {
     List<File> classPathRoots;
     if (myMpsHome != null) {
-      // if 
+      // if user set mps home location explicitly, assume he knows what he's doing and wishes to force it 
       classPathRoots = Collections.singletonList(new File(myMpsHome, "lib/"));
     } else {
       classPathRoots = MPSClasspathUtil.getClassPathRootsFromDependencies(getProject());
