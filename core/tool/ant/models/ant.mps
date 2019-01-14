@@ -2111,68 +2111,40 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="3RhXwLD0ObW" role="3cqZAp">
-                <node concept="2OqwBi" id="3RhXwLD0OFS" role="3clFbG">
-                  <node concept="2YIFZM" id="3RhXwLD0OBI" role="2Oq$k0">
-                    <ref role="37wK5l" to="wyt6:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
-                    <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
+              <node concept="3cpWs8" id="gQDJKNdiRq" role="3cqZAp">
+                <node concept="3cpWsn" id="gQDJKNdiRo" role="3cpWs9">
+                  <property role="3TUv4t" value="true" />
+                  <property role="TrG5h" value="threadContextCL" />
+                  <node concept="3uibUv" id="gQDJKNdjHH" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~ClassLoader" resolve="ClassLoader" />
                   </node>
-                  <node concept="liA8E" id="3RhXwLD0P5V" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Thread.setContextClassLoader(java.lang.ClassLoader):void" resolve="setContextClassLoader" />
-                    <node concept="37vLTw" id="3RhXwLD0Pg0" role="37wK5m">
-                      <ref role="3cqZAo" node="3ufQioQQtp9" resolve="classLoader" />
+                  <node concept="2OqwBi" id="gQDJKNdkMz" role="33vP2m">
+                    <node concept="2YIFZM" id="gQDJKNdkAi" role="2Oq$k0">
+                      <ref role="37wK5l" to="wyt6:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
+                      <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
+                    </node>
+                    <node concept="liA8E" id="gQDJKNdkZl" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Thread.getContextClassLoader():java.lang.ClassLoader" resolve="getContextClassLoader" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="SfApY" id="3ufQioQQtpq" role="3cqZAp">
-                <node concept="TDmWw" id="3ufQioQQtpr" role="TEbGg">
-                  <node concept="3clFbS" id="3ufQioQQtps" role="TDEfX">
-                    <node concept="YS8fn" id="3ufQioQQtpt" role="3cqZAp">
-                      <node concept="2ShNRf" id="3ufQioQQtpu" role="YScLw">
-                        <node concept="1pGfFk" id="3ufQioQQtpv" role="2ShVmc">
-                          <ref role="37wK5l" to="gola:~BuildException.&lt;init&gt;(java.lang.String)" resolve="BuildException" />
-                          <node concept="3cpWs3" id="3ufQioQQtpw" role="37wK5m">
-                            <node concept="3cpWs3" id="3ufQioQQtpx" role="3uHU7B">
-                              <node concept="3cpWs3" id="3ufQioQQtpy" role="3uHU7B">
-                                <node concept="2OqwBi" id="3ufQioQQtpz" role="3uHU7B">
-                                  <node concept="37vLTw" id="3GM_nagTrqx" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
-                                  </node>
-                                  <node concept="liA8E" id="3ufQioQQtp_" role="2OqNvi">
-                                    <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
-                                  </node>
-                                </node>
-                                <node concept="Xl_RD" id="3ufQioQQtpA" role="3uHU7w">
-                                  <property role="Xl_RC" value="\n" />
-                                </node>
-                              </node>
-                              <node concept="Xl_RD" id="3ufQioQQtpB" role="3uHU7w">
-                                <property role="Xl_RC" value="Used class path: " />
-                              </node>
-                            </node>
-                            <node concept="2OqwBi" id="3ufQioQQtpC" role="3uHU7w">
-                              <node concept="37vLTw" id="3GM_nagTv6X" role="2Oq$k0">
-                                <ref role="3cqZAo" node="3ufQioQQtoy" resolve="classPathUrls" />
-                              </node>
-                              <node concept="liA8E" id="3ufQioQQtpE" role="2OqNvi">
-                                <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
-                              </node>
-                            </node>
-                          </node>
+              <node concept="2GUZhq" id="gQDJKNdl8P" role="3cqZAp">
+                <node concept="3clFbS" id="3ufQioQQtpH" role="2GV8ay">
+                  <node concept="3clFbF" id="3RhXwLD0ObW" role="3cqZAp">
+                    <node concept="2OqwBi" id="3RhXwLD0OFS" role="3clFbG">
+                      <node concept="2YIFZM" id="3RhXwLD0OBI" role="2Oq$k0">
+                        <ref role="37wK5l" to="wyt6:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
+                        <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
+                      </node>
+                      <node concept="liA8E" id="3RhXwLD0P5V" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Thread.setContextClassLoader(java.lang.ClassLoader):void" resolve="setContextClassLoader" />
+                        <node concept="37vLTw" id="3RhXwLD0Pg0" role="37wK5m">
+                          <ref role="3cqZAo" node="3ufQioQQtp9" resolve="classLoader" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWsn" id="3ufQioQQtpF" role="TDEfY">
-                    <property role="TrG5h" value="t" />
-                    <property role="3TUv4t" value="false" />
-                    <node concept="3uibUv" id="3ufQioQQtpG" role="1tU5fm">
-                      <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbS" id="3ufQioQQtpH" role="SfCbr">
                   <node concept="3cpWs8" id="3ufQioQQtq3" role="3cqZAp">
                     <node concept="3cpWsn" id="3ufQioQQtq4" role="3cpWs9">
                       <property role="TrG5h" value="workerClass" />
@@ -2238,6 +2210,68 @@
                         <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
                         <node concept="37vLTw" id="3GM_nagTzQ2" role="37wK5m">
                           <ref role="3cqZAo" node="3ufQioQQtqn" resolve="worker" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="TDmWw" id="3ufQioQQtpr" role="TEXxN">
+                  <node concept="3clFbS" id="3ufQioQQtps" role="TDEfX">
+                    <node concept="YS8fn" id="3ufQioQQtpt" role="3cqZAp">
+                      <node concept="2ShNRf" id="3ufQioQQtpu" role="YScLw">
+                        <node concept="1pGfFk" id="3ufQioQQtpv" role="2ShVmc">
+                          <ref role="37wK5l" to="gola:~BuildException.&lt;init&gt;(java.lang.String)" resolve="BuildException" />
+                          <node concept="3cpWs3" id="3ufQioQQtpw" role="37wK5m">
+                            <node concept="3cpWs3" id="3ufQioQQtpx" role="3uHU7B">
+                              <node concept="3cpWs3" id="3ufQioQQtpy" role="3uHU7B">
+                                <node concept="2OqwBi" id="3ufQioQQtpz" role="3uHU7B">
+                                  <node concept="37vLTw" id="3GM_nagTrqx" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="3ufQioQQtpF" resolve="t" />
+                                  </node>
+                                  <node concept="liA8E" id="3ufQioQQtp_" role="2OqNvi">
+                                    <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                                  </node>
+                                </node>
+                                <node concept="Xl_RD" id="3ufQioQQtpA" role="3uHU7w">
+                                  <property role="Xl_RC" value="\n" />
+                                </node>
+                              </node>
+                              <node concept="Xl_RD" id="3ufQioQQtpB" role="3uHU7w">
+                                <property role="Xl_RC" value="Used class path: " />
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="3ufQioQQtpC" role="3uHU7w">
+                              <node concept="37vLTw" id="3GM_nagTv6X" role="2Oq$k0">
+                                <ref role="3cqZAo" node="3ufQioQQtoy" resolve="classPathUrls" />
+                              </node>
+                              <node concept="liA8E" id="3ufQioQQtpE" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWsn" id="3ufQioQQtpF" role="TDEfY">
+                    <property role="TrG5h" value="t" />
+                    <property role="3TUv4t" value="false" />
+                    <node concept="3uibUv" id="3ufQioQQtpG" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="gQDJKNdl8S" role="2GVbov">
+                  <node concept="3clFbF" id="gQDJKNdnnT" role="3cqZAp">
+                    <node concept="2OqwBi" id="gQDJKNdnHW" role="3clFbG">
+                      <node concept="2YIFZM" id="gQDJKNdnxV" role="2Oq$k0">
+                        <ref role="37wK5l" to="wyt6:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
+                        <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
+                      </node>
+                      <node concept="liA8E" id="gQDJKNdnUy" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Thread.setContextClassLoader(java.lang.ClassLoader):void" resolve="setContextClassLoader" />
+                        <node concept="37vLTw" id="gQDJKNdo4m" role="37wK5m">
+                          <ref role="3cqZAo" node="gQDJKNdiRo" resolve="threadContextCL" />
                         </node>
                       </node>
                     </node>

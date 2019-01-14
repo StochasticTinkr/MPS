@@ -33,6 +33,11 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
+      <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
+        <child id="1153952416686" name="body" index="2GV8ay" />
+        <child id="1153952429843" name="finallyBody" index="2GVbov" />
+        <child id="1164903700860" name="catchClause" index="TEXxN" />
+      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -676,8 +681,125 @@
                 </node>
               </node>
             </node>
-            <node concept="SfApY" id="6NgXkpAZm1K" role="3cqZAp">
-              <node concept="TDmWw" id="6NgXkpAZm1L" role="TEbGg">
+            <node concept="3cpWs8" id="gQDJKNdiRq" role="3cqZAp">
+              <node concept="3cpWsn" id="gQDJKNdiRo" role="3cpWs9">
+                <property role="3TUv4t" value="true" />
+                <property role="TrG5h" value="threadContextCL" />
+                <node concept="3uibUv" id="gQDJKNdjHH" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~ClassLoader" resolve="ClassLoader" />
+                </node>
+                <node concept="2OqwBi" id="gQDJKNdkMz" role="33vP2m">
+                  <node concept="2YIFZM" id="gQDJKNdkAi" role="2Oq$k0">
+                    <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
+                    <ref role="37wK5l" to="wyt6:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
+                  </node>
+                  <node concept="liA8E" id="gQDJKNdkZl" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Thread.getContextClassLoader():java.lang.ClassLoader" resolve="getContextClassLoader" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2GUZhq" id="gQDJKNdqFf" role="3cqZAp">
+              <node concept="3clFbS" id="6NgXkpAZm0N" role="2GV8ay">
+                <node concept="3clFbF" id="3RhXwLD0Czs" role="3cqZAp">
+                  <node concept="2OqwBi" id="3RhXwLD0CZt" role="3clFbG">
+                    <node concept="2YIFZM" id="3RhXwLD0CS1" role="2Oq$k0">
+                      <ref role="37wK5l" to="wyt6:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
+                      <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
+                    </node>
+                    <node concept="liA8E" id="3RhXwLD0D9$" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Thread.setContextClassLoader(java.lang.ClassLoader):void" resolve="setContextClassLoader" />
+                      <node concept="37vLTw" id="3RhXwLD0Dg4" role="37wK5m">
+                        <ref role="3cqZAo" node="6NgXkpAZm0x" resolve="classLoader" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="6NgXkpAZm0P" role="3cqZAp">
+                  <node concept="3cpWsn" id="6NgXkpAZm0O" role="3cpWs9">
+                    <property role="TrG5h" value="converterClass" />
+                    <property role="3TUv4t" value="false" />
+                    <node concept="2OqwBi" id="6NgXkpAZm2K" role="33vP2m">
+                      <node concept="37vLTw" id="6NgXkpAZm2J" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6NgXkpAZm0x" resolve="classLoader" />
+                      </node>
+                      <node concept="liA8E" id="6NgXkpAZm2L" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~ClassLoader.loadClass(java.lang.String):java.lang.Class" resolve="loadClass" />
+                        <node concept="Xl_RD" id="6NgXkpAZm0U" role="37wK5m">
+                          <property role="Xl_RC" value="jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3uibUv" id="6NgXkpAZm0Q" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+                      <node concept="3qTvmN" id="6NgXkpAZm0R" role="11_B2D" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="6NgXkpAZm0W" role="3cqZAp">
+                  <node concept="3cpWsn" id="6NgXkpAZm0V" role="3cpWs9">
+                    <property role="TrG5h" value="converter" />
+                    <property role="3TUv4t" value="false" />
+                    <node concept="2OqwBi" id="6NgXkpAZm2O" role="33vP2m">
+                      <node concept="37vLTw" id="6NgXkpAZm2N" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6NgXkpAZm0O" resolve="converterClass" />
+                      </node>
+                      <node concept="liA8E" id="6NgXkpAZm2P" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Class.newInstance():java.lang.Object" resolve="newInstance" />
+                      </node>
+                    </node>
+                    <node concept="3uibUv" id="6NgXkpAZm0X" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="6NgXkpAZm11" role="3cqZAp">
+                  <node concept="3cpWsn" id="6NgXkpAZm10" role="3cpWs9">
+                    <property role="TrG5h" value="method" />
+                    <property role="3TUv4t" value="false" />
+                    <node concept="3uibUv" id="6NgXkpAZyAC" role="1tU5fm">
+                      <ref role="3uigEE" to="t6h5:~Method" resolve="Method" />
+                    </node>
+                    <node concept="2OqwBi" id="6NgXkpAZm2S" role="33vP2m">
+                      <node concept="37vLTw" id="6NgXkpAZm2R" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6NgXkpAZm0O" resolve="converterClass" />
+                      </node>
+                      <node concept="liA8E" id="6NgXkpAZm2T" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getMethod" />
+                        <node concept="Xl_RD" id="6NgXkpAZm15" role="37wK5m">
+                          <property role="Xl_RC" value="convert" />
+                        </node>
+                        <node concept="3VsKOn" id="6NgXkpAZm17" role="37wK5m">
+                          <ref role="3VsUkX" to="33ny:~Map" resolve="Map" />
+                        </node>
+                        <node concept="3VsKOn" id="1y9wNTZgyLk" role="37wK5m">
+                          <ref role="3VsUkX" to="wyt6:~Boolean" resolve="Boolean" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="6NgXkpAZm18" role="3cqZAp">
+                  <node concept="2OqwBi" id="6NgXkpAZm2W" role="3clFbG">
+                    <node concept="37vLTw" id="6NgXkpAZm2V" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6NgXkpAZm10" resolve="method" />
+                    </node>
+                    <node concept="liA8E" id="6NgXkpAZm2X" role="2OqNvi">
+                      <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
+                      <node concept="37vLTw" id="6NgXkpAZm1b" role="37wK5m">
+                        <ref role="3cqZAo" node="6NgXkpAZm0V" resolve="converter" />
+                      </node>
+                      <node concept="37vLTw" id="6NgXkpAZm1c" role="37wK5m">
+                        <ref role="3cqZAo" node="6NgXkpAOzGp" resolve="toConvert" />
+                      </node>
+                      <node concept="37vLTw" id="1y9wNTZgtMt" role="37wK5m">
+                        <ref role="3cqZAo" node="1y9wNTZfV$0" resolve="myStripImplementation" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="TDmWw" id="6NgXkpAZm1L" role="TEXxN">
                 <node concept="3clFbS" id="6NgXkpAZm1h" role="TDEfX">
                   <node concept="3clFbJ" id="6NgXkpAZm1i" role="3cqZAp">
                     <node concept="1Wc70l" id="6NgXkpAZm1j" role="3clFbw">
@@ -842,100 +964,17 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbS" id="6NgXkpAZm0N" role="SfCbr">
-                <node concept="3clFbF" id="3RhXwLD0Czs" role="3cqZAp">
-                  <node concept="2OqwBi" id="3RhXwLD0CZt" role="3clFbG">
-                    <node concept="2YIFZM" id="3RhXwLD0CS1" role="2Oq$k0">
+              <node concept="3clFbS" id="gQDJKNdqFi" role="2GVbov">
+                <node concept="3clFbF" id="gQDJKNduKu" role="3cqZAp">
+                  <node concept="2OqwBi" id="gQDJKNduKv" role="3clFbG">
+                    <node concept="2YIFZM" id="gQDJKNduKw" role="2Oq$k0">
                       <ref role="37wK5l" to="wyt6:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
                       <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
                     </node>
-                    <node concept="liA8E" id="3RhXwLD0D9$" role="2OqNvi">
+                    <node concept="liA8E" id="gQDJKNduKx" role="2OqNvi">
                       <ref role="37wK5l" to="wyt6:~Thread.setContextClassLoader(java.lang.ClassLoader):void" resolve="setContextClassLoader" />
-                      <node concept="37vLTw" id="3RhXwLD0Dg4" role="37wK5m">
-                        <ref role="3cqZAo" node="6NgXkpAZm0x" resolve="classLoader" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="6NgXkpAZm0P" role="3cqZAp">
-                  <node concept="3cpWsn" id="6NgXkpAZm0O" role="3cpWs9">
-                    <property role="TrG5h" value="converterClass" />
-                    <property role="3TUv4t" value="false" />
-                    <node concept="2OqwBi" id="6NgXkpAZm2K" role="33vP2m">
-                      <node concept="37vLTw" id="6NgXkpAZm2J" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6NgXkpAZm0x" resolve="classLoader" />
-                      </node>
-                      <node concept="liA8E" id="6NgXkpAZm2L" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~ClassLoader.loadClass(java.lang.String):java.lang.Class" resolve="loadClass" />
-                        <node concept="Xl_RD" id="6NgXkpAZm0U" role="37wK5m">
-                          <property role="Xl_RC" value="jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3uibUv" id="6NgXkpAZm0Q" role="1tU5fm">
-                      <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-                      <node concept="3qTvmN" id="6NgXkpAZm0R" role="11_B2D" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="6NgXkpAZm0W" role="3cqZAp">
-                  <node concept="3cpWsn" id="6NgXkpAZm0V" role="3cpWs9">
-                    <property role="TrG5h" value="converter" />
-                    <property role="3TUv4t" value="false" />
-                    <node concept="2OqwBi" id="6NgXkpAZm2O" role="33vP2m">
-                      <node concept="37vLTw" id="6NgXkpAZm2N" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6NgXkpAZm0O" resolve="converterClass" />
-                      </node>
-                      <node concept="liA8E" id="6NgXkpAZm2P" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~Class.newInstance():java.lang.Object" resolve="newInstance" />
-                      </node>
-                    </node>
-                    <node concept="3uibUv" id="6NgXkpAZm0X" role="1tU5fm">
-                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="6NgXkpAZm11" role="3cqZAp">
-                  <node concept="3cpWsn" id="6NgXkpAZm10" role="3cpWs9">
-                    <property role="TrG5h" value="method" />
-                    <property role="3TUv4t" value="false" />
-                    <node concept="3uibUv" id="6NgXkpAZyAC" role="1tU5fm">
-                      <ref role="3uigEE" to="t6h5:~Method" resolve="Method" />
-                    </node>
-                    <node concept="2OqwBi" id="6NgXkpAZm2S" role="33vP2m">
-                      <node concept="37vLTw" id="6NgXkpAZm2R" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6NgXkpAZm0O" resolve="converterClass" />
-                      </node>
-                      <node concept="liA8E" id="6NgXkpAZm2T" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getMethod" />
-                        <node concept="Xl_RD" id="6NgXkpAZm15" role="37wK5m">
-                          <property role="Xl_RC" value="convert" />
-                        </node>
-                        <node concept="3VsKOn" id="6NgXkpAZm17" role="37wK5m">
-                          <ref role="3VsUkX" to="33ny:~Map" resolve="Map" />
-                        </node>
-                        <node concept="3VsKOn" id="1y9wNTZgyLk" role="37wK5m">
-                          <ref role="3VsUkX" to="wyt6:~Boolean" resolve="Boolean" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="6NgXkpAZm18" role="3cqZAp">
-                  <node concept="2OqwBi" id="6NgXkpAZm2W" role="3clFbG">
-                    <node concept="37vLTw" id="6NgXkpAZm2V" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6NgXkpAZm10" resolve="method" />
-                    </node>
-                    <node concept="liA8E" id="6NgXkpAZm2X" role="2OqNvi">
-                      <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
-                      <node concept="37vLTw" id="6NgXkpAZm1b" role="37wK5m">
-                        <ref role="3cqZAo" node="6NgXkpAZm0V" resolve="converter" />
-                      </node>
-                      <node concept="37vLTw" id="6NgXkpAZm1c" role="37wK5m">
-                        <ref role="3cqZAo" node="6NgXkpAOzGp" resolve="toConvert" />
-                      </node>
-                      <node concept="37vLTw" id="1y9wNTZgtMt" role="37wK5m">
-                        <ref role="3cqZAo" node="1y9wNTZfV$0" resolve="myStripImplementation" />
+                      <node concept="37vLTw" id="gQDJKNduXv" role="37wK5m">
+                        <ref role="3cqZAo" node="gQDJKNdiRo" resolve="threadContextCL" />
                       </node>
                     </node>
                   </node>

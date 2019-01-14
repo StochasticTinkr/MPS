@@ -83,6 +83,7 @@ public class ConvertToBinaryTask extends Copy {
         }
       }
       URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), this.getClass().getClassLoader());
+      final ClassLoader threadContextCL = Thread.currentThread().getContextClassLoader();
       try {
         Thread.currentThread().setContextClassLoader(classLoader);
         Class<?> converterClass = classLoader.loadClass("jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker");
@@ -99,6 +100,8 @@ public class ConvertToBinaryTask extends Copy {
         t.printStackTrace(new PrintWriter(sw));
         String message = sw.toString();
         throw new BuildException(String.format("Cannot convert .mps into .mpb: %s\nModels:%s\nClasspath:%s", message, toConvert.keySet(), classPathUrls), t);
+      } finally {
+        Thread.currentThread().setContextClassLoader(threadContextCL);
       }
     }
   }

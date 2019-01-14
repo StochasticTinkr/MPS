@@ -199,14 +199,17 @@ public class MpsLoadTask extends Task {
         }
       }
       URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), getClass().getClassLoader());
-      Thread.currentThread().setContextClassLoader(classLoader);
+      final ClassLoader threadContextCL = Thread.currentThread().getContextClassLoader();
       try {
+        Thread.currentThread().setContextClassLoader(classLoader);
         Class<?> workerClass = classLoader.loadClass(getWorkerClass());
         Object worker = instantiateInProcessWorker(workerClass);
         Method method = workerClass.getMethod("work");
         method.invoke(worker);
       } catch (Throwable t) {
         throw new BuildException(t.getMessage() + "\n" + "Used class path: " + classPathUrls.toString());
+      } finally {
+        Thread.currentThread().setContextClassLoader(threadContextCL);
       }
     }
   }

@@ -114,6 +114,7 @@
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.InputStreamReader" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
