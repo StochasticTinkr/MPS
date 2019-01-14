@@ -17,8 +17,9 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.ClassPathReader;
 import jetbrains.mps.util.ClassType;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.QualifiedPath;
+import jetbrains.mps.vfs.VFSManager;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -33,14 +34,14 @@ public final class CommonPaths {
   //--------paths-----------
 
   public static List<String> getMPSPaths(ClassType type) {
-    Predicate<String> toolsPredicate = s -> s.contains("jdk.jdi") || s.contains("tools.jar");
+    Predicate<QualifiedPath> toolsPredicate = s -> s.getPath().contains("jdk.jdi") || s.getPath().contains("tools.jar");
     if (type == ClassType.JDK) {
-      return getJDKPath().stream().filter(toolsPredicate.negate()).collect(Collectors.toList());
+      return getJDKPathInternal().stream().filter(toolsPredicate.negate()).map(qualifiedPath -> qualifiedPath.getPath()).collect(Collectors.toList());
     } else if (type == ClassType.JDK_TOOLS) {
-      return getJDKPath().stream().filter(toolsPredicate).collect(Collectors.toList());
+      return getJDKPathInternal().stream().filter(toolsPredicate).map(qualifiedPath -> qualifiedPath.getPath()).collect(Collectors.toList());
     }
 
-    final List<String> result = new ArrayList<>();
+    final List<QualifiedPath> result = new ArrayList<>();
     for (String path : new ClassPathReader(PathManager.getHomePath(), Collections.singletonList(type)).read()) {
       addIfExists(result, path);
     }
@@ -63,24 +64,28 @@ public final class CommonPaths {
     } else if (type == ClassType.TEST) {
       addTestJars(result);
     }
-    return result;
+    return result.stream().map(qualifiedPath -> qualifiedPath.getPath()).collect(Collectors.toList());
   }
 
   public static List<String> getJDKPath() {
-    return SDKDiscovery.discover().stream().map(qualifiedPath -> qualifiedPath.getPath()).collect(Collectors.toList());
+    return getJDKPathInternal().stream().map(qualifiedPath -> qualifiedPath.getPath()).collect(Collectors.toList());
+  }
+
+  private static List<QualifiedPath> getJDKPathInternal() {
+    return SDKDiscovery.discover();
   }
 
   //------classpaths : MPS--------
 
-  private static void addAnnotations(Collection<String> result) {
+  private static void addAnnotations(Collection<QualifiedPath> result) {
     addIfExists(result, "lib/annotations.jar");
   }
 
-  private static void addOpenAPIJars(Collection<String> result) {
+  private static void addOpenAPIJars(Collection<QualifiedPath> result) {
     addIfExists(result, "lib/mps-openapi.jar");
   }
 
-  private static void addCoreJars(Collection<String> result) {
+  private static void addCoreJars(Collection<QualifiedPath> result) {
     addIfExists(result, "lib/mps-annotations.jar");
     addIfExists(result, "lib/mps-logging.jar");
     addIfExists(result, "lib/mps-messaging.jar");
@@ -99,20 +104,20 @@ public final class CommonPaths {
     addIfExists(result, "lib/asm-all-7.0.jar");
   }
 
-  private static void addEditorJars(Collection<String> result) {
+  private static void addEditorJars(Collection<QualifiedPath> result) {
     addIfExists(result, "lib/mps-editor.jar");
     addIfExists(result, "lib/mps-editor-api.jar");
     addIfExists(result, "lib/mps-editor-runtime.jar");
   }
 
-  private static void addRepackedIdeaJars(Collection<String> result) {
+  private static void addRepackedIdeaJars(Collection<QualifiedPath> result) {
     addIfExists(result, "lib/openapi.jar");
     addIfExists(result, "lib/platform.jar");
     addIfExists(result, "lib/platform-api.jar");
     addIfExists(result, "lib/platform-impl.jar");
   }
 
-  private static void addIdeaJars(Collection<String> result) {
+  private static void addIdeaJars(Collection<QualifiedPath> result) {
     addRepackedIdeaJars(result);
     addIfExists(result, "lib/netty-buffer-4.1.30.Final.jar");
     addIfExists(result, "lib/netty-codec-4.1.30.Final.jar");
@@ -128,25 +133,25 @@ public final class CommonPaths {
     addIfExists(result, "lib/forms_rt.jar");
   }
 
-  private static void addPlatformJars(Collection<String> result) {
+  private static void addPlatformJars(Collection<QualifiedPath> result) {
     addIfExists(result, "lib/mps-platform.jar");
     addIfExists(result, "lib/mps-icons.jar");
   }
 
-  private static void addWorkbenchJars(Collection<String> result) {
+  private static void addWorkbenchJars(Collection<QualifiedPath> result) {
     addIfExists(result, "lib/mps-workbench.jar");
   }
 
-  private static void addTestJars(Collection<String> result) {
+  private static void addTestJars(Collection<QualifiedPath> result) {
     addIfExists(result, "lib/mps-test.jar");
     addIfExists(result, "lib/mps-environment.jar");
   }
 
-  private static void addIfExists(Collection<String> item, String path) {
+  private static void addIfExists(Collection<QualifiedPath> item, String path) {
     for (String basePath : PathManager.getHomePaths()) {
       String fullPath = basePath + File.separator + path;
       if (new File(fullPath).exists()) {
-        item.add(fullPath);
+        item.add(new QualifiedPath(path.endsWith(".jar") ? VFSManager.JAR_FS : VFSManager.FILE_FS, fullPath));
       }
     }
   }
