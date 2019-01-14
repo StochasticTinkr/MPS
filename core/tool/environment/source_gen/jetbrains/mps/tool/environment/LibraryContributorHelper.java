@@ -80,6 +80,8 @@ import java.util.LinkedHashMap;
       } catch (MalformedURLException ignored) {
       }
     }
+    // XXX why don't we use myRootClassLoader as a parent CL here? <mps-home>/lib seems to be proper parent CL for a plugin. 
+    //     HOWEVER, the judgement above is just a guess, see EnvironmentBase.createRootClassLoader 
     return new UrlClassLoader(urls, LibraryInitializer.class.getClassLoader());
   }
 

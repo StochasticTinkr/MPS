@@ -15,19 +15,13 @@
   </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.GenerateTask">
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.LinkedHashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.build.ant.MPSClasspathUtil" />
     <classNode dependClassName="jetbrains.mps.build.ant.ModuleJarDataType" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.Chunk" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.Plugin" />
     <classNode dependClassName="jetbrains.mps.tool.common.GeneratorProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.JavaCompilerProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
-    <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.ModuleChunkPart">

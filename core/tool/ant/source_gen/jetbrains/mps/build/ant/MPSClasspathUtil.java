@@ -200,6 +200,7 @@ public class MPSClasspathUtil {
     }
     return result.toString();
   }
+
   public static List<File> getClassPathRootsFromDependencies(Project project) {
     List<File> roots = new ArrayList<File>();
 
@@ -210,19 +211,28 @@ public class MPSClasspathUtil {
     String mpsWorkbenchHome = project.getProperty("artifacts.mpsWorkbench");
 
     if ((mpsHome != null && mpsHome.length() > 0)) {
-      // buildMPS 
+      // we've got regular MPS installation and everything we need is under its "lib/" folder, both IDEA platform and MPS stuff (including lib/ext) 
       roots.add(new File(project.resolveFile(mpsHome).getPath(), "lib"));
     } else if ((pluginHome != null && pluginHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
       // buildPlugin + IDEA 
+      // XXX not sure if it's possible to build with an MPS-generated script having just an MPS-IDEA plugin, but anyway... 
       roots.add(new File(project.resolveFile(ideaHome).getPath(), "lib"));
       roots.add(new File(project.resolveFile(pluginHome).getPath(), "mps-core/lib"));
     } else if ((mpsCoreHome != null && mpsCoreHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
-      // buildCore + IDEA 
+      // we are building something with dependency to mpsBootstrapCore, likely part of MPS itself. 
+      // There's IDEA installation we use, and we shall reference MPS-built artifacts 
       roots.add(new File(project.resolveFile(mpsCoreHome).getPath(), "lib"));
       roots.add(new File(project.resolveFile(ideaHome).getPath(), "lib"));
       if ((mpsWorkbenchHome != null && mpsWorkbenchHome.length() > 0)) {
         roots.add(new File(project.resolveFile(mpsWorkbenchHome).getPath(), "lib"));
       }
+    } else if ((ideaHome != null && ideaHome.length() > 0) && "mpsBootstrapCore".equals(project.getName())) {
+      // bootstrap hack. mpsBootstrapCore uses ant tasks defines in the jars it is about to compile/assemble. 
+      // In particular, it's copyModels in <assemble> task that needs to start MPS in-process at PERSISTENCE level. 
+      roots.add(new File(project.resolveFile(ideaHome).getPath(), "lib"));
+      // FIXME here, we assume weave_Tasks jars respective core classes under antTasks/ as it used to do. However, 
+      // FIXME I intend to change this so that there's no need to have custom handling both in mpsBootstrapCore.xml and here 
+      roots.add(getAntJARRelativeHome());
     }
 
     return roots;
@@ -246,6 +256,7 @@ public class MPSClasspathUtil {
     }
     for (File f : children) {
       if (f.isDirectory()) {
+        // FIXME why on earth this if is here and is different from the one at the start of the method?! 
         if (f.getName().equals("classes") || f.getName().equals("classes_gen")) {
           result.add(f);
         } else {

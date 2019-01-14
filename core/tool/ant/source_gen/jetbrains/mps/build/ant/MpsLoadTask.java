@@ -113,11 +113,11 @@ public class MpsLoadTask extends Task {
     myJvmArgs.addAll(jvmArg.getArgs());
   }
 
-  public void setWorker(String workerClass) {
+  public final void setWorker(String workerClass) {
     myWorkerClass = workerClass;
   }
 
-  public String getWorker() {
+  public final String getWorker() {
     return myWorkerClass;
   }
 
@@ -289,6 +289,8 @@ public class MpsLoadTask extends Task {
 
   protected void checkMpsHome() {
     if (myMpsHome == null) {
+      // FIXME myMpsHome shall serve as an indicator whether user set its location explicitly (hence, with desire to force its own and ignore default home lookup logic 
+      //       presently in MPSClasspathUtil, see #calculateClassPath(boolean)). Either use separate fields for user-supplied home and deduced one, or drop assignment altogether 
       myMpsHome = MPSClasspathUtil.resolveMPSHome(getProject(), true);
     }
 
@@ -311,10 +313,22 @@ public class MpsLoadTask extends Task {
   }
 
   protected Set<File> calculateClassPath(boolean fork) {
-    checkMpsHome();
-    LinkedHashSet<File> result = new LinkedHashSet<File>();
-    result.addAll(MPSClasspathUtil.buildClasspath(getProject(), myMpsHome, fork));
-    return result;
+    List<File> classPathRoots;
+    if (myMpsHome != null) {
+      // if 
+      classPathRoots = Collections.singletonList(new File(myMpsHome, "lib/"));
+    } else {
+      classPathRoots = MPSClasspathUtil.getClassPathRootsFromDependencies(getProject());
+    }
+    if (classPathRoots.isEmpty()) {
+      throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
+
+    }
+    Set<File> classPath = new LinkedHashSet<File>();
+    for (File file : classPathRoots) {
+      MPSClasspathUtil.gatherAllClassesAndJarsUnder(file, classPath);
+    }
+    return classPath;
   }
 
   /**

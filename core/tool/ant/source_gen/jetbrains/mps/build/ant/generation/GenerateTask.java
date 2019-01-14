@@ -8,11 +8,6 @@ import jetbrains.mps.tool.common.JavaCompilerProperties;
 import jetbrains.mps.build.ant.ModuleJarDataType;
 import java.io.File;
 import jetbrains.mps.tool.common.ScriptProperties;
-import java.util.Set;
-import java.util.List;
-import jetbrains.mps.build.ant.MPSClasspathUtil;
-import org.apache.tools.ant.BuildException;
-import java.util.LinkedHashSet;
 
 public class GenerateTask extends MpsLoadTask {
   private final GeneratorProperties myGenProps;
@@ -80,20 +75,5 @@ public class GenerateTask extends MpsLoadTask {
   }
   public void setTargetJavaVersion(String targetJavaVersion) {
     myJavaCompilerProperties.setTargetJavaVersion(targetJavaVersion);
-  }
-
-  @Override
-  protected Set<File> calculateClassPath(boolean fork) {
-    List<File> classPathRoots = MPSClasspathUtil.getClassPathRootsFromDependencies(getProject());
-    if (classPathRoots.isEmpty()) {
-      throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
-
-    }
-    Set<File> classPath = new LinkedHashSet<File>();
-    for (File file : classPathRoots) {
-      MPSClasspathUtil.gatherAllClassesAndJarsUnder(file, classPath);
-    }
-
-    return classPath;
   }
 }
