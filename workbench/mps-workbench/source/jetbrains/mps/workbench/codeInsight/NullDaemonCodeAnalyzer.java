@@ -38,9 +38,8 @@ public class NullDaemonCodeAnalyzer extends DaemonCodeAnalyzerImpl {
   public NullDaemonCodeAnalyzer(@NotNull Project project,
       @NotNull DaemonCodeAnalyzerSettings daemonCodeAnalyzerSettings,
       @NotNull EditorTracker editorTracker, @NotNull PsiDocumentManager psiDocumentManager,
-      @NotNull NamedScopeManager namedScopeManager,
       @NotNull DependencyValidationManager dependencyValidationManager) {
-    super(project, daemonCodeAnalyzerSettings, editorTracker, psiDocumentManager, namedScopeManager, dependencyValidationManager);
+    super(project, daemonCodeAnalyzerSettings, editorTracker, psiDocumentManager, dependencyValidationManager);
   }
 
   @Override
