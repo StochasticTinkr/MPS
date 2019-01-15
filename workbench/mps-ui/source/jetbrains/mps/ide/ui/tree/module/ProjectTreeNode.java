@@ -69,7 +69,12 @@ public class ProjectTreeNode extends TextTreeNode implements TreeElement {
     super.onAdd();
 
     myConnect = ApplicationManager.getApplication().getMessageBus().connect(this.getTree());
-    myConnect.subscribe(ProjectSaved.TOPIC, project -> ProjectTreeNode.this.doUpdatePresentation());
+    myConnect.subscribe(ProjectSaved.TOPIC, new ProjectSaved() {
+      @Override
+      public void duringSave(@NotNull com.intellij.openapi.project.Project project) {
+        ProjectTreeNode.this.doUpdatePresentation();
+      }
+    });
   }
 
   @Override
