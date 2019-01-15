@@ -307,8 +307,9 @@ public abstract class BaseTool {
   }
 
   public int getCurrentTabIndex() {
-    ContentManager contentManager = getContentManager();
-    return contentManager.getIndexOfContent(contentManager.getSelectedContent());
+    final ContentManager contentManager = getContentManager();
+    final Content selectedContent = contentManager.getSelectedContent();
+    return selectedContent == null ? -1 : contentManager.getIndexOfContent(selectedContent);
   }
 
   protected AnAction createCloseAction() {
