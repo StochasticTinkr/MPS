@@ -11,9 +11,6 @@ import java.util.LinkedHashSet;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.util.ClassType;
 import java.util.Arrays;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +27,7 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
     final String fsep = File.separator;
     // XXX Guess, the reason we use IDEA's PathManager instead of MPS's own copy is that we are running from sources here, and no chances to get <project home>/lib location 
-    //     by using resource root of PathManager class. 
+    //     by using resource root of our own PathManager class. 
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(MergeDriverPacker.mpsAddJars).select(new ISelector<String, String>() {
       public String select(String it) {
         return PathManager.getLibPath() + fsep + it;
@@ -49,16 +46,18 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
     }));
 
     final String languagesPath = homePath + fsep + "languages";
-    // FIXME likely, 'references' runtime is missing here
+    // FIXME likely, 'references' runtime is missing here, Radimir? 
     final Iterable<String> OTHER_CLASSES = Arrays.asList("closures", "collections", "tuples");
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(OTHER_CLASSES).select(new ISelector<String, String>() {
       public String select(String it) {
         return languagesPath + fsep + "baseLanguage" + fsep + it + fsep + "runtime" + fsep + "classes";
       }
     }));
-    SetSequence.fromSet(classpathItems).addSequence(ListSequence.fromList(CommonPaths.getMPSPaths(ClassType.OPENAPI)));
-    SetSequence.fromSet(classpathItems).addSequence(ListSequence.fromList(CommonPaths.getMPSPaths(ClassType.CORE)));
-    SetSequence.fromSet(classpathItems).addSequence(ListSequence.fromList(CommonPaths.getMPSPaths(ClassType.ASPECTS)));
+
+    // FIXME CommonPaths class knows about distribution jars, while this code works with MPS from sources 
+    //       Likely, ClassPathReader shall get employed here. OTOH, with MergeDriverMain restricted to 'PERSISTENCE' platform level, 
+    //       we don't need complete set of 'core' class folders here. Please take a look at CLASSPATHS variable above for the actual list 
+    //       If not used, at least keep its value for future reference as a comment! 
     SetSequence.fromSet(classpathItems).addElement(getVCSCorePluginPath() + fsep + "lib" + fsep + getVCSCoreFileName());
     return classpathItems;
   }

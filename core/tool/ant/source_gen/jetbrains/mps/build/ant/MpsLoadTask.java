@@ -123,8 +123,9 @@ public class MpsLoadTask extends Task {
 
   @Override
   public void execute() throws BuildException {
-    // XXX classpath contains MPS jars, which is odd in 'fork' scenario where AntBootstrap class adds 
-    // relevant MPS jars again (it also re-uses urls of the calculated classpath). Is there's any reason to do that? 
+    // By default, we build a classpath that presumably contains all necessary MPS jars (expecting MpsEnvironment or even IdeaEnvironment to fire up) 
+    // though specific task subclasses have control over what to include there. Unfortunately, there's no yet fine-grained control e.g. to include 
+    // only jars sufficient for MpsEnvironment (i.e. not to include any IDEA stuff) 
     Set<File> classPaths = calculateClassPath(myFork);
     if (myUsePropertiesAsMacro) {
       Hashtable properties = getProject().getProperties();
@@ -344,10 +345,15 @@ public class MpsLoadTask extends Task {
     return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(File.separator) || path.charAt(prefix.length()) == File.separatorChar);
   }
 
+  /**
+   * subclasses shall override in case they got better idea how worker classpath shall look like.
+   * Generally, subclasses use properties of the {@link org.apache.tools.ant.Target#getProject() ant project} to access information about environment
+   */
   protected Set<File> calculateClassPath(boolean fork) {
     List<File> classPathRoots;
     if (myMpsHome != null) {
       // if user set mps home location explicitly, assume he knows what he's doing and wishes to force it 
+      // XXX perhaps, would be better to have nested <mps> element with rich set of options? 
       classPathRoots = Collections.singletonList(new File(myMpsHome, "lib/"));
     } else {
       classPathRoots = MPSClasspathUtil.getClassPathRootsFromDependencies(getProject());

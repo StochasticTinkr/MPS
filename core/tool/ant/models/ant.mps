@@ -2,8 +2,8 @@
 <model ref="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)">
   <persistence version="9" />
   <languages>
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="gola" ref="847a3235-09f9-403c-b6a9-1c294a212e92/java:org.apache.tools.ant(Ant/)" />
@@ -1859,12 +1859,17 @@
       <node concept="3clFbS" id="3ufQioQQtnO" role="3clF47">
         <node concept="3SKdUt" id="3QFNug6zPhh" role="3cqZAp">
           <node concept="3SKdUq" id="3QFNug6zPhj" role="3SKWNk">
-            <property role="3SKdUp" value="XXX classpath contains MPS jars, which is odd in 'fork' scenario where AntBootstrap class adds" />
+            <property role="3SKdUp" value="By default, we build a classpath that presumably contains all necessary MPS jars (expecting MpsEnvironment or even IdeaEnvironment to fire up)" />
           </node>
         </node>
-        <node concept="3SKdUt" id="3QFNug6zVeG" role="3cqZAp">
-          <node concept="3SKdUq" id="3QFNug6zVeI" role="3SKWNk">
-            <property role="3SKdUp" value="relevant MPS jars again (it also re-uses urls of the calculated classpath). Is there's any reason to do that?" />
+        <node concept="3SKdUt" id="3uHpWKwwPIH" role="3cqZAp">
+          <node concept="3SKdUq" id="3uHpWKwwPII" role="3SKWNk">
+            <property role="3SKdUp" value="though specific task subclasses have control over what to include there. Unfortunately, there's no yet fine-grained control e.g. to include" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3uHpWKwx34R" role="3cqZAp">
+          <node concept="3SKdUq" id="3uHpWKwx34T" role="3SKWNk">
+            <property role="3SKdUp" value="only jars sufficient for MpsEnvironment (i.e. not to include any IDEA stuff)" />
           </node>
         </node>
         <node concept="3cpWs8" id="3ufQioQQtnR" role="3cqZAp">
@@ -4142,6 +4147,33 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="calculateClassPath" />
       <property role="DiZV1" value="false" />
+      <node concept="P$JXv" id="3uHpWKwx6Dk" role="lGtFl">
+        <node concept="TZ5HA" id="3uHpWKwx6Dl" role="TZ5H$">
+          <node concept="1dT_AC" id="3uHpWKwx6Dm" role="1dT_Ay">
+            <property role="1dT_AB" value="subclasses shall override in case they got better idea how worker classpath shall look like." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3uHpWKwxcTp" role="TZ5H$">
+          <node concept="1dT_AC" id="3uHpWKwxcTq" role="1dT_Ay">
+            <property role="1dT_AB" value="Generally, subclasses use properties of the " />
+          </node>
+          <node concept="1dT_AA" id="3uHpWKwxcTY" role="1dT_Ay">
+            <node concept="92FcH" id="3uHpWKwxcUc" role="qph3F">
+              <node concept="TZ5HA" id="3uHpWKwxcUe" role="2XjZqd">
+                <node concept="1dT_AC" id="3uHpWKwxrWC" role="1dT_Ay">
+                  <property role="1dT_AB" value="ant project" />
+                </node>
+              </node>
+              <node concept="VXe0Z" id="3uHpWKwxl0h" role="92FcQ">
+                <ref role="VXe0S" to="gola:~Target.getProject():org.apache.tools.ant.Project" resolve="getProject" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3uHpWKwxcTX" role="1dT_Ay">
+            <property role="1dT_AB" value=" to access information about environment" />
+          </node>
+        </node>
+      </node>
       <node concept="3Tmbuc" id="tKbzP52n7a" role="1B3o_S" />
       <node concept="3uibUv" id="3ufQioQQtwW" role="3clF45">
         <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
@@ -4166,6 +4198,11 @@
             <node concept="3SKdUt" id="gQDJKN8LBt" role="3cqZAp">
               <node concept="3SKdUq" id="gQDJKN8LBv" role="3SKWNk">
                 <property role="3SKdUp" value="if user set mps home location explicitly, assume he knows what he's doing and wishes to force it" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="3uHpWKwxs0A" role="3cqZAp">
+              <node concept="3SKdUq" id="3uHpWKwxs0C" role="3SKWNk">
+                <property role="3SKdUp" value="XXX perhaps, would be better to have nested &lt;mps&gt; element with rich set of options?" />
               </node>
             </node>
             <node concept="3clFbF" id="gQDJKN8EGj" role="3cqZAp">

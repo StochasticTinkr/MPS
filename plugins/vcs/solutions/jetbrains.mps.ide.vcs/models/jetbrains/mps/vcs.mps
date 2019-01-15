@@ -2404,7 +2404,7 @@
         </node>
         <node concept="3SKdUt" id="1K3lKVMZkWz" role="3cqZAp">
           <node concept="3SKdUq" id="1K3lKVMZkW_" role="3SKWNk">
-            <property role="3SKdUp" value="    by using resource root of PathManager class." />
+            <property role="3SKdUp" value="    by using resource root of our own PathManager class." />
           </node>
         </node>
         <node concept="3clFbF" id="6kmsk4KDJ2c" role="3cqZAp">
@@ -2658,58 +2658,7 @@
         </node>
         <node concept="3SKdUt" id="1K3lKVMYLhJ" role="3cqZAp">
           <node concept="3SKdUq" id="1K3lKVMYLhL" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME likely, 'references' runtime is missing here" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="EdItAYgaPQ" role="3cqZAp">
-          <node concept="2OqwBi" id="EdItAYgdo0" role="3clFbG">
-            <node concept="37vLTw" id="EdItAYgaPO" role="2Oq$k0">
-              <ref role="3cqZAo" node="2CUenDktZkp" resolve="classpathItems" />
-            </node>
-            <node concept="X8dFx" id="EdItAYgexA" role="2OqNvi">
-              <node concept="2YIFZM" id="EdItAYgpg0" role="25WWJ7">
-                <ref role="37wK5l" to="zkib:~CommonPaths.getMPSPaths(jetbrains.mps.util.ClassType):java.util.List" resolve="getMPSPaths" />
-                <ref role="1Pybhc" to="zkib:~CommonPaths" resolve="CommonPaths" />
-                <node concept="Rm8GO" id="EdItAYgw9I" role="37wK5m">
-                  <ref role="Rm8GQ" to="18ew:~ClassType.OPENAPI" resolve="OPENAPI" />
-                  <ref role="1Px2BO" to="18ew:~ClassType" resolve="ClassType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="EdItAYgwDi" role="3cqZAp">
-          <node concept="2OqwBi" id="EdItAYgwDj" role="3clFbG">
-            <node concept="37vLTw" id="EdItAYgwDk" role="2Oq$k0">
-              <ref role="3cqZAo" node="2CUenDktZkp" resolve="classpathItems" />
-            </node>
-            <node concept="X8dFx" id="EdItAYgwDl" role="2OqNvi">
-              <node concept="2YIFZM" id="EdItAYgwDm" role="25WWJ7">
-                <ref role="37wK5l" to="zkib:~CommonPaths.getMPSPaths(jetbrains.mps.util.ClassType):java.util.List" resolve="getMPSPaths" />
-                <ref role="1Pybhc" to="zkib:~CommonPaths" resolve="CommonPaths" />
-                <node concept="Rm8GO" id="EdItAYg$Hr" role="37wK5m">
-                  <ref role="Rm8GQ" to="18ew:~ClassType.CORE" resolve="CORE" />
-                  <ref role="1Px2BO" to="18ew:~ClassType" resolve="ClassType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7BnbNPv4Xxa" role="3cqZAp">
-          <node concept="2OqwBi" id="7BnbNPv4Xxb" role="3clFbG">
-            <node concept="37vLTw" id="7BnbNPv4Xxc" role="2Oq$k0">
-              <ref role="3cqZAo" node="2CUenDktZkp" resolve="classpathItems" />
-            </node>
-            <node concept="X8dFx" id="7BnbNPv4Xxd" role="2OqNvi">
-              <node concept="2YIFZM" id="7BnbNPv4Xxe" role="25WWJ7">
-                <ref role="37wK5l" to="zkib:~CommonPaths.getMPSPaths(jetbrains.mps.util.ClassType):java.util.List" resolve="getMPSPaths" />
-                <ref role="1Pybhc" to="zkib:~CommonPaths" resolve="CommonPaths" />
-                <node concept="Rm8GO" id="7BnbNPv5CJY" role="37wK5m">
-                  <ref role="Rm8GQ" to="18ew:~ClassType.ASPECTS" resolve="ASPECTS" />
-                  <ref role="1Px2BO" to="18ew:~ClassType" resolve="ClassType" />
-                </node>
-              </node>
-            </node>
+            <property role="3SKdUp" value="FIXME likely, 'references' runtime is missing here, Radimir?" />
           </node>
         </node>
         <node concept="3cpWs8" id="6gjr9XnnBYF" role="3cqZAp">
@@ -2804,6 +2753,89 @@
           </node>
         </node>
         <node concept="3clFbH" id="6kmsk4KDJ2D" role="3cqZAp" />
+        <node concept="3SKdUt" id="3uHpWKwxwyr" role="3cqZAp">
+          <node concept="3SKdUq" id="3uHpWKwxwyt" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME CommonPaths class knows about distribution jars, while this code works with MPS from sources" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3uHpWKwxz75" role="3cqZAp">
+          <node concept="3SKdUq" id="3uHpWKwxz77" role="3SKWNk">
+            <property role="3SKdUp" value="      Likely, ClassPathReader shall get employed here. OTOH, with MergeDriverMain restricted to 'PERSISTENCE' platform level," />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3uHpWKwxALl" role="3cqZAp">
+          <node concept="3SKdUq" id="3uHpWKwxALn" role="3SKWNk">
+            <property role="3SKdUp" value="      we don't need complete set of 'core' class folders here. Please take a look at CLASSPATHS variable above for the actual list" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3uHpWKwxFXD" role="3cqZAp">
+          <node concept="3SKdUq" id="3uHpWKwxFXF" role="3SKWNk">
+            <property role="3SKdUp" value="      If not used, at least keep its value for future reference as a comment!" />
+          </node>
+        </node>
+        <node concept="1X3_iC" id="3uHpWKwxsc6" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="EdItAYgaPQ" role="8Wnug">
+            <node concept="2OqwBi" id="EdItAYgdo0" role="3clFbG">
+              <node concept="37vLTw" id="EdItAYgaPO" role="2Oq$k0">
+                <ref role="3cqZAo" node="2CUenDktZkp" resolve="classpathItems" />
+              </node>
+              <node concept="X8dFx" id="EdItAYgexA" role="2OqNvi">
+                <node concept="2YIFZM" id="EdItAYgpg0" role="25WWJ7">
+                  <ref role="37wK5l" to="zkib:~CommonPaths.getMPSPaths(jetbrains.mps.util.ClassType):java.util.List" resolve="getMPSPaths" />
+                  <ref role="1Pybhc" to="zkib:~CommonPaths" resolve="CommonPaths" />
+                  <node concept="Rm8GO" id="EdItAYgw9I" role="37wK5m">
+                    <ref role="Rm8GQ" to="18ew:~ClassType.OPENAPI" resolve="OPENAPI" />
+                    <ref role="1Px2BO" to="18ew:~ClassType" resolve="ClassType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1X3_iC" id="3uHpWKwxsc7" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="EdItAYgwDi" role="8Wnug">
+            <node concept="2OqwBi" id="EdItAYgwDj" role="3clFbG">
+              <node concept="37vLTw" id="EdItAYgwDk" role="2Oq$k0">
+                <ref role="3cqZAo" node="2CUenDktZkp" resolve="classpathItems" />
+              </node>
+              <node concept="X8dFx" id="EdItAYgwDl" role="2OqNvi">
+                <node concept="2YIFZM" id="EdItAYgwDm" role="25WWJ7">
+                  <ref role="37wK5l" to="zkib:~CommonPaths.getMPSPaths(jetbrains.mps.util.ClassType):java.util.List" resolve="getMPSPaths" />
+                  <ref role="1Pybhc" to="zkib:~CommonPaths" resolve="CommonPaths" />
+                  <node concept="Rm8GO" id="EdItAYg$Hr" role="37wK5m">
+                    <ref role="Rm8GQ" to="18ew:~ClassType.CORE" resolve="CORE" />
+                    <ref role="1Px2BO" to="18ew:~ClassType" resolve="ClassType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1X3_iC" id="3uHpWKwxsc8" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="7BnbNPv4Xxa" role="8Wnug">
+            <node concept="2OqwBi" id="7BnbNPv4Xxb" role="3clFbG">
+              <node concept="37vLTw" id="7BnbNPv4Xxc" role="2Oq$k0">
+                <ref role="3cqZAo" node="2CUenDktZkp" resolve="classpathItems" />
+              </node>
+              <node concept="X8dFx" id="7BnbNPv4Xxd" role="2OqNvi">
+                <node concept="2YIFZM" id="7BnbNPv4Xxe" role="25WWJ7">
+                  <ref role="37wK5l" to="zkib:~CommonPaths.getMPSPaths(jetbrains.mps.util.ClassType):java.util.List" resolve="getMPSPaths" />
+                  <ref role="1Pybhc" to="zkib:~CommonPaths" resolve="CommonPaths" />
+                  <node concept="Rm8GO" id="7BnbNPv5CJY" role="37wK5m">
+                    <ref role="Rm8GQ" to="18ew:~ClassType.ASPECTS" resolve="ASPECTS" />
+                    <ref role="1Px2BO" to="18ew:~ClassType" resolve="ClassType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="6kmsk4KDJ1C" role="3cqZAp">
           <node concept="2OqwBi" id="6kmsk4KDJ1D" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTv8O" role="2Oq$k0">
