@@ -11,7 +11,9 @@ import java.util.LinkedHashSet;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.Arrays;
+import java.util.ArrayList;
+import jetbrains.mps.util.ClassType;
+import jetbrains.mps.util.ClassPathReader;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,28 +38,14 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
     // IMPORTANT 
     //       MergeDriverMain uses 'PERSISTENCE' level of the Platform, hence doesn't need to load MPSDataFlow or MPSTextGenerator classes. 
     //       Here, we shall satisfy relevant 'PERSISTANCE'-level dependencies only, not complete mps-core.jar content 
-    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "logging", "openapi", "smodel", "project", "typesystemEngine", "persistence", "components", "platform", "java-stub", "util", "vfs", "aspects" + fsep + "behavior" + fsep + "behavior-api", "aspects" + fsep + "behavior" + fsep + "behavior-runtime");
     String homePath = PathManager.getHomePath();
-    final String corePath = homePath + fsep + "core";
-    SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(CLASSPATHS).select(new ISelector<String, String>() {
-      public String select(String it) {
-        return corePath + fsep + it + fsep + "classes";
-      }
-    }));
-
-    final String languagesPath = homePath + fsep + "languages";
-    // FIXME likely, 'references' runtime is missing here, Radimir? 
-    final Iterable<String> OTHER_CLASSES = Arrays.asList("closures", "collections", "tuples");
-    SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(OTHER_CLASSES).select(new ISelector<String, String>() {
-      public String select(String it) {
-        return languagesPath + fsep + "baseLanguage" + fsep + it + fsep + "runtime" + fsep + "classes";
-      }
-    }));
-
-    // FIXME CommonPaths class knows about distribution jars, while this code works with MPS from sources 
-    //       Likely, ClassPathReader shall get employed here. OTOH, with MergeDriverMain restricted to 'PERSISTENCE' platform level, 
-    //       we don't need complete set of 'core' class folders here. Please take a look at CLASSPATHS variable above for the actual list 
-    //       If not used, at least keep its value for future reference as a comment! 
+    ArrayList<ClassType> coreTypes = new ArrayList<ClassType>();
+    coreTypes.add(ClassType.OPENAPI);
+    coreTypes.add(ClassType.CORE);
+    coreTypes.add(ClassType.ASPECTS);
+    for (String cpi : new ClassPathReader(homePath, coreTypes).read()) {
+      SetSequence.fromSet(classpathItems).addElement(homePath + "/" + cpi);
+    }
     SetSequence.fromSet(classpathItems).addElement(getVCSCorePluginPath() + fsep + "lib" + fsep + getVCSCoreFileName());
     return classpathItems;
   }
