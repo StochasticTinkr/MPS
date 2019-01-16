@@ -1707,12 +1707,16 @@ public class QueriesGenerated extends QueryProviderBase {
     // using the same mechanism as for any other MPS-orchestrated build project. 
     // In fact, it seems that only copyModels task is important (hence, Platform of 'PERSISTENCE' level) 
     // as MPS itself has been already generated and compiled (i.e no need for generate, migrate or runMPS tasks, see 
-    // antlib.xml for full list). Therefore, once PlatformBase is capable to load only deisred ComponentPlugin classes, 
-    // we can limit this hack to much smaller subset. 
-    // Unfortunately, MPSClasspathUtil expects jar names to match for both deployed and bootstrap MPS builds, hence 
-    // we can't just jar all copyModels-relevant classes into single mps-core.jar. OTOH, I don't quite understand why 
-    // do we need MPSClasspathUtil for ant tasks, why don't we build proper classpath right inside the build script  
-    // (classpathref of respective taskdef)? 
+    // antlib.xml for full list). Therefore, with PlatformBase capable to load only deisred ComponentPlugin classes, 
+    // we limit this hack to a smaller subset and don't include java/out of mps-generator, mps-textgen, mps-make-rt or kernel-resources 
+    // (last two facilitates project make). We don't care to split classes into different jars as  
+    // MPSClasspathUtil#getClassPathRootsFromDependencies and #getAntJARRelativeHome care to find only mps-core.jar somewhere up to 3 
+    // levels from ant-mps.jar 
+    // Note, alternative workaround is to specify proper 'mpsHome' for each task we'd like to execute (value of the home set overrides the 
+    // logic to locate mps-core.jar. However, that would require copy of IDEA libraries into the home location as well, and would give much more cluttered ant xml as each 
+    // copyModels task would need the value) 
+    // 
+    // Besisdes, we used to copy ${artifacts.IDEA}/lib/trove4j.jar into antTasks/. With MPSClasspathUtil#getClassPathRootsFromDependencies adding IDEA/lib to classpath, we no longer have to do it here. 
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals("mpsBootstrapCore") && SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).equals("jetbrains.mps.ide.build");
   }
   public static Object varMacro_Value_10_4(final TemplateVarContext _context) {

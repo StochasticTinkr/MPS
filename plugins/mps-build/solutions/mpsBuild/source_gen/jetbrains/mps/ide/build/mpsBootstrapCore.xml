@@ -6305,55 +6305,25 @@
   </target>
   
   <target name="declare-mps-tasks" depends="classes">
-    <jar destfile="${build.tmp}/antTasks/mps-collections.jar">
-      <fileset dir="${build.tmp}/java/out/mps-collections" />
-    </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-boot-util.jar">
-      <fileset dir="${build.tmp}/java/out/mps-boot-util" />
-    </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-tuples.jar">
-      <fileset dir="${build.tmp}/java/out/mps-tuples" />
-    </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-references.jar">
-      <fileset dir="${build.tmp}/java/out/mps-references" />
-    </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-closures.jar">
-      <fileset dir="${build.tmp}/java/out/mps-closures" />
-    </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-openapi.jar">
-      <fileset dir="${build.tmp}/java/out/mps-openapi" />
-    </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-logging.jar">
-      <fileset dir="${build.tmp}/java/out/mps-logging" />
-    </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-annotations.jar">
-      <fileset dir="${build.tmp}/java/out/mps-annotations" />
-    </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-messaging.jar">
-      <fileset dir="${build.tmp}/java/out/mps-messaging" />
-    </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-behavior-api.jar">
-      <fileset dir="${build.tmp}/java/out/mps-behavior-api" />
-    </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-behavior-runtime.jar">
-      <fileset dir="${build.tmp}/java/out/mps-behavior-runtime" />
-    </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-project-check.jar">
-      <fileset dir="${build.tmp}/java/out/mps-project-check" />
-    </jar>
     <jar destfile="${build.tmp}/antTasks/mps-core.jar">
-      <fileset dir="${build.tmp}/java/out/mps-kernel" />
-      <fileset dir="${build.tmp}/java/out/vfs" />
-      <fileset dir="${build.tmp}/java/out/util-core" />
-      <fileset dir="${build.tmp}/java/out/platform" />
-      <fileset dir="${build.tmp}/java/out/mps-core-components" />
+      <fileset dir="${build.tmp}/java/out/mps-references" />
+      <fileset dir="${build.tmp}/java/out/mps-closures" />
+      <fileset dir="${build.tmp}/java/out/mps-collections" />
+      <fileset dir="${build.tmp}/java/out/mps-tuples" />
+      <fileset dir="${build.tmp}/java/out/mps-openapi" />
       <fileset dir="${build.tmp}/java/out/mps-smodel" />
+      <fileset dir="${build.tmp}/java/out/mps-core-components" />
+      <fileset dir="${build.tmp}/java/out/mps-logging" />
+      <fileset dir="${build.tmp}/java/out/mps-annotations" />
+      <fileset dir="${build.tmp}/java/out/mps-messaging" />
+      <fileset dir="${build.tmp}/java/out/mps-behavior-api" />
+      <fileset dir="${build.tmp}/java/out/mps-behavior-runtime" />
+      <fileset dir="${build.tmp}/java/out/vfs" />
+      <fileset dir="${build.tmp}/java/out/mps-kernel" />
       <fileset dir="${build.tmp}/java/out/mps-persistence" />
       <fileset dir="${build.tmp}/java/out/mps-project" />
-      <fileset dir="${build.tmp}/java/out/mps-generator" />
-      <fileset dir="${build.tmp}/java/out/mps-textgen" />
-      <fileset dir="${build.tmp}/java/out/kernel-resources" />
-      <fileset dir="${build.tmp}/java/out/mps-make-rt" />
+      <fileset dir="${build.tmp}/java/out/util-core" />
+      <fileset dir="${build.tmp}/java/out/platform" />
     </jar>
     <jar destfile="${build.tmp}/antTasks/mps-tool.jar">
       <fileset dir="${build.tmp}/java/out/mps-tool" />
@@ -6361,9 +6331,6 @@
     <jar destfile="${build.tmp}/antTasks/ant/lib/ant-mps.jar">
       <fileset dir="${build.tmp}/java/out/ant-mps" />
     </jar>
-    <copy todir="${build.tmp}/antTasks">
-      <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-    </copy>
     <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path" />
   </target>
   
