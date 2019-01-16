@@ -42,15 +42,19 @@ import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.JBUI;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.FileBasedProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -93,7 +97,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
   private final static Logger LOG = LogManager.getLogger(ModelRootContentEntriesEditor.class);
 
   private final ModuleDescriptor myModuleDescriptor;
-  private final SRepository myRepository;
+  private Project myProject;
   private final ModelRootEntryPersistence myRootEntryPersistence;
   private final List<ModelRootEntryContainer> myModelRootEntries = new ArrayList<>();
   private ModelRootEntryContainer myFocusedModelRootEntryContainer;
@@ -104,9 +108,9 @@ public class ModelRootContentEntriesEditor implements Disposable {
   private JBPanel myMainPanel;
   private IFile myDefaultFolder;
 
-  public ModelRootContentEntriesEditor(ModuleDescriptor moduleDescriptor, SRepository repository) {
+  public ModelRootContentEntriesEditor(ModuleDescriptor moduleDescriptor, Project p) {
     myModuleDescriptor = moduleDescriptor;
-    myRepository = repository;
+    myProject = p;
     // XXX I'm puzzled with mix of ModelRoot and ModelRootDescriptor in ModelRootEntryPersistence, shall stick to one
     //     i.e. basically have to decide whether we edit SModule or ModuleDescriptor.
     myRootEntryPersistence = new ModelRootEntryPersistence(PersistenceFacade.getInstance());
@@ -118,7 +122,9 @@ public class ModelRootContentEntriesEditor implements Disposable {
         container.addContentEntryEditorListener(myEditorListener);
         myModelRootEntries.add(container);
       } else {
-        LOG.warn(String.format("Can't create editor for '%s' model root type in module %s. Check that plugin, where this model root type is registered, is enabled.", descriptor.getType(), moduleDescriptor.getModuleReference().getModuleName()));
+        LOG.warn(
+            String.format("Can't create editor for '%s' model root type in module %s. Check that plugin, where this model root type is registered, is enabled.",
+                          descriptor.getType(), moduleDescriptor.getModuleReference().getModuleName()));
       }
     }
     initUI();
@@ -127,7 +133,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
   private AnAction getContentEntryActions() {
     final List<AddContentEntryAction> list = new ArrayList<>();
     // make sure that if title for an entry editor has not been specified, we don't treat underscores of a root type as mnemonics
-    myRootEntryPersistence.foreachTypeAndName((type, name) -> list.add(new AddContentEntryAction(type, type.equals(name) ? name.replace('_', ' '): name)) );
+    myRootEntryPersistence.foreachTypeAndName((type, name) -> list.add(new AddContentEntryAction(type, type.equals(name) ? name.replace('_', ' ') : name)));
     // may need to introduce weight into extpoint if by name sorting is not good enough
     list.sort(Comparator.comparing(a -> a.getTemplatePresentation().getText()));
 
@@ -206,7 +212,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
     final JBPanel editorsPanel = new JBPanel(new GridBagLayout());
     splitter.setFirstComponent(editorsPanel);
     editorsPanel.add(entriesPanel,
-        new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, JBUI.emptyInsets(), 0, 0));
+                     new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, JBUI.emptyInsets(), 0, 0));
 
     final JBPanel editorPanel = new JBPanel(new BorderLayout());
     editorPanel.setBorder(BorderFactory.createEtchedBorder());
@@ -253,8 +259,8 @@ public class ModelRootContentEntriesEditor implements Disposable {
       myModelRootEntries.remove(entry);
       if (myFocusedModelRootEntryContainer.equals(entry)) {
         selectEntry(myModelRootEntries.size() > 0 ?
-            myModelRootEntries.get(Math.max(idx - 1, 0))
-            : null);
+                    myModelRootEntries.get(Math.max(idx - 1, 0))
+                                                  : null);
       } else {
         myMainPanel.updateUI();
       }
@@ -306,7 +312,9 @@ public class ModelRootContentEntriesEditor implements Disposable {
   public void dispose() {
   }
 
-  /** Set default folder for FileBasedModel root content dir if module is not in repository yet */
+  /**
+   * Set default folder for FileBasedModel root content dir if module is not in repository yet
+   */
   public final void setDefaultFolder(IFile defaultFolder) {
     myDefaultFolder = defaultFolder;
   }
@@ -340,14 +348,6 @@ public class ModelRootContentEntriesEditor implements Disposable {
     }
 
     private boolean checkAndAddFBModelRoot(ModelRootEntry entry) {
-      IFile contentRoot = myDefaultFolder != null ? myDefaultFolder : FileSystemExtPoint.getFS().getFile("");
-      final SModule module = new ModelAccessHelper(myRepository).runReadAction(() -> myRepository.getModule(myModuleDescriptor.getId()));
-      if (module instanceof AbstractModule) {
-        contentRoot = ((AbstractModule) module).getModuleSourceDir() == null
-            ? ((AbstractModule) module).getDescriptorFile().getParent()
-            : ((AbstractModule) module).getModuleSourceDir();
-      }
-
       Set<VirtualFile> candidatesForIntersection = new HashSet<>();
       for (ModelRootEntryContainer existingEntryContainer : myModelRootEntries) {
         if (entry.getClass().equals(existingEntryContainer.getModelRootEntry().getClass())) {
@@ -358,6 +358,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
       FileChooserDescriptor fileChooserDescriptor = new FileChooserDescriptor(false, true, true, false, true, false);
       fileChooserDescriptor.setTitle("Choose Root Folder for New Model Root");
 
+      IFile contentRoot = getInitialPath();
       VirtualFile chosen = null;
       while (chosen == null) {
         VirtualFile contentRootVFile = VirtualFileUtils.getProjectVirtualFile(contentRoot);
@@ -370,7 +371,9 @@ public class ModelRootContentEntriesEditor implements Disposable {
           for (VirtualFile candidate : candidatesForIntersection) {
             if (doIntersect(chosen, candidate)) {
               Messages.showWarningDialog(myMainPanel,
-                                         MessageFormat.format("<html>Can''t create new model root, it intersects with the existing model root:<br><b>{0}</b><br><br>Please, choose another folder.</html>", StringUtil.escapeXml(String.valueOf(candidate))),
+                                         MessageFormat.format(
+                                             "<html>Can''t create new model root, it intersects with the existing model root:<br><b>{0}</b><br><br>Please, choose another folder.</html>",
+                                             StringUtil.escapeXml(String.valueOf(candidate))),
                                          "Model Roots Intersection");
               chosen = null;
               break;
@@ -388,6 +391,22 @@ public class ModelRootContentEntriesEditor implements Disposable {
     private boolean doIntersect(VirtualFile chosen, VirtualFile candidate) {
       return isAncestor(candidate, chosen, true) || isAncestor(candidate, chosen, false);
     }
+  }
+
+  private IFile getInitialPath() {
+    if (myDefaultFolder != null) {
+      return myDefaultFolder;
+    }
+    SModule module = new ModelAccessHelper(myProject.getRepository()).runReadAction(() -> myProject.getRepository().getModule(myModuleDescriptor.getId()));
+    assert module != null : "Trying to edit settings of a module " + myModuleDescriptor.getNamespace() + ", which is not in repository";
+
+    if (module instanceof AbstractModule) {
+      AbstractModule am = (AbstractModule) module;
+      IFile sourceDir = am.getModuleSourceDir();
+      return sourceDir != null ? sourceDir : am.getDescriptorFile().getParent();
+    }
+
+    return FileSystemExtPoint.getFS().getFile(PathManager.getUserDir());
   }
 
   private final class MyContentEntryEditorListener implements ContentEntryEditorListener {
