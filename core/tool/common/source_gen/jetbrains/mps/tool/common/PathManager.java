@@ -66,7 +66,7 @@ public class PathManager {
   private PathManager() {
   }
 
-  public static String getHomePath() {
+  private static String getHomePath() {
     if (PathManager.ourHomePath != null) {
       return PathManager.ourHomePath;
     }

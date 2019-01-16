@@ -42,10 +42,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.net.URL;
+import java.util.LinkedHashSet;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil;
-import java.net.URISyntaxException;
-import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.IDebuggerSettings;
@@ -306,25 +305,31 @@ public class JUnit_Command {
     return ListSequence.fromList(tests.getParameters().getClassPath()).union(ListSequence.fromList(classpath)).toListSequence();
   }
   private static List<String> collectFromLibFolder() {
-    List<URL> urls = ListSequence.fromList(new ArrayList<URL>());
-    ClassloaderUtil.addIDEALibraries(urls);
-    // FIXME Look, this is stupid. First, we collect library location as files, then translate them to toURI().toURL() only to get File path back here. 
-    List<String> rv = ListSequence.fromList(new ArrayList<String>(ListSequence.fromList(urls).count()));
-    for (URL u : ListSequence.fromList(urls)) {
-      // NOTE, URL.getPath() gives URL segment with escaped characters (e.g. %20), therefore we resort to toURI to get them unescaped. 
-      try {
-        ListSequence.fromList(rv).addElement(u.toURI().getPath());
-      } catch (URISyntaxException ex) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Bad library location", ex);
+    LinkedHashSet<String> libPaths = new LinkedHashSet<String>();
+    // mps lib and platform lib may be the same 
+    libPaths.add(PathManager.getPlatformLibPath());
+    libPaths.add(PathManager.getLibPath());
+    libPaths.add(PathManager.getLibExtPath());
+    List<String> rv = new ArrayList<String>();
+    for (String lp : libPaths) {
+      File libDir = new File(lp);
+      if (!(libDir.isDirectory())) {
+        continue;
+      }
+      for (File f : libDir.listFiles()) {
+        if (ClassloaderUtil.isJarOrZip(f)) {
+          rv.add(f.getPath());
         }
       }
+      // don't get into nested dir. though this is different e.g. from ant tasks (see MPSClasspathUtil#gatherAllClassesAndJarsUnder() 
+      // this is how it was with ClassloaderUtil.addIDEALibraries that used to be here. 
     }
     return rv;
   }
   private static List<String> collectFromPreInstalledPluginsFolder() {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
-    File preinstalledFolder = new File(PathManager.getPreInstalledPluginsPath());
+    // XXX why pre-installed only, and not any locally-deployed (getPluginsPath())? Why not MPS's PathManager but IDEA's? 
+    File preinstalledFolder = new File(com.intellij.openapi.application.PathManager.getPreInstalledPluginsPath());
     final File[] pluginFiles = preinstalledFolder.listFiles();
     if (pluginFiles != null) {
       for (final File pluginFile : pluginFiles) {

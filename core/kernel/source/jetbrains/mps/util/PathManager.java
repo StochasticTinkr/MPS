@@ -33,6 +33,8 @@ import java.util.List;
 
 /**
  * Responsible for different predefined paths in the distribution layout
+ *
+ * IMPORTANT: this class is not for MPS startup, rather to figure out relevant values when there's MPS instance running.
  */
 @Singleton
 public final class PathManager {
@@ -56,9 +58,10 @@ public final class PathManager {
   private PathManager() {
   }
 
-  // FIXME there's j.m.tool.common.PluginPath.getHomePath, in use from Ant-MPS (e.g. MpsEnvironment and <generate> task)
-  //       which is slightly different from this one.
   public static String getHomePath() {
+    // XXX com.intellij.openapi.application.PathManager#getHomePath respects "idea.home.path" system property to force different location
+    //     Though we can not reference the class here directly, we might want to do it in a places where IDEA is available (e.g. JUnit test integration)
+    //     OTOH, it's odd to use different PathManager with different idea about 'home path' from various parts of MPS
     if (ourHomePath != null) {
       return ourHomePath;
     }
@@ -124,6 +127,9 @@ public final class PathManager {
     return getLibPath() + File.separator + "ext";
   }
 
+  /**
+   * @return <MPS or IDEA home>/lib location, where IDEA platform jars reside. May be the same as {@link #getLibPath()}
+   */
   public static String getPlatformLibPath() {
     if (ourPlatformLibPath != null) {
       return ourPlatformLibPath;
@@ -174,7 +180,20 @@ public final class PathManager {
     return paths;
   }
 
-  private static String getLibPath() {
+  /**
+   * @return <MPS home>/lib location, where mps own jars reside. May be the same as {@link #getPlatformLibPath()}
+   */
+  public static String getLibPath() {
+    // Given getIdeaPath() + getHomePath(), I assume we face few scenarios with location for MPS libraries:
+    // I) "Big" MPS aka MPS as IDE
+    //    there's one <MPS Installation>/lib folder to host both IDEA and MPS libraries
+    // II) MPS as IDEA plugin
+    //    there's <IDEA installation>/lib for IDEA jars
+    //    <MPS plugin>/lib with MPS jars
+    // III) MPS started from sources
+    //    there's <checkout dir>/lib with IDEA jars
+    //    there's no lib/ with MPS jars, however,  #getHomePath() points to same <checkout dir> (the one with bin/idea.properties), and
+    //    therefore getLibPath() == getPlatformLibPath().
     return getHomePath() + File.separator + "lib";
   }
 

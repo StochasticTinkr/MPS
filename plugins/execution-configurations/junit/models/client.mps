@@ -28,7 +28,6 @@
     <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
-    <import index="zf81" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.net(JDK/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
@@ -10262,112 +10261,174 @@
       <property role="TrG5h" value="collectFromLibFolder" />
       <node concept="3Tm6S6" id="6tKhx9Vk$dg" role="1B3o_S" />
       <node concept="3clFbS" id="6tKhx9Vk$di" role="3clF47">
-        <node concept="3cpWs8" id="6tKhx9VkQhp" role="3cqZAp">
-          <node concept="3cpWsn" id="6tKhx9VkQhv" role="3cpWs9">
-            <property role="TrG5h" value="urls" />
-            <node concept="_YKpA" id="6tKhx9VkSIX" role="1tU5fm">
-              <node concept="3uibUv" id="6tKhx9VkSIZ" role="_ZDj9">
-                <ref role="3uigEE" to="zf81:~URL" resolve="URL" />
-              </node>
+        <node concept="3cpWs8" id="4NLJPy97Q_L" role="3cqZAp">
+          <node concept="3cpWsn" id="4NLJPy97Q_M" role="3cpWs9">
+            <property role="TrG5h" value="libPaths" />
+            <node concept="3uibUv" id="4NLJPy97Q_J" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~LinkedHashSet" resolve="LinkedHashSet" />
+              <node concept="17QB3L" id="4NLJPy97RUD" role="11_B2D" />
             </node>
-            <node concept="2ShNRf" id="6tKhx9VkRLM" role="33vP2m">
-              <node concept="Tc6Ow" id="6tKhx9VkUjZ" role="2ShVmc">
-                <node concept="3uibUv" id="6tKhx9VkUSF" role="HW$YZ">
-                  <ref role="3uigEE" to="zf81:~URL" resolve="URL" />
-                </node>
+            <node concept="2ShNRf" id="4NLJPy97R0U" role="33vP2m">
+              <node concept="1pGfFk" id="4NLJPy97RHj" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
+                <node concept="17QB3L" id="4NLJPy97ROo" role="1pMfVU" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6tKhx9VkV9v" role="3cqZAp">
-          <node concept="2YIFZM" id="6tKhx9VkWdP" role="3clFbG">
-            <ref role="37wK5l" to="d6hn:1bMaI2XqGkF" resolve="addIDEALibraries" />
-            <ref role="1Pybhc" to="d6hn:1bMaI2XqGdw" resolve="ClassloaderUtil" />
-            <node concept="37vLTw" id="6tKhx9VldO3" role="37wK5m">
-              <ref role="3cqZAo" node="6tKhx9VkQhv" resolve="urls" />
+        <node concept="3SKdUt" id="1mVhhl9kPUX" role="3cqZAp">
+          <node concept="3SKdUq" id="1mVhhl9kPUZ" role="3SKWNk">
+            <property role="3SKdUp" value="mps lib and platform lib may be the same" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4NLJPy97Sfg" role="3cqZAp">
+          <node concept="2OqwBi" id="4NLJPy97TZZ" role="3clFbG">
+            <node concept="37vLTw" id="4NLJPy97Sfe" role="2Oq$k0">
+              <ref role="3cqZAo" node="4NLJPy97Q_M" resolve="libPaths" />
+            </node>
+            <node concept="liA8E" id="4NLJPy980MF" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~HashSet.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="2YIFZM" id="4NLJPy97PGK" role="37wK5m">
+                <ref role="37wK5l" to="18ew:~PathManager.getPlatformLibPath():java.lang.String" resolve="getPlatformLibPath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+              </node>
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="7gQSnkM0aNg" role="3cqZAp">
-          <node concept="3SKdUq" id="7gQSnkM0aNi" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME Look, this is stupid. First, we collect library location as files, then translate them to toURI().toURL() only to get File path back here." />
+        <node concept="3clFbF" id="4NLJPy981eG" role="3cqZAp">
+          <node concept="2OqwBi" id="4NLJPy981eH" role="3clFbG">
+            <node concept="37vLTw" id="4NLJPy981eI" role="2Oq$k0">
+              <ref role="3cqZAo" node="4NLJPy97Q_M" resolve="libPaths" />
+            </node>
+            <node concept="liA8E" id="4NLJPy981eJ" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~HashSet.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="2YIFZM" id="1mVhhl9jlta" role="37wK5m">
+                <ref role="37wK5l" to="18ew:~PathManager.getLibPath():java.lang.String" resolve="getLibPath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1mVhhl9jl1p" role="3cqZAp">
+          <node concept="2OqwBi" id="1mVhhl9jl1q" role="3clFbG">
+            <node concept="37vLTw" id="1mVhhl9jl1r" role="2Oq$k0">
+              <ref role="3cqZAo" node="4NLJPy97Q_M" resolve="libPaths" />
+            </node>
+            <node concept="liA8E" id="1mVhhl9jl1s" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~HashSet.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="2YIFZM" id="1mVhhl9jl1t" role="37wK5m">
+                <ref role="37wK5l" to="18ew:~PathManager.getLibExtPath():java.lang.String" resolve="getLibExtPath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3cpWs8" id="7gQSnkM0Mr6" role="3cqZAp">
           <node concept="3cpWsn" id="7gQSnkM0Mrc" role="3cpWs9">
             <property role="TrG5h" value="rv" />
-            <node concept="_YKpA" id="7gQSnkM0Mre" role="1tU5fm">
-              <node concept="17QB3L" id="7gQSnkM0N5A" role="_ZDj9" />
+            <node concept="3uibUv" id="1mVhhl9k2nF" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="17QB3L" id="1mVhhl9k3uo" role="11_B2D" />
             </node>
             <node concept="2ShNRf" id="7gQSnkM0N6X" role="33vP2m">
-              <node concept="Tc6Ow" id="7gQSnkM125h" role="2ShVmc">
-                <node concept="17QB3L" id="7gQSnkM12B3" role="HW$YZ" />
-                <node concept="2OqwBi" id="7gQSnkM13NA" role="3lWHg$">
-                  <node concept="37vLTw" id="7gQSnkM12VQ" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6tKhx9VkQhv" resolve="urls" />
-                  </node>
-                  <node concept="34oBXx" id="7gQSnkM15Pc" role="2OqNvi" />
-                </node>
+              <node concept="1pGfFk" id="1mVhhl9k5zz" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                <node concept="17QB3L" id="1mVhhl9k7nz" role="1pMfVU" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="2Gpval" id="7gQSnkM0LvW" role="3cqZAp">
-          <node concept="2GrKxI" id="7gQSnkM0LvY" role="2Gsz3X">
-            <property role="TrG5h" value="u" />
+        <node concept="2Gpval" id="1mVhhl9jn3m" role="3cqZAp">
+          <node concept="2GrKxI" id="1mVhhl9jn3o" role="2Gsz3X">
+            <property role="TrG5h" value="lp" />
           </node>
-          <node concept="37vLTw" id="7gQSnkM0LXd" role="2GsD0m">
-            <ref role="3cqZAo" node="6tKhx9VkQhv" resolve="urls" />
+          <node concept="37vLTw" id="1mVhhl9jnyl" role="2GsD0m">
+            <ref role="3cqZAo" node="4NLJPy97Q_M" resolve="libPaths" />
           </node>
-          <node concept="3clFbS" id="7gQSnkM0Lw2" role="2LFqv$">
-            <node concept="3SKdUt" id="7gQSnkM0f1J" role="3cqZAp">
-              <node concept="3SKdUq" id="7gQSnkM0f1L" role="3SKWNk">
-                <property role="3SKdUp" value="NOTE, URL.getPath() gives URL segment with escaped characters (e.g. %20), therefore we resort to toURI to get them unescaped." />
+          <node concept="3clFbS" id="1mVhhl9jn3s" role="2LFqv$">
+            <node concept="3cpWs8" id="1mVhhl9jP0_" role="3cqZAp">
+              <node concept="3cpWsn" id="1mVhhl9jP0A" role="3cpWs9">
+                <property role="TrG5h" value="libDir" />
+                <node concept="3uibUv" id="1mVhhl9jP0z" role="1tU5fm">
+                  <ref role="3uigEE" to="guwi:~File" resolve="File" />
+                </node>
+                <node concept="2ShNRf" id="1mVhhl9jP0B" role="33vP2m">
+                  <node concept="1pGfFk" id="1mVhhl9jP0C" role="2ShVmc">
+                    <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                    <node concept="2GrUjf" id="1mVhhl9jP0D" role="37wK5m">
+                      <ref role="2Gs0qQ" node="1mVhhl9jn3o" resolve="lp" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
-            <node concept="SfApY" id="7gQSnkM15QS" role="3cqZAp">
-              <node concept="3clFbS" id="7gQSnkM15QT" role="SfCbr">
-                <node concept="3clFbF" id="7gQSnkM15RF" role="3cqZAp">
-                  <node concept="2OqwBi" id="7gQSnkM16Bj" role="3clFbG">
-                    <node concept="37vLTw" id="7gQSnkM15RE" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7gQSnkM0Mrc" resolve="rv" />
-                    </node>
-                    <node concept="TSZUe" id="7gQSnkM18Fj" role="2OqNvi">
-                      <node concept="2OqwBi" id="7gQSnkM1alc" role="25WWJ7">
-                        <node concept="2OqwBi" id="7gQSnkM190Y" role="2Oq$k0">
-                          <node concept="2GrUjf" id="7gQSnkM18NQ" role="2Oq$k0">
-                            <ref role="2Gs0qQ" node="7gQSnkM0LvY" resolve="u" />
-                          </node>
-                          <node concept="liA8E" id="7gQSnkM19Fu" role="2OqNvi">
-                            <ref role="37wK5l" to="zf81:~URL.toURI():java.net.URI" resolve="toURI" />
-                          </node>
+            <node concept="3clFbJ" id="1mVhhl9jPEM" role="3cqZAp">
+              <node concept="3clFbS" id="1mVhhl9jPEO" role="3clFbx">
+                <node concept="3N13vt" id="1mVhhl9jR_U" role="3cqZAp" />
+              </node>
+              <node concept="3fqX7Q" id="1mVhhl9jRmu" role="3clFbw">
+                <node concept="2OqwBi" id="1mVhhl9jRmw" role="3fr31v">
+                  <node concept="37vLTw" id="1mVhhl9jRmx" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1mVhhl9jP0A" resolve="libDir" />
+                  </node>
+                  <node concept="liA8E" id="1mVhhl9jRmy" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.isDirectory():boolean" resolve="isDirectory" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2Gpval" id="1mVhhl9jSCV" role="3cqZAp">
+              <node concept="2GrKxI" id="1mVhhl9jSCX" role="2Gsz3X">
+                <property role="TrG5h" value="f" />
+              </node>
+              <node concept="3clFbS" id="1mVhhl9jSD1" role="2LFqv$">
+                <node concept="3clFbJ" id="1mVhhl9jTaw" role="3cqZAp">
+                  <node concept="3clFbS" id="1mVhhl9jTay" role="3clFbx">
+                    <node concept="3clFbF" id="1mVhhl9jXzt" role="3cqZAp">
+                      <node concept="2OqwBi" id="1mVhhl9k8Or" role="3clFbG">
+                        <node concept="37vLTw" id="1mVhhl9jXzs" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7gQSnkM0Mrc" resolve="rv" />
                         </node>
-                        <node concept="liA8E" id="7gQSnkM1bON" role="2OqNvi">
-                          <ref role="37wK5l" to="zf81:~URI.getPath():java.lang.String" resolve="getPath" />
+                        <node concept="liA8E" id="1mVhhl9k9VF" role="2OqNvi">
+                          <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                          <node concept="2OqwBi" id="1mVhhl9kato" role="37wK5m">
+                            <node concept="2GrUjf" id="1mVhhl9ka3k" role="2Oq$k0">
+                              <ref role="2Gs0qQ" node="1mVhhl9jSCX" resolve="f" />
+                            </node>
+                            <node concept="liA8E" id="1mVhhl9kM9G" role="2OqNvi">
+                              <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
+                  <node concept="2YIFZM" id="1mVhhl9jTbc" role="3clFbw">
+                    <ref role="37wK5l" to="d6hn:1bMaI2XqGnp" resolve="isJarOrZip" />
+                    <ref role="1Pybhc" to="d6hn:1bMaI2XqGdw" resolve="ClassloaderUtil" />
+                    <node concept="2GrUjf" id="1mVhhl9jTdb" role="37wK5m">
+                      <ref role="2Gs0qQ" node="1mVhhl9jSCX" resolve="f" />
+                    </node>
+                  </node>
                 </node>
               </node>
-              <node concept="TDmWw" id="7gQSnkM15QU" role="TEbGg">
-                <node concept="3cpWsn" id="7gQSnkM15QV" role="TDEfY">
-                  <property role="TrG5h" value="ex" />
-                  <node concept="3uibUv" id="7gQSnkM1eTa" role="1tU5fm">
-                    <ref role="3uigEE" to="zf81:~URISyntaxException" resolve="URISyntaxException" />
-                  </node>
+              <node concept="2OqwBi" id="1mVhhl9jRUE" role="2GsD0m">
+                <node concept="37vLTw" id="1mVhhl9jRBL" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1mVhhl9jP0A" resolve="libDir" />
                 </node>
-                <node concept="3clFbS" id="7gQSnkM15QX" role="TDEfX">
-                  <node concept="RRSsy" id="7gQSnkM1ewV" role="3cqZAp">
-                    <property role="RRSoG" value="error" />
-                    <node concept="Xl_RD" id="7gQSnkM1ewX" role="RRSoy">
-                      <property role="Xl_RC" value="Bad library location" />
-                    </node>
-                    <node concept="37vLTw" id="7gQSnkM1ewZ" role="RRSow">
-                      <ref role="3cqZAo" node="7gQSnkM15QV" resolve="ex" />
-                    </node>
-                  </node>
+                <node concept="liA8E" id="1mVhhl9jSob" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~File.listFiles():java.io.File[]" resolve="listFiles" />
                 </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="1mVhhl9kRJo" role="3cqZAp">
+              <node concept="3SKdUq" id="1mVhhl9kRJq" role="3SKWNk">
+                <property role="3SKdUp" value="don't get into nested dir. though this is different e.g. from ant tasks (see MPSClasspathUtil#gatherAllClassesAndJarsUnder()" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="1mVhhl9l0KL" role="3cqZAp">
+              <node concept="3SKdUq" id="1mVhhl9l0KN" role="3SKWNk">
+                <property role="3SKdUp" value="this is how it was with ClassloaderUtil.addIDEALibraries that used to be here." />
               </node>
             </node>
           </node>
@@ -10397,6 +10458,11 @@
                 <node concept="17QB3L" id="7zvx6_6CBe2" role="HW$YZ" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="1mVhhl9kR5C" role="3cqZAp">
+          <node concept="3SKdUq" id="1mVhhl9kR5E" role="3SKWNk">
+            <property role="3SKdUp" value="XXX why pre-installed only, and not any locally-deployed (getPluginsPath())? Why not MPS's PathManager but IDEA's?" />
           </node>
         </node>
         <node concept="3cpWs8" id="7zvx6_6CL25" role="3cqZAp">

@@ -142,11 +142,10 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.net.URISyntaxException" />
-    <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
@@ -177,6 +176,7 @@
     <classNode dependClassName="jetbrains.mps.tool.common.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.tool.common.RepositoryDescriptor" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptData" />
+    <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
