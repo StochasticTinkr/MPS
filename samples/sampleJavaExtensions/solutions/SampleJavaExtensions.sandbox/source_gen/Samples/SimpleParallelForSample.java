@@ -64,7 +64,7 @@ public class SimpleParallelForSample {
   }
 
   public static class Logger {
-    private static synchronized void log(String msg) {
+    private synchronized static void log(String msg) {
       System.out.println(msg);
     }
   }

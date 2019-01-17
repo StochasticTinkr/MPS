@@ -11,14 +11,14 @@ import org.jetbrains.annotations.Nullable;
 
 public class ScriptsHolder {
   private static final Map<Long, DeployScript> EXECUTOR_ID_TO_SCRIPT = MapSequence.fromMap(new HashMap<Long, DeployScript>());
-  public static synchronized void put(@NotNull ExecutionEnvironment environment, @NotNull DeployScript scipt) {
+  public synchronized static void put(@NotNull ExecutionEnvironment environment, @NotNull DeployScript scipt) {
     MapSequence.fromMap(EXECUTOR_ID_TO_SCRIPT).put(environment.getExecutionId(), scipt);
   }
   @Nullable
-  public static synchronized DeployScript get(@NotNull ExecutionEnvironment environment) {
+  public synchronized static DeployScript get(@NotNull ExecutionEnvironment environment) {
     return MapSequence.fromMap(EXECUTOR_ID_TO_SCRIPT).get(environment.getExecutionId());
   }
-  public static synchronized void remove(@NotNull ExecutionEnvironment environment) {
+  public synchronized static void remove(@NotNull ExecutionEnvironment environment) {
     MapSequence.fromMap(EXECUTOR_ID_TO_SCRIPT).removeKey(environment.getExecutionId());
   }
 }

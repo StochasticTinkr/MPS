@@ -22,18 +22,18 @@ public final class EnvironmentContainer {
   }
 
   @Nullable
-  public static synchronized Environment get() {
+  public synchronized static Environment get() {
     return ourCurrent;
   }
 
-  /*package*/ static synchronized void setCurrent(@NotNull Environment env) {
+  /*package*/ synchronized static void setCurrent(@NotNull Environment env) {
     if (EnvironmentContainer.ourCurrent != null) {
       throw new IllegalStateException("Another environment is active: " + EnvironmentContainer.ourCurrent);
     }
     EnvironmentContainer.ourCurrent = env;
   }
 
-  /*package*/ static synchronized void clear() {
+  /*package*/ synchronized static void clear() {
     if (ourCurrent == null) {
       throw new IllegalStateException("No active environment currently");
     }
