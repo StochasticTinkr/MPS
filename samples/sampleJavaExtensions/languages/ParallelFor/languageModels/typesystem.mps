@@ -1080,7 +1080,7 @@
                   <node concept="3cpWsn" id="4ERQEDB1obB" role="3cpWs9">
                     <property role="TrG5h" value="declaringClassifier" />
                     <node concept="3Tqbb2" id="4ERQEDB1obC" role="1tU5fm">
-                      <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+                      <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
                     </node>
                     <node concept="2OqwBi" id="4ERQEDB1obD" role="33vP2m">
                       <node concept="37vLTw" id="3GM_nagT$aR" role="2Oq$k0">
@@ -1088,8 +1088,8 @@
                       </node>
                       <node concept="2Xjw5R" id="4ERQEDB1obF" role="2OqNvi">
                         <node concept="1xMEDy" id="4ERQEDB1obG" role="1xVPHs">
-                          <node concept="chp4Y" id="v45EpvgpRx" role="ri$Ld">
-                            <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                          <node concept="chp4Y" id="3KhtvfN$fnE" role="ri$Ld">
+                            <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
                           </node>
                         </node>
                       </node>

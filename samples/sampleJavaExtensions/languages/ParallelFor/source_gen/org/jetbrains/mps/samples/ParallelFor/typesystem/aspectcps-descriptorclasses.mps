@@ -2116,7 +2116,7 @@
                     <node concept="3cpWsn" id="bH" role="3cpWs9">
                       <property role="TrG5h" value="declaringClassifier" />
                       <node concept="3Tqbb2" id="bJ" role="1tU5fm">
-                        <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+                        <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
                         <node concept="cd27G" id="bM" role="lGtFl">
                           <node concept="3u3nmq" id="bN" role="cd27D">
                             <property role="3u3nmv" value="5384012304952427240" />
@@ -2135,10 +2135,10 @@
                         <node concept="2Xjw5R" id="bP" role="2OqNvi">
                           <node concept="1xMEDy" id="bT" role="1xVPHs">
                             <node concept="chp4Y" id="bV" role="ri$Ld">
-                              <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                              <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
                               <node concept="cd27G" id="bX" role="lGtFl">
                                 <node concept="3u3nmq" id="bY" role="cd27D">
-                                  <property role="3u3nmv" value="559597157519302113" />
+                                  <property role="3u3nmv" value="4328370407503623658" />
                                 </node>
                               </node>
                             </node>

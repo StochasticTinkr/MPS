@@ -80,7 +80,7 @@ public class CallsToNonThreadSafeMethod_NonTypesystemRule extends AbstractNonTyp
           return;
         }
         SNode staticMethodDeclaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
-        SNode declaringClassifier = SNodeOperations.getNodeAncestor(staticMethodDeclaration, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+        SNode declaringClassifier = SNodeOperations.getNodeAncestor(staticMethodDeclaration, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
         if (declaringClassifier != null && AttributeOperations.getAttribute(declaringClassifier, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
           return;
         }
