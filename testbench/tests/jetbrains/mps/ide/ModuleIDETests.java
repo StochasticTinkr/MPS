@@ -277,7 +277,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
       // Some modules can exist without models folder - like Devkit
       if (modelsFolder != null && modelsFolder.getChildren() != null) {
         for (IFile file : modelsFolder.getChildren()) {
-          Assert.assertTrue(!file.getName().contains(newModuleName));
+          Assert.assertTrue(file.getName().contains(newModuleName));
         }
       }
 

@@ -86,8 +86,7 @@ public class ProjectCreationTest implements EnvironmentAware {
     };
     String[] rv = new String[aspects.length + 1];
     for (int i = 0; i < aspects.length; i++) {
-      rv[i] =
-          String.format(PATH_IN_PROJECT, projectName, LANGUAGES_ROOT, languageNamespace, Language.LANGUAGE_MODELS, aspects[i].getName(), MPSExtentions.MODEL);
+      rv[i] = String.format(PATH_IN_PROJECT, projectName, LANGUAGES_ROOT, languageNamespace, Language.LANGUAGE_MODELS, languageNamespace + "." + aspects[i].getName(), MPSExtentions.MODEL);
     }
     rv[aspects.length] =
         String.format(PATH_IN_PROJECT, projectName, LANGUAGES_ROOT, languageNamespace, "generator/template", "main@generator", MPSExtentions.MODEL);
@@ -96,7 +95,7 @@ public class ProjectCreationTest implements EnvironmentAware {
 
   private static List<String> solutionModels(String projectName, String solutionNamespace) {
     return Collections.singletonList(
-        String.format(PATH_IN_PROJECT, projectName, SOLUTIONS_ROOT, solutionNamespace, Solution.SOLUTION_MODELS, "sandbox", MPSExtentions.MODEL));
+        String.format(PATH_IN_PROJECT, projectName, SOLUTIONS_ROOT, solutionNamespace, Solution.SOLUTION_MODELS, solutionNamespace + "." + "sandbox", MPSExtentions.MODEL));
   }
 
   private IFile myTmpDir;
