@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -143,7 +143,7 @@ public class DirParser {
     }
   }
   private JavaParser.JavaParseResult parseFile(IFile file) throws IOException, JavaParseException {
-    String contents = IFileUtils.getTextContents(file);
+    String contents = IFileUtil.getTextContents(file);
     return myJavaParser.parseCompilationUnit(contents);
   }
   private SModel registerModelForPackage(String fqName) {

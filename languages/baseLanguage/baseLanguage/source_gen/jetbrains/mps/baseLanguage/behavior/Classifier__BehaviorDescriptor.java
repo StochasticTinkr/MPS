@@ -368,6 +368,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static List<SNode> getOwnMethods_id1DPgsAlM_WC(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(__thisNode__)));
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(Classifier__BehaviorDescriptor.staticMethods_id7fFTwQrQPHW.invoke(__thisNode__)));
     return result;
   }
   /*package*/ static IconResource getSideIcon_id6TtJ6IUjtJX(@NotNull SNode __thisNode__) {

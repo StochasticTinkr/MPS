@@ -27,10 +27,10 @@ public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTy
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(localMethodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
       return;
     }
-    List<SNode> containers = SNodeOperations.getNodeAncestors(localMethodCall, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
+    List<SNode> containers = SNodeOperations.getNodeAncestors(localMethodCall, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
     Set<SNode> containersAndParentClasses = SetSequence.fromSet(new HashSet<SNode>());
-    for (SNode classConcept : containers) {
-      Set<SNode> extendedClassifiers = ClassifierScopeUtils.getExtendedClassifiers(classConcept);
+    for (SNode container : containers) {
+      Set<SNode> extendedClassifiers = ClassifierScopeUtils.getExtendedClassifiers(container);
 
       for (SNode classifier : extendedClassifiers) {
         SetSequence.fromSet(containersAndParentClasses).addElement(classifier);

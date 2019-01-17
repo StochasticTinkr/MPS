@@ -11,8 +11,20 @@
 
   <application-components>
     <component>
-      <interface-class>jetbrains.mps.ide.vfs.IdeaFSComponent</interface-class>
-      <implementation-class>jetbrains.mps.ide.vfs.WatchingIdeaFileSystem</implementation-class>
+      <interface-class>jetbrains.mps.ide.platform.watching.FileSystemListenersContainer</interface-class>
+      <implementation-class>jetbrains.mps.ide.vfs.WatchingFileSystemListenersContainer</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.vfs.JrtIdeaFileSystem</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.vfs.JarIdeaFileSystem</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.vfs.LocalIdeaFileSystem</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.vfs.IdeaFileSystem</implementation-class>
     </component>
     <component>
       <interface-class>jetbrains.mps.smodel.ModelAccess</interface-class>

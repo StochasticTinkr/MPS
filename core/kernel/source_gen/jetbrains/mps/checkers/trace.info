@@ -408,61 +408,6 @@
       <unit id="3719390199793466458" at="29,0,211,0" name="jetbrains.mps.checkers.ModelCheckerBuilder" />
     </file>
   </root>
-  <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/3719390199793467569">
-    <file name="ModelPropertiesChecker.java">
-      <node id="4005002716614949198" at="19,61,20,40" concept="5" />
-      <node id="4005002716614967976" at="20,40,21,36" concept="12" />
-      <node id="4057642946563313884" at="27,60,28,48" concept="12" />
-      <node id="4005002716614963804" at="19,0,23,0" concept="10" trace="process#(Ljetbrains/mps/errors/item/ModelReportItem;)Z" />
-      <node id="4057642946563312033" at="26,0,30,0" concept="10" trace="getCategory#()Ljetbrains/mps/errors/item/IssueKindReportItem/CheckerCategory;" />
-      <node id="4005002716614963802" at="17,146,23,7" concept="5" />
-      <node id="4005002716614887265" at="16,0,25,0" concept="10" trace="check#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-      <scope id="4057642946563312040" at="27,60,28,48" />
-      <scope id="4005002716614963780" at="19,61,21,36" />
-      <scope id="4005002716614963804" at="19,0,23,0">
-        <var name="problem" id="4005002716614963808" />
-      </scope>
-      <scope id="4057642946563312033" at="26,0,30,0" />
-      <scope id="4005002716614887295" at="17,146,23,7" />
-      <scope id="4005002716614887265" at="16,0,25,0">
-        <var name="errorCollector" id="4005002716614887272" />
-        <var name="model" id="4005002716614887268" />
-        <var name="monitor" id="4005002716614887276" />
-        <var name="repository" id="4005002716614887270" />
-      </scope>
-      <unit id="4005002716614963818" at="18,44,23,5" name="jetbrains.mps.checkers.ModelPropertiesChecker$1" />
-      <unit id="3719390199793467569" at="14,0,31,0" name="jetbrains.mps.checkers.ModelPropertiesChecker" />
-    </file>
-  </root>
-  <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/3719390199795829319">
-    <file name="ModuleChecker.java">
-      <node id="377573184518794798" at="20,60,21,49" concept="12" />
-      <node id="7132901627890568353" at="26,58,27,54" concept="5" />
-      <node id="2826098859735883611" at="27,54,28,39" concept="12" />
-      <node id="3719390199795829327" at="16,0,18,0" concept="3" trace="ModuleChecker#()V" />
-      <node id="377573184518791368" at="19,0,23,0" concept="10" trace="getCategory#()Ljetbrains/mps/errors/item/IssueKindReportItem/CheckerCategory;" />
-      <node id="5870062848022601578" at="26,0,30,0" concept="10" trace="process#(Ljetbrains/mps/project/validation/ModuleValidationProblem;)Z" />
-      <node id="5870062848022599621" at="24,149,30,7" concept="5" />
-      <node id="5633148658971835242" at="23,0,32,0" concept="10" trace="check#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-      <scope id="3719390199795829330" at="16,26,16,26" />
-      <scope id="377573184518791372" at="20,60,21,49" />
-      <scope id="3719390199795829327" at="16,0,18,0" />
-      <scope id="5870062848022601580" at="26,58,28,39" />
-      <scope id="377573184518791368" at="19,0,23,0" />
-      <scope id="5870062848022601578" at="26,0,30,0">
-        <var name="vp" id="5870062848022601578" />
-      </scope>
-      <scope id="5633148658971835259" at="24,149,30,7" />
-      <scope id="5633148658971835242" at="23,0,32,0">
-        <var name="errorCollector" id="5633148658971835249" />
-        <var name="module" id="5633148658971835245" />
-        <var name="monitor" id="5633148658971835252" />
-        <var name="repository" id="5633148658971835247" />
-      </scope>
-      <unit id="5870062848022601578" at="25,46,30,5" name="jetbrains.mps.checkers.ModuleChecker$1" />
-      <unit id="3719390199795829319" at="15,0,33,0" name="jetbrains.mps.checkers.ModuleChecker" />
-    </file>
-  </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/4057642946561766034">
     <file name="IAbstractChecker.java">
       <node id="5633148658971830719" at="11,0,12,0" concept="10" trace="check#(nullLorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />

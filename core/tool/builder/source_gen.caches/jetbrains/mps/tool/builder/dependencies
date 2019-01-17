@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.tool.builder.AntBootstrap">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.lang.Thread" />
-    <classNode dependClassName="java.lang.reflect.Method" />
-    <classNode dependClassName="java.net.URL" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.classloading.UrlClassLoader" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-  </dependency>
   <dependency className="jetbrains.mps.tool.builder.MpsWorker">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.PrintWriter" />
@@ -74,7 +60,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />

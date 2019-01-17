@@ -582,9 +582,9 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-logging.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-references.jar" />
@@ -595,6 +595,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-project-check.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -627,9 +628,9 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-logging.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-references.jar" />
@@ -640,6 +641,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-project-check.jar" />
         <pathelement path="${build.tmp}/java/out/org.jetbrains.mps.samples.Constants" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -672,9 +674,9 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-logging.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-references.jar" />
@@ -685,6 +687,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-project-check.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -717,9 +720,9 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-logging.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-references.jar" />
@@ -730,6 +733,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-project-check.jar" />
         <pathelement path="${build.tmp}/java/out/org.jetbrains.mps.samples.IfAndUnless" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -770,6 +774,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-project-check.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -822,6 +827,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-project-check.jar" />
         <pathelement path="${build.tmp}/java/out/org.jetbrains.mps.samples.MoneyRuntime" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
@@ -860,9 +866,9 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-logging.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-references.jar" />
@@ -873,6 +879,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-project-check.jar" />
         <pathelement path="${build.tmp}/java/out/org.jetbrains.mps.samples.Money" />
         <pathelement path="${build.tmp}/java/out/org.jetbrains.mps.samples.MoneyRuntime" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -907,9 +914,9 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-logging.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-references.jar" />
@@ -920,6 +927,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-project-check.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -953,9 +961,9 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-logging.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-references.jar" />
@@ -966,6 +974,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-project-check.jar" />
         <pathelement path="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelFor" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />

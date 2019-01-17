@@ -63,14 +63,14 @@
       <root url="jar://$PROJECT_DIR$/lib/xml-resolver-1.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/kotlinx-coroutines-core-0.26.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/kotlinx-coroutines-jdk8-0.26.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/miglayout-core-5.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/miglayout-swing-5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/miglayout-core-5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/miglayout-swing-5.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/objenesis-2.6.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/serviceMessages.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/xml-apis-ext-1.3.04.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/xmlgraphics-commons-2.3.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/intellij-coverage-agent-1.0.494.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/intellij-test-discovery-agent-1.0.494.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/intellij-coverage-agent-1.0.495.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/intellij-test-discovery-agent-1.0.495.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/java-compatibility-1.0.1.jar!/" />
     </CLASSES>
     <JAVADOC />

@@ -80,7 +80,6 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import java.util.Scanner;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -495,7 +494,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
         });
       }
       public void addNode(final SNode node) {
-        addResponse(createNodeResponseItem_6q36mf_a0a0c0a0a0oc(SNodeOperations.cast(HUtil.copyIfNecessary(node), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))));
+        addResponse(createNodeResponseItem_6q36mf_a0a0c0a0a0oc(node));
       }
       public void addNodeRef(SNode target) {
         SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bbb600cL, "jetbrains.mps.console.base.structure.NodeReferencePresentation"));
@@ -628,11 +627,11 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35d30L, "jetbrains.mps.console.base.structure.NewLineResponseItem"), null, null, false);
     return n1;
   }
-  private static SNode createNodeResponseItem_6q36mf_a0a0c0a0a0oc(Object p0) {
+  private static SNode createNodeResponseItem_6q36mf_a0a0c0a0a0oc(SNode node0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c14L, "jetbrains.mps.console.base.structure.NodeResponseItem"), null, null, false);
-    if (p0 != null) {
-      n1.addChild(MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c14L, 0x4e3b035171b35c15L, "node"), (SNode) p0);
+    if (node0 != null) {
+      n1.addChild(MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c14L, 0x4e3b035171b35c15L, "node"), SNodeOperations.copyIfNecessary(SNodeOperations.cast(node0, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))));
     }
     return n1;
   }

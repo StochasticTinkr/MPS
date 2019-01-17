@@ -15,16 +15,17 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MementoWithFS;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.FileSystemEvent;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.openapi.FileSystem;
-import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
+import jetbrains.mps.vfs.refresh.FileSystemEvent;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
@@ -48,16 +49,16 @@ import static jetbrains.mps.util.FileUtil.getUnixPath;
  * <code>FileBasedModelRoot</code> contains several {@link SourceRoot} which contain models.
  * The source roots might be marked with a {@link SourceRootKind} which determine how do we treat the model files/folders
  * we discover under those source roots.
- *
+ * <p>
  * The class is in the state of migration from <code>String</code> source roots to the interface {@link SourceRoot}
  * that is why it is such a mess.
- *
+ * <p>
  * Paths represented by string either must have a clear contract (absolute, relative) or (better)
  * replaced with some <code>Path</code> entities.
  * AP
  *
  * @author evgeny, 12/11/12
- *         apyshkin, 15/12/16
+ * apyshkin, 15/12/16
  */
 public abstract class FileBasedModelRoot extends ModelRootBase implements FileSystemListener {
   /**
@@ -77,18 +78,22 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   /**
    * This is a private model root persistence notation, ought to be concealed from the general public
    */
-  @Internal public static final String CONTENT_PATH = "contentPath"; // TODO: 12/20/16 lower visibility
-  @Internal public static final String LOCATION = "location"; // TODO: 12/20/16 lower visibility
+  @Internal
+  public static final String CONTENT_PATH = "contentPath"; // TODO: 12/20/16 lower visibility
+  @Internal
+  public static final String LOCATION = "location"; // TODO: 12/20/16 lower visibility
   private static final String PATH = "path";
 
   @ToRemove(version = 3.5)
   @Deprecated
   @Nullable
-  @Immutable private final List<String> mySupportedFileKinds; // null <=> default constructor is used
+  @Immutable
+  private final List<String> mySupportedFileKinds; // null <=> default constructor is used
 
   /**
    * Ancestor for all the source paths
    * Commonly it is a module root folder and 'models' directory is its default source root
+   *
    * @see SourceRoot
    */
   private IFile myContentDir; // might be null when just created
@@ -103,7 +108,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   /**
    * @deprecated use {@link #FileBasedModelRoot()} instead and
-   *             define your own {@link #getSupportedFileKinds1()}
+   * define your own {@link #getSupportedFileKinds1()}
    */
   @Deprecated
   @ToRemove(version = 3.5)
@@ -158,13 +163,13 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   /**
    * @return <code>SourceRoot</code>s of the specified kind
-   *         They might contain relative paths (unlike the legacy counterpart method!!).
-   *         FBModelRoot is going to store relative path, all we need is
-   *         some api to provide relative path instances.
-   *         Now we do not have such abstraction since <code>IFile</code>
-   *         is effectively absolute (just since the idea's <code>VirtualFile</code> is absolute as well).
-   *
-   *         AP
+   * They might contain relative paths (unlike the legacy counterpart method!!).
+   * FBModelRoot is going to store relative path, all we need is
+   * some api to provide relative path instances.
+   * Now we do not have such abstraction since <code>IFile</code>
+   * is effectively absolute (just since the idea's <code>VirtualFile</code> is absolute as well).
+   * <p>
+   * AP
    */
   @NotNull
   @Immutable
@@ -208,8 +213,8 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   }
 
   /**
-   * @deprecated <code>String</code> is not the best choice. Consider using {@link #getSupportedFileKinds1()}
    * @see SourcePaths
+   * @deprecated <code>String</code> is not the best choice. Consider using {@link #getSupportedFileKinds1()}
    */
   @Deprecated
   @Immutable
@@ -337,15 +342,19 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
         IFile file = sourceRoot.getAbsolutePath();
         PathListener listener = new PathListener(file);
         myListeners.add(listener);
-        myFileSystem.addListener(listener);
+        if (myFileSystem instanceof CachingFileSystem) {
+          ((CachingFileSystem) myFileSystem).addListener(listener);
+        }
       }
     });
   }
 
   @Override
   public void dispose() {
-    for (PathListener listener : myListeners) {
-      myFileSystem.removeListener(listener);
+    if (myFileSystem instanceof CachingFileSystem) {
+      for (PathListener listener : myListeners) {
+        ((CachingFileSystem) myFileSystem).removeListener(listener);
+      }
     }
     myListeners.clear();
     super.dispose();

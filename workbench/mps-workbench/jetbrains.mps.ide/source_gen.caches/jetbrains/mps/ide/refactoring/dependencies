@@ -191,7 +191,6 @@
     <classNode dependClassName="jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.refactoring.Renamer" />
-    <classNode dependClassName="jetbrains.mps.vfs.path.Path" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />

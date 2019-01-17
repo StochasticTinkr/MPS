@@ -125,7 +125,7 @@ public class TreeFileChooser {
         if (file.isDirectory() && myDirectoriesAlwaysVisible) {
           return true;
         }
-        return myFileFilter.accept(FileSystem.getInstance().getFileByPath(file.getPath()));
+        return myFileFilter.accept(FileSystem.getInstance().getFile(file.getPath()));
       }
     };
     descriptor.setTitle(myTitle == null ? "Select File" : myTitle);
@@ -135,7 +135,7 @@ public class TreeFileChooser {
 
     VirtualFile selection = VirtualFileUtils.getOrCreateVirtualFile(ourInitialSelectedFile);
     for (VirtualFile file : dialog.choose(selection, null)) {
-      res.add(FileSystem.getInstance().getFileByPath(file.getPath()));
+      res.add(FileSystem.getInstance().getFile(file.getPath()));
     }
 
     if (!res.isEmpty()) ourInitialSelectedFile = res.get(0);

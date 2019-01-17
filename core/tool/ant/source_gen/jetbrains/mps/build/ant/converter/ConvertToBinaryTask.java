@@ -4,32 +4,27 @@ package jetbrains.mps.build.ant.converter;
 
 import org.apache.tools.ant.taskdefs.Copy;
 import java.util.Map;
-import java.util.HashMap;
 import java.io.File;
+import java.util.HashMap;
+import org.jetbrains.annotations.Nullable;
 import org.apache.tools.ant.util.FirstMatchMapper;
 import org.apache.tools.ant.util.GlobPatternMapper;
 import org.apache.tools.ant.util.IdentityMapper;
 import org.apache.tools.ant.types.FileSet;
 import org.apache.tools.ant.BuildException;
-import jetbrains.mps.build.ant.MPSClasspathUtil;
-import java.util.List;
-import java.net.URL;
-import java.util.ArrayList;
-import java.net.MalformedURLException;
-import java.net.URLClassLoader;
-import java.lang.reflect.Method;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.io.StringWriter;
-import java.io.PrintWriter;
+import jetbrains.mps.build.ant.MpsLoadTask;
+import org.jetbrains.annotations.NotNull;
+import java.lang.reflect.Constructor;
+import org.apache.tools.ant.Project;
 import org.apache.tools.ant.util.FileUtils;
 import org.apache.tools.ant.types.FilterSetCollection;
 import java.util.Vector;
-import org.apache.tools.ant.Project;
+import java.io.IOException;
 
 public class ConvertToBinaryTask extends Copy {
-  private Map<String, String> toConvert = new HashMap<String, String>();
+  private Map<File, File> toConvert = new HashMap<File, File>();
   private boolean myStripImplementation = false;
+  @Nullable
   private File mpsHome;
 
   public ConvertToBinaryTask() {
@@ -73,32 +68,22 @@ public class ConvertToBinaryTask extends Copy {
       destDir.mkdirs();
     }
     if (!(toConvert.isEmpty())) {
-      Iterable<File> classPaths = MPSClasspathUtil.buildClasspath(getProject(), mpsHome, false);
-      List<URL> classPathUrls = new ArrayList<URL>();
-      for (File path : classPaths) {
-        try {
-          classPathUrls.add(new URL("file:///" + path));
-        } catch (MalformedURLException e) {
-          throw new BuildException(e);
-        }
-      }
-      URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), this.getClass().getClassLoader());
       try {
-        Thread.currentThread().setContextClassLoader(classLoader);
-        Class<?> converterClass = classLoader.loadClass("jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker");
-        Object converter = converterClass.newInstance();
-        Method method = converterClass.getMethod("convert", Map.class, Boolean.class);
-        method.invoke(converter, toConvert, myStripImplementation);
-      } catch (Throwable t) {
-        if (t instanceof RuntimeException && t.getCause() instanceof IOException) {
-          t = t.getCause();
-        } else if (t instanceof InvocationTargetException) {
-          t = ((InvocationTargetException) t).getTargetException();
-        }
-        StringWriter sw = new StringWriter();
-        t.printStackTrace(new PrintWriter(sw));
-        String message = sw.toString();
-        throw new BuildException(String.format("Cannot convert .mps into .mpb: %s\nModels:%s\nClasspath:%s", message, toConvert.keySet(), classPathUrls), t);
+        MpsLoadTask mpsWorkerTask = new MpsLoadTask("jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker") {
+
+          @Override
+          protected Object instantiateInProcessWorker(@NotNull Class<?> workerClass) throws Exception {
+            Constructor<?> cons = workerClass.getConstructor(Map.class, Boolean.class);
+            return cons.newInstance(toConvert, myStripImplementation);
+          }
+        };
+        mpsWorkerTask.bindToOwner(this);
+        mpsWorkerTask.setFork(false);
+        mpsWorkerTask.setMpsHome(mpsHome);
+        mpsWorkerTask.execute();
+      } catch (BuildException ex) {
+        log(String.format("Cannot convert .mps into .mpb: %s\nModels:%s", ex.getMessage(), toConvert.keySet()), Project.MSG_ERR);
+        throw ex;
       }
     }
   }
@@ -114,7 +99,7 @@ public class ConvertToBinaryTask extends Copy {
     @Override
     public void copyFile(File sourceFile, File destFile, FilterSetCollection filters, Vector filterChains, boolean overwrite, boolean preserveLastModified, boolean append, String inputEncoding, String outputEncoding, Project project, boolean force) throws IOException {
       if (sourceFile.getPath().endsWith(".mps")) {
-        toConvert.put(sourceFile.getPath(), destFile.getPath());
+        toConvert.put(sourceFile, destFile);
       } else {
         delegate.copyFile(sourceFile, destFile, filters, filterChains, overwrite, preserveLastModified, append, inputEncoding, outputEncoding, project, force);
       }

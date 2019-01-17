@@ -7,31 +7,24 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.Objects;
-import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_PropertyAttribute_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_PropertyAttribute_NonTypesystemRule() {
   }
   public void applyRule(final SNode propertyAttribute, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    Iterable<SProperty> properties = SNodeOperations.getConcept(SNodeOperations.getParent(propertyAttribute)).getProperties();
-    SProperty existingProperty = Sequence.fromIterable(properties).findFirst(new IWhereFilter<SProperty>() {
-      public boolean accept(SProperty it) {
-        return Objects.equals(it, PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(propertyAttribute));
-      }
-    });
-    String reportName = PropertyAttribute__BehaviorDescriptor.getNameForReporting_id5gACAVBzOt1.invoke(propertyAttribute);
     if (SPropertyOperations.getString(propertyAttribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId")) == null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -41,22 +34,31 @@ public class check_PropertyAttribute_NonTypesystemRule extends AbstractNonTypesy
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
-    } else if (existingProperty == null) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(propertyAttribute, "Property Attribute is attached to not existing property: " + SPropertyOperations.getString(propertyAttribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId")) + "(" + reportName + ")", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6063712545516045327", null, errorTarget);
-        {
-          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUndeclaredPropertyAttribute_QuickFix", false);
-          _reporter_2309309498.addIntentionProvider(intentionProvider);
+    } else {
+      Iterable<SProperty> properties = SNodeOperations.getConcept(SNodeOperations.getParent(propertyAttribute)).getProperties();
+      SProperty existingProperty = Sequence.fromIterable(properties).findFirst(new IWhereFilter<SProperty>() {
+        public boolean accept(SProperty it) {
+          return Objects.equals(it, PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(propertyAttribute));
         }
-      }
-    } else if (!(Objects.equals(existingProperty.getName(), reportName))) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(propertyAttribute, "Incorrect property name: " + reportName, "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6063712545516052928", null, errorTarget);
+      });
+      String reportName = PropertyAttribute__BehaviorDescriptor.getNameForReporting_id5gACAVBzOt1.invoke(propertyAttribute);
+      if (existingProperty == null) {
         {
-          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.fix_PropertyAttribute_name_QuickFix", false);
-          _reporter_2309309498.addIntentionProvider(intentionProvider);
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(propertyAttribute, "Property Attribute is attached to not existing property: " + SPropertyOperations.getString(propertyAttribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId")) + "(" + reportName + ")", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6063712545516045327", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUndeclaredPropertyAttribute_QuickFix", false);
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
+        }
+      } else if (!(Objects.equals(existingProperty.getName(), reportName))) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(propertyAttribute, "Incorrect property name: " + reportName, "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6063712545516052928", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.fix_PropertyAttribute_name_QuickFix", false);
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
         }
       }
     }

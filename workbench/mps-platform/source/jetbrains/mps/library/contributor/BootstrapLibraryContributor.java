@@ -16,7 +16,7 @@
 package jetbrains.mps.library.contributor;
 
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.openapi.FileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;

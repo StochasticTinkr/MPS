@@ -18,7 +18,6 @@ import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
 import org.apache.log4j.Level;
 import javax.swing.JComponent;
 import com.intellij.ui.components.JBPanel;
-import jetbrains.mps.vfs.path.Path;
 import java.util.Collections;
 import javax.swing.JLabel;
 import com.intellij.ui.components.JBLabel;
@@ -93,9 +92,8 @@ public class RenameModuleDialog extends RenameDialog {
    * Have to update info panel after initialization in {@link jetbrains.mps.ide.refactoring.RenameModuleDialog#createCenterPanel() }, because last one happens in super constructor before {@link jetbrains.mps.ide.refactoring.RenameModuleDialog#myModule } is set.
    */
   private void updateCentralPanel() {
-    final Path renamingModulePath = myModule.getModuleSourceDir().path();
     // If folder and module name are different, folder will not be renamed, so no need to check submodules 
-    if (myModule.getModuleName() != null && myModule.getModuleName().equals(renamingModulePath.getFileName())) {
+    if (myModule.getModuleName() != null && myModule.getModuleName().equals(myModule.getModuleSourceDir().getName())) {
       mySubModules = Renamer.getSubModules(myProject.getRepository(), myModule);
     } else {
       mySubModules = Collections.emptyList();

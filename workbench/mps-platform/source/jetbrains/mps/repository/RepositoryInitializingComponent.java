@@ -17,7 +17,7 @@ package jetbrains.mps.repository;
 
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.ide.vfs.IdeaFSComponent;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.library.contributor.BootstrapLibraryContributor;
 import jetbrains.mps.library.contributor.PluginLibraryContributor;
 import jetbrains.mps.library.contributor.WorkbenchLibraryContributor;
@@ -29,7 +29,7 @@ public final class RepositoryInitializingComponent extends RepositoryInitializin
                                          MPSCoreComponents coreComponents,
                                          IRegistryManager registryManager,
                                          IdeaPluginFacetComponent ideaPluginFacetComponent,
-                                         IdeaFSComponent fs,
+                                         IdeaFileSystem fs,
                                          PersistentFS filesystem //see MPS-22970
   ) {
     super(improver, coreComponents, registryManager, ideaPluginFacetComponent, fs, filesystem);

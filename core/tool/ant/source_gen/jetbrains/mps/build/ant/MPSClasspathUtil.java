@@ -6,14 +6,16 @@ import java.util.Collection;
 import java.io.File;
 import org.apache.tools.ant.Project;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Collections;
 import org.apache.tools.ant.BuildException;
+import java.util.Set;
+import java.util.LinkedHashSet;
 import org.jetbrains.annotations.NotNull;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.net.MalformedURLException;
 import java.io.UnsupportedEncodingException;
-import java.util.Set;
+import java.util.ArrayList;
 
 public class MPSClasspathUtil {
   private static final String FILE = "file";
@@ -21,76 +23,37 @@ public class MPSClasspathUtil {
   private static final String JAR_DELIMITER = "!";
   private static final String PROTOCOL_DELIMITER = ":";
 
-  private static final String[] CLASSPATH = new String[]{"trove4j.jar", "mps-collections.jar", "mps-closures.jar", "mps-tuples.jar", "mps-openapi.jar", "mps-core.jar", "mps-references.jar", "mps-tool.jar", "mps-behavior-api.jar", "mps-behavior-runtime.jar", "mps-logging.jar", "mps-annotations.jar", "mps-boot-util.jar"};
-  private static final String[] FORK_CLASSPATH = new String[]{"jdom.jar", "log4j.jar", "ecj-4.7.2.jar", "xstream-1.4.8.jar", "asm-all-7.0.jar", "ext/diffutils-1.2.1.jar", "junit-4.12.jar", "javac2.jar"};
-
-
+  /**
+   * 
+   * @deprecated there are no uses I'm aware of, nevertheless, gonna keep for another release (to be removed once 2019.1 is out)
+   */
+  @Deprecated
   public static Collection<File> buildClasspath(Project antProject, File mpsHomeArg, boolean fork) {
-    List<File> homeFolders = new ArrayList<File>();
-
-    boolean foundMpsHome = false;
-    // if there is mps_home either in property or passed to the task as attribute 
-    if (mpsHomeArg == null || !(mpsHomeArg.isDirectory())) {
-      homeFolders.add(getAntJARRelativeHome());
-      mpsHomeArg = resolveMPSHome(antProject, false);
-    }
+    antProject.log("MPSClasspathUtil.buildClasspath() is deprecated and about to cease existence, stop using it!", new Throwable(), Project.MSG_ERR);
+    // XXX copy of what is in MpsLoadTask, just in (highly unlikely) case there's code that uses this method  
+    List<File> classPathRoots;
     if (mpsHomeArg != null) {
-      File lib = new File(mpsHomeArg, "lib");
-      if (lib.isDirectory()) {
-        foundMpsHome = true;
-        homeFolders.add(lib);
-      }
+      // if 
+      classPathRoots = Collections.singletonList(new File(mpsHomeArg, "lib/"));
+    } else {
+      classPathRoots = MPSClasspathUtil.getClassPathRootsFromDependencies(antProject);
     }
+    if (classPathRoots.isEmpty()) {
+      throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
 
-    // if there is no mps_home 
-    if (!(foundMpsHome)) {
-      homeFolders.add(getAntJARRelativeHome());
-      homeFolders.addAll(getClassPathRootsFromDependencies(antProject));
     }
-
-    List<File> result = new ArrayList<File>();
-    if (fork) {
-      MPSClasspathUtil.collectClasspath(FORK_CLASSPATH, homeFolders, result);
+    Set<File> classPath = new LinkedHashSet<File>();
+    for (File file : classPathRoots) {
+      MPSClasspathUtil.gatherAllClassesAndJarsUnder(file, classPath);
     }
-    MPSClasspathUtil.collectClasspath(CLASSPATH, homeFolders, result);
-    return result;
+    return classPath;
   }
-  public static List<File> getHomeFolders(Project antProject, File mpsHomeArg) {
-    List<File> homeFolders = new ArrayList<File>();
 
-    if (mpsHomeArg == null || !(mpsHomeArg.isDirectory())) {
-      homeFolders.add(getAntJARRelativeHome());
-      mpsHomeArg = resolveMPSHome(antProject, false);
-    }
-    if (mpsHomeArg != null) {
-      File lib = new File(mpsHomeArg, "lib");
-      if (lib.isDirectory()) {
-        homeFolders.add(lib);
-      }
-    }
-    if (homeFolders.isEmpty()) {
-      homeFolders.add(getAntJARRelativeHome());
-    }
-
-    return homeFolders;
-  }
-  private static void collectClasspath(String[] fileNames, List<File> homeFolders, List<File> result) {
-    for (String name : fileNames) {
-      File file = null;
-      for (File home : homeFolders) {
-        File f = new File(home, name);
-        if (f.isFile()) {
-          file = f;
-          break;
-        }
-      }
-      if (file == null) {
-        throw new BuildException("cannot find `" + name + "' in " + homeFolders.toString());
-      } else {
-        result.add(file);
-      }
-    }
-  }
+  /**
+   * 
+   * @deprecated shall become instance method of an mps classpath utility class
+   */
+  @Deprecated
   public static File resolveMPSHome(Project antProject, boolean failOtherwise) {
     String mpsHomePath = antProject.getProperty("mps.home");
     if ((mpsHomePath == null || mpsHomePath.length() == 0)) {
@@ -105,6 +68,7 @@ public class MPSClasspathUtil {
     }
     return antProject.resolveFile(mpsHomePath);
   }
+
   private static File getAntJARRelativeHome() {
     String containingJar = getAntMPSJar();
     if (!(containingJar.toLowerCase().endsWith(".jar"))) {
@@ -200,6 +164,7 @@ public class MPSClasspathUtil {
     }
     return result.toString();
   }
+
   public static List<File> getClassPathRootsFromDependencies(Project project) {
     List<File> roots = new ArrayList<File>();
 
@@ -210,23 +175,41 @@ public class MPSClasspathUtil {
     String mpsWorkbenchHome = project.getProperty("artifacts.mpsWorkbench");
 
     if ((mpsHome != null && mpsHome.length() > 0)) {
-      // buildMPS 
+      // we've got regular MPS installation and everything we need is under its "lib/" folder, both IDEA platform and MPS stuff (including lib/ext) 
       roots.add(new File(project.resolveFile(mpsHome).getPath(), "lib"));
     } else if ((pluginHome != null && pluginHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
       // buildPlugin + IDEA 
+      // XXX not sure if it's possible to build with an MPS-generated script having just an MPS-IDEA plugin, but anyway... 
       roots.add(new File(project.resolveFile(ideaHome).getPath(), "lib"));
       roots.add(new File(project.resolveFile(pluginHome).getPath(), "mps-core/lib"));
     } else if ((mpsCoreHome != null && mpsCoreHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
-      // buildCore + IDEA 
+      // we are building something with dependency to mpsBootstrapCore, likely part of MPS itself. 
+      // There's IDEA installation we use, and we shall reference MPS-built artifacts 
       roots.add(new File(project.resolveFile(mpsCoreHome).getPath(), "lib"));
       roots.add(new File(project.resolveFile(ideaHome).getPath(), "lib"));
       if ((mpsWorkbenchHome != null && mpsWorkbenchHome.length() > 0)) {
         roots.add(new File(project.resolveFile(mpsWorkbenchHome).getPath(), "lib"));
       }
+    } else if ((ideaHome != null && ideaHome.length() > 0) && "mpsBootstrapCore".equals(project.getName())) {
+      // bootstrap hack. mpsBootstrapCore uses ant tasks defines in the jars it is about to compile/assemble. 
+      // In particular, it's copyModels in <assemble> task that needs to start MPS in-process at PERSISTENCE level. 
+      roots.add(new File(project.resolveFile(ideaHome).getPath(), "lib"));
+      // FIXME here, we assume weave_Tasks jars respective core classes under antTasks/ as it used to do. However, 
+      // FIXME I intend to change this so that there's no need to have custom handling both in mpsBootstrapCore.xml and here. 
+      // FWIW, the only assumption this code has about jars weave_Tasks generate for this case is that there's mps-core.jar somewhere up 3 
+      //       directories from ant-mps.jar (the one holding MPSClasspathUtil.class), see #getAntJARRelativeHome 
+      roots.add(getAntJARRelativeHome());
     }
 
     return roots;
   }
+
+
+  /**
+   * 
+   * @deprecated about to reduce visibility to package or to become an instance method of an mps classpath utility class
+   */
+  @Deprecated
   public static void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
     if (dir.getName().equals("classes") || dir.getName().equals("classes_gen") || dir.getName().equals("apiclasses")) {
       result.add(dir);
@@ -246,6 +229,7 @@ public class MPSClasspathUtil {
     }
     for (File f : children) {
       if (f.isDirectory()) {
+        // FIXME why on earth this if is here and is different from the one at the start of the method?! 
         if (f.getName().equals("classes") || f.getName().equals("classes_gen")) {
           result.add(f);
         } else {

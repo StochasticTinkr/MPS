@@ -27,7 +27,6 @@
     <import index="i290" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.java.stub(MPS.Core/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
-    <import index="w827" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.openapi(MPS.Core/)" />
     <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" />
   </imports>
   <registry>
@@ -1660,10 +1659,10 @@
                   <node concept="3clFbF" id="2Dokkv7jPAR" role="3cqZAp">
                     <node concept="2OqwBi" id="1OabvAsfHij" role="3clFbG">
                       <node concept="1rXfSq" id="6sKuV4a334_" role="2Oq$k0">
-                        <ref role="37wK5l" to="ends:~FileBasedModelRoot.getFileSystem():jetbrains.mps.vfs.openapi.FileSystem" resolve="getFileSystem" />
+                        <ref role="37wK5l" to="ends:~FileBasedModelRoot.getFileSystem():jetbrains.mps.vfs.FileSystem" resolve="getFileSystem" />
                       </node>
                       <node concept="liA8E" id="1OabvAsfHDB" role="2OqNvi">
-                        <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                        <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                         <node concept="37vLTw" id="1OabvAsfHQy" role="37wK5m">
                           <ref role="3cqZAo" node="2Dokkv7jPjq" resolve="it" />
                         </node>
@@ -1750,14 +1749,14 @@
                     <node concept="3clFbF" id="2Dokkv7kuQJ" role="3cqZAp">
                       <node concept="2OqwBi" id="2Dokkv7kviA" role="3clFbG">
                         <node concept="1rXfSq" id="6sKuV4a32O_" role="2Oq$k0">
-                          <ref role="37wK5l" to="ends:~FileBasedModelRoot.getFileSystem():jetbrains.mps.vfs.openapi.FileSystem" resolve="getFileSystem" />
+                          <ref role="37wK5l" to="ends:~FileBasedModelRoot.getFileSystem():jetbrains.mps.vfs.FileSystem" resolve="getFileSystem" />
                         </node>
                         <node concept="liA8E" id="2Dokkv7kvEb" role="2OqNvi">
-                          <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                          <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                           <node concept="3cpWs3" id="2Dokkv7kx4g" role="37wK5m">
-                            <node concept="10M0yZ" id="1OabvAsfIZj" role="3uHU7w">
-                              <ref role="1PxDUh" to="eurq:~Path" resolve="Path" />
+                            <node concept="10M0yZ" id="Cv6g7Ycc$t" role="3uHU7w">
                               <ref role="3cqZAo" to="eurq:~Path.ARCHIVE_SEPARATOR" resolve="ARCHIVE_SEPARATOR" />
+                              <ref role="1PxDUh" to="eurq:~Path" resolve="Path" />
                             </node>
                             <node concept="2OqwBi" id="2Dokkv7kw9U" role="3uHU7B">
                               <node concept="37vLTw" id="2Dokkv7kvTy" role="2Oq$k0">

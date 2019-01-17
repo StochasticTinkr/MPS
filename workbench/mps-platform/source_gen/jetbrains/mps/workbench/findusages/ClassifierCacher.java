@@ -70,6 +70,7 @@ public class ClassifierCacher {
       updateExtendsForInterface(ac);
       updateStaticFields(ac);
       updateInstanceMethods(ac);
+      updateStaticMethods(ac, kind);
     } else if (kind == ClassifierKind.ANNOTATIONS) {
       instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"));
       updateAnnotationMethods(ac);

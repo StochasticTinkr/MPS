@@ -51,20 +51,6 @@ final class CopyDefaultModelRootHelper extends CopyFileBasedModelRootHelper<Defa
     super(sourceModelRoot, targetModelRoot);
   }
 
-  private boolean isInsideModuleDir() {
-    final SModule module = mySourceModelRoot.getModule();
-    if (module instanceof AbstractModule) {
-      IFile contentDirectory = mySourceModelRoot.getContentDirectory();
-      IFile moduleSourceDir = ((AbstractModule) module).getModuleSourceDir();
-      if (moduleSourceDir == null) {
-        return false;
-      }
-      assert contentDirectory != null;
-      return FileUtil.isAncestor(moduleSourceDir.getPath(), contentDirectory.getPath());
-    }
-    return false;
-  }
-
   /**
    * We are doing the same thing we do when collecting models but instead of creating models
    * we recalculate the paths (and other options) and create corresponding model copies under

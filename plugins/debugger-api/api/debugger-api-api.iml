@@ -21,6 +21,7 @@
     <orderEntry type="module" module-name="tuples-runtime" />
     <orderEntry type="module" module-name="mps-debugger" />
     <orderEntry type="module" module-name="debuginfo-api" exported="" />
+    <orderEntry type="module" module-name="debuginfo-impl" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Idea-platform" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />

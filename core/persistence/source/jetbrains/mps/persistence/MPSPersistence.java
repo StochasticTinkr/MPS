@@ -21,7 +21,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
-import jetbrains.mps.project.io.DescriptorIOFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -33,7 +32,6 @@ public final class MPSPersistence extends ComponentPlugin implements ComponentHo
   private final PersistenceFacade myPersistenceFacade;
   private final ModelFactoryService myModelFactoryService;
   private final DataSourceFactoryRuleService myDataSourceService;
-  private DescriptorIOFacade myModuleDescriptorFacade;
 
   public MPSPersistence(@NotNull ComponentHost mpsCore) {
     myModelFactoryService = mpsCore.findComponent(ModelFactoryService.class);
@@ -47,15 +45,11 @@ public final class MPSPersistence extends ComponentPlugin implements ComponentHo
     init(new DataSourceFactoryRuleCoreService(myDataSourceService));
     init(new ModelFactoryCoreService(myModelFactoryService));
     init(new JavaClassesPersistence(myPersistenceFacade));
-    init(myModuleDescriptorFacade = new DescriptorIOFacade());
   }
 
   @Nullable
   @Override
   public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
-    if (DescriptorIOFacade.class == componentClass) {
-      return componentClass.cast(myModuleDescriptorFacade);
-    }
     return null;
   }
 }

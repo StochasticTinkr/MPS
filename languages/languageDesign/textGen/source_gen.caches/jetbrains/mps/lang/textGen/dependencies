@@ -7,7 +7,6 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.actions.ActionAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.dataFlow.DataFlowAspectDescriptorImpl" />
@@ -18,7 +17,6 @@
     <classNode dependClassName="jetbrains.mps.lang.textGen.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
-    <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />

@@ -20,6 +20,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.errors.CheckerRegistry;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
@@ -30,6 +31,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.PathMacros;
+import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.structure.DescriptorModelComponent;
 import jetbrains.mps.project.structure.GeneratorDescriptorModelProvider;
 import jetbrains.mps.project.structure.GenericDescriptorModelProvider;
@@ -41,7 +43,6 @@ import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.Generator.GeneratorModelsAutoImports;
 import jetbrains.mps.smodel.Language.LanguageModelsAutoImports;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.PropertySupport.PropertySupportCache;
 import jetbrains.mps.smodel.SModelFileTracker;
@@ -53,6 +54,7 @@ import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.validation.ValidationSettings;
+import jetbrains.mps.vfs.VFSManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -79,6 +81,8 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   private DataSourceFactoryRuleService myDataSourceService;
   private ModelFactoryService myModelFactoryService;
   private ModelsAutoImportsManager myAutoImportsManager;
+  private DescriptorIOFacade myModuleDescriptorFacade;
+  private CheckerRegistry myCheckerRegistry;
 
   /**
    * made package-private
@@ -97,6 +101,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   @Override
   public void dispose() {
     super.dispose();
+    myModuleDescriptorFacade = null;
     myAutoImportsManager = null;
     myModelFactoryService = null;
     myClassLoaderManager = null;
@@ -149,8 +154,11 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     init(new TypeRegistry());
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
 
+    init(myModuleDescriptorFacade = new DescriptorIOFacade());
+
     init(new ResolverComponent());
-    init(new ValidationSettings());
+    myCheckerRegistry = init(new CheckerRegistry());
+    init(new ValidationSettings(myCheckerRegistry));
 
     init(new PropertySupportCache(myClassLoaderManager));
     myAutoImportsManager = init(new ModelsAutoImportsManager());
@@ -171,14 +179,9 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   }
 
   @NotNull
-  public LibraryInitializer getLibraryInitializer() {
-    checkInitialized();
-    return myLibraryInitializer;
-  }
-
-  @NotNull
   public PersistenceFacade getPersistenceFacade() {
     checkInitialized();
+    // PersistenceFacade is not a CoreComponent, one need to ask for findComponent(PersistenceRegistry.class) instead
     return myPersistenceFacade;
   }
 
@@ -188,19 +191,9 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     return myLanguageRegistry;
   }
 
-  @NotNull
-  public MPSModuleRepository getModuleRepository() {
-    checkInitialized();
-    return myModuleRepository;
-  }
-
-  public SRepositoryRegistry getRepositoryRegistry() {
-    checkInitialized();
-    return myRepositoryRegistry;
-  }
-
   public FacetsFacade getModuleFacetRegistry() {
     checkInitialized();
+    // FacetsFacade is not a CoreComponent, one need to ask for findComponent(FacetsRegistry.class) instead.
     return myModuleFacetsRegistry;
   }
 
@@ -244,8 +237,14 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     if (DataSourceFactoryRuleService.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myDataSourceService);
     }
+    if (DescriptorIOFacade.class == componentClass) {
+      return componentClass.cast(myModuleDescriptorFacade);
+    }
     if (ModelsAutoImportsManager.class.equals(componentClass)) {
       return componentClass.cast(myAutoImportsManager);
+    }
+    if (CheckerRegistry.class.equals(componentClass)) {
+      return componentClass.cast(myCheckerRegistry);
     }
     return null;
   }

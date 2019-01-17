@@ -40,17 +40,18 @@
     <orderEntry type="module" module-name="dataflow-rt" />
     <orderEntry type="module" module-name="migrations-runtime" />
     <orderEntry type="module" module-name="textgen" />
-    <orderEntry type="module" module-name="debuginfo-api" />
-    <orderEntry type="library" name="JDOM" level="project" />
-    <orderEntry type="library" name="Commons-httpclient" level="project" />
-    <orderEntry type="library" name="Trove" level="project" />
-    <orderEntry type="library" name="ASM" level="project" />
-    <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="module" module-name="debuginfo-impl" />
     <orderEntry type="module" module-name="make-facets" />
     <orderEntry type="module" module-name="scripts-runtime" />
     <orderEntry type="module" module-name="refactoring" />
     <orderEntry type="module" module-name="model" />
     <orderEntry type="module" module-name="module" />
+    <orderEntry type="module" module-name="project-check" />
+    <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="library" name="Commons-httpclient" level="project" />
+    <orderEntry type="library" name="Trove" level="project" />
+    <orderEntry type="library" name="ASM" level="project" />
+    <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="environment" scope="TEST" />
   </component>

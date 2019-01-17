@@ -25,6 +25,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -50,7 +51,7 @@ public class ModelsDataRule implements GetDataRule {
 
     List<SModel> result = new ArrayList<SModel>();
     for (VirtualFile f : virtualFiles) {
-      final SModel model = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(project)).findModel(FileSystem.getInstance().getFileByPath(f.getPath()));
+      final SModel model = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(project)).findModel(FileSystem.getInstance().getFile(f.getPath()));
       if (model != null) {
         result.add(model);
       }

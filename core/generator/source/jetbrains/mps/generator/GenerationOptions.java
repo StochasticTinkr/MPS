@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -143,15 +142,6 @@ public class GenerationOptions {
 
 
   /**
-   * @deprecated As long as output model is part of GenerationStatus, it's odd not to keep it.
-   */
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  public boolean isKeepOutputModel() {
-    return true;
-  }
-
-  /**
    * @see jetbrains.mps.generator.IGenerationSettings#createStaticReferences()
    */
   public boolean useDynamicReferences() {
@@ -240,16 +230,6 @@ public class GenerationOptions {
 
     public OptionsBuilder tracing(int tracingMode) {
       myTracingMode = tracingMode;
-      return this;
-    }
-
-    /**
-     * @deprecated no-op, just throw away, output model is always preserved (although not necessarily published, just not discarded/disposed, and is
-     * available to clients with access to GenerationStatus)
-     */
-    @Deprecated
-    @ToRemove(version = 2018.1)
-    public OptionsBuilder keepOutputModel(boolean keepOutputModel) {
       return this;
     }
 

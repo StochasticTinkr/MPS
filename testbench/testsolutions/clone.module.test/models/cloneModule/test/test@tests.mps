@@ -1617,8 +1617,8 @@
                 <node concept="3clFbF" id="2_jX3OnJT5v" role="3cqZAp">
                   <node concept="37vLTI" id="2_jX3OnHZQA" role="3clFbG">
                     <node concept="2YIFZM" id="2_jX3OnHZXB" role="37vLTx">
-                      <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
-                      <ref role="37wK5l" to="3ju5:~IFileUtils.createTmpDir():jetbrains.mps.vfs.IFile" resolve="createTmpDir" />
+                      <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+                      <ref role="37wK5l" to="18ew:~IFileUtil.createTmpDir():jetbrains.mps.vfs.IFile" resolve="createTmpDir" />
                     </node>
                     <node concept="37vLTw" id="2_jX3OnHZxj" role="37vLTJ">
                       <ref role="3cqZAo" node="2_jX3OnHZgc" resolve="clonedModulesDirectory" />

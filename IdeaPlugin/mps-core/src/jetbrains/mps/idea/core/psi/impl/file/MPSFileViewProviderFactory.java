@@ -90,8 +90,8 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
         return null;
       }
       final IFile modelFile = virtualFile.getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE
-        ? FileSystem.getInstance().getFileByPath(virtualFile.getParent().getPath())
-        : FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+        ? FileSystem.getInstance().getFile(virtualFile.getParent().getPath())
+        : FileSystem.getInstance().getFile(virtualFile.getPath());
 
       SRepository repository = ProjectHelper.getProjectRepository(getManager().getProject());
       PsiFile psiFile = new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<PsiFile>() {

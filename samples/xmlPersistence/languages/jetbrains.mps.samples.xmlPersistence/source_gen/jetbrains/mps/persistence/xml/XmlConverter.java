@@ -48,7 +48,7 @@ public class XmlConverter {
     }
     List<Namespace> additionalNamespaces = (List<Namespace>) elem.getAdditionalNamespaces();
     for (Namespace ns : ListSequence.fromList(additionalNamespaces)) {
-      ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"))).addElement(createXmlAttribute_h7fa2c_a0a0a5a3("xmlns:" + ns.getPrefix(), convertAttributeText(ns.getURI())));
+      ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"))).addElement(createXmlAttribute_h7fa2c_a0a0a5a3(convertAttributeText(ns.getURI()), "xmlns:" + ns.getPrefix()));
     }
 
     List<Content> list = (List<Content>) elem.getContent();
@@ -227,12 +227,12 @@ public class XmlConverter {
     SLinkOperations.setTarget(file, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54c94c0L, 0x5c842a42c54c94c1L, "document"), createXmlDocument_h7fa2c_a0a2a11(name));
     return file;
   }
-  private static SNode createXmlAttribute_h7fa2c_a0a0a5a3(Object p0, Object p1) {
+  private static SNode createXmlAttribute_h7fa2c_a0a0a5a3(Iterable<? extends SNode> seq0, Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, "jetbrains.mps.core.xml.structure.XmlAttribute"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54b8df6L, "attrName"), p0 + "");
-    for (SNode n : (Iterable<SNode>) p1) {
-      n1.addChild(MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54cfd1eL, "value"), n);
+    for (SNode n : seq0) {
+      n1.addChild(MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54cfd1eL, "value"), SNodeOperations.copyIfNecessary(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart"))));
     }
     return n1;
   }

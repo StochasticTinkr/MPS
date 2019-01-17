@@ -286,10 +286,10 @@
       <node id="6948801002403304583" at="101,180,102,18" concept="7" />
       <node id="6948801002403321404" at="104,180,105,188" concept="7" />
       <node id="6948801002403323100" at="106,5,107,17" concept="7" />
-      <node id="3160346131750751054" at="109,86,110,63" concept="6" />
+      <node id="3160346131750751054" at="109,88,110,63" concept="6" />
       <node id="3160346131750751054" at="110,63,111,239" concept="6" />
-      <node id="3160346131750751054" at="111,239,112,185" concept="2" />
-      <node id="3160346131750751054" at="112,185,113,14" concept="7" />
+      <node id="3160346131750751054" at="111,239,112,180" concept="2" />
+      <node id="3160346131750751054" at="112,180,113,14" concept="7" />
       <node id="3160346131750714710" at="115,99,116,63" concept="6" />
       <node id="3160346131750714710" at="116,63,117,239" concept="6" />
       <node id="3160346131750714710" at="117,239,118,154" concept="2" />
@@ -312,7 +312,7 @@
       <node id="3160346131749731897" at="37,0,41,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3160346131749742365" at="44,90,49,8" concept="6" />
       <node id="3017733173182700853" at="67,57,72,13" concept="6" />
-      <node id="3160346131750751054" at="109,0,115,0" concept="11" trace="createSmartReferenceAttribute_nopsft_a0f0d0h0c0a0g#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3160346131750751054" at="109,0,115,0" concept="11" trace="createSmartReferenceAttribute_nopsft_a0f0d0h0c0a0g#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3160346131750714710" at="115,0,122,0" concept="11" trace="createRefPresentationTemplate_nopsft_a0a0g0d0h0c0a0g#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6948801002403293733" at="100,0,109,0" concept="5" trace="hasRole#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
       <node id="7123110990003028400" at="73,0,84,11" concept="4" />
@@ -350,7 +350,7 @@
       <scope id="3160346131749731897" at="37,0,41,0">
         <var name="m" id="3160346131749731897" />
       </scope>
-      <scope id="3160346131750751054" at="109,86,113,14">
+      <scope id="3160346131750751054" at="109,88,113,14">
         <var name="facade" id="3160346131750751054" />
         <var name="n1" id="3160346131750751054" />
       </scope>
@@ -359,7 +359,7 @@
         <var name="n1" id="3160346131750714710" />
       </scope>
       <scope id="3160346131750751054" at="109,0,115,0">
-        <var name="p0" id="3160346131750751054" />
+        <var name="node0" id="3160346131750751054" />
       </scope>
       <scope id="6948801002403293736" at="100,52,107,17" />
       <scope id="3160346131750714710" at="115,0,122,0">

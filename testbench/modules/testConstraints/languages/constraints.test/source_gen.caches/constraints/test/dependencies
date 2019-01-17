@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="constraints.test.Language">
-    <classNode dependClassName="constraints.test.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="constraints.test.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="constraints.test.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="constraints.test.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="constraints.test.structure.StructureAspectDescriptor" />
-    <classNode dependClassName="constraints.test.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />

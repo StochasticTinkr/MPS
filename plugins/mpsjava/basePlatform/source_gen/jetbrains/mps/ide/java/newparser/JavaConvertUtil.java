@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class JavaConvertUtil {
@@ -17,7 +17,7 @@ public class JavaConvertUtil {
 
     for (IFile entry : Sequence.fromIterable(onlyLeaves(filesAndDirs))) {
       if (entry.isDirectory()) {
-        for (IFile file : ListSequence.fromList(IFileUtils.getAllFiles(entry))) {
+        for (IFile file : ListSequence.fromList(IFileUtil.getAllFiles(entry))) {
           if (accept(file)) {
             SetSequence.fromSet(result).addElement(file);
           }

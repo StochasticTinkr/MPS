@@ -16,8 +16,6 @@ import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import jetbrains.mps.lang.generator.generationContext.dataFlow.DataFlowAspectDescriptorImpl;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.generator.generationContext.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
-import jetbrains.mps.lang.generator.generationContext.scripts.ScriptsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.lang.generator.generationContext.structure.ConceptPresentationAspectImpl;
@@ -66,9 +64,6 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == EditorAspectDescriptor.class) {
       return aspectClass.cast(new EditorAspectDescriptorImpl());
-    }
-    if (aspectClass == ScriptAspectDescriptor.class) {
-      return aspectClass.cast(new ScriptsDescriptor());
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return aspectClass.cast(new jetbrains.mps.lang.generator.generationContext.structure.StructureAspectDescriptor());

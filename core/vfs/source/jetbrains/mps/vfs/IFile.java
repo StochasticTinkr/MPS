@@ -17,7 +17,12 @@ package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.path.Path;
-import jetbrains.mps.vfs.path.UniPath;
+import jetbrains.mps.vfs.refresh.CachingContext;
+import jetbrains.mps.vfs.refresh.CachingFile;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
+import jetbrains.mps.vfs.refresh.DefaultCachingContext;
+import jetbrains.mps.vfs.refresh.FileListener;
+import jetbrains.mps.vfs.refresh.FileListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
@@ -31,50 +36,32 @@ import java.net.URL;
 import java.util.List;
 
 /**
- * AP:
- * An abstraction of path names similar to the {@link java.io.File}.
- * Represents an abstract absolute path (or location) on disk (might be non-existent).
- * Moreover might represents a path to some archive + path within the archive (unlike the {@link java.io.File}).
- *
- * FIXME
-// * Another difference from the {@link java.io.File} is the one that this abstraction is supposed to be
-// * platform-independent (sic!) meaning that the path
- * @see #getPath() for an example
- * FIXME
+ * An abstraction of path names similar to the {@link java.nio.file.Path}.
+ * File may be obtained from a concrete file system or from VFSManager
+ * File.getPath() is os-independent.
+ * File.getPath() is absolute, do not store absolute paths in files. Instead, use MacroProcessor/QualifiedPath
+ * Path is not a global file identifier, see {@link jetbrains.mps.vfs.QualifiedPath}
  *
  * Also it is an MPS abstraction around the IDEA platform file system {@code com.intellij.openapi.vfs.VirtualFile}.
  * IDEA provides an intelligent caching mechanism which might boost up the file system traversal (comparing to the {@link java.io.File}).
- * @see CachingFile
- *
- * It has no fallback implementation base on {@link java.io.File},
- * however there is a special singleton class {@link jetbrains.mps.vfs.FileSystem} with
- * method #getFileByPath which creates a suitable instance of IFile.
- *
- * These mechanism nevertheless is deprecated and must not be used.
- *
- * From 3.4 you are supposed to use the direct implementing classes of IFile.
- *
- * //TODO continue
- *
- * AP: I suggest to continue using this interface because dropping it might cause too much pain.
- * As long as it is (technically speaking) our internal api, we are more or less free to change it.
- *
- * This class mixes two different issues (as well as the {@link java.io.File}): it works with paths (which are strings) and
- * also it accesses the physical fs from time to time. I'd rather split it up.
+ * See also {@link CachingFile}
  *
  * IFile must be immutable
  * we define it as a pathname abstraction. That means that we cannot rename the IFile, we can only rename something
  * that lies at this pathname on disk. The IFile itself must not be touched in any way. Otherwise it is cumbersome.
  * The alternative is to reconsider the IFile contract.
- *
- * AP
  */
 @Immutable
 public interface IFile {
   /**
-   * @return the file system which this file belongs to
+   * Use getFS() instead
+   * Note the IFileSystem is per-protocol, in which it differs from FileSystem.
    */
-  @NotNull jetbrains.mps.vfs.openapi.FileSystem getFileSystem();
+  @Deprecated
+  @ToRemove(version = 2019.1)
+  @NotNull FileSystem getFileSystem();
+
+  @NotNull IFileSystem getFS();
 
   /**
    * @return simply the last name of the file (the furthest one)
@@ -82,42 +69,28 @@ public interface IFile {
   @NotNull String getName();
 
   /**
-   * @return the whole path to the abstract location.
-   * The current contract:
-   * the resulting path will be canonical, absolute
-   * and the folders are separated with {@link Path#UNIX_SEPARATOR_CHAR} // todo explain more
-   *
-   * @see File#getCanonicalPath()
-   * @see Path
+   * Returns a path of this file in a file system.
    */
-  @ToRemove(version = 3.5)
-  /*@Deprecated*/
   @NotNull String getPath();
 
   /**
-   * @deprecated use #path instead
-   */
-  @Deprecated
-  @NotNull UniPath toPath();
-
-  @NotNull default Path path() {
-    return toPath();
-  }
-
-  /**
-   * Null if an error has occured.
+   * use getQualifiedPath()
    */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 2019.1)
   URL getUrl() throws MalformedURLException;
+
+  QualifiedPath getQualifiedPath();
 
   /**
    * @return null iff the instance is root and has no parent, the parent folder otherwise
    */
   @Nullable IFile getParent();
 
-  /**
-   * @return whether the underlying pathname points exactly to an archive file
-   */
+  @Deprecated
+  @ToRemove(version = 2019.1)
+  //Should not have been used. The single use in MPS was a mistake
   boolean isArchive();
 
   /**
@@ -148,7 +121,7 @@ public interface IFile {
 
   /**
    * @return the jar or folder which contains this file
-   * @deprecated use {@link #toPath()} and extract the path you need
+   * @deprecated use {@link #getPath()} and extract the path you need
    */
   @Deprecated
   @ToRemove(version = 3.4)
@@ -161,21 +134,23 @@ public interface IFile {
 
 
   /**
-   * TODO will be like this in some implementations of these two methods after 3.4:
-   //   * the files in the archive root in the case when {@link #isArchive()} is true.
-   //   *
-   //   * Thus the client of this method need not to bother to expand the archives on his own: the implementing class
-   //   * must do it automatically. Probably cosy recursive processing also will be provided.
-   * TODO
-   * FIXME please document whether suffix may include path separators (i.e. if one could query folder.getDescendant("my/relative/path/to/file")
-   * @return the file which has this file's path + suffix
+   * @deprecated use findChild() instead.
+   * The problem of findDescendant is that it's unclear, can we pass an empty string, string with path separators, string with archive separators
    */
+  @Deprecated
+  @ToRemove(version = 2019.2)
   @NotNull IFile getDescendant(@NotNull String suffix);
+
+  /**
+   * Immediate child only. Empty name is forbidden. Neither path separators nor archive separators can't present in name
+   */
+  @NotNull IFile findChild(@NotNull String name);
 
   /**
    * @return the children of this file in case when it is a folder,
    * null iff it is a file and therefore has no children
    */
+  //todo [MM] change to iterable. This will save resources and time on copying (see java's Path)
   @Nullable List<IFile> getChildren();
 
   /**
@@ -194,6 +169,9 @@ public interface IFile {
    * fixme if it is the same as in java.io.File then we need to enforce it
    */
   long lastModified();
+
+  @Deprecated
+  @ToRemove(version = 2019.1)
   long length();
   boolean exists();
   boolean setTimeStamp(long time);
@@ -232,4 +210,9 @@ public interface IFile {
   InputStream openInputStream() throws IOException;
 
   OutputStream openOutputStream() throws IOException;
+
+  //this is provisional API. We need to think how to compare files from different FSes
+  default boolean isDescendant(IFile file){
+    return getPath().startsWith(file.getPath());
+  }
 }

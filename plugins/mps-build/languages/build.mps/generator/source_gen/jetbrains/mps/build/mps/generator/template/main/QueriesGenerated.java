@@ -1703,6 +1703,16 @@ public class QueriesGenerated extends QueryProviderBase {
     return null;
   }
   public static Object varMacro_Value_10_3(final TemplateVarContext _context) {
+    //  FIXME this hack is to allow mpsBootstrapCore to assemble MPS sources into jars 
+    // using the same mechanism as for any other MPS-orchestrated build project. 
+    // In fact, it seems that only copyModels task is important (hence, Platform of 'PERSISTENCE' level) 
+    // as MPS itself has been already generated and compiled (i.e no need for generate, migrate or runMPS tasks, see 
+    // antlib.xml for full list). Therefore, once PlatformBase is capable to load only deisred ComponentPlugin classes, 
+    // we can limit this hack to much smaller subset. 
+    // Unfortunately, MPSClasspathUtil expects jar names to match for both deployed and bootstrap MPS builds, hence 
+    // we can't just jar all copyModels-relevant classes into single mps-core.jar. OTOH, I don't quite understand why 
+    // do we need MPSClasspathUtil for ant tasks, why don't we build proper classpath right inside the build script  
+    // (classpathref of respective taskdef)? 
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals("mpsBootstrapCore") && SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).equals("jetbrains.mps.ide.build");
   }
   public static Object varMacro_Value_10_4(final TemplateVarContext _context) {
@@ -1754,7 +1764,7 @@ public class QueriesGenerated extends QueryProviderBase {
     List<Tuples._2<SNode, String>> dependencies = new ProjectDependency(_context, _context.getNode()).collectDependencies().getDependencies();
     return ListSequence.fromList(dependencies).select(new ISelector<Tuples._2<SNode, String>, SNode>() {
       public SNode select(Tuples._2<SNode, String> it) {
-        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a453(it._1(), it._0());
+        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a453(it._0(), it._1());
       }
     }).toListSequence();
   }
@@ -3218,11 +3228,11 @@ public class QueriesGenerated extends QueryProviderBase {
     n1.setProperty(MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, 0xd94b027412f0827L, "path"), p0 + "");
     return n1;
   }
-  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a453(Object p0, Object p1) {
+  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a453(SNode node0, Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, "jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, 0x5830b38e16a017bdL, "path"), p0 + "");
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, 0x5830b38e16d823d3L, "project"), (SNode) p1);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, 0x5830b38e16d823d3L, "project"), node0);
     return n1;
   }
   private static boolean isNotEmptyString(String str) {

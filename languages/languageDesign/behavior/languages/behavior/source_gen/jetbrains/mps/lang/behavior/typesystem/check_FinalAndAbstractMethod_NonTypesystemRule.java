@@ -45,6 +45,6 @@ public class check_FinalAndAbstractMethod_NonTypesystemRule extends AbstractNonT
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
-    return true;
+    return false;
   }
 }

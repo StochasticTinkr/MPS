@@ -484,8 +484,8 @@
       <property role="IQ2nx" value="1178608670077" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="PrWs8" id="h9nw8k0" role="PzmwI">
-      <ref role="PrY4T" node="h9ngReX" resolve="ClassifierMember" />
+    <node concept="PrWs8" id="v45EpuhE_O" role="PzmwI">
+      <ref role="PrY4T" node="v45EpuhBDA" resolve="ClassifierMethodMember" />
     </node>
     <node concept="PrWs8" id="7bu6bIyR2E0" role="PzmwI">
       <ref role="PrY4T" node="7bu6bIyR2DN" resolve="ITypeApplicable" />
@@ -910,8 +910,8 @@
     <property role="34LRSv" value="static method" />
     <property role="EcuMT" value="1081236700938" />
     <ref role="1TJDcQ" node="6LFqxSRBTg8" resolve="MethodDeclaration" />
-    <node concept="PrWs8" id="h9nwb_8" role="PzmwI">
-      <ref role="PrY4T" node="h9ngReX" resolve="ClassifierMember" />
+    <node concept="PrWs8" id="v45EpuhE_J" role="PzmwI">
+      <ref role="PrY4T" node="v45EpuhBDA" resolve="ClassifierMethodMember" />
     </node>
     <node concept="PrWs8" id="49WhPGXow7w" role="PzmwI">
       <ref role="PrY4T" node="49WhPGXow7u" resolve="StaticKind" />
@@ -4485,6 +4485,17 @@
       <property role="20kJfa" value="expr" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="v45EpuhBDA">
+    <property role="EcuMT" value="559597157502843494" />
+    <property role="3GE5qa" value="classifiers.members" />
+    <property role="TrG5h" value="ClassifierMethodMember" />
+    <node concept="PrWs8" id="v45EpuhBDB" role="PrDN$">
+      <ref role="PrY4T" node="h9ngReX" resolve="ClassifierMember" />
+    </node>
+    <node concept="t5JxF" id="v45EpuhBDD" role="lGtFl">
+      <property role="t5JxN" value="need it for pure technical reasons (in order to make work the Interface constraints while counting the transformation menu ctorInterfaceMemberInIncomplete)" />
     </node>
   </node>
 </model>

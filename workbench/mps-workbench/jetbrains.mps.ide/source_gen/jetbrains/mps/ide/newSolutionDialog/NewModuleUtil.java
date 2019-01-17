@@ -269,7 +269,7 @@ public class NewModuleUtil {
 
   private static IFile getModuleFile(String namespace, String rootPath, String extension) {
     String path = rootPath + File.separator + namespace + extension;
-    return FileSystem.getInstance().getFileByPath(path);
+    return FileSystem.getInstance().getFile(path);
   }
 
   private static SolutionDescriptor createNewSolutionDescriptor(String namespace, IFile descriptorFile) {

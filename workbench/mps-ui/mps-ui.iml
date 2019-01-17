@@ -23,7 +23,7 @@
     <orderEntry type="module" module-name="editor-api" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="kernel-resources" />
-    <orderEntry type="module" module-name="debuginfo-api" />
+    <orderEntry type="module" module-name="debuginfo-impl" />
     <orderEntry type="module" module-name="java-stub" />
     <orderEntry type="module" module-name="migrations-runtime" />
   </component>

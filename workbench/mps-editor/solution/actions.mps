@@ -16051,7 +16051,7 @@
                           <ref role="2Gs0qQ" node="2RIelpRP9p1" resolve="suppress" />
                         </node>
                         <node concept="3TrcHB" id="6P8H5BqQ5FN" role="2OqNvi">
-                          <ref role="3TsBF5" to="tpck:26xHjLJaBbH" resolve="whichError" />
+                          <ref role="3TsBF5" to="tpck:26xHjLJaBbH" resolve="filter" />
                         </node>
                       </node>
                     </node>
@@ -16067,14 +16067,14 @@
                               </node>
                               <node concept="2OqwBi" id="2h2r7msDDUW" role="37vLTx">
                                 <node concept="2YIFZM" id="2h2r7msDDUX" role="2Oq$k0">
-                                  <ref role="1Pybhc" to="d6hs:~FlavouredItem$FlavourPredicate" resolve="FlavouredItem.FlavourPredicate" />
-                                  <ref role="37wK5l" to="d6hs:~FlavouredItem$FlavourPredicate.deserialize(java.lang.String):jetbrains.mps.errors.item.FlavouredItem$FlavourPredicate" resolve="deserialize" />
+                                  <ref role="1Pybhc" to="d6hs:~FlavouredItem$ReportItemPredicate" resolve="FlavouredItem.ReportItemPredicate" />
+                                  <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemPredicate.deserialize(java.lang.String):jetbrains.mps.errors.item.FlavouredItem$ReportItemPredicate" resolve="deserialize" />
                                   <node concept="37vLTw" id="6P8H5BqQ5FO" role="37wK5m">
                                     <ref role="3cqZAo" node="6P8H5BqQ5FK" resolve="errorSpecialization" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="2h2r7msDDV1" role="2OqNvi">
-                                  <ref role="37wK5l" to="d6hs:~FlavouredItem$FlavourPredicate.getFlavours():java.util.Map" resolve="getFlavours" />
+                                  <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemPredicate.getFlavours():java.util.Map" resolve="getFlavours" />
                                 </node>
                               </node>
                             </node>
@@ -16121,7 +16121,14 @@
                       <node concept="3uibUv" id="6Ia7CJh3u06" role="1tU5fm">
                         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                       </node>
-                      <node concept="10Nm6u" id="7VE8qBNdiBD" role="33vP2m" />
+                      <node concept="2OqwBi" id="7s1FVdAxLXu" role="33vP2m">
+                        <node concept="2GrUjf" id="7s1FVdAxKqu" role="2Oq$k0">
+                          <ref role="2Gs0qQ" node="2RIelpRP9p1" resolve="suppress" />
+                        </node>
+                        <node concept="3TrcHB" id="7s1FVdAxOa2" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:7s1FVdAuNzP" resolve="message" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                   <node concept="3cpWs8" id="1nIaFUJ33fV" role="3cqZAp">
@@ -16224,56 +16231,37 @@
                             <ref role="3cqZAo" node="6Ia7CJgY$up" resolve="rules" />
                           </node>
                           <node concept="X8dFx" id="7VE8qBNcN$e" role="2OqNvi">
-                            <node concept="2OqwBi" id="6Ia7CJgY$uq" role="25WWJ7">
-                              <node concept="10M0yZ" id="6Ia7CJgY$ur" role="2Oq$k0">
-                                <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
-                                <ref role="3cqZAo" to="d6hs:~RuleIdFlavouredItem.FLAVOUR_RULE_ID" resolve="FLAVOUR_RULE_ID" />
-                              </node>
-                              <node concept="liA8E" id="6Ia7CJgY$us" role="2OqNvi">
-                                <ref role="37wK5l" to="d6hs:~RuleIdFlavouredItem$RuleIdFlavour.deserialize(java.lang.String):java.util.Collection" resolve="deserialize" />
-                                <node concept="2OqwBi" id="6Ia7CJgY$ut" role="37wK5m">
-                                  <node concept="37vLTw" id="6Ia7CJgY$uu" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="2h2r7msDDUV" resolve="predicateFlavours" />
-                                  </node>
-                                  <node concept="liA8E" id="6Ia7CJgY$uv" role="2OqNvi">
-                                    <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-                                    <node concept="2OqwBi" id="1nIaFUJ1d96" role="37wK5m">
-                                      <node concept="10M0yZ" id="6Ia7CJgY$uw" role="2Oq$k0">
-                                        <ref role="3cqZAo" to="d6hs:~RuleIdFlavouredItem.FLAVOUR_RULE_ID" resolve="FLAVOUR_RULE_ID" />
-                                        <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
-                                      </node>
-                                      <node concept="liA8E" id="1nIaFUJ1eTs" role="2OqNvi">
-                                        <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.toString():java.lang.String" resolve="toString" />
+                            <node concept="2OqwBi" id="EQDWwQ4JiB" role="25WWJ7">
+                              <node concept="2OqwBi" id="EQDWwQ4cAo" role="2Oq$k0">
+                                <node concept="10M0yZ" id="EQDWwQ3Wjr" role="2Oq$k0">
+                                  <ref role="3cqZAo" to="d6hs:~RuleIdFlavouredItem.FLAVOUR_RULE_ID" resolve="FLAVOUR_RULE_ID" />
+                                  <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
+                                </node>
+                                <node concept="liA8E" id="EQDWwQ4eQx" role="2OqNvi">
+                                  <ref role="37wK5l" to="d6hs:~RuleIdFlavouredItem$RuleIdFlavour.deserializePredicate(java.lang.String):jetbrains.mps.errors.item.RuleIdFlavouredItem$RuleIdFlavour$RuleIdFlavourPredicate" resolve="deserializePredicate" />
+                                  <node concept="2OqwBi" id="EQDWwQ4lnP" role="37wK5m">
+                                    <node concept="37vLTw" id="EQDWwQ4lnQ" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="2h2r7msDDUV" resolve="predicateFlavours" />
+                                    </node>
+                                    <node concept="liA8E" id="EQDWwQ4lnR" role="2OqNvi">
+                                      <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                                      <node concept="2OqwBi" id="EQDWwQ4lnS" role="37wK5m">
+                                        <node concept="10M0yZ" id="EQDWwQ4lnT" role="2Oq$k0">
+                                          <ref role="3cqZAo" to="d6hs:~RuleIdFlavouredItem.FLAVOUR_RULE_ID" resolve="FLAVOUR_RULE_ID" />
+                                          <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
+                                        </node>
+                                        <node concept="liA8E" id="EQDWwQ4lnU" role="2OqNvi">
+                                          <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.toString():java.lang.String" resolve="toString" />
+                                        </node>
                                       </node>
                                     </node>
                                   </node>
                                 </node>
                               </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="7VE8qBNd6$8" role="3cqZAp">
-                        <node concept="37vLTI" id="7VE8qBNd6$a" role="3clFbG">
-                          <node concept="2OqwBi" id="6Ia7CJh3u1r" role="37vLTx">
-                            <node concept="37vLTw" id="6Ia7CJh3u1s" role="2Oq$k0">
-                              <ref role="3cqZAo" node="2h2r7msDDUV" resolve="predicateFlavours" />
-                            </node>
-                            <node concept="liA8E" id="6Ia7CJh3u1t" role="2OqNvi">
-                              <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-                              <node concept="2OqwBi" id="1nIaFUJ05iP" role="37wK5m">
-                                <node concept="10M0yZ" id="6Ia7CJh3u1u" role="2Oq$k0">
-                                  <ref role="3cqZAo" to="d6hs:~ReportItem.FLAVOUR_MESSAGE" resolve="FLAVOUR_MESSAGE" />
-                                  <ref role="1PxDUh" to="d6hs:~ReportItem" resolve="ReportItem" />
-                                </node>
-                                <node concept="liA8E" id="1nIaFUJ06Fs" role="2OqNvi">
-                                  <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.toString():java.lang.String" resolve="toString" />
-                                </node>
+                              <node concept="liA8E" id="EQDWwQ4L3O" role="2OqNvi">
+                                <ref role="37wK5l" to="d6hs:~RuleIdFlavouredItem$RuleIdFlavour$RuleIdFlavourPredicate.getValue():java.util.Collection" resolve="getValue" />
                               </node>
                             </node>
-                          </node>
-                          <node concept="37vLTw" id="7VE8qBNd6$e" role="37vLTJ">
-                            <ref role="3cqZAo" node="6Ia7CJh3u1q" resolve="message" />
                           </node>
                         </node>
                       </node>

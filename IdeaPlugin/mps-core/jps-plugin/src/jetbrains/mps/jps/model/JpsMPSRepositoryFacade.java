@@ -43,7 +43,7 @@ import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.io.ModelInputStream;
-import jetbrains.mps.vfs.FileRefresh;
+import jetbrains.mps.vfs.refresh.FileRefresh;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -192,7 +192,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       List<ModuleHandle> loadedModules = new ArrayList<ModuleHandle>();
       List<IFile> filesToLoad = new ArrayList<>();
       for (String path: languages.split(";")) {
-        IFile ipath = FileSystem.getInstance().getFileByPath(path);
+        IFile ipath = FileSystem.getInstance().getFile(path);
         filesToLoad.add(ipath);
       }
       new FileRefresh(filesToLoad).run();
@@ -239,7 +239,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Creating solution for " + mod.getName()));
       }
 
-      SolutionDescriptor descriptor = extension.getConfiguration().getSolutionDescriptor();
+      SolutionDescriptor descriptor = extension.getConfiguration().newSolutionDescriptor();
       descriptor.setNamespace(mod.getName());
       MPSCompilerUtil.debug(context, "UUID " + descriptor.getId());
       // Commeted out. See SolutionIdea: solutions don't have foreign ids, rather regular

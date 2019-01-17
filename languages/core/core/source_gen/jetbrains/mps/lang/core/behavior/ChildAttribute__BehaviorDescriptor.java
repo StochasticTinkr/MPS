@@ -38,8 +38,12 @@ public final class ChildAttribute__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static SContainmentLink getLink_idBpxLfMirzf(@NotNull SNode __thisNode__) {
-    String nonEmtpyLinkRole = (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b585L, "role_DebugInfo")) == null + "" ? "" : SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b585L, "role_DebugInfo")));
-    return MetaAdapterFactory.getContainmentLink(SContainmentLinkId.deserialize(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b587L, "linkId"))), nonEmtpyLinkRole);
+    String nonEmtpyLinkRole = (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b585L, "role_DebugInfo")) == null ? "" : SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b585L, "role_DebugInfo")));
+    try {
+      return MetaAdapterFactory.getContainmentLink(SContainmentLinkId.deserialize(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b587L, "linkId"))), nonEmtpyLinkRole);
+    } catch (RuntimeException e) {
+      return null;
+    }
   }
   /*package*/ static void setLink_idBpxLfMirzM(@NotNull SNode __thisNode__, SContainmentLink metaLink) {
     SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b585L, "role_DebugInfo"), metaLink.getName());

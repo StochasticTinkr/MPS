@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,25 @@
 package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.icons.MPSIcons.Nodes;
+import jetbrains.mps.ide.ui.tree.SortUtil.SModelComparator;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode.LongModelNameText;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class TransientModelsTreeNode extends ProjectModuleTreeNode {
 
   public TransientModelsTreeNode(@NotNull Project project, @NotNull TransientModelsModule module) {
     super(module);
-    populate();
     setNodeIdentifier(module.getModuleReference().toString());
+    populate();
   }
 
   @Override
@@ -51,6 +60,28 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    new SModelsSubtree(this, true, false).create(getModule());
+    final LongModelNameText fullModelName = new LongModelNameText();
+    GroupByForkBranchNamespaceBuilder treeBuilder = new GroupByForkBranchNamespaceBuilder();
+    ArrayList<SModel> sortedModels = new ArrayList<>(IterableUtil.asCollection(getModule().getModels()));
+    Collections.sort(sortedModels, new SModelComparator());
+    sortedModels.stream().map(m -> new SModelTreeNode(m, fullModelName)).forEach(treeBuilder::addNode);
+    treeBuilder.fillNode(this);
+  }
+
+  // FIXME refactor NamespaceTreeBuilder to take Supplier and get rid of subclassing
+  static final class GroupByForkBranchNamespaceBuilder extends DefaultNamespaceTreeBuilder<SModelTreeNode> {
+    @Override
+    protected String getNamespace(SModelTreeNode node) {
+      final SModel m = node.getModel();
+      // FIXME I know I'm not supposed to use TransientSModelDescriptor directly, rather extapi.TransientSModel
+      //       but there's no mechanism to access serial through that interface yet
+      final int branchSerial;
+      if (m instanceof TransientSModelDescriptor) {
+        branchSerial = ((TransientSModelDescriptor) m).getBranchSerial();
+      } else {
+        branchSerial = 0;
+      }
+      return branchSerial == 0 ? "" : String.format("Transformation branch #%d", branchSerial);
+    }
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,6 +71,7 @@ public class MPSFacetSourcesTab implements SModuleConfigurationTab {
       Disposer.dispose(myContentEntriesEditor);
       myContentEntriesEditor = null;
     }
+    // here come the only justified use of cfgBean.getSolutionDescriptor(), there's no other way to access Facet's SD here at the moment
     myContentEntriesEditor = new ModelRootContentEntriesEditor(data.getSolutionDescriptor(), ProjectHelper.getProjectRepository(myContext.getProject()));
     Disposer.register(myParentDisposable, myContentEntriesEditor);
     VirtualFile defaultFolder = myContext.getModule().getModuleFile() != null
@@ -94,6 +95,7 @@ public class MPSFacetSourcesTab implements SModuleConfigurationTab {
           // Fixme we don't remove source roots that we have added to idea module
 
           for (ModelRoot path : myContentEntriesEditor.getModelRoots()) {
+            // FIXME shall deal with ModelRootDescriptor here
             if(path instanceof DefaultModelRoot) {
               for(SourceRoot mpsSourceRoot : ((DefaultModelRoot) path).getSourceRoots(SourceRootKinds.SOURCES)) {
                 VirtualFile mpsSourceRootVFile = VirtualFileUtils.getProjectVirtualFile(mpsSourceRoot.getAbsolutePath());
@@ -128,7 +130,7 @@ public class MPSFacetSourcesTab implements SModuleConfigurationTab {
   }
 
   public void apply(MPSConfigurationBean data) {
-    data.setModelRoots(myContentEntriesEditor.getModelRoots());
+    myContentEntriesEditor.apply();
   }
 
   public boolean isModified(MPSConfigurationBean data) {

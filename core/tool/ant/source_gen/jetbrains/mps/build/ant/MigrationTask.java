@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.Objects;
 import jetbrains.mps.tool.common.RepositoryDescriptor;
 import java.util.Set;
-import java.util.List;
 import java.util.LinkedHashSet;
 
 public class MigrationTask extends MpsLoadTask {
@@ -24,15 +23,12 @@ public class MigrationTask extends MpsLoadTask {
   private static final String ERR_CODE_KEY = "mps.migration.errcode";
 
   public MigrationTask() {
+    super("jetbrains.mps.build.migration.MigrationWorker");
     setFailOnError(true);
   }
 
   public void setProject(String project) {
     myWhatToDo.addProjectFile(new File(project));
-  }
-
-  protected String getWorkerClass() {
-    return "jetbrains.mps.build.migration.MigrationWorker";
   }
 
   @Override
@@ -68,25 +64,19 @@ public class MigrationTask extends MpsLoadTask {
 
   @Override
   protected Set<File> calculateClassPath(boolean fork) {
-    // todo try using super method 
+    Set<File> classPath = new LinkedHashSet<File>(super.calculateClassPath(fork));
+
+    // FIXME checkMpsHome initializes myMpsHome if not set, while super.calculateClassPath() uses its value 
+    //       to figure out if mps home location has been explicitly set or not. Shall avoid these implicit assumptions 
     checkMpsHome();
+    File mpsHome = getMpsHome();
 
-    // copied from GenerationTask 
-    List<File> classPathRoots = MPSClasspathUtil.getClassPathRootsFromDependencies(getProject());
-    if (classPathRoots.isEmpty()) {
-      throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
-    }
-    Set<File> classPath = new LinkedHashSet<File>();
-    String mpsHomePath = getMpsHomePath();
+    // j.m.build.migration.jar hosts MigrationWorker 
+    addClassPath(classPath, mpsHome, "/plugins/mps-build/languages/build/jetbrains.mps.build.migration.jar");
+    addClassPath(classPath, mpsHome, "/plugins/modelchecker/lib/modelchecker.jar");
+    addClassPath(classPath, mpsHome, "/plugins/migration/lib/migration.jar");
+    addClassPath(classPath, mpsHome, "/plugins/migration/lib/migration-platform.jar");
 
-    addClassPath(classPath, mpsHomePath, "/plugins/mps-build/languages/build/jetbrains.mps.build.migration.jar");
-    addClassPath(classPath, mpsHomePath, "/plugins/modelchecker/lib/modelchecker.jar");
-    addClassPath(classPath, mpsHomePath, "/plugins/migration/lib/migration.jar");
-    addClassPath(classPath, mpsHomePath, "/plugins/migration/lib/migration-platform.jar");
-
-    for (File file : classPathRoots) {
-      MPSClasspathUtil.gatherAllClassesAndJarsUnder(file, classPath);
-    }
     return classPath;
   }
 
@@ -97,8 +87,8 @@ public class MigrationTask extends MpsLoadTask {
     return mpsHome.getAbsolutePath();
   }
 
-  private void addClassPath(Set<File> classPath, String mpsHomePath, String relativePath) {
-    File cp = new File(mpsHomePath + relativePath);
+  private void addClassPath(Set<File> classPath, File mpsHome, String relativePath) {
+    File cp = new File(mpsHome, relativePath);
     assert cp.exists() : "requested file does not exist: " + cp.getAbsolutePath();
     classPath.add(cp);
   }

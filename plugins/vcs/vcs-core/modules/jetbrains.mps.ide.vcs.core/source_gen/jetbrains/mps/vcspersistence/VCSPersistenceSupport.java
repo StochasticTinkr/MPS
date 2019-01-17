@@ -260,7 +260,7 @@ public class VCSPersistenceSupport {
   private static Map<String, String> loadMetadata(IFile modelFile) {
     String modelPath = modelFile.getPath();
     String versionPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + ".metadata";
-    IFile metadataFile = FileSystem.getInstance().getFileByPath(versionPath);
+    IFile metadataFile = FileSystem.getInstance().getFile(versionPath);
     if (!(metadataFile.exists())) {
       return null;
     }

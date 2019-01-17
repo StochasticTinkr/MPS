@@ -105,10 +105,14 @@ public class RefactoringProcessor {
    * Update usages during refactoring.
    * For calling not in migration assistant but in interactive enviromnent, so performs all in single refactoring session with project scope.
    */
-  public static <IP, FP> void performRefactoringInProject(final Project project, RefactoringUI refactoringUI, final RefactoringProcessor.RefactoringBody<IP, FP> refactoringBody) {
+  public static <IP, FP> void performRefactoringInProject(Project project, RefactoringUI refactoringUI, final RefactoringProcessor.RefactoringBody<IP, FP> refactoringBody) {
     final RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl(refactoringBody.getRefactoringName());
     final List<IP> initialStates = refactoringBody.findInitialStates();
-    performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<IP, FP>(), refactoringUI, refactoringSession, project.getRepository(), project.getScope(), refactoringBody.getRefactoringName(), refactoringBody.getAllAvailableParticipants(), initialStates, new _FunctionTypes._return_P1_E0<Map<IP, FP>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>>() {
+    performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<IP, FP>(), refactoringUI, refactoringSession, project.getRepository(), project.getScope(), refactoringBody.getRefactoringName(), refactoringBody.getAllAvailableParticipants(), initialStates, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        refactoringBody.prepareRefactoring();
+      }
+    }, new _FunctionTypes._return_P1_E0<Map<IP, FP>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>>() {
       public Map<IP, FP> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>> participantStates) {
         refactoringBody.doRefactor(participantStates, refactoringSession);
         Map<IP, FP> finalStateMap = MapSequence.fromMap(new HashMap<IP, FP>());
@@ -129,11 +133,7 @@ public class RefactoringProcessor {
       }
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        project.getRepository().getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            refactoringSession.performAllRegistered();
-          }
-        });
+        refactoringSession.performAllRegistered();
         refactoringBody.doCleanup();
       }
     });
@@ -143,19 +143,25 @@ public class RefactoringProcessor {
     String getRefactoringName();
     Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> getAllAvailableParticipants();
     List<IP> findInitialStates();
+
     /**
-     * perform refactoring itself (e.g. moves or renames smth)
+     * Called right before doRefactor(), but outside of command, so here dialogs can be shown.
+     */
+    void prepareRefactoring();
+    /**
+     * Perform refactoring itself (e.g. move or rename smth).
      * 
-     * executed in edt but not in command, so can show some final adjustment dialogs
+     * Executed inside command.
      */
     void doRefactor(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>> participantStates, RefactoringSession refactoringSession);
     /**
-     * pure method doing nothing but looking into a map that can be prepared in doRefactor(), so this method can be called outside of command
+     * Pure method doing nothing but looking into a map that can be prepared in doRefactor(), so this method should not require command..
+     * The map should be already initialized by method doRefactor().
      */
     FP getFinalStateFor(IP initialState);
     /**
-     * cleanup that should be performed after all usages are updated (e.g. deletion of old code that can be used by participants), used only because of POSTPONE_REMOVE option
-     * executed in edt but not in command, so can show some final adjustment dialogs
+     * Cleanup that should be performed after all usages are updated (e.g. deletion of old code that can be used by participants), used only because of POSTPONE_REMOVE option.
+     * Executed inside command.
      * 
      * @see jetbrains.mps.refactoring.participant.RefactoringParticipant.KeepOldNodes 
      */
@@ -166,7 +172,7 @@ public class RefactoringProcessor {
    * Update usages during refactoring.
    * For calling from both 'during refactoring' and migration context.
    */
-  public static <IP, FP, IS, FS> void performRefactoring(final RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringUI refactoringUI, final RefactoringSession refactoringSession, final SRepository repository, SearchScope scope, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IS> initialStates, final _FunctionTypes._return_P1_E0<? extends Map<IS, FS>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS>>> doRefactor, @Nullable final _FunctionTypes._void_P0_E0 doCleanup) {
+  public static <IP, FP, IS, FS> void performRefactoring(final RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringUI refactoringUI, final RefactoringSession refactoringSession, final SRepository repository, SearchScope scope, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IS> initialStates, final _FunctionTypes._void_P0_E0 prepareRefactoring, final _FunctionTypes._return_P1_E0<? extends Map<IS, FS>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS>>> doRefactor, @Nullable final _FunctionTypes._void_P0_E0 doCleanup) {
 
 
     final Tuples._2<List<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS>>, SearchTask> participantChanges = askParticipantChanges(factory, refactoringUI, repository, scope, participants, initialStates);
@@ -184,27 +190,28 @@ public class RefactoringProcessor {
     if (searchResults.value == null) {
       return;
     }
-
     refactoringUI.showRefactoringView(new Runnable() {
       public void run() {
-        final Map<IS, FS> getFinalObject = doRefactor.invoke(participantChanges._0());
-        if (getFinalObject == null) {
-          return;
+        if (prepareRefactoring != null) {
+          prepareRefactoring.invoke();
         }
         repository.getModelAccess().executeCommand(new Runnable() {
           public void run() {
-            for (RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS> participantState : ListSequence.fromList(participantChanges._0())) {
-              participantState.doRefactor(ListSequence.fromList(initialStates).select(new ISelector<IS, FS>() {
-                public FS select(IS it) {
-                  return MapSequence.fromMap(getFinalObject).get(it);
-                }
-              }).toListSequence(), repository, refactoringSession, factory);
+            final Map<IS, FS> getFinalObject = doRefactor.invoke(participantChanges._0());
+            if (getFinalObject != null) {
+              for (RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS> participantState : ListSequence.fromList(participantChanges._0())) {
+                participantState.doRefactor(ListSequence.fromList(initialStates).select(new ISelector<IS, FS>() {
+                  public FS select(IS it) {
+                    return MapSequence.fromMap(getFinalObject).get(it);
+                  }
+                }).toListSequence(), repository, refactoringSession, factory);
+              }
+              if (doCleanup != null) {
+                doCleanup.invoke();
+              }
             }
           }
         });
-        if (doCleanup != null) {
-          doCleanup.invoke();
-        }
       }
     }, refactoringName, searchResults.value, participantChanges._1(), refactoringSession);
   }

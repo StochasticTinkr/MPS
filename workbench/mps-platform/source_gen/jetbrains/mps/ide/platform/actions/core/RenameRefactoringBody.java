@@ -34,12 +34,11 @@ public class RenameRefactoringBody implements RefactoringProcessor.RefactoringBo
   public List<SNode> findInitialStates() {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), myNode);
   }
+  public void prepareRefactoring() {
+    // do nothing 
+  }
   public void doRefactor(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>> participantStates, RefactoringSession refactoringSession) {
-    myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
-      public void run() {
-        SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), myNewNodeName);
-      }
-    });
+    SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), myNewNodeName);
   }
   @Override
   public String getFinalStateFor(SNode initialState) {

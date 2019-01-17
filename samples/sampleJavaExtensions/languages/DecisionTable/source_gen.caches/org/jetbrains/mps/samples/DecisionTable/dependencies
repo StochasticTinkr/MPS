@@ -12,12 +12,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.samples.DecisionTable.behavior.BehaviorAspectDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.samples.DecisionTable.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.DecisionTable.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="org.jetbrains.mps.samples.DecisionTable.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="org.jetbrains.mps.samples.DecisionTable.structure.ConceptPresentationAspectImpl" />

@@ -69,6 +69,3 @@ teamcity-info.xml
 
 # Versions of library dependecies required for platform (like Kotlin, JDK etc)
 /build/dependencies
-
-# Ignore icon for now - it need to be removed from platform artifacts
-/bin/mps.svg

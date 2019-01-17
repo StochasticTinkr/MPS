@@ -16,15 +16,14 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.CachingFile;
-import jetbrains.mps.vfs.CachingFileSystem;
-import jetbrains.mps.vfs.DefaultCachingContext;
-import jetbrains.mps.vfs.FileSystemEvent;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.refresh.CachingFile;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
+import jetbrains.mps.vfs.refresh.DefaultCachingContext;
+import jetbrains.mps.vfs.refresh.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemExtPoint;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -77,7 +76,10 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
       myPaths.put(path.getPath(), listener);
       if (!(myListeners.isEmpty())) {
-        path.getFileSystem().addListener(listener);
+        FileSystem fs = path.getFileSystem();
+        if (fs instanceof CachingFileSystem) {
+          ((CachingFileSystem) fs).addListener(listener);
+        }
       }
     } finally {
       myLock.writeLock().unlock();
@@ -122,12 +124,10 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     for (IFile path : paths) {
       String fsPath = path.getPath();
       //at least some programs don't change timestamp of a directory inside jar file after deleting a file in it
-      if (fsPath.contains(Path.ARCHIVE_SEPARATOR)){
+      if (fsPath.contains(Path.ARCHIVE_SEPARATOR)) {
         IFile jarFile = path.getFileSystem().getFile(fsPath.substring(0, fsPath.lastIndexOf(Path.ARCHIVE_SEPARATOR)));
-        if (jarFile != null){
-          max = Math.max(max, jarFile.lastModified());
-          continue; // no need to go deep into jar contents
-        }
+        max = Math.max(max, jarFile.lastModified());
+        continue; // no need to go deep into jar contents
       }
       long ts = getTimestampRecursive(path);
       max = Math.max(max, ts);
@@ -150,7 +150,9 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
   private FileSystem getFS() {
     List<IFile> toRefresh = new ArrayList<>(getFiles());
-    if (toRefresh.isEmpty()) return FileSystemExtPoint.getFS();
+    if (toRefresh.isEmpty()) {
+      return FileSystemExtPoint.getFS();
+    }
     return toRefresh.get(0).getFileSystem();
   }
 
@@ -166,7 +168,10 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     try {
       if (myListeners.isEmpty()) {
         for (PathListener pathListener : myPaths.values()) {
-          getFS().addListener(pathListener);
+          FileSystem fs = getFS();
+          if (fs instanceof CachingFileSystem) {
+            ((CachingFileSystem) fs).addListener(pathListener);
+          }
         }
       }
       myListeners.add(listener);
@@ -182,7 +187,10 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
       myListeners.remove(listener);
       if (myListeners.isEmpty()) {
         for (PathListener pathListener : myPaths.values()) {
-          getFS().removeListener(pathListener);
+          FileSystem fs = getFS();
+          if (fs instanceof CachingFileSystem) {
+            ((CachingFileSystem) fs).removeListener(pathListener);
+          }
         }
       }
     } finally {
@@ -246,7 +254,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   @NotNull
   @Override
   public DataSourceType getType() {
-   return PreinstalledDataSourceTypes.FOLDER_SET;
+    return PreinstalledDataSourceTypes.FOLDER_SET;
   }
 
   private static class PathListener implements FileSystemListener {

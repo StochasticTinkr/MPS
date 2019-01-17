@@ -18,11 +18,13 @@ package jetbrains.mps.fileTypes;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @deprecated this class has very limited perspective on what files are module/model (sticks to predefined set of filename extensions), do not use
@@ -38,8 +40,8 @@ public final class MPSFileTypesManager {
     }
     FileType type = file.getFileType();
     return type.equals(MPSFileTypeFactory.LANGUAGE_FILE_TYPE) ||
-        type.equals(MPSFileTypeFactory.SOLUTION_FILE_TYPE) ||
-        type.equals(MPSFileTypeFactory.DEVKIT_FILE_TYPE);
+           type.equals(MPSFileTypeFactory.SOLUTION_FILE_TYPE) ||
+           type.equals(MPSFileTypeFactory.DEVKIT_FILE_TYPE);
   }
 
   public static boolean isModelFile(VirtualFile vfile) {
@@ -52,15 +54,12 @@ public final class MPSFileTypesManager {
   }
 
   private static boolean isIgnoredByDefault(String fileName) {
-    for (String matchingString : DEFAULT_MPS_IGNORED_PATTERNS) {
-      List<String> names = UniPath.fromString(fileName).getNames();
-      if (!names.isEmpty()) {
-        names = names.subList(0, names.size() - 1);
-        if (names.stream().anyMatch(dirName -> dirName.equals(matchingString))) {
-          return true;
-        }
-      }
+    Set<String> dirs = new HashSet<>();
+    File dir = new File(fileName);
+    while ((dir = dir.getParentFile()) != null) {
+      dirs.add(dir.getName());
     }
-    return false;
+    dirs.retainAll(DEFAULT_MPS_IGNORED_PATTERNS);
+    return !dirs.isEmpty();
   }
 }

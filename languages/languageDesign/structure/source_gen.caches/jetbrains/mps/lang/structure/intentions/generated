@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="1ojvk12eolq6k7kgw1agyyxtrk4jdof">
+<product version="3" modelHash="1hexm8b9obowu5xy16mqvt55xzv1l2u">
   <files names="AddDeprecatedAnnotation_Intention.java:AddSeeAlso_Intention.java:AnnotateToDocument_Intention.java:AttachSmartReferenceAttribute_Intention.java:ConceptIconHelper.java:CreateConceptIcon_Intention.java:ForbidIncomingReferencesInSubconcepts_Intention.java:IntentionsDescriptor.java:MakeAbstract_Intention.java:MakeFinal_Intention.java:MakeRootable_Intention.java" />
 </product>
 

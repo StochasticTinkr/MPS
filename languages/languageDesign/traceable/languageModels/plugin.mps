@@ -17,6 +17,7 @@
     <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -653,8 +654,8 @@
                                   <node concept="3clFbS" id="eduOM7PR7z" role="1bW5cS">
                                     <node concept="3clFbF" id="eduOM7PR7$" role="3cqZAp">
                                       <node concept="2YIFZM" id="eduOM7PR7_" role="3clFbG">
-                                        <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
-                                        <ref role="37wK5l" to="3ju5:~IFileUtils.copyFileContent(jetbrains.mps.vfs.IFile,jetbrains.mps.vfs.IFile):boolean" resolve="copyFileContent" />
+                                        <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+                                        <ref role="37wK5l" to="18ew:~IFileUtil.copyFileContent(jetbrains.mps.vfs.IFile,jetbrains.mps.vfs.IFile):boolean" resolve="copyFileContent" />
                                         <node concept="1LFfDK" id="eduOM7PR7A" role="37wK5m">
                                           <node concept="3cmrfG" id="eduOM7PR7B" role="1LF_Uc">
                                             <property role="3cmrfH" value="0" />

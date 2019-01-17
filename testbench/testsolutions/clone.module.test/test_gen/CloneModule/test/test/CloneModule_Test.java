@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.io.File;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.project.validation.MessageCollectProcessor;
 import jetbrains.mps.project.validation.ModuleValidationProblem;
 import jetbrains.mps.project.validation.ValidationUtil;
@@ -98,7 +98,7 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
     project = ((MPSProject) myEnvironment.openProject(new File(PROJECT_PATH)));
     executeUnderLock(new Runnable() {
       public void run() {
-        clonedModulesDirectory = IFileUtils.createTmpDir();
+        clonedModulesDirectory = IFileUtil.createTmpDir();
       }
     });
   }

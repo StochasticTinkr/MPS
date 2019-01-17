@@ -5,7 +5,7 @@ package jetbrains.mps.lang.test.structure;
 import jetbrains.mps.smodel.runtime.IconResource;
 
 public class IconContainer {
-  protected static IconResource RESOURCE_a0a2a0a71b0bd = new IconResource("nodesTest.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a3a0a33b0bd = new IconResource("nodesTest.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a2a0a75b0bd = new IconResource("nodesTest.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a71b0dd = new IconResource("nodesTest.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a3a0a43b0dd = new IconResource("nodesTest.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a95b0dd = new IconResource("nodesTest.png", IconContainer.class);
 }

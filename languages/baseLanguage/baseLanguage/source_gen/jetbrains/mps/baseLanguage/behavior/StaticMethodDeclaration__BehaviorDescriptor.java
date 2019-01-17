@@ -28,7 +28,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.scopes.Signature;
 import jetbrains.mps.baseLanguage.scopes.MethodSignature;
-import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -91,7 +90,7 @@ public final class StaticMethodDeclaration__BehaviorDescriptor extends BaseBHDes
     if (!((context.isElementVisible(__thisNode__)))) {
       return;
     }
-    Signature signature = new MethodSignature(__thisNode__, Collections.<SNode,SNode>emptyMap());
+    Signature signature = new MethodSignature(__thisNode__, context.getTypeByTypeVariableMapping());
     context.addMember(__thisNode__, signature);
     context.hideMembers(signature);
   }

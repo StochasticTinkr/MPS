@@ -99,7 +99,7 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
               if (itnode9 == null) {
                 continue;
               }
-              TemplateContext context5 = context4.subContext("parametersFromExpressions", itnode9);
+              TemplateContext context5 = context4.subContext("parametersFromExpressionsQ", itnode9);
               final SNode tnode10 = environment.createOutputNode(myConcepts[5]);
               try {
                 SNodeAccessUtil.setProperty(tnode10, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_2_0(new PropertyMacroContext(context5, "a", propertyMacro_6fpfng_c0a0c0a0d0c0f0b0c0f0g))));
@@ -116,7 +116,7 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
               } finally {
               }
               if (tnode10 != null) {
-                environment.registerLabel(itnode9, tnode10, "parametersFromExpressions");
+                environment.registerLabel(itnode9, tnode10, "parametersFromExpressionsQ");
                 tlist9.add(tnode10);
               }
             }
@@ -180,7 +180,7 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
                     TemplateContext context11 = context10.subContext();
                     {
                       Collection<SNode> tlist20 = null;
-                      TemplateContext context12 = context11.subContext("nodeVariable");
+                      TemplateContext context12 = context11.subContext("nodeVariableQ");
                       final SNode tnode21 = environment.createOutputNode(myConcepts[9]);
                       try {
                         environment.nodeCopied(context12, tnode21, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396681223");
@@ -206,7 +206,7 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
                       } finally {
                       }
                       tlist20 = TemplateUtil.singletonList(tnode21);
-                      environment.registerLabel(context11.getInput(), tnode21, "nodeVariable");
+                      environment.registerLabel(context11.getInput(), tnode21, "nodeVariableQ");
                       for (SNode child24 : TemplateUtil.asNotNull(tlist20)) {
                         tnode19.addChild(myAggregationLinks[7], child24);
                       }

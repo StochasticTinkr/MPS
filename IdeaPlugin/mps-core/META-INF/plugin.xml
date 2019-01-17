@@ -28,7 +28,19 @@
 
   <application-components>
     <component>
-      <interface-class>jetbrains.mps.ide.vfs.IdeaFSComponent</interface-class>
+      <interface-class>jetbrains.mps.ide.platform.watching.FileSystemListenersContainer</interface-class>
+      <implementation-class>jetbrains.mps.ide.platform.watching.FileSystemListenersContainer</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.vfs.JrtIdeaFileSystem</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.vfs.JarIdeaFileSystem</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.vfs.LocalIdeaFileSystem</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.vfs.IdeaFileSystem</implementation-class>
     </component>
     <component>
@@ -194,7 +206,7 @@
     -->
     <!-- IMPORTANT keep it in sync with build.xml runTests target, otherwise jps tests fill fail -->
     <compileServer.plugin
-            classpath="jps/mps-core-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-references.jar;mps-openapi.jar;mps-logging.jar;mps-messaging.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;mps-editor-api.jar;mps-platform.jar;mps-behavior-api.jar;mps-behavior-runtime.jar;mps-boot-util.jar;mps-annotations.jar"/>
+            classpath="jps/mps-core-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-references.jar;mps-openapi.jar;mps-logging.jar;mps-messaging.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;mps-editor-api.jar;mps-platform.jar;mps-behavior-api.jar;mps-behavior-runtime.jar;mps-boot-util.jar;mps-annotations.jar;mps-project-check.jar"/>
     <buildProcess.parametersProvider implementation="jetbrains.mps.idea.build.MPSBuildProcessParametersProvider"/>
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
     <projectConfigurable parentId="preferences.sourceCode" displayName="MPS Code Style" instance="jetbrains.mps.ide.codeStyle.CodeStyleSettingsConfigurable" />

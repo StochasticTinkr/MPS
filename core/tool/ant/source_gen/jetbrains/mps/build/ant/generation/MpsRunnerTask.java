@@ -5,14 +5,12 @@ package jetbrains.mps.build.ant.generation;
 import jetbrains.mps.tool.common.MpsRunnerProperties;
 
 public class MpsRunnerTask extends GenerateTask {
-  private MpsRunnerProperties myProperties;
-  public MpsRunnerTask() {
-    myProperties = new MpsRunnerProperties(myWhatToDo);
-  }
+  private final MpsRunnerProperties myProperties;
 
-  @Override
-  protected String getWorkerClass() {
-    return "jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker";
+  public MpsRunnerTask() {
+    // FIXME Please, oh PLEASE, stop extending GenerateTask!!!! 
+    myProperties = new MpsRunnerProperties(myWhatToDo);
+    setWorker("jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker");
   }
 
   public String getSolution() {

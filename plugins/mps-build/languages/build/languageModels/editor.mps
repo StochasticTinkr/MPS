@@ -7117,7 +7117,7 @@
                         <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
                       </node>
                       <node concept="liA8E" id="2nj994o3ZZh" role="2OqNvi">
-                        <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                        <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                         <node concept="2OqwBi" id="2wLE7OGpyf3" role="37wK5m">
                           <node concept="3GMtW1" id="2wLE7OGpyeI" role="2Oq$k0" />
                           <node concept="2qgKlT" id="2wLE7OGpyf8" role="2OqNvi">

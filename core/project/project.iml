@@ -13,11 +13,8 @@
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="java-stub" />
-    <orderEntry type="module" module-name="generator-engine" />
-    <orderEntry type="library" name="Trove" level="project" />
-    <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="components" />
+    <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
   </component>
 </module>

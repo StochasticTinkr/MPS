@@ -15,15 +15,12 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.util.URLUtil;
 import jetbrains.mps.util.ClassPathReader;
 import jetbrains.mps.util.ClassType;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.SystemInfo;
-import jetbrains.mps.util.URLUtil;
-import jetbrains.mps.vfs.impl.IoFile;
-import jetbrains.mps.vfs.path.UniPath;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -37,7 +34,6 @@ import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -191,6 +187,7 @@ public final class CommonPaths {
     addIfExists(result, "lib/mps-closures.jar");
     addIfExists(result, "lib/mps-collections.jar");
     addIfExists(result, "lib/mps-tuples.jar");
+    addIfExists(result, "lib/mps-project-check.jar");
     addIfExists(result, "lib/log4j.jar");
     addIfExists(result, "lib/trove4j.jar");
     addIfExists(result, "lib/jdom.jar");
@@ -244,11 +241,10 @@ public final class CommonPaths {
   }
 
   private static void addIfExists(Collection<String> item, String path) {
-    String dependentPath = UniPath.fromString(path).toSystemPath().toString(); // fixme waiting for Path#resolve method to resolve children in fs
     for (String basePath : PathManager.getHomePaths()) {
-      UniPath fullPath = UniPath.fromString(basePath + File.separator + dependentPath).toSystemPath();
-      if (new IoFile(fullPath).exists()) {
-        item.add(fullPath.toString());
+      String fullPath = basePath + File.separator + path;
+      if (new File(fullPath).exists()) {
+        item.add(fullPath);
       }
     }
   }

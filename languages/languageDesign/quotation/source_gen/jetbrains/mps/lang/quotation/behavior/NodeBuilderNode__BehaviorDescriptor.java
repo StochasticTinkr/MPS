@@ -65,10 +65,7 @@ public final class NodeBuilderNode__BehaviorDescriptor extends BaseBHDescriptor 
     return result;
   }
   /*package*/ static boolean isExpressionExternal_id4IuFl2JvP6C(@NotNull SAbstractConcept __thisConcept__, SNode expression) {
-    if ((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(expression) && ListSequence.fromList(SNodeOperations.getNodeDescendants(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), true, new SAbstractConcept[]{})).isEmpty()) {
-      return false;
-    }
-    return true;
+    return !((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(expression)) || ListSequence.fromList(SNodeOperations.getNodeDescendants(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), true, new SAbstractConcept[]{})).isNotEmpty();
   }
   /*package*/ static void collectExternalExpressions_idRRzwLnBy10(@NotNull SNode __thisNode__, List<SNode> list) {
     for (SNode v : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, 0x4bb51009d20b033bL, "values")))) {

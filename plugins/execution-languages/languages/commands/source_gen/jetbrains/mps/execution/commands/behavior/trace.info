@@ -1147,10 +1147,10 @@
       <node id="856705193941282089" at="175,14,176,58" concept="12" />
       <node id="856705193941282089" at="182,48,183,22" concept="6" />
       <node id="856705193941282089" at="188,40,189,19" concept="6" />
-      <node id="48168216977934887" at="191,65,192,63" concept="5" />
+      <node id="48168216977934887" at="191,67,192,63" concept="5" />
       <node id="48168216977934887" at="192,63,193,230" concept="5" />
-      <node id="48168216977934887" at="193,230,194,163" concept="2" />
-      <node id="48168216977934887" at="194,163,195,14" concept="6" />
+      <node id="48168216977934887" at="193,230,194,158" concept="2" />
+      <node id="48168216977934887" at="194,158,195,14" concept="6" />
       <node id="856705193941282089" at="51,0,54,0" concept="9" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="856705193941282089" at="55,0,58,0" concept="9" trace="isDebuggable_idJzCdmU6yOQ#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="856705193941282089" at="62,0,65,0" concept="9" trace="createType_idhEwJimy#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -1176,7 +1176,7 @@
       <node id="3754131050835964288" at="110,50,115,11" concept="6" />
       <node id="856705193941282089" at="180,0,185,0" concept="4" trace="getDeclaredMethods#()Ljava/util/List;" />
       <node id="856705193941282089" at="186,0,191,0" concept="4" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="48168216977934887" at="191,0,197,0" concept="9" trace="createCommandType_5aznw1_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="48168216977934887" at="191,0,197,0" concept="9" trace="createCommandType_5aznw1_a0a2#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3754131050835964286" at="110,0,117,0" concept="4" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="3754131050835964280" at="108,100,117,7" concept="6" />
       <node id="856705193941282089" at="167,5,177,5" concept="11" />
@@ -1263,7 +1263,7 @@
         <var name="node" id="856705193941282089" />
         <var name="parameters" id="856705193941282089" />
       </scope>
-      <scope id="48168216977934887" at="191,65,195,14">
+      <scope id="48168216977934887" at="191,67,195,14">
         <var name="facade" id="48168216977934887" />
         <var name="n1" id="48168216977934887" />
       </scope>
@@ -1271,7 +1271,7 @@
       <scope id="856705193941282089" at="180,0,185,0" />
       <scope id="856705193941282089" at="186,0,191,0" />
       <scope id="48168216977934887" at="191,0,197,0">
-        <var name="p0" id="48168216977934887" />
+        <var name="node0" id="48168216977934887" />
       </scope>
       <scope id="3754131050835964286" at="110,0,117,0">
         <var name="it" id="3754131050835964286" />

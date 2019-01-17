@@ -21,8 +21,9 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.vfs.util.PathUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -85,7 +86,6 @@ public final class MacrosFactory implements MacroHelper.Source {
 
   /**
    * @deprecated why would anyone care to cast openapi.SModule to AbstractModule? Use {@link #forModule(SModule)} instead.
-   *
    */
   @Deprecated
   @ToRemove(version = 2018.1)
@@ -123,7 +123,11 @@ public final class MacrosFactory implements MacroHelper.Source {
           anchorFolder = anchorFolder.getParent();
         }
         String modelRelativePath = removePrefix(path);
-        return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
+        IFile descendant = IFileUtil.getDescendant(anchorFolder, modelRelativePath);
+        if (descendant == null) {
+          throw new IllegalStateException("Can't find descendant " + modelRelativePath + " of file " + anchorFolder.getPath());
+        }
+        return descendant.getPath();
       }
 
       return super.expand(path, anchorFile);
@@ -135,7 +139,7 @@ public final class MacrosFactory implements MacroHelper.Source {
       if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
         anchorFolder = anchorFolder.getParent();
       }
-      String prefix = IFileUtils.getCanonicalPath(anchorFolder);
+      String prefix = IFileUtil.getCanonicalPath(anchorFolder);
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
         return MODULE + relationalPath;
@@ -153,7 +157,7 @@ public final class MacrosFactory implements MacroHelper.Source {
       if (path.contains(PROJECT_LEGACY)) {
         IFile projectDir = getProjectDir(anchorFile);
         String modelRelativePath = removePrefix(path);
-        return IFileUtils.getCanonicalPath(projectDir.getDescendant(modelRelativePath));
+        return IFileUtil.getCanonicalPath(projectDir.getDescendant(modelRelativePath));
       }
 
       return super.expand(path, anchorFile);
@@ -161,7 +165,7 @@ public final class MacrosFactory implements MacroHelper.Source {
 
     @Override
     protected String shrink(String absolutePath, IFile anchorFile) {
-      String prefix = IFileUtils.getCanonicalPath(getProjectDir(anchorFile));
+      String prefix = IFileUtil.getCanonicalPath(getProjectDir(anchorFile));
 
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
@@ -201,7 +205,7 @@ public final class MacrosFactory implements MacroHelper.Source {
     private String expand(String pathWithMacro, String macroPath) {
       String relativePath = removePrefix(pathWithMacro);
       IFile file = FileSystem.getInstance().getFile(macroPath).getDescendant(relativePath);
-      return IFileUtils.getCanonicalPath(file);
+      return IFileUtil.getCanonicalPath(file);
     }
 
     @Override

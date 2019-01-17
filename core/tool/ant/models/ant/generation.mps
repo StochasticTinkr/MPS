@@ -25,15 +25,6 @@
       <concept id="1215695189714" name="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" flags="nn" index="d57v9" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
-      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
-        <reference id="1188208074048" name="annotation" index="2AI5Lk" />
-      </concept>
-      <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
-        <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
-        <child id="1154032183016" name="body" index="2LFqv$" />
-      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -41,14 +32,12 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
+      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
-        <child id="1164991057263" name="throwable" index="YScLw" />
       </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
@@ -93,7 +82,6 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
@@ -144,12 +132,6 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
-        <child id="1144226360166" name="iterable" index="1DdaDG" />
-      </concept>
-      <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
-        <child id="1144230900587" name="variable" index="1Duv9x" />
-      </concept>
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -158,7 +140,6 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
-      <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -403,6 +384,12 @@
     <node concept="3clFbW" id="4VsuddjqnLq" role="jymVt">
       <node concept="3cqZAl" id="4VsuddjqnLr" role="3clF45" />
       <node concept="3clFbS" id="4VsuddjqnLs" role="3clF47">
+        <node concept="XkiVB" id="4vDU0BP$Ds_" role="3cqZAp">
+          <ref role="37wK5l" to="644x:4vDU0BPxMGt" resolve="MpsLoadTask" />
+          <node concept="Xl_RD" id="5reM9ACTkmr" role="37wK5m">
+            <property role="Xl_RC" value="jetbrains.mps.tool.builder.make.GeneratorWorker" />
+          </node>
+        </node>
         <node concept="3clFbF" id="2XB5puvn6gH" role="3cqZAp">
           <node concept="37vLTI" id="2XB5puvn6MN" role="3clFbG">
             <node concept="2ShNRf" id="2XB5puvn6S7" role="37vLTx">
@@ -479,23 +466,7 @@
       </node>
       <node concept="3Tm1VV" id="4VsuddjqnLt" role="1B3o_S" />
     </node>
-    <node concept="3clFb_" id="4Vsuddjh5gy" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getWorkerClass" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="4Vsuddjh5gz" role="1B3o_S" />
-      <node concept="3clFbS" id="4Vsuddjh5g$" role="3clF47">
-        <node concept="3clFbF" id="5reM9ACTkmp" role="3cqZAp">
-          <node concept="Xl_RD" id="5reM9ACTkmr" role="3clFbG">
-            <property role="Xl_RC" value="jetbrains.mps.tool.builder.make.GeneratorWorker" />
-          </node>
-        </node>
-      </node>
-      <node concept="17QB3L" id="5reM9ACT8QE" role="3clF45" />
-      <node concept="2AHcQZ" id="3tYsUK_p6pX" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
+    <node concept="2tJIrI" id="4vDU0BP$GES" role="jymVt" />
     <node concept="3clFb_" id="4Vsuddjh5gP" role="jymVt">
       <property role="TrG5h" value="addConfiguredChunk" />
       <node concept="3cqZAl" id="4Vsuddjh5gQ" role="3clF45" />
@@ -1062,119 +1033,6 @@
       <node concept="3Tm1VV" id="3pzB6wMWAYu" role="1B3o_S" />
       <node concept="3cqZAl" id="3pzB6wMWAYv" role="3clF45" />
     </node>
-    <node concept="2tJIrI" id="4Vsuddjx8oG" role="jymVt" />
-    <node concept="3clFb_" id="4Vsuddjh5le" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="calculateClassPath" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="4Vsuddjh5lf" role="1B3o_S" />
-      <node concept="3uibUv" id="4Vsuddjh5lg" role="3clF45">
-        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-        <node concept="3uibUv" id="4Vsuddjh5lh" role="11_B2D">
-          <ref role="3uigEE" to="guwi:~File" resolve="File" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="4Vsuddjh5li" role="3clF47">
-        <node concept="3cpWs8" id="vAjk0UZ1DP" role="3cqZAp">
-          <node concept="3cpWsn" id="vAjk0UZ1DQ" role="3cpWs9">
-            <property role="TrG5h" value="classPathRoots" />
-            <node concept="3uibUv" id="vAjk0UZ1DK" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="vAjk0UZ1DN" role="11_B2D">
-                <ref role="3uigEE" to="guwi:~File" resolve="File" />
-              </node>
-            </node>
-            <node concept="2YIFZM" id="vAjk0UZ1DR" role="33vP2m">
-              <ref role="37wK5l" to="644x:vAjk0TGzfD" resolve="getClassPathRootsFromDependencies" />
-              <ref role="1Pybhc" to="644x:3t7WP23N$8C" resolve="MPSClasspathUtil" />
-              <node concept="1rXfSq" id="vAjk0UZ1DS" role="37wK5m">
-                <ref role="37wK5l" to="gola:~ProjectComponent.getProject():org.apache.tools.ant.Project" resolve="getProject" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="vAjk0UZcxL" role="3cqZAp">
-          <node concept="2OqwBi" id="vAjk0UZgyD" role="3clFbw">
-            <node concept="liA8E" id="vAjk0UZksu" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
-            </node>
-            <node concept="37vLTw" id="vAjk0UZfjL" role="2Oq$k0">
-              <ref role="3cqZAo" node="vAjk0UZ1DQ" resolve="classPathRoots" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="vAjk0UZcxN" role="3clFbx">
-            <node concept="YS8fn" id="4Vsuddjh5mT" role="3cqZAp">
-              <node concept="2ShNRf" id="4Vsuddjh5mU" role="YScLw">
-                <node concept="1pGfFk" id="4Vsuddjh5mV" role="2ShVmc">
-                  <ref role="37wK5l" to="gola:~BuildException.&lt;init&gt;(java.lang.String)" resolve="BuildException" />
-                  <node concept="Xl_RD" id="4Vsuddjh5mW" role="37wK5m">
-                    <property role="Xl_RC" value="Dependency on MPS build scripts is required to generate MPS modules." />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="vAjk0UZcxM" role="3cqZAp" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="4Vsuddjh5lj" role="3cqZAp">
-          <node concept="3cpWsn" id="4Vsuddjh5lk" role="3cpWs9">
-            <property role="TrG5h" value="classPath" />
-            <node concept="3uibUv" id="4Vsuddjh5ll" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-              <node concept="3uibUv" id="4Vsuddjh5lm" role="11_B2D">
-                <ref role="3uigEE" to="guwi:~File" resolve="File" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="4Vsuddjh5ln" role="33vP2m">
-              <node concept="1pGfFk" id="4Vsuddjh5lo" role="2ShVmc">
-                <ref role="37wK5l" to="33ny:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
-                <node concept="3uibUv" id="4Vsuddjh5lp" role="1pMfVU">
-                  <ref role="3uigEE" to="guwi:~File" resolve="File" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1DcWWT" id="vAjk0V05M6" role="3cqZAp">
-          <node concept="37vLTw" id="vAjk0V0jZC" role="1DdaDG">
-            <ref role="3cqZAo" node="vAjk0UZ1DQ" resolve="classPathRoots" />
-          </node>
-          <node concept="3clFbS" id="vAjk0V05M8" role="2LFqv$">
-            <node concept="3clFbF" id="vAjk0V0mUz" role="3cqZAp">
-              <node concept="2YIFZM" id="vAjk0V2aOW" role="3clFbG">
-                <ref role="37wK5l" to="644x:vAjk0V2aML" resolve="gatherAllClassesAndJarsUnder" />
-                <ref role="1Pybhc" to="644x:3t7WP23N$8C" resolve="MPSClasspathUtil" />
-                <node concept="37vLTw" id="vAjk0V0p8K" role="37wK5m">
-                  <ref role="3cqZAo" node="vAjk0V05M9" resolve="file" />
-                </node>
-                <node concept="37vLTw" id="vAjk0V0tvG" role="37wK5m">
-                  <ref role="3cqZAo" node="4Vsuddjh5lk" resolve="classPath" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3cpWsn" id="vAjk0V05M9" role="1Duv9x">
-            <property role="TrG5h" value="file" />
-            <node concept="3uibUv" id="vAjk0V09rf" role="1tU5fm">
-              <ref role="3uigEE" to="guwi:~File" resolve="File" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="4Vsuddjh5mX" role="3cqZAp" />
-        <node concept="3cpWs6" id="4Vsuddjh5mY" role="3cqZAp">
-          <node concept="37vLTw" id="3GM_nagTvsD" role="3cqZAk">
-            <ref role="3cqZAo" node="4Vsuddjh5lk" resolve="classPath" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4Vsuddjh5n0" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-      <node concept="37vLTG" id="6IC6gZqFSOv" role="3clF46">
-        <property role="TrG5h" value="fork" />
-        <node concept="10P_77" id="6IC6gZqFSOu" role="1tU5fm" />
-      </node>
-    </node>
     <node concept="3Tm1VV" id="3GGnItM970W" role="1B3o_S" />
     <node concept="3uibUv" id="3ag$5R8QzKK" role="1zkMxy">
       <ref role="3uigEE" to="644x:3ufQioQQti6" resolve="MpsLoadTask" />
@@ -1240,25 +1098,23 @@
     <property role="TrG5h" value="GenTestTask" />
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
-    <node concept="3uibUv" id="JPOEsuruc1" role="1zkMxy">
-      <ref role="3uigEE" node="3GGnItM970V" resolve="GenerateTask" />
-    </node>
-    <node concept="3clFb_" id="JPOEsurt9e" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getWorkerClass" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="JPOEsurt9f" role="1B3o_S" />
-      <node concept="3clFbS" id="JPOEsurt9g" role="3clF47">
-        <node concept="3clFbF" id="JPOEsurt9h" role="3cqZAp">
-          <node concept="Xl_RD" id="JPOEsurt9i" role="3clFbG">
-            <property role="Xl_RC" value="jetbrains.mps.tool.builder.make.GenTestWorker" />
+    <node concept="2tJIrI" id="4vDU0BPA2sS" role="jymVt" />
+    <node concept="3clFbW" id="4vDU0BPA2AU" role="jymVt">
+      <node concept="3cqZAl" id="4vDU0BPA2AV" role="3clF45" />
+      <node concept="3clFbS" id="4vDU0BPA2AX" role="3clF47">
+        <node concept="3clFbF" id="4vDU0BPA2L8" role="3cqZAp">
+          <node concept="1rXfSq" id="4vDU0BPA2L7" role="3clFbG">
+            <ref role="37wK5l" to="644x:4vDU0BPyiY6" resolve="setWorker" />
+            <node concept="Xl_RD" id="JPOEsurt9i" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.tool.builder.make.GenTestWorker" />
+            </node>
           </node>
         </node>
       </node>
-      <node concept="17QB3L" id="JPOEsurt9j" role="3clF45" />
-      <node concept="2AHcQZ" id="JPOEsurt9k" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
+      <node concept="3Tm1VV" id="4vDU0BPA2AY" role="1B3o_S" />
+    </node>
+    <node concept="3uibUv" id="JPOEsuruc1" role="1zkMxy">
+      <ref role="3uigEE" node="3GGnItM970V" resolve="GenerateTask" />
     </node>
     <node concept="3clFb_" id="3ufQioQQtFv" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -1361,16 +1217,22 @@
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myProperties" />
-      <property role="3TUv4t" value="false" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="1Vi5mb_op2v" role="1B3o_S" />
       <node concept="3uibUv" id="1Vi5mb_opjQ" role="1tU5fm">
         <ref role="3uigEE" to="asz6:1Vi5mb_oi7$" resolve="MpsRunnerProperties" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4vDU0BPA3BG" role="jymVt" />
     <node concept="3clFbW" id="1Vi5mb_opSC" role="jymVt">
       <node concept="3cqZAl" id="1Vi5mb_opSE" role="3clF45" />
       <node concept="3Tm1VV" id="1Vi5mb_opSF" role="1B3o_S" />
       <node concept="3clFbS" id="1Vi5mb_opSG" role="3clF47">
+        <node concept="3SKdUt" id="4vDU0BPA3TN" role="3cqZAp">
+          <node concept="3SKdUq" id="4vDU0BPA3TP" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME Please, oh PLEASE, stop extending GenerateTask!!!!" />
+          </node>
+        </node>
         <node concept="3clFbF" id="1Vi5mb_opYR" role="3cqZAp">
           <node concept="37vLTI" id="1Vi5mb_oq0o" role="3clFbG">
             <node concept="2ShNRf" id="1Vi5mb_oq2e" role="37vLTx">
@@ -1386,27 +1248,17 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1Vi5mb_oqs1" role="jymVt" />
-    <node concept="3clFb_" id="3H7CugYdMHL" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getWorkerClass" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="3H7CugYdMHM" role="1B3o_S" />
-      <node concept="3clFbS" id="3H7CugYdMHN" role="3clF47">
-        <node concept="3clFbF" id="3H7CugYdMHO" role="3cqZAp">
-          <node concept="Xl_RD" id="3H7CugYdMHP" role="3clFbG">
-            <property role="Xl_RC" value="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker" />
+        <node concept="3clFbF" id="4vDU0BPA3dQ" role="3cqZAp">
+          <node concept="1rXfSq" id="4vDU0BPA3dO" role="3clFbG">
+            <ref role="37wK5l" to="644x:4vDU0BPyiY6" resolve="setWorker" />
+            <node concept="Xl_RD" id="3H7CugYdMHP" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker" />
+            </node>
           </node>
         </node>
       </node>
-      <node concept="17QB3L" id="3H7CugYdMHQ" role="3clF45" />
-      <node concept="2AHcQZ" id="3H7CugYdMHR" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
     </node>
-    <node concept="2tJIrI" id="3H7CugYdMwg" role="jymVt" />
+    <node concept="2tJIrI" id="1Vi5mb_oqs1" role="jymVt" />
     <node concept="3clFb_" id="5iKxrmkqBvm" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSolution" />

@@ -103,9 +103,12 @@ class GenerationSession {
   private final IPerformanceTracer ttrace;
   private StepArguments myStepArguments;
   private QueryProviderCache myQuerySource;
+  private int myBranchCounter = 0;
 
+  // next are class-wide state of an active transformation branch. FIXME move into PlanBranchInfo
   private int myMajorStep = 0;
   private int myMinorStep = -1;
+  private int myActiveBranchSerial = 0;
   private final List<SModel> myTransientModelsToRecycle = new ArrayList<>();
 
   GenerationSession(@NotNull SModel inputModel, @NotNull GenControllerContext environment, ITaskPoolProvider taskPoolProvider,
@@ -255,8 +258,10 @@ class GenerationSession {
     final ModelTransitions transitionTrace = branchInfo.transitionTrace;
     final ArrayDeque<GeneratorMappings> lastBigTransformStepMappings = new ArrayDeque<>(branchInfo.actualStateCopyOfLastBitTransformStepMappings);
 
+    // FIXME refactor, next shall be part of PBI only, not fields of GS class
     myMajorStep = branchInfo.majorStepAtFork;
     myMinorStep = branchInfo.minorStepAtFork;
+    myActiveBranchSerial = branchInfo.serial;
 
     SModel currOutput = null;
     for (int stepIndex = 0; stepIndex < branchSteps.size(); stepIndex++, myMajorStep++) {
@@ -348,13 +353,16 @@ class GenerationSession {
         lastBigTransformStepMappings.clear();
       } else if (planStep instanceof Fork) {
         Fork forkStep = (Fork) planStep;
-        PlanBranchInfo bi = new PlanBranchInfo();
-        // pair cloneTransient/changeModelReference deserves a dedicated utility
-        bi.inputModel = cloneTransientModel(currInputModel);
+        PlanBranchInfo bi = new PlanBranchInfo(++myBranchCounter);
+        // Pair cloneTransient/changeModelReference deserves a dedicated utility.
+        // Use of bi.serial is to ensure input model shows up under a proper group of models. It might be modified in-place, therefore it has to be part
+        // of the fork branch despite the fact it's just a clone of a model from parent/main branch and thus could have been kept there.
+        bi.inputModel = cloneTransientModel(currInputModel, bi.serial);
         changeModelReference(bi.inputModel, createTransientModelReference(myMajorStep, myMinorStep + 100));
         bi.branch = forkStep.getBranch();
         bi.majorStepAtFork = myMajorStep;
-        bi.minorStepAtFork = myMinorStep + 100;
+        bi.minorStepAtFork = myMinorStep + 100 + 1; // XXX +1 is sort of/mild hack, we'd like to see branch input model first, with its output next. With
+        // just +100, both input model and first output get the identical minorStep stereotype
         bi.actualStateCopyOfLastBitTransformStepMappings = new ArrayList<>(lastBigTransformStepMappings);
         // bi.inputModel, clone of currInputModel, already has ORIGIN_TRACE values properly set, no need to do anything in fork().
         bi.transitionTrace = transitionTrace.fork();
@@ -420,6 +428,7 @@ class GenerationSession {
   // precondition: myStepArguments initialized (!= null);
   private SModel executeMajorStepInternal(SModel inputModel, ProgressMonitor progress) throws GenerationFailureException, GenerationCanceledException {
     SModel currentInputModel = inputModel;
+    // XXX Does cloneInputModel == true make any sense for for a first model in a branch (which is itself a copy at the fork point?)
     final boolean cloneInputModel = myControlEnv.getOptions().isSaveTransientModels() && myControlEnv.getOptions().applyTransformationsInplace();
 
     // -----------------------
@@ -444,7 +453,7 @@ class GenerationSession {
       }
       myNewTrace.nextStep(currentInputModel.getReference(), currentOutputModel.getReference());
 
-      final SModel intactInputModelClone = cloneInputModel ? cloneTransientModel(currentInputModel) : null;
+      final SModel intactInputModelClone = cloneInputModel ? cloneTransientModel(currentInputModel, myActiveBranchSerial) : null;
       final TemplateGenerator tg = prepareToApplyRules(currentInputModel, currentOutputModel);
       boolean somethingHasBeenGenerated = false, applySucceed = false;
       try {
@@ -644,12 +653,17 @@ class GenerationSession {
   // XXX createOutputModel? - since the method has a side effect, increments myMinorStep count
   private SModel createTransientModel() {
     SModelReference mr = createTransientModelReference(myMajorStep, myMinorStep++);
-    return mySessionContext.getModule().createTransientModel(mr);
+    return mySessionContext.getModule().createTransientModel(mr, myActiveBranchSerial);
   }
 
   private SModel createTransientModel(int majorStep, int minorStep, String stereotype) {
     final SModelReference mr = createTransientModelReference(majorStep, minorStep, stereotype);
-    return mySessionContext.getModule().createTransientModel(mr);
+    // XXX technically, it seems feasible to keep simple values like branch serial number as a part of model reference,
+    //     which would help to deal with persistence issue (now we rely TransientSModelDescriptor instance stays the same)
+    //     but perhaps we would like to pass more attributes eventually.
+    // FIXME Might be reasonable to utilizeModelWithAttributes interface instead of dedicated and explicit int value,
+    //       just need to figure out if it affects checkpoint models (don't want them all get regenerated)
+    return mySessionContext.getModule().createTransientModel(mr, myActiveBranchSerial);
   }
 
   private SModelReference createTransientModelReference(int majorStep, int minorStep) {
@@ -670,11 +684,11 @@ class GenerationSession {
   /**
    * makes an identical copy of transient model, preserving model reference
    */
-  private SModel cloneTransientModel(SModel transientModel) {
+  private SModel cloneTransientModel(SModel transientModel, int branchSerial) {
     TransientModelsModule module = mySessionContext.getModule();
     final SModelReference mr = transientModel.getReference();
     assert module.isMyTransientModel(mr);
-    SModel newModel = module.createTransientModel(mr);
+    SModel newModel = module.createTransientModel(mr, branchSerial);
     new CloneUtil(transientModel, newModel).cloneModelWithImports();
     return newModel;
   }

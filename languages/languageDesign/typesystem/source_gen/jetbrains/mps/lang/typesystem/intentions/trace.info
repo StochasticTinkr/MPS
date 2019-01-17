@@ -43,10 +43,10 @@
       <node id="1376814389956363456" at="81,225,82,145" concept="2" />
       <node id="1376814389956363456" at="83,7,84,151" concept="2" />
       <node id="1376814389956363456" at="85,5,86,14" concept="7" />
-      <node id="1376814389956364849" at="88,74,89,63" concept="6" />
+      <node id="1376814389956364849" at="88,76,89,63" concept="6" />
       <node id="1376814389956364849" at="89,63,90,231" concept="6" />
-      <node id="1376814389956364849" at="90,231,91,161" concept="2" />
-      <node id="1376814389956364849" at="91,161,92,14" concept="7" />
+      <node id="1376814389956364849" at="90,231,91,156" concept="2" />
+      <node id="1376814389956364849" at="91,156,92,14" concept="7" />
       <node id="3302086321380606109" at="54,0,56,0" concept="1" trace="IntentionImplementation#()V" />
       <node id="3302086321380606109" at="26,0,29,0" concept="1" trace="CreateTypesystemIntention_Intention#()V" />
       <node id="3302086321380606109" at="34,84,37,5" concept="4" />
@@ -58,7 +58,7 @@
       <node id="3302086321380606109" at="69,0,73,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="1376814389956363456" at="79,234,83,7" concept="0" />
       <node id="3302086321380606109" at="47,0,53,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-      <node id="1376814389956364849" at="88,0,94,0" concept="9" trace="createTypesystemIntention_wv8vj7_a0c0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1376814389956364849" at="88,0,94,0" concept="9" trace="createTypesystemIntention_wv8vj7_a0c0a#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3302086321380606109" at="33,0,40,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="3302086321380606109" at="60,0,69,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="1376814389956363456" at="76,230,85,5" concept="0" />
@@ -90,7 +90,7 @@
         <var name="node" id="3302086321380606109" />
       </scope>
       <scope id="3302086321380606109" at="69,0,73,0" />
-      <scope id="1376814389956364849" at="88,74,92,14">
+      <scope id="1376814389956364849" at="88,76,92,14">
         <var name="facade" id="1376814389956364849" />
         <var name="n1" id="1376814389956364849" />
       </scope>
@@ -103,7 +103,7 @@
         <var name="quickFixNode" id="3302086321380616755" />
       </scope>
       <scope id="1376814389956364849" at="88,0,94,0">
-        <var name="p0" id="1376814389956364849" />
+        <var name="node0" id="1376814389956364849" />
       </scope>
       <scope id="3302086321380606109" at="33,0,40,0">
         <var name="editorContext" id="3302086321380606109" />

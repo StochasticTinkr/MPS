@@ -74,7 +74,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   }
 
   private IFile getAnchorIFile() {
-    return FileSystem.getInstance().getFileByPath(getAnchorFile().getPath());
+    return FileSystem.getInstance().getFile(getAnchorFile().getPath());
   }
 
   private File getAnchorFile() {

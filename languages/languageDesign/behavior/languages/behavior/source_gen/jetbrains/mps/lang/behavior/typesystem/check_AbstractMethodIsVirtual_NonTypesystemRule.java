@@ -39,6 +39,6 @@ public class check_AbstractMethodIsVirtual_NonTypesystemRule extends AbstractNon
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
-    return true;
+    return false;
   }
 }

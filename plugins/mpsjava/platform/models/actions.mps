@@ -1315,7 +1315,7 @@
                       <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
                     </node>
                     <node concept="liA8E" id="3jGGvHImGRg" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                      <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                       <node concept="2OqwBi" id="3jGGvHInwAM" role="37wK5m">
                         <node concept="2GrUjf" id="3jGGvHInw4Z" role="2Oq$k0">
                           <ref role="2Gs0qQ" node="3jGGvHImtSC" resolve="vfile" />
@@ -24448,6 +24448,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="v45Epvf81Z" role="jymVt" />
     <node concept="3clFb_" id="7UBFs_LRQWi" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isApplicable" />
@@ -24524,6 +24525,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="v45Epvf820" role="jymVt" />
     <node concept="3clFb_" id="7UBFs_LRQWO" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="execute" />
@@ -24583,7 +24585,7 @@
                     <ref role="1Y3XeK" to="u42p:5zhJtEaVXIg" resolve="MoveNodeDialog.NodeFilter" />
                     <node concept="3Tm1VV" id="30kw7F06hYa" role="1B3o_S" />
                     <node concept="Xl_RD" id="30kw7F06hYb" role="37wK5m">
-                      <property role="Xl_RC" value="Select class to move: refactoring can't be applied to selected node" />
+                      <property role="Xl_RC" value="Select classifier to move to: refactoring can't be applied to the selected node" />
                     </node>
                     <node concept="3clFb_" id="30kw7F06hYc" role="jymVt">
                       <property role="1EzhhJ" value="false" />
@@ -24627,8 +24629,8 @@
                                 <ref role="3cqZAo" node="30kw7F06hYe" resolve="selectedObject" />
                               </node>
                               <node concept="1mIQ4w" id="30kw7F06hYx" role="2OqNvi">
-                                <node concept="chp4Y" id="30kw7F06hYy" role="cj9EA">
-                                  <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                                <node concept="chp4Y" id="v45Epvfc5I" role="cj9EA">
+                                  <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                                 </node>
                               </node>
                             </node>
@@ -24727,6 +24729,7 @@
                               <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                             </node>
                           </node>
+                          <node concept="2tJIrI" id="v45EpvfciE" role="jymVt" />
                           <node concept="3clFb_" id="7Sw_42UC8mY" role="jymVt">
                             <property role="TrG5h" value="process" />
                             <property role="1EzhhJ" value="false" />
@@ -24788,14 +24791,14 @@
                                   <node concept="3rvAFt" id="7wz7QM0JJkx" role="1tU5fm">
                                     <node concept="3Tqbb2" id="7wz7QM0JK2a" role="3rvQeY" />
                                     <node concept="3Tqbb2" id="7wz7QM0JKys" role="3rvSg0">
-                                      <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+                                      <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
                                     </node>
                                   </node>
                                   <node concept="2ShNRf" id="7wz7QM0JMGc" role="33vP2m">
                                     <node concept="3rGOSV" id="7wz7QM0JMug" role="2ShVmc">
                                       <node concept="3Tqbb2" id="7wz7QM0JMuh" role="3rHrn6" />
                                       <node concept="3Tqbb2" id="7wz7QM0JMui" role="3rHtpV">
-                                        <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+                                        <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
                                       </node>
                                     </node>
                                   </node>
@@ -24883,7 +24886,7 @@
                                     <node concept="3cpWsn" id="7wz7QM0RC2n" role="3cpWs9">
                                       <property role="TrG5h" value="originalClass" />
                                       <node concept="3Tqbb2" id="7wz7QM0RC2o" role="1tU5fm">
-                                        <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+                                        <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
                                       </node>
                                       <node concept="3EllGN" id="7wz7QM0RC2p" role="33vP2m">
                                         <node concept="2GrUjf" id="7wz7QM0RC2D" role="3ElVtu">

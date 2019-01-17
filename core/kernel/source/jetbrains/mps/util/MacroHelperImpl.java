@@ -22,9 +22,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 
-/**
- * rewrite using {@link jetbrains.mps.vfs.path.Path}
- */
 class MacroHelperImpl implements MacroHelper {
   private static final Logger LOG = LogManager.getLogger(MacroHelperImpl.class);
 

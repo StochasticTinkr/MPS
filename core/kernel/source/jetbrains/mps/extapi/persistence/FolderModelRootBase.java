@@ -18,8 +18,9 @@ package jetbrains.mps.extapi.persistence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.FileSystemEvent;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
+import jetbrains.mps.vfs.refresh.FileSystemEvent;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -72,7 +73,10 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
     super.attach();
     SModule module = getModule();
     if (module instanceof AbstractModule) {
-      ((AbstractModule) module).getFileSystem().addListener(this);
+      FileSystem fs = ((AbstractModule) module).getFileSystem();
+      if (fs instanceof CachingFileSystem) {
+        ((CachingFileSystem) fs).addListener(this);
+      }
     }
   }
 
@@ -80,7 +84,10 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
   public void dispose() {
     SModule module = getModule();
     if (module instanceof AbstractModule) {
-      ((AbstractModule) module).getFileSystem().removeListener(this);
+      FileSystem fs = ((AbstractModule) module).getFileSystem();
+      if (fs instanceof CachingFileSystem) {
+        ((CachingFileSystem) fs).removeListener(this);
+      }
     }
     super.dispose();
   }
@@ -88,7 +95,7 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
   @NotNull
   @Override
   public IFile getFileToListen() {
-    return FileSystem.getInstance().getFileByPath(getPath());
+    return FileSystem.getInstance().getFile(getPath());
   }
 
   @Override

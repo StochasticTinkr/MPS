@@ -10,8 +10,6 @@
     <classNode dependClassName="jetbrains.mps.lang.project.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.project.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.project.structure.StructureAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.project.typesystem.TypesystemDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

@@ -41,23 +41,16 @@
     <import index="wwqx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.logging(MPS.Core/)" />
     <import index="jgwk" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells.traversal(MPS.Editor/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
-    <import index="cd28" ref="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)" />
     <import index="n7yi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells.optional(MPS.Editor/)" />
     <import index="7oz1" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.configuration(MPS.Editor/)" />
     <import index="3ahc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.cells(MPS.Editor/)" />
-    <import index="jlyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.filechooser(JDK/)" />
     <import index="mnlj" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.beans(JDK/)" />
     <import index="3fkn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileChooser(MPS.IDEA/)" />
-    <import index="jmi8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.util(MPS.IDEA/)" />
     <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
-    <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
-    <import index="gsia" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.event(JDK/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
-    <import index="lzb2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui(MPS.IDEA/)" />
     <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
-    <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
     <import index="wsw7" ref="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
@@ -66,10 +59,8 @@
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="j9co" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.event(MPS.Core/)" />
     <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
-    <import index="dl8v" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.validation(MPS.Core/)" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
-    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -460,9 +451,6 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
-        <property id="2423417345669755629" name="whichError" index="1eyWvh" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -3017,8 +3005,8 @@
                                   </node>
                                   <node concept="3clFbF" id="LiJMKze7kb" role="3cqZAp">
                                     <node concept="2YIFZM" id="LiJMKze7sN" role="3clFbG">
-                                      <ref role="37wK5l" to="3ju5:~IFileUtils.copyFileContent(jetbrains.mps.vfs.IFile,jetbrains.mps.vfs.IFile):boolean" resolve="copyFileContent" />
-                                      <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
+                                      <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+                                      <ref role="37wK5l" to="18ew:~IFileUtil.copyFileContent(jetbrains.mps.vfs.IFile,jetbrains.mps.vfs.IFile):boolean" resolve="copyFileContent" />
                                       <node concept="37vLTw" id="LiJMKzezfj" role="37wK5m">
                                         <ref role="3cqZAo" node="1nhYb0FOxIa" resolve="result" />
                                       </node>
@@ -6415,8 +6403,8 @@
                 <node concept="3uibUv" id="5NI6bHmfkL5" role="HW$YZ">
                   <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
                 </node>
-                <node concept="1rXfSq" id="5NI6bHmkA5_" role="I$8f6">
-                  <ref role="37wK5l" node="5NI6bHmgiDw" resolve="checkers" />
+                <node concept="37vLTw" id="6UWbfHqim6W" role="I$8f6">
+                  <ref role="3cqZAo" node="6UWbfHqi5NB" resolve="checkers" />
                 </node>
               </node>
             </node>
@@ -6450,35 +6438,12 @@
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
-    </node>
-    <node concept="2tJIrI" id="5NI6bHmkryS" role="jymVt" />
-    <node concept="2YIFZL" id="5NI6bHmgiDw" role="jymVt">
-      <property role="TrG5h" value="checkers" />
-      <node concept="3Tm1VV" id="5NI6bHmgiDz" role="1B3o_S" />
-      <node concept="3clFbS" id="5NI6bHmgiD$" role="3clF47">
-        <node concept="3clFbF" id="5NI6bHmkqFq" role="3cqZAp">
-          <node concept="2OqwBi" id="5NI6bHmkkxa" role="3clFbG">
-            <node concept="2OqwBi" id="5NI6bHmkkxb" role="2Oq$k0">
-              <node concept="2YIFZM" id="5NI6bHmkkxc" role="2Oq$k0">
-                <ref role="37wK5l" to="dl8v:~ValidationSettings.getInstance():jetbrains.mps.validation.ValidationSettings" resolve="getInstance" />
-                <ref role="1Pybhc" to="dl8v:~ValidationSettings" resolve="ValidationSettings" />
-              </node>
-              <node concept="liA8E" id="5NI6bHmkkxd" role="2OqNvi">
-                <ref role="37wK5l" to="dl8v:~ValidationSettings.getCheckerRegistry():jetbrains.mps.errors.CheckerRegistry" resolve="getCheckerRegistry" />
-              </node>
-            </node>
-            <node concept="liA8E" id="5NI6bHmkkxe" role="2OqNvi">
-              <ref role="37wK5l" to="2gg1:~CheckerRegistry.getEditorCheckers():java.util.List" resolve="getEditorCheckers" />
-            </node>
+      <node concept="37vLTG" id="6UWbfHqi5NB" role="3clF46">
+        <property role="TrG5h" value="checkers" />
+        <node concept="A3Dl8" id="6UWbfHqilcq" role="1tU5fm">
+          <node concept="3uibUv" id="6UWbfHqilhZ" role="A3Ik2">
+            <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
           </node>
-          <node concept="15s5l7" id="5NI6bHmkqVe" role="lGtFl">
-            <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_RULE_ID=&quot;[r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/1185363855090]&quot;;" />
-          </node>
-        </node>
-      </node>
-      <node concept="_YKpA" id="5NI6bHmgmTA" role="3clF45">
-        <node concept="3uibUv" id="5NI6bHmgmTB" role="_ZDj9">
-          <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
         </node>
       </node>
     </node>

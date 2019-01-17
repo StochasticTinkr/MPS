@@ -28,9 +28,9 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
-import jetbrains.mps.vfs.openapi.FileSystem;
 
 import java.io.File;
 import java.util.ArrayList;

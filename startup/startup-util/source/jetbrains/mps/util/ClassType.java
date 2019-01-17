@@ -26,6 +26,7 @@ public enum ClassType {
   JDK_TOOLS("jdk-tools"),
   ANNOTATIONS("annotations"),
   OPENAPI("openapi"),
+  ASPECTS("aspects"),
   CORE("core"),
   EDITOR("editor"),
   IDEA_PLATFORM("ideaPlatform"),

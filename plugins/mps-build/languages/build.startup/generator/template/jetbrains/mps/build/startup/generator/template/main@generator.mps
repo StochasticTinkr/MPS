@@ -193,7 +193,7 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
-        <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1757699476691236117" name="name_DebugInfo" index="2qtEX9" />
         <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -1569,7 +1569,7 @@
       <property role="2DPR8u" value="SET IDE_BIN_DIR=%~dp0" />
     </node>
     <node concept="2DRAP_" id="4eWOtElZKrh" role="2DRAPQ">
-      <property role="2DPR8u" value="SET IDE_HOME=%IDE_BIN_DIR%\.." />
+      <property role="2DPR8u" value="FOR /F &quot;delims=&quot; %%i in (&quot;%IDE_BIN_DIR%\..&quot;) DO SET IDE_HOME=%%~fi" />
     </node>
     <node concept="2DRAP_" id="61awNsXLWq4" role="2DRAPQ" />
     <node concept="2DRAP_" id="61awNsXLYMH" role="2DRAPQ">
@@ -1774,6 +1774,74 @@
                   <node concept="2qgKlT" id="RfNsRQ4SEU" role="2OqNvi">
                     <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
                     <node concept="10Nm6u" id="RfNsRQ4SEV" role="37wK5m" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="17Uvod" id="NkL_Hn1m9U" role="lGtFl">
+        <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
+        <property role="2qtEX9" value="text" />
+        <node concept="3zFVjK" id="NkL_Hn1m9V" role="3zH0cK">
+          <node concept="3clFbS" id="NkL_Hn1m9W" role="2VODD2">
+            <node concept="3clFbJ" id="NkL_Hn1m9X" role="3cqZAp">
+              <node concept="3clFbS" id="NkL_Hn1m9Y" role="3clFbx">
+                <node concept="3cpWs6" id="NkL_Hn1m9Z" role="3cqZAp">
+                  <node concept="3zGtF$" id="NkL_Hn1ma0" role="3cqZAk" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="NkL_Hn1ma1" role="3clFbw">
+                <node concept="2OqwBi" id="NkL_Hn1ma2" role="2Oq$k0">
+                  <node concept="30H73N" id="NkL_Hn1ma3" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="NkL_Hn1ma4" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="NkL_Hn1ma5" role="2OqNvi" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="NkL_Hn1ma6" role="3cqZAp" />
+            <node concept="3clFbF" id="NkL_Hn1ma7" role="3cqZAp">
+              <node concept="2YIFZM" id="NkL_Hn1ma8" role="3clFbG">
+                <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                <node concept="Xl_RD" id="NkL_Hn1ma9" role="37wK5m">
+                  <property role="Xl_RC" value=":: Try (in order): %s_JDK, %s%%BITS%%.exe.jdk, ..\\jre, JDK_HOME, JAVA_HOME." />
+                </node>
+                <node concept="2OqwBi" id="NkL_Hn1maa" role="37wK5m">
+                  <node concept="2OqwBi" id="NkL_Hn1mab" role="2Oq$k0">
+                    <node concept="2OqwBi" id="NkL_Hn1mac" role="2Oq$k0">
+                      <node concept="30H73N" id="NkL_Hn1mad" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="NkL_Hn1mae" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="NkL_Hn1maf" role="2OqNvi">
+                      <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="product" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="NkL_Hn1mag" role="2OqNvi">
+                    <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                    <node concept="10Nm6u" id="NkL_Hn1mah" role="37wK5m" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="NkL_Hn1mai" role="37wK5m">
+                  <node concept="2OqwBi" id="NkL_Hn1maj" role="2Oq$k0">
+                    <node concept="2OqwBi" id="NkL_Hn1mak" role="2Oq$k0">
+                      <node concept="30H73N" id="NkL_Hn1mal" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="NkL_Hn1mam" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="NkL_Hn1man" role="2OqNvi">
+                      <ref role="3Tt5mk" to="kdzh:Nf0pasGVkV" resolve="script" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="NkL_Hn1mao" role="2OqNvi">
+                    <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                    <node concept="10Nm6u" id="NkL_Hn1map" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -2198,11 +2266,149 @@
       <property role="2DPR8u" value=":: ---------------------------------------------------------------------" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm1ge_" role="2DRAPQ">
-      <property role="2DPR8u" value="IF NOT &quot;%IDEA_PROPERTIES%&quot; == &quot;&quot; SET IDE_PROPERTIES_PROPERTY=&quot;-Didea.properties.file=%IDEA_PROPERTIES%&quot;" />
+      <property role="2DPR8u" value="IF NOT &quot;%MPS_PROPERTIES%&quot; == &quot;&quot; SET IDE_PROPERTIES_PROPERTY=&quot;-Didea.properties.file=%MPS_PROPERTIES%&quot;" />
+      <node concept="17Uvod" id="NkL_HmLTS$" role="lGtFl">
+        <property role="2qtEX9" value="text" />
+        <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
+        <node concept="3zFVjK" id="NkL_HmLTS_" role="3zH0cK">
+          <node concept="3clFbS" id="NkL_HmLTSA" role="2VODD2">
+            <node concept="3clFbJ" id="NkL_HmLU1n" role="3cqZAp">
+              <node concept="3clFbS" id="NkL_HmLU1o" role="3clFbx">
+                <node concept="3cpWs6" id="NkL_HmLU1p" role="3cqZAp">
+                  <node concept="3zGtF$" id="NkL_HmLU1q" role="3cqZAk" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="NkL_HmLU1r" role="3clFbw">
+                <node concept="2OqwBi" id="NkL_HmLU1s" role="2Oq$k0">
+                  <node concept="30H73N" id="NkL_HmLU1t" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="NkL_HmLU1u" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="NkL_HmLU1v" role="2OqNvi" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="NkL_HmLU1w" role="3cqZAp" />
+            <node concept="3cpWs8" id="NkL_HmM4AA" role="3cqZAp">
+              <node concept="3cpWsn" id="NkL_HmM4AB" role="3cpWs9">
+                <property role="TrG5h" value="script" />
+                <node concept="17QB3L" id="NkL_HmM4Av" role="1tU5fm" />
+                <node concept="2OqwBi" id="NkL_Hn1n8W" role="33vP2m">
+                  <node concept="2OqwBi" id="NkL_Hn1n8X" role="2Oq$k0">
+                    <node concept="2OqwBi" id="NkL_Hn1n8Y" role="2Oq$k0">
+                      <node concept="30H73N" id="NkL_Hn1n8Z" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="NkL_Hn1n90" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="NkL_Hn1n91" role="2OqNvi">
+                      <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="product" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="NkL_Hn1n92" role="2OqNvi">
+                    <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                    <node concept="10Nm6u" id="NkL_Hn1n93" role="37wK5m" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="NkL_HmLU1x" role="3cqZAp">
+              <node concept="2YIFZM" id="NkL_HmLU1y" role="3clFbG">
+                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                <node concept="Xl_RD" id="NkL_HmLU1z" role="37wK5m">
+                  <property role="Xl_RC" value="IF NOT \&quot;%%%s_PROPERTIES%%\&quot; == \&quot;\&quot; SET IDE_PROPERTIES_PROPERTY=\&quot;-Didea.properties.file=%%%s_PROPERTIES%%\&quot;" />
+                </node>
+                <node concept="37vLTw" id="NkL_HmM4AL" role="37wK5m">
+                  <ref role="3cqZAo" node="NkL_HmM4AB" resolve="script" />
+                </node>
+                <node concept="37vLTw" id="NkL_HmM4AK" role="37wK5m">
+                  <ref role="3cqZAo" node="NkL_HmM4AB" resolve="script" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2DRAP_" id="4eWOtElZZKu" role="2DRAPQ" />
+    <node concept="2DRAP_" id="NkL_HmM5Bd" role="2DRAPQ">
+      <property role="2DPR8u" value=":: explicit" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmM78V" role="2DRAPQ">
+      <property role="2DPR8u" value="SET VM_OPTIONS_FILE=%MPS_VM_OPTIONS%" />
+      <node concept="17Uvod" id="NkL_HmMQez" role="lGtFl">
+        <property role="2qtEX9" value="text" />
+        <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
+        <node concept="3zFVjK" id="NkL_HmMQe$" role="3zH0cK">
+          <node concept="3clFbS" id="NkL_HmMQe_" role="2VODD2">
+            <node concept="3clFbJ" id="NkL_HmMQni" role="3cqZAp">
+              <node concept="3clFbS" id="NkL_HmMQnj" role="3clFbx">
+                <node concept="3cpWs6" id="NkL_HmMQnk" role="3cqZAp">
+                  <node concept="3zGtF$" id="NkL_HmMQnl" role="3cqZAk" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="NkL_HmMQnm" role="3clFbw">
+                <node concept="2OqwBi" id="NkL_HmMQnn" role="2Oq$k0">
+                  <node concept="30H73N" id="NkL_HmMQno" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="NkL_HmMQnp" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="NkL_HmMQnq" role="2OqNvi" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="NkL_HmMQnr" role="3cqZAp" />
+            <node concept="3clFbF" id="NkL_HmMQnB" role="3cqZAp">
+              <node concept="2YIFZM" id="NkL_HmMQnC" role="3clFbG">
+                <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                <node concept="Xl_RD" id="NkL_HmMQnD" role="37wK5m">
+                  <property role="Xl_RC" value="SET VM_OPTIONS_FILE=%%%s_VM_OPTIONS%%" />
+                </node>
+                <node concept="2OqwBi" id="NkL_Hn1nSd" role="37wK5m">
+                  <node concept="2OqwBi" id="NkL_Hn1nSe" role="2Oq$k0">
+                    <node concept="2OqwBi" id="NkL_Hn1nSf" role="2Oq$k0">
+                      <node concept="30H73N" id="NkL_Hn1nSg" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="NkL_Hn1nSh" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="NkL_Hn1nSi" role="2OqNvi">
+                      <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="product" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="NkL_Hn1nSj" role="2OqNvi">
+                    <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                    <node concept="10Nm6u" id="NkL_Hn1nSk" role="37wK5m" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2DRAP_" id="NkL_HmM8EE" role="2DRAPQ">
+      <property role="2DPR8u" value="IF NOT EXIST &quot;%VM_OPTIONS_FILE%&quot; (" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmMacq" role="2DRAPQ">
+      <property role="2DPR8u" value="  :: Toolbox" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmMbIb" role="2DRAPQ">
+      <property role="2DPR8u" value="  SET VM_OPTIONS_FILE=%IDE_HOME%.vmoptions" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmMdg0" role="2DRAPQ">
+      <property role="2DPR8u" value=")" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmMeN5" role="2DRAPQ">
+      <property role="2DPR8u" value="IF NOT EXIST &quot;%VM_OPTIONS_FILE%&quot; (" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmMguG" role="2DRAPQ">
+      <property role="2DPR8u" value="  :: user-overridden" />
+    </node>
     <node concept="2DRAP_" id="4eWOtEm1hvk" role="2DRAPQ">
-      <property role="2DPR8u" value="SET USER_VM_OPTIONS_FILE=%USERPROFILE%\.MPS\mps%BITS%.exe.vmoptions" />
+      <property role="2DPR8u" value="  SET VM_OPTIONS_FILE=%USERPROFILE%\.MPS\config\mps%BITS%.exe.vmoptions" />
       <node concept="17Uvod" id="4eWOtEm1nYk" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -2230,7 +2436,7 @@
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <node concept="Xl_RD" id="4eWOtEm1o6O" role="37wK5m">
-                  <property role="Xl_RC" value="SET USER_VM_OPTIONS_FILE=%%USERPROFILE%%\\.%s\\mps%%BITS%%.exe.vmoptions" />
+                  <property role="Xl_RC" value="  SET VM_OPTIONS_FILE=%%USERPROFILE%%\\.%s\\config\\mps%%BITS%%.exe.vmoptions" />
                 </node>
                 <node concept="2OqwBi" id="4eWOtEm1o6P" role="37wK5m">
                   <node concept="30H73N" id="4eWOtEm1o6Q" role="2Oq$k0" />
@@ -2261,8 +2467,17 @@
         </node>
       </node>
     </node>
+    <node concept="2DRAP_" id="NkL_HmMn_5" role="2DRAPQ">
+      <property role="2DPR8u" value=")" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmMps$" role="2DRAPQ">
+      <property role="2DPR8u" value="IF NOT EXIST &quot;%VM_OPTIONS_FILE%&quot; (" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmMswj" role="2DRAPQ">
+      <property role="2DPR8u" value="  :: default, standard installation" />
+    </node>
     <node concept="2DRAP_" id="4eWOtEm1h_a" role="2DRAPQ">
-      <property role="2DPR8u" value="SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\mps%BITS%.exe.vmoptions" />
+      <property role="2DPR8u" value="  SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\mps%BITS%.exe.vmoptions" />
       <node concept="17Uvod" id="2g$3PZUpxqZ" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -2290,7 +2505,7 @@
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <node concept="Xl_RD" id="2g$3PZUpxGg" role="37wK5m">
-                  <property role="Xl_RC" value="SET VM_OPTIONS_FILE=%%IDE_BIN_DIR%%\\%s%%BITS%%.exe.vmoptions" />
+                  <property role="Xl_RC" value="  SET VM_OPTIONS_FILE=%%IDE_BIN_DIR%%\\%s%%BITS%%.exe.vmoptions" />
                 </node>
                 <node concept="2OqwBi" id="2g$3PZUpxGk" role="37wK5m">
                   <node concept="2OqwBi" id="2g$3PZUpxGl" role="2Oq$k0">
@@ -2315,8 +2530,17 @@
         </node>
       </node>
     </node>
+    <node concept="2DRAP_" id="NkL_HmMqYr" role="2DRAPQ">
+      <property role="2DPR8u" value=")" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmMycX" role="2DRAPQ">
+      <property role="2DPR8u" value="IF NOT EXIST &quot;%VM_OPTIONS_FILE%&quot; (" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmM_gM" role="2DRAPQ">
+      <property role="2DPR8u" value="  :: default, universal package" />
+    </node>
     <node concept="2DRAP_" id="4eWOtEm1iPV" role="2DRAPQ">
-      <property role="2DPR8u" value="IF EXIST &quot;%IDE_BIN_DIR%\win\mps%BITS%.exe.vmoptions&quot; SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\win\mps%BITS%.exe.vmoptions" />
+      <property role="2DPR8u" value="  SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\win\mps%BITS%.exe.vmoptions" />
       <node concept="17Uvod" id="2g$3PZUpxzt" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -2344,7 +2568,7 @@
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <node concept="Xl_RD" id="2g$3PZUpAub" role="37wK5m">
-                  <property role="Xl_RC" value="IF EXIST \&quot;%%IDE_BIN_DIR%%\\win\\%s%%BITS%%.exe.vmoptions\&quot; SET VM_OPTIONS_FILE=%%IDE_BIN_DIR%%\\win\\%s%%BITS%%.exe.vmoptions" />
+                  <property role="Xl_RC" value="  SET VM_OPTIONS_FILE=%%IDE_BIN_DIR%%\\win\\%s%%BITS%%.exe.vmoptions" />
                 </node>
                 <node concept="2OqwBi" id="2g$3PZUpAuc" role="37wK5m">
                   <node concept="2OqwBi" id="2g$3PZUpAud" role="2Oq$k0">
@@ -2363,42 +2587,31 @@
                     <node concept="10Nm6u" id="2g$3PZUpAuj" role="37wK5m" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="2g$3PZUpJeO" role="37wK5m">
-                  <node concept="2OqwBi" id="2g$3PZUpJeP" role="2Oq$k0">
-                    <node concept="2OqwBi" id="2g$3PZUpJeQ" role="2Oq$k0">
-                      <node concept="30H73N" id="2g$3PZUpJeR" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="2g$3PZUpJeS" role="2OqNvi">
-                        <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
-                      </node>
-                    </node>
-                    <node concept="3TrEf2" id="2g$3PZUpJeT" role="2OqNvi">
-                      <ref role="3Tt5mk" to="kdzh:Nf0pasGVkV" resolve="script" />
-                    </node>
-                  </node>
-                  <node concept="2qgKlT" id="2g$3PZUpJeU" role="2OqNvi">
-                    <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
-                    <node concept="10Nm6u" id="2g$3PZUpJeV" role="37wK5m" />
-                  </node>
-                </node>
               </node>
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="2DRAP_" id="4eWOtEm1k5T" role="2DRAPQ">
-      <property role="2DPR8u" value="IF EXIST %USER_VM_OPTIONS_FILE% SET VM_OPTIONS_FILE=%USER_VM_OPTIONS_FILE%" />
+    <node concept="2DRAP_" id="NkL_HmMzIR" role="2DRAPQ">
+      <property role="2DPR8u" value=")" />
     </node>
-    <node concept="2DRAP_" id="4eWOtEm1mHr" role="2DRAPQ">
-      <property role="2DPR8u" value="IF NOT &quot;%IDEA_VM_OPTIONS%&quot; == &quot;&quot; SET VM_OPTIONS_FILE=%IDEA_VM_OPTIONS%" />
+    <node concept="2DRAP_" id="NkL_HmMH5C" role="2DRAPQ">
+      <property role="2DPR8u" value="IF NOT EXIST &quot;%VM_OPTIONS_FILE%&quot; (" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmMMIg" role="2DRAPQ">
+      <property role="2DPR8u" value="  ECHO ERROR: cannot find VM options file." />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmMLcx" role="2DRAPQ">
+      <property role="2DPR8u" value=")" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm1vV9" role="2DRAPQ" />
     <node concept="2DRAP_" id="2lwFGYOYLP6" role="2DRAPQ" />
     <node concept="2DRAP_" id="1w81suLSrCQ" role="2DRAPQ">
-      <property role="2DPR8u" value="set ACC=" />
+      <property role="2DPR8u" value="SET ACC=" />
     </node>
     <node concept="2DRAP_" id="1w81suLSrDJ" role="2DRAPQ">
-      <property role="2DPR8u" value="FOR /F &quot;usebackq delims=&quot; %%i IN (&quot;%VM_OPTIONS_FILE%&quot;) DO CALL &quot;%IDE_BIN_DIR%\append.bat&quot; &quot;%%i&quot;" />
+      <property role="2DPR8u" value="FOR /F &quot;eol=# usebackq delims=&quot; %%i IN (&quot;%VM_OPTIONS_FILE%&quot;) DO CALL &quot;%IDE_BIN_DIR%\append.bat&quot; &quot;%%i&quot;" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm1VxZ" role="2DRAPQ">
       <property role="2DPR8u" value="IF EXIST &quot;%VM_OPTIONS_FILE%&quot; SET ACC=%ACC% -Djb.vmOptionsFile=&quot;%VM_OPTIONS_FILE%&quot;" />
@@ -2530,7 +2743,7 @@
     </node>
     <node concept="2DRAP_" id="4eWOtEm2wu$" role="2DRAPQ" />
     <node concept="2DRAP_" id="7C7qUK4u4Jh" role="2DRAPQ">
-      <property role="2DPR8u" value="set IDEA_PATHS_SELECTOR=" />
+      <property role="2DPR8u" value="SET IDEA_PATHS_SELECTOR=" />
       <node concept="17Uvod" id="7C7qUK4u5SH" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -2562,7 +2775,7 @@
     </node>
     <node concept="2DRAP_" id="2lwFGYOZYdZ" role="2DRAPQ" />
     <node concept="2DRAP_" id="1w81suLSTQx" role="2DRAPQ">
-      <property role="2DPR8u" value="set CLASS_PATH=%IDE_HOME%\" />
+      <property role="2DPR8u" value="SET CLASS_PATH=%IDE_HOME%\" />
       <node concept="17Uvod" id="1w81suLSTRX" role="lGtFl">
         <property role="2qtEX9" value="text" />
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
@@ -2603,7 +2816,7 @@
       </node>
     </node>
     <node concept="2DRAP_" id="1w81suLSUvN" role="2DRAPQ">
-      <property role="2DPR8u" value="set CLASS_PATH=%CLASS_PATH%;%IDE_HOME%\" />
+      <property role="2DPR8u" value="SET CLASS_PATH=%CLASS_PATH%;%IDE_HOME%\" />
       <node concept="1WS0z7" id="1w81suLSVRC" role="lGtFl">
         <node concept="3JmXsc" id="1w81suLSVRE" role="3Jn$fo">
           <node concept="3clFbS" id="1w81suLSVRG" role="2VODD2">
@@ -2657,7 +2870,7 @@
       </node>
     </node>
     <node concept="2DRAP_" id="hoHCGhqd8Z" role="2DRAPQ">
-      <property role="2DPR8u" value="set CLASS_PATH=%CLASS_PATH%;%JDK%\lib\tools.jar" />
+      <property role="2DPR8u" value="SET CLASS_PATH=%CLASS_PATH%;%JDK%\lib\tools.jar" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm2ECl" role="2DRAPQ">
       <property role="2DPR8u" value="IF NOT &quot;%IDEA_CLASS_PATH%&quot; == &quot;&quot; SET CLASS_PATH=%CLASS_PATH%;%IDEA_CLASS_PATH%" />
@@ -2680,7 +2893,7 @@
     </node>
     <node concept="2DRAP_" id="4eWOtEm2N9t" role="2DRAPQ" />
     <node concept="2DRAP_" id="1w81suLSqs$" role="2DRAPQ">
-      <property role="2DPR8u" value="set MAIN_CLASS=" />
+      <property role="2DPR8u" value="SET MAIN_CLASS=" />
       <node concept="17Uvod" id="1w81suLSqsX" role="lGtFl">
         <property role="2qtEX9" value="text" />
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
@@ -3640,10 +3853,112 @@
       <property role="2DPR8u" value="# ---------------------------------------------------------------------" />
     </node>
     <node concept="2DRAP_" id="BsOHnjmajx" role="2DRAPQ">
-      <property role="2DPR8u" value="if [ -n &quot;$IDEA_PROPERTIES&quot; ]; then" />
+      <property role="2DPR8u" value="if [ -n &quot;$MPS_PROPERTIES&quot; ]; then" />
+      <node concept="17Uvod" id="1Kdb5nd$n0u" role="lGtFl">
+        <property role="2qtEX9" value="text" />
+        <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
+        <node concept="3zFVjK" id="1Kdb5nd$n0v" role="3zH0cK">
+          <node concept="3clFbS" id="1Kdb5nd$n0w" role="2VODD2">
+            <node concept="3clFbJ" id="1Kdb5nd$qxR" role="3cqZAp">
+              <node concept="3clFbS" id="1Kdb5nd$qxS" role="3clFbx">
+                <node concept="3cpWs6" id="1Kdb5nd$qxT" role="3cqZAp">
+                  <node concept="3zGtF$" id="1Kdb5nd$qxU" role="3cqZAk" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="1Kdb5nd$qxV" role="3clFbw">
+                <node concept="2OqwBi" id="1Kdb5nd$qxW" role="2Oq$k0">
+                  <node concept="30H73N" id="1Kdb5nd$qxX" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="1Kdb5nd$qxY" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="1Kdb5nd$qxZ" role="2OqNvi" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="1Kdb5nd$qy0" role="3cqZAp" />
+            <node concept="3clFbF" id="1Kdb5nd$qyc" role="3cqZAp">
+              <node concept="2YIFZM" id="1Kdb5nd$qyd" role="3clFbG">
+                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                <node concept="Xl_RD" id="1Kdb5nd$qye" role="37wK5m">
+                  <property role="Xl_RC" value="if [ -n \&quot;$%s_PROPERTIES\&quot; ]; then" />
+                </node>
+                <node concept="2OqwBi" id="1Kdb5nd$uFS" role="37wK5m">
+                  <node concept="2OqwBi" id="1Kdb5nd$uFT" role="2Oq$k0">
+                    <node concept="2OqwBi" id="1Kdb5nd$uFU" role="2Oq$k0">
+                      <node concept="30H73N" id="1Kdb5nd$uFV" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1Kdb5nd$uFW" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="1Kdb5nd$uFX" role="2OqNvi">
+                      <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="product" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="1Kdb5nd$uFY" role="2OqNvi">
+                    <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                    <node concept="10Nm6u" id="1Kdb5nd$uFZ" role="37wK5m" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2DRAP_" id="BsOHnjmbp5" role="2DRAPQ">
-      <property role="2DPR8u" value="  IDE_PROPERTIES_PROPERTY=&quot;-Didea.properties.file=$IDEA_PROPERTIES&quot;" />
+      <property role="2DPR8u" value="  IDE_PROPERTIES_PROPERTY=&quot;-Didea.properties.file=$MPS_PROPERTIES&quot;" />
+      <node concept="17Uvod" id="1Kdb5nd$vCr" role="lGtFl">
+        <property role="2qtEX9" value="text" />
+        <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
+        <node concept="3zFVjK" id="1Kdb5nd$vCs" role="3zH0cK">
+          <node concept="3clFbS" id="1Kdb5nd$vCt" role="2VODD2">
+            <node concept="3clFbJ" id="1Kdb5nd$vLa" role="3cqZAp">
+              <node concept="3clFbS" id="1Kdb5nd$vLb" role="3clFbx">
+                <node concept="3cpWs6" id="1Kdb5nd$vLc" role="3cqZAp">
+                  <node concept="3zGtF$" id="1Kdb5nd$vLd" role="3cqZAk" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="1Kdb5nd$vLe" role="3clFbw">
+                <node concept="2OqwBi" id="1Kdb5nd$vLf" role="2Oq$k0">
+                  <node concept="30H73N" id="1Kdb5nd$vLg" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="1Kdb5nd$vLh" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="1Kdb5nd$vLi" role="2OqNvi" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="1Kdb5nd$vLj" role="3cqZAp" />
+            <node concept="3clFbF" id="1Kdb5nd$vLk" role="3cqZAp">
+              <node concept="2YIFZM" id="1Kdb5nd$vLl" role="3clFbG">
+                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                <node concept="Xl_RD" id="1Kdb5nd$vLm" role="37wK5m">
+                  <property role="Xl_RC" value="  IDE_PROPERTIES_PROPERTY=\&quot;-Didea.properties.file=$%s_PROPERTIES\&quot;" />
+                </node>
+                <node concept="2OqwBi" id="1Kdb5nd$vLn" role="37wK5m">
+                  <node concept="2OqwBi" id="1Kdb5nd$vLo" role="2Oq$k0">
+                    <node concept="2OqwBi" id="1Kdb5nd$vLp" role="2Oq$k0">
+                      <node concept="30H73N" id="1Kdb5nd$vLq" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1Kdb5nd$vLr" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="1Kdb5nd$vLs" role="2OqNvi">
+                      <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="product" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="1Kdb5nd$vLt" role="2OqNvi">
+                    <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                    <node concept="10Nm6u" id="1Kdb5nd$vLu" role="37wK5m" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2DRAP_" id="BsOHnjmcuE" role="2DRAPQ">
       <property role="2DPR8u" value="fi" />
@@ -3661,8 +3976,17 @@
     <node concept="2DRAP_" id="BsOHnjmier" role="2DRAPQ">
       <property role="2DPR8u" value="  VM_OPTIONS_FILE=&quot;$IDEA_VM_OPTIONS&quot;" />
     </node>
+    <node concept="2DRAP_" id="NkL_HmLMnk" role="2DRAPQ">
+      <property role="2DPR8u" value="elif [ -r &quot;$IDE_HOME.vmoptions&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmLQqP" role="2DRAPQ">
+      <property role="2DPR8u" value="  # Toolbox" />
+    </node>
+    <node concept="2DRAP_" id="NkL_HmLOmQ" role="2DRAPQ">
+      <property role="2DPR8u" value="  VM_OPTIONS_FILE=&quot;$IDE_HOME.vmoptions&quot;" />
+    </node>
     <node concept="2DRAP_" id="BsOHnjIA$m" role="2DRAPQ">
-      <property role="2DPR8u" value="elif [ -r &quot;$HOME/.MPS/mps$BITS.vmoptions&quot; ]; then" />
+      <property role="2DPR8u" value="elif [ -r &quot;$HOME/.MPS/config/mps$BITS.vmoptions&quot; ]; then" />
       <node concept="17Uvod" id="BsOHnjICq4" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -3690,7 +4014,7 @@
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <node concept="Xl_RD" id="BsOHnjICz0" role="37wK5m">
-                  <property role="Xl_RC" value="elif [ -r \&quot;$HOME/.%s/mps$BITS.vmoptions\&quot; ]; then" />
+                  <property role="Xl_RC" value="elif [ -r \&quot;$HOME/.%s/config/mps$BITS.vmoptions\&quot; ]; then" />
                 </node>
                 <node concept="2OqwBi" id="BsOHnjICz1" role="37wK5m">
                   <node concept="30H73N" id="BsOHnjICz2" role="2Oq$k0" />
@@ -3725,7 +4049,7 @@
       <property role="2DPR8u" value="  # user-overridden" />
     </node>
     <node concept="2DRAP_" id="BsOHnjmlzy" role="2DRAPQ">
-      <property role="2DPR8u" value="  VM_OPTIONS_FILE=&quot;$HOME/.MPS/mps$BITS.vmoptions&quot;" />
+      <property role="2DPR8u" value="  VM_OPTIONS_FILE=&quot;$HOME/.MPS/config/mps$BITS.vmoptions&quot;" />
       <node concept="17Uvod" id="BsOHnjmEvn" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -3753,7 +4077,7 @@
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <node concept="Xl_RD" id="BsOHnjmEBR" role="37wK5m">
-                  <property role="Xl_RC" value="  VM_OPTIONS_FILE=\&quot;$HOME/.%s/mps$BITS.vmoptions\&quot;" />
+                  <property role="Xl_RC" value="  VM_OPTIONS_FILE=\&quot;$HOME/.%s/config/mps$BITS.vmoptions\&quot;" />
                 </node>
                 <node concept="2OqwBi" id="BsOHnjmEBS" role="37wK5m">
                   <node concept="30H73N" id="BsOHnjmEBT" role="2Oq$k0" />

@@ -19,8 +19,10 @@ import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.FileSystemEvent;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
+import jetbrains.mps.vfs.refresh.FileSystemEvent;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -134,7 +136,9 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   protected void startListening() {
-    myFile.getFileSystem().addListener(this);
+    if (isCachingFS()) {
+      ((CachingFileSystem) myFile.getFileSystem()).addListener(this);
+    }
   }
 
   @Override
@@ -155,7 +159,14 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   protected void stopListening() {
-    myFile.getFileSystem().removeListener(this);
+    if (isCachingFS()) {
+      ((CachingFileSystem) myFile.getFileSystem()).removeListener(this);
+    }
+  }
+
+  private boolean isCachingFS() {
+    FileSystem fs = myFile.getFileSystem();
+    return fs instanceof CachingFileSystem;
   }
 
   @NotNull

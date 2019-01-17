@@ -1647,6 +1647,7 @@
   <node concept="2S6QgY" id="7KUdrkE_$Zn">
     <property role="TrG5h" value="GenerateOuput" />
     <property role="2ZfUl0" value="true" />
+    <property role="3GE5qa" value="migration" />
     <ref role="2ZfgGC" to="tp5g:4K12N3pJ$JB" resolve="MigrationTestCase" />
     <node concept="2S6ZIM" id="7KUdrkE_$Zo" role="2ZfVej">
       <node concept="3clFbS" id="7KUdrkE_$Zp" role="2VODD2">

@@ -176,8 +176,9 @@
       <!--TODO use license files from IDEA Community-->
       <patternset>
         <exclude name="license/*"/>
-        <!-- TODO: Exclude log.xml from platform-->
+        <!-- TODO: Exclude log.xml & mps.svg from platform-->
         <exclude name="bin/log.xml"/>
+        <exclude name="bin/mps.svg"/>
       </patternset>
     </unzip>
 

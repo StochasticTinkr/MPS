@@ -65,7 +65,7 @@ public class SelectImageFileButton extends JButton {
           final File baseFile = (filename.value == null ? null : new File(filename.value));
 
           if (baseFile != null && baseFile.exists()) {
-            chooser.setInitialFile(FileSystem.getInstance().getFileByPath(baseFile.getAbsolutePath()));
+            chooser.setInitialFile(FileSystem.getInstance().getFile(baseFile.getAbsolutePath()));
           }
           IFile result = chooser.showDialog(frame);
           if (result == null) {

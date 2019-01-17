@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,21 @@
 package jetbrains.mps.ide.ui.tree.module;
 
 import com.intellij.icons.AllIcons.Nodes;
-import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.VisibleModuleRegistry;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.ProjectStructureModule;
+import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.module.SModule;
+
+import java.util.List;
 
 public class ProjectModulesPoolTreeNode extends TextTreeNode {
   private Project myProject;
@@ -60,7 +65,10 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
   }
 
   private void populate() {
-    Iterable<SModule> modules = new FilteredGlobalScope().getModules();
+    final VisibleModuleRegistry visibleModules = VisibleModuleRegistry.getInstance();
+    // no condition for models as we are not going to ask anything but modules from the scope
+    final ConditionalScope scope = new ConditionalScope(new GlobalScope(myProject.getRepository()), visibleModules::isVisible, null);
+    List<SModule> modules = IterableUtil.asList(scope.getModules());
     {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode solutions = new TextTreeNode("Solutions");
@@ -77,7 +85,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode languages = new TextTreeNode("Languages");
       for (SModule m : modules) {
-        if (Language.class.isInstance(m)) {
+        if (m instanceof Language) {
           builder.addNode(ProjectModuleTreeNode.createFor(myProject, m, true));
         }
       }
@@ -89,7 +97,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode devkits = new TextTreeNode("DevKits");
       for (SModule m : modules) {
-        if (DevKit.class.isInstance(m)) {
+        if (m instanceof DevKit) {
           builder.addNode(ProjectModuleTreeNode.createFor(myProject, m, true));
         }
       }

@@ -257,7 +257,7 @@
                         <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
                       </node>
                       <node concept="liA8E" id="5TmOWHd_PXz" role="2OqNvi">
-                        <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                        <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                         <node concept="37vLTw" id="3GM_nagTtGy" role="37wK5m">
                           <ref role="3cqZAo" node="4s4uRp_lDg5" resolve="path" />
                         </node>

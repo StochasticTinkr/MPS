@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -38,9 +38,13 @@ public final class LinkAttribute__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static SReferenceLink getLink_id1avfQ4BEFo6(@NotNull SNode __thisNode__) {
-    SReferenceLinkId id = SReferenceLinkId.deserialize(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId")));
     String nonEmptyLinkRole = (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "role_DebugInfo")) == null ? "" : SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "role_DebugInfo")));
-    return MetaAdapterFactory.getReferenceLink(id, nonEmptyLinkRole);
+    try {
+      SReferenceLinkId id = SReferenceLinkId.deserialize(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId")));
+      return MetaAdapterFactory.getReferenceLink(id, nonEmptyLinkRole);
+    } catch (RuntimeException e) {
+      return null;
+    }
   }
   /*package*/ static void setLink_id6Gg5KlvuxxF(@NotNull SNode __thisNode__, SReferenceLink metaLink) {
     SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "role_DebugInfo"), metaLink.getName());

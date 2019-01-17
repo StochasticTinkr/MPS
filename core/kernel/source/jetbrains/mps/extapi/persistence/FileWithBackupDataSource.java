@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.vfs.FileSystemEvent;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
+import jetbrains.mps.vfs.refresh.FileSystemEvent;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -88,12 +90,18 @@ public class FileWithBackupDataSource extends FileDataSource {
     super.startListening();
     IFile backupFile = getBackupFile();
     myBackupFileListener = new BackupFileListener(backupFile);
-    backupFile.getFileSystem().addListener(myBackupFileListener);
+    FileSystem fs = backupFile.getFileSystem();
+    if (fs instanceof CachingFileSystem){
+      ((CachingFileSystem) fs).addListener(myBackupFileListener);
+    }
   }
 
   @Override
   protected void stopListening() {
-    getBackupFile().getFileSystem().removeListener(myBackupFileListener);
+    FileSystem fs = getBackupFile().getFileSystem();
+    if (fs instanceof CachingFileSystem) {
+      ((CachingFileSystem) fs).removeListener(myBackupFileListener);
+    }
     myBackupFileListener = null;
     super.stopListening();
   }

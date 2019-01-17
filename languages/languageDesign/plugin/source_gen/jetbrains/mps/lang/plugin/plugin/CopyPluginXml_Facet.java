@@ -25,7 +25,7 @@ import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import java.util.Objects;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -76,7 +76,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                   String dest = vars(pa.forResource(tres)).pluginRoot();
 
                   if (dest != null) {
-                    final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModule(tres.module()).expandPath(dest));
+                    final IFile destDir = FileSystem.getInstance().getFile(MacrosFactory.forModule(tres.module()).expandPath(dest));
                     if (destDir.exists() && destDir.isDirectory()) {
                       final IFile metaInf = destDir.getDescendant("META-INF");
                       if (!(metaInf.exists()) || metaInf.isDirectory()) {
@@ -99,7 +99,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                               if (!(metaInf.exists())) {
                                 metaInf.mkdirs();
                               }
-                              IFileUtils.copyFileContent(pluginXml[0], metaInf.getDescendant(pluginXml[0].getName()));
+                              IFileUtil.copyFileContent(pluginXml[0], metaInf.getDescendant(pluginXml[0].getName()));
                             }
                           });
                         }

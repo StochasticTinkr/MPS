@@ -33,7 +33,7 @@ import jetbrains.mps.vfs.FileSystems;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import java.awt.Dimension;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -138,7 +138,7 @@ public class EditorUtil {
                   return;
                 }
               }
-              IFileUtils.copyFileContent(result.value, copiedFile);
+              IFileUtil.copyFileContent(result.value, copiedFile);
               result.value = copiedFile;
             }
           });

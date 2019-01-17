@@ -25,10 +25,10 @@ import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.refactoring.participant.MoveModelRefactoringParticipant;
 import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
-import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import jetbrains.mps.ide.platform.actions.core.DefaultRefactoringUI;
 
@@ -125,7 +125,7 @@ public class MoveModel_Action extends BaseAction {
         return ListSequence.fromListAndArray(new ArrayList<SModel>(), ((SModel) MapSequence.fromMap(_params).get("model")));
       }
       private EditableSModel newModel = null;
-      public void doRefactor(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SModel, SModel, SModel, SModel>> participantStates, RefactoringSession refactoringSession) {
+      public void prepareRefactoring() {
         final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
         ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
@@ -134,16 +134,14 @@ public class MoveModel_Action extends BaseAction {
         });
         dialog.value.show();
         newModel = dialog.value.getResult();
+      }
+      public void doRefactor(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SModel, SModel, SModel, SModel>> participantStates, RefactoringSession refactoringSession) {
         if (newModel == null) {
           return;
         }
 
-        ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            UpdateDependentModelsRefactoringParticipant.updateUsages(newModel, modelReference, newModel.getReference());
-            DeleteModelHelper.delete(((SModel) MapSequence.fromMap(_params).get("model")).getModule(), ((SModel) MapSequence.fromMap(_params).get("model")), true);
-          }
-        });
+        UpdateDependentModelsRefactoringParticipant.updateUsages(newModel, modelReference, newModel.getReference());
+        DeleteModelHelper.delete(((SModel) MapSequence.fromMap(_params).get("model")).getModule(), ((SModel) MapSequence.fromMap(_params).get("model")), true);
       }
       public SModel getFinalStateFor(SModel initialState) {
         return newModel;

@@ -580,29 +580,5 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="RRzwLnBtkf">
-    <property role="3GE5qa" value="container" />
-    <ref role="1M2myG" to="tp3r:4IP40Bi2$Et" resolve="NodeBuilder" />
-    <node concept="9S07l" id="147CB3QsUVg" role="9Vyp8">
-      <node concept="3clFbS" id="147CB3QsUVh" role="2VODD2">
-        <node concept="3clFbF" id="147CB3QsUVi" role="3cqZAp">
-          <node concept="2OqwBi" id="147CB3QsUVj" role="3clFbG">
-            <node concept="2OqwBi" id="147CB3QsUVk" role="2Oq$k0">
-              <node concept="nLn13" id="147CB3QsUVl" role="2Oq$k0" />
-              <node concept="2Xjw5R" id="147CB3QsUVm" role="2OqNvi">
-                <node concept="1xMEDy" id="147CB3QsUVn" role="1xVPHs">
-                  <node concept="chp4Y" id="147CB3QsUVo" role="ri$Ld">
-                    <ref role="cht4Q" to="tp3r:4IP40Bi2$Et" resolve="NodeBuilder" />
-                  </node>
-                </node>
-                <node concept="1xIGOp" id="147CB3QsUVp" role="1xVPHs" />
-              </node>
-            </node>
-            <node concept="3w_OXm" id="147CB3QsUVq" role="2OqNvi" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
 </model>
 

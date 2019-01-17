@@ -23,9 +23,9 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.util.Reference;
-import jetbrains.mps.vfs.CachingFileSystem;
-import jetbrains.mps.ide.vfs.IdeaFSComponent;
-import jetbrains.mps.vfs.DefaultCachingContext;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
+import jetbrains.mps.vfs.refresh.DefaultCachingContext;
 import com.intellij.testFramework.PlatformTestUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.core.platform.Platform;
@@ -227,7 +227,7 @@ public final class IdeaEnvironment extends EnvironmentBase {
     // if unit-test is executed with the "reuse caches" option. 
     String basePath = project.getBasePath();
     if (basePath != null) {
-      CachingFileSystem fs = ApplicationManager.getApplication().getComponent(IdeaFSComponent.class);
+      CachingFileSystem fs = ApplicationManager.getApplication().getComponent(IdeaFileSystem.class);
       fs.getFile(basePath).refresh(new DefaultCachingContext(true, true));
     }
   }

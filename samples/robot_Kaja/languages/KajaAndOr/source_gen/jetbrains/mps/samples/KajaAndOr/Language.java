@@ -10,15 +10,11 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.samples.KajaAndOr.actions.ActionAspectDescriptorImpl;
-import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
-import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.KajaAndOr.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.samples.KajaAndOr.structure.ConceptPresentationAspectImpl;
-import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
-import jetbrains.mps.samples.KajaAndOr.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   private final SLanguageId myId;
@@ -51,12 +47,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == ActionAspectDescriptor.class) {
       return aspectClass.cast(new ActionAspectDescriptorImpl());
     }
-    if (aspectClass == BehaviorAspectDescriptor.class) {
-      return aspectClass.cast(new jetbrains.mps.samples.KajaAndOr.behavior.BehaviorAspectDescriptor());
-    }
-    if (aspectClass == ConstraintsAspectDescriptor.class) {
-      return aspectClass.cast(new jetbrains.mps.samples.KajaAndOr.constraints.ConstraintsAspectDescriptor());
-    }
     if (aspectClass == EditorAspectDescriptor.class) {
       return aspectClass.cast(new EditorAspectDescriptorImpl());
     }
@@ -65,9 +55,6 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == ConceptPresentationAspect.class) {
       return aspectClass.cast(new ConceptPresentationAspectImpl());
-    }
-    if (aspectClass == IHelginsDescriptor.class) {
-      return aspectClass.cast(new TypesystemDescriptor());
     }
     return null;
   }

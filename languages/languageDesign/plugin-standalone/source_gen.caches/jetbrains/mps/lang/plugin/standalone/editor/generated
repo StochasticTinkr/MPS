@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="24a332q1r7pmxtl1lczydqyejp1lj77">
+<product version="3" modelHash="-bnusxv4ik5hjt16d1ct2n8b233oc9ji">
   <files names="AddWorkbenchToActionParameters_Contribution.java:ApplicationPluginDeclaration_Editor.java:ApplicationPluginDeclaration_EditorBuilder_a.java:ApplicationPluginType_Editor.java:ApplicationPluginType_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:GetPreferencesComponentInProjectOperation_Editor.java:GetPreferencesComponentInProjectOperation_EditorBuilder_a.java:GetPreferencesComponentInProjectOperation_SubstituteMenu.java:GetToolInProjectOperation_Editor.java:GetToolInProjectOperation_EditorBuilder_a.java:GetToolInProjectOperation_SubstituteMenu.java:PlatformAccessExpression_Editor.java:PlatformAccessExpression_EditorBuilder_a.java:ProjectPluginDeclaration_Editor.java:ProjectPluginDeclaration_EditorBuilder_a.java:ProjectPluginType_Editor.java:ProjectPluginType_EditorBuilder_a.java:StandalonePluginDescriptor_Editor.java:StandalonePluginDescriptor_EditorBuilder_a.java" />
 </product>
 

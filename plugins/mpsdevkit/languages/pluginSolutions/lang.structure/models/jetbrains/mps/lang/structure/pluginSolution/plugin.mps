@@ -7,7 +7,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
@@ -11464,6 +11464,7 @@
                                   <node concept="37vLTw" id="41U5zKUWRqa" role="37wK5m">
                                     <ref role="3cqZAo" node="41U5zKUWpLF" resolve="initialStates" />
                                   </node>
+                                  <node concept="10Nm6u" id="23EHyRfs0kj" role="37wK5m" />
                                   <node concept="37vLTw" id="6K8$EnD9sC0" role="37wK5m">
                                     <ref role="3cqZAo" node="41U5zKV0Mmk" resolve="doRefactor" />
                                   </node>

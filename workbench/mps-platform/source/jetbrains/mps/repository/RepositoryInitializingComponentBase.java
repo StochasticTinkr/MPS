@@ -20,13 +20,13 @@ import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.ide.vfs.IdeaFSComponent;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.impl.IoFileSystem;
-import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NotNull;
 
@@ -59,7 +59,7 @@ public class RepositoryInitializingComponentBase implements ApplicationComponent
                                              MPSCoreComponents coreComponents,
                                              IRegistryManager registryManager,
                                              IdeaPluginFacetComponent ideaPluginFacetComponent,
-                                             IdeaFSComponent fs,
+                                             IdeaFileSystem fs,
                                              PersistentFS filesystem //see MPS-22970
   ) {
     myLibraryInitializer = coreComponents.getLibraryInitializer();

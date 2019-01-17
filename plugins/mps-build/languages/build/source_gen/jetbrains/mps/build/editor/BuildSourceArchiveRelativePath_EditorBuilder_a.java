@@ -211,7 +211,7 @@ import jetbrains.mps.smodel.SNodePointer;
       }
 
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-        IFile file = FileSystem.getInstance().getFileByPath(BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(node, Context.defaultContext()));
+        IFile file = FileSystem.getInstance().getFile(BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(node, Context.defaultContext()));
         if (!(file.exists())) {
           return ListSequence.fromList(new ArrayList<String>());
         }

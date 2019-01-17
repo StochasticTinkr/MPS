@@ -244,6 +244,9 @@
         <reference id="5455284157993910961" name="concept" index="2pJxaS" />
         <child id="5455284157993911099" name="values" index="2pJxcM" />
       </concept>
+      <concept id="8182547171709752110" name="jetbrains.mps.lang.quotation.structure.NodeBuilderExpression" flags="nn" index="36biLy">
+        <child id="8182547171709752112" name="expression" index="36biLW" />
+      </concept>
     </language>
     <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
       <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
@@ -1386,7 +1389,9 @@
                 <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
                 <node concept="2pIpSj" id="6GFpWnVm8m_" role="2pJxcM">
                   <ref role="2pIpSl" to="tpee:g7uigIF" resolve="classifier" />
-                  <node concept="10Nm6u" id="6GFpWnVmeq6" role="2pJxcZ" />
+                  <node concept="36biLy" id="7iyvL_iQxzD" role="2pJxcZ">
+                    <node concept="10Nm6u" id="7iyvL_iQxzC" role="36biLW" />
+                  </node>
                 </node>
               </node>
             </node>

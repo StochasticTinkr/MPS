@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ public class ComponentPlugin {
   /**
    * this method is called from inheritors. Initialize a component and returns an initialized component instance
    */
-  protected <T extends CoreComponent> T init(final T component) {
+  protected final <T extends CoreComponent> T init(final T component) {
     try {
       component.init();
       myComponents.push(component);

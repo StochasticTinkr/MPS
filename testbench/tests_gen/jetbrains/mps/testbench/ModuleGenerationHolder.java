@@ -144,13 +144,13 @@ public class ModuleGenerationHolder {
   }
   private IFile tmpFile(String path) {
     if (MapSequence.fromMap(path2tmp).containsKey(path)) {
-      return FileSystem.getInstance().getFileByPath(MapSequence.fromMap(path2tmp).get(path));
+      return FileSystem.getInstance().getFile(MapSequence.fromMap(path2tmp).get(path));
     }
     int idx = path.indexOf('/');
     idx = (idx < 0 ? path.indexOf(File.separator) : idx);
     String tmp = tmpPath + "/" + ((idx < 0 ? path.replace(':', '_') : path.substring(idx + 1)));
     MapSequence.fromMap(path2tmp).put(path, tmp);
-    return FileSystem.getInstance().getFileByPath(tmp);
+    return FileSystem.getInstance().getFile(tmp);
   }
   private void diffDirs(final File orig, File revd, final List<String> diffs) {
     Iterable<String> onames = Sequence.fromArray(orig.list());

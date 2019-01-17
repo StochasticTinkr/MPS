@@ -22,7 +22,6 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
-import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -48,7 +47,7 @@ public class MPSCoreComponents implements ApplicationComponent {
   private MPSBaseLanguage myBaseLanguage;
   private Platform myPlatform;
 
-  public MPSCoreComponents(IdeaFSComponent fsProvider,
+  public MPSCoreComponents(
       ManagingFS fs,
       ModelAccess access,
       UndoHandler handler) {

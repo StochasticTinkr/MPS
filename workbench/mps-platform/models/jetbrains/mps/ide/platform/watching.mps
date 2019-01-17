@@ -42,11 +42,12 @@
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
     <import index="2r90" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.platform.watching(MPS.Platform/)" />
-    <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" />
     <import index="snbe" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util.io(MPS.IDEA/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
+    <import index="7nyy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.refresh(MPS.Core/)" />
+    <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2124,8 +2125,8 @@
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="5p_KN$yW$$F" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-        <node concept="3uibUv" id="5p_KN$yWAb3" role="11_B2D">
-          <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+        <node concept="3uibUv" id="7LZvUiIIBzx" role="11_B2D">
+          <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
         </node>
         <node concept="3uibUv" id="5p_KN$yWBOD" role="11_B2D">
           <ref role="3uigEE" node="5gUstTWicDZ" resolve="FileProcessor.ListenerData" />
@@ -2135,7 +2136,7 @@
         <node concept="1pGfFk" id="5p_KN$yWFy$" role="2ShVmc">
           <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;()" resolve="HashMap" />
           <node concept="3uibUv" id="5p_KN$yWIX7" role="1pMfVU">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
           <node concept="3uibUv" id="5p_KN$yWKE9" role="1pMfVU">
             <ref role="3uigEE" node="5gUstTWicDZ" resolve="FileProcessor.ListenerData" />
@@ -2150,13 +2151,13 @@
       <node concept="2ShNRf" id="4kWM61TN$wB" role="33vP2m">
         <node concept="2Jqq0_" id="4kWM61TNACH" role="2ShVmc">
           <node concept="3uibUv" id="4kWM61TNAK3" role="HW$YZ">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
         </node>
       </node>
       <node concept="3O6Q9H" id="4kWM61TNsin" role="1tU5fm">
         <node concept="3uibUv" id="4kWM61TNsiy" role="3O5elw">
-          <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+          <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
         </node>
       </node>
       <node concept="3Tm6S6" id="4kWM61TNra0" role="1B3o_S" />
@@ -2192,7 +2193,7 @@
                 <ref role="3cqZAo" node="2CbzOko73fc" resolve="fs" />
               </node>
               <node concept="liA8E" id="5p_KN$yYOHN" role="2OqNvi">
-                <ref role="37wK5l" to="4hrd:~IdeaFileSystem.getListenersContainer():jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" resolve="getListenersContainer" />
+                <ref role="37wK5l" to="4hrd:~BaseIdeaFileSystem.getListenersContainer():jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" resolve="getListenersContainer" />
               </node>
             </node>
             <node concept="37vLTw" id="5p_KN$yYVEm" role="37vLTJ">
@@ -2272,7 +2273,7 @@
                 <property role="TrG5h" value="sortedListeners" />
                 <node concept="A3Dl8" id="2X7HGNkqvBm" role="1tU5fm">
                   <node concept="3uibUv" id="2X7HGNkqvBp" role="A3Ik2">
-                    <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                    <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
                   </node>
                 </node>
                 <node concept="1rXfSq" id="2X7HGNkqvBs" role="33vP2m">
@@ -2311,7 +2312,7 @@
                         <ref role="3cqZAo" node="5p_KN$yYORl" resolve="myListenersContainer" />
                       </node>
                       <node concept="liA8E" id="7Tf$ga_RsO8" role="2OqNvi">
-                        <ref role="37wK5l" to="2r90:~FileSystemListenersContainer.contains(jetbrains.mps.vfs.FileListener):boolean" resolve="contains" />
+                        <ref role="37wK5l" to="2r90:~FileSystemListenersContainer.contains(jetbrains.mps.vfs.refresh.FileListener):boolean" resolve="contains" />
                         <node concept="2GrUjf" id="7Tf$ga_UxJ3" role="37wK5m">
                           <ref role="2Gs0qQ" node="3Fdn9B$Xlb1" resolve="listener" />
                         </node>
@@ -2349,7 +2350,7 @@
                 <node concept="3clFbF" id="4kWM61TM0Il" role="3cqZAp">
                   <node concept="2OqwBi" id="4kWM61TM1YI" role="3clFbG">
                     <node concept="liA8E" id="4kWM61TM365" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~FileListener.update(org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.vfs.FileSystemEvent):void" resolve="update" />
+                      <ref role="37wK5l" to="7nyy:~FileListener.update(org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.vfs.refresh.FileSystemEvent):void" resolve="update" />
                       <node concept="2OqwBi" id="4kWM61TM56h" role="37wK5m">
                         <node concept="liA8E" id="4kWM61TM56i" role="2OqNvi">
                           <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int,org.jetbrains.mps.openapi.util.SubProgressKind):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
@@ -2421,7 +2422,7 @@
               <node concept="3cpWsn" id="4kWM61TNFhe" role="3cpWs9">
                 <property role="TrG5h" value="listener" />
                 <node concept="3uibUv" id="4kWM61TNFhf" role="1tU5fm">
-                  <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                  <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
                 </node>
               </node>
             </node>
@@ -2481,7 +2482,7 @@
                       <ref role="3cqZAo" node="4kWM61TNFhe" resolve="listener" />
                     </node>
                     <node concept="liA8E" id="4kWM61TOm4c" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~FileListener.update(org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.vfs.FileSystemEvent):void" resolve="update" />
+                      <ref role="37wK5l" to="7nyy:~FileListener.update(org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.vfs.refresh.FileSystemEvent):void" resolve="update" />
                       <node concept="2OqwBi" id="4kWM61TOm4d" role="37wK5m">
                         <node concept="liA8E" id="4kWM61TOm4e" role="2OqNvi">
                           <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int,org.jetbrains.mps.openapi.util.SubProgressKind):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
@@ -2687,7 +2688,7 @@
       <node concept="37vLTG" id="4kWM61TMA8U" role="3clF46">
         <property role="TrG5h" value="listener" />
         <node concept="3uibUv" id="4kWM61TMA8T" role="1tU5fm">
-          <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+          <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
         </node>
       </node>
       <node concept="37vLTG" id="4kWM61TMRdi" role="3clF46">
@@ -2702,7 +2703,7 @@
       <property role="TrG5h" value="sortedListeners" />
       <node concept="A3Dl8" id="7Tf$ga_SX39" role="3clF45">
         <node concept="3uibUv" id="7Tf$ga_SXSC" role="A3Ik2">
-          <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+          <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
         </node>
       </node>
       <node concept="3Tm6S6" id="7Tf$ga_SWcM" role="1B3o_S" />
@@ -2722,14 +2723,14 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="7Tf$ga_TADx" role="1pMfVU">
-                  <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                  <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
                 </node>
               </node>
             </node>
             <node concept="3uibUv" id="7Tf$ga_Tm6j" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
               <node concept="3uibUv" id="7Tf$ga_TorY" role="11_B2D">
-                <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
               </node>
             </node>
           </node>
@@ -2773,7 +2774,7 @@
       <node concept="37vLTG" id="7Tf$ga_U4iz" role="3clF46">
         <property role="TrG5h" value="listener" />
         <node concept="3uibUv" id="7Tf$ga_U5lA" role="1tU5fm">
-          <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+          <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
         </node>
       </node>
       <node concept="37vLTG" id="7Tf$ga_U716" role="3clF46">
@@ -2781,7 +2782,7 @@
         <node concept="3uibUv" id="7Tf$ga_U89n" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
           <node concept="3uibUv" id="7Tf$ga_U89o" role="11_B2D">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
         </node>
       </node>
@@ -2823,12 +2824,12 @@
             <node concept="3uibUv" id="7Tf$ga_VEve" role="1tU5fm">
               <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
               <node concept="3uibUv" id="7Tf$ga_VEvh" role="11_B2D">
-                <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
               </node>
             </node>
             <node concept="2OqwBi" id="7Tf$ga_VEyp" role="33vP2m">
               <node concept="liA8E" id="7Tf$ga_VEyq" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystemListener.getListenerDependencies():java.lang.Iterable" resolve="getListenerDependencies" />
+                <ref role="37wK5l" to="7nyy:~FileSystemListener.getListenerDependencies():java.lang.Iterable" resolve="getListenerDependencies" />
               </node>
               <node concept="37vLTw" id="7Tf$ga_VEyr" role="2Oq$k0">
                 <ref role="3cqZAo" node="7Tf$ga_U4iz" resolve="listener" />
@@ -2917,7 +2918,7 @@
           <node concept="3cpWsn" id="7Tf$ga_WfSX" role="1Duv9x">
             <property role="TrG5h" value="dep" />
             <node concept="3uibUv" id="7Tf$ga_Whgt" role="1tU5fm">
-              <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+              <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
             </node>
           </node>
         </node>
@@ -2992,13 +2993,13 @@
         <node concept="3cpWs8" id="3Fdn9B$W_K1" role="3cqZAp">
           <node concept="3cpWsn" id="3Fdn9B$W_K2" role="3cpWs9">
             <property role="TrG5h" value="file" />
-            <node concept="2ShNRf" id="5bPhg88OBxD" role="33vP2m">
-              <node concept="1pGfFk" id="5bPhg88PmuT" role="2ShVmc">
-                <ref role="37wK5l" to="4hrd:~IdeaFile.&lt;init&gt;(jetbrains.mps.ide.vfs.IdeaFileSystem,java.lang.String)" resolve="IdeaFile" />
-                <node concept="37vLTw" id="5bPhg88Pmvl" role="37wK5m">
-                  <ref role="3cqZAo" node="2CbzOko76qO" resolve="FS" />
-                </node>
-                <node concept="37vLTw" id="5bPhg88PmM8" role="37wK5m">
+            <node concept="2OqwBi" id="7121Ns6wA3v" role="33vP2m">
+              <node concept="37vLTw" id="7121Ns6w_GZ" role="2Oq$k0">
+                <ref role="3cqZAo" node="2CbzOko76qO" resolve="FS" />
+              </node>
+              <node concept="liA8E" id="7121Ns6wC78" role="2OqNvi">
+                <ref role="37wK5l" to="4hrd:~IdeaFileSystem.getFile(java.lang.String):jetbrains.mps.ide.vfs.IdeaFile" resolve="getFile" />
+                <node concept="37vLTw" id="7121Ns6wC$3" role="37wK5m">
                   <ref role="3cqZAo" node="6KWQXOSpcQ2" resolve="path" />
                 </node>
               </node>
@@ -3259,7 +3260,7 @@
             <property role="TrG5h" value="ancestors" />
             <node concept="A3Dl8" id="5p_KN$yXCf_" role="1tU5fm">
               <node concept="3uibUv" id="5p_KN$yXCfC" role="A3Ik2">
-                <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
               </node>
             </node>
             <node concept="2OqwBi" id="5p_KN$yXCfP" role="33vP2m">
@@ -3303,7 +3304,7 @@
             <property role="TrG5h" value="concretePathListeners" />
             <node concept="A3Dl8" id="5p_KN$yXNSt" role="1tU5fm">
               <node concept="3uibUv" id="5p_KN$yXOLx" role="A3Ik2">
-                <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
               </node>
             </node>
             <node concept="2OqwBi" id="5p_KN$yXKrk" role="33vP2m">
@@ -3321,7 +3322,7 @@
             <property role="TrG5h" value="descendants" />
             <node concept="A3Dl8" id="5p_KN$yXHnu" role="1tU5fm">
               <node concept="3uibUv" id="5p_KN$yXHnv" role="A3Ik2">
-                <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
               </node>
             </node>
             <node concept="2OqwBi" id="5p_KN$yXHnw" role="33vP2m">
@@ -3365,13 +3366,13 @@
             <property role="TrG5h" value="allListeners" />
             <node concept="_YKpA" id="5p_KN$yXXtY" role="1tU5fm">
               <node concept="3uibUv" id="5p_KN$yXXu0" role="_ZDj9">
-                <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
               </node>
             </node>
             <node concept="2ShNRf" id="5p_KN$yXVEC" role="33vP2m">
               <node concept="Tc6Ow" id="5p_KN$yXWqw" role="2ShVmc">
                 <node concept="3uibUv" id="5p_KN$yXXkH" role="HW$YZ">
-                  <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                  <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
                 </node>
               </node>
             </node>
@@ -3460,7 +3461,7 @@
       <node concept="37vLTG" id="5p_KN$yX9dn" role="3clF46">
         <property role="TrG5h" value="listener" />
         <node concept="3uibUv" id="5p_KN$yX9do" role="1tU5fm">
-          <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+          <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
         </node>
       </node>
       <node concept="3clFbS" id="5p_KN$yX9d2" role="3clF47">
@@ -3487,7 +3488,7 @@
                 <node concept="37vLTG" id="5p_KN$yXx$p" role="1bW2Oz">
                   <property role="TrG5h" value="it1" />
                   <node concept="3uibUv" id="5p_KN$yXx$q" role="1tU5fm">
-                    <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                    <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
                   </node>
                 </node>
               </node>
@@ -3534,7 +3535,7 @@
                 <ref role="3cqZAo" node="50BC9x8h354" resolve="listenerToChildFile" />
               </node>
               <node concept="liA8E" id="50BC9x8h34s" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystemListener.getFileToListen():jetbrains.mps.vfs.IFile" resolve="getFileToListen" />
+                <ref role="37wK5l" to="7nyy:~FileSystemListener.getFileToListen():jetbrains.mps.vfs.IFile" resolve="getFileToListen" />
               </node>
             </node>
           </node>
@@ -3599,11 +3600,11 @@
                   <ref role="3cqZAo" node="50BC9x8h354" resolve="listenerToChildFile" />
                 </node>
                 <node concept="liA8E" id="5p_KN$ySsbS" role="2OqNvi">
-                  <ref role="37wK5l" to="3ju5:~FileListener.listeningPreferences():jetbrains.mps.vfs.FileListeningPreferences" resolve="listeningPreferences" />
+                  <ref role="37wK5l" to="7nyy:~FileListener.listeningPreferences():jetbrains.mps.vfs.refresh.FileListeningPreferences" resolve="listeningPreferences" />
                 </node>
               </node>
               <node concept="2OwXpG" id="5p_KN$ySsO7" role="2OqNvi">
-                <ref role="2Oxat5" to="3ju5:~FileListeningPreferences.notifyOnParentCreation" resolve="notifyOnParentCreation" />
+                <ref role="2Oxat5" to="7nyy:~FileListeningPreferences.notifyOnParentCreation" resolve="notifyOnParentCreation" />
               </node>
             </node>
             <node concept="3clFbC" id="5p_KN$ySsbU" role="3uHU7B">
@@ -3637,14 +3638,14 @@
               <node concept="2OqwBi" id="5p_KN$ySsc5" role="3uHU7w">
                 <node concept="2OqwBi" id="5p_KN$ySsc6" role="2Oq$k0">
                   <node concept="liA8E" id="5p_KN$ySsc8" role="2OqNvi">
-                    <ref role="37wK5l" to="3ju5:~FileListener.listeningPreferences():jetbrains.mps.vfs.FileListeningPreferences" resolve="listeningPreferences" />
+                    <ref role="37wK5l" to="7nyy:~FileListener.listeningPreferences():jetbrains.mps.vfs.refresh.FileListeningPreferences" resolve="listeningPreferences" />
                   </node>
                   <node concept="37vLTw" id="5p_KN$ySt3N" role="2Oq$k0">
                     <ref role="3cqZAo" node="50BC9x8h354" resolve="listenerToChildFile" />
                   </node>
                 </node>
                 <node concept="2OwXpG" id="5p_KN$ySsDV" role="2OqNvi">
-                  <ref role="2Oxat5" to="3ju5:~FileListeningPreferences.notifyOnParentChange" resolve="notifyOnParentChange" />
+                  <ref role="2Oxat5" to="7nyy:~FileListeningPreferences.notifyOnParentChange" resolve="notifyOnParentChange" />
                 </node>
               </node>
             </node>
@@ -3673,11 +3674,11 @@
                     <ref role="3cqZAo" node="50BC9x8h354" resolve="listenerToChildFile" />
                   </node>
                   <node concept="liA8E" id="5p_KN$ySscl" role="2OqNvi">
-                    <ref role="37wK5l" to="3ju5:~FileListener.listeningPreferences():jetbrains.mps.vfs.FileListeningPreferences" resolve="listeningPreferences" />
+                    <ref role="37wK5l" to="7nyy:~FileListener.listeningPreferences():jetbrains.mps.vfs.refresh.FileListeningPreferences" resolve="listeningPreferences" />
                   </node>
                 </node>
                 <node concept="2OwXpG" id="5p_KN$ySsvJ" role="2OqNvi">
-                  <ref role="2Oxat5" to="3ju5:~FileListeningPreferences.notifyOnParentRemoval" resolve="notifyOnParentRemoval" />
+                  <ref role="2Oxat5" to="7nyy:~FileListeningPreferences.notifyOnParentRemoval" resolve="notifyOnParentRemoval" />
                 </node>
               </node>
             </node>
@@ -3696,7 +3697,7 @@
       <node concept="37vLTG" id="50BC9x8h354" role="3clF46">
         <property role="TrG5h" value="listenerToChildFile" />
         <node concept="3uibUv" id="50BC9x8h355" role="1tU5fm">
-          <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+          <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
         </node>
       </node>
       <node concept="37vLTG" id="1ElMMDYFc0t" role="3clF46">
@@ -3725,7 +3726,7 @@
                 <ref role="3cqZAo" node="50BC9x8eRy9" resolve="listenerToParentFile" />
               </node>
               <node concept="liA8E" id="50BC9x8feSU" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystemListener.getFileToListen():jetbrains.mps.vfs.IFile" resolve="getFileToListen" />
+                <ref role="37wK5l" to="7nyy:~FileSystemListener.getFileToListen():jetbrains.mps.vfs.IFile" resolve="getFileToListen" />
               </node>
             </node>
           </node>
@@ -3790,11 +3791,11 @@
                   <ref role="3cqZAo" node="50BC9x8eRy9" resolve="listenerToParentFile" />
                 </node>
                 <node concept="liA8E" id="50BC9x8fIDa" role="2OqNvi">
-                  <ref role="37wK5l" to="3ju5:~FileListener.listeningPreferences():jetbrains.mps.vfs.FileListeningPreferences" resolve="listeningPreferences" />
+                  <ref role="37wK5l" to="7nyy:~FileListener.listeningPreferences():jetbrains.mps.vfs.refresh.FileListeningPreferences" resolve="listeningPreferences" />
                 </node>
               </node>
               <node concept="2OwXpG" id="50BC9x8fJ1y" role="2OqNvi">
-                <ref role="2Oxat5" to="3ju5:~FileListeningPreferences.notifyOnChildCreation" resolve="notifyOnChildCreation" />
+                <ref role="2Oxat5" to="7nyy:~FileListeningPreferences.notifyOnChildCreation" resolve="notifyOnChildCreation" />
               </node>
             </node>
             <node concept="3clFbC" id="50BC9x8fNhY" role="3uHU7B">
@@ -3831,11 +3832,11 @@
                     <ref role="3cqZAo" node="50BC9x8eRy9" resolve="listenerToParentFile" />
                   </node>
                   <node concept="liA8E" id="50BC9x8fRTW" role="2OqNvi">
-                    <ref role="37wK5l" to="3ju5:~FileListener.listeningPreferences():jetbrains.mps.vfs.FileListeningPreferences" resolve="listeningPreferences" />
+                    <ref role="37wK5l" to="7nyy:~FileListener.listeningPreferences():jetbrains.mps.vfs.refresh.FileListeningPreferences" resolve="listeningPreferences" />
                   </node>
                 </node>
                 <node concept="2OwXpG" id="50BC9x8fS1b" role="2OqNvi">
-                  <ref role="2Oxat5" to="3ju5:~FileListeningPreferences.notifyOnChildChange" resolve="notifyOnChildChange" />
+                  <ref role="2Oxat5" to="7nyy:~FileListeningPreferences.notifyOnChildChange" resolve="notifyOnChildChange" />
                 </node>
               </node>
             </node>
@@ -3864,11 +3865,11 @@
                     <ref role="3cqZAo" node="50BC9x8eRy9" resolve="listenerToParentFile" />
                   </node>
                   <node concept="liA8E" id="5p_KN$ySrTO" role="2OqNvi">
-                    <ref role="37wK5l" to="3ju5:~FileListener.listeningPreferences():jetbrains.mps.vfs.FileListeningPreferences" resolve="listeningPreferences" />
+                    <ref role="37wK5l" to="7nyy:~FileListener.listeningPreferences():jetbrains.mps.vfs.refresh.FileListeningPreferences" resolve="listeningPreferences" />
                   </node>
                 </node>
                 <node concept="2OwXpG" id="5p_KN$ySs2G" role="2OqNvi">
-                  <ref role="2Oxat5" to="3ju5:~FileListeningPreferences.notifyOnChildRemoval" resolve="notifyOnChildRemoval" />
+                  <ref role="2Oxat5" to="7nyy:~FileListeningPreferences.notifyOnChildRemoval" resolve="notifyOnChildRemoval" />
                 </node>
               </node>
             </node>
@@ -3887,7 +3888,7 @@
       <node concept="37vLTG" id="50BC9x8eRy9" role="3clF46">
         <property role="TrG5h" value="listenerToParentFile" />
         <node concept="3uibUv" id="50BC9x8eRy8" role="1tU5fm">
-          <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+          <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
         </node>
       </node>
       <node concept="37vLTG" id="50BC9x8fDc5" role="3clF46">
@@ -3976,7 +3977,7 @@
       <property role="2bfB8j" value="true" />
       <node concept="3Tm6S6" id="3Fdn9B$ZcaL" role="1B3o_S" />
       <node concept="3uibUv" id="7f2aAtsPxd" role="EKbjA">
-        <ref role="3uigEE" to="3ju5:~FileSystemEvent" resolve="FileSystemEvent" />
+        <ref role="3uigEE" to="7nyy:~FileSystemEvent" resolve="FileSystemEvent" />
       </node>
       <node concept="312cEg" id="3Fdn9B$Wmdi" role="jymVt">
         <property role="TrG5h" value="added" />
@@ -4125,7 +4126,7 @@
         <node concept="37vLTG" id="4kWM61TLH_L" role="3clF46">
           <property role="TrG5h" value="listener" />
           <node concept="3uibUv" id="4kWM61TLH_M" role="1tU5fm">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
         </node>
         <node concept="3clFbS" id="4kWM61TLH_N" role="3clF47">
@@ -4229,7 +4230,6 @@
   </node>
   <node concept="312cEu" id="6KWQXOStuzV">
     <property role="TrG5h" value="FileSystemListenersContainer" />
-    <property role="1EXbeo" value="true" />
     <node concept="3UR2Jj" id="7ZmUkHE660c" role="lGtFl">
       <node concept="TZ5HA" id="7ZmUkHE660d" role="TZ5H$">
         <node concept="1dT_AC" id="7ZmUkHE660e" role="1dT_Ay">
@@ -4278,15 +4278,15 @@
         <node concept="1pGfFk" id="5gUstTWeU$J" role="2ShVmc">
           <ref role="37wK5l" to="5zyv:~ConcurrentHashMap.&lt;init&gt;()" resolve="ConcurrentHashMap" />
           <node concept="3uibUv" id="1lpVEpVksDo" role="1pMfVU">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
           <node concept="17QB3L" id="5gUstTWeUIH" role="1pMfVU" />
         </node>
       </node>
       <node concept="3uibUv" id="5gUstTWeU1p" role="1tU5fm">
         <ref role="3uigEE" to="5zyv:~ConcurrentMap" resolve="ConcurrentMap" />
-        <node concept="3uibUv" id="1lpVEpVkj6o" role="11_B2D">
-          <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+        <node concept="3uibUv" id="7LZvUiIIqlF" role="11_B2D">
+          <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
         </node>
         <node concept="17QB3L" id="5gUstTWeU2o" role="11_B2D" />
       </node>
@@ -4305,13 +4305,13 @@
         <property role="3TUv4t" value="true" />
         <node concept="_YKpA" id="5p_KN$yWoDg" role="1tU5fm">
           <node concept="3uibUv" id="5p_KN$yWoXE" role="_ZDj9">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
         </node>
         <node concept="2ShNRf" id="5p_KN$yW1Ot" role="33vP2m">
           <node concept="Tc6Ow" id="5p_KN$yW1Ou" role="2ShVmc">
             <node concept="3uibUv" id="5p_KN$yW1Ov" role="HW$YZ">
-              <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+              <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
             </node>
           </node>
         </node>
@@ -4324,13 +4324,13 @@
         <node concept="2ShNRf" id="5p_KN$yW1PA" role="33vP2m">
           <node concept="Tc6Ow" id="5p_KN$yW1PB" role="2ShVmc">
             <node concept="3uibUv" id="5p_KN$yW1PC" role="HW$YZ">
-              <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+              <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
             </node>
           </node>
         </node>
         <node concept="_YKpA" id="5p_KN$yWp4L" role="1tU5fm">
           <node concept="3uibUv" id="5p_KN$yWp4M" role="_ZDj9">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
         </node>
       </node>
@@ -4342,13 +4342,13 @@
         <node concept="2ShNRf" id="5p_KN$yW1QK" role="33vP2m">
           <node concept="Tc6Ow" id="5p_KN$yW1QL" role="2ShVmc">
             <node concept="3uibUv" id="5p_KN$yW1QM" role="HW$YZ">
-              <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+              <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
             </node>
           </node>
         </node>
         <node concept="_YKpA" id="5p_KN$yWpbU" role="1tU5fm">
           <node concept="3uibUv" id="5p_KN$yWpbV" role="_ZDj9">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
         </node>
       </node>
@@ -4392,7 +4392,7 @@
                 <ref role="3cqZAo" node="5gUstTWbMPQ" resolve="listener" />
               </node>
               <node concept="liA8E" id="2X7HGNkpAcw" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystemListener.getFileToListen():jetbrains.mps.vfs.IFile" resolve="getFileToListen" />
+                <ref role="37wK5l" to="7nyy:~FileSystemListener.getFileToListen():jetbrains.mps.vfs.IFile" resolve="getFileToListen" />
               </node>
             </node>
           </node>
@@ -4556,7 +4556,7 @@
       <node concept="37vLTG" id="5gUstTWbMPQ" role="3clF46">
         <property role="TrG5h" value="listener" />
         <node concept="3uibUv" id="5gUstTWbMPP" role="1tU5fm">
-          <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+          <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
         </node>
         <node concept="2AHcQZ" id="5LhcIq1TFGS" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
@@ -4730,7 +4730,7 @@
       <node concept="37vLTG" id="5gUstTWcRU7" role="3clF46">
         <property role="TrG5h" value="listener" />
         <node concept="3uibUv" id="5gUstTWcRU8" role="1tU5fm">
-          <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+          <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
         </node>
         <node concept="2AHcQZ" id="5LhcIq1TFS2" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
@@ -5011,7 +5011,7 @@
         <node concept="3uibUv" id="50BC9x8hGhy" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3uibUv" id="50BC9x8hIbH" role="11_B2D">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
         </node>
         <node concept="2AHcQZ" id="50BC9x8hKch" role="2AJF6D">
@@ -5056,7 +5056,7 @@
             </node>
             <node concept="liA8E" id="7ZmUkHE6dxD" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~String.split(java.lang.String):java.lang.String[]" resolve="split" />
-              <node concept="10M0yZ" id="7ZmUkHE6llk" role="37wK5m">
+              <node concept="10M0yZ" id="Cv6g7Yc04B" role="37wK5m">
                 <ref role="3cqZAo" to="eurq:~Path.UNIX_SEPARATOR" resolve="UNIX_SEPARATOR" />
                 <ref role="1PxDUh" to="eurq:~Path" resolve="Path" />
               </node>
@@ -5099,7 +5099,7 @@
       <node concept="37vLTG" id="5gUstTWfEIS" role="3clF46">
         <property role="TrG5h" value="listener" />
         <node concept="3uibUv" id="2X7HGNkpB$o" role="1tU5fm">
-          <ref role="3uigEE" to="3ju5:~FileListener" resolve="FileListener" />
+          <ref role="3uigEE" to="7nyy:~FileListener" resolve="FileListener" />
         </node>
         <node concept="2AHcQZ" id="5LhcIq1TG74" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
@@ -5121,7 +5121,7 @@
         <node concept="3uibUv" id="5gUstTWcpvC" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3uibUv" id="1lpVEpVkiKA" role="11_B2D">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
         </node>
         <node concept="3Tm6S6" id="6KWQXOStvCO" role="1B3o_S" />
@@ -5682,7 +5682,7 @@
           <node concept="3uibUv" id="5gUstTW9WgF" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~List" resolve="List" />
             <node concept="3uibUv" id="1lpVEpVkeIh" role="11_B2D">
-              <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+              <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
             </node>
           </node>
         </node>
@@ -5703,7 +5703,7 @@
                     <node concept="1pGfFk" id="5gUstTWcugR" role="2ShVmc">
                       <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(int)" resolve="ArrayList" />
                       <node concept="3uibUv" id="1lpVEpVkt73" role="1pMfVU">
-                        <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+                        <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
                       </node>
                       <node concept="3cmrfG" id="5cS3BzrGtfB" role="37wK5m">
                         <property role="3cmrfH" value="4" />
@@ -5740,7 +5740,7 @@
             <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
           </node>
           <node concept="3uibUv" id="1lpVEpVkw6S" role="1tU5fm">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
         </node>
       </node>
@@ -5784,7 +5784,7 @@
             <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
           </node>
           <node concept="3uibUv" id="50BC9x8esSs" role="1tU5fm">
-            <ref role="3uigEE" to="3ju5:~FileSystemListener" resolve="FileSystemListener" />
+            <ref role="3uigEE" to="7nyy:~FileSystemListener" resolve="FileSystemListener" />
           </node>
         </node>
       </node>

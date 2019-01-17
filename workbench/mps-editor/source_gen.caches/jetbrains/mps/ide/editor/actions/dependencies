@@ -1121,7 +1121,6 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.errors.item.FlavouredItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
-    <classNode dependClassName="jetbrains.mps.errors.item.ReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.RuleIdFlavouredItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.TypesystemReportItemAdapter" />
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />

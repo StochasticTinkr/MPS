@@ -83,14 +83,6 @@
     <classNode dependClassName="jetbrains.mps.tool.gentest.plugin.Test_Facet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacetManifest" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.gentest.plugin.ITestResource">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
-  </dependency>
   <dependency className="jetbrains.mps.tool.gentest.plugin.Test_Facet">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -100,10 +92,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITargetEx" />
@@ -118,9 +107,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.GResource" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestListener" />
-    <classNode dependClassName="jetbrains.mps.tool.gentest.plugin.ITestResource" />
-    <classNode dependClassName="jetbrains.mps.tool.gentest.plugin.Test_Facet.Target_runTests.Parameters" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />

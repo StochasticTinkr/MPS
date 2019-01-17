@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-6n3obkkyb993jwnli6n2pryfnth325v">
-  <files names="NewGeneratorDialog.java:NewModelDialog.java" />
+<product version="3" modelHash="7rd3qj4jt975mxkcejz3jc0m7vdhclu">
+  <files names="ModelCreateHelper.java:NewGeneratorDialog.java:NewModelDialog.java" />
 </product>
 

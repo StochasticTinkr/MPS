@@ -335,7 +335,7 @@
                                 <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
                               </node>
                               <node concept="liA8E" id="Ik4DRK775Y" role="2OqNvi">
-                                <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                                <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                                 <node concept="2OqwBi" id="38mXUTXNh0x" role="37wK5m">
                                   <node concept="2YIFZM" id="6tm98vZh9Yz" role="2Oq$k0">
                                     <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
@@ -572,8 +572,8 @@
                                                     </node>
                                                     <node concept="3clFbF" id="1t1utOFshm9" role="3cqZAp">
                                                       <node concept="2YIFZM" id="1t1utOFshmc" role="3clFbG">
-                                                        <ref role="37wK5l" to="3ju5:~IFileUtils.copyFileContent(jetbrains.mps.vfs.IFile,jetbrains.mps.vfs.IFile):boolean" resolve="copyFileContent" />
-                                                        <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
+                                                        <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+                                                        <ref role="37wK5l" to="18ew:~IFileUtil.copyFileContent(jetbrains.mps.vfs.IFile,jetbrains.mps.vfs.IFile):boolean" resolve="copyFileContent" />
                                                         <node concept="AH0OO" id="1t1utOFshnZ" role="37wK5m">
                                                           <node concept="3cmrfG" id="1t1utOFsho2" role="AHEQo">
                                                             <property role="3cmrfH" value="0" />

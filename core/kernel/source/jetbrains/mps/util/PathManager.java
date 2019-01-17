@@ -56,6 +56,8 @@ public final class PathManager {
   private PathManager() {
   }
 
+  // FIXME there's j.m.tool.common.PluginPath.getHomePath, in use from Ant-MPS (e.g. MpsEnvironment and <generate> task)
+  //       which is slightly different from this one.
   public static String getHomePath() {
     if (ourHomePath != null) {
       return ourHomePath;

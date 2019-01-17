@@ -170,7 +170,6 @@
       </concept>
       <concept id="1216390987552" name="jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock" flags="in" index="QznSV" />
       <concept id="1195213580585" name="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" flags="ig" index="18hYwZ">
-        <property id="1195213689297" name="overrides" index="18ip37" />
         <child id="1195213635060" name="body" index="18ibNy" />
       </concept>
       <concept id="1195214364922" name="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" flags="ig" index="18kY7G" />
@@ -253,7 +252,7 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -1208,7 +1207,6 @@
   <node concept="18kY7G" id="6ONtaJUkKzl">
     <property role="TrG5h" value="check_FinalAndAbstractMethod" />
     <property role="3GE5qa" value="" />
-    <property role="18ip37" value="true" />
     <node concept="3clFbS" id="6ONtaJUkKzm" role="18ibNy">
       <node concept="3clFbJ" id="6ONtaJUkPkd" role="3cqZAp">
         <node concept="1Wc70l" id="6ONtaJUkXEd" role="3clFbw">
@@ -1359,7 +1357,6 @@
   <node concept="18kY7G" id="6WSEafdwp3b">
     <property role="TrG5h" value="check_AbstractMethodIsVirtual" />
     <property role="3GE5qa" value="" />
-    <property role="18ip37" value="true" />
     <node concept="3clFbS" id="6WSEafdwp3c" role="18ibNy">
       <node concept="3clFbJ" id="6WSEafdwp3d" role="3cqZAp">
         <node concept="1Wc70l" id="6WSEafdwp3e" role="3clFbw">
@@ -1523,7 +1520,6 @@
   <node concept="18kY7G" id="6WSEafdwUJG">
     <property role="TrG5h" value="check_FinalMethodIsVirtual" />
     <property role="3GE5qa" value="" />
-    <property role="18ip37" value="true" />
     <node concept="3clFbS" id="6WSEafdwUJH" role="18ibNy">
       <node concept="3clFbJ" id="6WSEafdwUJI" role="3cqZAp">
         <node concept="1Wc70l" id="6WSEafdwUJJ" role="3clFbw">
@@ -1715,7 +1711,6 @@
   <node concept="18kY7G" id="172ROKPERhF">
     <property role="TrG5h" value="check_MethodIsNotOverriddenTwice" />
     <property role="3GE5qa" value="" />
-    <property role="18ip37" value="true" />
     <node concept="3clFbS" id="172ROKPERhG" role="18ibNy">
       <node concept="3cpWs8" id="172ROKPFzcA" role="3cqZAp">
         <node concept="3cpWsn" id="172ROKPFzcB" role="3cpWs9">

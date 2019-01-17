@@ -73,7 +73,7 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
       final File backupFile = MergeBackupUtil.zipModel(byteContents, file);
 
       final String ext;
-      if (FilePerRootDataSource.isPerRootPersistenceFile(FileSystem.getInstance().getFileByPath(file.getPath()))) {
+      if (FilePerRootDataSource.isPerRootPersistenceFile(FileSystem.getInstance().getFile(file.getPath()))) {
         // load model partially from per-root persistence with "normal" persistence loading 
         ext = MPSExtentions.MODEL;
       } else {
@@ -220,7 +220,7 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
   @Nullable
   private static String saveModel(SModel resultModel, VirtualFile file, String ext) {
     // file is just to check and select proper format for per-root persistence 
-    if (FilePerRootDataSource.isPerRootPersistenceFile(FileSystem.getInstance().getFileByPath(file.getPath()))) {
+    if (FilePerRootDataSource.isPerRootPersistenceFile(FileSystem.getInstance().getFile(file.getPath()))) {
       return PersistenceUtil.savePerRootModel(resultModel, MPSExtentions.MODEL_HEADER.equals(file.getExtension()));
     } else {
       return PersistenceUtil.saveModel(resultModel, ext);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import com.intellij.ide.plugins.PluginManager;
 import com.intellij.internal.statistic.UsageTrigger;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -31,7 +30,7 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -44,7 +43,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
  */
 public class MPSFacet extends Facet<MPSFacetConfiguration> {
   private static final Logger LOG = Logger.getInstance(MPSFacet.class);
-  private final Project myMpsProject;
+  private final MPSProject myMpsProject;
   private Solution mySolution;
 
   public MPSFacet(@NotNull FacetType facetType, @NotNull Module module, @NotNull String name, @NotNull MPSFacetConfiguration configuration, Facet underlyingFacet) {
@@ -56,7 +55,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
   @Override
   public void initFacet() {
     myMpsProject.getModelAccess().runWriteAction(() -> {
-      SolutionDescriptor solutionDescriptor = getConfiguration().getBean().getSolutionDescriptor();
+      SolutionDescriptor solutionDescriptor = getConfiguration().createSolutionDescriptor();
       Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
 
       com.intellij.openapi.project.Project project = getModule().getProject();
@@ -119,18 +118,32 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 //  }
 
   public void updateModels() {
-    if (mySolution == null) return;
+    if (mySolution == null) {
+      return;
+    }
     mySolution.updateModelsSet();
   }
 
   public void setConfiguration(final MPSConfigurationBean configurationBean) {
+    // XXX what if ModuleRenameHandler uses this method prior to getSolution, we would have lost configurationBean settings then
     if (!wasInitialized()) {
+      // SD in cfgBean is provisional and kept here just in case there are settings coming through its SD
+      getConfiguration().loadState(/*FIXME just null*/ configurationBean.getSolutionDescriptor(), configurationBean);
       return;
     }
-    myMpsProject.getModelAccess().runWriteAction(() -> mySolution.setModuleDescriptor(configurationBean.getSolutionDescriptor()));
+    // FIXME not clear why not descriptor from the bean, as it's the one being modified from e.g. MPSFacetSourcesTab
+    //       we imply here mySolution.getModuleDescriptor() === configurationBean.getSolutionDescriptor(), otherwise changed done to SD through
+    //       configurationBean.getSolutionDescriptor() would get lost.
+    assert configurationBean.getSolutionDescriptor() == null || configurationBean.getSolutionDescriptor() == mySolution.getModuleDescriptor();
+    getConfiguration().loadState(mySolution.getModuleDescriptor(), configurationBean);
+    myMpsProject.getModelAccess().runWriteAction(() -> mySolution.setModuleDescriptor(getConfiguration().createSolutionDescriptor()));
   }
 
   public Solution getSolution() {
     return mySolution;
+  }
+
+  /*package*/ MPSProject getProject() {
+    return myMpsProject;
   }
 }

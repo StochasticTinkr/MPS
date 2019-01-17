@@ -2114,7 +2114,7 @@
                   </node>
                   <node concept="3cpWs8" id="aF" role="3cqZAp">
                     <node concept="3cpWsn" id="bH" role="3cpWs9">
-                      <property role="TrG5h" value="declaringClass" />
+                      <property role="TrG5h" value="declaringClassifier" />
                       <node concept="3Tqbb2" id="bJ" role="1tU5fm">
                         <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
                         <node concept="cd27G" id="bM" role="lGtFl">
@@ -2138,7 +2138,7 @@
                               <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
                               <node concept="cd27G" id="bX" role="lGtFl">
                                 <node concept="3u3nmq" id="bY" role="cd27D">
-                                  <property role="3u3nmv" value="5384012304952427245" />
+                                  <property role="3u3nmv" value="4328370407503623658" />
                                 </node>
                               </node>
                             </node>
@@ -2190,7 +2190,7 @@
                     <node concept="1Wc70l" id="c5" role="3clFbw">
                       <node concept="3y3z36" id="cc" role="3uHU7B">
                         <node concept="37vLTw" id="cf" role="3uHU7B">
-                          <ref role="3cqZAo" node="bH" resolve="declaringClass" />
+                          <ref role="3cqZAo" node="bH" resolve="declaringClassifier" />
                           <node concept="cd27G" id="ci" role="lGtFl">
                             <node concept="3u3nmq" id="cj" role="cd27D">
                               <property role="3u3nmv" value="4265636116363102630" />
@@ -2213,7 +2213,7 @@
                       <node concept="3y3z36" id="cd" role="3uHU7w">
                         <node concept="2OqwBi" id="cn" role="3uHU7B">
                           <node concept="37vLTw" id="cq" role="2Oq$k0">
-                            <ref role="3cqZAo" node="bH" resolve="declaringClass" />
+                            <ref role="3cqZAo" node="bH" resolve="declaringClassifier" />
                             <node concept="cd27G" id="ct" role="lGtFl">
                               <node concept="3u3nmq" id="cu" role="cd27D">
                                 <property role="3u3nmv" value="4265636116363072134" />
@@ -2307,7 +2307,7 @@
                                     </node>
                                   </node>
                                   <node concept="Xl_RD" id="cZ" role="37wK5m">
-                                    <property role="Xl_RC" value="Calling a method on a non-thread-safe class" />
+                                    <property role="Xl_RC" value="Calling a method on a non-thread-safe classifier" />
                                     <node concept="cd27G" id="d6" role="lGtFl">
                                       <node concept="3u3nmq" id="d7" role="cd27D">
                                         <property role="3u3nmv" value="5384012304952487101" />
@@ -2348,7 +2348,7 @@
                     <node concept="1Wc70l" id="cF" role="3clFbw">
                       <node concept="3y3z36" id="da" role="3uHU7B">
                         <node concept="37vLTw" id="dd" role="3uHU7B">
-                          <ref role="3cqZAo" node="bH" resolve="declaringClass" />
+                          <ref role="3cqZAo" node="bH" resolve="declaringClassifier" />
                           <node concept="cd27G" id="dg" role="lGtFl">
                             <node concept="3u3nmq" id="dh" role="cd27D">
                               <property role="3u3nmv" value="4265636116363073351" />
@@ -2371,7 +2371,7 @@
                       <node concept="3y3z36" id="db" role="3uHU7w">
                         <node concept="2OqwBi" id="dl" role="3uHU7B">
                           <node concept="37vLTw" id="do" role="2Oq$k0">
-                            <ref role="3cqZAo" node="bH" resolve="declaringClass" />
+                            <ref role="3cqZAo" node="bH" resolve="declaringClassifier" />
                             <node concept="cd27G" id="dr" role="lGtFl">
                               <node concept="3u3nmq" id="ds" role="cd27D">
                                 <property role="3u3nmv" value="4265636116363108412" />
@@ -2463,7 +2463,7 @@
                                 </node>
                               </node>
                               <node concept="Xl_RD" id="dS" role="37wK5m">
-                                <property role="Xl_RC" value="Calling a method on a potentially non-thread-safe class" />
+                                <property role="Xl_RC" value="Calling a method on a potentially non-thread-safe classifier" />
                                 <node concept="cd27G" id="dZ" role="lGtFl">
                                   <node concept="3u3nmq" id="e0" role="cd27D">
                                     <property role="3u3nmv" value="5384012304952427266" />

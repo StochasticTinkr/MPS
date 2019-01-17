@@ -169,14 +169,6 @@
       <unit id="3186742424690919238" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_generator_tests" />
     </file>
   </root>
-  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/3323419009398480325">
-    <file name="TestModule_jetbrains_mps_kernel_tests.java">
-      <node id="3323419009398480325" at="12,0,14,0" concept="0" trace="TestModule_jetbrains_mps_kernel_tests#()V" />
-      <scope id="3323419009398480325" at="12,50,12,50" />
-      <scope id="3323419009398480325" at="12,0,14,0" />
-      <unit id="3323419009398480325" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_tests" />
-    </file>
-  </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/3611349286777542940">
     <file name="TestModule_jetbrains_mps_testActions.java">
       <node id="3611349286777542940" at="12,0,14,0" concept="0" trace="TestModule_jetbrains_mps_testActions#()V" />

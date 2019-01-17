@@ -5,16 +5,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.sampleXML.actions.ActionAspectDescriptorImpl" />
-    <classNode dependClassName="jetbrains.mps.sampleXML.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.sampleXML.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.sampleXML.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.sampleXML.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.sampleXML.textGen.TextGenAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

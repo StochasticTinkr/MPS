@@ -91,7 +91,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
 
     List<IFile> sourcePaths = ListSequence.fromList(new ArrayList<IFile>());
     for (String path : moduleDescr.getSourcePaths()) {
-      ListSequence.fromList(sourcePaths).addElement(FileSystem.getInstance().getFileByPath(path));
+      ListSequence.fromList(sourcePaths).addElement(FileSystem.getInstance().getFile(path));
     }
 
     final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository(), ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(MessagesViewTool.class).newHandler());

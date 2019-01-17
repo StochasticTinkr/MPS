@@ -146,6 +146,7 @@ public abstract class MergeDriverPacker {
     if (isFromSources()) {
       SetSequence.fromSet(classpathItems).addSequence(SetSequence.fromSet(getClasspathInternal()));
     } else {
+      // FIXME why don't we use CommonPath.getMPSPaths(ClassType.[CORE|OPENAPI|ANNOATATION]) That would reduce number of places with jar names we have to keep! 
       final String mpsCorePath = getMPSCorePath();
       SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(mpsLibJars).select(new ISelector<String, String>() {
         public String select(String it) {

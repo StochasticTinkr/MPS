@@ -17,13 +17,10 @@ package jetbrains.mps.module;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleClassLoader;
-import jetbrains.mps.classloading.ModuleClassNotFoundException;
-import jetbrains.mps.classloading.ModuleIsNotLoadableException;
-import jetbrains.mps.classloading.RootClassloaderLookup;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.openapi.FileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;

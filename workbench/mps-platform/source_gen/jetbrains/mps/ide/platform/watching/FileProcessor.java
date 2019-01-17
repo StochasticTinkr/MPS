@@ -5,7 +5,7 @@ package jetbrains.mps.ide.platform.watching;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.Map;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import java.util.HashMap;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -20,7 +20,6 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.List;
@@ -30,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.function.Function;
 import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.vfs.FileSystemEvent;
+import jetbrains.mps.vfs.refresh.FileSystemEvent;
 import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
@@ -132,7 +131,7 @@ import java.util.Arrays;
   }
 
   /*package*/ void processDelete(String path) {
-    final IFile file = new IdeaFile(FS, path);
+    final IFile file = FS.getFile(path);
     ListSequence.fromList(getData(file.getPath(), FileProcessor.EventKind.REMOVED)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
         it.removed.add(file);

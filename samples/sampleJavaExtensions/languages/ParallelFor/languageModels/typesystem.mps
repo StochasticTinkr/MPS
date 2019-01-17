@@ -1078,7 +1078,7 @@
                 </node>
                 <node concept="3cpWs8" id="4ERQEDB1obA" role="3cqZAp">
                   <node concept="3cpWsn" id="4ERQEDB1obB" role="3cpWs9">
-                    <property role="TrG5h" value="declaringClass" />
+                    <property role="TrG5h" value="declaringClassifier" />
                     <node concept="3Tqbb2" id="4ERQEDB1obC" role="1tU5fm">
                       <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
                     </node>
@@ -1088,7 +1088,7 @@
                       </node>
                       <node concept="2Xjw5R" id="4ERQEDB1obF" role="2OqNvi">
                         <node concept="1xMEDy" id="4ERQEDB1obG" role="1xVPHs">
-                          <node concept="chp4Y" id="4ERQEDB1obH" role="ri$Ld">
+                          <node concept="chp4Y" id="3KhtvfN$fnE" role="ri$Ld">
                             <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
                           </node>
                         </node>
@@ -1103,14 +1103,14 @@
                   <node concept="1Wc70l" id="4ERQEDB1obQ" role="3clFbw">
                     <node concept="3y3z36" id="4ERQEDB1obR" role="3uHU7B">
                       <node concept="37vLTw" id="3GM_nagT$AA" role="3uHU7B">
-                        <ref role="3cqZAo" node="4ERQEDB1obB" resolve="declaringClass" />
+                        <ref role="3cqZAo" node="4ERQEDB1obB" resolve="declaringClassifier" />
                       </node>
                       <node concept="10Nm6u" id="4ERQEDB1obT" role="3uHU7w" />
                     </node>
                     <node concept="3y3z36" id="4ERQEDB1obU" role="3uHU7w">
                       <node concept="2OqwBi" id="4ERQEDB1obV" role="3uHU7B">
                         <node concept="37vLTw" id="3GM_nagTta6" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4ERQEDB1obB" resolve="declaringClass" />
+                          <ref role="3cqZAo" node="4ERQEDB1obB" resolve="declaringClassifier" />
                         </node>
                         <node concept="3CFZ6_" id="4ERQEDB1obX" role="2OqNvi">
                           <node concept="3CFYIy" id="4ERQEDB1obY" role="3CFYIz">
@@ -1129,21 +1129,21 @@
                         <ref role="1YBMHb" node="4ERQEDB1fUZ" resolve="baseMethodCall" />
                       </node>
                       <node concept="Xl_RD" id="4ERQEDB1AMX" role="2MkJ7o">
-                        <property role="Xl_RC" value="Calling a method on a non-thread-safe class" />
+                        <property role="Xl_RC" value="Calling a method on a non-thread-safe classifier" />
                       </node>
                     </node>
                   </node>
                   <node concept="1Wc70l" id="4ERQEDB1AMJ" role="3clFbw">
                     <node concept="3y3z36" id="4ERQEDB1AMK" role="3uHU7B">
                       <node concept="37vLTw" id="3GM_nagTtt7" role="3uHU7B">
-                        <ref role="3cqZAo" node="4ERQEDB1obB" resolve="declaringClass" />
+                        <ref role="3cqZAo" node="4ERQEDB1obB" resolve="declaringClassifier" />
                       </node>
                       <node concept="10Nm6u" id="4ERQEDB1AMM" role="3uHU7w" />
                     </node>
                     <node concept="3y3z36" id="4ERQEDB1AMN" role="3uHU7w">
                       <node concept="2OqwBi" id="4ERQEDB1AMO" role="3uHU7B">
                         <node concept="37vLTw" id="3GM_nagTA0W" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4ERQEDB1obB" resolve="declaringClass" />
+                          <ref role="3cqZAo" node="4ERQEDB1obB" resolve="declaringClassifier" />
                         </node>
                         <node concept="3CFZ6_" id="4ERQEDB1AMQ" role="2OqNvi">
                           <node concept="3CFYIy" id="4ERQEDB1AMU" role="3CFYIz">
@@ -1160,7 +1160,7 @@
                     <ref role="1YBMHb" node="4ERQEDB1fUZ" resolve="baseMethodCall" />
                   </node>
                   <node concept="Xl_RD" id="4ERQEDB1oc2" role="a7wSD">
-                    <property role="Xl_RC" value="Calling a method on a potentially non-thread-safe class" />
+                    <property role="Xl_RC" value="Calling a method on a potentially non-thread-safe classifier" />
                   </node>
                 </node>
               </node>

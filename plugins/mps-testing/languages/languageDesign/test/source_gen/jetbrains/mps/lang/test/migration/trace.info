@@ -153,10 +153,10 @@
       <node id="5462094956390011552" at="71,41,72,195" concept="6" />
       <node id="7680625225105658074" at="75,41,76,225" concept="6" />
       <node id="6471305449341895792" at="81,51,82,144" concept="6" />
-      <node id="6471305449342044946" at="86,81,87,63" concept="5" />
+      <node id="6471305449342044946" at="86,83,87,63" concept="5" />
       <node id="6471305449342044946" at="87,63,88,229" concept="5" />
-      <node id="6471305449342044946" at="88,229,89,172" concept="2" />
-      <node id="6471305449342044946" at="89,172,90,14" concept="6" />
+      <node id="6471305449342044946" at="88,229,89,167" concept="2" />
+      <node id="6471305449342044946" at="89,167,90,14" concept="6" />
       <node id="6471305449341895792" at="27,0,30,0" concept="4" trace="getCaption#()Ljava/lang/String;" />
       <node id="6471305449341994323" at="43,0,46,0" concept="4" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
       <node id="1304837983361840720" at="48,0,51,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -169,7 +169,7 @@
       <node id="6471305449341994323" at="41,90,46,8" concept="5" />
       <node id="1304837983361845061" at="52,0,57,0" concept="4" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5462094956390018376" at="64,90,69,8" concept="5" />
-      <node id="6471305449342044946" at="86,0,92,0" concept="8" trace="createMigrationReference_y0ige7_a0a0a0a0a0a0d#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6471305449342044946" at="86,0,92,0" concept="8" trace="createMigrationReference_y0ige7_a0a0a0a0a0a0d#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5462094956390019064" at="69,8,78,9" concept="6" />
       <node id="1304837983361766003" at="46,8,57,9" concept="2" />
       <node id="5462094956390018376" at="61,45,79,5" concept="0" />
@@ -203,7 +203,7 @@
       <scope id="6471305449341895792" at="34,0,38,0">
         <var name="m" id="6471305449341895792" />
       </scope>
-      <scope id="6471305449342044946" at="86,81,90,14">
+      <scope id="6471305449342044946" at="86,83,90,14">
         <var name="facade" id="6471305449342044946" />
         <var name="n1" id="6471305449342044946" />
       </scope>
@@ -211,7 +211,7 @@
         <var name="it" id="1304837983361845061" />
       </scope>
       <scope id="6471305449342044946" at="86,0,92,0">
-        <var name="p0" id="6471305449342044946" />
+        <var name="node0" id="6471305449342044946" />
       </scope>
       <scope id="5462094956390018376" at="62,5,78,9">
         <var name="context" id="5462094956390018376" />

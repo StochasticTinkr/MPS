@@ -29,7 +29,7 @@ import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectOptions;
@@ -150,7 +150,7 @@ public class ProjectCreationTest implements EnvironmentAware {
           @Override
           public void run() {
             try {
-              myTmpDir = IFileUtils.createTmpDir();
+              myTmpDir = IFileUtil.createTmpDir();
               try {
                 ProjectFactory factory = new ProjectFactory(projectOptionsProvider.getProjectOptions(myTmpDir));
                 myProject = factory.createProject();

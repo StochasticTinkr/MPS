@@ -50,7 +50,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="mz8t" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.xmlb(MPS.IDEA/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
-    <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" />
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
@@ -2830,28 +2829,6 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="4xnDkoPp7wR" role="3clF47">
-        <node concept="3cpWs8" id="4xnDkoPm$Bk" role="3cqZAp">
-          <node concept="3cpWsn" id="4xnDkoPm$Bl" role="3cpWs9">
-            <property role="TrG5h" value="renamingModulePath" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="3XD7mq23WEq" role="1tU5fm">
-              <ref role="3uigEE" to="eurq:~Path" resolve="Path" />
-            </node>
-            <node concept="2OqwBi" id="4xnDkoPm$Bm" role="33vP2m">
-              <node concept="2OqwBi" id="4xnDkoPm$Bn" role="2Oq$k0">
-                <node concept="37vLTw" id="4xnDkoPm$Bo" role="2Oq$k0">
-                  <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
-                </node>
-                <node concept="liA8E" id="4xnDkoPm$Bp" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleSourceDir():jetbrains.mps.vfs.IFile" resolve="getModuleSourceDir" />
-                </node>
-              </node>
-              <node concept="liA8E" id="3R5e$_HR_t9" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~IFile.path():jetbrains.mps.vfs.path.Path" resolve="path" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3SKdUt" id="4xnDkoPo_aC" role="3cqZAp">
           <node concept="3SKdUq" id="4xnDkoPo_aE" role="3SKWNk">
             <property role="3SKdUp" value="If folder and module name are different, folder will not be renamed, so no need to check submodules" />
@@ -2862,12 +2839,17 @@
             <node concept="2OqwBi" id="UiQGWJ_spD" role="3uHU7w">
               <node concept="liA8E" id="UiQGWJ_tfv" role="2OqNvi">
                 <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="2OqwBi" id="UiQGWJ_rqF" role="37wK5m">
-                  <node concept="37vLTw" id="UiQGWJ_r3B" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4xnDkoPm$Bl" resolve="renamingModulePath" />
+                <node concept="2OqwBi" id="5UptKEdbMdz" role="37wK5m">
+                  <node concept="2OqwBi" id="4xnDkoPm$Bn" role="2Oq$k0">
+                    <node concept="37vLTw" id="4xnDkoPm$Bo" role="2Oq$k0">
+                      <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
+                    </node>
+                    <node concept="liA8E" id="4xnDkoPm$Bp" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleSourceDir():jetbrains.mps.vfs.IFile" resolve="getModuleSourceDir" />
+                    </node>
                   </node>
-                  <node concept="liA8E" id="UiQGWJ_s5P" role="2OqNvi">
-                    <ref role="37wK5l" to="eurq:~Path.getFileName():java.lang.String" resolve="getFileName" />
+                  <node concept="liA8E" id="5UptKEdbMy4" role="2OqNvi">
+                    <ref role="37wK5l" to="3ju5:~IFile.getName():java.lang.String" resolve="getName" />
                   </node>
                 </node>
               </node>

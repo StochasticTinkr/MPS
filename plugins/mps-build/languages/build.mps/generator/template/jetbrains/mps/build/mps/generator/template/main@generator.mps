@@ -2,14 +2,14 @@
 <model ref="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="7" />
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="2" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -715,6 +715,10 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
+        <property id="8575328350543493365" name="message" index="huDt6" />
+        <property id="2423417345669755629" name="filter" index="1eyWvh" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -6107,6 +6111,10 @@
             </node>
           </node>
           <node concept="1Koe21" id="14LJu4ZggmG" role="150oIE">
+            <node concept="15s5l7" id="7iyvL_jf8kd" role="lGtFl">
+              <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;reference scopes (reference scopes)&quot;;FLAVOUR_MESSAGE=&quot;reference aaa (module) is out of search scope&quot;;FLAVOUR_NODE_FEATURE=&quot;module&quot;;FLAVOUR_RULE_ID=&quot;[r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)/1224588814561913827]&quot;;" />
+              <property role="huDt6" value="reference aaa (module) is out of search scope" />
+            </node>
             <node concept="398223" id="14LJu4ZggmI" role="1Koe22">
               <node concept="3_J27D" id="14LJu4ZggmJ" role="Nbhlr">
                 <node concept="3Mxwew" id="14LJu4ZggmK" role="3MwsjC">
@@ -6370,6 +6378,10 @@
             </node>
           </node>
           <node concept="1Koe21" id="5kC7eCQMr5q" role="150oIE">
+            <node concept="15s5l7" id="7iyvL_jf92h" role="lGtFl">
+              <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;reference scopes (reference scopes)&quot;;FLAVOUR_MESSAGE=&quot;reference aaa (module) is out of search scope&quot;;FLAVOUR_NODE_FEATURE=&quot;module&quot;;FLAVOUR_RULE_ID=&quot;[r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)/1224588814561913827]&quot;;" />
+              <property role="huDt6" value="reference aaa (module) is out of search scope" />
+            </node>
             <node concept="398223" id="5kC7eCQMrjS" role="1Koe22">
               <node concept="3981dx" id="5kC7eCQMrk1" role="39821P">
                 <node concept="1kK7hY" id="5kC7eCQMrk2" role="39821P">
@@ -12133,6 +12145,27 @@
                 </node>
               </node>
             </node>
+            <node concept="2Vbh7Z" id="$wIWWjuObf" role="2VaTZU">
+              <node concept="2pNNFK" id="$wIWWjuObg" role="2Vbh7K">
+                <property role="2pNNFO" value="jar" />
+                <node concept="2pNNFK" id="$wIWWjuObh" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNUuL" id="$wIWWjuObi" role="2pNNFR">
+                    <property role="2pNUuO" value="dir" />
+                    <node concept="2pMdtt" id="$wIWWjuObj" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/mps-project-check" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNUuL" id="$wIWWjuObk" role="2pNNFR">
+                  <property role="2pNUuO" value="destfile" />
+                  <node concept="2pMdtt" id="$wIWWjuObl" role="2pMdts">
+                    <property role="2pMdty" value="${build.tmp}/antTasks/mps-project-check.jar" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="2Vbh7Z" id="5mxyaMf$njU" role="2VaTZU">
               <node concept="2pNNFK" id="5mxyaMf$njV" role="2Vbh7K">
                 <property role="2pNNFO" value="jar" />
@@ -12213,16 +12246,6 @@
                     <property role="2pNUuO" value="dir" />
                     <node concept="2pMdtt" id="6OTUdBQYCc9" role="2pMdts">
                       <property role="2pMdty" value="${build.tmp}/java/out/mps-project" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="2pNNFK" id="6OTUdBR4tuZ" role="3o6s8t">
-                  <property role="qg3DV" value="true" />
-                  <property role="2pNNFO" value="fileset" />
-                  <node concept="2pNUuL" id="6OTUdBR4tv0" role="2pNNFR">
-                    <property role="2pNUuO" value="dir" />
-                    <node concept="2pMdtt" id="6OTUdBR4tv1" role="2pMdts">
-                      <property role="2pMdty" value="${build.tmp}/java/out/mps-debuginfo-api" />
                     </node>
                   </node>
                 </node>
@@ -12344,6 +12367,56 @@
           <property role="TrG5h" value="mpsBootCore" />
           <node concept="2jfdEK" id="g0fHFWlnqM" role="2jfP_Y">
             <node concept="3clFbS" id="g0fHFWlnqO" role="2VODD2">
+              <node concept="3SKdUt" id="$wIWWjuPgF" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuPgH" role="3SKWNk">
+                  <property role="3SKdUp" value=" FIXME this hack is to allow mpsBootstrapCore to assemble MPS sources into jars" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuPNe" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuPNg" role="3SKWNk">
+                  <property role="3SKdUp" value="using the same mechanism as for any other MPS-orchestrated build project." />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuQal" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuQan" role="3SKWNk">
+                  <property role="3SKdUp" value="In fact, it seems that only copyModels task is important (hence, Platform of 'PERSISTENCE' level)" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuQxw" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuQxy" role="3SKWNk">
+                  <property role="3SKdUp" value="as MPS itself has been already generated and compiled (i.e no need for generate, migrate or runMPS tasks, see" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuRIQ" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuRIR" role="3SKWNk">
+                  <property role="3SKdUp" value="antlib.xml for full list). Therefore, once PlatformBase is capable to load only deisred ComponentPlugin classes," />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuS65" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuS67" role="3SKWNk">
+                  <property role="3SKdUp" value="we can limit this hack to much smaller subset." />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuSid" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuSif" role="3SKWNk">
+                  <property role="3SKdUp" value="Unfortunately, MPSClasspathUtil expects jar names to match for both deployed and bootstrap MPS builds, hence" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuSup" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuSur" role="3SKWNk">
+                  <property role="3SKdUp" value="we can't just jar all copyModels-relevant classes into single mps-core.jar. OTOH, I don't quite understand why" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuSPO" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuSPQ" role="3SKWNk">
+                  <property role="3SKdUp" value="do we need MPSClasspathUtil for ant tasks, why don't we build proper classpath right inside the build script " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="$wIWWjuT1$" role="3cqZAp">
+                <node concept="3SKdUq" id="$wIWWjuT1_" role="3SKWNk">
+                  <property role="3SKdUp" value="(classpathref of respective taskdef)?" />
+                </node>
+              </node>
               <node concept="3clFbF" id="g0fHFWlnF9" role="3cqZAp">
                 <node concept="1Wc70l" id="g0fHFWic07" role="3clFbG">
                   <node concept="2OqwBi" id="g0fHFWigLw" role="3uHU7w">

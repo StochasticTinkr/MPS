@@ -1270,12 +1270,6 @@
         </node>
       </node>
     </node>
-    <node concept="2sgV4H" id="53PdBITeUc8" role="1l3spa">
-      <ref role="1l3spb" to="ffeo:3IKDaVZmzS6" resolve="mps" />
-      <node concept="398BVA" id="7XvkNSEzhLM" role="2JcizS">
-        <ref role="398BVh" node="53PdBITeUc4" resolve="mps_home" />
-      </node>
-    </node>
     <node concept="2sgV4H" id="5r4$rjzsv1c" role="1l3spa">
       <ref role="1l3spb" to="ffeo:3E9C6pCXzPk" resolve="mpsConsolePlugin" />
       <node concept="398BVA" id="5r4$rjzuia9" role="2JcizS">

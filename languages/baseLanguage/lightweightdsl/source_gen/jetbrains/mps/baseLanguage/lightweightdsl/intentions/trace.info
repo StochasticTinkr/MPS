@@ -202,10 +202,10 @@
       <node id="1291729193367787822" at="80,295,81,82" concept="2" />
       <node id="6305381134221689014" at="84,48,85,51" concept="8" />
       <node id="6305381134221689014" at="87,34,88,25" concept="8" />
-      <node id="6305381134221737587" at="91,68,92,63" concept="7" />
+      <node id="6305381134221737587" at="91,70,92,63" concept="7" />
       <node id="6305381134221737587" at="92,63,93,242" concept="7" />
-      <node id="6305381134221737587" at="93,242,94,173" concept="2" />
-      <node id="6305381134221737587" at="94,173,95,14" concept="8" />
+      <node id="6305381134221737587" at="93,242,94,168" concept="2" />
+      <node id="6305381134221737587" at="94,168,95,14" concept="8" />
       <node id="6305381134221689014" at="31,0,34,0" concept="1" trace="AddClasslikeAnnotation_Intention#()V" />
       <node id="6305381134221689014" at="39,84,42,5" concept="5" />
       <node id="6305381134221689014" at="45,0,48,0" concept="6" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
@@ -220,7 +220,7 @@
       <node id="6305381134221689014" at="54,53,59,5" concept="5" />
       <node id="6305381134221696524" at="62,86,67,24" concept="8" />
       <node id="6305381134221689014" at="78,0,83,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="6305381134221737587" at="91,0,97,0" concept="10" trace="createDSLAnnotation_qk2y7i_a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6305381134221737587" at="91,0,97,0" concept="10" trace="createDSLAnnotation_qk2y7i_a0a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6305381134221689014" at="38,0,45,0" concept="6" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="6305381134221689014" at="62,0,69,0" concept="6" trace="parameter#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
       <node id="6305381134221689014" at="52,0,62,0" concept="6" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
@@ -260,7 +260,7 @@
         <var name="node" id="6305381134221689014" />
       </scope>
       <scope id="6305381134221689014" at="83,0,87,0" />
-      <scope id="6305381134221737587" at="91,68,95,14">
+      <scope id="6305381134221737587" at="91,70,95,14">
         <var name="facade" id="6305381134221737587" />
         <var name="n1" id="6305381134221737587" />
       </scope>
@@ -270,7 +270,7 @@
         <var name="node" id="6305381134221689014" />
       </scope>
       <scope id="6305381134221737587" at="91,0,97,0">
-        <var name="p0" id="6305381134221737587" />
+        <var name="node0" id="6305381134221737587" />
       </scope>
       <scope id="6305381134221689014" at="38,0,45,0">
         <var name="editorContext" id="6305381134221689014" />

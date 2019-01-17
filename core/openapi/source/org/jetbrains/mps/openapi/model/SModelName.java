@@ -110,6 +110,18 @@ public final class SModelName {
     return nsSeparator == -1 ? qualifiedName : qualifiedName.substring(nsSeparator + 1);
   }
 
+  /**
+   * Similar to {@link #getSimpleName()}, just keeps stereotype part, if any
+   * @return name of the model without namespace but with stereotype, if any.
+   */
+  @NotNull
+  public String getShortNameWithStereotype() {
+    final int stereotypeIndex = myValue.lastIndexOf('@');
+    // assume there could be a dot in a stereotype
+    int nsSeparator = myValue.lastIndexOf('.', stereotypeIndex > 0 ? stereotypeIndex : myValue.length() - 1);
+    return nsSeparator == -1 ? myValue : myValue.substring(nsSeparator + 1);
+  }
+
   @NotNull
   public String getNamespace() {
     String qualifiedName = getLongName();

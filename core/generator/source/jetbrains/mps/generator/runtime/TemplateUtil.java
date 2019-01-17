@@ -24,8 +24,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_S
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -40,8 +38,6 @@ import java.util.List;
  * Evgeny Gryaznov, 10/28/10
  */
 public class TemplateUtil {
-
-  private static final Logger LOG = LogManager.getLogger(TemplateUtil.class);
 
   public static Collection<SNode> singletonList(SNode node) {
     return node != null ? Collections.singletonList(node) : Collections.emptyList();
@@ -174,16 +170,6 @@ public class TemplateUtil {
       result.getMappingConfigs().add((MappingConfig_AbstractRef) element);
     }
     return result;
-  }
-
-  /**
-   * @deprecated Use {@link #createRefNormal(String, String, String)} instead. Deployment-time ref shall record
-   *             name of MC not to expect presence of template source model to find it out.
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static TemplateMappingConfigRef createRefNormal(String modelUID, String nodeUID) {
-    return createRefNormal(modelUID, nodeUID, nodeUID);
   }
 
   public static TemplateMappingConfigRef createRefNormal(String modelUID, String nodeUID, String mapConfigName) {

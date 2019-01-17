@@ -30,14 +30,13 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.LibraryDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.vfs.impl.JarEntryFile;
 import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -63,7 +62,6 @@ import java.util.Set;
  */
 public final class ModulesMiner {
   private static final Logger LOG = LogManager.getLogger(ModulesMiner.class);
-  private static final String DOT_JAR = JarEntryFile.DOT_JAR;
   public static final String META_INF = "META-INF";
   private static final String JAR_SEPARATOR = Path.ARCHIVE_SEPARATOR;
   public static final String MODULE_XML = "module.xml";
@@ -125,7 +123,7 @@ public final class ModulesMiner {
     if (file.isDirectory()) {
       readModuleDescriptorsFromFolder(file);
     } else {
-      if (IFileUtils.isJarFile(file)) {
+      if (IFileUtil.isJarFile(file)) {
         readModuleDescriptorsFromJarFile(file);
       } else {
         trySourceModuleDescriptorsFromFile(file);
@@ -216,7 +214,7 @@ public final class ModulesMiner {
       // nor expect jar with modules nested into another module, and
       // do not look into jars under a folder with either META-INF/ or modules/ they are likely auxiliary.
       for (IFile f : files) {
-        if (IFileUtils.isJarFile(f)) {
+        if (IFileUtil.isJarFile(f)) {
           readModuleDescriptorsFromJarFile(f);
         }
       }
@@ -245,8 +243,8 @@ public final class ModulesMiner {
    * @param jarFile {@code folder/module.name.jar} from the sample layouts above.
    */
   private void readModuleDescriptorsFromJarFile(IFile jarFile) {
-    assert IFileUtils.isJarFile(jarFile);
-    IFile jarFileRoot = IFileUtils.stepIntoJar(jarFile);
+    assert IFileUtil.isJarFile(jarFile);
+    IFile jarFileRoot = IFileUtil.stepIntoJar(jarFile);
 
     if (tryModuleFromDeploymentDescriptor(jarFile, jarFileRoot.getDescendant(META_INF).getDescendant(MODULE_XML))) {
       return;
@@ -441,8 +439,8 @@ public final class ModulesMiner {
           it.set(moduleHome.getPath());
         } else if (!cpEntry.isEmpty()) {
           StringBuilder moduleHomePath = new StringBuilder();
-          if (IFileUtils.isJarFile(moduleHome)) {
-            moduleHomePath.append(IFileUtils.stepIntoJar(moduleHome).getPath());
+          if (IFileUtil.isJarFile(moduleHome)) {
+            moduleHomePath.append(IFileUtil.stepIntoJar(moduleHome).getPath());
           } else {
             moduleHomePath.append(moduleHome.getPath());
           }
@@ -486,7 +484,7 @@ public final class ModulesMiner {
   }
 
   // part of processExcludes() with common code for any module type
-  private void processModuleExcludes(jetbrains.mps.vfs.openapi.FileSystem fileSystem, ModuleDescriptor descriptor) {
+  private void processModuleExcludes(FileSystem fileSystem, ModuleDescriptor descriptor) {
     String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(descriptor);
     if (generatorOutputPath != null) {
       IFile genOutputFile = fileSystem.getFile(generatorOutputPath);
@@ -531,7 +529,7 @@ public final class ModulesMiner {
     if (descriptor == null || descriptorFile.isReadOnly()) {
       return;
     }
-    jetbrains.mps.vfs.openapi.FileSystem fileSystem = descriptorFile.getFileSystem();
+    FileSystem fileSystem = descriptorFile.getFileSystem();
     processModuleExcludes(fileSystem, descriptor);
 
     if (descriptor instanceof LanguageDescriptor) {
@@ -582,7 +580,7 @@ public final class ModulesMiner {
     } else {
       // FIXME any idea why the code below mangles path instead of going up/down with regular FS getParent/getDescendant operations?
       //       I suspect it's just incomplete refactoring in 4c5b44bc9e1242d4e4399dc816e5caa01855dc00, right?
-      jetbrains.mps.vfs.openapi.FileSystem fileSystem = deploymentFile.getFileSystem();
+      FileSystem fileSystem = deploymentFile.getFileSystem();
       String deploymentPath = deploymentFile.getPath();
       String moduleJarPath = deploymentPath.substring(0, deploymentPath.length() - SLASH_META_INF_MODULE_XML.length());
       IFile moduleJar = fileSystem.getFile(moduleJarPath);

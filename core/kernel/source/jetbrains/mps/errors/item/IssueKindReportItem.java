@@ -19,8 +19,6 @@ import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.ModelPathObject;
 import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.ModulePathObject;
 import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.NodePathObject;
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
-import jetbrains.mps.util.ListMap;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -31,16 +29,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.function.Predicate;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import static jetbrains.mps.errors.item.NodeFlavouredItem.FLAVOUR_NODE;
 
 /**
@@ -50,8 +38,40 @@ public interface IssueKindReportItem extends ReportItem {
 
   ItemKind getIssueKind();
 
+  class IssueKindFlavourPredicate implements FlavourPredicate<IssueKindReportItem, ItemKind> {
+    private final String mySerializedValue;
+
+    public IssueKindFlavourPredicate(String serializedValue) {
+      mySerializedValue = serializedValue;
+    }
+
+    @Override
+    public ReportItemFlavour<IssueKindReportItem, ItemKind> getFlavour() {
+      return FLAVOUR_ISSUE_KIND;
+    }
+
+    @Override
+    public boolean matches(String serializedValue) {
+      return serializedValue.startsWith(mySerializedValue);
+    }
+
+    @Override
+    public String serialize() {
+      return mySerializedValue;
+    }
+  }
+
   SimpleReportItemFlavour<IssueKindReportItem, ItemKind> FLAVOUR_ISSUE_KIND =
-      new SimpleReportItemFlavour<>("FLAVOUR_ISSUE_KIND", IssueKindReportItem.class, IssueKindReportItem::getIssueKind);
+      new SimpleReportItemFlavour<IssueKindReportItem, ItemKind>("FLAVOUR_ISSUE_KIND", IssueKindReportItem.class, IssueKindReportItem::getIssueKind) {
+        @Override
+        public FlavourPredicate<IssueKindReportItem, ItemKind> toPredicate(ItemKind value) {
+          return new IssueKindFlavourPredicate(FLAVOUR_ISSUE_KIND.serialize(value));
+        }
+        @Override
+        public FlavourPredicate<IssueKindReportItem, ItemKind> deserializePredicate(String serialized) {
+          return new IssueKindFlavourPredicate(serialized);
+        }
+      };
 
   final class CheckerCategory {
     private final KindLevel myKindLevel;

@@ -183,6 +183,7 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -232,6 +233,7 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
+      <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -277,6 +279,7 @@
       </concept>
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
+      <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
     </language>
   </registry>
   <node concept="312cEu" id="3D5F99qcPzc">
@@ -2746,12 +2749,23 @@
                   </node>
                 </node>
               </node>
-              <node concept="3fqX7Q" id="7d$WBe35Plp" role="3clFbw">
-                <node concept="2YIFZM" id="7d$WBe35Plr" role="3fr31v">
-                  <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
-                  <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                  <node concept="2GrUjf" id="7d$WBe35Pls" role="37wK5m">
-                    <ref role="2Gs0qQ" node="6mz0KzMFsqc" resolve="m" />
+              <node concept="1Wc70l" id="6DXJxvQHgx_" role="3clFbw">
+                <node concept="2OqwBi" id="6DXJxvQHKgf" role="3uHU7w">
+                  <node concept="2OqwBi" id="6DXJxvQHhav" role="2Oq$k0">
+                    <node concept="2GrUjf" id="6DXJxvQHgP_" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6mz0KzMFsqc" resolve="m" />
+                    </node>
+                    <node concept="2RRcyG" id="6DXJxvQHJ7e" role="2OqNvi" />
+                  </node>
+                  <node concept="3GX2aA" id="6DXJxvQIqmv" role="2OqNvi" />
+                </node>
+                <node concept="3fqX7Q" id="7d$WBe35Plp" role="3uHU7B">
+                  <node concept="2YIFZM" id="7d$WBe35Plr" role="3fr31v">
+                    <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
+                    <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                    <node concept="2GrUjf" id="7d$WBe35Pls" role="37wK5m">
+                      <ref role="2Gs0qQ" node="6mz0KzMFsqc" resolve="m" />
+                    </node>
                   </node>
                 </node>
               </node>

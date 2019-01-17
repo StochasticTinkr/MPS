@@ -61,6 +61,7 @@
     <orderEntry type="module" module-name="execution-api" scope="TEST" />
     <orderEntry type="module" module-name="openapi" />
     <orderEntry type="module" module-name="project" />
+    <orderEntry type="module" module-name="project-check" />
     <orderEntry type="module" module-name="vcs-core" scope="TEST" />
     <orderEntry type="module" module-name="editor-runtime" scope="TEST" />
     <orderEntry type="module" module-name="console" scope="RUNTIME" />

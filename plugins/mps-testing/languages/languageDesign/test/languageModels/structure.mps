@@ -21,7 +21,9 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+      </concept>
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
@@ -1268,6 +1270,7 @@
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="MigrationTestCase" />
     <property role="EcuMT" value="5476670926298696679" />
+    <property role="3GE5qa" value="migration" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4K12N3pJ_iz" role="1TKVEi">
       <property role="IQ2ns" value="5476670926298698915" />
@@ -1275,7 +1278,9 @@
       <property role="20kJfa" value="migration_old" />
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="53vh:4uVwhQyFcjm" resolve="IMigrationUnit" />
-      <node concept="asaX9" id="5BeGwkd5D7k" role="lGtFl" />
+      <node concept="asaX9" id="5BeGwkd5D7k" role="lGtFl">
+        <property role="YLPcu" value="2018.1" />
+      </node>
     </node>
     <node concept="1TJgyj" id="4K12N3pJ$JC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -1297,6 +1302,13 @@
       <property role="20kJfa" value="migration" />
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" node="5JRx$mlRtY9" resolve="MigrationReference" />
+    </node>
+    <node concept="1TJgyj" id="5j9sOBrGAXZ" role="1TKVEi">
+      <property role="IQ2ns" value="6109541130560499583" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="option" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5j9sOBrE7yu" resolve="MigrationTestOption" />
     </node>
     <node concept="PrWs8" id="5JRx$mlRtY3" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -1329,6 +1341,7 @@
   <node concept="1TIwiD" id="5JRx$mlRtY9">
     <property role="EcuMT" value="6626913010124185481" />
     <property role="TrG5h" value="MigrationReference" />
+    <property role="3GE5qa" value="migration" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5JRx$mlRtYa" role="1TKVEi">
       <property role="IQ2ns" value="6626913010124185482" />
@@ -1365,6 +1378,20 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tp3j:2c3oNEsfAwl" resolve="SurroundWithIntentionDeclaration" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="5j9sOBrE7yu">
+    <property role="EcuMT" value="6109541130559846558" />
+    <property role="3GE5qa" value="migration" />
+    <property role="TrG5h" value="MigrationTestOption" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="5j9sOBrG_KN">
+    <property role="EcuMT" value="6109541130560494643" />
+    <property role="3GE5qa" value="migration" />
+    <property role="TrG5h" value="IgnoreMigrationDataOption" />
+    <property role="34LRSv" value="except data produced" />
+    <ref role="1TJDcQ" node="5j9sOBrE7yu" resolve="MigrationTestOption" />
   </node>
 </model>
 

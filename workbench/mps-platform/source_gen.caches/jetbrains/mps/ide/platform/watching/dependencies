@@ -56,7 +56,6 @@
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypesManager" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" />
-    <classNode dependClassName="jetbrains.mps.ide.vfs.IdeaFile" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.IdeaFileSystem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -66,9 +65,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.QueueSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystemEvent" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystemListener" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="jetbrains.mps.vfs.refresh.FileSystemEvent" />
+    <classNode dependClassName="jetbrains.mps.vfs.refresh.FileSystemListener" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -87,10 +86,10 @@
     <classNode dependClassName="java.util.concurrent.locks.ReentrantReadWriteLock" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileListener" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystemListener" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.vfs.path.Path" />
+    <classNode dependClassName="jetbrains.mps.vfs.refresh.FileListener" />
+    <classNode dependClassName="jetbrains.mps.vfs.refresh.FileSystemListener" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>

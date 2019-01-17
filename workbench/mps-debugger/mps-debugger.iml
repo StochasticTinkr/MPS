@@ -18,7 +18,7 @@
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="mps-platform" />
-    <orderEntry type="module" module-name="debuginfo-api" />
+    <orderEntry type="module" module-name="debuginfo-impl" />
     <orderEntry type="module" module-name="components" />
   </component>
 </module>

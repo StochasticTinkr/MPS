@@ -1027,7 +1027,7 @@
                                   <ref role="3cqZAo" node="4TtYrYGuXoK" resolve="anchor" />
                                 </node>
                                 <node concept="35c_gC" id="3IB1iu7neyZ" role="37wK5m">
-                                  <ref role="35c_gD" to="tpee:fz12cDA" resolve="ClassConcept" />
+                                  <ref role="35c_gD" to="tpee:g7pOWCK" resolve="Classifier" />
                                 </node>
                               </node>
                             </node>

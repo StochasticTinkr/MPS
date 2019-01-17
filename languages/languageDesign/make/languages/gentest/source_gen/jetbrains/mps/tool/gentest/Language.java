@@ -7,12 +7,8 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
-import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.tool.gentest.plugin.FacetAspectDescriptor;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import jetbrains.mps.tool.gentest.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   private final SLanguageId myId;
@@ -41,17 +37,8 @@ public class Language extends LanguageRuntime {
 
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (aspectClass == BehaviorAspectDescriptor.class) {
-      return aspectClass.cast(new jetbrains.mps.tool.gentest.behavior.BehaviorAspectDescriptor());
-    }
     if (aspectClass == MakeAspectDescriptor.class) {
       return aspectClass.cast(new FacetAspectDescriptor());
-    }
-    if (aspectClass == StructureAspectDescriptor.class) {
-      return aspectClass.cast(new jetbrains.mps.tool.gentest.structure.StructureAspectDescriptor());
-    }
-    if (aspectClass == ConceptPresentationAspect.class) {
-      return aspectClass.cast(new ConceptPresentationAspectImpl());
     }
     return null;
   }

@@ -104,6 +104,6 @@ public class MigrationDataUtil {
     } else {
       path = FileUtil.getNameWithoutExtension(module.getDescriptorFile().getPath()) + ".migration";
     }
-    return FileSystem.getInstance().getFileByPath(path);
+    return FileSystem.getInstance().getFile(path);
   }
 }

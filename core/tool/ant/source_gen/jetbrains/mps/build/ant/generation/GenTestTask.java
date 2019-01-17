@@ -5,9 +5,9 @@ package jetbrains.mps.build.ant.generation;
 import jetbrains.mps.tool.common.ScriptProperties;
 
 public class GenTestTask extends GenerateTask {
-  @Override
-  protected String getWorkerClass() {
-    return "jetbrains.mps.tool.builder.make.GenTestWorker";
+
+  public GenTestTask() {
+    setWorker("jetbrains.mps.tool.builder.make.GenTestWorker");
   }
   public boolean getShowDiff() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.SHOW_DIFF));

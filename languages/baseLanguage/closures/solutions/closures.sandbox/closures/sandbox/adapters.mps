@@ -93,7 +93,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
-      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
         <child id="1199542457201" name="resultType" index="1ajl9A" />
         <child id="1199542501692" name="parameterType" index="1ajw0F" />
@@ -175,9 +174,9 @@
       <property role="TrG5h" value="acceptsFun" />
       <node concept="37vLTG" id="2uAWGxT7Z7L" role="3clF46">
         <property role="TrG5h" value="bar" />
-        <node concept="9cv3F" id="6mhkh6yDktF" role="1tU5fm">
-          <node concept="17QB3L" id="6mhkh6yDktG" role="1ajw0F" />
-          <node concept="10Oyi0" id="6mhkh6yDktH" role="1ajl9A" />
+        <node concept="1ajhzC" id="5j9sOBs3buB" role="1tU5fm">
+          <node concept="17QB3L" id="5j9sOBs3buC" role="1ajw0F" />
+          <node concept="10Oyi0" id="5j9sOBs3buD" role="1ajl9A" />
         </node>
         <node concept="2AHcQZ" id="2uAWGxT7Z7T" role="2AJF6D">
           <ref role="2AI5Lk" to="qbve:7w8CYsT5wfS" resolve="AdapterClass" />
@@ -197,11 +196,11 @@
       <property role="TrG5h" value="acceptGenFun" />
       <node concept="37vLTG" id="25RNw_CdbjO" role="3clF46">
         <property role="TrG5h" value="bar" />
-        <node concept="9cv3F" id="6mhkh6yDkt$" role="1tU5fm">
-          <node concept="16syzq" id="6mhkh6yDkt_" role="1ajw0F">
+        <node concept="1ajhzC" id="5j9sOBs3bvg" role="1tU5fm">
+          <node concept="16syzq" id="5j9sOBs3bvh" role="1ajw0F">
             <ref role="16sUi3" node="25RNw_CdbjQ" resolve="S" />
           </node>
-          <node concept="16syzq" id="6mhkh6yDktA" role="1ajl9A">
+          <node concept="16syzq" id="5j9sOBs3bvi" role="1ajl9A">
             <ref role="16sUi3" node="25RNw_CdbjR" resolve="T" />
           </node>
         </node>

@@ -43,17 +43,8 @@ import com.intellij.ui.ColoredListCellRenderer;
 import javax.swing.JList;
 import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.util.Reference;
-import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.project.ModelsAutoImportsManager;
-import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.smodel.ModelImports;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.extapi.persistence.SourceRootKinds;
-import jetbrains.mps.extapi.persistence.DefaultSourceRoot;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import javax.lang.model.SourceVersion;
 import javax.swing.JComponent;
@@ -223,7 +214,7 @@ public class NewModelDialog extends DialogWrapper {
     }
 
     try {
-      myResult = createModel((ModelFactoryType) myModelStorageFormat.getSelectedItem(), (ModelRoot) myModelRoots.getSelectedItem());
+      myResult = makeHelper().createModel(myClone, myPreserveIds);
     } catch (ModelCannotBeCreatedException ex) {
       Messages.showErrorDialog(myProject.getProject(), "Could not create a new model because '" + ex.getMessage() + "'", "Error");
     }
@@ -231,101 +222,8 @@ public class NewModelDialog extends DialogWrapper {
     super.doOKAction();
   }
 
-  private EditableSModel createModel(final ModelFactoryType storageFormat, final ModelRoot selectedModelRoot) throws ModelCannotBeCreatedException {
-    final String fqName = getFqName();
-
-    final Reference<SourceRoot> sourceRootOpt = new Reference<SourceRoot>(null);
-    // next constant is purely for documentation purposes, just to indicate what's the intention of getOrCreateAccessortySourceRoot method 
-    final boolean distinctSrcRoot4Accessory = false;
-    if (myModule instanceof Language && selectedModelRoot instanceof DefaultModelRoot) {
-      if (distinctSrcRoot4Accessory || !(selectedModelRoot.canCreateModel(fqName))) {
-        sourceRootOpt.set(getOrCreateAccessorySourceRoot(((DefaultModelRoot) selectedModelRoot)));
-      }
-    }
-
-    final Reference<ModelCannotBeCreatedException> refException = new Reference<ModelCannotBeCreatedException>();
-
-    final EditableSModel res = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<EditableSModel>() {
-      @Override
-      public EditableSModel compute() {
-        SModel result;
-        try {
-          if (selectedModelRoot instanceof DefaultModelRoot) {
-            result = ((DefaultModelRoot) selectedModelRoot).createModel(new SModelName(fqName), sourceRootOpt.get(), null, storageFormat);
-          } else {
-            result = selectedModelRoot.createModel(fqName);
-          }
-          if (!(result instanceof EditableSModel)) {
-            // XXX there seems to be no true need to get EditableSModel return value, please revisit 
-            throw new ModelCannotBeCreatedException(String.format("Could not create EditableSModel, got %s", result));
-          }
-          // XXX do we need autoimports in case there's myClone we would copy from? 
-          myProject.getComponent(ModelsAutoImportsManager.class).performImports(myModule, result);
-          // XXX Perhaps, shall fix module dependencies only once imports of myClone has been copied? 
-          new MissingDependenciesFixer(result).fixModuleDependencies();
-        } catch (ModelCannotBeCreatedException e) {
-          refException.set(e);
-          return null;
-        }
-        final EditableSModel rv = ((EditableSModel) result);
-        // newly created model is not marked as changed, won't get saved unless we tell it is. 
-        rv.setChanged(true);
-        if (myClone == null) {
-          // due to threading issues and invokeLater processing, we have to do save here, in this platform write action 
-          // so that dumb mode triggered from ProjectRootManagerComponent (wicked processing of a new model file created event) 
-          // has a chance to get queued in EDT (see DumbServiceImpl.queueTaskOnEdt, invokeLater call) prior to our invokeLater in doOkAction(), above. 
-          // DumbServiceImpl then clears dumb flag prior to model configurable dialog show up and eventually model imports popup has chances to get populated. 
-          // see https://youtrack.jetbrains.com/issue/MPS-28999 
-          rv.save();
-          return rv;
-        }
-        ModelImports imports = new ModelImports(result);
-        imports.copyImportedModelsFrom(myClone);
-        imports.copyUsedLanguagesFrom(myClone);
-        imports.copyEmployedDevKitsFrom(myClone);
-        imports.copyLanguageEngagedOnGeneration(myClone);
-        if (myPreserveIds) {
-          CopyUtil.copyModelContentAndPreserveIds(myClone, result);
-        } else {
-          CopyUtil.copyModelContentAndUpdateCrossRootReferences(myClone, result);
-        }
-        if (myClone instanceof GeneratableSModel && result instanceof GeneratableSModel) {
-          ((GeneratableSModel) result).setDoNotGenerate(((GeneratableSModel) myClone).isDoNotGenerate());
-          ((GeneratableSModel) result).setGenerateIntoModelFolder(((GeneratableSModel) myClone).isGenerateIntoModelFolder());
-        }
-        rv.save();
-        return rv;
-      }
-    });
-
-    if (!(refException.isNull())) {
-      throw refException.get();
-    }
-
-    return res;
-  }
-
-  private SourceRoot getOrCreateAccessorySourceRoot(final FileBasedModelRoot selectedModelRoot) {
-    return new ModelAccessHelper(myProject.getModelAccess()).runWriteAction(new Computable<SourceRoot>() {
-      public SourceRoot compute() {
-        final String dedicatedSourceRootName = "languageAccessories";
-        for (SourceRoot sr : selectedModelRoot.getSourceRoots(SourceRootKinds.SOURCES)) {
-          if (sr.getPath().endsWith(dedicatedSourceRootName)) {
-            return sr;
-          }
-        }
-        DefaultSourceRoot rv = new DefaultSourceRoot(dedicatedSourceRootName, selectedModelRoot.getContentDirectory());
-        selectedModelRoot.addSourceRoot(SourceRootKinds.SOURCES, rv);
-        // it's up to model root impl to ensure module is marked changed on source root addition 
-        return rv;
-      }
-    });
-  }
-
-  private String getFqName() {
-    String stereo = myModelStereotype.getSelectedItem().toString().trim();
-    return myModelName.getText() + ((stereo.length() > 0 ? "@" + stereo : ""));
-
+  public ModelCreateHelper makeHelper() {
+    return new ModelCreateHelper(myProject, myModule, new SModelName(myModelName.getText(), myModelStereotype.getItemAt(myModelStereotype.getSelectedIndex()).trim()), myModelRoots.getItemAt(myModelRoots.getSelectedIndex()), myModelStorageFormat.getItemAt(myModelStorageFormat.getSelectedIndex()));
   }
 
   private boolean check() {
@@ -370,7 +268,7 @@ public class NewModelDialog extends DialogWrapper {
       return false;
     }
 
-    if (!(mr.canCreateModel(getFqName()))) {
+    if (!(mr.canCreateModel(new SModelName(myModelName.getText(), myModelStereotype.getSelectedItem().toString().trim()).getLongName()))) {
       boolean isLang = myModule instanceof Language;
       if (!(isLang) || !((mr instanceof FileBasedModelRoot))) {
         setErrorText("Can't create a model with this name under this model root");

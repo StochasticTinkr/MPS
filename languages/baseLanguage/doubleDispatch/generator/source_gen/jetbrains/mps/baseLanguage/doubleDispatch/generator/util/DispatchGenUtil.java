@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -44,7 +43,7 @@ public class DispatchGenUtil {
       classesToConsider = Sequence.<SNode>singleton(parentClass);
       methods = new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
         public Iterable<SNode> invoke(SNode cls) {
-          return (Iterable<SNode>) ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+          return (Iterable<SNode>) Classifier__BehaviorDescriptor.staticMethods_id7fFTwQrQPHW.invoke(cls);
         }
       };
 

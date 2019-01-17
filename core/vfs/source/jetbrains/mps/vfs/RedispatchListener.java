@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.vfs;
 
+import jetbrains.mps.vfs.refresh.FileListener;
+import jetbrains.mps.vfs.refresh.FileListeningPreferences;
+import jetbrains.mps.vfs.refresh.FileSystemEvent;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;

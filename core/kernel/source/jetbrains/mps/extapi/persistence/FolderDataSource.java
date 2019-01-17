@@ -17,8 +17,10 @@ package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.FileSystemEvent;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
+import jetbrains.mps.vfs.refresh.FileSystemEvent;
+import jetbrains.mps.vfs.refresh.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -171,7 +173,10 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   public void addListener(@NotNull DataSourceListener listener) {
     synchronized (LOCK) {
       if (myListeners.isEmpty()) {
-        myFolder.getFileSystem().addListener(this);
+        FileSystem fs = myFolder.getFileSystem();
+        if (fs instanceof CachingFileSystem) {
+          ((CachingFileSystem) fs).addListener(this);
+        }
       }
       myListeners.add(listener);
     }
@@ -182,7 +187,10 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     synchronized (LOCK) {
       myListeners.remove(listener);
       if (myListeners.isEmpty()) {
-        myFolder.getFileSystem().removeListener(this);
+        FileSystem fs = myFolder.getFileSystem();
+        if (fs instanceof CachingFileSystem) {
+          ((CachingFileSystem) fs).removeListener(this);
+        }
       }
     }
   }

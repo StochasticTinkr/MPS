@@ -8,24 +8,17 @@ import jetbrains.mps.tool.common.JavaCompilerProperties;
 import jetbrains.mps.build.ant.ModuleJarDataType;
 import java.io.File;
 import jetbrains.mps.tool.common.ScriptProperties;
-import java.util.Set;
-import java.util.List;
-import jetbrains.mps.build.ant.MPSClasspathUtil;
-import org.apache.tools.ant.BuildException;
-import java.util.LinkedHashSet;
 
 public class GenerateTask extends MpsLoadTask {
   private final GeneratorProperties myGenProps;
   private final JavaCompilerProperties myJavaCompilerProperties;
   public GenerateTask() {
+    super("jetbrains.mps.tool.builder.make.GeneratorWorker");
     myGenProps = new GeneratorProperties(myWhatToDo);
     myGenProps.setStrictMode(true).setParallelMode(false).setInplaceTransform(false).setHideWarnings(false).setCreateStaticRefs(true);
     myJavaCompilerProperties = new JavaCompilerProperties(myWhatToDo);
   }
-  @Override
-  protected String getWorkerClass() {
-    return "jetbrains.mps.tool.builder.make.GeneratorWorker";
-  }
+
   public void addConfiguredChunk(Chunk chunk) {
     myWhatToDo.addChunk(chunk.getModules(), chunk.getBootstrap());
   }
@@ -82,20 +75,5 @@ public class GenerateTask extends MpsLoadTask {
   }
   public void setTargetJavaVersion(String targetJavaVersion) {
     myJavaCompilerProperties.setTargetJavaVersion(targetJavaVersion);
-  }
-
-  @Override
-  protected Set<File> calculateClassPath(boolean fork) {
-    List<File> classPathRoots = MPSClasspathUtil.getClassPathRootsFromDependencies(getProject());
-    if (classPathRoots.isEmpty()) {
-      throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
-
-    }
-    Set<File> classPath = new LinkedHashSet<File>();
-    for (File file : classPathRoots) {
-      MPSClasspathUtil.gatherAllClassesAndJarsUnder(file, classPath);
-    }
-
-    return classPath;
   }
 }

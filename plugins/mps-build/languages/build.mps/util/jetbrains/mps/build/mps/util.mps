@@ -33,7 +33,6 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="w827" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.openapi(MPS.Core/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
@@ -671,8 +670,8 @@
       <property role="TrG5h" value="myFS" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="6cqWk79zUv$" role="1B3o_S" />
-      <node concept="3uibUv" id="6cqWk79zUB1" role="1tU5fm">
-        <ref role="3uigEE" to="w827:~FileSystem" resolve="FileSystem" />
+      <node concept="3uibUv" id="3obB83rpWpx" role="1tU5fm">
+        <ref role="3uigEE" to="3ju5:~FileSystem" resolve="FileSystem" />
       </node>
     </node>
     <node concept="312cEg" id="3rjNyPddPb6" role="jymVt">
@@ -1417,7 +1416,7 @@
                 <ref role="3cqZAo" node="6cqWk79zUBf" resolve="myFS" />
               </node>
               <node concept="liA8E" id="6cqWk79$AVf" role="2OqNvi">
-                <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                 <node concept="37vLTw" id="6cqWk79$AVg" role="37wK5m">
                   <ref role="3cqZAo" node="6cqWk79$AUc" resolve="moduleFilePath" />
                 </node>
@@ -11954,8 +11953,8 @@
               </node>
               <node concept="3cpWs6" id="7AaordoBmat" role="3cqZAp">
                 <node concept="2YIFZM" id="7AaordoBmaL" role="3cqZAk">
-                  <ref role="37wK5l" to="3ju5:~IFileUtils.getCanonicalPath(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getCanonicalPath" />
-                  <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
+                  <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+                  <ref role="37wK5l" to="18ew:~IFileUtil.getCanonicalPath(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getCanonicalPath" />
                   <node concept="2OqwBi" id="7AaordoBmbM" role="37wK5m">
                     <node concept="37vLTw" id="2BHiRxeuyJe" role="2Oq$k0">
                       <ref role="3cqZAo" node="7AaordoBmal" resolve="moduleSourceDir" />
@@ -12323,12 +12322,12 @@
               </node>
               <node concept="3cpWs6" id="7AaordoBmAN" role="3cqZAp">
                 <node concept="2YIFZM" id="7AaordoBmAO" role="3cqZAk">
-                  <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
-                  <ref role="37wK5l" to="3ju5:~IFileUtils.getCanonicalPath(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getCanonicalPath" />
+                  <ref role="1Pybhc" to="18ew:~IFileUtil" resolve="IFileUtil" />
+                  <ref role="37wK5l" to="18ew:~IFileUtil.getCanonicalPath(jetbrains.mps.vfs.IFile):java.lang.String" resolve="getCanonicalPath" />
                   <node concept="2OqwBi" id="7AaordoBmAP" role="37wK5m">
                     <node concept="2OqwBi" id="7AaordoBnOX" role="2Oq$k0">
                       <node concept="liA8E" id="7AaordoBnP7" role="2OqNvi">
-                        <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                        <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                         <node concept="37vLTw" id="3GM_nagTupX" role="37wK5m">
                           <ref role="3cqZAo" node="7AaordoBmA8" resolve="localPath" />
                         </node>
@@ -12338,7 +12337,7 @@
                           <ref role="3cqZAo" node="7AaordoBmal" resolve="moduleSourceDir" />
                         </node>
                         <node concept="liA8E" id="6cqWk79OH4e" role="2OqNvi">
-                          <ref role="37wK5l" to="3ju5:~IFile.getFileSystem():jetbrains.mps.vfs.openapi.FileSystem" resolve="getFileSystem" />
+                          <ref role="37wK5l" to="3ju5:~IFile.getFileSystem():jetbrains.mps.vfs.FileSystem" resolve="getFileSystem" />
                         </node>
                       </node>
                     </node>

@@ -15,119 +15,39 @@
  */
 package jetbrains.mps.ide.vfs;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.fileTypes.FileTypeManager;
-import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.SafeWriteRequestor;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.newvfs.RefreshQueue;
+import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.CachingContext;
-import jetbrains.mps.vfs.CachingFile;
-import jetbrains.mps.vfs.DefaultCachingContext;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.IFile;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import jetbrains.mps.vfs.IFileSystem;
+import jetbrains.mps.vfs.VFSManager;
+import jetbrains.mps.vfs.refresh.CachingFileSystem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Collectors;
+@Deprecated
+@ToRemove(version = 2019.1)
+public final class IdeaFileSystem extends BaseIdeaFileSystem implements SafeWriteRequestor, ApplicationComponent, FileSystem, IFileSystem, CachingFileSystem {
+  private FileSystem myOldFileSystem;
 
-/**
- * @author Evgeny Gerashchenko
- */
-public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequestor {
-  private static final Logger LOG = LogManager.getLogger(IdeaFileSystem.class);
-
-  private final FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
-
-  public IdeaFileSystem() {
-  }
-
-  @Override
-  public void refresh(@NotNull CachingContext context, Collection<CachingFile> files) {
-    Set<VirtualFile> virtualFiles = files.stream().map(file -> ((IdeaFile) file).getVirtualFile()).filter(Objects::nonNull).collect(Collectors.toSet());
-    virtualFiles.forEach(VirtualFile::getChildren); // to enforce refresh for this file
-    RefreshQueue.getInstance().refresh(!context.isSynchronous(), context.isRecursive(), null, virtualFiles);
+  public IdeaFileSystem(FileSystemListenersContainer listenerContainer, JarIdeaFileSystem fs1, LocalIdeaFileSystem fs2) {
+    super(listenerContainer);
   }
 
   @NotNull
   @Override
   public IdeaFile getFile(@NotNull String path) {
-    return new IdeaFile(this, path);
-  }
-
-  @Override
-  public void addListener(@NotNull FileSystemListener listener) {
-    myListeners.addListener(listener);
-  }
-
-  @Override
-  public void removeListener(@NotNull FileSystemListener listener) {
-    myListeners.removeListener(listener);
-  }
-
-  public FileSystemListenersContainer getListenersContainer() {
-    return myListeners;
-  }
-
-  @Override
-  public boolean isFileIgnored(@NotNull String name) {
-    return FileTypeManager.getInstance().isFileIgnored(name);
-  }
-
-  @Override
-  public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles) {
-    final List<IFile> newFiles = new ArrayList<>();
-    final List<IFile> updatedFiles = new ArrayList<>();
-    for (IFile file : writtenFiles) {
-      if (file.exists()) {
-        updatedFiles.add(file);
-      } else {
-        newFiles.add(file);
-      }
-    }
-    ApplicationManager.getApplication().invokeLater(new IdeaWriteAction(() -> {
-      // Recreate files using VFS
-      for (IFile file : newFiles) {
-        OutputStream out = null;
-        try {
-          // No need to close InputStream: it will be closed by loadFromStream()
-          byte[] content = StreamUtil.loadFromStream(new FileInputStream(file.getPath()));
-
-          out = file.openOutputStream();
-          out.write(content);
-        } catch (IOException e) {
-          LOG.error(String.format("Failed to re-create file '%s'", file), e);
-        } finally {
-          FileUtil.closeFileSafe(out);
-        }
-      }
-
-      // Refresh added files
-      Set<CachingFile> ideaFiles = updatedFiles.stream()
-          .filter(file -> file instanceof IdeaFile)
-          .map(file -> ((IdeaFile) file)).collect(Collectors.toSet());
-      refresh(new DefaultCachingContext(true, false), ideaFiles);
-    })
-    );
-  }
-
-  @Override
-  public boolean runWriteTransaction(@NotNull Runnable r) {
-    final IdeaWriteAction action = new IdeaWriteAction(r);
-    ApplicationManager.getApplication().invokeAndWait(action, ModalityState.defaultModalityState());
-    return action.getFailure() == null;
+    path = FileUtil.normalize(path);
+    String fsId = path.contains("!") ? VFSManager.JAR_FS : VFSManager.FILE_FS;
+    IFileSystem fileSystem = VFSManager.getInstance().getFileSystem(fsId);
+    assert fileSystem instanceof BaseIdeaFileSystem;
+    return ((BaseIdeaFileSystem) fileSystem).getFile(path);
   }
 
   /**
@@ -137,35 +57,38 @@ public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequesto
    */
   @NotNull
   public IFile fromVirtualFile(@NotNull VirtualFile virtualFile) {
-    return new IdeaFile(this, virtualFile);
-  }
-
-  private static class IdeaWriteAction implements Runnable {
-    private final Runnable myDelegate;
-    private Exception myException;
-
-    public IdeaWriteAction(@NotNull Runnable delegate) {
-      myDelegate = delegate;
-    }
-
-    @Override
-    public void run() {
-      try {
-        ApplicationManager.getApplication().runWriteAction(myDelegate);
-      } catch (Exception ex) {
-        LOG.error(ex.getMessage(), ex);
-        myException = ex;
-      }
-    }
-
-    public Exception getFailure() {
-      return myException;
-    }
+    return getFile(FileUtil.normalize(virtualFile.getPath()));
   }
 
   @NotNull
   @Override
   public String getComponentName() {
     return "IdeaFileSystemProvider";
+  }
+
+  @Override
+  public void initComponent() {
+    myOldFileSystem = FileSystemExtPoint.getFS();
+    FileSystemExtPoint.setFS(this);
+  }
+
+  @Override
+  public void disposeComponent() {
+    if (myOldFileSystem != null) {
+      FileSystemExtPoint.setFS(myOldFileSystem);
+      myOldFileSystem = null;
+    }
+  }
+
+  @Nullable
+  @Override
+  VirtualFileSystem getUnderlyingFS() {
+    throw new UnsupportedOperationException("Should not be invoked on IdeaFileSystem");
+  }
+
+  @NotNull
+  @Override
+  String getProtocol() {
+    throw new UnsupportedOperationException("Should not be invoked on IdeaFileSystem");
   }
 }

@@ -3,6 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -30,7 +32,8 @@
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
-    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" implicit="true" />
+    <import index="asz6" ref="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1411,17 +1414,17 @@
               </node>
             </node>
           </node>
-          <node concept="2YIFZM" id="KL8AqljyKH" role="2GsD0m">
-            <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
-            <ref role="37wK5l" to="v9gs:4937uxYQnqa" resolve="getBootstrapPaths" />
+          <node concept="2YIFZM" id="4TNBaKVrsVy" role="2GsD0m">
+            <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+            <ref role="37wK5l" to="18ew:~PathManager.getBootstrapPaths():java.util.Collection" resolve="getBootstrapPaths" />
           </node>
         </node>
         <node concept="3clFbF" id="5mza6QqhEZj" role="3cqZAp">
           <node concept="1rXfSq" id="5mza6QqhEZi" role="3clFbG">
             <ref role="37wK5l" node="6rx4kZDk8ph" resolve="addLib" />
-            <node concept="2YIFZM" id="DMIDDhgEJx" role="37wK5m">
-              <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
-              <ref role="37wK5l" to="v9gs:4937uxYQnre" resolve="getLanguagesPath" />
+            <node concept="2YIFZM" id="4TNBaKVrsVz" role="37wK5m">
+              <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+              <ref role="37wK5l" to="18ew:~PathManager.getLanguagesPath():java.lang.String" resolve="getLanguagesPath" />
             </node>
           </node>
         </node>
@@ -1442,32 +1445,12 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="5hfNQWynXUh" role="3clF47">
-        <node concept="3cpWs8" id="5hfNQWynZeF" role="3cqZAp">
-          <node concept="3cpWsn" id="5hfNQWynZeG" role="3cpWs9">
-            <property role="TrG5h" value="workbenchPath" />
-            <node concept="17QB3L" id="DMIDDhgGfE" role="1tU5fm" />
-            <node concept="3cpWs3" id="5hfNQWynZeJ" role="33vP2m">
-              <node concept="Xl_RD" id="5hfNQWynZeK" role="3uHU7w">
-                <property role="Xl_RC" value="workbench" />
-              </node>
-              <node concept="3cpWs3" id="5hfNQWynZeL" role="3uHU7B">
-                <node concept="10M0yZ" id="5hfNQWynZeM" role="3uHU7w">
-                  <ref role="1PxDUh" to="guwi:~File" resolve="File" />
-                  <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
-                </node>
-                <node concept="2YIFZM" id="5hfNQWynZeN" role="3uHU7B">
-                  <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
-                  <ref role="37wK5l" to="v9gs:4937uxYQn9c" resolve="getHomePath" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="5hfNQWynZeU" role="3cqZAp">
           <node concept="1rXfSq" id="5hfNQWynZeV" role="3clFbG">
             <ref role="37wK5l" node="6rx4kZDk8ph" resolve="addLib" />
-            <node concept="37vLTw" id="5hfNQWynZeW" role="37wK5m">
-              <ref role="3cqZAo" node="5hfNQWynZeG" resolve="workbenchPath" />
+            <node concept="2YIFZM" id="7F6rovmpvXz" role="37wK5m">
+              <ref role="37wK5l" to="18ew:~PathManager.getWorkbenchPath():java.lang.String" resolve="getWorkbenchPath" />
+              <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
             </node>
           </node>
         </node>
@@ -4781,6 +4764,16 @@
                 </node>
               </node>
             </node>
+            <node concept="3SKdUt" id="21bannvQpty" role="3cqZAp">
+              <node concept="3SKdUq" id="21bannvQpt$" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME PathManager.getPluginsPath is a dependency to j.m.tool.common I'd like to get rid of (this class has access to MPS kernel classes" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="21bannvQvvw" role="3cqZAp">
+              <node concept="3SKdUq" id="21bannvQvvy" role="3SKWNk">
+                <property role="3SKdUp" value="      and doesn't need to depend from tool.common at all), but I didn't find a proper alternative. Alex P., could you please help me here?" />
+              </node>
+            </node>
             <node concept="1DcWWT" id="3FVfMMI1n6k" role="3cqZAp">
               <node concept="3clFbS" id="3FVfMMI1n6m" role="2LFqv$">
                 <node concept="3cpWs8" id="3FVfMMI1qAv" role="3cqZAp">
@@ -4826,8 +4819,8 @@
                   <node concept="3cpWsn" id="4937uxYQns1" role="3cpWs9">
                     <property role="TrG5h" value="pluginCL" />
                     <property role="3TUv4t" value="false" />
-                    <node concept="3uibUv" id="4937uxYQns2" role="1tU5fm">
-                      <ref role="3uigEE" to="d6hn:5QbKaIbm7l0" resolve="UrlClassLoader" />
+                    <node concept="3uibUv" id="7F6rovmp$E$" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~ClassLoader" resolve="ClassLoader" />
                     </node>
                     <node concept="10Nm6u" id="4937uxYQns3" role="33vP2m" />
                   </node>
@@ -5092,13 +5085,13 @@
               <node concept="2YIFZM" id="3FVfMMI1nv5" role="1DdaDG">
                 <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                 <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-                <node concept="2YIFZM" id="3FVfMMI1nB$" role="37wK5m">
-                  <ref role="37wK5l" to="v9gs:4937uxYQng3" resolve="getPluginsPath" />
-                  <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
+                <node concept="2YIFZM" id="4TNBaKVrsVu" role="37wK5m">
+                  <ref role="37wK5l" to="asz6:4937uxYQng3" resolve="getPluginsPath" />
+                  <ref role="1Pybhc" to="asz6:4937uxYQn6D" resolve="PathManager" />
                 </node>
-                <node concept="2YIFZM" id="3FVfMMI1Kwt" role="37wK5m">
-                  <ref role="37wK5l" to="v9gs:3FVfMMI1J$9" resolve="getPreInstalledPluginsPath" />
-                  <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
+                <node concept="2YIFZM" id="4TNBaKVrsVv" role="37wK5m">
+                  <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+                  <ref role="37wK5l" to="18ew:~PathManager.getPreInstalledPluginsPath():java.lang.String" resolve="getPreInstalledPluginsPath" />
                 </node>
               </node>
             </node>
@@ -5251,6 +5244,16 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="7F6rovmpCRd" role="3cqZAp">
+          <node concept="3SKdUq" id="7F6rovmpCRf" role="3SKWNk">
+            <property role="3SKdUp" value="XXX why don't we use myRootClassLoader as a parent CL here? &lt;mps-home&gt;/lib seems to be proper parent CL for a plugin." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7F6rovmpHJX" role="3cqZAp">
+          <node concept="3SKdUq" id="7F6rovmpHJZ" role="3SKWNk">
+            <property role="3SKdUp" value="    HOWEVER, the judgement above is just a guess, see EnvironmentBase.createRootClassLoader" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="4937uxYQnu2" role="3cqZAp">
           <node concept="2ShNRf" id="4937uxYQnu3" role="3cqZAk">
             <node concept="1pGfFk" id="4937uxYQnu4" role="2ShVmc">
@@ -5270,8 +5273,8 @@
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="4937uxYQnu9" role="3clF45">
-        <ref role="3uigEE" to="d6hn:5QbKaIbm7l0" resolve="UrlClassLoader" />
+      <node concept="3uibUv" id="7F6rovmp$mH" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~ClassLoader" resolve="ClassLoader" />
       </node>
       <node concept="37vLTG" id="4937uxYQnua" role="3clF46">
         <property role="TrG5h" value="lib" />
@@ -5287,7 +5290,7 @@
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2Koq9V0qGPu" role="3clF47">
         <node concept="3cpWs6" id="2Koq9V0rXbG" role="3cqZAp">
-          <node concept="2YIFZM" id="2ky3Rs1tnLI" role="3cqZAk">
+          <node concept="2YIFZM" id="4TNBaKVramd" role="3cqZAk">
             <ref role="37wK5l" to="v9gs:3eUNqOk8DM1" resolve="fromSet" />
             <ref role="1Pybhc" to="v9gs:57xhZj4tkXA" resolve="SetLibraryContributor" />
             <node concept="Xl_RD" id="2ky3Rs1tnLJ" role="37wK5m">
@@ -5375,9 +5378,9 @@
         </node>
         <node concept="3clFbH" id="2Koq9V0raYH" role="3cqZAp" />
         <node concept="3cpWs6" id="2Koq9V0rahV" role="3cqZAp">
-          <node concept="2YIFZM" id="3eUNqOk8Kbw" role="3cqZAk">
-            <ref role="1Pybhc" to="v9gs:57xhZj4tkXA" resolve="SetLibraryContributor" />
+          <node concept="2YIFZM" id="4TNBaKVramc" role="3cqZAk">
             <ref role="37wK5l" to="v9gs:3eUNqOk8vfn" resolve="fromMap" />
+            <ref role="1Pybhc" to="v9gs:57xhZj4tkXA" resolve="SetLibraryContributor" />
             <node concept="Xl_RD" id="2ky3Rs1tqla" role="37wK5m">
               <property role="Xl_RC" value="Library contributor" />
             </node>

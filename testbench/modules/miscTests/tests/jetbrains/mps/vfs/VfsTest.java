@@ -17,9 +17,13 @@ package jetbrains.mps.vfs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
+import jetbrains.mps.ide.vfs.JarIdeaFileSystem;
+import jetbrains.mps.ide.vfs.LocalIdeaFileSystem;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentAware;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -61,7 +65,8 @@ public class VfsTest implements EnvironmentAware {
   private static void IDEA_FS_TEST(final Runnable testRunnable) {
     FileSystem oldFS = FileSystemExtPoint.getFS();
     try {
-      FileSystemExtPoint.setFS(new IdeaFileSystem());
+      FileSystemListenersContainer lc = new FileSystemListenersContainer();
+      FileSystemExtPoint.setFS(new IdeaFileSystem(lc, new JarIdeaFileSystem(lc), new LocalIdeaFileSystem(lc)));
       final Throwable[] ex = new Throwable[1];
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         @Override
@@ -97,7 +102,7 @@ public class VfsTest implements EnvironmentAware {
   }
 
   private static void doBaseVfsTest() {
-    IFile tmpDir = IFileUtils.createTmpDir();
+    IFile tmpDir = IFileUtil.createTmpDir();
     assertTrue("Temp dir does not exist", tmpDir.exists());
     assertTrue("Created temp directory is not directory", tmpDir.isDirectory());
     assertFalse("Could create file with the same name as the directory", tmpDir.createNewFile());
@@ -161,7 +166,7 @@ public class VfsTest implements EnvironmentAware {
     assertEquals(jarRoot.getChildren().size(), 3);
     assertTrue(jarRoot.isDirectory());
     assertTrue(jarRoot.isReadOnly());
-    assertTrue(fileSystem.isPackaged(jarRoot));
+    assertTrue(jarRoot.isPackaged());
     IFile readmeFile = jarRoot.getDescendant("README");
     assertFalse(readmeFile.isDirectory());
     try {

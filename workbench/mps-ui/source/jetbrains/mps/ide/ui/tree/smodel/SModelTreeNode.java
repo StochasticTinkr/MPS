@@ -438,7 +438,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
     @Override
     public String calculateText(SModelTreeNode treeNode) {
       SModel model = treeNode.getModel();
-      return model == null ? "<null>" : model.getName().getSimpleName();
+      return model == null ? "<null>" : model.getName().getShortNameWithStereotype();
     }
   }
 }

@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import java.io.IOException;
 
@@ -34,7 +34,7 @@ public class MPSJavaSrcDataSource extends FolderDataSource {
     try {
       for (String stream : getAvailableStreams()) {
         IFile file = getFile(stream);
-        String code = IFileUtils.getTextContents(file);
+        String code = IFileUtil.getTextContents(file);
         pkg = JavaParser.peekPackage(code);
       }
     } catch (IOException e) {
