@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -277,8 +277,26 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
         confirmUndo = UndoConfirmationPolicy.REQUEST_CONFIRMATION;
       }
     }
-    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(wrapTopCommandRunnable(r, project)));
-    CommandProcessor.getInstance().executeCommand(project.getProject(), myPlatformWriteHelper.withPlatformWrite(withModelLock), name, groupId, confirmUndo);
+    Runnable cmd = wrapTopCommandRunnable(r, project);
+    if (canWrite()) {
+      // see https://youtrack.jetbrains.com/issue/MPS-29602, we could be out of a command (isInsideCommand() == false, but still in a write
+      // e.g. dispatching post-write action notifications. We shall avoid write action notification dispatch until the previous one is over,
+      // we don't expect implementations of WriteActionListener to be re-enterable.
+      // Though it's tempting to wrap with platform write here
+      //   cmd = myPlatformWriteHelper.withPlatformWrite(cmd)
+      // -- doesn't seem to hurt to have and extra platform write (canWrite tells us state of our model RW lock only, not combined with that of IDEA).
+      //    myPlatformWriteActionTracker in TryRunPlatformWriteHelper merely counts write attempts, and Application.runWriteAction is
+      //    re-enterable and a precondition for a command anyway
+      // it seems to be wrong as it may lead to improper lock sequence and deadlock. Ussually we grab platform write first, then MPS write. If
+      // we happen to get here with MPS write but without IDEA's, we might get into a deadlock, which is far more complicated to discover than
+      // a failed assertion.
+      ApplicationManager.getApplication().assertWriteAccessAllowed();
+      // just go on with cmd as is
+    } else {
+      final LockRunnable withModelLock = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(cmd));
+      cmd = myPlatformWriteHelper.withPlatformWrite(withModelLock);
+    }
+    CommandProcessor.getInstance().executeCommand(project.getProject(), cmd, name, groupId, confirmUndo);
   }
 
   /*package*/ void runUndoTransparentCommand(Runnable r, MPSProject project) {
