@@ -25,7 +25,7 @@ public class GoToNodeById_Action extends BaseAction {
 
   public GoToNodeById_Action() {
     super("Go to Node by ID", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
   @Override
