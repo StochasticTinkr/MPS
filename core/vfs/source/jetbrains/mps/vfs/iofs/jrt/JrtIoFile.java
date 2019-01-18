@@ -23,6 +23,7 @@ import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
 import jetbrains.mps.vfs.util.PathAssert;
+import jetbrains.mps.vfs.util.PathUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -172,7 +173,7 @@ public class JrtIoFile implements IFile {
   @NotNull
   @Override
   public IFile getDescendant(@NotNull String suffix) {
-    IFile result = IFileUtil.getDescendant(this, suffix);
+    IFile result = IFileUtil.getDescendant(this, PathUtil.toSystemIndependent(suffix));
     if (result == null) {
       throw new IllegalStateException("Can't find descendant " + suffix + " of file " + getPath());
     }

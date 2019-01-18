@@ -37,6 +37,7 @@ import jetbrains.mps.vfs.refresh.CachingFileSystem;
 import jetbrains.mps.vfs.refresh.FileListener;
 import jetbrains.mps.vfs.refresh.FileListenerAdapter;
 import jetbrains.mps.vfs.util.PathAssert;
+import jetbrains.mps.vfs.util.PathUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -177,7 +178,7 @@ public class IdeaFile implements IFile, CachingFile {
   @Override
   @NotNull
   public IdeaFile getDescendant(@NotNull String suffix) {
-    IFile result = IFileUtil.getDescendant(this, suffix);
+    IFile result = IFileUtil.getDescendant(this, PathUtil.toSystemIndependent(suffix));
     if (result == null) {
       throw new IllegalStateException("Can't find descendant " + suffix + " of file " + getPath());
     }
