@@ -183,7 +183,7 @@ class LocalFile implements IFile {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
-    IFile result = IFileUtil.getDescendant(this, suffix);
+    IFile result = IFileUtil.getDescendant(this, PathUtil.toSystemIndependent(suffix));
     if (result == null) {
       throw new IllegalStateException("Can't find descendant " + suffix + " of file " + getPath());
     }

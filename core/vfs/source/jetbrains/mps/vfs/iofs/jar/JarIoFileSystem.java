@@ -40,7 +40,7 @@ public class JarIoFileSystem implements IFileSystem {
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
-    new PathAssert(path).absolute().noDots().osDependentPath();
+    new PathAssert(path).absolute().noDots().osIndependentPath();
     int index = path.indexOf('!');
     assert index > 0;
     String jarPath = path.substring(0, index);

@@ -123,11 +123,7 @@ public final class MacrosFactory implements MacroHelper.Source {
           anchorFolder = anchorFolder.getParent();
         }
         String modelRelativePath = removePrefix(path);
-        IFile descendant = IFileUtil.getDescendant(anchorFolder, modelRelativePath);
-        if (descendant == null) {
-          throw new IllegalStateException("Can't find descendant " + modelRelativePath + " of file " + anchorFolder.getPath());
-        }
-        return descendant.getPath();
+        return anchorFolder.getDescendant(modelRelativePath).getPath();
       }
 
       return super.expand(path, anchorFile);
