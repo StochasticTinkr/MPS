@@ -26,7 +26,8 @@ import jetbrains.mps.persistence.FilePerRootDataSourceFactoryRule;
  * Service provider with MPS own data source factories.
  *
  * Despite being a {@link CoreComponent}, is not supposed to get accessed directly through {@link jetbrains.mps.components.ComponentHost#findComponent(Class)},
- * one shall access and query {@link DataSourceFactoryRuleService} instead. This component merely registers standard MPS data source factories.
+ * One shall access and query {@link DataSourceFactoryRuleService} instead.
+ * This component merely registers standard MPS data source factories.
  *
  * @see DataSourceFactoryRuleService
  * @see DataSourceFactoryFromName

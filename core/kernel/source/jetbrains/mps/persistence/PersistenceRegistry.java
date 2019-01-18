@@ -40,6 +40,7 @@ import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
@@ -86,20 +87,24 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     myDataSourceRegistry = dsRegistry;
   }
 
+  /**
+   * access the component using <code>ComponentHost#findComponent(PersitenceFacade.class)</code>
+   */
+  @Deprecated
   public static PersistenceRegistry getInstance() {
     return (PersistenceRegistry) INSTANCE;
   }
 
   @Override
-  public ModelRootFactory getModelRootFactory(String type) {
-    if (type == null || type.length() == 0) {
-      throw new IllegalArgumentException("type");
+  public ModelRootFactory getModelRootFactory(@NotNull String type) {
+    if (type.length() == 0) {
+      throw new IllegalArgumentException("Wrong type requested :" + type);
     }
     return myRootFactories.get(type);
   }
 
   @Override
-  public void setModelRootFactory(String type, ModelRootFactory factory) {
+  public void setModelRootFactory(@NotNull String type, @Nullable ModelRootFactory factory) {
     if (factory == null) {
       myRootFactories.remove(type);
     } else {
@@ -109,8 +114,14 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   @Deprecated
   @Override
-  public ModelFactory getModelFactory(String extension) {
+  public ModelFactory getModelFactory(@Nullable String extension) {
     return myModelFactoryService.getDefaultModelFactory(FileExtensionDataSourceType.of(extension));
+  }
+
+  @Nullable
+  @Override
+  public ModelFactory getModelFactory(@NotNull ModelFactoryType type) {
+    return myModelFactoryService.getFactoryByType(type);
   }
 
   @Nullable
@@ -121,8 +132,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Deprecated
   @Override
   public ModelFactory getDefaultModelFactory() {
-    String defaultExt = MPSExtentions.MODEL;
-    return getModelFactory(defaultExt);
+    return getModelFactory(PreinstalledModelFactoryTypes.PLAIN_XML);
   }
 
   @NotNull

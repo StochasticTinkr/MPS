@@ -25,5 +25,8 @@ import org.jetbrains.annotations.NotNull;
  * @since 28/12/16
  */
 public interface ModelFactoryType {
+  /**
+   * @return the user-friendly description of the underlying format
+   */
   @NotNull String getFormatTitle();
 }

@@ -30,7 +30,8 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 /**
  * Data source factory base for factories based
- * on the different file extensions :
+ * on the different file extensions.
+ *
  * @see FileExtensionDataSourceType
  * @author apyshkin
  * @since 27/12/16

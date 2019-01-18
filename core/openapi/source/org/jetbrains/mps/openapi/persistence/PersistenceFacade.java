@@ -31,10 +31,11 @@ import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import java.util.Set;
 
 /**
- * Represents a singleton registry of model and model root factories.
+ * Represents a singleton registry of model, model root factories, find usages and navigation participants.
+ * Also provides a bunch of methods to transform String to model refs/module refs/ node ids and vice versa.
+ *
  */
 public abstract class PersistenceFacade {
-
   protected PersistenceFacade() {
   }
 
@@ -55,33 +56,39 @@ public abstract class PersistenceFacade {
   /**
    * Retrieves the factory associated with the given type
    */
-  public abstract ModelRootFactory getModelRootFactory(String type);
+  public abstract ModelRootFactory getModelRootFactory(@NotNull String type);
 
   /**
    * Registers the factory with the given type, overwriting potential earlier registration.
    *
-   * @param factory The factory to register, null to clear the registration for the given type.
+   * @param factory The factory to register, <code>null</code> to clear the registration for the given type.
    */
-  public abstract void setModelRootFactory(String type, ModelRootFactory factory);
+  public abstract void setModelRootFactory(@NotNull String type, @Nullable ModelRootFactory factory);
 
   /**
    * Retrieves the factory associated with the given file extension.
-   * @deprecated use {@code ModelFactoryRegistry#getDefault(DataSourceType)}
-   *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
-   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService</code>
+   * @deprecated use {@link PersistenceFacade#getModelFactory(ModelFactoryType)} instead
    */
   @ToRemove(version = 181)
   @Deprecated
   public abstract ModelFactory getModelFactory(@Nullable String extension);
 
+  /**
+   * @return the ModelFactory which was registered <b>last</b>.
+   * Use <code>ModelFactoryRegister</code> extension point in order to register a custom ModelFactory.
+   */
+  @Nullable
+  public abstract ModelFactory getModelFactory(@NotNull ModelFactoryType type);
+
+  /**
+   * @return the ModelFactory which was registered last and has in its {@link ModelFactory#getPreferredDataSourceTypes()} the dataSourceType.
+   */
   @Nullable
   public abstract ModelFactory getModelFactory(@NotNull DataSourceType dataSourceType);
 
   /**
    * Retrieves the factory for default MPS storage format (xml-based).
-   * @deprecated unclear contract, use {@code ModelFactoryRegistry#getDefault(DataSourceType)}
-   *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
-   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService</code>
+   * @deprecated unclear contract, use {@code ModelFactoryRegistry#getDefault(DataSourceType)} + <code>PreinstalledModelFactoryTypes.PLAIN_XML</code>
    */
   @ToRemove(version = 181)
   @Deprecated
