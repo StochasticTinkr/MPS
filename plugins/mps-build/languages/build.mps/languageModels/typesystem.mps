@@ -267,6 +267,7 @@
       </concept>
       <concept id="1195214364922" name="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" flags="ig" index="18kY7G" />
       <concept id="1210784285454" name="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" flags="ng" index="3Cnw8n">
+        <property id="1216127910019" name="applyImmediately" index="ARO6o" />
         <reference id="1216388525179" name="quickFix" index="QpYPw" />
       </concept>
       <concept id="1174642788531" name="jetbrains.mps.lang.typesystem.structure.ConceptReference" flags="ig" index="1YaCAy">
@@ -318,6 +319,9 @@
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
+      <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
+        <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
@@ -3782,6 +3786,71 @@
     <node concept="1YaCAy" id="3wV6xYBZv8p" role="1YuTPh">
       <property role="TrG5h" value="plugin" />
       <ref role="1YaFvo" to="kdzh:5HVSRHdUrHI" resolve="BuildMpsLayout_Plugin" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="A39Wmmu2mY">
+    <property role="TrG5h" value="check_PackagingTypeIsSet" />
+    <node concept="3clFbS" id="A39Wmmu2mZ" role="18ibNy">
+      <node concept="3clFbJ" id="A39Wmmu2vg" role="3cqZAp">
+        <node concept="2OqwBi" id="A39Wmmu3zC" role="3clFbw">
+          <node concept="2OqwBi" id="A39Wmmu2GR" role="2Oq$k0">
+            <node concept="1YBJjd" id="A39Wmmu2vs" role="2Oq$k0">
+              <ref role="1YBMHb" node="A39Wmmu2n1" resolve="plugin" />
+            </node>
+            <node concept="3TrEf2" id="A39Wmmu2Xv" role="2OqNvi">
+              <ref role="3Tt5mk" to="kdzh:36cV00CpqRw" resolve="packagingType" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="A39Wmmu4o_" role="2OqNvi" />
+        </node>
+        <node concept="3clFbS" id="A39Wmmu2vi" role="3clFbx">
+          <node concept="a7r0C" id="A39Wmmu4qz" role="3cqZAp">
+            <node concept="3Cnw8n" id="A39Wmmu8Pi" role="2OEOjU">
+              <property role="ARO6o" value="true" />
+              <ref role="QpYPw" node="A39Wmmu4so" resolve="SetPackagingTypeToAuto" />
+            </node>
+            <node concept="Xl_RD" id="A39Wmmu4qP" role="a7wSD">
+              <property role="Xl_RC" value="Packaging type is not set, please change it to auto" />
+            </node>
+            <node concept="1YBJjd" id="A39Wmmu4rT" role="2OEOjV">
+              <ref role="1YBMHb" node="A39Wmmu2n1" resolve="plugin" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="A39Wmmu2n1" role="1YuTPh">
+      <property role="TrG5h" value="plugin" />
+      <ref role="1YaFvo" to="kdzh:5HVSRHdUrHI" resolve="BuildMpsLayout_Plugin" />
+    </node>
+  </node>
+  <node concept="Q5z_Y" id="A39Wmmu4so">
+    <property role="TrG5h" value="SetPackagingTypeToAuto" />
+    <node concept="Q5ZZ6" id="A39Wmmu4sp" role="Q6x$H">
+      <node concept="3clFbS" id="A39Wmmu4sq" role="2VODD2">
+        <node concept="3clFbF" id="A39Wmmu4sI" role="3cqZAp">
+          <node concept="37vLTI" id="A39Wmmu8yF" role="3clFbG">
+            <node concept="2ShNRf" id="A39Wmmu8D2" role="37vLTx">
+              <node concept="3zrR0B" id="A39Wmmu8Bl" role="2ShVmc">
+                <node concept="3Tqbb2" id="A39Wmmu8Bm" role="3zrR0E">
+                  <ref role="ehGHo" to="kdzh:36cV00CpqQx" resolve="BuildMpsLayout_AutoPluginLayoutType" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="A39Wmmu4Ys" role="37vLTJ">
+              <node concept="1PxgMI" id="A39Wmmu4M6" role="2Oq$k0">
+                <node concept="chp4Y" id="A39Wmmu4ML" role="3oSUPX">
+                  <ref role="cht4Q" to="kdzh:5HVSRHdUrHI" resolve="BuildMpsLayout_Plugin" />
+                </node>
+                <node concept="Q6c8r" id="A39Wmmu4sH" role="1m5AlR" />
+              </node>
+              <node concept="3TrEf2" id="A39Wmmu6Nd" role="2OqNvi">
+                <ref role="3Tt5mk" to="kdzh:36cV00CpqRw" resolve="packagingType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

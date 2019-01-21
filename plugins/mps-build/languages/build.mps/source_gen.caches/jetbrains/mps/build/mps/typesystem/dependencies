@@ -73,6 +73,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
+  <dependency className="jetbrains.mps.build.mps.typesystem.SetPackagingTypeToAuto_QuickFix">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
+  </dependency>
   <dependency className="jetbrains.mps.build.mps.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.build.mps.typesystem.IdeaPluginIsInLayout_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.build.mps.typesystem.check_BuildMpsLayout_ModuleXml_CustomJarLocation_NonTypesystemRule" />
@@ -86,6 +95,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.typesystem.check_ModulesImport_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.build.mps.typesystem.check_MpsTips_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.build.mps.typesystem.check_PackagingOfCompiledOutOfMPSModulesInPlugin_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.build.mps.typesystem.check_PackagingTypeIsSet_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
@@ -292,6 +302,20 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.typesystem.check_PackagingTypeIsSet_NonTypesystemRule">
+    <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
+    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />

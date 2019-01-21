@@ -55,5 +55,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_PackagingOfCompiledOutOfMPSModulesInPlugin_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_PackagingTypeIsSet_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
   }
 }
