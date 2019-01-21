@@ -1279,16 +1279,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2pNNFK" id="7aYn41gUss2" role="3o6s8t">
-                  <property role="qg3DV" value="true" />
-                  <property role="2pNNFO" value="jvmarg" />
-                  <node concept="2pNUuL" id="7aYn41gUss3" role="2pNNFR">
-                    <property role="2pNUuO" value="value" />
-                    <node concept="2pMdtt" id="7aYn41gUss4" role="2pMdts">
-                      <property role="2pMdty" value="-XX:+HeapDumpOnOutOfMemoryError" />
-                    </node>
-                  </node>
-                </node>
                 <node concept="2pNNFK" id="7aYn41gUsuj" role="3o6s8t">
                   <property role="qg3DV" value="true" />
                   <property role="2pNNFO" value="jvmarg" />
@@ -1377,7 +1367,7 @@
                   <node concept="2pNUuL" id="3qWAZKHym_J" role="2pNNFR">
                     <property role="2pNUuO" value="value" />
                     <node concept="2pMdtt" id="3qWAZKHym_K" role="2pMdts">
-                      <property role="2pMdty" value="${mps.l1ibraries.path.string}" />
+                      <property role="2pMdty" value="${mps.libraries.path.string}" />
                     </node>
                   </node>
                 </node>
