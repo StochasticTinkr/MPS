@@ -54,6 +54,12 @@ public final class QualifiedPath {
     return myPath;
   }
 
+  @Override
+  public String toString() {
+    //made not equal to serialize() not to provoke clients to use toString/deserialize pair
+    return "QP{" +myFsId + '#' + myPath + '}';
+  }
+
   @NotNull
   public String serialize(@Nullable MacroProcessor mp) {
     return myFsId + FS_DELIM + (mp == null ? myPath : mp.shrinkPath(myPath));
