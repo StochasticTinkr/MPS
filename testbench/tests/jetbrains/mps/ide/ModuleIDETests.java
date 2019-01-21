@@ -27,6 +27,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.refresh.CachingFile;
 import jetbrains.mps.vfs.refresh.DefaultCachingContext;
@@ -42,9 +43,11 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Tests for Rename and Delete actions.
@@ -339,6 +342,48 @@ public class ModuleIDETests extends ModuleInProjectTest {
       moduleSourceDir.refresh(new DefaultCachingContext(true, true));
       Assert.assertFalse(moduleSourceDir.exists());
       Assert.assertFalse(myProject.getProjectModules().contains(lang));
+    });
+  }
+
+  @Test
+  public void deleteLangFolder() {
+    String moduleName = getNewModuleName();
+    Reference<Language> langRef = new Reference<>();
+    AtomicReference<String> newDirInProject = new AtomicReference<>();
+    invokeInCommand(() -> {
+      newDirInProject.set(createNewDirInProject());
+      langRef.set(NewModuleUtil.createLanguage(moduleName, newDirInProject.get(), myProject));
+    });
+    invokeInCommand(() -> {
+      @NotNull Language lang = langRef.get();
+      FileUtil.delete(Paths.get(newDirInProject.get()).toFile());
+      CachingFile moduleSourceDir = (CachingFile) lang.getModuleSourceDir();
+      Assert.assertNotNull(moduleSourceDir);
+      moduleSourceDir.refresh(new DefaultCachingContext(true, true));
+      Assert.assertFalse(moduleSourceDir.exists());
+      Assert.assertFalse("The language stayed in the project", myProject.getProjectModules().contains(lang));
+      Assert.assertNull("The language stayed in the repo", myProject.getRepository().getModule(lang.getModuleId()));
+    });
+  }
+
+  @Test
+  public void deleteSlnFolder() {
+    String moduleName = getNewModuleName();
+    Reference<Solution> slnRef = new Reference<>();
+    AtomicReference<String> newDirInProject = new AtomicReference<>();
+    invokeInCommand(() -> {
+      newDirInProject.set(createNewDirInProject());
+      slnRef.set(NewModuleUtil.createSolution(moduleName, newDirInProject.get(), myProject));
+    });
+    invokeInCommand(() -> {
+      @NotNull Solution sln = slnRef.get();
+      FileUtil.delete(Paths.get(newDirInProject.get()).toFile());
+      CachingFile moduleSourceDir = (CachingFile) sln.getModuleSourceDir();
+      Assert.assertNotNull(moduleSourceDir);
+      moduleSourceDir.refresh(new DefaultCachingContext(true, true));
+      Assert.assertFalse(moduleSourceDir.exists());
+      Assert.assertFalse("The solution stayed in the project", myProject.getProjectModules().contains(sln));
+      Assert.assertNull("The solution stayed in the repo", myProject.getRepository().getModule(sln.getModuleId()));
     });
   }
 
