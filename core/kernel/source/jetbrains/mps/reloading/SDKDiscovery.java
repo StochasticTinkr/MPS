@@ -15,19 +15,15 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SystemInfo;
-import jetbrains.mps.util.URLUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
 import jetbrains.mps.vfs.VFSManager;
-import jetbrains.mps.vfs.iofs.jar.JarIoFileSystem;
 import jetbrains.mps.vfs.iofs.jrt.JrtIoFileSystem;
 import jetbrains.mps.vfs.util.PathUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,12 +31,8 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.net.URLDecoder;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -54,7 +46,7 @@ import java.util.Set;
  */
 public class SDKDiscovery {
   public static List<QualifiedPath> discover() {
-    return findClasses(new File(System.getProperty("java.home")), false);
+    return findClasses(new File(System.getProperty("java.home")));
   }
 
   @Nullable
@@ -89,7 +81,7 @@ public class SDKDiscovery {
   private static final Logger LOG = LogManager.getLogger(SDKDiscovery.class);
 
   @NotNull
-  public static List<QualifiedPath> findClasses(@NotNull File file, boolean isJre) {
+  public static List<QualifiedPath> findClasses(@NotNull File file) {
     List<QualifiedPath> result = new ArrayList<>();
     VFSManager fManager = VFSManager.getInstance();
 
@@ -115,7 +107,7 @@ public class SDKDiscovery {
         }
       }
     } else {
-      for (File root : getJdkClassesRoots(file, isJre)) {
+      for (File root : getJdkClassesRoots(file,  !new File(file, "jre").exists())) {
         String path = getPath(root);
         String proto = VFSManager.FILE_FS;
         result.add(new QualifiedPath(proto, path));
