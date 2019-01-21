@@ -1279,6 +1279,36 @@
                     </node>
                   </node>
                 </node>
+                <node concept="2pNNFK" id="7aYn41gUss2" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="jvmarg" />
+                  <node concept="2pNUuL" id="7aYn41gUss3" role="2pNNFR">
+                    <property role="2pNUuO" value="value" />
+                    <node concept="2pMdtt" id="7aYn41gUss4" role="2pMdts">
+                      <property role="2pMdty" value="-XX:+HeapDumpOnOutOfMemoryError" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNNFK" id="7aYn41gUsuj" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="jvmarg" />
+                  <node concept="2pNUuL" id="7aYn41gUtjX" role="2pNNFR">
+                    <property role="2pNUuO" value="value" />
+                    <node concept="2pMdtt" id="7aYn41gUtjY" role="2pMdts">
+                      <property role="2pMdty" value="-Didea.config.path=${build.mps.config.path}" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNNFK" id="7aYn41gUtk9" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="jvmarg" />
+                  <node concept="2pNUuL" id="7aYn41gUu9Q" role="2pNNFR">
+                    <property role="2pNUuO" value="value" />
+                    <node concept="2pMdtt" id="7aYn41gUu9R" role="2pMdts">
+                      <property role="2pMdty" value="-Didea.system.path=${build.mps.system.path}" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="3o6iSG" id="6u4p9jnVkPu" role="3o6s8t" />
                 <node concept="2pNNFK" id="6u4p9jnVOKa" role="3o6s8t">
                   <property role="2pNNFO" value="classpath" />
@@ -1347,7 +1377,7 @@
                   <node concept="2pNUuL" id="3qWAZKHym_J" role="2pNNFR">
                     <property role="2pNUuO" value="value" />
                     <node concept="2pMdtt" id="3qWAZKHym_K" role="2pMdts">
-                      <property role="2pMdty" value="${mps.libraries.path.string}" />
+                      <property role="2pMdty" value="${mps.l1ibraries.path.string}" />
                     </node>
                   </node>
                 </node>

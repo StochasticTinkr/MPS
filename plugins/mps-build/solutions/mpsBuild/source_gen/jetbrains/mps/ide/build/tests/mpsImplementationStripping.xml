@@ -629,6 +629,9 @@
       <jvmarg value="-Xmx1024m" />
       <jvmarg value="-XX:MaxPermSize=256m" />
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
+      <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
+      <jvmarg value="-Didea.config.path=${build.mps.config.path}" />
+      <jvmarg value="-Didea.system.path=${build.mps.system.path}" />
       
       <classpath>
         <fileset dir="${build.tmp}">
@@ -638,7 +641,7 @@
       
       <env key="NO_FS_ROOTS_ACCESS_CHECK" value="true" />
       <sysproperty key="plugin.path" value="${mps.plugins.path.string}" />
-      <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
+      <sysproperty key="mps.libraries" value="${mps.l1ibraries.path.string}" />
       <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
       
       
