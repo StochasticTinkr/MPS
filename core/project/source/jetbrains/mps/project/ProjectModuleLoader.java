@@ -111,9 +111,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
         ModuleHandle handle = modulesMiner.loadModuleHandle(descriptorFile);
         handleToPath.put(handle, modulePath);
       } else {
-        // TODO listen to file location in the MPSProject
-        // AP : it is kind of strange having module watching for removing/changing its file descriptor and having someone else
-        // watching for the module creation. I believe everything which concerns the module file system watching must be done in one place.
         error(String.format("Can't load module from %s. File doesn't exist.", descriptorPath));
         fireModuleNotFound(modulePath);
       }

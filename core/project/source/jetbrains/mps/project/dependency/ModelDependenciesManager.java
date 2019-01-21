@@ -76,7 +76,7 @@ public class ModelDependenciesManager {
 
   private volatile Collection<SLanguage> myCachedDeps;
 
-  public ModelDependenciesManager(SModel model) {
+  public ModelDependenciesManager(@NotNull SModel model) {
     myModel = model;
   }
 
