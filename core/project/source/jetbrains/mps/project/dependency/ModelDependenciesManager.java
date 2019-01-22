@@ -241,6 +241,7 @@ public class ModelDependenciesManager {
 
     private final SRepository myRepository;
     private final ModelDependenciesManager myDepManager;
+    private boolean myIsDisposed = false;
 
     private MyModuleWatcher(ModelDependenciesManager mdm, SRepository repository) {
       myDepManager = mdm;
@@ -273,6 +274,12 @@ public class ModelDependenciesManager {
     }
 
     private void invalidateIfWatching(SModule module) {
+      if (myIsDisposed) {
+        // see https://youtrack.jetbrains.com/issue/MPS-29623 for details, how one could get a notification into a unregistered listener
+        // FIXME In 2019.1, we shall drop cache update of ModelDependenciesManager as it's odd to refresh thousands (8k in mbeddr!) of repository
+        // listeners on any module change just to keep list of used languages up to date.
+        return;
+      }
       if ((module instanceof Language)) {
         SLanguage languageId = MetaAdapterFactory.getLanguage(module.getModuleReference());
         if (myDepManager.isDependency(languageId)) {
@@ -295,6 +302,7 @@ public class ModelDependenciesManager {
     }
 
     public void dispose() {
+      myIsDisposed = true;
       unsubscribeFrom(myRepository);
     }
   }
