@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,11 @@ import java.util.function.Consumer;
         LOG.trace(String.format("Action started (level:%d)", actionLevel));
       }
       r.run();
+    } catch (Exception ex) {
+      // we need this catch not to obscure errors during run with errors from finally block (e.g. if both onActionStarted and onActionFinished fail with
+      // exception, we would observe only the last one from onActionFinished)
+      // FWIW, there's no scenario behind actionLevel printout here, just in case it yields anything interesting.
+      LOG.error(String.format("Action dispatch failed (level:%d)", actionLevel), ex);
     } finally {
       if (traceEnabled) {
         LOG.trace(String.format("Action finished (level:%d)", actionLevel));
