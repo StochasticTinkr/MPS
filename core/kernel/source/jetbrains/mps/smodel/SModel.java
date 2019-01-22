@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.model.SModelDescriptorStub;
-import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.event.ModelEventDispatch;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -100,7 +99,6 @@ public class SModel implements SModelData, UpdateModeSupport {
   private List<ImportElement> myImports = new ArrayList<>();
   private INodeIdToNodeMap myIdToNodeMap;
   private StackTraceElement[] myDisposedStacktrace = null;
-  private ModelDependenciesManager myModelDependenciesManager;
   private ImplicitImportsLegacyHolder myLegacyImplicitImports;
   /**
    * update mode, aka full load mode, is the state we are attaching newly loaded children to a model loaded partially
@@ -353,10 +351,6 @@ public class SModel implements SModelData, UpdateModeSupport {
     myDisposedStacktrace = new Throwable().getStackTrace();
     myIdToNodeMap = null;
     myRoots.clear();
-    if (myModelDependenciesManager != null) {
-      myModelDependenciesManager.dispose();
-      myModelDependenciesManager = null;
-    }
   }
 
   private void checkNotDisposed() {
@@ -641,24 +635,6 @@ public class SModel implements SModelData, UpdateModeSupport {
     myIdToNodeMap.remove(id);
   }
 
-  public ModelDependenciesManager getModelDepsManager() {
-    if (myModelDependenciesManager == null) {
-      myModelDependenciesManager = new ModelDependenciesManager(getModelDescriptor());
-      // we do not need to track model changes as we are invalidating dep manager right away on any change
-      SRepository repo = getRepository();
-      if (repo != null) {
-        myModelDependenciesManager.trackRepositoryChanges(repo);
-      }
-    }
-    return myModelDependenciesManager;
-  }
-
-  private void invalidateModelDepsManager() {
-    if (myModelDependenciesManager != null) {
-      myModelDependenciesManager.invalidate();
-    }
-  }
-
   //language
 
   public Collection<SLanguage> usedLanguages() {
@@ -677,7 +653,6 @@ public class SModel implements SModelData, UpdateModeSupport {
 
   public void deleteLanguage(@NotNull SLanguage id) {
     if (myLanguagesIds.remove(id) != null) {
-      invalidateModelDepsManager();
       fireLanguageRemovedEvent(id);
       markChanged();
     }
@@ -710,7 +685,6 @@ public class SModel implements SModelData, UpdateModeSupport {
 
   private void setLanguageVersionInternal(SLanguage language, int version) {
     myLanguagesIds.put(language, version);
-    invalidateModelDepsManager();
     fireLanguageAddedEvent(language);
     markChanged();
   }
@@ -723,7 +697,6 @@ public class SModel implements SModelData, UpdateModeSupport {
 
   public void addDevKit(SModuleReference ref) {
     if (!myDevKits.contains(ref) && myDevKits.add(ref)) {
-      invalidateModelDepsManager();
       fireDevKitAddedEvent(ref);
       markChanged();
     }
@@ -731,7 +704,6 @@ public class SModel implements SModelData, UpdateModeSupport {
 
   public void deleteDevKit(@NotNull SModuleReference ref) {
     if (myDevKits.remove(ref)) {
-      invalidateModelDepsManager();
       fireDevKitRemovedEvent(ref);
       markChanged();
     }

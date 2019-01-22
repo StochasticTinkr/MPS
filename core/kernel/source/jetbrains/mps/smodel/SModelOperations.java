@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.model.SModelDescriptorStub;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
@@ -132,11 +131,6 @@ public class SModelOperations {
   @ToRemove(version = 2018.3)
   @NotNull
   public static Set<SLanguage> getAllLanguageImports(@NotNull SModel model) {
-    if (model instanceof SModelDescriptorStub) {
-      // if it's our implementation, use cached value
-      return new HashSet<>(((SModelDescriptorStub) model).getModelDepsManager().getAllImportedLanguagesIds());
-    }
-    // otherwise, just calculate it
     return new HashSet<>(new ModelDependenciesManager(model).getAllImportedLanguagesIds());
   }
 
