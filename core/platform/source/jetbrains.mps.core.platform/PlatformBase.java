@@ -46,13 +46,28 @@ class PlatformBase implements Platform {
       initAndRegister(new MPSPersistence(myCore));
     }
     if (options.loadsOthers()) {
-      initAndRegister(new MPSProjectValidation(myCore));
-      initAndRegister(new MPSMake(myCore.getLanguageRegistry()));
-      initAndRegister(new MPSTypesystem(myCore.getLanguageRegistry(), myCore.getClassLoaderManager()));
-      initAndRegister(new MPSGenerator(myCore));
-      initAndRegister(new MPSFindUsages(myCore.getLanguageRegistry()));
-      initAndRegister(new MPSTextGenerator(myCore.getLanguageRegistry()));
-      initAndRegister(new MPSDataFlow(myCore.getClassLoaderManager()));
+      // XXX IMPORTANT: this odd code is to deal with a puzzling classloading peculiarity we've faced, keep it unless you've tested your alternative
+      //     (e.g. Ant 'Binaries' build to bundle MPS itself, with copyModels task that starts the platform up to 'PERSISTENCE' level, shall not require e.g.
+      //     MPSGenerator or MPSTextGenerator in classpath).
+      // Generally, Java resolves symbolic reference the moment referenced class is accessed, not the moment reference origin is loaded.
+      // For a simple test project (Main loads DelayedLinkage), NoClassDefFoundError is reported the moment referenced class is accessed. However,
+      // for PlatformBase class with new MPSGenerator() inside a condition I know to be false, NCDFE is reported the moment PlatformBase class *is loaded*
+      // Odd enough, it's not class reference per se, MPSGenerator::new or MPSGenerator.class.getConstructor() references do not bring NCDFE on load, as well
+      // as Runnable wrap employed bellow. Since I prefer direct cons invocation of the initialized component, I favour anonymous inner class here.
+      // FWIW, it's not a Module ClassLoader to blame, as ConvertToBinaryTask loads PlatformBase using regular URLClassLoader (see MpsLoadTask). Would be
+      // great to find out an answer some day, classloading guru, come and help us!
+      new Runnable() {
+        @Override
+        public void run() {
+          initAndRegister(new MPSProjectValidation(myCore));
+          initAndRegister(new MPSMake(myCore.getLanguageRegistry()));
+          initAndRegister(new MPSTypesystem(myCore.getLanguageRegistry(), myCore.getClassLoaderManager()));
+          initAndRegister(new MPSGenerator(myCore));
+          initAndRegister(new MPSFindUsages(myCore.getLanguageRegistry()));
+          initAndRegister(new MPSTextGenerator(myCore.getLanguageRegistry()));
+          initAndRegister(new MPSDataFlow(myCore.getClassLoaderManager()));
+        }
+      }.run();
     }
   }
 
