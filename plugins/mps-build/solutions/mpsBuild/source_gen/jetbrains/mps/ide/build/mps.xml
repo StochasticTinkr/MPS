@@ -62,7 +62,7 @@
     <mkdir dir="${build.tmp}/default/branding.jar/idea" />
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
-        <version major="2018" minor="3.3" eap="false" update-channel="MPS183EAP" />
+        <version major="2018" minor="3.4" eap="false" update-channel="MPS183EAP" />
         <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" copyrightStart="2009" />
         <build number="${build.number}" date="${date}" />
         <logo url="/splash.png" textcolor="FFFFFF" progressColor="FFFFFF" progressX="117" progressY="280" progressHeight="3" />
