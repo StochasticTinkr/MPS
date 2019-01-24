@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.util.SystemInfo;
+import jetbrains.mps.util.URLUtil;
+import jetbrains.mps.vfs.Files;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileSystem;
 import jetbrains.mps.vfs.QualifiedPath;
@@ -31,8 +35,13 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -49,31 +58,23 @@ public class SDKDiscovery {
     return findClasses(new File(System.getProperty("java.home")));
   }
 
+  //------------------------------
+
   @Nullable
   private static QualifiedPath getJDK_ToolsPath() {
     String toolsJarClass = "com.sun.jdi.Field";
-    Class cls;
     try {
-      cls = Class.forName(toolsJarClass);
-    } catch (ClassNotFoundException e) {
+      Class cls = Class.forName(toolsJarClass);
+      String url = cls.getResource(cls.getSimpleName() + ".class").toString();
+      String prefix = "jar:";
+      assert url.startsWith(prefix) : url;
+
+      String jarPath = url.substring(prefix.length(), url.indexOf('!'));
+      return new QualifiedPath(VFSManager.FILE_FS, Files.fromURL(new URL(jarPath)).getPath());
+    } catch (ClassNotFoundException | MalformedURLException e) {
       LOG.warn("jar file for class " + toolsJarClass + " could not be found");
       return null;
     }
-
-    String url = cls.getResource(cls.getSimpleName() + ".class").toString();
-    String protocol = "jar:file:";
-    assert url.startsWith(protocol);
-
-    URI jarUri;
-    try {
-      jarUri = new URI(url.substring("jar:".length(), url.indexOf('!')));
-    } catch (URISyntaxException e) {
-      LOG.error(e);
-      return null;
-    }
-
-    String path = new File(jarUri).getAbsolutePath();
-    return new QualifiedPath(VFSManager.FILE_FS, path);
   }
 
   //-------------------------------------copied from JavaSdkImpl----------------------------------
@@ -107,12 +108,15 @@ public class SDKDiscovery {
         }
       }
     } else {
-      for (File root : getJdkClassesRoots(file,  !new File(file, "jre").exists())) {
+      for (File root : getJdkClassesRoots(file, !new File(file, "jre").exists())) {
         String path = getPath(root);
         String proto = VFSManager.FILE_FS;
         result.add(new QualifiedPath(proto, path));
       }
-      result.add(getJDK_ToolsPath());
+      QualifiedPath toolsJar = getJDK_ToolsPath();
+      if (toolsJar != null) {
+        result.add(toolsJar);
+      }
     }
 
     result.sort((o1, o2) -> {
