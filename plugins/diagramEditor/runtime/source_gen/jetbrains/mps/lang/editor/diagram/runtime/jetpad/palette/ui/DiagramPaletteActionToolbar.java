@@ -22,7 +22,8 @@ import java.awt.event.MouseEvent;
   }
 
   @Override
-  public ActionButton createToolbarButton(AnAction action, ActionButtonLook look, String place, Presentation presentation, Dimension minimumSize) {
+  @NotNull
+  protected ActionButton createToolbarButton(AnAction action, ActionButtonLook look, String place, Presentation presentation, Dimension minimumSize) {
     if (action.displayTextInToolbar()) {
       return super.createToolbarButton(action, look, place, presentation, minimumSize);
     }
