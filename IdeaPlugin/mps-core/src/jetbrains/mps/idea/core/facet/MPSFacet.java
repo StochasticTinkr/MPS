@@ -20,7 +20,6 @@ import com.intellij.facet.Facet;
 import com.intellij.facet.FacetType;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
-import com.intellij.internal.statistic.UsageTrigger;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import jetbrains.mps.extapi.module.SRepositoryExt;
@@ -88,8 +87,6 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 
       LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleName()));
       IdeaPluginDescriptor descriptor = PluginManager.getPlugin(PluginManager.getPluginByClassName(MPSFacet.class.getName()));
-      String version = descriptor == null ? null : descriptor.getVersion();
-      UsageTrigger.trigger("MPS.initFacet." + version);
     });
   }
 
