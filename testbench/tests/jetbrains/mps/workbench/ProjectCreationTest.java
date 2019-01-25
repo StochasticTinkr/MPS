@@ -26,10 +26,9 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentAware;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectOptions;
@@ -65,14 +64,14 @@ public class ProjectCreationTest implements EnvironmentAware {
   private static final List<String> PROJECT_PROPERTIES_DIR_CONTENT = Arrays.asList(
       PROJECT_PROPERTIES_DIR + "/modules.xml",
       PROJECT_PROPERTIES_DIR + "/misc.xml",
-      PROJECT_PROPERTIES_DIR + "/encodings.xml");
+      PROJECT_PROPERTIES_DIR + "/workspace.xml");
 
   private static final List<String> EMPTY_PROJECT_PATH_LIST_FB = Arrays.asList(
-      PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT);
+      PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT,
+      PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_IDEAWORKSPACE);
   private static final List<String> EMPTY_PROJECT_PATH_LIST_DB = PROJECT_PROPERTIES_DIR_CONTENT;
   static final String LANGUAGES_ROOT = "languages";
   static final String SOLUTIONS_ROOT = "solutions";
-  private static List<String> PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE;
   private static List<String> PROJECT_WITH_MODULES_PATH_LIST_FB;
   private static List<String> PROJECT_WITH_MODULES_PATH_LIST_DB;
 
@@ -108,17 +107,19 @@ public class ProjectCreationTest implements EnvironmentAware {
 
   @BeforeClass
   public static void init() {
-    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE = new ArrayList<>();
+    List<String> template = new ArrayList<>();
     final String languageModule = PROJECT_NAME + "/" + LANGUAGES_ROOT + "/" + LANGUAGE_NAMESPACE + "/" + LANGUAGE_NAMESPACE + MPSExtentions.DOT_LANGUAGE;
     final String solutionModule = PROJECT_NAME + "/" + SOLUTIONS_ROOT + "/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + MPSExtentions.DOT_SOLUTION;
-    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.add(languageModule);
-    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.add(solutionModule);
-    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.addAll(languageModels(PROJECT_NAME, LANGUAGE_NAMESPACE));
-    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.addAll(solutionModels(PROJECT_NAME, SOLUTION_NAMESPACE));
-    PROJECT_WITH_MODULES_PATH_LIST_FB = CollectionUtil.union(
-        Arrays.asList(PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT),
-        PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
-    PROJECT_WITH_MODULES_PATH_LIST_DB = CollectionUtil.union(PROJECT_PROPERTIES_DIR_CONTENT, PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
+    template.add(languageModule);
+    template.add(solutionModule);
+    template.addAll(languageModels(PROJECT_NAME, LANGUAGE_NAMESPACE));
+    template.addAll(solutionModels(PROJECT_NAME, SOLUTION_NAMESPACE));
+
+    PROJECT_WITH_MODULES_PATH_LIST_FB = new ArrayList<>(EMPTY_PROJECT_PATH_LIST_FB);
+    PROJECT_WITH_MODULES_PATH_LIST_FB.addAll(template);
+
+    PROJECT_WITH_MODULES_PATH_LIST_DB = new ArrayList<>(PROJECT_PROPERTIES_DIR_CONTENT);
+    PROJECT_WITH_MODULES_PATH_LIST_DB.addAll(template);
   }
 
   @Test
