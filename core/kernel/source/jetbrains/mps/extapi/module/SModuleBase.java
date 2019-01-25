@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,12 @@ public abstract class SModuleBase implements SModule {
   private List<SModuleListener> myListeners = new CopyOnWriteArrayList<>();
 
   private final Set<SModelBase> myModels = new LinkedHashSet<>();
+  /**
+   * Sorted (!) list of models we return from {@link #getModels}, discarded on any change to myModels.
+   * This is a workaround for MPS-29587 to get old behavior (when @descriptor models come last in the list)
+   * Perhaps, worth a better fix in 2019/master, just need to come up with a better alternative.
+   */
+  private List<SModel> myCachedModelsList;
   private final ConcurrentMap<SModelId, SModel> myIdToModelMap = new ConcurrentHashMap<>();
 
   protected SModuleBase() {
@@ -63,7 +69,13 @@ public abstract class SModuleBase implements SModule {
   //todo [MM] this will be possible when stub node ids do not contain return values
   public final List<SModel> getModels() {
     assertCanRead();
-    return Collections.unmodifiableList(new ArrayList<>(myModels));
+    if (myCachedModelsList == null) {
+      // I don't care to initialize/sort twice in parallel reads, either list is the same
+      final ArrayList<SModelBase> list = new ArrayList<>(myModels);
+      list.sort(MODEL_BY_NAME_COMPARATOR);
+      myCachedModelsList = Collections.unmodifiableList(list);
+    }
+    return myCachedModelsList;
   }
 
   public void attach(@NotNull SRepository repo) {
@@ -87,6 +99,7 @@ public abstract class SModuleBase implements SModule {
       m.detach();
     }
     myModels.clear();
+    myCachedModelsList = null;
     myIdToModelMap.clear();
     myRepository = null;
   }
@@ -231,9 +244,10 @@ public abstract class SModuleBase implements SModule {
     if (model.getModule() != null && model.getModule() != this) {
       throw new IllegalArgumentException(String.format("Model '%s' is already registered in the module: '%s', " +
                                                        "when trying to register it in '%s'.",
-                                                       model.getModelName(), model.getModule(), this));
+                                                       model.getName(), model.getModule(), this));
     }
 
+    myCachedModelsList = null;
     myModels.add(model);
     myIdToModelMap.put(model.getModelId(), model);
 
@@ -247,10 +261,11 @@ public abstract class SModuleBase implements SModule {
   public void unregisterModel(SModelBase model) {
     assertCanChange();
     if (model.getModule() != this) {
-      throw new IllegalArgumentException("Model `" + model.getModelName() + "' is registered elsewhere.");
+      throw new IllegalArgumentException(String.format("Model `%s' is registered elsewhere.", model.getName()));
     }
 
     fireBeforeModelRemoved(model);
+    myCachedModelsList = null;
     SModelReference reference = model.getReference();
     myIdToModelMap.remove(reference.getModelId());
     myModels.remove(model);
