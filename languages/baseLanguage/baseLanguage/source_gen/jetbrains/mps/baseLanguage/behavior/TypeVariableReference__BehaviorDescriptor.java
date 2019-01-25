@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -45,8 +46,9 @@ public final class TypeVariableReference__BehaviorDescriptor extends BaseBHDescr
   public static final SMethod<Void> collectGenericSubstitutions_id3zZky3wF74h = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("collectGenericSubstitutions").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3zZky3wF74h").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Map<SNode, SNode>>) ((Class) Object.class), ""));
   public static final SMethod<SNode> expandGenerics_id3$PgO9fYTB5 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("expandGenerics").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("3$PgO9fYTB5").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Map<SNode, SNode>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> isSupersetOf_id7PgshREdQKp = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSupersetOf").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7PgshREdQKp").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Map<SNode, SNode>>) ((Class) Object.class), ""));
+  /*package*/ static final SMethod<SNode> doResolve_id3QovYE_nFjT = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("doResolve").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("3QovYE_nFjT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Map<SNode, SNode>>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getErasure_idB1mAlA38Mq, getLooseType_id4YTQtEKnnzf, collectGenericSubstitutions_id3zZky3wF74h, expandGenerics_id3$PgO9fYTB5, isSupersetOf_id7PgshREdQKp);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getErasure_idB1mAlA38Mq, getLooseType_id4YTQtEKnnzf, collectGenericSubstitutions_id3zZky3wF74h, expandGenerics_id3$PgO9fYTB5, isSupersetOf_id7PgshREdQKp, doResolve_id3QovYE_nFjT);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -109,24 +111,8 @@ public final class TypeVariableReference__BehaviorDescriptor extends BaseBHDescr
     return __thisNode__;
   }
   /*package*/ static boolean isSupersetOf_id7PgshREdQKp(@NotNull SNode __thisNode__, SNode t, Map<SNode, SNode> substitutions) {
-    SNode myResolvedType = __thisNode__;
-    SNode resolvedT = t;
-    while (SNodeOperations.isInstanceOf(myResolvedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
-      SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(myResolvedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
-      if (temp != null) {
-        myResolvedType = temp;
-      } else {
-        break;
-      }
-    }
-    while (SNodeOperations.isInstanceOf(resolvedT, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
-      SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(resolvedT, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
-      if (temp != null) {
-        resolvedT = temp;
-      } else {
-        break;
-      }
-    }
+    SNode myResolvedType = TypeVariableReference__BehaviorDescriptor.doResolve_id3QovYE_nFjT.invoke(__thisNode__, __thisNode__, substitutions);
+    SNode resolvedT = TypeVariableReference__BehaviorDescriptor.doResolve_id3QovYE_nFjT.invoke(__thisNode__, t, substitutions);
 
     if (myResolvedType != __thisNode__ || resolvedT != t) {
       return (boolean) Type__BehaviorDescriptor.isSupersetOf_id7PgshREdQKp.invoke(myResolvedType, resolvedT, substitutions);
@@ -135,6 +121,22 @@ public final class TypeVariableReference__BehaviorDescriptor extends BaseBHDescr
       return supersetOf;
     }
 
+  }
+  /*package*/ static SNode doResolve_id3QovYE_nFjT(@NotNull SNode __thisNode__, SNode startType, Map<SNode, SNode> substitutions) {
+    List<SNode> visited = ListSequence.fromList(new ArrayList<SNode>());
+    while (SNodeOperations.isInstanceOf(startType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+      SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(startType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
+      if (ListSequence.fromList(visited).contains(temp)) {
+        break;
+      }
+      if (temp != null) {
+        ListSequence.fromList(visited).addElement(temp);
+        startType = temp;
+      } else {
+        break;
+      }
+    }
+    return startType;
   }
 
   /*package*/ TypeVariableReference__BehaviorDescriptor() {
@@ -166,6 +168,8 @@ public final class TypeVariableReference__BehaviorDescriptor extends BaseBHDescr
         return (T) ((SNode) expandGenerics_id3$PgO9fYTB5(node, (Map<SNode, SNode>) parameters[0], (List<SNode>) parameters[1]));
       case 5:
         return (T) ((Boolean) isSupersetOf_id7PgshREdQKp(node, (SNode) parameters[0], (Map<SNode, SNode>) parameters[1]));
+      case 6:
+        return (T) ((SNode) doResolve_id3QovYE_nFjT(node, (SNode) parameters[0], (Map<SNode, SNode>) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
