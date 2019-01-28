@@ -32,12 +32,17 @@ import static jetbrains.mps.project.SModuleOperations.isCompileInMps;
 final class ModulesContainer {
   private final Set<SModule> myModules;
   private final Dependencies myDependencies;
-  private final Map<SModule, ModuleSources> myModuleSources = new HashMap<>();
+  private final Map<SModule, ModuleSources> myModuleSources;
   private final Map<String, SModule> myClassName2ModuleMap = new HashMap<>();
 
   public ModulesContainer(Set<SModule> modules, Dependencies dependencies) {
+    this(modules, dependencies, new HashMap<>());
+  }
+
+  private ModulesContainer(Set<SModule> modules, Dependencies dependencies, Map<SModule, ModuleSources> moduleSources) {
     myModules = modules;
     myDependencies = dependencies;
+    myModuleSources = moduleSources;
   }
 
   public ModuleSources getSources(@NotNull SModule module) {
@@ -80,6 +85,20 @@ final class ModulesContainer {
     return myModules;
   }
 
+  /**
+   * @param modules have to be a subset of {@link #getModules()}
+   * @return an instance restricted to set of speficied modules
+   */
+  public ModulesContainer restricted(@NotNull Set<SModule> modules) {
+    if (!myModules.containsAll(modules)) {
+      // well, technically, #getSources() in its present state would deal nice with the situation.
+      // however, I'd like to see my assumptions to fail fast.
+      throw new IllegalArgumentException("Attempt to restrict a container to modules that are not part of it");
+    }
+    // intention is to share ModuleSource instance and any files/data it has collected so far
+    return new ModulesContainer(modules, myDependencies, myModuleSources);
+  }
+
   void putClassForModule(@NotNull String className, @NotNull SModule module) {
     myClassName2ModuleMap.put(className, module);
   }
@@ -91,5 +110,4 @@ final class ModulesContainer {
   public static boolean isExcluded(@NotNull SModule m) {
     return m.isReadOnly() || !isCompileInMps(m);
   }
-
 }
