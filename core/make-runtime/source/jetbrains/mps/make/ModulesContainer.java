@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ package jetbrains.mps.make;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -51,16 +53,27 @@ final class ModulesContainer {
     return myModules.stream().anyMatch(module -> !isExcluded(module));
   }
 
-  public boolean isDirty(@NotNull SModule m) {
-    if (isExcluded(m)) return false;
-    return !areClassesUpToDate(m);
+  /**
+   * @return collection of module and their sources, subset of {@link #getModules()}, only those that are stale.
+   */
+  public Collection<ModuleSources> getDirtyModuleSources() {
+    ArrayList<ModuleSources> rv = new ArrayList<>(myModules.size());
+    for (SModule m : myModules) {
+      if (isDirty(m)) {
+        rv.add(getSources(m));
+      }
+    }
+    return rv;
   }
 
-  public boolean areClassesUpToDate(@NotNull SModule m) {
-    if (isExcluded(m)) return true;
-    if (!isCompileInMps(m)) return true;
-
-    return getSources(m).isUpToDate();
+  /**
+   * @return {@code true} if module got source files and these are stale
+   */
+  private boolean isDirty(@NotNull SModule m) {
+    if (isExcluded(m)) {
+      return false;
+    }
+    return !getSources(m).isUpToDate();
   }
 
   public Set<SModule> getModules() {

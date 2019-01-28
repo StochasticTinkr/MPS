@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,16 +42,13 @@ class ModuleAnalyzer {
     Set<SModule> modulesWithRemovals = new HashSet<>();
     Set<File> filesToDelete = new HashSet<>();
 
-    for (SModule module : myModulesContainer.getModules()) {
-      if (!myModulesContainer.areClassesUpToDate(module)) {
-        ModuleSources sources = myModulesContainer.getSources(module);
-        hasResourcesToUpdate |= !sources.isResourcesUpToDate();
-        hasJavaToCompile |= !sources.isJavaUpToDate();
-        Collection<File> filesToDelete0 = myModulesContainer.getSources(module).getFilesToDelete();
-        if (!filesToDelete0.isEmpty()) {
-          filesToDelete.addAll(filesToDelete0);
-          modulesWithRemovals.add(module);
-        }
+    for (ModuleSources sources : myModulesContainer.getDirtyModuleSources()) {
+      hasResourcesToUpdate |= !sources.isResourcesUpToDate();
+      hasJavaToCompile |= !sources.isJavaUpToDate();
+      Collection<File> filesToDelete0 = sources.getFilesToDelete();
+      if (!filesToDelete0.isEmpty()) {
+        filesToDelete.addAll(filesToDelete0);
+        modulesWithRemovals.add(sources.getModule());
       }
     }
 

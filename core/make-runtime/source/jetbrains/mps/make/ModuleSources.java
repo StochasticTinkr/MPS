@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 
 // FIXME AP refactor
-public class ModuleSources {
+public final class ModuleSources {
   private final Map<SModule, ModuleSources> myAvailableSources;
   private Dependencies myDependencies;
   private SModule myModule;
@@ -59,6 +59,10 @@ public class ModuleSources {
 
     collectInputFilesInfo();
     collectOutputFilesInfo();
+  }
+
+  public SModule getModule() {
+    return myModule;
   }
 
   public Collection<File> getFilesToDelete() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,10 +216,8 @@ public final class ModuleMaker {
     Set<SModule> candidates = modulesContainer.getModules();
     tracer.push(CHECKING_DIRTY_MODULES_MSG);
     List<SModule> dirtyModules = new ArrayList<>(candidates.size());
-    for (SModule m : candidates) {
-      if (modulesContainer.isDirty(m)) {
-        dirtyModules.add(m);
-      }
+    for (ModuleSources m : modulesContainer.getDirtyModuleSources()) {
+      dirtyModules.add(m.getModule());
     }
     tracer.pop(1);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,12 +100,10 @@ class InternalJavaCompiler {
    */
   private EclipseJavaCompiler collectSources() {
     EclipseJavaCompiler compiler = new EclipseJavaCompiler();
-    for (SModule module : myModulesContainer.getModules()) {
-      if (!myModulesContainer.areClassesUpToDate(module)) {
-        for (JavaFile javaFile : myModulesContainer.getSources(module).getFilesToCompile()) {
-          compiler.addSource(javaFile.getClassName(), javaFile.getContents());
-          myModulesContainer.putClassForModule(javaFile.getClassName(), module);
-        }
+    for (ModuleSources module : myModulesContainer.getDirtyModuleSources()) {
+      for (JavaFile javaFile : module.getFilesToCompile()) {
+        compiler.addSource(javaFile.getClassName(), javaFile.getContents());
+        myModulesContainer.putClassForModule(javaFile.getClassName(), module.getModule());
       }
     }
     return compiler;
