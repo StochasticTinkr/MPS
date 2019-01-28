@@ -463,7 +463,13 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       List<EditorComponent> activeEditors = myEditorList.getActiveEditors(); // Must be called in EDT
 
       // don't use addPendingAction() as it resets grace period
-      myBackgroundExecutor.submit(() -> update(activeEditors));
+      myBackgroundExecutor.submit(() -> {
+        try {
+          update(activeEditors);
+        } catch (Throwable t) {
+          LOG.error("Error occurred during highlighter update", t);
+        }
+      });
     }
 
     private boolean isGoodTimeToUpdate() {

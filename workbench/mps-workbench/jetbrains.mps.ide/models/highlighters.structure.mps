@@ -1542,11 +1542,26 @@
           </node>
         </node>
         <node concept="3cpWs6" id="1dN09JzYomw" role="3cqZAp">
-          <node concept="2YIFZM" id="2mjA7mXxbUj" role="3cqZAk">
-            <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
-            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-            <node concept="37vLTw" id="2mjA7mXxctQ" role="37wK5m">
-              <ref role="3cqZAo" node="6xaYinJLvPs" resolve="msg" />
+          <node concept="3K4zz7" id="2HhdZggTyGN" role="3cqZAk">
+            <node concept="2YIFZM" id="2HhdZggTzZA" role="3K4E3e">
+              <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
+              <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+              <node concept="3uibUv" id="2HhdZggTQo4" role="3PaCim">
+                <ref role="3uigEE" to="exr9:~EditorMessage" resolve="EditorMessage" />
+              </node>
+            </node>
+            <node concept="3clFbC" id="2HhdZggTxVt" role="3K4Cdx">
+              <node concept="10Nm6u" id="2HhdZggTy0p" role="3uHU7w" />
+              <node concept="37vLTw" id="2HhdZggTxhI" role="3uHU7B">
+                <ref role="3cqZAo" node="6xaYinJLvPs" resolve="msg" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="2mjA7mXxbUj" role="3K4GZi">
+              <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+              <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+              <node concept="37vLTw" id="2mjA7mXxctQ" role="37wK5m">
+                <ref role="3cqZAo" node="6xaYinJLvPs" resolve="msg" />
+              </node>
             </node>
           </node>
         </node>
