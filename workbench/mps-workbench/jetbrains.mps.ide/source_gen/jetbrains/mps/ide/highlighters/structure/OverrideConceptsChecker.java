@@ -47,6 +47,6 @@ public final class OverrideConceptsChecker extends BaseEventProcessingEditorChec
   @NotNull
   private List<EditorMessage> calculateEditorMessages(SNode concept, Cancellable cancellable) {
     EditorMessage msg = new DescendantsLookup(cancellable, new GlobalScope(myProject), concept, this, MAX_ITEMS_TO_SHOW).calcMessage();
-    return Collections.singletonList(msg);
+    return (msg == null ? Collections.<EditorMessage>emptyList() : Collections.singletonList(msg));
   }
 }
