@@ -1242,6 +1242,27 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="51g5y1cPPcc" role="jymVt" />
+    <node concept="3clFb_" id="51g5y1cQ0$5" role="jymVt">
+      <property role="TrG5h" value="getPlatform" />
+      <property role="DiZV1" value="true" />
+      <node concept="3clFbS" id="51g5y1cQ0$8" role="3clF47">
+        <node concept="3cpWs6" id="51g5y1cQ5Q9" role="3cqZAp">
+          <node concept="2OqwBi" id="51g5y1cQdwl" role="3cqZAk">
+            <node concept="37vLTw" id="51g5y1cQaNq" role="2Oq$k0">
+              <ref role="3cqZAo" node="KL8Aqlj5lM" resolve="myEnvironment" />
+            </node>
+            <node concept="liA8E" id="51g5y1cQiQC" role="2OqNvi">
+              <ref role="37wK5l" to="79ha:8Pnvxgloc_" resolve="getPlatform" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="51g5y1cPVsB" role="1B3o_S" />
+      <node concept="3uibUv" id="51g5y1cQ0on" role="3clF45">
+        <ref role="3uigEE" to="wyuk:~ComponentHost" resolve="ComponentHost" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="5A5jZrz0A6C" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqlj5oC" role="jymVt">
       <property role="1EzhhJ" value="false" />

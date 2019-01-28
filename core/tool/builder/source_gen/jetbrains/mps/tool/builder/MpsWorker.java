@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -162,6 +163,10 @@ public abstract class MpsWorker {
       myEnvironment.dispose();
       myEnvironment = null;
     }
+  }
+
+  protected final ComponentHost getPlatform() {
+    return myEnvironment.getPlatform();
   }
 
   protected void make() {

@@ -10,7 +10,6 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.project.Project;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -41,7 +40,7 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
 
   protected void setGenerationProperties() {
     GeneratorProperties gp = new GeneratorProperties(myWhatToDo);
-    IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
+    IModifiableGenerationSettings settings = getPlatform().findComponent(GenerationSettingsProvider.class).getGenerationSettings();
     boolean strictMode = gp.isStrictMode();
     boolean parallelMode = gp.isParallelMode();
     boolean inplace = gp.isInplaceTransform();
@@ -67,16 +66,6 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
 
   protected void showStatistic() {
     failBuild("generation");
-  }
-
-  /**
-   * 
-   * @deprecated use {@link jetbrains.mps.tool.builder.make.BaseGeneratorWorker#generate(Project, Collection<SModule>) } instead
-   */
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
-    generate(project, go.getModules());
   }
 
   protected void generate(Project project, Collection<SModule> modules) {
