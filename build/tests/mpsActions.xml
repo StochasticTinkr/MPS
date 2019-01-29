@@ -467,7 +467,6 @@
       <jvmarg value="-ea" />
       <jvmarg value="-Xss2048k" />
       <jvmarg value="-Xmx1024m" />
-      <jvmarg value="-XX:MaxPermSize=256m" />
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
       <jvmarg value="-Didea.config.path=${build.mps.config.path}" />
       <jvmarg value="-Didea.system.path=${build.mps.system.path}" />
