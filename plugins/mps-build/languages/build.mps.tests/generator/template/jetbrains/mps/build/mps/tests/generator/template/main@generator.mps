@@ -1259,16 +1259,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2pNNFK" id="6u4p9jnVoCJ" role="3o6s8t">
-                  <property role="qg3DV" value="true" />
-                  <property role="2pNNFO" value="jvmarg" />
-                  <node concept="2pNUuL" id="6u4p9jnVoCK" role="2pNNFR">
-                    <property role="2pNUuO" value="value" />
-                    <node concept="2pMdtt" id="6u4p9jnVoCL" role="2pMdts">
-                      <property role="2pMdty" value="-XX:MaxPermSize=256m" />
-                    </node>
-                  </node>
-                </node>
                 <node concept="2pNNFK" id="6u4p9jnVoCZ" role="3o6s8t">
                   <property role="qg3DV" value="true" />
                   <property role="2pNNFO" value="jvmarg" />
