@@ -684,6 +684,11 @@
                 </node>
               </node>
             </node>
+            <node concept="3SKdUt" id="jVJrchjdya" role="3cqZAp">
+              <node concept="3SKdUq" id="jVJrchjdyc" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME there's similar code in MpsTestSuite, but not in jUnit launcher" />
+              </node>
+            </node>
             <node concept="3SKdUt" id="4Y7Caw8wm4i" role="3cqZAp">
               <node concept="3SKdUq" id="4Y7Caw8wm4k" role="3SKWNk">
                 <property role="3SKdUp" value="FIXME if I don't fix build language templates to list generator.jar explicitly, shall account for lang-N-generator.jar here to support multiple generators per language case." />

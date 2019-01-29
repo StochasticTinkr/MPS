@@ -40,6 +40,7 @@ public class GenerateTask extends MpsLoadTask {
       if (generatorJar.isFile()) {
         myWhatToDo.addLibraryJar(generatorJar.getAbsolutePath());
       }
+      // FIXME there's similar code in MpsTestSuite, but not in jUnit launcher 
       // FIXME if I don't fix build language templates to list generator.jar explicitly, shall account for lang-N-generator.jar here to support multiple generators per language case. 
     }
   }

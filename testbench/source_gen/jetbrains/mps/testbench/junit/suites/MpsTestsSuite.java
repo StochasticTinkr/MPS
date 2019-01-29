@@ -15,14 +15,15 @@ import jetbrains.mps.testbench.junit.runners.FromModulesListProjectStrategy;
 import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
-import java.util.Map;
-import java.util.LinkedHashMap;
-import jetbrains.mps.testbench.junit.runners.TestRootAccessInsight;
-import java.util.HashMap;
+import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
+import jetbrains.mps.testbench.junit.runners.TestRootAccessInsight;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -63,8 +64,8 @@ public class MpsTestsSuite extends BaseMpsSuite {
 
   public Environment initIdeaEnvironment() {
     EnvironmentConfig config = EnvironmentConfig.defaultConfig();
-    for (IMapping<String, String> lib : MapSequence.fromMap(loadLibraries())) {
-      config = config.addLib(lib.value());
+    for (String lib : loadLibraries()) {
+      config = config.addLib(lib);
     }
     for (IMapping<String, File> macro : MapSequence.fromMap(loadMacros())) {
       config = config.addMacro(macro.key(), macro.value());
@@ -74,8 +75,8 @@ public class MpsTestsSuite extends BaseMpsSuite {
     return rv;
   }
 
-  private static Map<String, String> loadLibraries() {
-    Map<String, String> result = MapSequence.fromMap(new LinkedHashMap<String, String>(16, (float) 0.75, false));
+  private static Set<String> loadLibraries() {
+    Set<String> result = SetSequence.fromSet(new LinkedHashSet<String>());
     String librariesString = System.getProperty(MpsTestsSuite.PROPERTY_LIBRARY);
     if ((librariesString == null || librariesString.length() == 0)) {
       return result;
@@ -84,8 +85,19 @@ public class MpsTestsSuite extends BaseMpsSuite {
     TestRootAccessInsight.allowTestRootAccessForModuleFolders(libraries);
     for (String lib : libraries) {
       File libFile = new File(lib);
-      if (libFile.exists()) {
-        MapSequence.fromMap(result).put(libFile.getName(), lib);
+      if (!(libFile.exists())) {
+        continue;
+      }
+      SetSequence.fromSet(result).addElement(lib);
+      // XXX next is a copy of a workaround from GenerateTask.addConfiguredLibrary to make sure jars with generator modules are reported to LibraryInitializer 
+      // and no attempt to load generators though their source modules (see MPS-29650) 
+      if (libFile.isFile() && lib.endsWith(".jar")) {
+        // perhaps, it's a language.jar, register corresponding generator.jar, if any. 
+        String fname = libFile.getName();
+        File generatorJar = new File(libFile.getParent(), fname.substring(0, fname.length() - 4) + "-generator.jar");
+        if (generatorJar.isFile()) {
+          SetSequence.fromSet(result).addElement(generatorJar.getAbsolutePath());
+        }
       }
     }
     return result;

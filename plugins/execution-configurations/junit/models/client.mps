@@ -8861,6 +8861,26 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="3SKdUt" id="jVJrchhG$f" role="3cqZAp">
+                        <node concept="3SKdUq" id="jVJrchhG$h" role="3SKWNk">
+                          <property role="3SKdUp" value="XXX don't we need to add respective generator module jars like we do inMpsTestsSuite and GenerateTask so tha" />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="jVJrchhUON" role="3cqZAp">
+                        <node concept="3SKdUq" id="jVJrchhUOP" role="3SKWNk">
+                          <property role="3SKdUp" value="    environment started from WithPlatformTestExecutor loads all modules properly?" />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="jVJrchi8h2" role="3cqZAp">
+                        <node concept="3SKdUq" id="jVJrchi8h4" role="3SKWNk">
+                          <property role="3SKdUp" value="    OTOH, language and generator modules from the MPS platform are likely to get loaded regardless of the setting," />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="jVJrchiro4" role="3cqZAp">
+                        <node concept="3SKdUq" id="jVJrchiro6" role="3SKWNk">
+                          <property role="3SKdUp" value="          while languages and generators from the active project are non-deployed anyway" />
+                        </node>
+                      </node>
                       <node concept="2Gpval" id="7$iKQw$d$xc" role="3cqZAp">
                         <node concept="2GrKxI" id="7$iKQw$d$xe" role="2Gsz3X">
                           <property role="TrG5h" value="m" />

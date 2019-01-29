@@ -148,6 +148,10 @@ public class JUnit_Command {
           }
           GlobalModuleDependenciesManager gmdm = new GlobalModuleDependenciesManager(modules);
           Collection<SModule> execClosure = gmdm.getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE);
+          // XXX don't we need to add respective generator module jars like we do inMpsTestsSuite and GenerateTask so tha 
+          //     environment started from WithPlatformTestExecutor loads all modules properly? 
+          //     OTOH, language and generator modules from the MPS platform are likely to get loaded regardless of the setting, 
+          //           while languages and generators from the active project are non-deployed anyway 
           for (SModule m : CollectionSequence.fromCollection(execClosure)) {
             if (false == m instanceof AbstractModule) {
               continue;
