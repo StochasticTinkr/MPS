@@ -14,6 +14,7 @@ import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
@@ -24,7 +25,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -62,7 +62,7 @@ public class EvaluationProvider implements IEvaluationProvider {
     final SRepository repository = myDebugSession.getProject().getRepository();
     repository.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        EvaluationModule module = new EvaluationModule();
+        EvaluationModule module = new EvaluationModule(ProjectHelper.fromIdeaProject(myDebugSession.getIdeaProject()).getPlatform());
         ((SRepositoryExt) repository).registerModule(module, myDebugSession.getProject());
         myContainerModuleRef = module.getModuleReference();
       }

@@ -10,14 +10,13 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.components.ComponentHost;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -26,11 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.module.SDependencyImpl;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import java.util.Collection;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 
 /**
  * This module contains a necessary information for the 'evaluate expression'
@@ -42,14 +37,16 @@ public final class EvaluationModule extends AbstractModule implements SModule {
 
   private final ModuleDescriptor myDescriptor;
   private final Set<String> myClassPaths = SetSequence.fromSet(new HashSet<String>());
+  private final ComponentHost myPlatform;
   private static final AtomicInteger ourCounter = new AtomicInteger();
 
   private static int incCounter() {
     return ourCounter.incrementAndGet();
   }
 
-  public EvaluationModule() {
+  public EvaluationModule(ComponentHost mpsPlatform) {
     super((IFile) null);
+    myPlatform = mpsPlatform;
     setModuleReference(new ModuleReference("Evaluation Container Module " + incCounter(), ModuleId.regular()));
     myDescriptor = new ModuleDescriptor();
   }
@@ -64,31 +61,17 @@ public final class EvaluationModule extends AbstractModule implements SModule {
     return myDescriptor;
   }
 
-  @Override
-  protected Iterable<ModelRoot> loadRoots() {
-    Set<ModelRoot> result = new HashSet<ModelRoot>();
-    for (String stub : myClassPaths) {
-      ModelRoot modelRoot = PersistenceFacade.getInstance().getModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT).create();
-      if (modelRoot instanceof FileBasedModelRoot) {
-        ((FileBasedModelRoot) modelRoot).setContentRoot(stub);
-        ((FileBasedModelRoot) modelRoot).addFile(FileBasedModelRoot.SOURCE_ROOTS, stub);
-      } else {
-        LOG.error("Unexpected model root type: " + modelRoot.getType() + " but need 'java_classes' model root");
-      }
-      result.add(modelRoot);
-    }
-    return result;
-  }
-
-  public String addClassPathItem(String path) {
-    if (SetSequence.fromSet(myClassPaths).contains(path)) {
-      path = null;
-    } else {
+  public void addClassPathItem(String path) {
+    if (!(SetSequence.fromSet(myClassPaths).contains(path))) {
       SetSequence.fromSet(myClassPaths).addElement(path);
+      // XXX Here, we use IFile just to populate MRD, which keeps strings, therefore we don't care to use anything but 
+      //     a mechanism to access parent/name. It could be java.io.File, if MRD.getJavaStubsModelRoot pleases to support one 
+      IFile file = IoFileSystem.INSTANCE.getFile(path);
+      ModelRootDescriptor javaStubRoot = ModelRootDescriptor.getJavaStubsModelRoot(file, myDescriptor.getModelRootDescriptors());
+      myDescriptor.getModelRootDescriptors().add(javaStubRoot);
       myDescriptor.getAdditionalJavaStubPaths().add(path);
+      fireChanged();
     }
-    fireChanged();
-    return path;
   }
 
   @Override
@@ -107,12 +90,7 @@ public final class EvaluationModule extends AbstractModule implements SModule {
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
-    Collection<Language> languages = new ModuleRepositoryFacade(getRepository()).getAllModules(Language.class);
-    return SetSequence.fromSetWithValues(new HashSet<SLanguage>(), CollectionSequence.fromCollection(languages).select(new ISelector<Language, SLanguage>() {
-      public SLanguage select(Language it) {
-        return MetaAdapterByDeclaration.getLanguage(it);
-      }
-    }));
+    return SetSequence.fromSetWithValues(new HashSet<SLanguage>(), myPlatform.findComponent(LanguageRegistry.class).getAllLanguages());
   }
 
   @Override

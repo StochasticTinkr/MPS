@@ -561,6 +561,23 @@
                       <node concept="2ShNRf" id="1KUoCiqb5ZY" role="33vP2m">
                         <node concept="1pGfFk" id="u1wCMkd3Bb" role="2ShVmc">
                           <ref role="37wK5l" to="i1lu:5$fHs$AvHaI" resolve="EvaluationModule" />
+                          <node concept="2OqwBi" id="jVJrchl_Eu" role="37wK5m">
+                            <node concept="2YIFZM" id="jVJrchluKq" role="2Oq$k0">
+                              <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+                              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                              <node concept="2OqwBi" id="jVJrchlvvV" role="37wK5m">
+                                <node concept="37vLTw" id="jVJrchlv8M" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="_hR$3XCoUL" resolve="myDebugSession" />
+                                </node>
+                                <node concept="liA8E" id="jVJrchl_1z" role="2OqNvi">
+                                  <ref role="37wK5l" to="1l1h:3SnNvqCaKcY" resolve="getIdeaProject" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="jVJrchlGIi" role="2OqNvi">
+                              <ref role="37wK5l" to="z1c3:~ProjectBase.getPlatform():jetbrains.mps.components.ComponentHost" resolve="getPlatform" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
