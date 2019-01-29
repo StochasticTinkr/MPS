@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,5 +44,10 @@ public class LibDescriptor implements RepositoryPathDescriptor {
   @Nullable
   public ClassLoader getPluginClassLoader() {
     return myPluginClassLoader;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("LibDescriptor[%s; %s]", myPath, myPluginClassLoader == null ? null : myPluginClassLoader.getClass().getSimpleName());
   }
 }
