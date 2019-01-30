@@ -118,29 +118,26 @@ public final class MacrosFactory implements MacroHelper.Source {
     @Override
     protected String expand(String path, IFile anchorFile) {
       if (path.startsWith(MODULE)) {
-        IFile anchorFolder = anchorFile.getParent();
-        if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
-          anchorFolder = anchorFolder.getParent();
-        }
-        String modelRelativePath = removePrefix(path);
-        return anchorFolder.getDescendant(modelRelativePath).getPath();
+        return path.replace(MODULE, IFileUtil.getCanonicalPath(getAnchorFolder(anchorFile)));
       }
-
       return super.expand(path, anchorFile);
     }
 
     @Override
     protected String shrink(String absolutePath, IFile anchorFile) {
-      IFile anchorFolder = anchorFile.getParent();
-      if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
-        anchorFolder = anchorFolder.getParent();
-      }
-      String prefix = IFileUtil.getCanonicalPath(anchorFolder);
+      String prefix = IFileUtil.getCanonicalPath(getAnchorFolder(anchorFile));
       if (pathStartsWith(absolutePath, prefix)) {
-        String relationalPath = shrink(absolutePath, prefix);
-        return MODULE + relationalPath;
+        return MODULE + shrink(absolutePath, prefix);
       }
       return super.shrink(absolutePath, anchorFile);
+    }
+
+    private IFile getAnchorFolder(IFile anchorFile) {
+      IFile anchorFolder = anchorFile.getParent();
+      if (!anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+        return anchorFolder;
+      }
+      return anchorFolder.getParent();
     }
   }
 
@@ -152,20 +149,16 @@ public final class MacrosFactory implements MacroHelper.Source {
       path = path.replace(PROJECT, PROJECT_LEGACY);
       if (path.contains(PROJECT_LEGACY)) {
         IFile projectDir = getProjectDir(anchorFile);
-        String modelRelativePath = removePrefix(path);
-        return IFileUtil.getCanonicalPath(projectDir.getDescendant(modelRelativePath));
+        return path.replace(PROJECT_LEGACY, IFileUtil.getCanonicalPath(projectDir));
       }
-
       return super.expand(path, anchorFile);
     }
 
     @Override
     protected String shrink(String absolutePath, IFile anchorFile) {
       String prefix = IFileUtil.getCanonicalPath(getProjectDir(anchorFile));
-
       if (pathStartsWith(absolutePath, prefix)) {
-        String relationalPath = shrink(absolutePath, prefix);
-        return PROJECT + relationalPath;
+        return PROJECT + shrink(absolutePath, prefix);
       }
       return super.shrink(absolutePath, anchorFile);
     }
@@ -199,9 +192,9 @@ public final class MacrosFactory implements MacroHelper.Source {
     }
 
     private String expand(String pathWithMacro, String macroPath) {
-      String relativePath = removePrefix(pathWithMacro);
-      IFile file = FileSystem.getInstance().getFile(macroPath).getDescendant(relativePath);
-      return IFileUtil.getCanonicalPath(file);
+      int macroEnd = pathWithMacro.indexOf('}');
+      assert macroEnd > 0 : "Path does not contain a macro: " + pathWithMacro;
+      return macroPath + pathWithMacro.substring(macroEnd + 1);
     }
 
     @Override

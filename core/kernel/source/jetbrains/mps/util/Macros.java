@@ -25,33 +25,25 @@ import java.io.File;
 import java.util.Set;
 
 class Macros {
-  @NotNull private final static PathMacros PATH_MACROS = PathMacros.getInstance();
-
-  @NotNull
-  private String getFullPath(@NotNull String anchorPath, @NotNull String relativePath) {
-    return IFileUtil.getCanonicalPath(IoFileSystem.INSTANCE.getFile(anchorPath).getDescendant(relativePath));
-  }
-
   protected String expand(String path, @Nullable IFile anchorFile) {
     if (!MacrosFactory.containsMacro(path)) {
       return path;
     }
-    String macro = path.substring(2, path.indexOf('}'));
-    String relativePath = removePrefix(path);
-    String macroValue = PATH_MACROS.getValue(macro);
-    if (macroValue != null) {
-      return getFullPath(macroValue, relativePath);
+    int macroEnd = path.indexOf('}');
+    String macro = path.substring(2, macroEnd);
+    String macroValue = PathMacros.getInstance().getValue(macro);
+    if (macroValue == null) {
+      PathMacros.getInstance().report("Please define path variable in path variables section of settings", macro);
+      return path;
     }
-
-    PATH_MACROS.report("Please define path variable in path variables section of settings", macro);
-    return path;
+    return macroValue + path.substring(macroEnd + 1);
   }
 
   protected String shrink(String absolutePath, IFile anchorFile) {
     String fileName;
-    Set<String> macroNames = PATH_MACROS.getNames();
+    Set<String> macroNames = PathMacros.getInstance().getNames();
     for (String macro : macroNames) {
-      String path = PATH_MACROS.getValue(macro);
+      String path = PathMacros.getInstance().getValue(macro);
       if (path != null) {
         path = getCanonicalPath(path).replace(MacrosFactory.SEPARATOR_CHAR, File.separatorChar);
         if (pathStartsWith(absolutePath, path)) {
@@ -78,14 +70,6 @@ class Macros {
     }
     assert path.length() >= prefix.length() : "path: " + path + "; prefix: " + prefix;
     return File.separator + FileUtil.getRelativePath(path, prefix, File.separator);
-  }
-
-  String removePrefix(String path) {
-    String result = path.substring(path.indexOf('}') + 1);
-    if (result.startsWith(File.separator)) {
-      result = result.substring(1);
-    }
-    return result;
   }
 
   static boolean pathStartsWith(String path, @NotNull String with) {
