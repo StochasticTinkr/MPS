@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.httpsupport.manager" uuid="23865718-e2ed-41b5-a132-0da1d04e266d" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="false">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />

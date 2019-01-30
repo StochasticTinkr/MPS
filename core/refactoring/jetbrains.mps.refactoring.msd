@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.refactoring" uuid="5187f5c9-b8a8-4309-90b3-14f9919bd2d8" moduleVersion="0" compileInMPS="false">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.core.tool.environment" uuid="fdaaf35f-8ee3-4c37-b09d-9efaeaaa7a41" moduleVersion="0" compileInMPS="false">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.typesystemEngine" uuid="20c6e580-bdc5-4067-8049-d7e3265a86de" moduleVersion="0" pluginKind="PLUGIN_CORE" compileInMPS="false" generatorOutputPath="${mps_home}/core/typesystemEngine/source_gen">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="collections.runtime" uuid="9b80526e-f0bf-4992-bdf5-cee39c1833f3" moduleVersion="0" pluginKind="PLUGIN_CORE" compileInMPS="false">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />

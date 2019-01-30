@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.generator" uuid="5fa23c0a-216d-4571-a163-e286643e6f5f" moduleVersion="0" pluginKind="PLUGIN_CORE" compileInMPS="false" generatorOutputPath="${mps_home}/core/generator/source_gen">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />

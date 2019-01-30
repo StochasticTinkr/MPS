@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.runtime" uuid="9a4afe51-f114-4595-b5df-048ce3c596be" moduleVersion="0" pluginKind="PLUGIN_CORE" compileInMPS="false">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />

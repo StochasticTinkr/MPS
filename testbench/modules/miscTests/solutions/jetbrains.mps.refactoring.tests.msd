@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.refactoring.tests" uuid="9e6a0894-dcdb-4946-967f-35c0fc5d51f8" compileInMPS="false" generatorOutputPath="${mps_home}/testbench/modules/miscTests/tests_gen">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />

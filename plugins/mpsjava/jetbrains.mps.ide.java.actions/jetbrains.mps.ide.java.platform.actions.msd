@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.java.platform.actions" uuid="546f6e5c-e4a5-492f-bb5a-17f680dec8fd" moduleVersion="0" compileInMPS="false" generatorOutputPath="${mps_home}/plugins/mps-java-workbench/META-INF/platform">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />

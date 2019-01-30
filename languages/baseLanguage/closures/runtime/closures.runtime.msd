@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="closures.runtime" uuid="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb" moduleVersion="0" pluginKind="PLUGIN_CORE" compileInMPS="false">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />

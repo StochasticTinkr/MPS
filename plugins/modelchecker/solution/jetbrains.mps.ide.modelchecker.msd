@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.modelchecker" uuid="190bd57b-8f4d-4411-955f-e9cc0378366a" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${mps_home}/plugins/modelchecker/source_gen">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
