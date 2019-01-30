@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,18 +139,9 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
         // Case 1. Deployed generator modules have no DD and are read independently from their source languages.
         //         Include their separate jar (hard-coded knowledge about build layout) into classpath.
         if (getModule() instanceof Generator) {
-          LOG.error(String.format("Deployed generator module %s without deployment descriptor. File: %s",
+          LOG.error(String.format("Deployed generator module %s without deployment descriptor. Generator classes would be missing. File: %s",
                                   getModule().getModuleReference(),
                                   getModule().getDescriptorFile()));
-          // FIXME COMPATIBILITY CODE BELOW SHALL CEASE TO EXIST IN 2017.2 (case 1)
-          IFile descriptorFile = ((Generator) getModule()).getSourceLanguage().getDescriptorFile();
-          IFile bundleHome = descriptorFile == null ? null : descriptorFile.getBundleHome();
-          if (bundleHome != null) {
-            // bundleHome for module itself and {bundleHome without .jar}-generator.jar for generator
-            String mainPath = bundleHome.getPath().substring(0, bundleHome.getPath().length() - ".jar".length());
-            String jarPath = mainPath + "-generator.jar";
-            classesGen = bundleHome.getFileSystem().getFile(jarPath);
-          }
         } else if (getModule().getDescriptorFile() != null) {
           // CASE 2. Solution(s) bundled into single jar with classes (both from hand-written and generated sources) at the root.
           // HACK. Fallback for manually bundled modules (vcs.jar or mps-core.jar):
