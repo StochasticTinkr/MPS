@@ -44,6 +44,9 @@ public final class IdeaFileSystem extends BaseIdeaFileSystem implements SafeWrit
   @Override
   public IdeaFile getFile(@NotNull String path) {
     path = FileUtil.normalize(path);
+    if (path.endsWith("!")) {
+      path += "/";
+    }
     String fsId = path.contains("!") ? VFSManager.JAR_FS : VFSManager.FILE_FS;
     IFileSystem fileSystem = VFSManager.getInstance().getFileSystem(fsId);
     assert fileSystem instanceof BaseIdeaFileSystem;
@@ -52,6 +55,7 @@ public final class IdeaFileSystem extends BaseIdeaFileSystem implements SafeWrit
 
   /**
    * Proper alternative to {@link VirtualFileUtils#toIFile(VirtualFile)}, gives MPS file abstraction for an IDEA's one.
+   *
    * @param virtualFile IDEA's file abstraction
    * @return MPS file abstraction
    */
