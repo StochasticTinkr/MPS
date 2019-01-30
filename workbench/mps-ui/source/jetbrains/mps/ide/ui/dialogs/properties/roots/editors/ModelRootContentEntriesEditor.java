@@ -352,7 +352,12 @@ public class ModelRootContentEntriesEditor implements Disposable {
       for (ModelRootEntryContainer existingEntryContainer : myModelRootEntries) {
         if (entry.getClass().equals(existingEntryContainer.getModelRootEntry().getClass())) {
           FileBasedModelRoot existingModelRoot = (FileBasedModelRoot) existingEntryContainer.getModelRootEntry().getModelRoot();
-          candidatesForIntersection.add(VirtualFileUtils.getVirtualFile(existingModelRoot.getContentRoot()));
+          VirtualFile vFile = VirtualFileUtils.getVirtualFile(existingModelRoot.getContentRoot());
+          if (vFile == null){
+            LOG.error("Can't find file for model root. This root will not be checked for intersection with others. Path: " + existingModelRoot.getContentRoot());
+            continue;
+          }
+          candidatesForIntersection.add(vFile);
         }
       }
       FileChooserDescriptor fileChooserDescriptor = new FileChooserDescriptor(false, true, true, false, true, false);
