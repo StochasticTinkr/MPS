@@ -16,6 +16,7 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tos2" ref="r:19e846e2-aa6a-48a9-8367-2a1eda2709e7(jetbrains.mps.build.mps.runner.behavior)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -85,6 +86,12 @@
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -219,6 +226,38 @@
           </node>
         </node>
       </node>
+      <node concept="3cpWs8" id="7L2U3nU1lrj" role="3cqZAp">
+        <node concept="3cpWsn" id="7L2U3nU1lrk" role="3cpWs9">
+          <property role="TrG5h" value="solution" />
+          <node concept="3Tqbb2" id="7L2U3nU1lrf" role="1tU5fm">
+            <ref role="ehGHo" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
+          </node>
+          <node concept="2OqwBi" id="7L2U3nU1lrl" role="33vP2m">
+            <node concept="1YBJjd" id="7L2U3nU1lrm" role="2Oq$k0">
+              <ref role="1YBMHb" node="6rDosczLWA$" resolve="buildSolutionRunner" />
+            </node>
+            <node concept="3TrEf2" id="7L2U3nU1lrn" role="2OqNvi">
+              <ref role="3Tt5mk" to="as3y:5iKxrmkn6qh" resolve="solution" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="7L2U3nU1kpG" role="3cqZAp">
+        <node concept="3clFbS" id="7L2U3nU1kpI" role="3clFbx">
+          <node concept="3SKdUt" id="7L2U3nU1plc" role="3cqZAp">
+            <node concept="3SKdUq" id="7L2U3nU1ple" role="3SKWNk">
+              <property role="3SKdUp" value="solution is still not filled =&gt; error in constraints" />
+            </node>
+          </node>
+          <node concept="3cpWs6" id="7L2U3nU1pcR" role="3cqZAp" />
+        </node>
+        <node concept="3clFbC" id="7L2U3nU1paS" role="3clFbw">
+          <node concept="10Nm6u" id="7L2U3nU1paZ" role="3uHU7w" />
+          <node concept="37vLTw" id="7L2U3nU1oVH" role="3uHU7B">
+            <ref role="3cqZAo" node="7L2U3nU1lrk" resolve="solution" />
+          </node>
+        </node>
+      </node>
       <node concept="3cpWs8" id="6rDosczM1nq" role="3cqZAp">
         <node concept="3cpWsn" id="6rDosczM1nr" role="3cpWs9">
           <property role="TrG5h" value="moduleReference" />
@@ -229,13 +268,8 @@
             <ref role="37wK5l" to="w0gx:~ModuleReference.parseReference(java.lang.String):org.jetbrains.mps.openapi.module.SModuleReference" resolve="parseReference" />
             <ref role="1Pybhc" to="w0gx:~ModuleReference" resolve="ModuleReference" />
             <node concept="2OqwBi" id="6rDosczM1nt" role="37wK5m">
-              <node concept="2OqwBi" id="6rDosczM1nu" role="2Oq$k0">
-                <node concept="1YBJjd" id="6rDosczM1nv" role="2Oq$k0">
-                  <ref role="1YBMHb" node="6rDosczLWA$" resolve="buildSolutionRunner" />
-                </node>
-                <node concept="3TrEf2" id="6rDosczM1nw" role="2OqNvi">
-                  <ref role="3Tt5mk" to="as3y:5iKxrmkn6qh" resolve="solution" />
-                </node>
+              <node concept="37vLTw" id="7L2U3nU1lro" role="2Oq$k0">
+                <ref role="3cqZAo" node="7L2U3nU1lrk" resolve="solution" />
               </node>
               <node concept="2qgKlT" id="6rDosczM1nx" role="2OqNvi">
                 <ref role="37wK5l" to="2txq:41K1b4v5ZCB" resolve="getModuleReference" />
@@ -271,13 +305,8 @@
             </node>
             <node concept="3cpWs3" id="5AcmpEOi0lQ" role="2MkJ7o">
               <node concept="2OqwBi" id="5AcmpEOi0lR" role="3uHU7w">
-                <node concept="2OqwBi" id="5AcmpEOi0lS" role="2Oq$k0">
-                  <node concept="1YBJjd" id="5AcmpEOi0lT" role="2Oq$k0">
-                    <ref role="1YBMHb" node="6rDosczLWA$" resolve="buildSolutionRunner" />
-                  </node>
-                  <node concept="3TrEf2" id="5AcmpEOi0lU" role="2OqNvi">
-                    <ref role="3Tt5mk" to="as3y:5iKxrmkn6qh" resolve="solution" />
-                  </node>
+                <node concept="37vLTw" id="7L2U3nU1poy" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7L2U3nU1lrk" resolve="solution" />
                 </node>
                 <node concept="3TrcHB" id="5AcmpEOi0lV" role="2OqNvi">
                   <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -494,13 +523,8 @@
         </node>
         <node concept="3cpWs3" id="6rDosczM7ae" role="2MkJ7o">
           <node concept="2OqwBi" id="6rDosczM7V$" role="3uHU7w">
-            <node concept="2OqwBi" id="6rDosczM7eS" role="2Oq$k0">
-              <node concept="1YBJjd" id="6rDosczM7aw" role="2Oq$k0">
-                <ref role="1YBMHb" node="6rDosczLWA$" resolve="buildSolutionRunner" />
-              </node>
-              <node concept="3TrEf2" id="6rDosczM7_k" role="2OqNvi">
-                <ref role="3Tt5mk" to="as3y:5iKxrmkn6qh" resolve="solution" />
-              </node>
+            <node concept="37vLTw" id="7L2U3nU1r59" role="2Oq$k0">
+              <ref role="3cqZAo" node="7L2U3nU1lrk" resolve="solution" />
             </node>
             <node concept="3TrcHB" id="6rDosczM8_n" role="2OqNvi">
               <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
