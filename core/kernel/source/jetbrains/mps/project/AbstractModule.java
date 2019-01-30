@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,17 +18,13 @@ package jetbrains.mps.project;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.module.SModuleBase;
-import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
-import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.persistence.MementoImpl;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.scope.VisibleDepsSearchScope;
@@ -36,14 +32,10 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.MacroHelper;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Contract;
@@ -67,7 +59,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -406,179 +397,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     setChanged();
   }
 
-  // FIXME: MPS-19756
-  // TODO: get rid of this code - generate the deployment descriptor during build process
-  protected void updatePackagedDescriptor() {
-    // things to do:
-    // 1) load/prepare stub libraries (getAdditionalJavaStubPaths) from sources descriptor
-    // 2) load/prepare stub model roots from sources descriptor
-    // 3) load libraries from deployment descriptor (/classes_gen ?)
-
-    // possible cases:
-    // 1) without deployment descriptor (nothing to do; todo: ?)
-    // 2) with deployment descriptor, without sources (to do: 3)
-    // 3) with deployment descriptor, with sources (to do: 1,2,3)
-
-    if (!isPackaged()) {
-      return;
-    }
-
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) {
-      return;
-    }
-    DeploymentDescriptor deplDescriptor = descriptor.getDeploymentDescriptor();
-    if (deplDescriptor == null) {
-      return;
-    }
-    if (getDescriptorFile() == null) {
-      // this implicitly filters out Generator modules from updatePackagedDescriptor().
-      // however, generators never got DD (now they do, and that's the reason we could get NPE here),
-      // and the method doesn't look like something to persist forever, so I don't care to update generator's source descriptor.
-      // Instead, proper locations have to be specified right in deployment time
-      return;
-    }
-
-    final IFile bundleHomeFile = getDescriptorFile().getBundleHome();
-    if (bundleHomeFile == null) {
-      return;
-    }
-
-    IFile newContentDir = bundleHomeFile.getParent();
-    if (newContentDir == null || !newContentDir.exists()) {
-      return;
-    }
-
-    IFile sourcesDescriptorFile = ModulesMiner.getSourceDescriptorFile(getDescriptorFile(), deplDescriptor);
-    if (sourcesDescriptorFile == null) {
-      // todo: for now it's impossible
-      assert descriptor instanceof DeploymentDescriptor;
-    } else {
-      assert !(descriptor instanceof DeploymentDescriptor);
-    }
-
-    // 1 && 2
-    if (sourcesDescriptorFile != null) {
-      // stub model roots
-      List<ModelRootDescriptor> toRemove = new ArrayList<>();
-      List<ModelRootDescriptor> toAdd = new ArrayList<>();
-      for (ModelRootDescriptor rootDescriptor : descriptor.getModelRootDescriptors()) {
-        String rootDescriptorType = rootDescriptor.getType();
-        if (rootDescriptorType.equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) {
-          boolean update = false;
-          Memento newMemento = new MementoImpl();
-          {
-            // there are few possible deployment layouts:
-            //    1. App/Contents/languages/my.lang.jar + -src.jar
-            //    2. App/Contents/plugins/<name>/languages/my.lang.jar + -src.jar + libraries from additional cp
-            //       (build language generator puts libraries there with the help of ArtifactsRelativePathHelper, base on extracted jar deps;
-            //       FWIW, build language ignores jars listed under stub models)
-            //       App/Contents/plugins/<name>/pluginSolutions/my.lang.pluginSolution.jar
-            //       App/Contents/plugins/<name>/lib/icons.jar (placed there by build language generator)
-            //    3. Custom layout:
-            //       e.g. jetpad, which differs from (2) with lib/ full of cp jars
-            //       mps-core, with languageDesign/ and util/ nested under languages/
-            //       mps-vcs, with cp jars under lib/
-            //
-            // trying to load new format : replacing paths like **.jar!/module ->
-            String contentPath = rootDescriptor.getMemento().get(FileBasedModelRoot.CONTENT_PATH);
-            List<String> paths = new LinkedList<>();
-            for (Memento sourceRoot : rootDescriptor.getMemento().getChildren(FileBasedModelRoot.SOURCE_ROOTS)) {
-              paths.add(contentPath + File.separator + sourceRoot.get(FileBasedModelRoot.LOCATION));
-            }
-            // contentPath = my.lang-src.jar!/module/xxx (provided original was ${module}/xxx; although some have ${mps-home} there)
-            // bundleHomeFile == my.lang.jar
-            // bundleParent == folder of my.lang.jar
-            // e.g. for collections.trove.msd:
-            //    /plugins/mps-trove/languages/collections_trove.runtime.jar
-            //    /plugins/mps-trove/languages/trove-2.1.0.jar
-            //  and
-            //    <modelRoot contentPath="${module}" type="java_classes">
-            //      <sourceRoot location="classes_gen" />
-            //      <sourceRoot location="lib/trove-2.1.0.jar" />
-            //    </modelRoot>
-            // the code below makes no sense
-            // DD for the module lists <library jar="trove-2.1.0.jar" />, which is likely the way file from languages/ is loaded
-            newMemento.put(FileBasedModelRoot.CONTENT_PATH, newContentDir.getPath());
-            Memento newMementoChild = newMemento.createChild(FileBasedModelRoot.SOURCE_ROOTS);
-            for (String path : paths) {
-              String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
-              if (convertedPath != null) {
-                String newRelativeLocation = FileUtil.getRelativePath(FileUtil.getUnixPath(convertedPath),
-                                                                      FileUtil.getUnixPath(newContentDir.getPath()),
-                                                                      Path.UNIX_SEPARATOR);
-                newMementoChild.put(FileBasedModelRoot.LOCATION, newRelativeLocation);
-                update = true;
-              }
-            }
-          }
-          if (update) {
-            toAdd.add(new ModelRootDescriptor(rootDescriptorType, newMemento));
-            toRemove.add(rootDescriptor);
-          }
-        }
-      }
-      descriptor.getModelRootDescriptors().removeAll(toRemove);
-      descriptor.getModelRootDescriptors().addAll(toAdd);
-    }
-
-    // 3
-    // MD.getAdditionalJavaStubPaths() has been updated by ModulesMiner to point to correct location according to information from DD
-    // Would be great to have IFile here directly, but alas, there's no well-established idea what's relation between MD and IFile/Path
-    // the problem is that myFileSystem not necessarily match that of deployment descriptor (the one we used to create these paths in MM).
-    for (String jarFile : descriptor.getAdditionalJavaStubPaths()) {
-      IFile jar = myFileSystem.getFile(jarFile);
-      if (jar.exists()) {
-        // FIXME why do we expose *each* cp jar as model stub? Seems to be legacy, when stubModelEntry used to specify
-        //       both cp+stub, now there's distinct model root for that. HOWEVER, now it's only dd that points correctly to
-        //       library jars (filesystem-wise). While module-relative stub jars from deployed modules are ignored in the update cycle
-        //       above (module-src.jar!/module/ doesn't contain lib/stub.jar), and stub.jar is often part of CP, this code helps to get
-        //       stubs in deployed modules (e.g. check collections_trove.runtime)
-        descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(jar));
-      }
-    }
-  }
-
   /**
-   * Convert path from sources module descriptor for using on distribution
-   * /classes && /classes_gen converts to bundle home path
-   *
-   * @param originalPath Original path from sources module descriptor
-   * @return Converted path, null if path meaningless on packaged module
+   * @deprecated no-op, just drop any usage.
    */
-  @Nullable
-  private String convertPath(String originalPath, IFile bundleHome, IFile sourcesDescriptorFile, ModuleDescriptor descriptor) {
-    MacroHelper macroHelper = MacrosFactory.forModuleFile(sourcesDescriptorFile);
-
-    String canonicalPath = FileUtil.getCanonicalPath(originalPath);
-
-    // /classes && /classes_gen hack
-    String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
-    if (canonicalPath.endsWith(suffix)) {
-      // MacrosFactory based on original descriptor file because we use original descriptor file for ModuleDescriptor reading, so all paths expanded to original descriptor file
-      String classes = macroHelper.expandPath("${module}/" + suffix);
-      if (FileUtil.getCanonicalPath(classes).equalsIgnoreCase(canonicalPath)) {
-        return bundleHome.getPath();
-      }
-    } else if (FileUtil.getCanonicalPath(bundleHome.getPath()).equalsIgnoreCase(canonicalPath)) {
-      return bundleHome.getPath();
-    }
-
-    // ${mps_home}/lib
-    String mpsHomeLibPath = FileUtil.getCanonicalPath(PathManager.getHomePath() + File.separator + "lib");
-    if (FileUtil.isAncestor(mpsHomeLibPath, canonicalPath)) {
-      return canonicalPath;
-    }
-
-    // we used to keep originalPath if it has a macro not known to MPS here.
-    // However, the check has been deprecated in 2012 and thus removed. I'm not 100% sure what
-    // 'meaningless' in the contract of the method means. Of course, unknown macros make no sense for us
-    // and thus null is legitimate answer, OTOH, custom macros might have a lot of meaning to someone else.
-    //
-    // ignore paths starts from ${module}/${project} etc
-    return null;
+  @Deprecated
+  @ToRemove(version = 2019.1)
+  protected void updatePackagedDescriptor() {
+    LOG.warn("AbstractModule#updatePackagedDescriptor() is no op, stop using it", new Throwable());
   }
-
 
 //----
 
@@ -594,7 +420,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   private void initFacetsAndModels() {
-    updatePackagedDescriptor();
     updateFacets();
     updateModelsSet();
   }
