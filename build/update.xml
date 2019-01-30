@@ -248,5 +248,13 @@
       </build>
     </channel>
 
+    <channel id="MPS191EAP" name="MPS 2019.1" status="eap"
+             url="https://www.jetbrains.com/mps/download"
+             feedback="http://youtrack.jetbrains.net"
+             majorVersion="2019" minorVersoin="1">
+      <build number="191.555" version="2019.1">
+        <message>JetBrains MPS 2019.1 EAP1 is available.</message>
+        <button name="Download" url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2019.1+EAP+Download+Page" download="true"/>      </build>
+    </channel>
   </product>
 </products>
