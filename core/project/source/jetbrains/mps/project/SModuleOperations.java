@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,9 +119,17 @@ public class SModuleOperations {
     return facet != null && facet.isCompileInMps();
   }
 
+  /**
+   * @param module non-null
+   * @return true iff module has java facet, doesn't require MPS compilation and _expilictly_ demands external compilation with IDEA
+   */
   public static boolean isCompileInIdea(SModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-    return facet != null && !facet.isCompileInMps();
+    if (facet == null || facet.isCompileInMps() || !(module instanceof AbstractModule)) {
+      return false;
+    }
+    final ModuleDescriptor md = ((AbstractModule) module).getModuleDescriptor();
+    return md != null && md.needsExternalIdeaCompile();
   }
 
   public static Set<String> getAllSourcePaths(SModule module) {

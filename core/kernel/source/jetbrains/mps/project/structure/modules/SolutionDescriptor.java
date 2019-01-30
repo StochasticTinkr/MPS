@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ public class SolutionDescriptor extends ModuleDescriptor {
   private String myOutputPath;
   private SolutionKind myKind = SolutionKind.NONE;
   private boolean myCompileInMPS = true;
+  private boolean myRequestCompileIDEA = false;
 
   public final String getOutputPath() {
     return myOutputPath;
@@ -47,6 +48,16 @@ public class SolutionDescriptor extends ModuleDescriptor {
     return myCompileInMPS;
   }
 
+  @Override
+  public boolean needsExternalIdeaCompile() {
+    return myRequestCompileIDEA;
+  }
+
+  @Override
+  public void setNeedsExternalIdeaCompile(boolean value) {
+    myRequestCompileIDEA = value;
+  }
+
   public final void setCompileInMPS(boolean compileInMPS) {
     myCompileInMPS = compileInMPS;
   }
@@ -62,6 +73,7 @@ public class SolutionDescriptor extends ModuleDescriptor {
     stream.writeString(myOutputPath);
     stream.writeString(myKind.name());
     stream.writeBoolean(myCompileInMPS);
+    stream.writeBoolean(myRequestCompileIDEA);
   }
 
   @Override
@@ -70,6 +82,7 @@ public class SolutionDescriptor extends ModuleDescriptor {
     myOutputPath = stream.readString();
     myKind = SolutionKind.valueOf(stream.readString());
     myCompileInMPS = stream.readBoolean();
+    myRequestCompileIDEA = stream.readBoolean();
   }
 
   @Override
@@ -78,6 +91,7 @@ public class SolutionDescriptor extends ModuleDescriptor {
     SolutionDescriptor copy = copy0(SolutionDescriptor::new);
     copy.setKind(getKind());
     copy.setCompileInMPS(getCompileInMPS());
+    copy.setNeedsExternalIdeaCompile(needsExternalIdeaCompile());
     copy.setOutputPath(getOutputPath());
     return copy;
   }

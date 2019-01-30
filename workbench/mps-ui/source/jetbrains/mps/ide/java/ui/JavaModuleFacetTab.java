@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.ItemRemovable;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
@@ -54,7 +55,9 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
+import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -68,6 +71,7 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   private FilesTableModel myLibrariesTableModel;
   private boolean myLibrariesChanged = false;
   private JBCheckBox myCheckBox;
+  private JBCheckBox myExternalIdeaCompile;
   private ComboBox myComboBox;
 
   private final JavaModuleFacetImpl myJavaModuleFacet;
@@ -100,7 +104,18 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
                                           GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       myCheckBox = new JBCheckBox(PropertiesBundle.message("facet.java.compileinmps"), descriptor.getCompileInMPS());
-      advancedTab.add(myCheckBox,
+      Component compileFlags = null;
+      if (RuntimeFlags.isInternalMode()) {
+        myExternalIdeaCompile = new JBCheckBox(PropertiesBundle.message("facet.java.compileinidea"), descriptor.needsExternalIdeaCompile());
+        myCheckBox.addChangeListener(e -> {myExternalIdeaCompile.setEnabled(!myCheckBox.isSelected());});
+        JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT), false);
+        p.add(myCheckBox);
+        p.add(myExternalIdeaCompile);
+        compileFlags = p;
+      } else {
+        compileFlags = myCheckBox;
+      }
+      advancedTab.add(compileFlags,
                       new GridConstraints(row++, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
                                           GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
@@ -186,6 +201,9 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       SolutionDescriptor descriptor = (SolutionDescriptor) myJavaModuleFacet.getModule().getModuleDescriptor();
       assert descriptor != null;
       solutionCheck = descriptor.getCompileInMPS() != myCheckBox.isSelected() || descriptor.getKind() != myComboBox.getSelectedItem();
+      if (myExternalIdeaCompile != null) {
+        solutionCheck |= descriptor.needsExternalIdeaCompile() != myExternalIdeaCompile.isSelected();
+      }
     }
 
     // Any change in table model will require re-save, even if state in the end is the same, to simplify this check.
@@ -199,6 +217,9 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       assert descriptor != null;
       descriptor.setCompileInMPS(myCheckBox.isSelected());
       descriptor.setKind((SolutionKind) myComboBox.getSelectedItem());
+      if (myExternalIdeaCompile != null) {
+        descriptor.setNeedsExternalIdeaCompile(myExternalIdeaCompile.isSelected());
+      }
     }
 
     // TODO: Move save of sources and libraries to JavaModuleFacetImpl#save(), when settings will be moved from ModuleDescriptor to memento
