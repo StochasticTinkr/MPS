@@ -10,11 +10,11 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -36,13 +36,18 @@ public class check_BuildSolutionRunnerAspect_NonTypesystemRule extends AbstractN
     final String className = BuildSolutionRunnerAspect__BehaviorDescriptor.getClassName_id1aYLt$9dW4N.invoke(buildSolutionRunner);
     final String methodName = BuildSolutionRunnerAspect__BehaviorDescriptor.getMethodName_id1aYLt$9dX0a.invoke(buildSolutionRunner);
     final SRepository repo = SNodeOperations.getModel(buildSolutionRunner).getRepository();
-    SModuleReference moduleReference = ModuleReference.parseReference(BuildMps_AbstractModule__BehaviorDescriptor.getModuleReference_id41K1b4v5ZCB.invoke(SLinkOperations.getTarget(buildSolutionRunner, MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution"))));
+    SNode solution = SLinkOperations.getTarget(buildSolutionRunner, MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution"));
+    if (solution == null) {
+      // solution is still not filled => error in constraints 
+      return;
+    }
+    SModuleReference moduleReference = ModuleReference.parseReference(BuildMps_AbstractModule__BehaviorDescriptor.getModuleReference_id41K1b4v5ZCB.invoke(solution));
     SModule module = moduleReference.resolve(repo);
     if (module == null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new ReferenceMessageTarget("solution");
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(buildSolutionRunner, "Cannot find solution " + SPropertyOperations.getString(SLinkOperations.getTarget(buildSolutionRunner, MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "r:6869e2b7-2b2d-443c-a462-ce5a9004892e(jetbrains.mps.build.mps.runner.typesystem)", "6452630887099532660", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(buildSolutionRunner, "Cannot find solution " + SPropertyOperations.getString(solution, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "r:6869e2b7-2b2d-443c-a462-ce5a9004892e(jetbrains.mps.build.mps.runner.typesystem)", "6452630887099532660", null, errorTarget);
       }
       return;
     }
@@ -69,7 +74,7 @@ public class check_BuildSolutionRunnerAspect_NonTypesystemRule extends AbstractN
     {
       MessageTarget errorTarget = new NodeMessageTarget();
       errorTarget = new ReferenceMessageTarget("solution");
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(buildSolutionRunner, "Cannot find public static void " + className + "." + methodName + "(...) in " + SPropertyOperations.getString(SLinkOperations.getTarget(buildSolutionRunner, MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "r:6869e2b7-2b2d-443c-a462-ce5a9004892e(jetbrains.mps.build.mps.runner.typesystem)", "7415565752189086936", null, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(buildSolutionRunner, "Cannot find public static void " + className + "." + methodName + "(...) in " + SPropertyOperations.getString(solution, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "r:6869e2b7-2b2d-443c-a462-ce5a9004892e(jetbrains.mps.build.mps.runner.typesystem)", "7415565752189086936", null, errorTarget);
     }
   }
   public SAbstractConcept getApplicableConcept() {
