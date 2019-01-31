@@ -5,14 +5,17 @@ package jetbrains.mps.baseLanguage.javadoc.editor;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil;
 import jetbrains.mps.baseLanguage.javadoc.behavior.CommentLinePart__BehaviorDescriptor;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine__BehaviorDescriptor;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -26,149 +29,68 @@ public class TextCommentLinePart_ActionMap {
         this.execute_internal(editorContext, node);
       }
       public void execute_internal(EditorContext editorContext, SNode node) {
-        // there is a difference between Backspace & delete actions now. 
-        // code was copied from delete action. 
-        // TODO: handle Backspace here 
-        int caretPosition = ((EditorCell_Label) editorContext.getSelectedCell()).getCaretPosition();
-        // todo: this cannot distinguish backspace and delete when placed on the first position in a part 
-        if (caretPosition == 0) {
-          //  Caret is at the beginning of part, we're doing backspace 
-          boolean isFirstPart;
-          boolean isFirstLine;
-          SNode nodeToSelect;
-          int caret;
-          SNode currrentNode = editorContext.getSelectedNode();
-          isFirstPart = (SNodeOperations.getPrevSibling(currrentNode) == null);
-          isFirstLine = (SNodeOperations.getPrevSibling(SNodeOperations.getParent(currrentNode)) == null);
-          if (isFirstPart) {
-            if (isFirstLine) {
-              //  This is beginning of comment lines container 
-              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(currrentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"))) {
-                SNodeOperations.deleteNode(SNodeOperations.getParent(currrentNode));
-              } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(currrentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"))) {
-                NodeCaretPair nodeCaret = CommentLinePart__BehaviorDescriptor.smartDelete_id7PYAiugbmRz.invoke(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(currrentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")), ((boolean) true));
-                editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
-                ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
+        boolean isFirstPart;
+        boolean isFirstLine;
+        SNode nodeToSelect;
+        int caret;
+        SNode currentNode = editorContext.getSelectedNode();
+        isFirstPart = (SNodeOperations.getPrevSibling(currentNode) == null);
+        isFirstLine = (SNodeOperations.getPrevSibling(SNodeOperations.getParent(currentNode)) == null);
+        if (isFirstPart) {
+          if (isFirstLine) {
+            //  This is beginning of comment lines container 
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(currentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"))) {
+              if (DeletionApproverUtil.approve(editorContext, SNodeOperations.getParent(SNodeOperations.getParent(currentNode)))) {
+                return;
               }
-              return;
-            } else {
-              //  This is the beginning of line 
-              SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currrentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
-              SNode prevLine = SNodeOperations.cast(SNodeOperations.getPrevSibling(curLine), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
-              nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).last();
-              int index = ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).count() - 1;
-              ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))));
-              if (SNodeOperations.isInstanceOf(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")))) {
-                caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length();
-              } else {
-                caret = 0;
-              }
-              CommentLine__BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(prevLine, ((int) index));
-
-              SNodeOperations.deleteNode(curLine);
-              editorContext.selectWRTFocusPolicy(nodeToSelect);
-              ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret);
-              return;
-            }
-          } else {
-            //  Caret is at the beginning of text part inside comment line 
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"))) {
-              nodeToSelect = SNodeOperations.getPrevSibling(currrentNode);
-              SNode linePart = SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"));
-              if (isEmptyString(SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")))) {
-                SNodeOperations.deleteNode(nodeToSelect);
-                nodeToSelect = currrentNode;
-              } else {
-                SPropertyOperations.assign(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text"), SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).substring(0, SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length() - 1));
-              }
-              editorContext.selectWRTFocusPolicy(nodeToSelect);
-            } else if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart")) || SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"))) {
-              NodeCaretPair nodeCaret = CommentLinePart__BehaviorDescriptor.smartDelete_id7PYAiugbmRz.invoke(SNodeOperations.cast(SNodeOperations.getPrevSibling(currrentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")), ((boolean) false));
+              SNodeOperations.deleteNode(SNodeOperations.getParent(SNodeOperations.getParent(currentNode)));
+            } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(currentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"))) {
+              NodeCaretPair nodeCaret = CommentLinePart__BehaviorDescriptor.smartDelete_id7PYAiugbmRz.invoke(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(currentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")), ((boolean) false));
               editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
               ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
             }
             return;
+          } else {
+            //  This is the beginning of line 
+            SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
+            SNode prevLine = SNodeOperations.cast(SNodeOperations.getPrevSibling(curLine), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
+            nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).last();
+            int index = ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).count() - 1;
+            ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))));
+            if (SNodeOperations.isInstanceOf(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")))) {
+              caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length();
+            } else {
+              caret = 0;
+            }
+            CommentLine__BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(prevLine, ((int) index));
+
+            SNodeOperations.deleteNode(curLine);
+            editorContext.selectWRTFocusPolicy(nodeToSelect);
+            ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret);
+            return;
           }
         } else {
-          // We're doing delete 
-          SNode nodeToSelect = null;
-          int caret = -1;
-          EditorCell_Label selectedCell = ((EditorCell_Label) editorContext.getSelectedCell());
-          if (isNotEmptyString(selectedCell.getSelectedText())) {
-            selectedCell.deleteSelection();
-            if (isEmptyString(selectedCell.getText())) {
-              if ((SNodeOperations.getNextSibling(node) == null)) {
-                CommentLine__BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine")), ((int) SNodeOperations.getIndexInParent(node)));
-              } else {
-                nodeToSelect = SNodeOperations.getNextSibling(node);
-                SNodeOperations.deleteNode(node);
-              }
+          //  Caret is at the beginning of text part inside comment line 
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"))) {
+            nodeToSelect = SNodeOperations.getPrevSibling(currentNode);
+            SNode linePart = SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"));
+            if (isEmptyString(SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")))) {
+              SNodeOperations.deleteNode(nodeToSelect);
+              nodeToSelect = currentNode;
+            } else {
+              SPropertyOperations.assign(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text"), SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).substring(0, SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length() - 1));
             }
             editorContext.selectWRTFocusPolicy(nodeToSelect);
-            return;
-          } else if (selectedCell.getCaretPosition() == selectedCell.getText().length()) {
-            //  Caret is at the end of part 
-            boolean isLastPart;
-            boolean isLastLine;
-            SNode currentNode = editorContext.getSelectedNode();
-            isLastPart = (SNodeOperations.getNextSibling(currentNode) == null);
-            isLastLine = (SNodeOperations.getNextSibling(SNodeOperations.getParent(currentNode)) == null);
-            if (isLastPart) {
-              if (isLastLine) {
-                //  This is end of comment lines container 
-                if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(currentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"))) {
-                  //  Shouldn't delete documentation comment 
-                } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(currentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"))) {
-                  NodeCaretPair nodeCaret = CommentLinePart__BehaviorDescriptor.smartDelete_id7PYAiugbmRz.invoke(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(currentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")), ((boolean) false));
-                  editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
-                  ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
-                }
-                return;
-              } else {
-                //  This is the end of line 
-                SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
-                SNode nextLine = SNodeOperations.cast(SNodeOperations.getNextSibling(curLine), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
-                nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).last();
-                int index = SNodeOperations.getIndexInParent(currentNode);
-                ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(nextLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))));
-                if (SNodeOperations.isInstanceOf(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")))) {
-                  caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length();
-                } else {
-                  caret = 0;
-                }
-                CommentLine__BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(curLine, ((int) index));
-
-                SNodeOperations.deleteNode(nextLine);
-                editorContext.selectWRTFocusPolicy(nodeToSelect);
-                ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret);
-                return;
-              }
-            } else {
-              //  Caret is at the end of text part inside comment line 
-              if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"))) {
-                nodeToSelect = SNodeOperations.getNextSibling(currentNode);
-                if (isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")))) {
-                  SNodeOperations.deleteNode(nodeToSelect);
-                  nodeToSelect = node;
-                } else {
-                  SPropertyOperations.assign(SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text"), SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).substring(1));
-                }
-                editorContext.selectWRTFocusPolicy(nodeToSelect);
-                ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret);
-              } else if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart")) || SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"))) {
-                NodeCaretPair nodeCaret = CommentLinePart__BehaviorDescriptor.smartDelete_id7PYAiugbmRz.invoke(SNodeOperations.cast(SNodeOperations.getNextSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")), ((boolean) true));
-                editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
-                ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
-              }
+          } else if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart")) || SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"))) {
+            if (DeletionApproverUtil.approve(editorContext, SNodeOperations.getPrevSibling(currentNode))) {
               return;
             }
-          } else {
-            SPropertyOperations.assign(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text"), SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).substring(0, selectedCell.getCaretPosition()) + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).substring(selectedCell.getCaretPosition() + 1));
-            return;
+            NodeCaretPair nodeCaret = CommentLinePart__BehaviorDescriptor.smartDelete_id7PYAiugbmRz.invoke(SNodeOperations.cast(SNodeOperations.getPrevSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")), ((boolean) false));
+            editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
+            ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
           }
-
+          return;
         }
-
       }
 
     };
@@ -180,67 +102,59 @@ public class TextCommentLinePart_ActionMap {
       }
       public void execute_internal(EditorContext editorContext, SNode node) {
         int caretPosition = ((EditorCell_Label) editorContext.getSelectedCell()).getCaretPosition();
-        // todo: this cannot distinguish backspace and delete when placed on the first position in a part 
         if (caretPosition == 0) {
-          //  Caret is at the beginning of part, we're doing backspace 
-          boolean isFirstPart;
-          boolean isFirstLine;
           SNode nodeToSelect;
-          int caret;
-          SNode currrentNode = editorContext.getSelectedNode();
-          isFirstPart = (SNodeOperations.getPrevSibling(currrentNode) == null);
-          isFirstLine = (SNodeOperations.getPrevSibling(SNodeOperations.getParent(currrentNode)) == null);
-          if (isFirstPart) {
-            if (isFirstLine) {
-              //  This is beginning of comment lines container 
-              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(currrentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"))) {
-                SNodeOperations.deleteNode(SNodeOperations.getParent(currrentNode));
-              } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(currrentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"))) {
-                NodeCaretPair nodeCaret = CommentLinePart__BehaviorDescriptor.smartDelete_id7PYAiugbmRz.invoke(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(currrentNode)), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")), ((boolean) true));
-                editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
-                ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
-              }
-              return;
-            } else {
-              //  This is the beginning of line 
-              SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currrentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
-              SNode prevLine = SNodeOperations.cast(SNodeOperations.getPrevSibling(curLine), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
-              nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).last();
-              int index = ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).count() - 1;
-              ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))));
-              if (SNodeOperations.isInstanceOf(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")))) {
-                caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length();
-              } else {
-                caret = 0;
-              }
-              CommentLine__BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(prevLine, ((int) index));
+          SNode currentNode = editorContext.getSelectedNode();
 
-              SNodeOperations.deleteNode(curLine);
-              editorContext.selectWRTFocusPolicy(nodeToSelect);
-              ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret);
-              return;
-            }
-          } else {
-            //  Caret is at the beginning of text part inside comment line 
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"))) {
-              nodeToSelect = SNodeOperations.getPrevSibling(currrentNode);
+          if ((SNodeOperations.getNextSibling(currentNode) != null)) {
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"))) {
+              nodeToSelect = SNodeOperations.getNextSibling(currentNode);
               SNode linePart = SNodeOperations.cast(nodeToSelect, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"));
               if (isEmptyString(SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")))) {
                 SNodeOperations.deleteNode(nodeToSelect);
-                nodeToSelect = currrentNode;
+                nodeToSelect = currentNode;
               } else {
-                SPropertyOperations.assign(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text"), SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).substring(0, SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length() - 1));
+                SPropertyOperations.assign(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text"), SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).substring(0, SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length()));
               }
               editorContext.selectWRTFocusPolicy(nodeToSelect);
-            } else if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart")) || SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"))) {
-              NodeCaretPair nodeCaret = CommentLinePart__BehaviorDescriptor.smartDelete_id7PYAiugbmRz.invoke(SNodeOperations.cast(SNodeOperations.getPrevSibling(currrentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")), ((boolean) false));
+              SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.getNextSibling(currentNode), SelectionManager.FIRST_CELL, 0);
+              SNodeOperations.deleteNode(currentNode);
+            } else if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart")) || SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"))) {
+              if (DeletionApproverUtil.approve(editorContext, SNodeOperations.getNextSibling(currentNode))) {
+                return;
+              }
+              NodeCaretPair nodeCaret = CommentLinePart__BehaviorDescriptor.smartDelete_id7PYAiugbmRz.invoke(SNodeOperations.cast(SNodeOperations.getNextSibling(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")), ((boolean) true));
               editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
               ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
             }
             return;
+          } else {
+            SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currentNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
+            SNode nextLine = SNodeOperations.cast(SNodeOperations.getNextSibling(curLine), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
+            if ((SNodeOperations.getPrevSibling(node) != null)) {
+              int index = ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).count() - 1;
+              SNodeOperations.deleteNode(nextLine);
+              ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(nextLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))));
+              CommentLine__BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(curLine, ((int) index));
+            } else {
+              SNodeOperations.deleteNode(curLine);
+              if ((nextLine != null)) {
+                nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(nextLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).first();
+                editorContext.selectWRTFocusPolicy(nodeToSelect);
+                ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(0);
+              } else {
+                if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(curLine), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"))) {
+                  NodeCaretPair nodeCaret = CommentLinePart__BehaviorDescriptor.smartDelete_id7PYAiugbmRz.invoke(SNodeOperations.cast(SNodeOperations.getParent(curLine), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")), ((boolean) false));
+                  editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
+                  ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
+                } else {
+                  SNodeOperations.deleteNode(SNodeOperations.getParent(curLine));
+                }
+              }
+            }
+            return;
           }
         } else {
-          // We're doing delete 
           SNode nodeToSelect = null;
           int caret = -1;
           EditorCell_Label selectedCell = ((EditorCell_Label) editorContext.getSelectedCell());
