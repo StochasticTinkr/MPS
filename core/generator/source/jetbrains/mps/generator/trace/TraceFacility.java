@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
 package jetbrains.mps.generator.trace;
 
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -45,5 +45,8 @@ public final class TraceFacility {
     return new RuleTrace(interestedInTheRule, reductionRule);
   }
 
-
+  public RuleTrace2 reductionRule(TemplateReductionRule reductionRule) {
+    // may want to cache RT2 instances per RR if single thread or RT2 made thread-aware
+    return new RuleTrace2(Collections.emptyList(), reductionRule);
+  }
 }
