@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,7 +110,7 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
                                    getCause(e));
     }
     if (Arrays.asList(options).contains(MetaInfoLoadingOption.KEEP_READ)) {
-      binaryModelHeader.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo(binaryModelHeader.getModelReference())));
+      binaryModelHeader.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo()));
     }
     return new DefaultSModelDescriptor(new PersistenceFacility(this, source), binaryModelHeader);
   }
@@ -168,7 +168,7 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
   public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {
     try {
       SModelHeader binaryModelHeader = BinaryPersistence.readHeader(source);
-      binaryModelHeader.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo(binaryModelHeader.getModelReference())));
+      binaryModelHeader.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo()));
       final ModelLoadResult loadedModel = BinaryPersistence.readModel(binaryModelHeader, source, false);
       Map<String, String> result = BinaryPersistence.getDigestMap(loadedModel.getModel(), binaryModelHeader.getMetaInfoProvider());
       result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(source.openInputStream()));

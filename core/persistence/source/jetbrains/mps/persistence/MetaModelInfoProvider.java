@@ -31,11 +31,8 @@ import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
 
 import java.util.HashMap;
@@ -241,10 +238,8 @@ public interface MetaModelInfoProvider {
    */
   class RegularMetaModelInfo extends BaseMetaModelInfo {
     private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
-    private SModelReference myModelRef;
 
-    public RegularMetaModelInfo(@Nullable SModelReference modelRef) {
-      myModelRef = modelRef;
+    public RegularMetaModelInfo() {
     }
 
     @Override

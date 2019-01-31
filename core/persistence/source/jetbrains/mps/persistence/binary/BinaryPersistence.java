@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,7 +131,7 @@ public final class BinaryPersistence {
     IdInfoRegistry meta = null;
     DigestBuilderOutputStream os = ModelDigestUtil.createDigestBuilderOutputStream();
     try {
-      BinaryPersistence bp = new BinaryPersistence(mmiProvider == null ? new RegularMetaModelInfo(model.getReference()) : mmiProvider, model);
+      BinaryPersistence bp = new BinaryPersistence(mmiProvider == null ? new RegularMetaModelInfo() : mmiProvider, model);
       ModelOutputStream mos = new ModelOutputStream(os);
       meta = bp.saveModelProperties(mos);
       mos.flush();
@@ -223,7 +223,7 @@ public final class BinaryPersistence {
       SModelHeader modelHeader = loadHeader(mis);
 
       DefaultSModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
-      BinaryPersistence bp = new BinaryPersistence(mmiProvider == null ? new RegularMetaModelInfo(modelHeader.getModelReference()) : mmiProvider, model);
+      BinaryPersistence bp = new BinaryPersistence(mmiProvider == null ? new RegularMetaModelInfo() : mmiProvider, model);
       ReadHelper rh = bp.loadModelProperties(mis);
       rh.requestInterfaceOnly(interfaceOnly);
 
@@ -240,7 +240,7 @@ public final class BinaryPersistence {
     if (model instanceof DefaultSModel && ((DefaultSModel) model).getSModelHeader().getMetaInfoProvider() != null) {
       mmiProvider = ((DefaultSModel) model).getSModelHeader().getMetaInfoProvider();
     } else {
-      mmiProvider = new RegularMetaModelInfo(model.getReference());
+      mmiProvider = new RegularMetaModelInfo();
     }
     BinaryPersistence bp = new BinaryPersistence(mmiProvider, model);
     IdInfoRegistry meta = bp.saveModelProperties(os);
