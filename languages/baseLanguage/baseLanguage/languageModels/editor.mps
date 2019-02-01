@@ -14341,8 +14341,8 @@
       <node concept="1sVBvm" id="hqOxLHK" role="1sWHZn">
         <node concept="3F0A7n" id="hqOxMwo" role="2wV5jI">
           <property role="1Intyy" value="true" />
-          <ref role="1k5W1q" node="hshQ_OE" resolve="Field" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          <ref role="1k5W1q" node="hshQ_OE" resolve="Field" />
         </node>
       </node>
     </node>
@@ -14764,6 +14764,25 @@
         <node concept="VPM3Z" id="48lPkMUs$aT" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
+        <node concept="pkWqt" id="34sshOo5uy3" role="pqm2j">
+          <node concept="3clFbS" id="34sshOo5uy4" role="2VODD2">
+            <node concept="3clFbF" id="34sshOo5uDN" role="3cqZAp">
+              <node concept="2OqwBi" id="34sshOo5uDO" role="3clFbG">
+                <node concept="2OqwBi" id="34sshOo5uDP" role="2Oq$k0">
+                  <node concept="pncrf" id="34sshOo5uDQ" role="2Oq$k0" />
+                  <node concept="Bykcj" id="34sshOo5uDR" role="2OqNvi">
+                    <node concept="1aIX9F" id="34sshOo5uDS" role="1xVPHs">
+                      <node concept="26LbJo" id="34sshOo5uDT" role="1aIX9E">
+                        <ref role="26LbJp" to="tpee:4k0WLUKaBu8" resolve="typeArgument" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3GX2aA" id="34sshOo5uDU" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="1iCGBv" id="hwlm1Dd" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no method&gt;" />
@@ -14772,6 +14791,7 @@
           <node concept="3F0A7n" id="hwlm1Df" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <property role="1$x2rV" value="&lt;no name&gt;" />
+            <property role="1cu_pB" value="0" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
             <ref role="1k5W1q" node="6H7j4iMM5Cm" resolve="MPSMethodCall" />
           </node>
@@ -61332,8 +61352,8 @@
             </node>
             <node concept="3clFbF" id="1wEcoXjIEC7" role="3cqZAp">
               <node concept="2YIFZM" id="1wEcoXjIEC8" role="3clFbG">
-                <ref role="37wK5l" node="5d7cDYKUJMp" />
-                <ref role="1Pybhc" node="5d7cDYKUJE_" />
+                <ref role="1Pybhc" node="5d7cDYKUJE_" resolve="MemberDeclarationRefactoringUtil" />
+                <ref role="37wK5l" node="5d7cDYKUJMp" resolve="rewireMethodReferences" />
                 <node concept="7Obwk" id="1wEcoXjIECm" role="37wK5m" />
                 <node concept="37vLTw" id="1wEcoXjIECa" role="37wK5m">
                   <ref role="3cqZAo" node="1wEcoXjIEC2" resolve="staticMethod" />
@@ -61349,7 +61369,7 @@
                     <property role="3cmrfH" value="-1" />
                   </node>
                   <node concept="2TlHUq" id="1wEcoXjIECh" role="lGT1i">
-                    <ref role="2TlMyj" node="5kmCgHXRVxR" />
+                    <ref role="2TlMyj" node="5kmCgHXRVxR" resolve="staticModifier" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="1wEcoXjIECi" role="2Oq$k0">
