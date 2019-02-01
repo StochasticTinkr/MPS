@@ -33,13 +33,13 @@ public class BackspaceErrorReference_Test extends BaseTransformationTest {
 
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("1165710012577080885", "1165710012577082543");
+      initEditorComponent("1165710012577080885", "3538827776991355682");
       EditorUtil.runWithTwoStepDeletion(new EditorUtil.EditorTestRunnable() {
         public void run() throws Exception {
           invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
           invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
         }
-      }, false);
+      }, true);
     }
   }
 }

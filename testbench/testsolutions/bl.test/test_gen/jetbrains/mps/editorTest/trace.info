@@ -156,7 +156,7 @@
       <node id="1165710012577063752" at="30,0,33,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
       <node id="1165710012577063752" at="23,0,27,0" concept="5" trace="test_BackspaceErrorReference#()V" />
       <node id="1241246198928245599" at="38,0,42,0" concept="5" trace="run#()V" />
-      <node id="1241246198928245597" at="36,72,42,16" concept="2" />
+      <node id="1241246198928245597" at="36,72,42,15" concept="2" />
       <node id="1165710012577063752" at="34,0,44,0" concept="5" trace="testMethodImpl#()V" />
       <scope id="1165710012577063752" at="19,41,20,25" />
       <scope id="1165710012577063752" at="24,63,25,65" />
@@ -168,7 +168,7 @@
       </scope>
       <scope id="1165710012577063752" at="23,0,27,0" />
       <scope id="1241246198928245599" at="38,0,42,0" />
-      <scope id="1165710012577063752" at="35,51,42,16" />
+      <scope id="1165710012577063752" at="35,51,42,15" />
       <scope id="1165710012577063752" at="34,0,44,0" />
       <unit id="1241246198928245599" at="37,44,42,7" name="jetbrains.mps.editorTest.BackspaceErrorReference_Test$TestBody$1" />
       <unit id="1165710012577063752" at="28,0,45,0" name="jetbrains.mps.editorTest.BackspaceErrorReference_Test$TestBody" />
