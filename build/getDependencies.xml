@@ -85,6 +85,9 @@
     <loadfile property="current.version" srcfile="${basedir}/../lib/build.txt">
       <filterchain>
         <replacestring from="MPS-" to=""/>
+        <!-- TODO: fix prefix in platform build -->
+        <!-- Quick fix: wrong prefix in build.txt -->
+        <replacestring from="IC-" to=""/>
         <striplinebreaks/>
       </filterchain>
     </loadfile>
