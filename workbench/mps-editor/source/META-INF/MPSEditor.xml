@@ -27,10 +27,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.editor.MPSFileNodeEditorProvider</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager</implementation-class>
     </component>
 
@@ -93,6 +89,8 @@
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
+    <fileEditorProvider implementation="jetbrains.mps.ide.editor.MPSFileNodeEditorProvider"/>
+
     <fileIconProvider implementation="jetbrains.mps.ide.editor.icons.NodeFileIconProvider"/>
     <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.TransientModelWarningsProvider"/>
     <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.PackagedModelWarningsProvider"/>

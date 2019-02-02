@@ -98,9 +98,6 @@
       </implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.workbench.editors.MPSLanguageEditorProvider</implementation-class>
-    </component>
-    <component>
       <interface-class>jetbrains.mps.workbench.action.IRegistryManager</interface-class>
       <implementation-class>jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager</implementation-class>
     </component>
@@ -213,6 +210,8 @@
     <projectConfigurable displayName="Project Settings" instance="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" id="project.options.prefs.page" nonDefaultProject="true"/>
     <applicationConfigurable groupId="build" groupWeight="150" instance="jetbrains.mps.smodel.ModelValidationConfigurable" id="preferences.modelValidationSettings"/>
     <applicationConfigurable groupId="build" groupWeight="140" instance="jetbrains.mps.ide.generator.GenerationSettingsPreferencesPage" id="preferences.generationSettings"/>
+
+    <fileEditorProvider implementation="jetbrains.mps.workbench.editors.MPSLanguageEditorProvider"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">
