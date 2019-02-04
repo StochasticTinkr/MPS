@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.CollectConsumer;
 import com.intellij.util.Consumer;
@@ -34,6 +35,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
+ * FIXME uses name-based identities for association links
  * User: fyodor
  * Date: 4/8/13
  */
@@ -47,9 +49,13 @@ public class ForeignIdReferenceCacheImpl extends ForeignIdReferenceCache {
   }
 
   private void findReferencesMatching(String prefix, Consumer<SReference> consumer, GlobalSearchScope scope) {
-    final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
-    List<Collection<Pair<SNodeDescriptor, String>>> values = fileBasedIndex.getValues(ForeignIdReferenceIndex.ID, prefix, scope);
-    collectReferences(consumer, values, ProjectHelper.getProjectRepository(scope.getProject()));
+    try {
+      final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
+      List<Collection<Pair<SNodeDescriptor, String>>> values = fileBasedIndex.getValues(ForeignIdReferenceIndex.ID, prefix, scope);
+      collectReferences(consumer, values, ProjectHelper.getProjectRepository(scope.getProject()));
+    } catch (ProcessCanceledException ex) {
+      // ignore the exception
+    }
   }
 
   private void collectReferences(final Consumer<SReference> consumer, final List<Collection<Pair<SNodeDescriptor, String>>> values, final SRepository repository) {
