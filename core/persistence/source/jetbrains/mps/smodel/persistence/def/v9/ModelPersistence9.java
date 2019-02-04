@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
     if (header != null && header.getMetaInfoProvider() != null) {
       mmiProvider = header.getMetaInfoProvider();
     } else {
-      mmiProvider = new RegularMetaModelInfo(header == null ? null : header.getModelReference());
+      mmiProvider = new RegularMetaModelInfo();
     }
     return new ModelWriter9(mmiProvider);
   }
@@ -107,7 +107,7 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
     final boolean stripImplementation = state == ModelLoadingState.NO_IMPLEMENTATION;
     MetaModelInfoProvider mmiProvider = header.getMetaInfoProvider();
     if (mmiProvider == null) {
-      mmiProvider = new RegularMetaModelInfo(header.getModelReference());
+      mmiProvider = new RegularMetaModelInfo();
     }
     IdInfoReadHelper readHelper = new IdInfoReadHelper(mmiProvider, interfaceOnly, stripImplementation);
     return new ModelReader9Handler(header, readHelper);

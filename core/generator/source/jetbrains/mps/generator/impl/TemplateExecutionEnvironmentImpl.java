@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.trace.RuleTrace;
+import jetbrains.mps.generator.trace.RuleTrace2;
 import jetbrains.mps.generator.trace.TraceFacility;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNodePointer;
@@ -431,10 +432,19 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     TraceFacility traceSession = generator.getTraceSession();
     try {
       for (TemplateReductionRule rule : conceptRules) {
+        RuleTrace2 ruleTrace2 = traceSession != null ? traceSession.reductionRule(rule) : null;
         reductionRule = rule;
-        if (!myReductionTrack.isReductionBlocked(inputNode, rule)) {
+        final boolean reductionBlocked = myReductionTrack.isReductionBlocked(inputNode, rule);
+        if (ruleTrace2 != null) {
+          ruleTrace2.blocked(reductionBlocked);
+        }
+        if (!reductionBlocked) {
           if (rule instanceof TemplateRuleWithCondition) {
-            if (!getQueryExecutor().isApplicable((TemplateRuleWithCondition) rule, context)) {
+            final boolean applicable = getQueryExecutor().isApplicable((TemplateRuleWithCondition) rule, context);
+            if (ruleTrace2 != null) {
+              ruleTrace2.condition(applicable);
+            }
+            if (!applicable) {
               continue;
             }
             // fall-through
@@ -448,6 +458,9 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
             }
             myReductionTrack.enter(inputNode, rule);
             Collection<SNode> outputNodes = getQueryExecutor().applyRule(rule, context);
+            if (ruleTrace2 != null) {
+              ruleTrace2.completed(outputNodes);
+            }
             if (outputNodes != null) {
               SNodeId in = context.getInput() == null ? null : context.getInput().getNodeId();
               getTrace().trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
@@ -457,6 +470,9 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
           } catch (DismissTopMappingRuleException ex) {
             // it's ok, just continue with a next applicable rule, if any
             generator.reportDismissRuleException(ex, reductionRule);
+            if (ruleTrace2 != null) {
+              ruleTrace2.dismissed();
+            }
           } finally {
             myReductionTrack.leave();
           }

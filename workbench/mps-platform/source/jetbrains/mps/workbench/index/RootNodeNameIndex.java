@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.index;
 
 import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -144,9 +145,14 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
    */
   @NotNull
   public static Collection<NavigationTarget> getValues(@NotNull VirtualFile modelFile) {
-    int fileId = RootNodeNameIndex.getFileKey(modelFile);
-    ConcreteFilesGlobalSearchScope fileScope = new ConcreteFilesGlobalSearchScope(Collections.singleton(modelFile));
-    List<ModelRootsData> descriptors = FileBasedIndex.getInstance().getValues(RootNodeNameIndex.NAME, fileId, fileScope);
+    List<ModelRootsData> descriptors = Collections.emptyList();
+    try {
+      int fileId = RootNodeNameIndex.getFileKey(modelFile);
+      ConcreteFilesGlobalSearchScope fileScope = new ConcreteFilesGlobalSearchScope(Collections.singleton(modelFile));
+      descriptors = FileBasedIndex.getInstance().getValues(RootNodeNameIndex.NAME, fileId, fileScope);
+    } catch (ProcessCanceledException ex) {
+      // ignore, fall-through
+    }
     if (descriptors.isEmpty()) {
       return Collections.emptyList();
     }

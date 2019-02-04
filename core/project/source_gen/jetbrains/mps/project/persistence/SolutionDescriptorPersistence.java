@@ -66,6 +66,8 @@ public class SolutionDescriptorPersistence {
 
           result_8ckma3_a0a0a0b0j.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(XmlUtil.first(rootElement, "models"), "modelRoot"), myMacroHelper));
 
+          result_8ckma3_a0a0a0b0j.setNeedsExternalIdeaCompile(XmlUtil.first(rootElement, "compileInIDEA") != null);
+
           Element facets = XmlUtil.first(rootElement, "facets");
           if (facets != null) {
             result_8ckma3_a0a0a0b0j.getModuleFacetDescriptors().addAll(ModuleDescriptorPersistence.loadFacets(XmlUtil.children(facets, "facet"), myMacroHelper));
@@ -111,6 +113,9 @@ public class SolutionDescriptorPersistence {
       if (!(SOURCE_GEN_DEFAULT.equals(p))) {
         result.setAttribute("generatorOutputPath", p);
       }
+    }
+    if (descriptor.needsExternalIdeaCompile()) {
+      result.addContent(new Element("compileInIDEA"));
     }
 
     Element models = new Element("models");

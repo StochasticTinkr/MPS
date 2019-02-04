@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -125,6 +126,21 @@ public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
 
   public boolean getCompileInMPS() {
     throw new UnsupportedOperationException();
+  }
+
+  /**
+   * This is MPS internal flag intended for developers that run MPS from sources.
+   * Unlike compileInMPS, it is NOT exposed in JavaModuleFacet intentionally; it's our internal setting, after all
+   * Use {@link jetbrains.mps.project.SModuleOperations#isCompileInIdea(SModule)} to find out if module demands external IDEA compilation.
+   *
+   * @return true if a module with compileInMPS == false shall get compiled with a help of an IDEA instance by means of idea integration plugin
+   */
+  public boolean needsExternalIdeaCompile() {
+    return false;
+  }
+
+  public void setNeedsExternalIdeaCompile(boolean value) {
+    // no-op, subclasses that do support this setting shall override
   }
 
   public final Collection<ModelRootDescriptor> getModelRootDescriptors() {

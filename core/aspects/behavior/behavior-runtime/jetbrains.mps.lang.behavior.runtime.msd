@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.lang.behavior.runtime" uuid="d936855b-48da-4812-a8a0-2bfddd633ac4" moduleVersion="0" compileInMPS="false">
+  <compileInIDEA/>
   <models>
     <modelRoot contentPath="${module}" type="java_classes">
       <sourceRoot location="classes" />

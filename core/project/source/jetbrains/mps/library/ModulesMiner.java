@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2018 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,17 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.components.ComponentHost;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.io.DescriptorIO;
 import jetbrains.mps.project.io.DescriptorIOException;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
 import jetbrains.mps.project.persistence.ModuleReadException;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -30,7 +34,10 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.LibraryDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IFileUtil;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
@@ -43,7 +50,9 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.persistence.Memento;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -141,7 +150,7 @@ public final class ModulesMiner {
   }
 
   private boolean needProcess(IFile file) {
-    return !getFileSystem().isFileIgnored(file.getName()) && !myExcludes.contains(file);
+    return !file.getFileSystem().isFileIgnored(file.getName()) && !myExcludes.contains(file);
   }
 
 
@@ -455,9 +464,12 @@ public final class ModulesMiner {
       // TODO create module without sources
       if (result != null) {
         result.setDeploymentDescriptor(deploymentDescriptor);
-        // fix stubs libraries:
+        ArrayList<IFile> deploymentLibraries = new ArrayList<>(4);
+        // fix extra classpath libraries:
         // META-INF/module.xml contains info about model libs, while clients generally look at MD.getAdditionalJavaStubPaths() which were not
         // updated by build language at deployment time and still points to design-time lib location.
+        // In fact, code shall resort to libraries of DD if present (e.g. JavaModuleFacetImpl shall do it), but it doesn't hurt to have source
+        // module updated anyway.
         // Here we ignore stub libraries from source module descriptor, use libs from DeploymentDescriptor
         result.getAdditionalJavaStubPaths().clear();
         // XXX I don't like this assumption that libraries are siblings to module home, but have no better idea now.
@@ -466,11 +478,15 @@ public final class ModulesMiner {
           IFile jar = jarFile.startsWith("/")
               ? bundleParent.getFileSystem().getFile(PathManager.getHomePath() + jarFile)
               : bundleParent.getDescendant(jarFile);
+          deploymentLibraries.add(jar);
           if (jar.exists()) {
             String path = jar.getPath();
             result.getAdditionalJavaStubPaths().add(path);
           }
         }
+
+        // fix @java_stub locations, if any
+        fixJavaStubModelRoots(result, sourceDescriptorFile, moduleHome, deploymentLibraries);
       }
       // XXX why don't we return DD if no source MD found?
       return result;
@@ -481,6 +497,112 @@ public final class ModulesMiner {
       LOG.error("Unknown error while loading a deployment descriptor from the path " + file.getPath(), e);
       return null;
     }
+  }
+
+  /**
+   * We've got deployed module, found its source module, and need to fix java stub paths of the latter to get @java_stub models loaded properly.
+   *
+   * On one hand, there's desire to get rid of this code by moving relevant update into build language, as it's odd to 'fix' module descriptor during load.
+   * OTOH, it's source module we get fixed here, and if we move towards no source modules at all, then, perhaps, we shall not care to update neither here nor
+   * in build language. Still, there's a question whether @java_stub models are part of deployment story.
+   *
+   * JFTR, next code used to live in AbstractModule#updatePackagedDescriptor. Unlike the method, we no longer expose dd.getLibraries() as @java_stubs,
+   * instead, we do our best to update MRD here with a proper path (we consult deploymentJars, with actual deployed layout, for matches).
+   *
+   * @param sourceModuleDescriptor source module descriptor (usually comes from module-src.jar!/module/module.msd or [module-home]/module/module.msd), see #getSourceDescriptorFile
+   * @param sourcesDescriptorFile IFle {@code sourceModuleDescriptor} has been read from
+   * @param moduleHome either a jar file or a directory, base location for META-INF/module.xml
+   * @param deploymentJars list of libraries recorded in deployment descriptor (generally paths fixed by a build language to point to specific layout elements)
+   */
+  private void fixJavaStubModelRoots(ModuleDescriptor sourceModuleDescriptor, IFile sourcesDescriptorFile, IFile moduleHome, List<IFile> deploymentJars) {
+    // stub model roots
+    // see https://youtrack.jetbrains.com/issue/MPS-19756
+    List<ModelRootDescriptor> toRemove = new ArrayList<>();
+    List<ModelRootDescriptor> toAdd = new ArrayList<>();
+    MacroHelper macroHelper = MacrosFactory.forModuleFile(sourcesDescriptorFile);
+    for (ModelRootDescriptor rootDescriptor : sourceModuleDescriptor.getModelRootDescriptors()) {
+      String rootDescriptorType = rootDescriptor.getType();
+      if (rootDescriptorType.equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) {
+        // there are few possible deployment layouts:
+        //    1. App/Contents/languages/my.lang.jar + -src.jar
+        //    2. App/Contents/plugins/<name>/languages/my.lang.jar + -src.jar + libraries from additional cp
+        //       (build language generator puts libraries there with the help of ArtifactsRelativePathHelper, base on extracted jar deps;
+        //       FWIW, build language ignores jars listed under stub models)
+        //       App/Contents/plugins/<name>/pluginSolutions/my.lang.pluginSolution.jar
+        //       App/Contents/plugins/<name>/lib/icons.jar (placed there by build language generator)
+        //    3. Custom layout:
+        //       e.g. jetpad, which differs from (2) with lib/ full of cp jars
+        //       mps-core, with languageDesign/ and util/ nested under languages/
+        //       mps-vcs, with cp jars under lib/
+        //
+        // trying to load new format : replacing paths like **.jar!/module ->
+        // Here, macroHelper have to be the same as the one used to load sourceModuleDescriptor, and it's just a hidden knowledge that
+        // DescriptorIOFacade uses same approach to construct its macro helper.
+        String contentPath = macroHelper.shrinkPath(rootDescriptor.getMemento().get(FileBasedModelRoot.CONTENT_PATH));
+        if (contentPath == null || !contentPath.startsWith(MacrosFactory.MODULE)) {
+          continue;
+        }
+        contentPath = contentPath.substring(MacrosFactory.MODULE.length());
+        boolean update = false;
+        Memento newMemento = new MementoImpl();
+        IFile moduleHomeDir = IFileUtil.isJarFile(moduleHome) ? moduleHome.getParent() : moduleHome;
+        newMemento.put(FileBasedModelRoot.CONTENT_PATH, moduleHomeDir.getPath());
+        for (Memento sourceRoot : rootDescriptor.getMemento().getChildren(FileBasedModelRoot.SOURCE_ROOTS)) {
+          Memento newMementoChild = newMemento.createChild(FileBasedModelRoot.SOURCE_ROOTS);
+          // bear in mind that FileBasedModelRoot.LOCATION could be "." or ""
+          final String normalizedSuffix = FileUtil.normalize(contentPath + File.separator + sourceRoot.get(FileBasedModelRoot.LOCATION));
+          final String pastModuleMacroSuffix;
+          if (normalizedSuffix.endsWith(Path.ARCHIVE_SEPARATOR)) {
+            // I've seen <modelRoot contentPath="${module}/lib/whatever-1.2.7.jar!" type="java_classes"><sourceRoot location="." /></modelRoot>
+            pastModuleMacroSuffix = normalizedSuffix.substring(0, normalizedSuffix.length() - Path.ARCHIVE_SEPARATOR.length());
+          } else {
+            pastModuleMacroSuffix = normalizedSuffix;
+          }
+          IFile deploymentJarMatch;
+          if (pastModuleMacroSuffix.endsWith("classes_gen") || pastModuleMacroSuffix.endsWith("classes")) {
+            if (IFileUtil.isJarFile(moduleHome)) {
+              newMementoChild.put(FileBasedModelRoot.LOCATION, moduleHome.getName());
+            } else {
+              newMementoChild.put(FileBasedModelRoot.LOCATION, ".");
+            }
+            update = true;
+          } else if ((deploymentJarMatch = deploymentJars.stream().filter(f -> pastModuleMacroSuffix.endsWith(f.getName())).findFirst().orElse(null)) != null) {
+            // IOW, if there's a deployment jar with a name that matches location we are looking at. "Matches" here is intentionally 'name only' here, as
+            // we may face odd/inconsistent source/deployment layout and file references:
+            // e.g. for collections.trove.msd:
+            //  deployed layout
+            //    /plugins/mps-trove/languages/collections_trove.runtime.jar
+            //    /plugins/mps-trove/languages/trove-2.1.0.jar
+            //  source module
+            //    <modelRoot contentPath="${module}" type="java_classes">
+            //      <sourceRoot location="classes_gen" />
+            //      <sourceRoot location="lib/trove-2.1.0.jar" />
+            //    </modelRoot>
+            // Indeed, we have to fix deployed layout to place trove.jar outside of 'languages/' (whether it's "mps-trove/lib/" or just "mps-trove" is up to
+            // build project. But as long as we may face such layouts, we can not use full location value). Yes, this would fail e.g if one
+            // uses different folder names but same jar libraries, like "trove-2.1.0/library.jar" abd "trove-2.0.5/library.jar", I just expect this to be
+            // much rare case.
+            //
+            // XXX what it deploymentJar lives under <mps-home>/lib, do I care to build relative path? Perhaps, shall replace with distinct MRD then?
+            final String jarRelativeToDeployedModule = FileBasedModelRoot.relativize(deploymentJarMatch.getPath(), moduleHomeDir);
+            newMementoChild.put(FileBasedModelRoot.LOCATION, jarRelativeToDeployedModule);
+            update = true;
+          } else {
+            // just keep it as is, relative to deployment value of ${module}. If anything important, users may tell build project to copy
+            // relevant stuff as deployed jar's "extra content".
+            newMementoChild.put(FileBasedModelRoot.LOCATION, pastModuleMacroSuffix);
+            // there's intentionally no `update = true`. In case there are no other converted values, just ignore the root descriptor altogether
+            // If, however, there are other location changed, we would preserve this one from the original memento.
+          }
+        }
+        if (update) {
+          toAdd.add(new ModelRootDescriptor(rootDescriptorType, newMemento));
+          toRemove.add(rootDescriptor);
+        }
+      }
+    }
+    sourceModuleDescriptor.getModelRootDescriptors().removeAll(toRemove);
+    sourceModuleDescriptor.getModelRootDescriptors().addAll(toAdd);
   }
 
   // part of processExcludes() with common code for any module type
@@ -592,11 +714,6 @@ public final class ModulesMiner {
     }
   }
 
-  @NotNull
-  private static FileSystem getFileSystem() {
-    return FileSystem.getInstance();
-  }
-
   public void saveHandle(@NotNull ModuleHandle handle, ModelOutputStream stream) throws IOException {
     stream.writeShort(0x1be0);
     stream.writeString(handle.getFile().getPath());
@@ -640,7 +757,7 @@ public final class ModulesMiner {
       throw new IOException("broken stream: invalid descriptor type");
     }
     descriptor.load(stream);
-    return new ModuleHandle(getFileSystem().getFile(file), descriptor);
+    return new ModuleHandle(FileSystem.getInstance().getFile(file), descriptor);
   }
 
   @Immutable

@@ -9823,6 +9823,28 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="3clFbH" id="7PzOcl10B5V" role="3cqZAp" />
+                      <node concept="3clFbF" id="7PzOcl10Msy" role="3cqZAp">
+                        <node concept="2OqwBi" id="7PzOcl10MD_" role="3clFbG">
+                          <node concept="1bf8Ab" id="7PzOcl10Msw" role="2Oq$k0" />
+                          <node concept="liA8E" id="7PzOcl10N6p" role="2OqNvi">
+                            <ref role="37wK5l" to="w0gx:~SolutionDescriptor.setNeedsExternalIdeaCompile(boolean):void" resolve="setNeedsExternalIdeaCompile" />
+                            <node concept="3y3z36" id="7PzOcl10OcT" role="37wK5m">
+                              <node concept="10Nm6u" id="7PzOcl10Osv" role="3uHU7w" />
+                              <node concept="2YIFZM" id="7PzOcl10HU$" role="3uHU7B">
+                                <ref role="37wK5l" to="7a2w:4eI2K_Iuew6" resolve="first" />
+                                <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
+                                <node concept="37vLTw" id="7PzOcl10HU_" role="37wK5m">
+                                  <ref role="3cqZAo" node="33oJVYhfQy$" resolve="rootElement" />
+                                </node>
+                                <node concept="Xl_RD" id="7PzOcl10HUA" role="37wK5m">
+                                  <property role="Xl_RC" value="compileInIDEA" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node concept="3clFbH" id="2xoEMW8V1qr" role="3cqZAp" />
                       <node concept="3cpWs8" id="2xoEMW8V3UN" role="3cqZAp">
                         <node concept="3cpWsn" id="2xoEMW8V3UO" role="3cpWs9">
@@ -10337,6 +10359,36 @@
               <node concept="liA8E" id="IMUMWuHR8N" role="2OqNvi">
                 <ref role="37wK5l" to="w0gx:~SolutionDescriptor.getOutputPath():java.lang.String" resolve="getOutputPath" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7PzOcl10UXS" role="3cqZAp">
+          <node concept="3clFbS" id="7PzOcl10UXU" role="3clFbx">
+            <node concept="3clFbF" id="7PzOcl10XEY" role="3cqZAp">
+              <node concept="2OqwBi" id="7PzOcl10XLl" role="3clFbG">
+                <node concept="37vLTw" id="7PzOcl10XEW" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1Tieq1im88u" resolve="result" />
+                </node>
+                <node concept="liA8E" id="7PzOcl10XUC" role="2OqNvi">
+                  <ref role="37wK5l" to="mmaq:~Element.addContent(org.jdom.Element):org.jdom.Element" resolve="addContent" />
+                  <node concept="2ShNRf" id="7PzOcl10XX9" role="37wK5m">
+                    <node concept="1pGfFk" id="7PzOcl112XJ" role="2ShVmc">
+                      <ref role="37wK5l" to="mmaq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
+                      <node concept="Xl_RD" id="7PzOcl1134G" role="37wK5m">
+                        <property role="Xl_RC" value="compileInIDEA" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7PzOcl10WMN" role="3clFbw">
+            <node concept="37vLTw" id="7PzOcl10W7S" role="2Oq$k0">
+              <ref role="3cqZAo" node="33oJVYhgCCY" resolve="descriptor" />
+            </node>
+            <node concept="liA8E" id="7PzOcl10XBj" role="2OqNvi">
+              <ref role="37wK5l" to="w0gx:~SolutionDescriptor.needsExternalIdeaCompile():boolean" resolve="needsExternalIdeaCompile" />
             </node>
           </node>
         </node>
