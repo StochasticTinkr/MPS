@@ -76,6 +76,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(event.getData(CommonDataKeys.PROJECT), event.getData(MPSCommonDataKeys.FRAME));
+    blameDialog.initDialog();
     blameDialog.setIssueHidden(true);
     blameDialog.setSubsystem("Version Control");
     blameDialog.setIssueTitle("Model merge problem");
@@ -121,7 +122,6 @@ public class ReportModelMergeProblem_Action extends BaseAction {
           return;
         }
         blameDialog.addFile(new File(backupDir, zipNames[selectedIndex]));
-        blameDialog.initDialog();
         blameDialog.show();
       }
     }
