@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,10 +22,17 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+import java.util.Collection;
 import java.util.Set;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 /**
- * A module represents a language or a solution.
+ * A module is an abstraction for collection of models, tailored to address specific task.
+ * Examples of a module include Language module to provide new DSL capabilities into MPS,
+ * Generator module to describe transformation between lanuages, and a Solution module, which serves
+ * various purposes ranging from language runtime support to end-user code.
  */
 public interface SModule {
 
@@ -106,10 +113,22 @@ public interface SModule {
   SModel getModel(SModelId id);
 
   /**
-   * Retrieves all module's models
+   * Retrieves all module's models.
+   * Note, there could be models intended for MPS internal needs (like '@descriptor' model), use {@link #getModels(Predicate)} if you care about
+   * specific subset of models.
    * Contract: if the module was not changed the order of the models which this method returns stays the same.
    */
   @NotNull Iterable<SModel> getModels();
+
+  /**
+   * Filtered view of {@link #getModels()} with models matching supplied condition
+   * @param condition tells whether a model is allowed to pass
+   * @return subset of module's own models that match the condition
+   */
+  @NotNull
+  default Collection<SModel> getModels(@NotNull Predicate<SModel> condition) {
+    return StreamSupport.stream(getModels().spliterator(), false).filter(condition).collect(Collectors.toList());
+  }
 
   /**
    * Retrieves all instantiated facets. (see {@link SModuleFacet})
