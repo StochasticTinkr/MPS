@@ -652,14 +652,29 @@
           <node concept="pkWqt" id="1P_b4lPRMhg" role="pqm2j">
             <node concept="3clFbS" id="1P_b4lPRMhh" role="2VODD2">
               <node concept="3clFbF" id="1P_b4lPRMhi" role="3cqZAp">
-                <node concept="2OqwBi" id="2wdLO7Kh4ET" role="3clFbG">
-                  <node concept="3TrcHB" id="2wdLO7Kh4EU" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
+                <node concept="22lmx$" id="4XxHUpU3Dc0" role="3clFbG">
+                  <node concept="2OqwBi" id="4XxHUpU3HpO" role="3uHU7w">
+                    <node concept="2OqwBi" id="4XxHUpU3D$H" role="2Oq$k0">
+                      <node concept="pncrf" id="4XxHUpU3Dok" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="4XxHUpU3Ecm" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tp1t:hDM2mAQ" resolve="concept" />
+                      </node>
+                    </node>
+                    <node concept="1mIQ4w" id="4XxHUpU3IDQ" role="2OqNvi">
+                      <node concept="chp4Y" id="4XxHUpU3ILE" role="cj9EA">
+                        <ref role="cht4Q" to="tpce:h0PlHMJ" resolve="InterfaceConceptDeclaration" />
+                      </node>
+                    </node>
                   </node>
-                  <node concept="2OqwBi" id="2wdLO7Kh4EV" role="2Oq$k0">
-                    <node concept="pncrf" id="2wdLO7Kh4EW" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="2wdLO7Kh4EX" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp1t:hDM2mAQ" resolve="concept" />
+                  <node concept="2OqwBi" id="2wdLO7Kh4ET" role="3uHU7B">
+                    <node concept="3TrcHB" id="2wdLO7Kh4EU" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
+                    </node>
+                    <node concept="2OqwBi" id="2wdLO7Kh4EV" role="2Oq$k0">
+                      <node concept="pncrf" id="2wdLO7Kh4EW" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="2wdLO7Kh4EX" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tp1t:hDM2mAQ" resolve="concept" />
+                      </node>
                     </node>
                   </node>
                 </node>
