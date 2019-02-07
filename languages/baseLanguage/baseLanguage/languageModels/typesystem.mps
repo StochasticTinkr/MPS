@@ -35785,6 +35785,48 @@
       <property role="TrG5h" value="subType" />
       <ref role="1YaFvo" to="tpee:f_0Q1BR" resolve="ArrayType" />
     </node>
+    <node concept="1xSnZT" id="1LNJx_NYRua" role="1xSnZW">
+      <node concept="3clFbS" id="1LNJx_NYRub" role="2VODD2">
+        <node concept="3clFbF" id="1LNJx_NYRFk" role="3cqZAp">
+          <node concept="1Wc70l" id="1LNJx_NYZNd" role="3clFbG">
+            <node concept="3fqX7Q" id="1LNJx_NYXNO" role="3uHU7B">
+              <node concept="2OqwBi" id="1LNJx_NYXNQ" role="3fr31v">
+                <node concept="2OqwBi" id="1LNJx_NYXNR" role="2Oq$k0">
+                  <node concept="1YBJjd" id="1LNJx_NYXNS" role="2Oq$k0">
+                    <ref role="1YBMHb" node="5k3Ifb8ISHx" resolve="subType" />
+                  </node>
+                  <node concept="3TrEf2" id="1LNJx_NYXNT" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpee:f_0Q1BS" resolve="componentType" />
+                  </node>
+                </node>
+                <node concept="1mIQ4w" id="1LNJx_NYXNU" role="2OqNvi">
+                  <node concept="chp4Y" id="1LNJx_NYXNV" role="cj9EA">
+                    <ref role="cht4Q" to="tpee:gWaQbR$" resolve="PrimitiveType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="1LNJx_NZ322" role="3uHU7w">
+              <node concept="2OqwBi" id="1LNJx_NZ5Np" role="3fr31v">
+                <node concept="2OqwBi" id="1LNJx_NZ4rl" role="2Oq$k0">
+                  <node concept="1YBJjd" id="1LNJx_NZ3YW" role="2Oq$k0">
+                    <ref role="1YBMHb" node="5k3Ifb8ISHy" resolve="superType" />
+                  </node>
+                  <node concept="3TrEf2" id="1LNJx_NZ4YK" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpee:f_0Q1BS" resolve="componentType" />
+                  </node>
+                </node>
+                <node concept="1mIQ4w" id="1LNJx_NZ6lb" role="2OqNvi">
+                  <node concept="chp4Y" id="1LNJx_NZ6Du" role="cj9EA">
+                    <ref role="cht4Q" to="tpee:gWaQbR$" resolve="PrimitiveType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="63aowDh9smP">
     <property role="TrG5h" value="Queries" />

@@ -22003,51 +22003,59 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/6125943271043337054">
     <file name="Arrays_InequationReplacementRule.java">
-      <node id="5108287150803754723" at="20,5,21,73" concept="12" />
-      <node id="5108287150803754723" at="21,73,22,203" concept="12" />
-      <node id="5108287150803754723" at="22,203,23,62" concept="6" />
-      <node id="5108287150803754723" at="23,62,24,429" concept="6" />
-      <node id="6125943271043337054" at="27,207,28,35" concept="12" />
-      <node id="5108287150803754723" at="28,35,29,451" concept="6" />
-      <node id="6125943271043337054" at="29,451,30,27" concept="13" />
-      <node id="6125943271043337054" at="32,27,33,16" concept="13" />
-      <node id="6125943271043337054" at="35,71,36,105" concept="13" />
-      <node id="6125943271043337054" at="38,73,39,107" concept="13" />
-      <node id="6125943271043337054" at="42,57,43,148" concept="13" />
-      <node id="6125943271043337054" at="45,59,46,148" concept="13" />
-      <node id="6125943271043337054" at="17,0,19,0" concept="3" trace="Arrays_InequationReplacementRule#()V" />
-      <node id="6125943271043337054" at="32,0,35,0" concept="11" trace="isWeak#()Z" />
-      <node id="6125943271043337054" at="35,0,38,0" concept="11" trace="isApplicableSubtypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="6125943271043337054" at="38,0,41,0" concept="11" trace="isApplicableSupertypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="6125943271043337054" at="42,0,45,0" concept="11" trace="getApplicableSubtypeConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="6125943271043337054" at="45,0,48,0" concept="11" trace="getApplicableSupertypeConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="6125943271043337054" at="27,0,32,0" concept="11" trace="checkInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)Z" />
-      <node id="5108287150803754723" at="19,253,25,5" concept="1" />
-      <node id="6125943271043337054" at="19,0,27,0" concept="11" trace="processInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
-      <scope id="6125943271043337054" at="17,45,17,45" />
-      <scope id="6125943271043337054" at="32,27,33,16" />
-      <scope id="6125943271043337054" at="35,71,36,105" />
-      <scope id="6125943271043337054" at="38,73,39,107" />
-      <scope id="6125943271043337054" at="42,57,43,148" />
-      <scope id="6125943271043337054" at="45,59,46,148" />
-      <scope id="6125943271043337054" at="17,0,19,0" />
-      <scope id="6125943271043337054" at="27,207,30,27">
+      <node id="2050191271913028308" at="20,97,21,694" concept="13" />
+      <node id="5108287150803754723" at="24,5,25,73" concept="12" />
+      <node id="5108287150803754723" at="25,73,26,203" concept="12" />
+      <node id="5108287150803754723" at="26,203,27,62" concept="6" />
+      <node id="5108287150803754723" at="27,62,28,429" concept="6" />
+      <node id="6125943271043337054" at="31,207,32,35" concept="12" />
+      <node id="5108287150803754723" at="32,35,33,451" concept="6" />
+      <node id="6125943271043337054" at="33,451,34,27" concept="13" />
+      <node id="6125943271043337054" at="36,27,37,16" concept="13" />
+      <node id="6125943271043337054" at="39,71,40,105" concept="13" />
+      <node id="6125943271043337054" at="42,73,43,107" concept="13" />
+      <node id="6125943271043337054" at="46,57,47,148" concept="13" />
+      <node id="6125943271043337054" at="49,59,50,148" concept="13" />
+      <node id="6125943271043337054" at="18,0,20,0" concept="3" trace="Arrays_InequationReplacementRule#()V" />
+      <node id="6125943271043337054" at="20,0,23,0" concept="11" trace="isApplicableCustom#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+      <node id="6125943271043337054" at="36,0,39,0" concept="11" trace="isWeak#()Z" />
+      <node id="6125943271043337054" at="39,0,42,0" concept="11" trace="isApplicableSubtypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="6125943271043337054" at="42,0,45,0" concept="11" trace="isApplicableSupertypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="6125943271043337054" at="46,0,49,0" concept="11" trace="getApplicableSubtypeConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="6125943271043337054" at="49,0,52,0" concept="11" trace="getApplicableSupertypeConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="6125943271043337054" at="31,0,36,0" concept="11" trace="checkInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)Z" />
+      <node id="5108287150803754723" at="23,253,29,5" concept="1" />
+      <node id="6125943271043337054" at="23,0,31,0" concept="11" trace="processInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
+      <scope id="6125943271043337054" at="18,45,18,45" />
+      <scope id="2050191271913027467" at="20,97,21,694" />
+      <scope id="6125943271043337054" at="36,27,37,16" />
+      <scope id="6125943271043337054" at="39,71,40,105" />
+      <scope id="6125943271043337054" at="42,73,43,107" />
+      <scope id="6125943271043337054" at="46,57,47,148" />
+      <scope id="6125943271043337054" at="49,59,50,148" />
+      <scope id="6125943271043337054" at="18,0,20,0" />
+      <scope id="6125943271043337054" at="20,0,23,0">
+        <var name="status" id="6125943271043337054" />
+        <var name="subtype" id="6125943271043337054" />
+        <var name="supertype" id="6125943271043337054" />
+      </scope>
+      <scope id="6125943271043337054" at="31,207,34,27">
         <var name="result_14532009" id="6125943271043337054" />
       </scope>
-      <scope id="6125943271043337054" at="32,0,35,0" />
-      <scope id="6125943271043337054" at="35,0,38,0">
+      <scope id="6125943271043337054" at="36,0,39,0" />
+      <scope id="6125943271043337054" at="39,0,42,0">
         <var name="node" id="6125943271043337054" />
       </scope>
-      <scope id="6125943271043337054" at="38,0,41,0">
+      <scope id="6125943271043337054" at="42,0,45,0">
         <var name="node" id="6125943271043337054" />
       </scope>
-      <scope id="6125943271043337054" at="42,0,45,0" />
-      <scope id="6125943271043337054" at="45,0,48,0" />
-      <scope id="5108287150803754723" at="20,5,24,429">
+      <scope id="6125943271043337054" at="46,0,49,0" />
+      <scope id="6125943271043337054" at="49,0,52,0" />
+      <scope id="5108287150803754723" at="24,5,28,429">
         <var name="_info_12389875345" id="5108287150803754723" />
         <var name="_nodeToCheck_1029348928467" id="5108287150803754723" />
       </scope>
-      <scope id="6125943271043337054" at="27,0,32,0">
+      <scope id="6125943271043337054" at="31,0,36,0">
         <var name="equationInfo" id="6125943271043337054" />
         <var name="inequalityIsLessThan" id="6125943271043337054" />
         <var name="inequalityIsWeak" id="6125943271043337054" />
@@ -22055,8 +22063,8 @@
         <var name="subtype" id="6125943271043337054" />
         <var name="supertype" id="6125943271043337054" />
       </scope>
-      <scope id="6125943271043337056" at="19,253,25,5" />
-      <scope id="6125943271043337054" at="19,0,27,0">
+      <scope id="6125943271043337056" at="23,253,29,5" />
+      <scope id="6125943271043337054" at="23,0,31,0">
         <var name="equationInfo" id="6125943271043337054" />
         <var name="inequalityIsLessThan" id="6125943271043337054" />
         <var name="inequalityIsWeak" id="6125943271043337054" />
@@ -22065,7 +22073,7 @@
         <var name="supertype" id="6125943271043337054" />
         <var name="typeCheckingContext" id="6125943271043337054" />
       </scope>
-      <unit id="6125943271043337054" at="16,0,49,0" name="jetbrains.mps.baseLanguage.typesystem.Arrays_InequationReplacementRule" />
+      <unit id="6125943271043337054" at="17,0,53,0" name="jetbrains.mps.baseLanguage.typesystem.Arrays_InequationReplacementRule" />
     </file>
     <file name="TypesystemDescriptor.java">
       <node id="6125943271043337054" at="1314,5,1315,97" concept="12" />
